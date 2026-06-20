@@ -1,0 +1,52 @@
+name: Deploy Pages
+
+# 本地生成 + 推送 docs/，CI 只负责部署，不在云端调用模型 / 暴露 API key。
+# 触发条件：docs/ 或 .github/workflows/generate.yml 变动推到 main，或手动触发。
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/generate.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Verify docs/ has content
+        run: |
+          if [ ! -f docs/index.html ]; then
+            echo "::error::docs/index.html 不存在。请先在本地运行生成脚本并提交 docs/。"
+            exit 1
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,260 @@
+/* ============================================================================
+   show-me-your-novel — 站点样式
+   无外部依赖、暗色友好、阅读向
+   ============================================================================ */
+
+:root {
+  --bg: #0f1115;
+  --bg-soft: #161922;
+  --bg-card: #1b1f2a;
+  --border: #2a3040;
+  --text: #e6e6ea;
+  --text-dim: #9aa0ad;
+  --accent: #7c9cff;
+  --accent-soft: rgba(124, 156, 255, 0.15);
+  --green: #5cc98a;
+  --yellow: #e0b341;
+  --red: #e06c75;
+  --radius: 10px;
+  --maxw: 820px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f7f8fa;
+    --bg-soft: #ffffff;
+    --bg-card: #ffffff;
+    --border: #e3e6ec;
+    --text: #1f2330;
+    --text-dim: #6b7280;
+    --accent: #3b6dff;
+    --accent-soft: rgba(59, 109, 255, 0.1);
+    --green: #2e9d63;
+    --yellow: #b8860b;
+    --red: #d23a4a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei",
+               "Noto Sans CJK SC", system-ui, sans-serif;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* ── 页头 / 页脚 ──────────────────────────────────────── */
+.site-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+.site-header .brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+.site-header .brand:hover { text-decoration: none; color: var(--accent); }
+.site-header .tagline { color: var(--text-dim); font-size: 0.9rem; }
+
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ── 首页：小说卡片网格 ───────────────────────────────── */
+.page-title { font-size: 1.6rem; margin: 0 0 0.5rem; }
+.page-desc { color: var(--text-dim); margin: 0 0 1.5rem; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.card {
+  display: block;
+  padding: 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.card:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.card-genre {
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+.card-title { font-size: 1.2rem; margin: 0 0 0.5rem; color: var(--text); }
+.card-intro {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta { font-size: 0.8rem; }
+
+.badge {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+.badge-completed { color: var(--green); border-color: var(--green); }
+.badge-partial   { color: var(--yellow); border-color: var(--yellow); }
+.badge-pending   { color: var(--text-dim); }
+.badge-genre {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ── 小说详情页 ──────────────────────────────────────── */
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+.back:hover { color: var(--accent); }
+
+.story-meta-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.story-count { color: var(--text-dim); font-size: 0.9rem; }
+
+.section-title {
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-top: 2.5rem;
+}
+
+.prompt-section { margin-bottom: 2.5rem; }
+.prompt-body {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1rem 1.4rem;
+  font-size: 0.92rem;
+}
+.prompt-body h1 { display: none; }  /* 主标题已在页头展示 */
+
+.version-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.8rem;
+}
+.version-card {
+  display: block;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.version-card:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.version-pending {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.vc-name { font-weight: 600; margin-bottom: 0.3rem; }
+.vc-stats {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* ── 小说正文页 ──────────────────────────────────────── */
+.novel-header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.novel-title { font-size: 1.8rem; margin: 0 0 0.6rem; }
+.novel-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  align-items: center;
+}
+.novel-meta .dim { opacity: 0.7; }
+
+.novel-body { font-size: 1.02rem; }
+.novel-body h2 {
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.6rem;
+}
+
+/* 通用 markdown 渲染 */
+.markdown h1 { font-size: 1.5rem; margin: 1.5rem 0 1rem; }
+.markdown h2 { font-size: 1.3rem; margin: 2rem 0 1rem; }
+.markdown h3 { font-size: 1.1rem; margin: 1.5rem 0 0.8rem; }
+.markdown p { margin: 0.8rem 0; }
+.markdown ul, .markdown ol { padding-left: 1.5rem; margin: 0.8rem 0; }
+.markdown li { margin: 0.3rem 0; }
+.markdown blockquote {
+  border-left: 3px solid var(--border);
+  margin: 1rem 0;
+  padding: 0.3rem 1rem;
+  color: var(--text-dim);
+}
+
+.empty { color: var(--text-dim); }
+
+@media (max-width: 600px) {
+  .container { padding: 1.2rem; }
+  .site-header { padding: 1rem 1.2rem; flex-direction: column; gap: 0.2rem; align-items: flex-start; }
+}
