@@ -159,7 +159,7 @@ foreach ($storyDir in $storyDirs) {
   foreach ($m in $modelObjs) {
     $total++
     $outputFile = Join-Path $storyDir "$($m.id).md"
-    $workdir    = Join-Path $WorkDir $storySlug $m.id
+    $sandbox    = Join-Path $WorkDir $storySlug $m.id
     $fullModel  = "${PROVIDER}/$($m.spec)"  # → opencode-go/<model>
 
     if (Test-Path $outputFile) {
@@ -168,9 +168,11 @@ foreach ($storyDir in $storyDirs) {
     }
 
     Write-Log "  └ $($m.name) → 生成中…（model=$fullModel）"
-    $null = New-Item -ItemType Directory -Force -Path $workdir | Out-Null
+    $null = New-Item -ItemType Directory -Force -Path $sandbox | Out-Null
 
     $prompt = Get-Content $promptFile -Raw -Encoding UTF8
+    # 让模型在当前目录自由写，脚本之后会复制出去
+    $prompt = "$prompt`n`n在当前目录下写小说正文，文件名任意。"
     $outFile = Join-Path $tmpDir "$storySlug__$($m.id).out"
     $errFile = Join-Path $tmpDir "$storySlug__$($m.id).err"
     foreach ($f in @($outFile,$errFile)) { if (Test-Path $f) { Remove-Item $f } }
@@ -186,38 +188,58 @@ foreach ($storyDir in $storyDirs) {
       $failed++; $failures += "$($m.name) [$storySlug, prompt过长]"; continue
     }
 
-    # opencode 在 Windows 下是 .cmd shim，不是合法 Win32 exe，故用 cmd.exe /c 包一层。
-    # 关键：把整条命令拼成"带字面双引号"的单一字符串传给 cmd.exe /c，
-    # 这样 --dir（路径含空格）和 prompt（含换行/中文/特殊字符）都能被原样保留。
-    # 不能用 Start-Process -ArgumentList @(...) 的数组形式——它对含空格元素加引号不可靠。
-    $cmdLine = '/c opencode run --model "' + $fullModel + '" --dir "' + $workdir + '" "' + $prompt + '"'
+    # 模型在自己的 work 目录里写，写完再复制出来，防止它看到其他模型的输出。
+    # prompt 已经作为消息传入，模型不需要读 prompt.md。
+    $cmdLine = '/c opencode run --model "' + $fullModel + '" --dir "' + $sandbox + '" "' + $prompt + '"'
     $p = Start-Process -FilePath "cmd.exe" `
       -ArgumentList $cmdLine `
       -RedirectStandardOutput $outFile -RedirectStandardError $errFile `
       -NoNewWindow -Wait -PassThru
     $rc = $p.ExitCode
-
     $stdout = if (Test-Path $outFile) { [System.IO.File]::ReadAllText($outFile, [System.Text.Encoding]::UTF8) } else { "" }
     $stderr = if (Test-Path $errFile) { [System.IO.File]::ReadAllText($errFile, [System.Text.Encoding]::UTF8) } else { "" }
 
-    if ($rc -ne 0 -or [string]::IsNullOrWhiteSpace($stdout)) {
+    # 保留完整日志到 sandbox：工具调用过程（stderr）+ 模型对话（stdout）+ 发送的 prompt
+    $convLog = Join-Path $sandbox ".conversation.log"
+    [System.IO.File]::WriteAllText($convLog, $stdout, [System.Text.Encoding]::UTF8)
+    $toolLog = Join-Path $sandbox ".opencode.log"
+    [System.IO.File]::WriteAllText($toolLog, $stderr, [System.Text.Encoding]::UTF8)
+    $promptLog = Join-Path $sandbox ".prompt.txt"
+    [System.IO.File]::WriteAllText($promptLog, $prompt, [System.Text.Encoding]::UTF8)
+
+    if ($rc -ne 0) {
       Write-Err "  └ $($m.name) → 生成失败（rc=$rc）"
-      $logPath = Join-Path $workdir ".opencode.log"
-      [System.IO.File]::WriteAllText($logPath, $stderr, [System.Text.Encoding]::UTF8)
       $errShort = ($stderr -replace '\x1b\[[0-9;]*m','') -replace '\s+',' '
       if ($errShort.Length -gt 240) { $errShort = $errShort.Substring(0,240) + "…" }
       if ($errShort) { Write-Err "      错误摘要：$errShort" }
-      Write-Err "      完整日志：$logPath"
+      Write-Err "      日志目录：$sandbox"
+      $failed++; $failures += "$($m.name) [$storySlug]"; continue
+    }
+
+    # 从 workdir 找模型写的 .md 文件，复制到 novels 目录
+    $candidates = Get-ChildItem -Path $sandbox -Filter "*.md" -File -Recurse -ErrorAction SilentlyContinue |
+                  Sort-Object Length -Descending
+    if ($candidates) {
+      $src = $candidates[0]
+      Copy-Item -Path $src.FullName -Destination $outputFile -Force
+      Write-Log "  └ 从 $($src.Name) 复制到 $($m.id).md"
+    }
+
+    if (-not (Test-Path $outputFile)) {
+      Write-Err "  └ $($m.name) → 模型未产出 .md 文件（work 目录无生成结果）"
+      Write-Err "      日志目录：$sandbox"
+      $failed++; $failures += "$($m.name) [$storySlug]"; continue
+    }
+
+    $fileSize = (Get-Item $outputFile).Length
+    if ($fileSize -lt 500) {
+      Write-Err "  └ $($m.name) → 输出过短（$fileSize 字节），可能只含对话摘要而非小说正文"
+      Write-Err "      日志目录：$sandbox"
       Remove-Item -Path $outputFile -ErrorAction SilentlyContinue
       $failed++; $failures += "$($m.name) [$storySlug]"; continue
     }
 
-    # 保留完整 stderr 到 work 日志，便于排查
-    $logPath = Join-Path $workdir ".opencode.log"
-    [System.IO.File]::WriteAllText($logPath, $stderr, [System.Text.Encoding]::UTF8)
-
-    [System.IO.File]::WriteAllText($outputFile, $stdout.TrimEnd() + "`n", [System.Text.Encoding]::UTF8)
-    Write-Ok "  └ $($m.name) → 完成（$($stdout.Length) 字符）"
+    Write-Ok "  └ $($m.name) → 完成（$fileSize 字节）"
     $doneCount++
   }
 }
@@ -229,6 +251,6 @@ Write-Log "───────────────────────
 Write-Log "完成：$doneCount  跳过：$skipped  失败：$failed  总计：$total"
 if ($failed -gt 0) {
   Write-Err "失败列表：$($failures -join '、')"
-  Write-Err "请查看 work/*/.opencode.log。常见原因：API key 过期 / 该模型不可用 / 超时。"
+  Write-Err "请查看 work/<slug>/<model>/ 目录下的 .opencode.log 和 .conversation.log。"
   exit 1
 }

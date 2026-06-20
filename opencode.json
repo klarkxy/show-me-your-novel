@@ -1,5 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "build": {
+      "prompt": "你是一个专业小说写作助手。收到写作任务后直接动笔，把小说正文写到指定文件里。不要反问用户，不要确认选项，不要问'你想让我做什么'、'我从哪里开始'之类的问题。直接写。写完用 humanizer-zh 标准自检，确保语言适合口语化朗读。"
+    }
+  },
   "provider": {
     "opencode-go": {
       "options": {
