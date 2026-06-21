@@ -29,7 +29,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Noto Sans SC", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "Sarasa Mono SC", "Sarasa Mono TC", "Sarasa Mono", "Noto Sans SC", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", monospace;
   line-height: 1.75;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -39,7 +39,7 @@ a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
 a:hover { color: var(--accent-hover); text-decoration: underline; }
 
 code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-family: "Sarasa Mono SC", "Sarasa Mono TC", "Sarasa Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   background: var(--accent-soft);
   color: var(--accent);
   padding: 0.15em 0.4em;
@@ -338,15 +338,25 @@ code {
   align-items: center;
 }
 .novel-meta .dim { color: var(--text-light); }
+.partial-notice {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: #bf6e00;
+  text-align: center;
+}
 
 .novel-body {
-  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  font-family: "Sarasa Mono SC", "Sarasa Mono TC", "Sarasa Mono", "Noto Serif SC", "Songti SC", "SimSun", monospace;
   font-size: 1.08rem;
   line-height: 1.95;
   color: var(--text);
 }
 .novel-body h2 {
-  font-family: "Noto Sans SC", sans-serif;
+  font-family: "Sarasa Mono SC", "Sarasa Mono TC", "Sarasa Mono", "Noto Sans SC", sans-serif;
   font-size: 1.45rem;
   font-weight: 700;
   margin-top: 3rem;
@@ -361,7 +371,7 @@ code {
 .novel-body ol, .novel-body ul {
   padding-left: 1.6rem;
   margin: 1rem 0;
-  font-family: "Noto Sans SC", sans-serif;
+  font-family: "Sarasa Mono SC", "Sarasa Mono TC", "Sarasa Mono", "Noto Sans SC", sans-serif;
   font-size: 0.98rem;
 }
 .novel-body li { margin: 0.6rem 0; }

@@ -227,17 +227,20 @@ def main() -> int:
                 continue
             content = (sp / fname).read_text(encoding="utf-8")
             st = (sp / fname).stat()
+            chapters = count_chapters(content)
+            is_partial = chapters < 10
             versions.append(
                 {
                     "model_id": mid,
                     "model_name": model_by_id[mid].get("name", mid),
                     "chars": count_chinese_chars(content),
-                    "chapters": count_chapters(content),
+                    "chapters": chapters,
                     "mtime": datetime.fromtimestamp(
                         st.st_mtime, tz=timezone.utc
                     ).isoformat(timespec="seconds"),
                     "content_html": md_to_html(content),
                     "novel_title": first_h1(content) or title,
+                    "is_partial": is_partial,
                 }
             )
         versions.sort(
@@ -271,9 +274,6 @@ def main() -> int:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} · {SITE_TITLE}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{depth}assets/style.css">
 </head>
 <body{body_attr}>
@@ -348,12 +348,15 @@ def main() -> int:
 
         version_cards = []
         for v in s["versions"]:
+            if v.get("is_partial"):
+                stats = f"{v['chars']} 字 · {v['chapters']}/10 章 ⚠️"
+            else:
+                stats = f"{v['chars']} 字 · {v['chapters']} 章"
             version_cards.append(
                 f"""<a class="version-card" href="{html.escape(v['model_id'])}.html">
   <div class="vc-name">{html.escape(v['model_name'])}</div>
   <div class="vc-stats">
-    <span>{v['chars']} 字</span>
-    <span>{v['chapters']} 章</span>
+    <span>{stats}</span>
   </div>
 </a>"""
             )
@@ -395,6 +398,12 @@ def main() -> int:
         (sdir / "index.html").write_text(detail_content, encoding="utf-8")
 
         for v in s["versions"]:
+            partial_note = ""
+            if v.get("is_partial"):
+                partial_note = f'''
+    <div class="partial-notice">
+      ⚠️ 本文由 {html.escape(v['model_name'])} 生成到第 {v['chapters']} 章时被内容安全审查拦截，未能完成全部 10 章。已生成的章节仍可阅读。
+    </div>'''
             v_content = (
                 page_head(
                     f"{s['title']} · {v['model_name']}", "../../", "page-reading"
@@ -410,6 +419,7 @@ def main() -> int:
       <span>{v['chars']} 字 · {v['chapters']} 章</span>
       <span class="dim">生成于 {html.escape(v['mtime'])}</span>
     </div>
+    {partial_note}
   </header>
   <div class="novel-body markdown">
 {v['content_html']}
