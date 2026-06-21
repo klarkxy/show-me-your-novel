@@ -4,10 +4,10 @@
 
 每一部「小说」对应 `novels/` 下的一个目录，里面有一份 `prompt.md`。这份提示词会交给 `config.yaml` 里配置的所有模型各写一遍，每个模型生成一个版本。最后由脚本渲染成一个静态站点，发布到 GitHub Pages。
 
-- **统一工具**：所有模型都通过 [OpenCode](https://opencode.ai) CLI 调用，脚本模式（`opencode run`）。
-- **锁死 opencode-go**：所有模型走 opencode-go 订阅服务，key 放在 `.env`，由仓库根目录的 `opencode.json` 注入。本地一键过一遍全部模型。
-- **隔离工作区**：每个模型在独立的 `work/<story>/<model>/` 目录里运行，互不可见。
-- **幂等生成**：`novels/<story>/<model>.md` 已存在就跳过；删掉再跑才会重新生成。
+- **直连 API**：通过 `runner/generate.py` 直接调用 OpenAI-compatible API，不依赖任何 CLI 工具。
+- **统一 Provider**：所有模型走同一个 API 端点（[OpenCode Go](https://opencode.ai)），key 放在 `.env`。
+- **分章生成 + 质检**：每次先生成大纲，再逐章生成，每章自动检验字数、格式、元评论，失败自动修正。
+- **幂等**：`novels/<story>/<model>.md` 已存在且校验通过则跳过。
 - **本地生成 + 推送部署**：在本地生成小说和站点，提交 `docs/` 后 CI 只负责部署 Pages，云端不碰 API key。
 
 ## 目录结构
@@ -15,27 +15,28 @@
 ```
 show-me-your-novel/
 ├── config.yaml              # 模型列表（id / name / model）
-├── opencode.json            # 把 opencode-go 的 key 指向 {env:OPENCODE_API_KEY}
 ├── .env                     # OPENCODE_API_KEY=sk-...（不入库）
 ├── novels/
-│   └── sci-fi-uplink/
+│   └── <story>/
 │       ├── prompt.md        # 这部小说的统一提示词
 │       └── <model>.md       # 各模型生成的版本
-├── runner/generate.ps1      # 遍历 小说 × 模型，缺啥补啥（Windows / PowerShell）
-├── runner/generate.sh       # 同上（bash 版，CI 或 macOS/Linux 用）
-├── scripts/generate-site.ps1 # 从 novels/ 渲染 GitHub Pages 到 docs/
-├── scripts/generate-site.sh
+├── runner/
+│   ├── generate.py          # 核心：分章调用 API 生成小说
+│   ├── generate.ps1         # 薄包装（PowerShell）
+│   └── generate.sh          # 薄包装（bash）
+├── scripts/
+│   ├── generate_site.py     # 核心：从 novels/ 渲染站点到 docs/
+│   ├── generate-site.ps1    # 薄包装（PowerShell）
+│   └── generate-site.sh     # 薄包装（bash）
 ├── docs/                    # Pages 根目录（生成后提交，CI 部署）
 └── .github/workflows/       # deploy-only CI
 ```
 
-## 本地使用（Windows / PowerShell）
+## 本地使用
 
 ### 前置依赖
 
-- `opencode` CLI：`npm install -g opencode-ai`（或见 [opencode.ai/install](https://opencode.ai/install)）
-- `python3` + `pyyaml`：`pip install pyyaml`
-- PowerShell 7（`pwsh`）
+- python3 + pyyaml：`pip install pyyaml`
 
 ### 配置 key
 
@@ -46,7 +47,6 @@ OPENCODE_API_KEY=sk-...
 ```
 
 > `.env` 已在 `.gitignore` 里，不会提交。
-> 仓库根目录的 `opencode.json` 把 opencode-go provider 的 key 设为 `{env:OPENCODE_API_KEY}`，确保 opencode 用 `.env` 里的 key，而不是本机 `~/.local/share/opencode/auth.json` 里可能残留的旧 key。若出现 `Invalid API key`，先确认 `.env` 的 key 有效，并检查本机 auth.json 是否有过期凭证（`opencode auth list`）。
 
 ### 配置模型
 
@@ -54,82 +54,81 @@ OPENCODE_API_KEY=sk-...
 
 ```yaml
 models:
-  - id: qwen3.7-max            # 文件名 / slug
-    name: Qwen3.7 Max          # 页面展示名
-    model: qwen3.7-max         # 模型 id（不含 provider 前缀，runner 自动拼成 opencode-go/<model>）
+  - id: qwen3.7-max        # 文件名 / slug
+    name: Qwen3.7 Max      # 页面展示名
+    model: qwen3.7-max     # 传给 API 的 model 参数
+    provider: opencode-go  # 对应 providers 下的 key（缺省为 opencode-go）
 ```
 
-默认配置已包含 opencode-go 的全部 13 个模型。可用 `opencode models opencode-go` 查看（需先配好 key）。
+默认配置已包含 opencode-go 的全部 13 个模型。
 
 ### 生成小说
 
-```powershell
-# 生成全部缺失的小说版本（全部模型）
-.\runner\generate.ps1
+```bash
+# 生成全部缺失的小说版本
+python3 runner/generate.py
 
 # 只处理某一部小说
-.\runner\generate.ps1 -Story sci-fi-uplink
+python3 runner/generate.py --story sci-fi-uplink
 
-# 只用指定模型（便于先试一个）
-.\runner\generate.ps1 -Story sci-fi-uplink -Models qwen3.7-max
+# 只用指定模型（可多次指定）
+python3 runner/generate.py --story sci-fi-uplink --model qwen3.7-max
 
-# 重新生成某个版本：删掉对应文件再跑
-Remove-Item novels/sci-fi-uplink/qwen3.7-max.md
+# 强制重新生成（会清空中间产物）
+python3 runner/generate.py --story sci-fi-uplink --reset
+
+# bash / PowerShell 薄包装
+bash runner/generate.sh sci-fi-uplink
 .\runner\generate.ps1 -Story sci-fi-uplink
 ```
 
+#### 生成流程
+
+1. 读取 `prompt.md`，调用 API 生成 10 章结构化大纲（`outline.json`）
+2. 逐章生成，每章把前文完整正文拼进上下文，保持连贯
+3. 每章自动质检：字数 1500+、标题格式正确、无元评论、无代码围栏
+4. 质检失败自动修正（最多 3 次）
+5. 合并 10 章为 `<model>.md`，追加 `【未完待续】`
+6. 最终校验：10 章、20000+ 字、结尾标记正确
+
 ### 生成站点并预览
 
-```powershell
+```bash
+# 独立 Python 脚本（推荐）
+python3 scripts/generate_site.py
+
+# 或通过薄包装
+bash scripts/generate-site.sh
 .\scripts\generate-site.ps1
-# 本地打开
-Start-Process docs/index.html
 ```
 
 ### 推送部署
 
-生成满意后，把 `novels/` 和 `docs/` 一起提交推送，CI 会自动部署 Pages：
-
-```powershell
+```bash
 git add novels docs
-git commit -m "novel: 生成《超时空链接》各模型版本"
+git commit -m "生成新版本"
 git push
 ```
 
-## macOS / Linux（bash）
+### 添加一部新小说
 
-同样提供了 bash 版脚本，`.env` 用 `export OPENCODE_API_KEY=...` 或 `set -a; . .env; set +a`：
-
-```bash
-export OPENCODE_API_KEY=sk-...
-bash runner/generate.sh
-bash scripts/generate-site.sh
-open docs/index.html
-```
-
-## 添加一部新小说
-
-1. 在 `novels/` 下新建目录：`mkdir novels/my-story`
-2. 写一份 `novels/my-story/prompt.md`。第一行 `# 标题` 会作为小说名；建议包含 `## 题材` 和 `## 世界观设定` 两节，首页会据此生成简介。
-3. 运行 `.\runner\generate.ps1 -Story my-story`，再 `.\scripts\generate-site.ps1`，提交推送即可。
+1. 新建目录：`mkdir novels/my-story`
+2. 写一份 `novels/my-story/prompt.md`。第一行 `# 标题` 会作为小说名；建议包含 `## 题材` 和 `## 世界观设定` 两节。
+3. 运行 `python3 runner/generate.py --story my-story`，再 `python3 scripts/generate_site.py`，提交推送即可。
 
 ## CI
 
 仓库推送到 GitHub 后：
 
-1. 在 **Settings → Pages** 里把 Source 设为 **GitHub Actions**。
-2. 无需配置任何 secret —— 本地生成，CI 只部署 `docs/`。
-3. 之后每次改动 `docs/`（或本工作流文件）并推送到 `main`，都会触发 [generate.yml](.github/workflows/generate.yml) 部署 Pages。也可手动触发（workflow_dispatch）。
+1. 在 **Settings → Pages** 里把 Source 设为 **GitHub Actions**
+2. 无需配置任何 secret —— 本地生成，CI 只部署 `docs/`
+3. 之后每次改动 `docs/` 并推送到 `main`，都会触发 [generate.yml](.github/workflows/generate.yml) 部署 Pages
 
-## OpenCode 调用方式
+## 目录对照
 
-每个版本由这样一次调用产出（`work/` 是隔离目录）：
-
-```powershell
-opencode run `
-  --model opencode-go/qwen3.7-max `
-  --dir work/sci-fi-uplink/qwen3.7-max `
-  "$(Get-Content novels/sci-fi-uplink/prompt.md -Raw)"
-```
-
-provider 锁死 opencode-go、key 由 `opencode.json` 从 `OPENCODE_API_KEY` 注入；`--dir` 把工作区限制在隔离目录内，模型间互不可见。
+| 目录/文件 | 作用 |
+|-----------|------|
+| `novels/<story>/prompt.md` | 统一提示词（手工编写） |
+| `novels/<story>/<model>.md` | 各模型生成的小说正文 |
+| `work/<story>/<model>/` | 中间产物（大纲、分章、原始输出），已 gitignore |
+| `docs/` | 静态站点根目录（提交后 CI 部署） |
