@@ -377,7 +377,7 @@ def main() -> int:
         for v in s["versions"]:
             v_content = (
                 page_head(
-                    f"{s['title']} · {v['model_name']}", "../"
+                    f"{s['title']} · {v['model_name']}", "../../"
                 )
                 + f"""
 <a class="back" href="index.html">← 返回《{html.escape(s['title'])}》</a>
