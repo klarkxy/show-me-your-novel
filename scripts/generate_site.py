@@ -263,19 +263,25 @@ def main() -> int:
     SITE_TITLE = "Show Me Your Novel"
     SITE_SUB = "同一个提示词，不同模型写的小说"
 
-    def page_head(title: str, depth: str) -> str:
+    def page_head(title: str, depth: str, body_class: str = "") -> str:
+        body_attr = f' class="{body_class}"' if body_class else ""
         return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} · {SITE_TITLE}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{depth}assets/style.css">
 </head>
-<body>
+<body{body_attr}>
 <header class="site-header">
-  <a class="brand" href="{depth}index.html">{SITE_TITLE}</a>
-  <span class="tagline">{html.escape(SITE_SUB)}</span>
+  <div class="header-inner">
+    <a class="brand" href="{depth}index.html">{SITE_TITLE}</a>
+    <span class="tagline">{html.escape(SITE_SUB)}</span>
+  </div>
 </header>
 <main class="container">
 """
@@ -303,7 +309,10 @@ def main() -> int:
         )
         cards.append(
             f"""<a class="card" href="novels/{html.escape(s['slug'])}/index.html">
-  <div class="card-genre">{html.escape(s['genre'] or '小说')}</div>
+  <div class="card-top">
+    <span class="card-genre">{html.escape(s['genre'] or '小说')}</span>
+    <span class="card-arrow" aria-hidden="true">→</span>
+  </div>
   <h2 class="card-title">{html.escape(s['title'])}</h2>
   <p class="card-intro">{html.escape(s['intro'] or '（无简介）')}</p>
   <div class="card-meta">
@@ -312,12 +321,21 @@ def main() -> int:
 </a>"""
         )
 
-    index_content = page_head(SITE_TITLE, "") + f"""
-<h1 class="page-title">小说列表</h1>
-<p class="page-desc">每一部小说用同一份提示词，交给不同的模型去写，看看各自的笔法。</p>
-<div class="card-grid">
+    index_content = page_head(SITE_TITLE, "", "page-home") + f"""
+<section class="hero">
+  <h1 class="hero-title">同一个提示词<br>不同模型写的小说</h1>
+  <p class="hero-desc">把大模型们的长篇小说并排摆放，对比笔法、节奏与细节。</p>
+</section>
+
+<section class="story-section">
+  <div class="section-header">
+    <h2 class="section-title">小说列表</h2>
+    <span class="section-count">{len(stories)} 部</span>
+  </div>
+  <div class="card-grid">
 {chr(10).join(cards) if cards else '<p class="empty">还没有小说。在 <code>novels/&lt;slug&gt;/prompt.md</code> 放一份提示词，然后运行生成脚本。</p>'}
-</div>
+  </div>
+</section>
 """ + PAGE_FOOT
     index_html_path.write_text(index_content, encoding="utf-8")
 
@@ -350,13 +368,15 @@ def main() -> int:
 </div>"""
             )
 
-        detail_content = page_head(s["title"], "../../") + f"""
+        detail_content = page_head(s["title"], "../../", "page-detail") + f"""
 <a class="back" href="../../index.html">← 返回小说列表</a>
-<h1 class="page-title">{html.escape(s['title'])}</h1>
-<div class="story-meta-row">
-  <span class="badge badge-genre">{html.escape(s['genre'] or '小说')}</span>
-  <span class="story-count">{len(s['versions'])}/{len(models)} 个模型已完成</span>
-</div>
+<header class="story-header">
+  <h1 class="story-title">{html.escape(s['title'])}</h1>
+  <div class="story-meta-row">
+    <span class="badge badge-genre">{html.escape(s['genre'] or '小说')}</span>
+    <span class="story-count">{len(s['versions'])}/{len(models)} 个模型已完成</span>
+  </div>
+</header>
 
 <section class="prompt-section">
   <h2 class="section-title">提示词</h2>
@@ -377,16 +397,16 @@ def main() -> int:
         for v in s["versions"]:
             v_content = (
                 page_head(
-                    f"{s['title']} · {v['model_name']}", "../../"
+                    f"{s['title']} · {v['model_name']}", "../../", "page-reading"
                 )
                 + f"""
 <a class="back" href="index.html">← 返回《{html.escape(s['title'])}》</a>
 <article class="novel">
   <header class="novel-header">
+    <p class="novel-model">{html.escape(v['model_name'])}</p>
     <h1 class="novel-title">{html.escape(v['novel_title'])}</h1>
     <div class="novel-meta">
       <span class="badge badge-genre">{html.escape(s['genre'] or '小说')}</span>
-      <span>模型：{html.escape(v['model_name'])}</span>
       <span>{v['chars']} 字 · {v['chapters']} 章</span>
       <span class="dim">生成于 {html.escape(v['mtime'])}</span>
     </div>
