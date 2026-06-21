@@ -231,7 +231,7 @@ def head(title: str, depth: str) -> str:
 FOOT = """
 </main>
 <footer class="site-footer">
-  <p>由 <code>show-me-your-novel</code> 生成 · 统一提示词 + OpenCode CLI · 多模型对比</p>
+  <p>由 <code>show-me-your-novel</code> 生成 · 统一提示词 + 直连 LLM API 分章生成 · 多模型对比</p>
 </footer>
 </body>
 </html>

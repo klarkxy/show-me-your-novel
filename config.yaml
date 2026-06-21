@@ -1,69 +1,89 @@
 # ============================================================================
 # show-me-your-novel — 模型配置
 # ============================================================================
-# 每个条目对应一次 OpenCode 调用，用同一份 prompt.md 生成一部小说。
+# 每个条目对应一次 LLM 调用，用同一份 prompt.md 生成一部小说。
 # 增删模型只需修改本文件，无需改动脚本。
 #
-# 所有模型都走 opencode-go 订阅服务（provider 锁死为 opencode-go，
-# 见仓库根目录 opencode.json，API key 从 .env 的 OPENCODE_API_KEY 注入）。
-# 因此这里的 model 只写模型 id 本身，runner 会自动拼成 opencode-go/<id>。
-#
 # 字段说明：
-#   id    : 文件名 / 目录 / URL slug，必须唯一
-#   name  : 展示在页面上的模型名
-#   model : 模型 id（不含 provider 前缀），runner 调用时拼成 opencode-go/<model>
-#           可用 `opencode models opencode-go` 查看全部可用模型（需先配好 key）
+#   providers:
+#     <provider_id>:
+#       base_url   : OpenAI-compatible API 基础 URL（末尾可带 /v1）
+#       api_key_env: 存放 API key 的环境变量名
+#   models:
+#     id       : 文件名 / 目录 / URL slug，必须唯一
+#     name     : 展示在页面上的模型名
+#     model    : 模型 id，直接传给 /v1/chat/completions
+#     provider : 对应 providers 下的 provider_id（缺省为 opencode-go）
+#     temperature / max_tokens : 可选，覆盖默认值
 # ============================================================================
+
+providers:
+  opencode-go:
+    base_url: "https://opencode.ai/zen/go/v1"
+    api_key_env: "OPENCODE_API_KEY"
 
 models:
   - id: deepseek-v4-flash
     name: DeepSeek V4 Flash
     model: deepseek-v4-flash
+    provider: opencode-go
 
   - id: deepseek-v4-pro
     name: DeepSeek V4 Pro
     model: deepseek-v4-pro
+    provider: opencode-go
 
   - id: glm-5.1
     name: GLM 5.1
     model: glm-5.1
+    provider: opencode-go
 
   - id: glm-5.2
     name: GLM 5.2
     model: glm-5.2
+    provider: opencode-go
 
   - id: kimi-k2.6
     name: Kimi K2.6
     model: kimi-k2.6
+    provider: opencode-go
 
   - id: kimi-k2.7-code
     name: Kimi K2.7 Code
     model: kimi-k2.7-code
+    provider: opencode-go
 
   - id: mimo-v2.5
     name: MiMo V2.5
     model: mimo-v2.5
+    provider: opencode-go
 
   - id: mimo-v2.5-pro
     name: MiMo V2.5 Pro
     model: mimo-v2.5-pro
+    provider: opencode-go
 
   - id: minimax-m2.7
     name: MiniMax M2.7
     model: minimax-m2.7
+    provider: opencode-go
 
   - id: minimax-m3
     name: MiniMax M3
     model: minimax-m3
+    provider: opencode-go
 
   - id: qwen3.6-plus
     name: Qwen3.6 Plus
     model: qwen3.6-plus
+    provider: opencode-go
 
   - id: qwen3.7-max
     name: Qwen3.7 Max
     model: qwen3.7-max
+    provider: opencode-go
 
   - id: qwen3.7-plus
     name: Qwen3.7 Plus
     model: qwen3.7-plus
+    provider: opencode-go

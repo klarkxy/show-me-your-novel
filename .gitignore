@@ -1,9 +1,4 @@
-# OpenCode 隔离工作目录（运行时生成，每个模型一个）
 work/
-
-# 生成的站点 HTML 由本地脚本产出后提交到 docs/，CI 直接部署，故需入库。
-# 注意：docs/assets/style.css 是静态资源，必须提交；
-#       novels/<story>/*.md 是生成出的小说正文，属于展示内容，也需提交。
-
-# API key —— 永不入库
+.pyc
 .env
+
