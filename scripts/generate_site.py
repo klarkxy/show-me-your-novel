@@ -31,6 +31,23 @@ import yaml
 def md_to_html(md: str) -> str:
     if md is None:
         return ""
+
+    # 预处理器：将 [思考过程] 块转换为 <details> HTML
+    def _replace_thinking(m):
+        content = m.group(1).strip()
+        # 内容中的空行转为 <br>，段落保留
+        html_content = content.replace("\n\n", "</p><p>").replace("\n", "<br>")
+        return (f'<details class="thinking">'
+                f'<summary><span class="thinking-icon">🤔</span> 模型思考过程</summary>'
+                f'<div class="thinking-content"><p>{html_content}</p></div>'
+                f'</details>')
+    md = re.sub(
+        r'\[思考过程\]\n(.*?)\n\[/思考过程\]',
+        _replace_thinking,
+        md,
+        flags=re.DOTALL,
+    )
+
     lines = md.splitlines()
     out: list[str] = []
     i = 0
@@ -89,6 +106,13 @@ def md_to_html(md: str) -> str:
                 in_ol = True
             text = re.sub(r"^\d+\.\s+", "", stripped)
             out.append(f"<li>{inline(text)}</li>")
+            i += 1
+            continue
+
+        # Raw HTML pass-through（用于 <details>/<summary> 思考块）
+        if any(stripped.startswith(t) for t in ("<details", "</details>", "<summary", "</summary>", '<div class="thinking-content"', "</div>")):
+            close_lists()
+            out.append(line)
             i += 1
             continue
 

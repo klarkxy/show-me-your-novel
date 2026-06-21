@@ -279,8 +279,12 @@ def chat_completion(
     max_tokens: int = DEFAULT_MAX_TOKENS,
     response_format: dict[str, str] | None = None,
     timeout: int = 180,
-) -> str:
-    """同步调用 OpenAI-compatible chat completions，返回 assistant 文本。"""
+    thinking: bool = False,
+) -> tuple[str, str]:
+    """同步调用 OpenAI-compatible chat completions。
+
+    返回 (content, reasoning_content)，若模型未返回思考内容则 reasoning_content 为空。
+    """
     url = f"{normalize_base_url(base_url)}/chat/completions"
     payload: dict[str, Any] = {
         "model": model,
@@ -290,6 +294,8 @@ def chat_completion(
     }
     if response_format:
         payload["response_format"] = response_format
+    if thinking:
+        payload["thinking"] = {"type": "enabled"}
 
     data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(
@@ -311,10 +317,12 @@ def chat_completion(
                 choices = result.get("choices") or []
                 if not choices:
                     raise RuntimeError("API 返回空 choices")
-                content = choices[0].get("message", {}).get("content", "")
+                msg = choices[0].get("message", {})
+                content = msg.get("content", "")
                 if not content.strip():
                     raise RuntimeError("API 返回空内容")
-                return content
+                reasoning = msg.get("reasoning_content", "")
+                return content, reasoning
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", errors="ignore")[:500]
             last_error = RuntimeError(f"HTTP {e.code}: {body}")
@@ -388,11 +396,12 @@ def generate_outline(
     model: str,
     temperature: float,
     max_tokens: int,
+    thinking: bool = False,
 ) -> dict[str, Any]:
     messages = build_outline_messages(prompt_text)
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            text = chat_completion(
+            text, _reasoning = chat_completion(
                 base_url=base_url,
                 api_key=api_key,
                 model=model,
@@ -400,6 +409,7 @@ def generate_outline(
                 temperature=temperature,
                 max_tokens=max_tokens,
                 response_format={"type": "json_object"},
+                thinking=thinking,
             )
             return parse_outline(text)
         except Exception as e:
@@ -521,6 +531,7 @@ def generate_single_chapter(
     model: str,
     temperature: float,
     max_tokens: int,
+    thinking: bool = False,
     work_dir: Path | None = None,
 ) -> str:
     """生成一章，含清洗与质检，失败会重试。"""
@@ -529,13 +540,14 @@ def generate_single_chapter(
 
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            raw_text = chat_completion(
+            raw_text, reasoning = chat_completion(
                 base_url=base_url,
                 api_key=api_key,
                 model=model,
                 messages=messages,
                 temperature=temperature,
                 max_tokens=max_tokens,
+                thinking=thinking,
             )
             if work_dir is not None:
                 raw_dir = work_dir / "raw"
@@ -543,10 +555,14 @@ def generate_single_chapter(
                 (raw_dir / f"chapter_{number:02d}_attempt_{attempt}.md").write_text(
                     raw_text, encoding="utf-8"
                 )
+                if reasoning:
+                    (raw_dir / f"chapter_{number:02d}_attempt_{attempt}_thinking.md").write_text(
+                        reasoning, encoding="utf-8"
+                    )
             text = clean_chapter(raw_text, number, chapter_info.get("title", ""))
             ok_, reason = validate_chapter(text, number)
             if ok_:
-                return text
+                return text, reasoning
             err(f"第 {number} 章质检未通过（{attempt}/{MAX_RETRIES}）：{reason}")
 
             # 第一次失败后，基于已有文本做针对性修改，而不是让模型从头乱写
@@ -562,8 +578,11 @@ def generate_single_chapter(
 # ---------------------------------------------------------------------------
 # 合并
 # ---------------------------------------------------------------------------
-def merge_chapters(outline: dict[str, Any], chapters: list[str], work_dir: Path) -> str:
-    """合并 10 章为最终小说正文，大纲作为目录夹在标题与正文之间。"""
+def merge_chapters(outline: dict[str, Any], chapters: list[str], thinkings: list[str] | None = None) -> str:
+    """合并章节为最终小说正文，大纲作为目录夹在标题与正文之间。
+
+    若提供了 thinkings 列表，会在每章标题后插入思考内容（[思考过程]...[/思考过程]）。
+    """
     lines: list[str] = []
     title = outline.get("title", "")
     if title:
@@ -586,6 +605,12 @@ def merge_chapters(outline: dict[str, Any], chapters: list[str], work_dir: Path)
         if i > 1:
             lines.append("")
         lines.append(ch_text)
+        # 在每章末尾插入思考内容（折叠展示用）
+        if thinkings and i <= len(thinkings) and thinkings[i - 1].strip():
+            lines.append("")
+            lines.append("[思考过程]")
+            lines.append(thinkings[i - 1].strip())
+            lines.append("[/思考过程]")
 
     # 确保结尾有【未完待续】
     full_text = "\n".join(lines).rstrip()
@@ -707,6 +732,7 @@ def main() -> int:
 
             temperature = model_cfg.get("temperature", DEFAULT_TEMPERATURE)
             max_tokens = model_cfg.get("max_tokens", DEFAULT_MAX_TOKENS)
+            thinking_enabled = model_cfg.get("thinking", False)
 
             try:
                 log(f"  └ {model_cfg['name']} → 生成中…（provider={provider_id}, model={model_cfg['model']}）")
@@ -724,6 +750,7 @@ def main() -> int:
                         model=model_cfg["model"],
                         temperature=temperature,
                         max_tokens=max_tokens,
+                        thinking=thinking_enabled,
                     )
                     outline_path.write_text(json.dumps(outline, ensure_ascii=False, indent=2), encoding="utf-8")
                     meta["outline_generated"] = True
@@ -733,18 +760,24 @@ def main() -> int:
 
                 # 2) 逐章生成
                 chapters: list[str] = []
+                thinkings: list[str] = []
                 last_done = meta.get("last_completed_chapter", 0)
                 for ch in outline["chapters"]:
                     number = ch["number"]
                     chapter_file = story_work_dir / f"chapter_{number:02d}.md"
+                    thinking_file = story_work_dir / f"chapter_{number:02d}_thinking.md"
 
                     if number <= last_done and chapter_file.exists():
                         ch_text = chapter_file.read_text(encoding="utf-8")
                         chapters.append(ch_text)
+                        if thinking_file.exists():
+                            thinkings.append(thinking_file.read_text(encoding="utf-8"))
+                        else:
+                            thinkings.append("")
                         log(f"      第 {number} 章已存在，复用")
                         continue
 
-                    ch_text = generate_single_chapter(
+                    ch_text, reasoning = generate_single_chapter(
                         prompt_text=prompt_text,
                         chapter_info=ch,
                         previous_chapters=chapters[:],
@@ -753,10 +786,14 @@ def main() -> int:
                         model=model_cfg["model"],
                         temperature=temperature,
                         max_tokens=max_tokens,
+                        thinking=thinking_enabled,
                         work_dir=story_work_dir,
                     )
                     chapter_file.write_text(ch_text, encoding="utf-8")
+                    if reasoning:
+                        thinking_file.write_text(reasoning, encoding="utf-8")
                     chapters.append(ch_text)
+                    thinkings.append(reasoning)
 
                     meta["last_completed_chapter"] = number
                     meta["updated_at"] = datetime.now(timezone.utc).isoformat()
@@ -767,7 +804,7 @@ def main() -> int:
                     ok(f"      第 {number} 章生成完成（{count_chinese_chars(ch_text)} 字）")
 
                 # 3) 合并
-                full_text = merge_chapters(outline, chapters, story_work_dir)
+                full_text = merge_chapters(outline, chapters, thinkings)
 
                 # 备份旧产物
                 if output_file.exists():

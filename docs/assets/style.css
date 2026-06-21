@@ -349,6 +349,44 @@ code {
   text-align: center;
 }
 
+/* ── 思考过程折叠块 ──────────────────────────── */
+details.thinking {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  font-family: "Noto Sans SC", sans-serif;
+}
+details.thinking summary {
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  -webkit-user-select: none;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease;
+}
+details.thinking[open] summary {
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+details.thinking .thinking-icon {
+  font-size: 0.9rem;
+}
+details.thinking .thinking-content {
+  padding: 0.8rem 1.2rem 1rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-height: 400px;
+  overflow-y: auto;
+}
+details.thinking .thinking-content p {
+  margin: 0.6rem 0;
+}
+
 .novel-body {
   font-family: "Sarasa Mono SC", "Sarasa Mono TC", "Sarasa Mono", "Noto Serif SC", "Songti SC", "SimSun", monospace;
   font-size: 1.08rem;

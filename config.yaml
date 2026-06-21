@@ -23,68 +23,57 @@ providers:
     api_key_env: "OPENCODE_API_KEY"
 
 models:
+  # DeepSeek — flash/pro 是不同档次，都保留
   - id: deepseek-v4-flash
     name: DeepSeek V4 Flash
     model: deepseek-v4-flash
+    thinking: true
     provider: opencode-go
 
   - id: deepseek-v4-pro
     name: DeepSeek V4 Pro
     model: deepseek-v4-pro
+    thinking: true
     provider: opencode-go
 
-  - id: glm-5.1
-    name: GLM 5.1
-    model: glm-5.1
-    provider: opencode-go
-
+  # GLM — 只保留最新的 5.2
   - id: glm-5.2
     name: GLM 5.2
     model: glm-5.2
+    thinking: true
     provider: opencode-go
 
-  - id: kimi-k2.6
-    name: Kimi K2.6
-    model: kimi-k2.6
-    provider: opencode-go
-
+  # Kimi — 只保留 K2.7 Code
   - id: kimi-k2.7-code
     name: Kimi K2.7 Code
     model: kimi-k2.7-code
     temperature: 1.0
+    thinking: true
     provider: opencode-go
 
-  - id: mimo-v2.5
-    name: MiMo V2.5
-    model: mimo-v2.5
-    provider: opencode-go
-
+  # MiMo — 只保留 Pro
   - id: mimo-v2.5-pro
     name: MiMo V2.5 Pro
     model: mimo-v2.5-pro
+    thinking: true
     provider: opencode-go
 
-  - id: minimax-m2.7
-    name: MiniMax M2.7
-    model: minimax-m2.7
-    provider: opencode-go
-
+  # MiniMax — 只保留 M3
   - id: minimax-m3
     name: MiniMax M3
     model: minimax-m3
+    thinking: true
     provider: opencode-go
 
-  - id: qwen3.6-plus
-    name: Qwen3.6 Plus
-    model: qwen3.6-plus
-    provider: opencode-go
-
+  # Qwen3.7 — Max 和 Plus 是不同模型，都保留
   - id: qwen3.7-max
     name: Qwen3.7 Max
     model: qwen3.7-max
+    thinking: true
     provider: opencode-go
 
   - id: qwen3.7-plus
     name: Qwen3.7 Plus
     model: qwen3.7-plus
+    thinking: true
     provider: opencode-go
