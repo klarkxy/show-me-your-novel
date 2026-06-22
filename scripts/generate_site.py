@@ -288,7 +288,7 @@ def main() -> int:
     # HTML 模板
     # -----------------------------------------------------------------------
     SITE_TITLE = "Show Me Your Novel"
-    SITE_SUB = "读的全是小说，写的全是代码"
+    SITE_SUB = "读的是小说，写的是代码"
     # 仓库地址：页头 GitHub 按钮、shields.io 徽章、软文里都从这里派生，避免四处散落
     REPO_URL = "https://github.com/klarkxy/show-me-your-novel"
     REPO_OWNER = "klarkxy"
@@ -306,9 +306,9 @@ def main() -> int:
         )
         return (
             f'<a class="gh-button" href="{REPO_URL}" target="_blank" rel="noopener" '
-            f'title="点开看看。不用谢。">'
+            f'title="看不上眼就来骂，反正你写不出更好的。">'
             f'<span class="gh-icon" aria-hidden="true">★</span>'
-            f'<span class="gh-text">judge it yourself</span>'
+            f'<span class="gh-text">嫌丑？来打脸</span>'
             f'<img class="gh-badge" src="{star_img}" alt="GitHub stars" loading="lazy">'
             f'</a>'
         )
@@ -337,7 +337,7 @@ def main() -> int:
     PAGE_FOOT = f"""
 </main>
 <footer class="site-footer">
-  <p><a href="{REPO_URL}" target="_blank" rel="noopener">klarkxy/show-me-your-novel</a> · 嫌机器写的不行，自己上</p>
+  <p><a href="{REPO_URL}" target="_blank" rel="noopener">klarkxy/show-me-your-novel</a> · 觉得写得烂就 PR</p>
 </footer>
 </body>
 </html>
@@ -372,12 +372,12 @@ def main() -> int:
 
     index_content = page_head(SITE_TITLE, "", "page-home") + f"""
 <section class="hero">
-  <h1 class="hero-title">Talk is cheap,<br>show me your novel.</h1>
+  <h1 class="hero-title">Talk is cheap.<br>Show me your novel.</h1>
 </section>
 
 <section class="story-section">
   <div class="card-grid">
-{chr(10).join(cards) if cards else '<p class="empty">no novels yet. drop a <code>prompt.md</code> in <code>novels/</code> and run the script.</p>'}
+{chr(10).join(cards) if cards else '<p class="empty">小说还没出生。在 <code>novels/&lt;slug&gt;/prompt.md</code> 放一份提示词，自己生。</p>'}
   </div>
 </section>
 """ + PAGE_FOOT
@@ -393,7 +393,7 @@ def main() -> int:
         version_cards = []
         for v in s["versions"]:
             if v.get("is_partial"):
-                stats = f"{v['chars']} 字 · {v['chapters']}/10 章, walked off"
+                stats = f"{v['chars']} 字 · {v['chapters']}/10 章，跑了"
             else:
                 stats = f"{v['chars']} 字 · {v['chapters']} 章"
             version_cards.append(
@@ -411,12 +411,12 @@ def main() -> int:
             version_cards.append(
                 f"""<div class="version-card version-pending">
   <div class="vc-name">{html.escape(model_by_id[mid].get('name', mid))}</div>
-  <div class="vc-stats"><span>model skipped. PRs welcome.</span></div>
+  <div class="vc-stats"><span>它还没接活。催它：PR。</span></div>
 </div>"""
             )
 
         detail_content = page_head(s["title"], "../../", "page-detail") + f"""
-<a class="back" href="../../index.html">← back</a>
+<a class="back" href="../../index.html">← 滚回去</a>
 <header class="story-header">
   <h1 class="story-title">{html.escape(s['title'])}</h1>
 </header>
@@ -429,7 +429,7 @@ def main() -> int:
 
 <section class="versions-section">
   <div class="version-grid">
-{chr(10).join(version_cards) if version_cards else '<p class="empty">no model has written this one yet.</p>'}
+{chr(10).join(version_cards) if version_cards else '<p class="empty">还没模型敢接这部小说。</p>'}
   </div>
 </section>
 """ + PAGE_FOOT
@@ -440,21 +440,21 @@ def main() -> int:
             if v.get("is_partial"):
                 partial_note = f'''
     <div class="partial-notice">
-      ⚠️ {html.escape(v['model_name'])} 写到第 {v['chapters']} 章直接罢工。剩下的你看着办。
+      ⚠️ {html.escape(v['model_name'])} 写到第 {v['chapters']} 章直接撂挑子。剩下的你接不接？
     </div>'''
             v_content = (
                 page_head(
                     f"{s['title']} · {v['model_name']}", "../../", "page-reading"
                 )
                 + f"""
-<a class="back" href="index.html">← back</a>
+<a class="back" href="index.html">← 滚回去</a>
 <article class="novel">
   <header class="novel-header">
     <p class="novel-model">{html.escape(v['model_name'])}</p>
     <h1 class="novel-title">{html.escape(v['novel_title'])}</h1>
     <div class="novel-meta">
       <span>{v['chars']} 字 · {v['chapters']} 章</span>
-      <span class="dim">GPU 完工于 {html.escape(v['mtime'])}</span>
+      <span class="dim">显卡终于凉下来：{html.escape(v['mtime'])}</span>
     </div>
     {partial_note}
   </header>
