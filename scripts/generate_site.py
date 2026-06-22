@@ -288,7 +288,7 @@ def main() -> int:
     # HTML 模板
     # -----------------------------------------------------------------------
     SITE_TITLE = "Show Me Your Novel"
-    SITE_SUB = "同一个提示词，不同模型写的小说"
+    SITE_SUB = "读的全是小说，写的全是代码"
     # 仓库地址：页头 GitHub 按钮、shields.io 徽章、软文里都从这里派生，避免四处散落
     REPO_URL = "https://github.com/klarkxy/show-me-your-novel"
     REPO_OWNER = "klarkxy"
@@ -306,9 +306,9 @@ def main() -> int:
         )
         return (
             f'<a class="gh-button" href="{REPO_URL}" target="_blank" rel="noopener" '
-            f'title="在 GitHub 上查看 / Star 本项目">'
+            f'title="点开看看。不用谢。">'
             f'<span class="gh-icon" aria-hidden="true">★</span>'
-            f'<span class="gh-text">Star on GitHub</span>'
+            f'<span class="gh-text">judge it yourself</span>'
             f'<img class="gh-badge" src="{star_img}" alt="GitHub stars" loading="lazy">'
             f'</a>'
         )
@@ -337,7 +337,7 @@ def main() -> int:
     PAGE_FOOT = f"""
 </main>
 <footer class="site-footer">
-  <p><a href="{REPO_URL}" target="_blank" rel="noopener">klarkxy/show-me-your-novel</a></p>
+  <p><a href="{REPO_URL}" target="_blank" rel="noopener">klarkxy/show-me-your-novel</a> · 嫌机器写的不行，自己上</p>
 </footer>
 </body>
 </html>
@@ -359,6 +359,7 @@ def main() -> int:
         cards.append(
             f"""<a class="card" href="novels/{html.escape(s['slug'])}/index.html">
   <div class="card-top">
+    <span class="card-genre">{html.escape(s['genre'] or '小说')}</span>
     <span class="card-arrow" aria-hidden="true">→</span>
   </div>
   <h2 class="card-title">{html.escape(s['title'])}</h2>
@@ -371,12 +372,12 @@ def main() -> int:
 
     index_content = page_head(SITE_TITLE, "", "page-home") + f"""
 <section class="hero">
-  <h1 class="hero-title">同一段提示词<br>不同模型写的同一部小说</h1>
+  <h1 class="hero-title">Talk is cheap,<br>show me your novel.</h1>
 </section>
 
 <section class="story-section">
   <div class="card-grid">
-{chr(10).join(cards) if cards else '<p class="empty">还没有小说。在 <code>novels/&lt;slug&gt;/prompt.md</code> 放一份提示词，然后运行生成脚本。</p>'}
+{chr(10).join(cards) if cards else '<p class="empty">no novels yet. drop a <code>prompt.md</code> in <code>novels/</code> and run the script.</p>'}
   </div>
 </section>
 """ + PAGE_FOOT
@@ -392,7 +393,7 @@ def main() -> int:
         version_cards = []
         for v in s["versions"]:
             if v.get("is_partial"):
-                stats = f"{v['chars']} 字 · {v['chapters']}/10 章 ⚠️"
+                stats = f"{v['chars']} 字 · {v['chapters']}/10 章, walked off"
             else:
                 stats = f"{v['chars']} 字 · {v['chapters']} 章"
             version_cards.append(
@@ -410,12 +411,12 @@ def main() -> int:
             version_cards.append(
                 f"""<div class="version-card version-pending">
   <div class="vc-name">{html.escape(model_by_id[mid].get('name', mid))}</div>
-  <div class="vc-stats"><span>待生成</span></div>
+  <div class="vc-stats"><span>model skipped. PRs welcome.</span></div>
 </div>"""
             )
 
         detail_content = page_head(s["title"], "../../", "page-detail") + f"""
-<a class="back" href="../../index.html">←</a>
+<a class="back" href="../../index.html">← back</a>
 <header class="story-header">
   <h1 class="story-title">{html.escape(s['title'])}</h1>
 </header>
@@ -428,7 +429,7 @@ def main() -> int:
 
 <section class="versions-section">
   <div class="version-grid">
-{chr(10).join(version_cards) if version_cards else '<p class="empty">还没有模型生成这部小说。</p>'}
+{chr(10).join(version_cards) if version_cards else '<p class="empty">no model has written this one yet.</p>'}
   </div>
 </section>
 """ + PAGE_FOOT
@@ -439,21 +440,21 @@ def main() -> int:
             if v.get("is_partial"):
                 partial_note = f'''
     <div class="partial-notice">
-      ⚠️ 本文由 {html.escape(v['model_name'])} 生成到第 {v['chapters']} 章时被内容安全审查拦截，未能完成全部 10 章。已生成的章节仍可阅读。
+      ⚠️ {html.escape(v['model_name'])} 写到第 {v['chapters']} 章直接罢工。剩下的你看着办。
     </div>'''
             v_content = (
                 page_head(
                     f"{s['title']} · {v['model_name']}", "../../", "page-reading"
                 )
                 + f"""
-<a class="back" href="index.html">←</a>
+<a class="back" href="index.html">← back</a>
 <article class="novel">
   <header class="novel-header">
     <p class="novel-model">{html.escape(v['model_name'])}</p>
     <h1 class="novel-title">{html.escape(v['novel_title'])}</h1>
     <div class="novel-meta">
       <span>{v['chars']} 字 · {v['chapters']} 章</span>
-      <span class="dim">生成于 {html.escape(v['mtime'])}</span>
+      <span class="dim">GPU 完工于 {html.escape(v['mtime'])}</span>
     </div>
     {partial_note}
   </header>

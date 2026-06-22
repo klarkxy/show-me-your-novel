@@ -178,9 +178,16 @@ code {
 .card:hover .card-arrow { transform: translateX(4px); }
 .card-top {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
+}
+.card-genre {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 .card-arrow {
   color: var(--text-light);
