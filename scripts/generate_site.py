@@ -287,7 +287,7 @@ def main() -> int:
     # -----------------------------------------------------------------------
     # HTML 模板
     # -----------------------------------------------------------------------
-    SITE_TITLE = "Show Me Your Novel"
+    SITE_TITLE = "让我康康你的文"
     SITE_SUB = ""
     # 仓库地址：页头 GitHub 按钮、shields.io 徽章、软文里都从这里派生，避免四处散落
     REPO_URL = "https://github.com/klarkxy/show-me-your-novel"
@@ -306,9 +306,7 @@ def main() -> int:
         )
         return (
             f'<a class="gh-button" href="{REPO_URL}" target="_blank" rel="noopener" '
-            f'title="让我康康你的文 → {REPO_URL}">'
-            f'<span class="gh-icon" aria-hidden="true">★</span>'
-            f'<span class="gh-text">嫌丑？来打脸</span>'
+            f'title="仓库在这 → {REPO_URL}">'
             f'<img class="gh-badge" src="{star_img}" alt="GitHub stars" loading="lazy">'
             f'</a>'
         )
@@ -333,11 +331,8 @@ def main() -> int:
 <main class="container">
 """
 
-    PAGE_FOOT = f"""
+    PAGE_FOOT = """
 </main>
-<footer class="site-footer">
-  <p><a href="{REPO_URL}" target="_blank" rel="noopener">让我康康你的文</a> · 觉得写得烂就 PR</p>
-</footer>
 </body>
 </html>
 """
