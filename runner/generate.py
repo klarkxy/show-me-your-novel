@@ -718,7 +718,8 @@ def generate_single_chapter(
 def merge_chapters(outline: dict[str, Any], chapters: list[str], thinkings: list[str] | None = None) -> str:
     """合并章节为最终小说正文，大纲作为目录夹在标题与正文之间。
 
-    若提供了 thinkings 列表，会在每章标题后插入思考内容（[思考过程]...[/思考过程]）。
+    若提供了 thinkings 列表，会在每章标题下方、正文之前插入思考内容
+    （[思考过程]...[/思考过程]）。
     """
     lines: list[str] = []
     title = outline.get("title", "")
@@ -738,16 +739,32 @@ def merge_chapters(outline: dict[str, Any], chapters: list[str], thinkings: list
             lines.append(f"{num}. **{ch_title}** — {summary}")
         lines.append("")
 
+    # 每章：先写章节正文，再把思考过程插到章节标题下方、正文之前
+    # 章节标题形如 "## 第N章 标题"，其下直到下一个 "## 第" 之前为正文
     for i, ch_text in enumerate(chapters, start=1):
         if i > 1:
             lines.append("")
-        lines.append(ch_text)
-        # 在每章末尾插入思考内容（折叠展示用）
-        if thinkings and i <= len(thinkings) and thinkings[i - 1].strip():
+
+        thinking_text = ""
+        if thinkings and i <= len(thinkings):
+            thinking_text = (thinkings[i - 1] or "").strip()
+
+        # 拆分首行标题与正文
+        ch_lines = ch_text.splitlines()
+        title_line = ch_lines[0] if ch_lines else ""
+        body_lines = ch_lines[1:]
+
+        lines.append(title_line)
+
+        if thinking_text:
             lines.append("")
             lines.append("[思考过程]")
-            lines.append(thinkings[i - 1].strip())
+            lines.append(thinking_text)
             lines.append("[/思考过程]")
+
+        if body_lines:
+            lines.append("")
+            lines.extend(body_lines)
 
     # 确保结尾有【未完待续】
     full_text = "\n".join(lines).rstrip()

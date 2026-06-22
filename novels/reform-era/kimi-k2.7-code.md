@@ -13,7 +13,71 @@
 9. **最后一船货** — 老赵安排最后一船货从蛇口码头上岸，承诺做完这单就散伙。何志远发现船舱里藏的不仅是冰箱，还有几箱没报备的录像机。
 10. **河对岸的电话** — 何志远站在深圳河边等消息，对岸元朗仍黑黢黢的。口袋里的大哥大突然响了，老赵的声音沙哑：货被查，阿炳把你供了，你自己选。
 
+
 ## 第1章 三千块与一栋楼
+
+[思考过程]
+We need respond with chapter 1 only, in Chinese, no meta. Must be fiction text. Need incorporate setting: 1984 spring Shenzhen, protagonist He Zhiyuan 26 from Hengyang, former repairman, came with 80 yuan and blanket, worked 3 months carrying steel, bought tricycle selling breakfast and late-night food. Has saved 3000 yuan, standing under IFC scaffolding, deciding bigger plan. Chapter title in markdown ## 第1章 三千块与一栋楼. Need 2500 words approx within range.
+
+We need craft narrative: early morning 3 am, selling cheung fun (rice noodle rolls) at street stall, details of era, ingredients, customers, Shenzhen atmosphere. After collecting, count 3000. Look at building. Sells tricycle to fellow townsman. Rents tin shack at edge of industrial zone. Decides not to sell breakfast. End with suspense. Need third-person limited, no lyricism. Language tough, crisp, period texture.
+
+We need ensure historically plausible details: prices, wages, ration tickets, Shenzhen 1984. 三千块 significant. Rent? Tin shack maybe tens/month. Tricycle used maybe 150-200? Breakfast cheung fun price maybe 0.15-0.2 yuan per serving. Worker salary ~50-80/month. IFC coffee expensive. He sells to construction workers. Details: rice milk, steam box, lard, soy sauce, chopped scallion, chili. Customers pay with paper tickets? 粮票? but in Shenzhen ration system still existed, but for food maybe cash. He has no license? "走鬼"? Police maybe. He works early morning to avoid management.
+
+Need not over-explain. Tight scenes. Include conflict maybe dispute with customer over change, or city management inspection, or encounter with someone from home, or notice of people selling electronic goods /批文. Since it's chapter 1, set up. Include the buyer of tricycle, fellow countryman. Include landlord/rent. End with him standing in tin shack and seeing something/ someone, or a telegram/letter, or promise.
+
+Need maintain word count ~2500 Chinese characters. Let's aim ~2400-2800.
+
+Let's plan sections:
+1. 3am wake, prep in rented space? He currently lives in a squatter area? He packs steam box, rice milk, lard. Rides tricycle to Shekou construction site gate. The street dark, sounds, harbor lights. Sets up.
+2. Customers arrive: workers from IFC, steelworkers, truck drivers. Dialogue. Transactions. A young worker from Hunan, a Cantonese foreman. Details of money: notes, coins. He counts bowls. Steam. 肠粉 made on cloth over steamer. Price: two fen? Let's set 1毛5一份 (0.15). Workers earn maybe 2-3 yuan/day. Plausible.
+3. He reflects on arriving, savings, not wanting to be a porter. He watches the tower growing. The slogan "Time is money..." on a billboard. He feels the building's pull.
+4. After dawn, he rides to old market/bike shop, meets 老周/同乡 阿强 from Hunan, negotiates selling tricycle. They settle 180 yuan? But his tricycle is his livelihood; he sells it plus steam box? He decides to rent a tin shack instead. He shows 3000 cash wrapped in oil paper. Emotion.
+5. Renting tin shack: at edge of industrial zone, near a dirt road, 铁皮屋 from an old Cantonese landlord. 30 yuan/month? He pays deposit. Landlord warns about electricity/water/no license.
+6. He sits in empty shack, no tricycle, just money and blanket. He makes decision: no more selling breakfast. Outside he hears trucks, sees a banner about "发展才是硬道理"? That's 1992; avoid. Use 1984 slogans. He unfolds money, counts again. A knock or a man appears: maybe a thin guy named 阿灿 who says "何老板，听说你想做电器?" or a police notice. End suspense.
+
+Need ensure "不是这个人选择了这条路，是这个时代只给他留了这条路" by showing limited options: mechanical repair state job dead, construction exhausting, street vendor capped, bigger opportunity only through trade/venture.
+
+Let's write.
+
+Word count target: about 2500 Chinese characters. Need maybe 5-6 paragraphs per section. Let's draft carefully.
+
+Potential title in markdown. No other headings? Could include chapter title only as requested. Maybe no subheadings.
+
+Let's compose.
+
+Open with He waking, environment: darkness, kerosene stove, smell of diesel, neighbor coughing, mosquito net? He rents a corner in an old factory dorm? Actually he lives in a shared dwelling in Shekou. He lights kerosene lamp. Gets rice milk (he ground rice last night). The steam box (三层铝皮抽屉). Lard in tin. Sauce. He loads tricycle.
+
+Describe ride through Shekou at 3:30. Road not paved, puddles reflect container truck lights. Harbor cranes. A dog barks. Construction site gates: IFC?国贸大厦工地. Workers on night shift exit at 6? Actually he sells from 4 to 7. Setup outside gate.
+
+Make cheung fun: he lifts lid, steam rolls, ladles thin rice milk onto white cloth, adds minced pork/dried shrimp maybe? Rolls with scraper, cuts into strips, brushes lard, pours soy sauce and chili. Price 1毛5. Some eat standing; others take away in enamel bowls.
+
+Customers speak dialects. A worker pays with 1 yuan note, no change? He has a tobacco tin of coins/fen notes. A foreman orders ten portions for crew, pays with a stack. This shows cash flow. Maybe a city management jeep passes; he tenses, but it doesn't stop. Era detail: urban management or "市管会" maybe.
+
+He reflects: one bowl costs ~3 fen ingredients, profit 1毛2; three hours can sell 80-120 bowls; net ~10 yuan/day; saved for half year 3000. He had come with 6.5, worked steel, then bought tricycle for 45 yuan. Hardship: slept under bridge first nights.
+
+When sun rises, he looks up at the tower, steel frame, red flags, "三天一层楼" sign. He feels small and hungry. The slogan "时间就是金钱，效率就是生命" on a wall. He doesn't understand fully but feels money in speed.
+
+After cleanup, he rides to 蛇口旧码头旁 where migrants gather. Sells tricycle to 同乡 刘水根 from Hengyang who arrived last month, wants to sell fruit. Bargain: tricycle plus steam box and two buckets for 200 yuan (he bought tricycle for 120?). He counts money; Liu's cash is damp. They share a cigarette. He tells Liu "别再做肠粉了，你做不过河南帮". He keeps only the money and blanket.
+
+Then he rents铁皮屋. Location: 工业区边，深圳湾大道旁？ Actually 1984 maybe 深南大道 still under construction. Use "工业大道旁". The landlord 梁伯, Cantonese, owns a row of tin shacks near a drainage ditch. Rent 35 yuan/month, two months deposit. No papers; electricity tapped from construction site. He pays 105 yuan. Shack has a plank bed, kerosene lamp, a padlock. Empty. He spreads the 3000 yuan on the bed: mostly ten-yuan notes, some fives, coins in oil paper. He counts twice. It's all there.
+
+He lies on the plank bed. The shack vibrates from passing trucks. Outside someone is selling Hong Kong watches from a canvas bag; police whistles; a woman calls out "可乐，香港可乐". He closes his eyes. The building is still growing. He thinks: three thousand can buy a pallet of watches? Or a few hundred cassette recorders? But he doesn't know the channel.
+
+Then a knock. He opens door. A man in a dirty polyester jacket, maybe 30, with a canvas bag, asks "何志远？我姓马，马国梁。你老乡说你手上有三千，想做大生意。" He doesn't answer. End. That creates suspense.
+
+Need maybe include "出卖带自己入行的兄弟" setup? The first chapter can introduce the brother figure later. We can introduce 带他入行的人 maybe at the end? Or not. Fine.
+
+Check historical references: 1984 Shenzhen, 国贸大厦 (International Trade Centre) under construction; slogan "时间就是金钱，效率就是生命" erected 1984 in Shekou by 袁庚. Good. "三天一层楼" indeed Shenzhen speed. 双轨制物价, 官倒 mentioned in world building but not necessarily this chapter. Could hint: a customer mentions buying a Hong Kong TV needs "指标", a批文. That builds. Maybe at stall, a truck driver says "有批日本彩电到文锦渡，没批文不敢动." This hints.
+
+Need no lyricism. Use plain descriptions.
+
+Let's produce ~2500 characters. Counting Chinese characters: average 1.5-2 per token. We'll write perhaps 2400 Chinese characters. Let's draft in Chinese now.
+
+(Internal drafting complete.)
+
+Now ensure final only text, no commentary. Need not include chapter summary. Output just "## 第1章 三千块与一栋楼" then text. Let's write.
+[/思考过程]
+
 
 凌晨三点，何志远就醒了。
 
@@ -122,70 +186,114 @@
 没有署名。
 
 他把纸条凑到煤油灯上，看着火苗舔上去，纸角卷起来，化成一团黑灰落在地上。铁皮屋外，一辆香港过来的货柜车正轰隆隆地驶过，车灯从门缝里扫进来，在墙上晃了一下，又灭了。
+## 第2章 老赵的批条
 
 [思考过程]
-We need respond with chapter 1 only, in Chinese, no meta. Must be fiction text. Need incorporate setting: 1984 spring Shenzhen, protagonist He Zhiyuan 26 from Hengyang, former repairman, came with 80 yuan and blanket, worked 3 months carrying steel, bought tricycle selling breakfast and late-night food. Has saved 3000 yuan, standing under IFC scaffolding, deciding bigger plan. Chapter title in markdown ## 第1章 三千块与一栋楼. Need 2500 words approx within range.
+We need write chapter 2 of novel, titled 老赵的批条. Must be in Chinese, only chapter body, no meta commentary. Must start with markdown heading "## 第2章 老赵的批条". Should continue from chapter 1. Protagonist He Zhiyuan, 26, ex street food vendor, has 3000 yuan, lives in iron sheet room, got anonymous note. This chapter introduces Zhao Tiesheng via coworker, takes him through area near Luohu Bridge customs, shows permits/批条, HK dollars, piles of imported transistors. Need narrative tight, details, suspense, psychological change. Target ~2500 words, range 1500-99999. We need output a single chapter, no extra content.
 
-We need craft narrative: early morning 3 am, selling cheung fun (rice noodle rolls) at street stall, details of era, ingredients, customers, Shenzhen atmosphere. After collecting, count 3000. Look at building. Sells tricycle to fellow townsman. Rents tin shack at edge of industrial zone. Decides not to sell breakfast. End with suspense. Need third-person limited, no lyricism. Language tough, crisp, period texture.
+We need carefully craft. We must be historically accurate 1984 Shenzhen:批条 (import permits), 三极管 (transistors), 罗湖桥 customs, 文锦渡 maybe, HK dollars, 走私 electronics components. The protagonist is poor; 3000 yuan is capital. He doesn't want prison but wants bigger money.
 
-We need ensure historically plausible details: prices, wages, ration tickets, Shenzhen 1984. 三千块 significant. Rent? Tin shack maybe tens/month. Tricycle used maybe 150-200? Breakfast cheung fun price maybe 0.15-0.2 yuan per serving. Worker salary ~50-80/month. IFC coffee expensive. He sells to construction workers. Details: rice milk, steam box, lard, soy sauce, chopped scallion, chili. Customers pay with paper tickets? 粮票? but in Shenzhen ration system still existed, but for food maybe cash. He has no license? "走鬼"? Police maybe. He works early morning to avoid management.
+Let's plan:
 
-Need not over-explain. Tight scenes. Include conflict maybe dispute with customer over change, or city management inspection, or encounter with someone from home, or notice of people selling electronic goods /批文. Since it's chapter 1, set up. Include the buyer of tricycle, fellow countryman. Include landlord/rent. End with him standing in tin shack and seeing something/ someone, or a telegram/letter, or promise.
+Chapter starts after he burns note, next day? He meets coworker/工友 who introduces Zhao Tiesheng. Maybe Liu Shuigen (who bought tricycle) or another named Zhou? The summary says "经工友介绍，他认识了倒卖电子元器件的赵铁生". Use a coworker from construction site: "周大勇" or "郑大头"? Let's create "老周", a steel fixer at Shekou site, older, from Hubei or something. He sees He no longer selling breakfast and invites him.
 
-Need maintain word count ~2500 Chinese characters. Let's aim ~2400-2800.
+Events:
+- Morning, He returns to old construction site? Actually he had sold tricycle; he is idle in铁皮屋. He goes out for water / food. At工业区 he runs into 老周，钢筋工，曾一起扛钢筋，知他卖粉。老周说最近有活，问他愿不愿意见一个人。
+- Evening, they go to Shekou Wharf warehouse No.3? The note said 三号仓库， but maybe coincidence. He brings money? He might hide most, bring some. He meets Zhao Tiesheng: middle-aged, lean, with a scar, wears a short-sleeve shirt, plastic sandals, carries a人造革 briefcase, smokes Hongtashan? Zhao inspects him, asks about capital. He says 3000. Zhao says small but enough for a test.
+- Zhao leads him through narrow lanes behind Luohu Bridge customs: 船步路/建设路 area, near罗湖桥， crowds, people carrying sacks, plainclothes, money changers, stalls. They pass a shop with transistor radios, cassette players. Enter a dim warehouse stacked with cardboard boxes labeled Japanese/Taiwan electronics: transistors 2SCxxx, resistors, integrated circuits. Workers sorting with tweezers. Zhao pulls out a批条 (official import approval) from briefcase: pink paper, red seal "××省电子工业局" maybe photocopied? He explains: with this, goods can come through文锦渡/沙头角; without it, customs seizes. Prices: buy here at HK dollar price, sell to factories in Guangzhou/Shenzhen at multiples.
+- He Zhiyuan handles a transistor, sees it tiny but worth more than a bowl of肠粉. He mentally calculates: one box maybe 1000 units, cost 2 yuan each, sell 8 yuan, profit 6000. A month's粉 equals one box.
+- Zhao offers him a trial: put 3000 in a shipment of transistors from Hong Kong, delivered tomorrow night to warehouse, he can earn 1500 if all goes well. But need to be at customs side to "receive". The risk: no批条 means they might be raided; but Zhao has one. He suspects trap? Or sees the money and desperation. He also notices a young man with a knife/alert, maybe police? Suspense: a motorcycle passes, Zhao quickly closes briefcase, they leave.
+- On way back, Zhao warns him: "这条船上的人多，嘴要紧，钱要狠。" He asks why Zhao chose him. Zhao says "你没有根，没有退路。这种人最敢干，也最好管。" Or something.
+- He returns to铁皮屋 at night, counts money again. He thinks about his father's hatred of speculation, but also that he has nothing else. The chapter ends with him making a decision? But chapter 10 ending suspense. For chapter 2, maybe he decides to bring money to warehouse next night, or is already caught? We need leave a small suspense: he hides 1500 under bed, puts 1500 in belt; tomorrow. Or he sees police raiding a nearby house as he returns. That sets tension.
 
-Let's plan sections:
-1. 3am wake, prep in rented space? He currently lives in a squatter area? He packs steam box, rice milk, lard. Rides tricycle to Shekou construction site gate. The street dark, sounds, harbor lights. Sets up.
-2. Customers arrive: workers from IFC, steelworkers, truck drivers. Dialogue. Transactions. A young worker from Hunan, a Cantonese foreman. Details of money: notes, coins. He counts bowls. Steam. 肠粉 made on cloth over steamer. Price: two fen? Let's set 1毛5一份 (0.15). Workers earn maybe 2-3 yuan/day. Plausible.
-3. He reflects on arriving, savings, not wanting to be a porter. He watches the tower growing. The slogan "Time is money..." on a billboard. He feels the building's pull.
-4. After dawn, he rides to old market/bike shop, meets 老周/同乡 阿强 from Hunan, negotiates selling tricycle. They settle 180 yuan? But his tricycle is his livelihood; he sells it plus steam box? He decides to rent a tin shack instead. He shows 3000 cash wrapped in oil paper. Emotion.
-5. Renting tin shack: at edge of industrial zone, near a dirt road, 铁皮屋 from an old Cantonese landlord. 30 yuan/month? He pays deposit. Landlord warns about electricity/water/no license.
-6. He sits in empty shack, no tricycle, just money and blanket. He makes decision: no more selling breakfast. Outside he hears trucks, sees a banner about "发展才是硬道理"? That's 1992; avoid. Use 1984 slogans. He unfolds money, counts again. A knock or a man appears: maybe a thin guy named 阿灿 who says "何老板，听说你想做电器?" or a police notice. End suspense.
+Need include sensory details: heat, diesel smell, Cantonese chatter, currency exchange, '外汇券', '港币', '蛇皮袋', '三合板' boxes, '红塔山', '羊城' etc.
 
-Need ensure "不是这个人选择了这条路，是这个时代只给他留了这条路" by showing limited options: mechanical repair state job dead, construction exhausting, street vendor capped, bigger opportunity only through trade/venture.
+Word count target 2500. Let's aim around 2500-3000 Chinese characters? Actually 2500 words probably Chinese characters. Need write in prose, not too short. We'll aim ~2600 characters. But instructions say 字数 1500-99999 字; target 2500. In Chinese word count often characters. Let's produce maybe 2800 characters. Need be careful.
 
-Let's write.
+Let's craft chapter.
 
-Word count target: about 2500 Chinese characters. Need maybe 5-6 paragraphs per section. Let's draft carefully.
+Important: third-person limited, close to He Zhiyuan. No lyrical, use concrete details. Avoid meta, no summary. Just output.
 
-Potential title in markdown. No other headings? Could include chapter title only as requested. Maybe no subheadings.
+Potential issues: Need not output the previous chapter. Only chapter 2.
 
-Let's compose.
+Let's write in sections but no subheadings; just paragraphs. Start with heading.
 
-Open with He waking, environment: darkness, kerosene stove, smell of diesel, neighbor coughing, mosquito net? He rents a corner in an old factory dorm? Actually he lives in a shared dwelling in Shekou. He lights kerosene lamp. Gets rice milk (he ground rice last night). The steam box (三层铝皮抽屉). Lard in tin. Sauce. He loads tricycle.
+Title: "## 第2章 老赵的批条"
 
-Describe ride through Shekou at 3:30. Road not paved, puddles reflect container truck lights. Harbor cranes. A dog barks. Construction site gates: IFC?国贸大厦工地. Workers on night shift exit at 6? Actually he sells from 4 to 7. Setup outside gate.
+Opening: Next morning, after night of little sleep,何志远被铁皮屋顶晒醒. He goes to工业区 to find老周. Or老周找上门. The note remains a mystery; maybe he decides to ignore it. Let's integrate: He ignores note, but老周 introduces Zhao as if arranged. Maybe Zhao sent note? Could be.
 
-Make cheung fun: he lifts lid, steam rolls, ladles thin rice milk onto white cloth, adds minced pork/dried shrimp maybe? Rolls with scraper, cuts into strips, brushes lard, pours soy sauce and chili. Price 1毛5. Some eat standing; others take away in enamel bowls.
+Let's make: In the morning he goes to蛇口码头附近找零工/打探. He sees a group of workers playing cards under a banyan. 老周 from steelwork sees him, calls him. 老周 says he heard He wants bigger business. He mentions a man "赵铁生" who deals in electronics. If interested, meet at six at the wharf.
 
-Customers speak dialects. A worker pays with 1 yuan note, no change? He has a tobacco tin of coins/fen notes. A foreman orders ten portions for crew, pays with a stack. This shows cash flow. Maybe a city management jeep passes; he tenses, but it doesn't stop. Era detail: urban management or "市管会" maybe.
+He is wary but agrees. He spends day at铁皮屋; in evening goes. Zhao appears. They talk. Zhao leads him to罗湖桥外. etc.
 
-He reflects: one bowl costs ~3 fen ingredients, profit 1毛2; three hours can sell 80-120 bowls; net ~10 yuan/day; saved for half year 3000. He had come with 6.5, worked steel, then bought tricycle for 45 yuan. Hardship: slept under bridge first nights.
+We should make He carry all 3000? He might bring it. Let's make him bring 3000 in a cloth belt. Zhao glances but doesn't count. They take bus? Or walk? From Shekou to Luohu far; in 1984 maybe they take a "小巴" or hitch truck. Let's have Zhao has a motorcycle? Or they take a chartered 货车. Realistic: From Shekou to Luohu maybe 30 km; they take a "东风" truck driven by a friend. More detail.
 
-When sun rises, he looks up at the tower, steel frame, red flags, "三天一层楼" sign. He feels small and hungry. The slogan "时间就是金钱，效率就是生命" on a wall. He doesn't understand fully but feels money in speed.
+Actually, Zhao could lead him first to a shed near Shekou, then take a truck. But summary says "带他走过罗湖桥海关外的巷子，见识了批条、港币和堆积的进口三极管". So they go to Luohu Bridge customs alleys.
 
-After cleanup, he rides to 蛇口旧码头旁 where migrants gather. Sells tricycle to 同乡 刘水根 from Hengyang who arrived last month, wants to sell fruit. Bargain: tricycle plus steam box and two buckets for 200 yuan (he bought tricycle for 120?). He counts money; Liu's cash is damp. They share a cigarette. He tells Liu "别再做肠粉了，你做不过河南帮". He keeps only the money and blanket.
+Let's write: They take a rusty 解放牌 truck from Shekou, sharing cabin with driver and two men. Arrive at Shenzhen railway station near Luohu Bridge. Then walk through back alleys behind联检大楼. At night alleys crowded. They enter a courtyard with warehouses, guarded by a dog? Boxes. Zhao shows批条.
 
-Then he rents铁皮屋. Location: 工业区边，深圳湾大道旁？ Actually 1984 maybe 深南大道 still under construction. Use "工业大道旁". The landlord 梁伯, Cantonese, owns a row of tin shacks near a drainage ditch. Rent 35 yuan/month, two months deposit. No papers; electricity tapped from construction site. He pays 105 yuan. Shack has a plank bed, kerosene lamp, a padlock. Empty. He spreads the 3000 yuan on the bed: mostly ten-yuan notes, some fives, coins in oil paper. He counts twice. It's all there.
+Need maintain suspense: police presence, plainclothes, a raid nearby? Maybe at the end, as they leave, they hear sirens and people scattering. That hooks.
 
-He lies on the plank bed. The shack vibrates from passing trucks. Outside someone is selling Hong Kong watches from a canvas bag; police whistles; a woman calls out "可乐，香港可乐". He closes his eyes. The building is still growing. He thinks: three thousand can buy a pallet of watches? Or a few hundred cassette recorders? But he doesn't know the channel.
+Character Zhao: maybe ex-soldier, from Northeast? Or local? Let's make him from四川 or湖南 to connect? "赵铁生" sounds northern. We'll make him a former warehouse clerk at省电子局， knows permits. He is 40ish, has a long scar on forearm, wears a faded的确良 shirt, carries a black人造革包 with a brass clasp. Speaks Mandarin with Hunan accent maybe.
 
-Then a knock. He opens door. A man in a dirty polyester jacket, maybe 30, with a canvas bag, asks "何志远？我姓马，马国梁。你老乡说你手上有三千，想做大生意。" He doesn't answer. End. That creates suspense.
+He Zhiyuan's psychological change: Starts resistant, then calculates profits, then tempted. The chapter title "老赵的批条" suggests the批条 is key object of power. He realizes批条 is worth more than money. He feels both awe and fear. He thinks of father but also铁皮屋 and wanting not to fall back.
 
-Need maybe include "出卖带自己入行的兄弟" setup? The first chapter can introduce the brother figure later. We can introduce 带他入行的人 maybe at the end? Or not. Fine.
+Let's write with dialogue and action, sensory detail.
 
-Check historical references: 1984 Shenzhen, 国贸大厦 (International Trade Centre) under construction; slogan "时间就是金钱，效率就是生命" erected 1984 in Shekou by 袁庚. Good. "三天一层楼" indeed Shenzhen speed. 双轨制物价, 官倒 mentioned in world building but not necessarily this chapter. Could hint: a customer mentions buying a Hong Kong TV needs "指标", a批文. That builds. Maybe at stall, a truck driver says "有批日本彩电到文锦渡，没批文不敢动." This hints.
+Need be historically grounded:
+- 三极管 prices in 1984: imported transistors maybe a few yuan. For example 2SC9014 used in radios, cost 0.5-1 yuan, sold for 3-5 yuan? But maybe boxes. Let's use figures: A carton has 5000 pieces, bought at HK$0.15 each (~0.06 RMB?), sold in Guangzhou at 0.8-1 RMB. But dual exchange rate: official 1 HKD=0.3 RMB? Actually 1984 official rate ~1 USD=2.8 RMB, HKD ~0.36 RMB. Black market higher. Let's avoid precise unrealistic figures, use general "一块钱进，八块钱出".
+- Wage: construction worker maybe 2-3 yuan/day, monthly ~60-80. He earned 11 yuan/day selling粉, already good. 3000 is huge.
+- A bowl of肠粉 price 0.15? In chapter 1 they said "一毛五一条"? Actually肠粉一条一毛五? He sold bowl three pieces with egg 一块五? Wait chapter 1 had inconsistency: one says "三条肠粉加蛋" price 一块五, he replies "不是一毛五一条吗?" "加蛋两毛，三条六毛." That suggests base 0.15 each, egg 0.05, total 0.6, but he charged 1.5? That seems off, maybe they meant 0.15一条 with egg 0.2? Hmm not our concern. We'll not reference.
 
-Need no lyricism. Use plain descriptions.
+Let's focus.
 
-Let's produce ~2500 characters. Counting Chinese characters: average 1.5-2 per token. We'll write perhaps 2400 Chinese characters. Let's draft in Chinese now.
+Detailed outline for writing:
 
-(Internal drafting complete.)
+Para1: Morning after the note. Sun heats铁皮屋. He wakes on木板床， pillow still holding money. He gets up, splashes water on face at公用水龙头. Goes to工业区路口吃一碗粥 (0.1 yuan). Sees老周.
 
-Now ensure final only text, no commentary. Need not include chapter summary. Output just "## 第1章 三千块与一栋楼" then text. Let's write.
+Para2: 老周 about 45, rebar worker, from Hubei, has a right hand missing half finger. They greet.老周 asks why not selling. He says quit.老周 says heard he wants to make money and knows a guy "赵铁生" who does electronic components, needs a young able runner. "晚上八点，蛇口码头三号仓。你自己去，他认得我，你提我名。" He also warns don't ask too much.
+
+Para3: He spends day uneasy. He counts money; hides half under a loose floorboard. In evening, he wraps 1500 in a cloth belt around waist, puts remaining in a canvas包. He leaves铁皮屋.
+
+Para4: Arrives码头三号仓库. Area of freight sheds, forklifts, container smell. A man leaning against a rusty 解放牌. He asks "找谁？" He says "老周让我来找赵老板。" The man sizes him up, opens shed door. Inside dim, Zhao sitting on a木箱 smoking.
+
+Para5: Zhao looks up. He is lean, sallow, with a scar from left eyebrow to cheek? Wears grey short-sleeve, plastic sandals, black人造革包 on box beside him. Says老周介绍的人？坐下。 He offers a cigarette; He refuses (or accepts?). Zhao asks capital. He says three thousand. Zhao laughs: "三千块，胆子倒不小。" Then says fine.
+
+Para6: Zhao says let's go see货. They get into truck cabin. Driver is young, cap low, doesn't speak. The truck rattles along Shennan Road? Dust, headlights. Two hours? Actually in 1984 road may be rough. They pass Shenzhen railway station, then to Luohu.
+
+Para7: Arrive near联检大楼. Neon? Actually 1984 maybe not much neon. They walk through back lanes behind the customs building: narrow, wet, reeking of urine and diesel. Crowds: people with sacks, money changers hissing "换港币换港币", women selling soda, a child sleeping on cardboard. They pass a stall with transistor radios playing Cantonese pop. Zhao walks fast, doesn't look around.
+
+Para8: Enter a courtyard behind a restaurant. Warehouses with tin roofs. A padlocked gate; a fat man opens it after Zhao taps a code. Inside, cardboard boxes stacked to roof. Two women under a bare bulb sorting small parts into plastic bags with tweezers. A scale on a木桌.
+
+Para9: Zhao opens his briefcase, takes out a batch of papers. "批条". Pink official forms with red seals, handwritten numbers: "进口电子元器件审批单", "广东省电子工业供销公司" or "深圳经济特区发展公司". He holds one up. "没有这东西，货到文锦渡就扣下；有了它，三极管就是生产资料，谁敢查？" He explains the profit: buy from Hong Kong at HK dollar, use批条 to clear customs, sell to state factories at domestic price. "一个三极管，香港进来成本不到一块钱，广州厂里愿意出八块十块。票子他们自己有，但他们缺的就是这个。" He taps the paper.
+
+Para10: He Zhiyuan holds a transistor in palm: black plastic cylinder with three metal legs. It's lighter than a纽扣. He thinks this tiny thing equals dozens of bowls of肠粉. He asks if it's legal. Zhao says "批文是真的，章是真的，货是真的。你说呢？" But the way he says suggests grey. He asks what he needs to do. Zhao says: "你跟着我跑两趟，学学接货、点数、送单。等你熟了，自己拿一联批条去提货，挣的归你，给我三成。" Or maybe for the 3000 test: "今晚有一批三极管从文锦渡到，你用三千押一车，明天早上我带你去福田交货，赚头一千五。"
+
+Para11: He notices tension. The fat man at gate mutters something, Zhao snaps briefcase shut. They hear a motorcycle outside; everyone freezes. Zhao gestures, they slip out a back door. In alley they see a police jeep with red light at the end; people scattering, boxes being dragged. "查仓的。" Zhao says calmly, "不是这一家。" They keep walking.
+
+Para12: Return trip. In truck cabin, Zhao lights another cigarette. Tells He: "这行吃饭，靠三样：眼快、嘴紧、心黑。你心不够黑，但手快。" He asks why Zhao picked him. Zhao: "老周说你卖粉，三个月没缺过斤两。这种人信得过。再说你没人，没户口，没单位，出了事也牵不出别人。" This unnerves He. He stares out at dark road.
+
+Para13: Back at铁皮屋, alone. He takes out the 1500 from waist, the hidden 1500 from floor. He counts again. 3000. The room hums from passing truck. He lights kerosene lamp. On wall he sees his shadow huge. He remembers the transistor in palm, the批条 red seal, the police jeep. He thinks of his father: "投机倒把，枪毙都活该." But also thinks of国贸大厦 rising. He lies down, puts money under pillow. Before sleep, he decides: go back tomorrow with all money.
+
+End with him not sleeping; outside a dog barks. The铁皮屋 door rattles. He reaches for something? The note? Maybe someone knocks. End on suspense: a knock at door, or he finds another note? Maybe no need. The chapter ends with him lying in dark, holding money, waiting. This leaves suspense: will he go?
+
+But the user said chapter 10 ending suspense, not this chapter. However each chapter can have tension. We'll end with unresolved immediate decision and a knock? A knock is good.
+
+Need ensure no meta, no summary.
+
+Let's write with adequate length. Keep sentences short, concrete.
+
+Let's produce final text. Check word count. We'll write around 2600-3000 characters. Use third-person limited.
+
+One concern: The heading should be exactly "## 第2章 老赵的批条". Then newline. The body follows. No extra blank lines? It's okay.
+
+Let's craft carefully. Ensure all details plausible: "的确是 "的确良" shirt; "人造革" briefcase; "公用水龙头"; "蛇口码头三号仓库" from note; "罗湖桥海关"; "文锦渡"; "批条".
+
+Let's also maybe include He noticing Zhao's briefcase has several批条 and a wad of港币. The title is 老赵的批条.
+
+Let's write now.
 [/思考过程]
 
-## 第2章 老赵的批条
 
 铁皮屋到天亮时已经热得像个蒸笼。何志远一夜没睡踏实，枕在脑后的手一直能碰着那包钱。外头公鸡刚叫第一遍，他就起来了，从床底提出一只铁皮桶，到公用水龙头接了一桶水，把脸埋进去。水是温的，带着铁锈味。
 
@@ -348,114 +456,81 @@ Now ensure final only text, no commentary. Need not include chapter summary. Out
 迷迷糊糊间，他听见外头传来脚步声，停在门口。何志远没睁眼，手却下意识伸到枕头下，握住了那包钱。
 
 门板上，响起了三声不紧不慢的敲门声。
+## 第3章 第一单钢材
 
 [思考过程]
-We need write chapter 2 of novel, titled 老赵的批条. Must be in Chinese, only chapter body, no meta commentary. Must start with markdown heading "## 第2章 老赵的批条". Should continue from chapter 1. Protagonist He Zhiyuan, 26, ex street food vendor, has 3000 yuan, lives in iron sheet room, got anonymous note. This chapter introduces Zhao Tiesheng via coworker, takes him through area near Luohu Bridge customs, shows permits/批条, HK dollars, piles of imported transistors. Need narrative tight, details, suspense, psychological change. Target ~2500 words, range 1500-99999. We need output a single chapter, no extra content.
+We need generate chapter 3 of a Chinese novel. User gave detailed setting and prior chapters. Need output only chapter text, starting with markdown heading "## 第3章 第一单钢材". Need length 1500-99999, target 2500. Narrative should continue from chapter 2. The chapter title "第一单钢材". Need summary: He uses all savings as guarantee, follows Old Zhao to complete first planned steel quota order. Money comes fast, but he discovers batch note behind connects to factory supply/marketing chief and a Hitachi color TV. Need details, era realism, third-person limited close to He Zhiyuan. No meta, no explanation, no writing process, no summarization. Must not end all threads; keep suspense.
 
-We need carefully craft. We must be historically accurate 1984 Shenzhen:批条 (import permits), 三极管 (transistors), 罗湖桥 customs, 文锦渡 maybe, HK dollars, 走私 electronics components. The protagonist is poor; 3000 yuan is capital. He doesn't want prison but wants bigger money.
+We need invent coherent continuation: In prior chapter Zhao gave him choice: come back day after tomorrow night with money or not. Chapter 3 probably begins with He deciding, meeting Zhao at warehouse, going on deal. But summary says "第一单钢材" (first steel order), not electronics? World has dual-track steel quotas, planned steel. Need maybe Zhao says electronics batch is canceled/police raid and switches to steel? Maybe He meets someone at door (the knock at end ch2). Let's craft.
 
-Let's plan:
+Need include accurate era details: prices, ration tickets, wage levels, Shenzhen in 1984. Steel planned price vs market price, batch note (批条), factory supply and marketing chief, Hitachi color TV bribe maybe. The chapter should show his psychology: thrill, then unease. He uses all 3000 as deposit/guarantee. The deal makes money fast. But he finds invoice tied to a factory supply section chief and a color TV, hinting corruption and risk.
 
-Chapter starts after he burns note, next day? He meets coworker/工友 who introduces Zhao Tiesheng. Maybe Liu Shuigen (who bought tricycle) or another named Zhou? The summary says "经工友介绍，他认识了倒卖电子元器件的赵铁生". Use a coworker from construction site: "周大勇" or "郑大头"? Let's create "老周", a steel fixer at Shekou site, older, from Hubei or something. He sees He no longer selling breakfast and invites him.
+Let's outline:
 
-Events:
-- Morning, He returns to old construction site? Actually he had sold tricycle; he is idle in铁皮屋. He goes out for water / food. At工业区 he runs into 老周，钢筋工，曾一起扛钢筋，知他卖粉。老周说最近有活，问他愿不愿意见一个人。
-- Evening, they go to Shekou Wharf warehouse No.3? The note said 三号仓库， but maybe coincidence. He brings money? He might hide most, bring some. He meets Zhao Tiesheng: middle-aged, lean, with a scar, wears a short-sleeve shirt, plastic sandals, carries a人造革 briefcase, smokes Hongtashan? Zhao inspects him, asks about capital. He says 3000. Zhao says small but enough for a test.
-- Zhao leads him through narrow lanes behind Luohu Bridge customs: 船步路/建设路 area, near罗湖桥， crowds, people carrying sacks, plainclothes, money changers, stalls. They pass a shop with transistor radios, cassette players. Enter a dim warehouse stacked with cardboard boxes labeled Japanese/Taiwan electronics: transistors 2SCxxx, resistors, integrated circuits. Workers sorting with tweezers. Zhao pulls out a批条 (official import approval) from briefcase: pink paper, red seal "××省电子工业局" maybe photocopied? He explains: with this, goods can come through文锦渡/沙头角; without it, customs seizes. Prices: buy here at HK dollar price, sell to factories in Guangzhou/Shenzhen at multiples.
-- He Zhiyuan handles a transistor, sees it tiny but worth more than a bowl of肠粉. He mentally calculates: one box maybe 1000 units, cost 2 yuan each, sell 8 yuan, profit 6000. A month's粉 equals one box.
-- Zhao offers him a trial: put 3000 in a shipment of transistors from Hong Kong, delivered tomorrow night to warehouse, he can earn 1500 if all goes well. But need to be at customs side to "receive". The risk: no批条 means they might be raided; but Zhao has one. He suspects trap? Or sees the money and desperation. He also notices a young man with a knife/alert, maybe police? Suspense: a motorcycle passes, Zhao quickly closes briefcase, they leave.
-- On way back, Zhao warns him: "这条船上的人多，嘴要紧，钱要狠。" He asks why Zhao chose him. Zhao says "你没有根，没有退路。这种人最敢干，也最好管。" Or something.
-- He returns to铁皮屋 at night, counts money again. He thinks about his father's hatred of speculation, but also that he has nothing else. The chapter ends with him making a decision? But chapter 10 ending suspense. For chapter 2, maybe he decides to bring money to warehouse next night, or is already caught? We need leave a small suspense: he hides 1500 under bed, puts 1500 in belt; tomorrow. Or he sees police raiding a nearby house as he returns. That sets tension.
+- Start in tin shed at night after three knocks. He opens door to find a young woman? Actually from ch2 ending, knocks. Could be Zhao? Maybe it's a messenger, or someone else. To not derail, we can make it the next morning/afternoon leading to appointment. Maybe the knocks are from a boy delivering note from Zhao: location changed/time. But summary says "following Old Zhao completes first planned steel quota." Let's have next section: He wakes, knocks were from someone (maybe a kid) who gives note? Or he decides, at 7pm goes to warehouse. We can start directly at warehouse to avoid ch2 cliffhanger.
 
-Need include sensory details: heat, diesel smell, Cantonese chatter, currency exchange, '外汇券', '港币', '蛇皮袋', '三合板' boxes, '红塔山', '羊城' etc.
+But we must keep continuity; readers saw knocks. We can resolve knocks as a neighbor? But no need mention? It might feel abrupt. Better start with him opening door, finding nothing but a folded paper with time/place? Or it's just a cat? That seems weak. Better make knocks meaningful: a short man gives him a message from Zhao: "明晚八点，盐田某处" and leaves. Or a woman? Hmm.
 
-Word count target 2500. Let's aim around 2500-3000 Chinese characters? Actually 2500 words probably Chinese characters. Need write in prose, not too short. We'll aim ~2600 characters. But instructions say 字数 1500-99999 字; target 2500. In Chinese word count often characters. Let's produce maybe 2800 characters. Need be careful.
+Given chapter summary: "用全部积蓄做保证金，跟着老赵做成第一单计划内钢材指标。钱到手很快，但他发现批条背后连着工厂供销科长和一台日立彩电。" So the chapter begins with him making decision to use all savings. We can show him going to meet Zhao. The knocks could be a signal: He opens door, nobody, just a rusted tin can? No, let's incorporate: It's morning; after knocks, he opens door; a kid says "赵老板叫八点老地方，带齐钱" and runs off. That resolves.
 
-Let's craft chapter.
+Then he takes all 3000 from under floorboard. He goes to warehouse. Zhao is there, not electronics but steel because police raid on electronics warehouse led him to switch. Zhao says Shenzhen electronic circuit is hot now; steel quota safer, profit less but quick. Need a factory in Dongguan? Let's set in Bao'an or Guangzhou? Could be a steel mill in Shaoguan? They travel to a small county/state-run factory supply section. They have a batch note for planned steel (e.g., 20 tons of rebar) at state price 600/ton, market price 1500/ton. He puts 3000 as guarantee to Zhao, who gives him the batch note and arranges delivery to a construction site in Shenzhen. They go to a state-run metal materials company, see the supply section chief who signs release. Maybe he sees a Hitachi color TV in the office (bribe). They drive to a warehouse in Buji? Then deliver to buyer (a construction team in Luohu) at market price, get cash. He gets profit maybe 1500 or 2000 immediately. But at the end, back at Zhao's place, he notices a delivery slip or receipt with factory supply section chief's name and a note "日立彩电 14寸 1台" plus invoice, implying the chief got TV for the batch. He realizes the corruption web.
 
-Important: third-person limited, close to He Zhiyuan. No lyrical, use concrete details. Avoid meta, no summary. Just output.
+Need details: currency: 3000 yuan, state rebar price maybe 550 yuan per ton, market 1300. Profit per ton 750. 20 tons profit 15000. He gets maybe 2000? Let's be plausible. In 1984, monthly wage ~50, steel price in plan ~600-700/ton, market 1200-1500/ton. A 14-inch Hitachi color TV cost ~1500-2000 yuan. So a TV is a significant bribe.
 
-Potential issues: Need not output the previous chapter. Only chapter 2.
+They need a truck. Maybe use a chartered agricultural vehicle or borrow a friend's truck. Zhao has a "合同工" driver. They go to a materials company in Longgang/Huiyang? Maybe better in Shenzhen's Bao'an county: the "宝安县金属材料公司". The supply section chief signs the release note. In the office, there's a brand-new Hitachi TV still in box? Or the chief's family takes it? He sees it on a receipt later.
 
-Let's write in sections but no subheadings; just paragraphs. Start with heading.
+Let's craft prose style: concrete, terse, period texture, no lyrical. Use Cantonese/Mandarin slang era: 批条，计划内，指标，供销科，厂长，外汇券，粮票，工业券. Details: old truck, dust, ration coupons? Steel quotas maybe require "钢材票" or allocation certificates. Maybe the buyer pays in cash and a "水泥票"? We can avoid overcomplicating.
 
-Title: "## 第2章 老赵的批条"
+Need length ~2500 Chinese characters. We'll aim about 2400-2800.
 
-Opening: Next morning, after night of little sleep,何志远被铁皮屋顶晒醒. He goes to工业区 to find老周. Or老周找上门. The note remains a mystery; maybe he decides to ignore it. Let's integrate: He ignores note, but老周 introduces Zhao as if arranged. Maybe Zhao sent note? Could be.
+Let's write in sections: Opening with knocks and message; preparing money; going to warehouse; Zhao explains steel deal; trip to materials company; seeing the chief and TV; loading truck; delivery and payment; return and discovery of receipt; ending with Zhao giving him cash but also a warning, leaving suspense.
 
-Let's make: In the morning he goes to蛇口码头附近找零工/打探. He sees a group of workers playing cards under a banyan. 老周 from steelwork sees him, calls him. 老周 says he heard He wants bigger business. He mentions a man "赵铁生" who deals in electronics. If interested, meet at six at the wharf.
+Ensure third-person limited: only He Zhiyuan's perceptions. But he can infer Zhao's mood. Keep close.
 
-He is wary but agrees. He spends day at铁皮屋; in evening goes. Zhao appears. They talk. Zhao leads him to罗湖桥外. etc.
+Let's think about the knock at end of ch2. It is night after 11pm. He hears footsteps stop and three knocks. He grips money. In ch3, he opens the door to find a thin boy (maybe a ragged child) who says: "赵老板说的，明晚八点，盐田旧煤场，过时不候。" Then runs. Or maybe gives a scrap. This would be at nearly midnight. It creates paranoia. Then he can't sleep.
 
-We should make He carry all 3000? He might bring it. Let's make him bring 3000 in a cloth belt. Zhao glances but doesn't count. They take bus? Or walk? From Shekou to Luohu far; in 1984 maybe they take a "小巴" or hitch truck. Let's have Zhao has a motorcycle? Or they take a chartered 货车. Realistic: From Shekou to Luohu maybe 30 km; they take a "东风" truck driven by a friend. More detail.
+But summary says he uses all savings as margin, follows Zhao to do first order. Time jumps could be next evening. We'll show him counting money in morning, hiding nothing, then going.
 
-Actually, Zhao could lead him first to a shed near Shekou, then take a truck. But summary says "带他走过罗湖桥海关外的巷子，见识了批条、港币和堆积的进口三极管". So they go to Luohu Bridge customs alleys.
+Let's decide the meeting location changes from Shekou to Yantian coal yard because police raid. Zhao doesn't trust phone, sends messenger.
 
-Let's write: They take a rusty 解放牌 truck from Shekou, sharing cabin with driver and two men. Arrive at Shenzhen railway station near Luohu Bridge. Then walk through back alleys behind联检大楼. At night alleys crowded. They enter a courtyard with warehouses, guarded by a dog? Boxes. Zhao shows批条.
+Let's start writing.
 
-Need maintain suspense: police presence, plainclothes, a raid nearby? Maybe at the end, as they leave, they hear sirens and people scattering. That hooks.
+Potential issue: The prior ch2 ended with warehouse electronics police raid, Zhao said "后天晚上七点，三号仓库。带不带钱，你自己想。" That was the appointment. But ch3 summary says first steel order. We can have Zhao at warehouse tell him electronics line is paused; switch to steel. But if the messenger changes location, fine.
 
-Character Zhao: maybe ex-soldier, from Northeast? Or local? Let's make him from四川 or湖南 to connect? "赵铁生" sounds northern. We'll make him a former warehouse clerk at省电子局， knows permits. He is 40ish, has a long scar on forearm, wears a faded的确良 shirt, carries a black人造革包 with a brass clasp. Speaks Mandarin with Hunan accent maybe.
+Also, the summary says "钱到手很快". So after doing deal, he gets money quickly.
 
-He Zhiyuan's psychological change: Starts resistant, then calculates profits, then tempted. The chapter title "老赵的批条" suggests the批条 is key object of power. He realizes批条 is worth more than money. He feels both awe and fear. He thinks of father but also铁皮屋 and wanting not to fall back.
+Let's write in Chinese. We'll be careful with no meta.
 
-Let's write with dialogue and action, sensory detail.
+Potential terms:
+- 批条： hand-written approval note on official letterhead, with red seal.
+- 计划内钢材指标： planned allocation of steel, e.g., 县农机厂急需的钢材， but they are reselling.
+- 保证金： He gives Zhao all 3000 as guarantee that he won't run away with the batch note or the steel. Zhao says "批条值大钱，你押钱在我这，货卖了本金还你，利分你两成/三成".
+- Actually summary: "用全部积蓄做保证金" means his 3000 serves as deposit. He doesn't use it to buy steel; he uses it to secure the batch note and delivery.
+- Price: They get 30 tons of 6.5mm wire rod at planned price 520 yuan/ton = 15,600. Market buyer pays 1380/ton = 41,400. Gross profit 25,800. Zhao gives him maybe 3000? Let's compute. If Zhao promised "利分你两成": 5160. Plus return deposit 3000 => 8160. Too much? But "钱到手很快" and he discovers corruption. He ends up with maybe 4800? But he had 3000, now 5500? It can be ambiguous. For realism, small-time runner gets maybe 10-15%. Zhao might give him 800 plus deposit back? But he used all savings as guarantee; maybe the profit is big but he only gets a cut. Let's set Zhao gives him 2200 as his share, plus returns 3000? That would more than double. Or Zhao returns his 3000 plus 1500 profit. That fits "钱到手很快".
 
-Need be historically grounded:
-- 三极管 prices in 1984: imported transistors maybe a few yuan. For example 2SC9014 used in radios, cost 0.5-1 yuan, sold for 3-5 yuan? But maybe boxes. Let's use figures: A carton has 5000 pieces, bought at HK$0.15 each (~0.06 RMB?), sold in Guangzhou at 0.8-1 RMB. But dual exchange rate: official 1 HKD=0.3 RMB? Actually 1984 official rate ~1 USD=2.8 RMB, HKD ~0.36 RMB. Black market higher. Let's avoid precise unrealistic figures, use general "一块钱进，八块钱出".
-- Wage: construction worker maybe 2-3 yuan/day, monthly ~60-80. He earned 11 yuan/day selling粉, already good. 3000 is huge.
-- A bowl of肠粉 price 0.15? In chapter 1 they said "一毛五一条"? Actually肠粉一条一毛五? He sold bowl three pieces with egg 一块五? Wait chapter 1 had inconsistency: one says "三条肠粉加蛋" price 一块五, he replies "不是一毛五一条吗?" "加蛋两毛，三条六毛." That suggests base 0.15 each, egg 0.05, total 0.6, but he charged 1.5? That seems off, maybe they meant 0.15一条 with egg 0.2? Hmm not our concern. We'll not reference.
+But the summary says "用全部积蓄做保证金" not "投资". So after deal, Zhao returns the 3000 and gives him commission. However in previous ch2 Zhao said "一千五算入股" for electronics. For steel, he uses all 3000 as guarantee and maybe Zhao covers purchase capital. The 3000 ensures he doesn't abscond. After successful run, he gets 3000 back plus share. But if he loses the batch/steel, he loses all. That raises stakes.
 
-Let's focus.
+Let's make the deal: Zhao has a batch note for 25 tons of 6.5mm wire rod allocated to "惠阳县农机公司". He needs someone to take the batch note and driver's license to the materials company warehouse, load the steel, and deliver to a buyer in Shenzhen. He doesn't want to show his own face because the supply section chief knows him and wants to keep distance. He uses He as front. He gives all 3000 as deposit to Zhao. They go together.
 
-Detailed outline for writing:
+At the warehouse, He sees the supply section chief, middle-aged man in white shirt, sweaty, signs the release. In the corner of the office, a Hitachi 14-inch color TV in its carton, with a handwritten slip "贺科长笑纳" or on the receipt. Maybe He notices the box because he has seen such TVs in shops costing 1600. The chief signs quickly, not checking IDs. Outside, they load the truck at planned price? Actually they need pay the materials company at planned price? Who pays? Zhao gives He an envelope with cash (maybe from buyer advance) to pay? The purchase price is lower. Maybe the factory materials company is a state entity; they pay official price to warehouse? But the batch note itself is allocated to a factory, so they can draw the steel at state price; they need to present the note and pay. Zhao provides cash for purchase. The profit is the difference between state and market price.
 
-Para1: Morning after the note. Sun heats铁皮屋. He wakes on木板床， pillow still holding money. He gets up, splashes water on face at公用水龙头. Goes to工业区路口吃一碗粥 (0.1 yuan). Sees老周.
+Could be simplified: They arrive at "宝安县金属材料公司" storage yard, show the batch note, a clerk weighs and loads. Zhao hands over a thick envelope (planned price payment) to the clerk? Actually purchase price maybe not paid to the company if it's allocated; but in planned economy, state allocation requires payment at planned price, so yes.
 
-Para2: 老周 about 45, rebar worker, from Hubei, has a right hand missing half finger. They greet.老周 asks why not selling. He says quit.老周 says heard he wants to make money and knows a guy "赵铁生" who does electronic components, needs a young able runner. "晚上八点，蛇口码头三号仓。你自己去，他认得我，你提我名。" He also warns don't ask too much.
+Then they drive to Longgang construction site? Let's set buyer is a construction team building a factory in Bao'an, willing to pay market price in cash. They unload, the foreman pays Zhao in a canvas bag. They drive back. Zhao counts and gives He his share.
 
-Para3: He spends day uneasy. He counts money; hides half under a loose floorboard. In evening, he wraps 1500 in a cloth belt around waist, puts remaining in a canvas包. He leaves铁皮屋.
+At the end, in the truck or warehouse, He finds a crumpled slip from the envelope/receipt: it lists "日立牌14吋彩色电视机壹台" and the name of the supply section chief, with a phone number. Maybe it's a delivery note from the morning, indicating Zhao bribed the chief with TV. He realizes the batch note isn't just paper; it's bought.
 
-Para4: Arrives码头三号仓库. Area of freight sheds, forklifts, container smell. A man leaning against a rusty 解放牌. He asks "找谁？" He says "老周让我来找赵老板。" The man sizes him up, opens shed door. Inside dim, Zhao sitting on a木箱 smoking.
+The chapter ends with Zhao saying: "这趟跑顺了，下礼拜还有一船。" Or maybe warning: "这台电视，看见了也当没看见。" Then a phone rings? Or a knock? Leave suspense.
 
-Para5: Zhao looks up. He is lean, sallow, with a scar from left eyebrow to cheek? Wears grey short-sleeve, plastic sandals, black人造革包 on box beside him. Says老周介绍的人？坐下。 He offers a cigarette; He refuses (or accepts?). Zhao asks capital. He says three thousand. Zhao laughs: "三千块，胆子倒不小。" Then says fine.
+Need include sensory details: heat, dust, diesel smell, the truck (a 130 light truck? Jiefang?), scale, steel coils, rebar, cash counting, the Hitachi box, sounds of industrial Shenzhen, border feeling.
 
-Para6: Zhao says let's go see货. They get into truck cabin. Driver is young, cap low, doesn't speak. The truck rattles along Shennan Road? Dust, headlights. Two hours? Actually in 1984 road may be rough. They pass Shenzhen railway station, then to Luohu.
+Let's ensure era details: In 1984 Shenzhen, Bao'an County still existed; Yantian is part of Shenzhen? Actually Yantian port area developed later. Could be "盐田墟". Use it. The metals company might be "宝安县物资局金属公司". Good.
 
-Para7: Arrive near联检大楼. Neon? Actually 1984 maybe not much neon. They walk through back lanes behind the customs building: narrow, wet, reeking of urine and diesel. Crowds: people with sacks, money changers hissing "换港币换港币", women selling soda, a child sleeping on cardboard. They pass a stall with transistor radios playing Cantonese pop. Zhao walks fast, doesn't look around.
+Need no prose process. Just output the heading and text.
 
-Para8: Enter a courtyard behind a restaurant. Warehouses with tin roofs. A padlocked gate; a fat man opens it after Zhao taps a code. Inside, cardboard boxes stacked to roof. Two women under a bare bulb sorting small parts into plastic bags with tweezers. A scale on a木桌.
-
-Para9: Zhao opens his briefcase, takes out a batch of papers. "批条". Pink official forms with red seals, handwritten numbers: "进口电子元器件审批单", "广东省电子工业供销公司" or "深圳经济特区发展公司". He holds one up. "没有这东西，货到文锦渡就扣下；有了它，三极管就是生产资料，谁敢查？" He explains the profit: buy from Hong Kong at HK dollar, use批条 to clear customs, sell to state factories at domestic price. "一个三极管，香港进来成本不到一块钱，广州厂里愿意出八块十块。票子他们自己有，但他们缺的就是这个。" He taps the paper.
-
-Para10: He Zhiyuan holds a transistor in palm: black plastic cylinder with three metal legs. It's lighter than a纽扣. He thinks this tiny thing equals dozens of bowls of肠粉. He asks if it's legal. Zhao says "批文是真的，章是真的，货是真的。你说呢？" But the way he says suggests grey. He asks what he needs to do. Zhao says: "你跟着我跑两趟，学学接货、点数、送单。等你熟了，自己拿一联批条去提货，挣的归你，给我三成。" Or maybe for the 3000 test: "今晚有一批三极管从文锦渡到，你用三千押一车，明天早上我带你去福田交货，赚头一千五。"
-
-Para11: He notices tension. The fat man at gate mutters something, Zhao snaps briefcase shut. They hear a motorcycle outside; everyone freezes. Zhao gestures, they slip out a back door. In alley they see a police jeep with red light at the end; people scattering, boxes being dragged. "查仓的。" Zhao says calmly, "不是这一家。" They keep walking.
-
-Para12: Return trip. In truck cabin, Zhao lights another cigarette. Tells He: "这行吃饭，靠三样：眼快、嘴紧、心黑。你心不够黑，但手快。" He asks why Zhao picked him. Zhao: "老周说你卖粉，三个月没缺过斤两。这种人信得过。再说你没人，没户口，没单位，出了事也牵不出别人。" This unnerves He. He stares out at dark road.
-
-Para13: Back at铁皮屋, alone. He takes out the 1500 from waist, the hidden 1500 from floor. He counts again. 3000. The room hums from passing truck. He lights kerosene lamp. On wall he sees his shadow huge. He remembers the transistor in palm, the批条 red seal, the police jeep. He thinks of his father: "投机倒把，枪毙都活该." But also thinks of国贸大厦 rising. He lies down, puts money under pillow. Before sleep, he decides: go back tomorrow with all money.
-
-End with him not sleeping; outside a dog barks. The铁皮屋 door rattles. He reaches for something? The note? Maybe someone knocks. End on suspense: a knock at door, or he finds another note? Maybe no need. The chapter ends with him lying in dark, holding money, waiting. This leaves suspense: will he go?
-
-But the user said chapter 10 ending suspense, not this chapter. However each chapter can have tension. We'll end with unresolved immediate decision and a knock? A knock is good.
-
-Need ensure no meta, no summary.
-
-Let's write with adequate length. Keep sentences short, concrete.
-
-Let's produce final text. Check word count. We'll write around 2600-3000 characters. Use third-person limited.
-
-One concern: The heading should be exactly "## 第2章 老赵的批条". Then newline. The body follows. No extra blank lines? It's okay.
-
-Let's craft carefully. Ensure all details plausible: "的确是 "的确良" shirt; "人造革" briefcase; "公用水龙头"; "蛇口码头三号仓库" from note; "罗湖桥海关"; "文锦渡"; "批条".
-
-Let's also maybe include He noticing Zhao's briefcase has several批条 and a wad of港币. The title is 老赵的批条.
-
-Let's write now.
+Let's begin drafting.
 [/思考过程]
 
-## 第3章 第一单钢材
 
 门板又响了三下，不紧不慢，像在试里面的人睡没睡。
 
@@ -670,81 +745,64 @@ Let's write now.
 “贺德昌收了电视，也收了你的钱。快跑。”
 
 何志远盯着那行字，手慢慢攥紧。铁皮屋外，探照灯的光从远处扫过来，在墙上晃了一下，又灭了。
+## 第4章 彩电与河水
 
 [思考过程]
-We need generate chapter 3 of a Chinese novel. User gave detailed setting and prior chapters. Need output only chapter text, starting with markdown heading "## 第3章 第一单钢材". Need length 1500-99999, target 2500. Narrative should continue from chapter 2. The chapter title "第一单钢材". Need summary: He uses all savings as guarantee, follows Old Zhao to complete first planned steel quota order. Money comes fast, but he discovers batch note behind connects to factory supply/marketing chief and a Hitachi color TV. Need details, era realism, third-person limited close to He Zhiyuan. No meta, no explanation, no writing process, no summarization. Must not end all threads; keep suspense.
+We need write chapter 4 of provided novel. Need output only chapter 4 title and text. Need think: User provides detailed world, characters, prior chapters. Need continue immediately after chapter 3 ending. We must create chapter titled "彩电与河水" (Color TV and River Water). Must be 1500-99999 words; target 2500. Need use Markdown heading "## 第4章 彩电与河水". Tight third-person limited to He Zhiyuan. Narrative compact, details, suspense, psychological change. Need reflect era: dual-track prices, official profiteering, Shenzhen River smuggling, color TVs. Need include night transaction by Shenzhen River, first see Panasonic TVs in sack and dark Hong Kong fields. Need incorporate previous events: anonymous note warning He that He Dechang took TV and his money, maybe warning from someone. He has to make choices; chapter should push him into running documents and smuggling appliances, taste sweetness, quit odd jobs (already quit but now fully commits), and first river transaction. Need maintain language style: firm, crisp, era texture. No lyrical, use details and action. Ending with suspense maybe police raid or betrayal. Need not resolve all threads.
 
-We need invent coherent continuation: In prior chapter Zhao gave him choice: come back day after tomorrow night with money or not. Chapter 3 probably begins with He deciding, meeting Zhao at warehouse, going on deal. But summary says "第一单钢材" (first steel order), not electronics? World has dual-track steel quotas, planned steel. Need maybe Zhao says electronics batch is canceled/police raid and switches to steel? Maybe He meets someone at door (the knock at end ch2). Let's craft.
+Let's outline chapter 4. Start right after note under door. He Zhiyuan reads warning. He must decide: run? But he needs money, not run. He will seek Zhao Tiesheng maybe. Could go to Zhao. Or not trust note. Maybe it's from Zhou? Or someone trying to scare him. Need realistic: In 1984, official profiteering; He Dechang accepted bribe and He Zhiyuan's "deposit"? Wait note says "也收了你的钱" which is odd, because Zhao took deposit. Maybe note means He Dechang accepted bribe and He Zhiyuan's money is at risk? Actually previous note: "贺德昌收了电视，也收了你的钱。快跑。" Could be implying that He Dechang has been paid off but will also turn them in? Or He Dechang took He Zhiyuan's deposit? But he didn't give He Dechang money. Maybe note author mistakes. But He Zhiyuan might interpret as setup: He Dechang took the TV and the bribe money (Zhao's?), and is going to sell them out, so run.
 
-Need include accurate era details: prices, ration tickets, wage levels, Shenzhen in 1984. Steel planned price vs market price, batch note (批条), factory supply and marketing chief, Hitachi color TV bribe maybe. The chapter should show his psychology: thrill, then unease. He uses all 3000 as deposit/guarantee. The deal makes money fast. But he finds invoice tied to a factory supply section chief and a color TV, hinting corruption and risk.
+He can go to Zhao to warn or ask. Zhao maybe calm, says stay low, next job is TV sets via Shenzhen River. This chapter should show He Zhiyuan going to Zhao at盐田 old coal yard, with deposit. Or maybe first he investigates note. He could go to Zhao's warehouse #3 at Shekou at evening. The chapter should include him quitting whatever odd jobs he still had? In chapter 1 he sold breakfast; chapter 2 3 he already doing Zhao jobs. The summary says "尝到甜头后，他辞掉工地零工，专门跑批文和走私电器。" But he already quit breakfast. Maybe he had been still doing some construction odd jobs? Actually after chapter 1 he sold breakfast? Wait summary says he started street vending, then got involved. In ch1 he sold breakfast and quit. In ch2-3 he was doing Zhao jobs. Maybe "工地零工" refers to part-time construction; maybe he did a few odd jobs before breakfast? But by chapter 4 he has tasted profits from steel; now fully commits. Maybe he is summoned for a night deal at Shenzhen River with electronics (color TVs) smuggling. He needs to drop odd jobs. We can insert that he did one last day of loading at dock? Or still had a temporary job? The summary mentions 辞掉工地零工，专门跑批文和走私电器. We can have him earlier in chapter at码头扛包 (Liu Shuigen). But by chapter 4 he is already with Zhao. Maybe we can show him telling Liu Shuigen he won't do odd jobs anymore; or he helps Liu for half day then leaves after receiving news. But to align with summary, he needs to officially quit all remaining side jobs and become full-time runner. Perhaps he still kept a part-time dock job? In Chapter 1 he sold breakfast after construction; after selling breakfast he had no job except Zhao. But summary says he had a工地零工 maybe from original synopsis: He did construction, then breakfast, then steel. In our chapters, he did breakfast then steel. Could keep a minor job like he occasionally goes to construction site. But for consistency, perhaps he is still registered as a temporary worker at a site? Hmm.
 
-Let's outline:
+Maybe we can interpret: In chapter 1 he quit breakfast and didn't work construction. In chapter 2-3 he worked for Zhao but considered it temporary. Now in chapter 4, after the sweetness of 1500 yuan, he fully quits any pretense of legitimate work and commits to running documents and smuggling. He doesn't need an explicit construction job; "工地零工" can refer to Zhao's steel runs (as a runner). But the summary specifically says "专门跑批文和走私电器". So chapter should transition to electronics smuggling.
 
-- Start in tin shed at night after three knocks. He opens door to find a young woman? Actually from ch2 ending, knocks. Could be Zhao? Maybe it's a messenger, or someone else. To not derail, we can make it the next morning/afternoon leading to appointment. Maybe the knocks are from a boy delivering note from Zhao: location changed/time. But summary says "following Old Zhao completes first planned steel quota." Let's have next section: He wakes, knocks were from someone (maybe a kid) who gives note? Or he decides, at 7pm goes to warehouse. We can start directly at warehouse to avoid ch2 cliffhanger.
+Let's craft a plot:
 
-But we must keep continuity; readers saw knocks. We can resolve knocks as a neighbor? But no need mention? It might feel abrupt. Better start with him opening door, finding nothing but a folded paper with time/place? Or it's just a cat? That seems weak. Better make knocks meaningful: a short man gives him a message from Zhao: "明晚八点，盐田某处" and leaves. Or a woman? Hmm.
+- Night after note. He Zhiyuan sits in tin house, holding note, money under pillow. He doesn't sleep. Early morning, he goes to a public telephone? In 1984 phone scarce. Or he goes to盐田 old coal yard earlier than scheduled to find Zhao. But Zhao may not be there. Instead he goes to a construction site where Liu Shuigen works? Actually no. Maybe he goes to 周？老周 introduced him. But he doesn't know where老周 lives. Better: he goes to Shekou pier warehouse #3 where he first met Zhao, arriving at dusk as scheduled. There he meets Zhao, shows note. Zhao reads, burns it, says "有人想把你吓跑，这样他吃你的份。" Or "贺德昌那边没事，我昨晚又给他送了电视。" Then offers a bigger job: color TV sets from Hong Kong via Shenzhen River, no document, need to receive at riverbank and move to a warehouse in Nantou/Futian. Payment huge. He Zhiyuan agrees, bringing his 3000 deposit? Actually he has 4500. Zhao says for this one need 5000? He can use 3000. He invests 3000.
 
-Given chapter summary: "用全部积蓄做保证金，跟着老赵做成第一单计划内钢材指标。钱到手很快，但他发现批条背后连着工厂供销科长和一台日立彩电。" So the chapter begins with him making decision to use all savings. We can show him going to meet Zhao. The knocks could be a signal: He opens door, nobody, just a rusted tin can? No, let's incorporate: It's morning; after knocks, he opens door; a kid says "赵老板叫八点老地方，带齐钱" and runs off. That resolves.
+- Preparation: they drive to a spot along Shenzhen River near Lo Wu/文锦渡? At night. They wait in a dark field. On other side is Hong Kong Yuen Long, black. Suddenly a light flashes from opposite bank three times, answered by their side. A rubber boat or raft crosses with sacks. They unload onto a truck. He sees Panasonic color TV boxes in sacks, maybe 14-inch National/Panasonic. He touches one. The river smells, mosquitoes. Hong Kong side dark. Shenzhen side lit by construction. They load quickly. Then a dog barks, or a patrol flashlight. They scatter. Maybe the truck gets stopped? Or He is told to carry one TV on his back through fields to a road. He runs with a TV, falls into mud, the TV maybe breaks? He keeps going. Ends with him reaching a prearranged spot, but Zhao not there; instead a police jeep appears, or someone points a flashlight. Or he finds Zhao waiting but Zhao has a gun? Suspense.
 
-Then he takes all 3000 from under floorboard. He goes to warehouse. Zhao is there, not electronics but steel because police raid on electronics warehouse led him to switch. Zhao says Shenzhen electronic circuit is hot now; steel quota safer, profit less but quick. Need a factory in Dongguan? Let's set in Bao'an or Guangzhou? Could be a steel mill in Shaoguan? They travel to a small county/state-run factory supply section. They have a batch note for planned steel (e.g., 20 tons of rebar) at state price 600/ton, market price 1500/ton. He puts 3000 as guarantee to Zhao, who gives him the batch note and arranges delivery to a construction site in Shenzhen. They go to a state-run metal materials company, see the supply section chief who signs release. Maybe he sees a Hitachi color TV in the office (bribe). They drive to a warehouse in Buji? Then deliver to buyer (a construction team in Luohu) at market price, get cash. He gets profit maybe 1500 or 2000 immediately. But at the end, back at Zhao's place, he notices a delivery slip or receipt with factory supply section chief's name and a note "日立彩电 14寸 1台" plus invoice, implying the chief got TV for the batch. He realizes the corruption web.
+Need include his psychological shift: he chose this, not because he likes crime, but because era leaves no path. Show calculations: 4500 vs wages. Color TV profit maybe each set cost 800 HK? sell 2000 RMB? Huge. He realizes the risks but sees no alternative. The anonymous note triggers fear but also pushes him to double down? Or he thinks of running away but has no home. Need reflect his father's voice, his own rationalization.
 
-Need details: currency: 3000 yuan, state rebar price maybe 550 yuan per ton, market 1300. Profit per ton 750. 20 tons profit 15000. He gets maybe 2000? Let's be plausible. In 1984, monthly wage ~50, steel price in plan ~600-700/ton, market 1200-1500/ton. A 14-inch Hitachi color TV cost ~1500-2000 yuan. So a TV is a significant bribe.
+Need era details: 1984 Shenzhen, two-track price, foreign exchange certificates, "官倒", Panasonic TV (National/Panasonic), Shenzhen River, border fence, Yuen Long fields dark, Shenzhen lit by searchlights, barbed wire, patrol, mosquito, smell of river, mud, humidity. Wages: state worker monthly ~50-80, a color TV costs ~1500-2000 RMB or black-market price. Smuggled TVs from Hong Kong. Document details: maybe Zhao has a "进口电视机审批单" but not enough, so they smuggle the rest. Maybe they mix legal and illegal.
 
-They need a truck. Maybe use a chartered agricultural vehicle or borrow a friend's truck. Zhao has a "合同工" driver. They go to a materials company in Longgang/Huiyang? Maybe better in Shenzhen's Bao'an county: the "宝安县金属材料公司". The supply section chief signs the release note. In the office, there's a brand-new Hitachi TV still in box? Or the chief's family takes it? He sees it on a receipt later.
+Need avoid being too explicit on law? But fine.
 
-Let's craft prose style: concrete, terse, period texture, no lyrical. Use Cantonese/Mandarin slang era: 批条，计划内，指标，供销科，厂长，外汇券，粮票，工业券. Details: old truck, dust, ration coupons? Steel quotas maybe require "钢材票" or allocation certificates. Maybe the buyer pays in cash and a "水泥票"? We can avoid overcomplicating.
+Need also ensure no extra content beyond chapter. Output begins with "## 第4章 彩电与河水". Then text. No summary, no meta. Let's write around 2500 Chinese characters? The target says 2500 words (1500-99999). The Chinese word count generally equals characters. We should aim ~2500 Chinese characters. Let's plan content length.
 
-Need length ~2500 Chinese characters. We'll aim about 2400-2800.
+Let's structure:
 
-Let's write in sections: Opening with knocks and message; preparing money; going to warehouse; Zhao explains steel deal; trip to materials company; seeing the chief and TV; loading truck; delivery and payment; return and discovery of receipt; ending with Zhao giving him cash but also a warning, leaving suspense.
+1. The note under the door. He reads, doesn't sleep. He folds note, keeps it. Morning he decides not to run because he has no place to go. He counts money: 4500. He wraps 3000 to take. He goes to a noodle stall for breakfast; sees police? Or sees a man watching? Suspense.
 
-Ensure third-person limited: only He Zhiyuan's perceptions. But he can infer Zhao's mood. Keep close.
+2. He goes to Shekou pier warehouse #3 at night, as previously arranged? Actually he was told next Wed. But after note, he might go earlier? That could create conflict: he arrives early, Zhao not there, only the driver? Better to stick to time: he goes Wednesday evening, as scheduled, with money. Or perhaps the note is from Zhao's rival, and Zhao has moved location. To incorporate the note, maybe he arrives at warehouse #3 but it's empty, and a kid gives him a new address: Shenzhen River. This creates suspense.
 
-Let's think about the knock at end of ch2. It is night after 11pm. He hears footsteps stop and three knocks. He grips money. In ch3, he opens the door to find a thin boy (maybe a ragged child) who says: "赵老板说的，明晚八点，盐田旧煤场，过时不候。" Then runs. Or maybe gives a scrap. This would be at nearly midnight. It creates paranoia. Then he can't sleep.
+Let's incorporate summary: He quits all remaining odd jobs. Maybe before going, he passes by Liu Shuigen at dock and tells him he won't be coming back, gives him the tin house key? Hmm. In chapter 1 he sold cart; no construction job. We can create a minor part-time: after the steel run, he had taken a two-day unloading job at Shekou dock to pass time? Actually he wouldn't because he made 1500. But summary says "尝到甜头后，他辞掉工地零工"—so maybe he did have a construction odd job between steel runs. We can have a short scene where he works a half day hauling cement at a site and then quits after Zhao sends word. But must fit chapter. Could start with him on a construction site at dawn, carrying steel bars, then someone tells him "赵老板找你". He quits, gets unpaid wages? That shows him leaving legitimate work. Yes, summary: "尝到甜头后，他辞掉工地零工，专门跑批文和走私电器。" So at beginning of chapter 4, he can be at a construction site doing odd labor. It fits: after first steel deal, he still had a casual site job? But with 4500 yuan, why? Maybe because next Zhao job is a week later and he doesn't want to sit idle, so he took a temporary dock/construction job for 2.5/day? That fits his character—cautious, doesn't know if Zhao will call again. But after tasting 1500, carrying steel for 2.5 is unbearable. So he quits.
 
-But summary says he uses all savings as margin, follows Zhao to do first order. Time jumps could be next evening. We'll show him counting money in morning, hiding nothing, then going.
+Let's start: He didn't sleep; at dawn, he goes to a construction site at Shekou/Lo Wu? He registers as a casual laborer, carries steel. Foreman pays daily. During work, the same barefoot boy appears: "赵老板叫你，今晚八点，深圳河北岸，旧渡口。" He quits, foreman scolds and withholds half-day wage. He returns tin house, bathes, counts money. He wraps 3000 into a bag, puts rest hidden. Then goes.
 
-Let's decide the meeting location changes from Shekou to Yantian coal yard because police raid. Zhao doesn't trust phone, sends messenger.
+This addresses summary nicely. We can also show Liu Shuigen? Maybe not necessary. But a construction site scene with details.
 
-Let's start writing.
+Then he meets Zhao. Where? They drive to Shenzhen River. Could be at a spot near 文锦渡 or 罗湖桥. They wait in dark. The driver and a new guy "瘦高个". Maybe Zhao gives him a cigarette. They discuss the note: He shows it; Zhao laughs and burns it, says "贺德昌要是不收钱，咱才该跑。" This confirms official corruption. But also foreshadows betrayal.
 
-Potential issue: The prior ch2 ended with warehouse electronics police raid, Zhao said "后天晚上七点，三号仓库。带不带钱，你自己想。" That was the appointment. But ch3 summary says first steel order. We can have Zhao at warehouse tell him electronics line is paused; switch to steel. But if the messenger changes location, fine.
+Then the river crossing. Description: black water, smell, mosquitoes, barbed wire on far bank, Hong Kong side dark, Shenzhen side lights. Flashlight signals. A raft with outboard motor appears, low in water, loaded with sacks. They unload onto truck. He sees a Panasonic TV box when a sack tears. The driver says hush. The price: each set cost 1200 HKD? They will sell for 2600 RMB. He realizes one TV equals his three years wages? Actually a worker's annual wage maybe 800, so one TV maybe 2000 = 2.5 years. Good.
 
-Also, the summary says "钱到手很快". So after doing deal, he gets money quickly.
+Maybe there's a near-miss: border patrol flashlight from Hong Kong side? Or Shenzhen patrol. They hide. A dog barks. They must move fast. They load 30 sets. Then the truck can't go by road because of checkpoint, so they divide: He and another guy carry two sets each across a muddy path to a van waiting on a road. During this, he slips, one TV falls into mud. The screen maybe not broken because boxed. He picks it up; mud on box. They reach the van. Zhao pays him on spot? Or promises.
 
-Let's write in Chinese. We'll be careful with no meta.
+Ending suspense: As they finish loading, headlights appear; not the van, a jeep. They scatter into fields. He runs with a TV, perhaps toward the tin house? Or hides in a drainage ditch. The chapter ends with him crouched in reeds, holding the TV, watching the jeep's red tail lights, and the realization he is now fully in it. Or he reaches the drop point and finds Zhao waiting with a gun? Maybe better: after escaping, he arrives at the warehouse, but the door is padlocked and there is a fresh chalk mark? Or someone follows him.
 
-Potential terms:
-- 批条： hand-written approval note on official letterhead, with red seal.
-- 计划内钢材指标： planned allocation of steel, e.g., 县农机厂急需的钢材， but they are reselling.
-- 保证金： He gives Zhao all 3000 as guarantee that he won't run away with the batch note or the steel. Zhao says "批条值大钱，你押钱在我这，货卖了本金还你，利分你两成/三成".
-- Actually summary: "用全部积蓄做保证金" means his 3000 serves as deposit. He doesn't use it to buy steel; he uses it to secure the batch note and delivery.
-- Price: They get 30 tons of 6.5mm wire rod at planned price 520 yuan/ton = 15,600. Market buyer pays 1380/ton = 41,400. Gross profit 25,800. Zhao gives him maybe 3000? Let's compute. If Zhao promised "利分你两成": 5160. Plus return deposit 3000 => 8160. Too much? But "钱到手很快" and he discovers corruption. He ends up with maybe 4800? But he had 3000, now 5500? It can be ambiguous. For realism, small-time runner gets maybe 10-15%. Zhao might give him 800 plus deposit back? But he used all savings as guarantee; maybe the profit is big but he only gets a cut. Let's set Zhao gives him 2200 as his share, plus returns 3000? That would more than double. Or Zhao returns his 3000 plus 1500 profit. That fits "钱到手很快".
+We need leave cliffhanger. The note earlier warned "快跑". At end, perhaps he sees Zhao's driver talking to a man in uniform; or he returns to tin house and finds the door broken, his hidden money gone/present? Hmm. Since chapter 4 is a middle chapter, we can end with him being left alone by the river with a single TV and Zhao's truck gone, while a patrol jeep approaches. That's suspense.
 
-But the summary says "用全部积蓄做保证金" not "投资". So after deal, Zhao returns the 3000 and gives him commission. However in previous ch2 Zhao said "一千五算入股" for electronics. For steel, he uses all 3000 as guarantee and maybe Zhao covers purchase capital. The 3000 ensures he doesn't abscond. After successful run, he gets 3000 back plus share. But if he loses the batch/steel, he loses all. That raises stakes.
+But maybe more aligned with summary: The night transaction is the climax of this chapter. After the transaction, he sees the dark fields of Hong Kong and the lit Shenzhen. Then a patrol appears. End. Let's decide.
 
-Let's make the deal: Zhao has a batch note for 25 tons of 6.5mm wire rod allocated to "惠阳县农机公司". He needs someone to take the batch note and driver's license to the materials company warehouse, load the steel, and deliver to a buyer in Shenzhen. He doesn't want to show his own face because the supply section chief knows him and wants to keep distance. He uses He as front. He gives all 3000 as deposit to Zhao. They go together.
+Let's craft detailed scenes with sensory details: mud, mosquitoes, river smell, diesel, rope burns, weight of TV, Panasonic box art, "Panasonic" roman letters, made in Japan. Use era details: 外汇券, 电视机票? Wait color TV required ticket in mainland. Smuggled sets avoid tickets. Price: In 1984, a 14-inch domestic color TV maybe 1000+ RMB but scarce; imported Panasonic maybe 2000-2500. A worker's monthly wage 50-70. A bowl of noodles 0.2. A pack of cigarettes 0.08. Use such details.
 
-At the warehouse, He sees the supply section chief, middle-aged man in white shirt, sweaty, signs the release. In the corner of the office, a Hitachi 14-inch color TV in its carton, with a handwritten slip "贺科长笑纳" or on the receipt. Maybe He notices the box because he has seen such TVs in shops costing 1600. The chief signs quickly, not checking IDs. Outside, they load the truck at planned price? Actually they need pay the materials company at planned price? Who pays? Zhao gives He an envelope with cash (maybe from buyer advance) to pay? The purchase price is lower. Maybe the factory materials company is a state entity; they pay official price to warehouse? But the batch note itself is allocated to a factory, so they can draw the steel at state price; they need to present the note and pay. Zhao provides cash for purchase. The profit is the difference between state and market price.
+Need keep third-person limited close to He Zhiyuan's perceptions. Show his inner thoughts: calculations, fear, rationalization, memory of father. Not lyrical but crisp.
 
-Could be simplified: They arrive at "宝安县金属材料公司" storage yard, show the batch note, a clerk weighs and loads. Zhao hands over a thick envelope (planned price payment) to the clerk? Actually purchase price maybe not paid to the company if it's allocated; but in planned economy, state allocation requires payment at planned price, so yes.
+Let's write. We need to produce around 2500 Chinese characters. Let's aim 2300-2600. Need use no headings except chapter title. Use paragraphs.
 
-Then they drive to Longgang construction site? Let's set buyer is a construction team building a factory in Bao'an, willing to pay market price in cash. They unload, the foreman pays Zhao in a canvas bag. They drive back. Zhao counts and gives He his share.
-
-At the end, in the truck or warehouse, He finds a crumpled slip from the envelope/receipt: it lists "日立牌14吋彩色电视机壹台" and the name of the supply section chief, with a phone number. Maybe it's a delivery note from the morning, indicating Zhao bribed the chief with TV. He realizes the batch note isn't just paper; it's bought.
-
-The chapter ends with Zhao saying: "这趟跑顺了，下礼拜还有一船。" Or maybe warning: "这台电视，看见了也当没看见。" Then a phone rings? Or a knock? Leave suspense.
-
-Need include sensory details: heat, dust, diesel smell, the truck (a 130 light truck? Jiefang?), scale, steel coils, rebar, cash counting, the Hitachi box, sounds of industrial Shenzhen, border feeling.
-
-Let's ensure era details: In 1984 Shenzhen, Bao'an County still existed; Yantian is part of Shenzhen? Actually Yantian port area developed later. Could be "盐田墟". Use it. The metals company might be "宝安县物资局金属公司". Good.
-
-Need no prose process. Just output the heading and text.
-
-Let's begin drafting.
+Let's draft in Chinese now.
 [/思考过程]
 
-## 第4章 彩电与河水
 
 何志远没睡到天亮。
 
@@ -989,214 +1047,7 @@ Let's begin drafting.
 远处，一辆货柜车正轰隆隆驶过，车灯从他脸上扫过去。
 
 他没有开门。
-
-[思考过程]
-We need write chapter 4 of provided novel. Need output only chapter 4 title and text. Need think: User provides detailed world, characters, prior chapters. Need continue immediately after chapter 3 ending. We must create chapter titled "彩电与河水" (Color TV and River Water). Must be 1500-99999 words; target 2500. Need use Markdown heading "## 第4章 彩电与河水". Tight third-person limited to He Zhiyuan. Narrative compact, details, suspense, psychological change. Need reflect era: dual-track prices, official profiteering, Shenzhen River smuggling, color TVs. Need include night transaction by Shenzhen River, first see Panasonic TVs in sack and dark Hong Kong fields. Need incorporate previous events: anonymous note warning He that He Dechang took TV and his money, maybe warning from someone. He has to make choices; chapter should push him into running documents and smuggling appliances, taste sweetness, quit odd jobs (already quit but now fully commits), and first river transaction. Need maintain language style: firm, crisp, era texture. No lyrical, use details and action. Ending with suspense maybe police raid or betrayal. Need not resolve all threads.
-
-Let's outline chapter 4. Start right after note under door. He Zhiyuan reads warning. He must decide: run? But he needs money, not run. He will seek Zhao Tiesheng maybe. Could go to Zhao. Or not trust note. Maybe it's from Zhou? Or someone trying to scare him. Need realistic: In 1984, official profiteering; He Dechang accepted bribe and He Zhiyuan's "deposit"? Wait note says "也收了你的钱" which is odd, because Zhao took deposit. Maybe note means He Dechang accepted bribe and He Zhiyuan's money is at risk? Actually previous note: "贺德昌收了电视，也收了你的钱。快跑。" Could be implying that He Dechang has been paid off but will also turn them in? Or He Dechang took He Zhiyuan's deposit? But he didn't give He Dechang money. Maybe note author mistakes. But He Zhiyuan might interpret as setup: He Dechang took the TV and the bribe money (Zhao's?), and is going to sell them out, so run.
-
-He can go to Zhao to warn or ask. Zhao maybe calm, says stay low, next job is TV sets via Shenzhen River. This chapter should show He Zhiyuan going to Zhao at盐田 old coal yard, with deposit. Or maybe first he investigates note. He could go to Zhao's warehouse #3 at Shekou at evening. The chapter should include him quitting whatever odd jobs he still had? In chapter 1 he sold breakfast; chapter 2 3 he already doing Zhao jobs. The summary says "尝到甜头后，他辞掉工地零工，专门跑批文和走私电器。" But he already quit breakfast. Maybe he had been still doing some construction odd jobs? Actually after chapter 1 he sold breakfast? Wait summary says he started street vending, then got involved. In ch1 he sold breakfast and quit. In ch2-3 he was doing Zhao jobs. Maybe "工地零工" refers to part-time construction; maybe he did a few odd jobs before breakfast? But by chapter 4 he has tasted profits from steel; now fully commits. Maybe he is summoned for a night deal at Shenzhen River with electronics (color TVs) smuggling. He needs to drop odd jobs. We can insert that he did one last day of loading at dock? Or still had a temporary job? The summary mentions 辞掉工地零工，专门跑批文和走私电器. We can have him earlier in chapter at码头扛包 (Liu Shuigen). But by chapter 4 he is already with Zhao. Maybe we can show him telling Liu Shuigen he won't do odd jobs anymore; or he helps Liu for half day then leaves after receiving news. But to align with summary, he needs to officially quit all remaining side jobs and become full-time runner. Perhaps he still kept a part-time dock job? In Chapter 1 he sold breakfast after construction; after selling breakfast he had no job except Zhao. But summary says he had a工地零工 maybe from original synopsis: He did construction, then breakfast, then steel. In our chapters, he did breakfast then steel. Could keep a minor job like he occasionally goes to construction site. But for consistency, perhaps he is still registered as a temporary worker at a site? Hmm.
-
-Maybe we can interpret: In chapter 1 he quit breakfast and didn't work construction. In chapter 2-3 he worked for Zhao but considered it temporary. Now in chapter 4, after the sweetness of 1500 yuan, he fully quits any pretense of legitimate work and commits to running documents and smuggling. He doesn't need an explicit construction job; "工地零工" can refer to Zhao's steel runs (as a runner). But the summary specifically says "专门跑批文和走私电器". So chapter should transition to electronics smuggling.
-
-Let's craft a plot:
-
-- Night after note. He Zhiyuan sits in tin house, holding note, money under pillow. He doesn't sleep. Early morning, he goes to a public telephone? In 1984 phone scarce. Or he goes to盐田 old coal yard earlier than scheduled to find Zhao. But Zhao may not be there. Instead he goes to a construction site where Liu Shuigen works? Actually no. Maybe he goes to 周？老周 introduced him. But he doesn't know where老周 lives. Better: he goes to Shekou pier warehouse #3 where he first met Zhao, arriving at dusk as scheduled. There he meets Zhao, shows note. Zhao reads, burns it, says "有人想把你吓跑，这样他吃你的份。" Or "贺德昌那边没事，我昨晚又给他送了电视。" Then offers a bigger job: color TV sets from Hong Kong via Shenzhen River, no document, need to receive at riverbank and move to a warehouse in Nantou/Futian. Payment huge. He Zhiyuan agrees, bringing his 3000 deposit? Actually he has 4500. Zhao says for this one need 5000? He can use 3000. He invests 3000.
-
-- Preparation: they drive to a spot along Shenzhen River near Lo Wu/文锦渡? At night. They wait in a dark field. On other side is Hong Kong Yuen Long, black. Suddenly a light flashes from opposite bank three times, answered by their side. A rubber boat or raft crosses with sacks. They unload onto a truck. He sees Panasonic color TV boxes in sacks, maybe 14-inch National/Panasonic. He touches one. The river smells, mosquitoes. Hong Kong side dark. Shenzhen side lit by construction. They load quickly. Then a dog barks, or a patrol flashlight. They scatter. Maybe the truck gets stopped? Or He is told to carry one TV on his back through fields to a road. He runs with a TV, falls into mud, the TV maybe breaks? He keeps going. Ends with him reaching a prearranged spot, but Zhao not there; instead a police jeep appears, or someone points a flashlight. Or he finds Zhao waiting but Zhao has a gun? Suspense.
-
-Need include his psychological shift: he chose this, not because he likes crime, but because era leaves no path. Show calculations: 4500 vs wages. Color TV profit maybe each set cost 800 HK? sell 2000 RMB? Huge. He realizes the risks but sees no alternative. The anonymous note triggers fear but also pushes him to double down? Or he thinks of running away but has no home. Need reflect his father's voice, his own rationalization.
-
-Need era details: 1984 Shenzhen, two-track price, foreign exchange certificates, "官倒", Panasonic TV (National/Panasonic), Shenzhen River, border fence, Yuen Long fields dark, Shenzhen lit by searchlights, barbed wire, patrol, mosquito, smell of river, mud, humidity. Wages: state worker monthly ~50-80, a color TV costs ~1500-2000 RMB or black-market price. Smuggled TVs from Hong Kong. Document details: maybe Zhao has a "进口电视机审批单" but not enough, so they smuggle the rest. Maybe they mix legal and illegal.
-
-Need avoid being too explicit on law? But fine.
-
-Need also ensure no extra content beyond chapter. Output begins with "## 第4章 彩电与河水". Then text. No summary, no meta. Let's write around 2500 Chinese characters? The target says 2500 words (1500-99999). The Chinese word count generally equals characters. We should aim ~2500 Chinese characters. Let's plan content length.
-
-Let's structure:
-
-1. The note under the door. He reads, doesn't sleep. He folds note, keeps it. Morning he decides not to run because he has no place to go. He counts money: 4500. He wraps 3000 to take. He goes to a noodle stall for breakfast; sees police? Or sees a man watching? Suspense.
-
-2. He goes to Shekou pier warehouse #3 at night, as previously arranged? Actually he was told next Wed. But after note, he might go earlier? That could create conflict: he arrives early, Zhao not there, only the driver? Better to stick to time: he goes Wednesday evening, as scheduled, with money. Or perhaps the note is from Zhao's rival, and Zhao has moved location. To incorporate the note, maybe he arrives at warehouse #3 but it's empty, and a kid gives him a new address: Shenzhen River. This creates suspense.
-
-Let's incorporate summary: He quits all remaining odd jobs. Maybe before going, he passes by Liu Shuigen at dock and tells him he won't be coming back, gives him the tin house key? Hmm. In chapter 1 he sold cart; no construction job. We can create a minor part-time: after the steel run, he had taken a two-day unloading job at Shekou dock to pass time? Actually he wouldn't because he made 1500. But summary says "尝到甜头后，他辞掉工地零工"—so maybe he did have a construction odd job between steel runs. We can have a short scene where he works a half day hauling cement at a site and then quits after Zhao sends word. But must fit chapter. Could start with him on a construction site at dawn, carrying steel bars, then someone tells him "赵老板找你". He quits, gets unpaid wages? That shows him leaving legitimate work. Yes, summary: "尝到甜头后，他辞掉工地零工，专门跑批文和走私电器。" So at beginning of chapter 4, he can be at a construction site doing odd labor. It fits: after first steel deal, he still had a casual site job? But with 4500 yuan, why? Maybe because next Zhao job is a week later and he doesn't want to sit idle, so he took a temporary dock/construction job for 2.5/day? That fits his character—cautious, doesn't know if Zhao will call again. But after tasting 1500, carrying steel for 2.5 is unbearable. So he quits.
-
-Let's start: He didn't sleep; at dawn, he goes to a construction site at Shekou/Lo Wu? He registers as a casual laborer, carries steel. Foreman pays daily. During work, the same barefoot boy appears: "赵老板叫你，今晚八点，深圳河北岸，旧渡口。" He quits, foreman scolds and withholds half-day wage. He returns tin house, bathes, counts money. He wraps 3000 into a bag, puts rest hidden. Then goes.
-
-This addresses summary nicely. We can also show Liu Shuigen? Maybe not necessary. But a construction site scene with details.
-
-Then he meets Zhao. Where? They drive to Shenzhen River. Could be at a spot near 文锦渡 or 罗湖桥. They wait in dark. The driver and a new guy "瘦高个". Maybe Zhao gives him a cigarette. They discuss the note: He shows it; Zhao laughs and burns it, says "贺德昌要是不收钱，咱才该跑。" This confirms official corruption. But also foreshadows betrayal.
-
-Then the river crossing. Description: black water, smell, mosquitoes, barbed wire on far bank, Hong Kong side dark, Shenzhen side lights. Flashlight signals. A raft with outboard motor appears, low in water, loaded with sacks. They unload onto truck. He sees a Panasonic TV box when a sack tears. The driver says hush. The price: each set cost 1200 HKD? They will sell for 2600 RMB. He realizes one TV equals his three years wages? Actually a worker's annual wage maybe 800, so one TV maybe 2000 = 2.5 years. Good.
-
-Maybe there's a near-miss: border patrol flashlight from Hong Kong side? Or Shenzhen patrol. They hide. A dog barks. They must move fast. They load 30 sets. Then the truck can't go by road because of checkpoint, so they divide: He and another guy carry two sets each across a muddy path to a van waiting on a road. During this, he slips, one TV falls into mud. The screen maybe not broken because boxed. He picks it up; mud on box. They reach the van. Zhao pays him on spot? Or promises.
-
-Ending suspense: As they finish loading, headlights appear; not the van, a jeep. They scatter into fields. He runs with a TV, perhaps toward the tin house? Or hides in a drainage ditch. The chapter ends with him crouched in reeds, holding the TV, watching the jeep's red tail lights, and the realization he is now fully in it. Or he reaches the drop point and finds Zhao waiting with a gun? Maybe better: after escaping, he arrives at the warehouse, but the door is padlocked and there is a fresh chalk mark? Or someone follows him.
-
-We need leave cliffhanger. The note earlier warned "快跑". At end, perhaps he sees Zhao's driver talking to a man in uniform; or he returns to tin house and finds the door broken, his hidden money gone/present? Hmm. Since chapter 4 is a middle chapter, we can end with him being left alone by the river with a single TV and Zhao's truck gone, while a patrol jeep approaches. That's suspense.
-
-But maybe more aligned with summary: The night transaction is the climax of this chapter. After the transaction, he sees the dark fields of Hong Kong and the lit Shenzhen. Then a patrol appears. End. Let's decide.
-
-Let's craft detailed scenes with sensory details: mud, mosquitoes, river smell, diesel, rope burns, weight of TV, Panasonic box art, "Panasonic" roman letters, made in Japan. Use era details: 外汇券, 电视机票? Wait color TV required ticket in mainland. Smuggled sets avoid tickets. Price: In 1984, a 14-inch domestic color TV maybe 1000+ RMB but scarce; imported Panasonic maybe 2000-2500. A worker's monthly wage 50-70. A bowl of noodles 0.2. A pack of cigarettes 0.08. Use such details.
-
-Need keep third-person limited close to He Zhiyuan's perceptions. Show his inner thoughts: calculations, fear, rationalization, memory of father. Not lyrical but crisp.
-
-Let's write. We need to produce around 2500 Chinese characters. Let's aim 2300-2600. Need use no headings except chapter title. Use paragraphs.
-
-Let's draft in Chinese now.
-[/思考过程]
-
 ## 第5章 官倒的价码
-
-何志远没有立刻开门。
-
-他贴着门缝站了约莫一袋烟工夫，直到外头有穿校服的孩童跑过，嘴里念着拼音。那声音脆生生的，像一把小石子落在铁皮屋顶上。他竖起耳朵，听着脚步声由近及远，混进巷口卖豆浆的梆子声里，这才松了半口气。
-
-这间屋子是他去年秋天租下的，在城西老棉纺厂后头的杂院。院子原是工厂的仓库，后来改成了单身宿舍，住着拉板车的、修自行车的、在菜市场摆摊的，什么人都有。房东是个退休女工，姓刘，一只眼睛不好，看人时总歪着头。每月十五号收租，从未提前来过。
-
-他把帆布挎包从肩上卸下来，攥在手里，另一只手从墙根摸起半截锈钢筋，用脚尖把门顶开。
-
-门轴吱呀一声，像是有人从里头呻吟。何志远没急着迈腿，先让门敞开半边，自己侧身贴在门框上，借着外头的天光往里瞧。屋里的气味先涌出来——煤油、汗酸、墙缝里霉烂的木屑味，还有一股说不清的腥甜，像是耗子死在了什么角落。
-
-屋里比外头还闷。
-
-铁皮桶倒了，桶沿磕出几个新印子，在泥地上划出浅浅的沟。煤油灯滚在墙角，灯罩裂成两半，玻璃碴子撒了一地，被进门的风一吹，亮晶晶地闪。床板被撬起一块，露出发黑的稻草和几根锈钉子。褥子掀到地上，沾了半块泥脚印，看那大小，是个穿四十二码解放鞋的男人。枕头裂开一道口子，荞麦皮撒了一地，像谁在这屋里下了一场小雪。
-
-何志远的心猛地一沉。
-
-他先没进去，站在门口扫了一圈。灶台上那口铝锅扣着，旁边两只碗摞得整整齐齐——这不是他早上出门时的样子。他记得清楚，自己临走前喝了一碗凉水，碗是反扣在锅台上的，碗底还留着一个湿印子。现在那两只碗却正扣着，像是有人故意摆回原位，又摆得太过规矩。
-
-他又看墙角。那只装旧衣服的破木箱被挪过，箱底的煤灰拖出一道弧形的印子，停在离原处两寸远的地方。箱盖没锁，露出里头一件洗得发白的军绿色棉袄。那是他当兵时穿过的，袖口还补着块蓝布。搜的人显然翻过了，又觉得一件旧棉袄不值什么，随手扔了回去。
-
-何志远这才走进去。
-
-脚下的荞麦皮被踩得咯吱作响。他绕过铁皮桶，走到床前，把那块没被撬动的木板掀开。木板下面有一个浅坑，是他用半个月晚上偷偷刨出来的，坑里垫着一层塑料布，塑料布上端端正正放着一个蓝布包。
-
-蓝布包还在。
-
-他用两根手指捏住布包一角，轻轻提起来，又抖了抖。里头的报纸包着的钱还在。他把布包放在膝上，一层一层揭开——最外层是蓝布，中间是两张《人民日报》，里头是牛皮纸，牛皮纸再打开，露出一叠整整齐齐的钞票。十元一张，一百五十张，一千五，一张不少。
-
-他长长地吐出一口气，这才觉得后背的汗已经湿透衬衫，风从门缝灌进来，凉飕飕地贴着脊梁。
-
-可这事没完。
-
-他又摸了摸挎包。那五千块是昨晚赵铁生在河边给他的，还没离身。赵铁生是他部队上的老班长，退伍后分到县物资局当司机，专门给局长开车。这五千块不是小数目，赵铁生说是他攒了五年的老婆本，借给何志远"翻本"用。何志远当时站在河堤上，听着水拍岸的声音，接过那包钱时手都在抖。他知道这钱烫手，可他也知道，没有这钱，他连"官倒"的门朝哪边开都摸不着。
-
-"官倒"这个词，是去年冬天他在火车站听一个穿呢子大衣的人说的。那人抽着带过滤嘴的烟，跟旁边的人说，现在钢材紧张，有计划内计划外之分，计划内的价低，计划外的价高，中间隔着一条河。谁能从河里捞一把，谁就能发大财。何志远当时蹲在一边啃馒头，听得入了神。后来他找赵铁生打听，赵铁生犹豫了好几天，才吐出一句话："局里的刘科长手里有批条，一张条子能提二十吨钢材，每吨差价三百。你想要，得先送礼。"
-
-送礼。送什么？送钱。
-
-他解开皮带，把钱取出来，和蓝布包并在一起，重新数了一遍：六千五。
-
-钞票是新崭崭的，还带着银行捆钱的纸条。他把钱分成三叠，一叠一千五，是他自己的本钱；一叠三千，是准备送给刘科长的；剩下两千，是留给中间人老张的跑腿费和"茶水钱"。六千五百块，一分一厘都不能差。
-
-数完钱，他没立刻收起来。他坐在床沿上，把那半截锈钢筋横在膝头，眼睛盯着地上的荞麦皮。
-
-是谁来过？
-
-他第一个想到的是房东刘婶。可刘婶那只坏眼虽然歪，人心却不坏，收租时从不进他屋。再说她一个寡妇，要翻也翻不出什么名堂。
-
-第二个想到的是隔壁卖豆腐的王老三。王老三每天晚上打呼噜，白天推着车沿街叫卖，哪有这闲工夫？而且他那双手只会磨豆腐，撬床板这种事，他做不来。
-
-第三个想到的是码头上的疤脸刘。上个月何志远从他手里赊过一批木料，说好月底结账，可他现在手里攥着的是钢材批条的生意，木料的事被他搁在了一边。疤脸刘放出话来，说何志远要是赖账，就让他"在城里待不下去"。可疤脸刘那帮人做事粗鲁，真要搜屋，早就把屋顶掀了，不会只撬一块床板。
-
-还有一种可能，何志远最不愿意想，却越想越觉得像。
-
-那就是刘科长那边的人。
-
-赵铁生说帮他牵线，可赵铁生也说过，刘科长这人胃口大，心眼多，办事之前喜欢"摸摸对方的底"。也许刘科长派人来，就是想看看他何志远手里到底有多少本钱，值不值得把批条卖给他。这种"摸底"不偷钱，只翻屋，翻完了还要把东西摆回原样，装作没来过，好让买卖双方面上都过得去。
-
-可如果真是这样，那这"官倒"的价码就不仅仅是钱了。
-
-何志远低头看着膝上的钞票。六千五百块，在普通工人眼里是十年的工资，在刘科长眼里也许只是一顿饭钱。他要拿这些钱去买一张批条，批条到手后再去钢厂提货，提到货后倒卖给乡镇企业，一倒手就能赚六七千。可万一批条是假的，万一钢厂不认，万一货运到半道被人截住，他何志远就什么都没了，连赵铁生的老婆本都得赔进去。
-
-他把手掌按在钱上，掌心被纸币的边角硌得生疼。
-
-外头忽然传来一阵脚步声，停在门口。
-
-何志远浑身一紧，攥住锈钢筋，把钱往身后一推。他盯着那扇半开的门，看见一个影子投在地上，拉得很长。
-
-"何哥？在屋呢？"
-
-是赵铁生的声音。
-
-何志远没有立刻应声。他先把钱胡乱塞进蓝布包，又塞进床板下的坑里，把木板盖回去，用脚把地上的荞麦皮往床边踢了踢，这才站起身，把锈钢筋别在腰后。
-
-"在呢，门没锁。"
-
-赵铁生推门进来，一眼看见屋里的狼藉，脸色变了。
-
-"这是……遭贼了？"
-
-何志远摇摇头，又点点头："来过了，钱没丢。"
-
-赵铁生愣了一下，随即明白过来。他反手把门带上，压低声音："刘科长那边？"
-
-"说不准。"何志远从兜里摸出烟盒，抖出一根皱巴巴的烟，"也可能是疤脸刘，也可能是别的什么人。"
-
-赵铁生接过烟，没点，在手里捻着："那批条的事，还办不办？"
-
-何志远把火柴划着，凑到赵铁生烟前。火光映着两个人的脸，一跳一跳的。
-
-"办。"他说，"都到这份上了，不办也得办。六千五，一分没动，全在这儿。你告诉刘科长，我要见他。"
-
-赵铁生深深地看了他一眼，把烟点上，猛吸一口："志远，你可要想清楚。这'官倒'的买卖，做好了能翻身，做不好……"
-
-"做不好就是个死。"何志远替他把话说完，嘴角扯出一个笑，"老班长，我爹临死前跟我说，穷死也是死，饿死也是死，横竖都是死，不如搏一把。"
-
-赵铁生沉默半晌，把烟头扔在地上，用脚碾灭："行。晚上八点，城西老码头，三号仓库。刘科长爱喝二锅头，你备两瓶好的。"
-
-"备好了。"何志远从床底下拖出一个纸箱，里头码着四瓶红星二锅头，还有一条大前门香烟，"酒是正宗的，烟是托人从上海带来的。另外还有这个——"他从怀里掏出一个小布包，打开，里头是一只老式的上海牌手表，"给刘科长夫人的。"
-
-赵铁生拿起手表，对着门缝的光照了照，又放下："志远，你这是把家底都押上了。"
-
-"不押不行。"何志远重新坐回床沿，看着地上那道被箱子拖出的弧形印子，"人家来搜过我的底，知道我有六千五。我要是这时候缩回去，他们更瞧不起我。这'官倒'的价码，表面上是钱，实际上是个胆。你敢不敢赌，敢不敢把全部身家押在一张条子上。"
-
-他顿了顿，又补充道："我现在敢了。"
-
-赵铁生没再说什么，只是把烟盒里剩下的烟都倒出来，揣进自己兜里："晚上我来接你。换身干净衣裳，别穿这件，袖口都磨破了。"
-
-何志远低头看看自己的袖口，确实磨出了毛边。他点点头，把赵铁生送到门口。
-
-赵铁生走了两步，又回头："志远，屋里这烂摊子，要不要我帮你收拾？"
-
-"不用。"何志远扶着门框，"我自己来。收拾干净了，晚上还得请刘科长来坐呢。"
-
-赵铁生看了他一眼，那眼神里有担忧，也有一种说不清的佩服。他摆摆手，拐出了巷子。
-
-何志远站在门口，看着赵铁生的背影消失在卖豆浆的梆子声里。他回过身，重新走进屋里，把门关上。
-
-屋里又暗了下来。
-
-他没有立刻收拾。他先走到床前，再次掀开那块木板，把蓝布包取出来，把钱重新数了一遍。六千五，一张不少。他把钱分成三叠，分别用报纸包好，一叠塞进蓝布包放回坑里，一叠藏进棉袄的内衬，还有一叠——最大的一叠，三千块——他仔细地用塑料布裹好，贴身绑在腰上。
-
-做完这一切，他才拿起扫帚，开始扫地上的荞麦皮。
-
-扫到墙角时，他停了一下。煤油灯的玻璃碎片里，混着一小片东西，不是玻璃，是棕色的，像是从什么皮具上掉下来的。他蹲下去，捏起来看了看，是一片人造革，边缘还带着针脚，像是公文包的边角料。
-
-何志远把那片人造革捏在手心里，看了很久。
-
-他知道，这不是疤脸刘留下的。疤脸刘那帮人不会背人造革的公文包。这也不是王老三的，王老三背的是装豆腐的木箱。这是另一种人留下的——穿中山装、坐吉普车、手里拿着批条的人。
-
-他把人造革收进兜里，继续扫地。
-
-窗外的天色渐渐暗了，巷口传来收摊的吆喝声。何志远把铁皮桶扶起来，把煤油灯碎片扫进簸箕，把褥子重新铺好。他没有换枕头套，裂口就那么敞着，像一张无声的嘴。
-
-他坐在收拾干净的床边，从怀里摸出赵铁生剩下的那根烟，点上。
-
-烟雾在昏暗的屋里升腾，他看着那缕烟，想起小时候在村里看戏，戏台上的老爷们穿着官服，一拍惊堂木，底下的人就得跪下。那时候他觉得，那些老爷高不可攀。可现在他明白了，老爷也是人，也要喝酒，也要抽烟，也要收礼。你只要摸准了他的胃口，老爷的批条就能从你手里过一遍。
-
-六千五，买一张批条，批条换二十吨钢材，钢材换一万多块现金。这就是"官倒"的价码。
-
-何志远把烟吸到尽头，烫了手指才扔掉。他站起来，从床底下拖出脸盆，到院里的公用水龙头打了半盆水，回到屋里，对着那块裂了缝的镜子，仔细地刮了胡子，洗了脸，把头发梳得一丝不乱。
-
-然后他从木箱里取出唯一一件没有补丁的蓝色中山装，换上，又把腰上的钱按了按，确认不会掉出来。
-
-镜子里的男人三十出头，浓眉大眼，肩膀宽厚，除了眼底那两道因为熬夜而泛青的影子，看起来精神头还不错。
-
-何志远对着镜子里的人笑了笑。
-
-"晚上见，刘科长。"
 
 [思考过程]
 用户要求我作为专业中文小说编辑，只输出修改后的章节正文，不解释。原文第5章《官倒的价码》只有260字，需要扩充到1500-99999字之间，建议2500字。
@@ -1416,7 +1267,231 @@ Let's draft in Chinese now.
  最终输出只需要正文，不需要任何说明。
 [/思考过程]
 
+
+何志远没有立刻开门。
+
+他贴着门缝站了约莫一袋烟工夫，直到外头有穿校服的孩童跑过，嘴里念着拼音。那声音脆生生的，像一把小石子落在铁皮屋顶上。他竖起耳朵，听着脚步声由近及远，混进巷口卖豆浆的梆子声里，这才松了半口气。
+
+这间屋子是他去年秋天租下的，在城西老棉纺厂后头的杂院。院子原是工厂的仓库，后来改成了单身宿舍，住着拉板车的、修自行车的、在菜市场摆摊的，什么人都有。房东是个退休女工，姓刘，一只眼睛不好，看人时总歪着头。每月十五号收租，从未提前来过。
+
+他把帆布挎包从肩上卸下来，攥在手里，另一只手从墙根摸起半截锈钢筋，用脚尖把门顶开。
+
+门轴吱呀一声，像是有人从里头呻吟。何志远没急着迈腿，先让门敞开半边，自己侧身贴在门框上，借着外头的天光往里瞧。屋里的气味先涌出来——煤油、汗酸、墙缝里霉烂的木屑味，还有一股说不清的腥甜，像是耗子死在了什么角落。
+
+屋里比外头还闷。
+
+铁皮桶倒了，桶沿磕出几个新印子，在泥地上划出浅浅的沟。煤油灯滚在墙角，灯罩裂成两半，玻璃碴子撒了一地，被进门的风一吹，亮晶晶地闪。床板被撬起一块，露出发黑的稻草和几根锈钉子。褥子掀到地上，沾了半块泥脚印，看那大小，是个穿四十二码解放鞋的男人。枕头裂开一道口子，荞麦皮撒了一地，像谁在这屋里下了一场小雪。
+
+何志远的心猛地一沉。
+
+他先没进去，站在门口扫了一圈。灶台上那口铝锅扣着，旁边两只碗摞得整整齐齐——这不是他早上出门时的样子。他记得清楚，自己临走前喝了一碗凉水，碗是反扣在锅台上的，碗底还留着一个湿印子。现在那两只碗却正扣着，像是有人故意摆回原位，又摆得太过规矩。
+
+他又看墙角。那只装旧衣服的破木箱被挪过，箱底的煤灰拖出一道弧形的印子，停在离原处两寸远的地方。箱盖没锁，露出里头一件洗得发白的军绿色棉袄。那是他当兵时穿过的，袖口还补着块蓝布。搜的人显然翻过了，又觉得一件旧棉袄不值什么，随手扔了回去。
+
+何志远这才走进去。
+
+脚下的荞麦皮被踩得咯吱作响。他绕过铁皮桶，走到床前，把那块没被撬动的木板掀开。木板下面有一个浅坑，是他用半个月晚上偷偷刨出来的，坑里垫着一层塑料布，塑料布上端端正正放着一个蓝布包。
+
+蓝布包还在。
+
+他用两根手指捏住布包一角，轻轻提起来，又抖了抖。里头的报纸包着的钱还在。他把布包放在膝上，一层一层揭开——最外层是蓝布，中间是两张《人民日报》，里头是牛皮纸，牛皮纸再打开，露出一叠整整齐齐的钞票。十元一张，一百五十张，一千五，一张不少。
+
+他长长地吐出一口气，这才觉得后背的汗已经湿透衬衫，风从门缝灌进来，凉飕飕地贴着脊梁。
+
+可这事没完。
+
+他又摸了摸挎包。那五千块是昨晚赵铁生在河边给他的，还没离身。赵铁生是他部队上的老班长，退伍后分到县物资局当司机，专门给局长开车。这五千块不是小数目，赵铁生说是他攒了五年的老婆本，借给何志远"翻本"用。何志远当时站在河堤上，听着水拍岸的声音，接过那包钱时手都在抖。他知道这钱烫手，可他也知道，没有这钱，他连"官倒"的门朝哪边开都摸不着。
+
+"官倒"这个词，是去年冬天他在火车站听一个穿呢子大衣的人说的。那人抽着带过滤嘴的烟，跟旁边的人说，现在钢材紧张，有计划内计划外之分，计划内的价低，计划外的价高，中间隔着一条河。谁能从河里捞一把，谁就能发大财。何志远当时蹲在一边啃馒头，听得入了神。后来他找赵铁生打听，赵铁生犹豫了好几天，才吐出一句话："局里的刘科长手里有批条，一张条子能提二十吨钢材，每吨差价三百。你想要，得先送礼。"
+
+送礼。送什么？送钱。
+
+他解开皮带，把钱取出来，和蓝布包并在一起，重新数了一遍：六千五。
+
+钞票是新崭崭的，还带着银行捆钱的纸条。他把钱分成三叠，一叠一千五，是他自己的本钱；一叠三千，是准备送给刘科长的；剩下两千，是留给中间人老张的跑腿费和"茶水钱"。六千五百块，一分一厘都不能差。
+
+数完钱，他没立刻收起来。他坐在床沿上，把那半截锈钢筋横在膝头，眼睛盯着地上的荞麦皮。
+
+是谁来过？
+
+他第一个想到的是房东刘婶。可刘婶那只坏眼虽然歪，人心却不坏，收租时从不进他屋。再说她一个寡妇，要翻也翻不出什么名堂。
+
+第二个想到的是隔壁卖豆腐的王老三。王老三每天晚上打呼噜，白天推着车沿街叫卖，哪有这闲工夫？而且他那双手只会磨豆腐，撬床板这种事，他做不来。
+
+第三个想到的是码头上的疤脸刘。上个月何志远从他手里赊过一批木料，说好月底结账，可他现在手里攥着的是钢材批条的生意，木料的事被他搁在了一边。疤脸刘放出话来，说何志远要是赖账，就让他"在城里待不下去"。可疤脸刘那帮人做事粗鲁，真要搜屋，早就把屋顶掀了，不会只撬一块床板。
+
+还有一种可能，何志远最不愿意想，却越想越觉得像。
+
+那就是刘科长那边的人。
+
+赵铁生说帮他牵线，可赵铁生也说过，刘科长这人胃口大，心眼多，办事之前喜欢"摸摸对方的底"。也许刘科长派人来，就是想看看他何志远手里到底有多少本钱，值不值得把批条卖给他。这种"摸底"不偷钱，只翻屋，翻完了还要把东西摆回原样，装作没来过，好让买卖双方面上都过得去。
+
+可如果真是这样，那这"官倒"的价码就不仅仅是钱了。
+
+何志远低头看着膝上的钞票。六千五百块，在普通工人眼里是十年的工资，在刘科长眼里也许只是一顿饭钱。他要拿这些钱去买一张批条，批条到手后再去钢厂提货，提到货后倒卖给乡镇企业，一倒手就能赚六七千。可万一批条是假的，万一钢厂不认，万一货运到半道被人截住，他何志远就什么都没了，连赵铁生的老婆本都得赔进去。
+
+他把手掌按在钱上，掌心被纸币的边角硌得生疼。
+
+外头忽然传来一阵脚步声，停在门口。
+
+何志远浑身一紧，攥住锈钢筋，把钱往身后一推。他盯着那扇半开的门，看见一个影子投在地上，拉得很长。
+
+"何哥？在屋呢？"
+
+是赵铁生的声音。
+
+何志远没有立刻应声。他先把钱胡乱塞进蓝布包，又塞进床板下的坑里，把木板盖回去，用脚把地上的荞麦皮往床边踢了踢，这才站起身，把锈钢筋别在腰后。
+
+"在呢，门没锁。"
+
+赵铁生推门进来，一眼看见屋里的狼藉，脸色变了。
+
+"这是……遭贼了？"
+
+何志远摇摇头，又点点头："来过了，钱没丢。"
+
+赵铁生愣了一下，随即明白过来。他反手把门带上，压低声音："刘科长那边？"
+
+"说不准。"何志远从兜里摸出烟盒，抖出一根皱巴巴的烟，"也可能是疤脸刘，也可能是别的什么人。"
+
+赵铁生接过烟，没点，在手里捻着："那批条的事，还办不办？"
+
+何志远把火柴划着，凑到赵铁生烟前。火光映着两个人的脸，一跳一跳的。
+
+"办。"他说，"都到这份上了，不办也得办。六千五，一分没动，全在这儿。你告诉刘科长，我要见他。"
+
+赵铁生深深地看了他一眼，把烟点上，猛吸一口："志远，你可要想清楚。这'官倒'的买卖，做好了能翻身，做不好……"
+
+"做不好就是个死。"何志远替他把话说完，嘴角扯出一个笑，"老班长，我爹临死前跟我说，穷死也是死，饿死也是死，横竖都是死，不如搏一把。"
+
+赵铁生沉默半晌，把烟头扔在地上，用脚碾灭："行。晚上八点，城西老码头，三号仓库。刘科长爱喝二锅头，你备两瓶好的。"
+
+"备好了。"何志远从床底下拖出一个纸箱，里头码着四瓶红星二锅头，还有一条大前门香烟，"酒是正宗的，烟是托人从上海带来的。另外还有这个——"他从怀里掏出一个小布包，打开，里头是一只老式的上海牌手表，"给刘科长夫人的。"
+
+赵铁生拿起手表，对着门缝的光照了照，又放下："志远，你这是把家底都押上了。"
+
+"不押不行。"何志远重新坐回床沿，看着地上那道被箱子拖出的弧形印子，"人家来搜过我的底，知道我有六千五。我要是这时候缩回去，他们更瞧不起我。这'官倒'的价码，表面上是钱，实际上是个胆。你敢不敢赌，敢不敢把全部身家押在一张条子上。"
+
+他顿了顿，又补充道："我现在敢了。"
+
+赵铁生没再说什么，只是把烟盒里剩下的烟都倒出来，揣进自己兜里："晚上我来接你。换身干净衣裳，别穿这件，袖口都磨破了。"
+
+何志远低头看看自己的袖口，确实磨出了毛边。他点点头，把赵铁生送到门口。
+
+赵铁生走了两步，又回头："志远，屋里这烂摊子，要不要我帮你收拾？"
+
+"不用。"何志远扶着门框，"我自己来。收拾干净了，晚上还得请刘科长来坐呢。"
+
+赵铁生看了他一眼，那眼神里有担忧，也有一种说不清的佩服。他摆摆手，拐出了巷子。
+
+何志远站在门口，看着赵铁生的背影消失在卖豆浆的梆子声里。他回过身，重新走进屋里，把门关上。
+
+屋里又暗了下来。
+
+他没有立刻收拾。他先走到床前，再次掀开那块木板，把蓝布包取出来，把钱重新数了一遍。六千五，一张不少。他把钱分成三叠，分别用报纸包好，一叠塞进蓝布包放回坑里，一叠藏进棉袄的内衬，还有一叠——最大的一叠，三千块——他仔细地用塑料布裹好，贴身绑在腰上。
+
+做完这一切，他才拿起扫帚，开始扫地上的荞麦皮。
+
+扫到墙角时，他停了一下。煤油灯的玻璃碎片里，混着一小片东西，不是玻璃，是棕色的，像是从什么皮具上掉下来的。他蹲下去，捏起来看了看，是一片人造革，边缘还带着针脚，像是公文包的边角料。
+
+何志远把那片人造革捏在手心里，看了很久。
+
+他知道，这不是疤脸刘留下的。疤脸刘那帮人不会背人造革的公文包。这也不是王老三的，王老三背的是装豆腐的木箱。这是另一种人留下的——穿中山装、坐吉普车、手里拿着批条的人。
+
+他把人造革收进兜里，继续扫地。
+
+窗外的天色渐渐暗了，巷口传来收摊的吆喝声。何志远把铁皮桶扶起来，把煤油灯碎片扫进簸箕，把褥子重新铺好。他没有换枕头套，裂口就那么敞着，像一张无声的嘴。
+
+他坐在收拾干净的床边，从怀里摸出赵铁生剩下的那根烟，点上。
+
+烟雾在昏暗的屋里升腾，他看着那缕烟，想起小时候在村里看戏，戏台上的老爷们穿着官服，一拍惊堂木，底下的人就得跪下。那时候他觉得，那些老爷高不可攀。可现在他明白了，老爷也是人，也要喝酒，也要抽烟，也要收礼。你只要摸准了他的胃口，老爷的批条就能从你手里过一遍。
+
+六千五，买一张批条，批条换二十吨钢材，钢材换一万多块现金。这就是"官倒"的价码。
+
+何志远把烟吸到尽头，烫了手指才扔掉。他站起来，从床底下拖出脸盆，到院里的公用水龙头打了半盆水，回到屋里，对着那块裂了缝的镜子，仔细地刮了胡子，洗了脸，把头发梳得一丝不乱。
+
+然后他从木箱里取出唯一一件没有补丁的蓝色中山装，换上，又把腰上的钱按了按，确认不会掉出来。
+
+镜子里的男人三十出头，浓眉大眼，肩膀宽厚，除了眼底那两道因为熬夜而泛青的影子，看起来精神头还不错。
+
+何志远对着镜子里的人笑了笑。
+
+"晚上见，刘科长。"
 ## 第6章 风声紧
+
+[思考过程]
+We need write chapter 6 in Chinese. Need follow style. Output only chapter title then body. No explanations. Need around 2500 words. Need keep consistency with previous chapters, but note previous chapters 1-5 had some inconsistencies (e.g., chapter 5 changed setting to city west, old cotton mill, Liu Kesong etc). But we need maintain earlier established details: protagonist He Zhiyuan, Zhao Tiesheng, warehouse, goods, now crackdown, A Bing arrested at Buji freight station, he burns ledgers, finds refrigerators have arrived. Need incorporate previous elements: Zhao Tiesheng maybe 'old Zhao' or '老赵'; in chapters 1-4 he was Zhao Tiesheng, but chapter 5 used Zhao Tiesheng as old squad leader? Wait chapter 5 says Zhao Tiesheng is from military, now county materials bureau driver, gave 5000. That seems inconsistent with earlier Zhao Tiesheng as speculator; but the prompt says "同伙阿炳在布吉货运站被扣。何志远连夜烧掉几本账本，却发现最要紧的那批冰箱已经到岸". We should respect prompt's chapter summary for chapter 6 more than trying to reconcile all. Could keep Zhao Tiesheng / 老赵 from earlier as speculator boss; A Bing as accomplice; Buji freight station; ledgers; refrigerators. We can include He Zhiyuan's铁皮屋 in 蛇口, the crackdown atmosphere.
+
+Need narrative: Third-person limited close to He. Tense after A Bing arrested at Buji freight station. Rumors of严打投机倒把. He returns to his铁皮屋 or Zhao's warehouse, burns account books. But discovers crucial batch of refrigerators has arrived (maybe at river or freight station). Need psychological shift. Suspense at end.
+
+Need details consistent with era: 1984 Shenzhen, prices, goods, etc. Buji freight station. Maybe night, rain, neon? Need writing: robust, crisp, era texture. Use details and action, no lyricism.
+
+Let's craft a chapter with scenes:
+1. He at a noodle stall or somewhere hears crackdown rumors. Maybe news from old Zhou that A Bing detained. 
+2. He goes to Buji freight station to check, sees A Bing's tricycle, or men in制服. 
+3. Returns to铁皮屋, retrieves account books (notebooks of deals). Burns them in metal bucket in the alley. As he burns, watches pages curl.
+4. Realizes the most important batch of refrigerators has arrived: a note under door or a boy messenger, or he sees truck/ship? Need "already ashore" perhaps at Shenzhen river/warehouse. Maybe while burning, a van arrives, the driver says the refrigerator shipment is at the river. Or He had assumed it was delayed, but it is already there. Need suspense: he must decide whether to run, warn Zhao, or retrieve. End with a knock, him holding can of kerosene? Maybe the batch of fridges arrives at his door, or a boy says "goods are ashore, come now". This leaves the cliffhanger.
+
+Need around 2500 words. Let's aim 2400-2600 Chinese characters? Wait 2500 字 means words/characters? Usually 字. We'll aim ~2500 Chinese characters. Need make it gripping.
+
+Let's outline:
+
+- Evening, May? early 1984. He in 东门 or 罗湖 eating rice noodles? He hears two men talk about crackdown, "投机倒把严打". Then old Zhou runs over: "A Bing got caught at Buji freight station." Show action: he stands up, pays, goes.
+- Travel to Buji: takes truck? Buji freight station. Description: low buildings, floodlights, freight yard. Sees A Bing's bicycle/tricycle? maybe his Liberation cap. He hides. Sees a green jeep and 工商/公安. Sees A Bing handcuffed being pushed into jeep. A Bing looks at him? Or A Bing's eyes scan crowd; He steps behind oil drum. Maybe A Bing has his notebook? Risk.
+- Returns. He goes to warehouse where ledgers hidden. Ledgers are account books of deals: dates, quantities, buyers. He must burn them before police search. Also retrieve stash money. But the most important fridge shipment is due. He thinks it's not until next week.
+- At铁皮屋/warehouse, he builds fire in a metal barrel using kerosene, burns notebooks page by page. Details: flames lick paper, numbers disappear, red fingerprints of IOUs curl. He is sweating.
+- After burning, he goes back inside, checks hidden money (the 4500?). Door creaks. A note? Actually while burning, a small truck with covered cargo arrives; driver says "Are you He Zhiyuan? The refrigerators from Old Zhao are ashore." Or a boy messenger: "Goods at old ferry, tonight, don't miss." He realizes it's the batch that A Bing was supposed to receive; if he doesn't move it, it sits. He has no A Bing, no driver. He must decide.
+- Maybe end: He picks up a steel rebar / knife, money, and walks out into dark; or police arrive and knock. The prompt says "却发现最要紧的那批冰箱已经到岸" and "第10章末尾留下悬念，不要收束所有线索" but for chapter 6 ending suspense: He burns ledgers then finds fridges arrived; he looks at the packed truck, hears sirens approaching, he grabs a crowbar? Better: He is burning ledgers when a kid slides note: "Bing哥被扣，货已到岸，七号仓". He realizes he's trapped. Chapter ends with him standing by the burning barrel, holding the note, as men approach at alley mouth. Or open door and find fridge boxes already in his铁皮屋? Let's think.
+
+Need "最要紧的那批冰箱已经到岸" means the crucial batch of fridges has reached shore. Maybe He has hidden them at Shenzhen river? But after burning ledgers, he discovers they have arrived—maybe the delivery note. He may have to choose: abandon goods, or move them and risk arrest. Good suspense.
+
+Let's integrate A Bing: A Bing is an accomplice, perhaps younger, introduced? He wasn't in previous chapters. But prompt says 同伙阿炳. We can introduce him through flashback or interaction? The chapter summary itself introduces him. We can mention he was the barefoot boy messenger? In earlier chapters, a boy delivered notes. Could be A Bing. He could be the one arrested. Maybe He and A Bing are partners in small-time; A Bing handled freight station. We'll show He's reaction: A Bing's arrest means everything is exposed.
+
+Need keep protagonist consistent: 26, from Hengyang, former repairman, practical, cautious but pushed. The era leaves him no way out. Show internal: he calculates money, realizes if A Bing talks, he's done; if he runs, loses everything; if he takes fridge shipment, maybe can buy his way out? He has no good options.
+
+Let's write with concrete details:
+- Buji freight station: a concrete yard with weighing scales, stacks of gunny sacks, forklift idle, a green 212 jeep, men in white short-sleeve uniforms with red armbands (工商行政管理人员?), dark blue trousers. The station master office has a fan spinning. 
+- A Bing maybe wearing a white vest, hands cuffed behind, head down, being shoved into jeep. A crate of radios/TVs? He had ledgers? 
+- He hides behind a pile of scrap metal; smells diesel, raw pork from refrigerated car. 
+- Return: hitches on a sand truck or takes the last minibus? It costs, but he has no choice? Maybe he walks to highway and flags a truck. 
+- At铁皮屋 in Shekou? Actually in chapter 5铁皮屋 moved to city west cotton mill? But earlier he lived in Shekou石棉瓦棚屋, later铁皮屋 at工业区边上. For chapter 6, keep铁皮屋 near warehouse where ledgers hidden, maybe in 蛇口的杂院? But prompt says 连夜烧掉几本账本. Let's keep a rented shack in 罗湖以北 (as in chapter 5?). To avoid contradictions, focus on current location: a tin shed in a yard. We can say this is the warehouse near Shenzhen River used to stash fridges? Let's decide: He rents a small brick-and-iron warehouse in Buji/Rural fringe, behind a metalwork shop. He hides ledgers in a false-bottomed wooden box. He burns them in the yard at night. 
+- The refrigerator shipment: twelve Hitachi/Konosuke fridges? Need model: in 1984 fridges were imported from Japan, "日立" or "东芝". Maybe "东芝 GR-185E"? Not necessary.
+
+Let's produce text. Ensure no meta comments, no summary. Start with "## 第6章 风声紧". Then body.
+
+Need word count. Let's draft around 2500 Chinese characters. We need to be careful not to exceed or be too short. Let's write roughly 2300-2600 characters. We'll count mentally; Chinese punctuation counts as characters too. We can be generous.
+
+Also ensure no process. Fine.
+
+Let's write.
+
+Body:
+
+April or May? Let's set in early summer, maybe May. But world says 1984 spring. Keep spring. Maybe late April. It rains.
+
+Scene 1: At a stall, 老周 comes.
+
+Detailed: He is eating rice noodle roll? Actually he no longer sells; he works for Zhao. He is at a 大排档 near 罗湖汽车站, eating 牛腩粉 for 8毛. The radio in stall plays news about "严厉打击经济领域违法犯罪活动". Old Zhou arrives, face ashen, says A Bing got caught at Buji freight station. He says "工商、公安联合行动，带走了人，也带走了三本账". He leaves immediately.
+
+Scene 2: Buji freight station. He goes there not to rescue but to see if goods were seized. He reaches around 8pm. Yard has sodium lights. He sees A Bing, handcuffed, pushed into a green jeep. A carton of Panasonic color TVs? Actually Buji freight station for refrigerators? The batch might be there. He sees the truck with "粤B" plate, cargo covered with canvas. The police seal it. He slips away.
+
+Scene 3: He returns to his铁皮屋 by hitching a sand truck. He retrieves ledgers from a hole in wall/under floor. Ledgers: three cloth-bound notebooks with entries: dates, tons, names, red fingerprints. Also IOUs. He burns them in a kerosene drum. As flames rise, a boy arrives? Better: after burning, he checks water barrel? He finds a note: "货已到岸，老地方，速来。" But he doesn't know if it's a trap. Then a knock. He opens to find a small truck driver: "阿炳让我送来的，十二台冰箱，从河上刚下来的，再不走边防要来了." Wait, A Bing arrested, so driver sent by someone else? Could be Zhao's man. 
+
+Or while burning, he hears a truck engine in alley. He sees a covered truck; the driver is looking for him. The tailgate opens, revealing twelve carton fridges. The driver says "姓赵的让你收一下，船提前到了，阿炳联系不上". He realizes A Bing was arrested because he went to receive this shipment.
+
+He stands there, holding a half-burned page, knowing if he accepts the goods he is caught; if he refuses, he owes Zhao and loses deposit. End with headlights sweeping the alley—maybe a police patrol. He yells at driver to back in; or he runs.
+
+Let's keep suspense: He burns ledgers, then finds fridge shipment already at his door. He must decide. End with him stepping toward the truck, or a voice from the dark "何志远，站着别动". But prompt: "第10章末尾留下悬念" is global, not chapter 6; chapter 6 can end with cliffhanger. Fine.
+
+Let's ensure the chapter title included.
+
+Let's write with detail and action. I'll compose in Chinese, maintaining tone.
+
+Potential issue: Need not include any content about the AI, no extra. Only output title + body.
+
+Let's draft now.
+[/思考过程]
+
 
 何志远是在罗湖汽车站后面那家“老蔡牛腩粉”摊上听到风声的。
 
@@ -1709,81 +1784,86 @@ Let's draft in Chinese now.
 身后，吉普车的引擎重新发动，车灯把整片竹林照得一片惨白。
 
 而河面上，那艘本该开走的铁壳船，果然还停在那里，像一只张着嘴的兽，等着他跳进去。
+## 第7章 兄弟的账本
 
 [思考过程]
-We need write chapter 6 in Chinese. Need follow style. Output only chapter title then body. No explanations. Need around 2500 words. Need keep consistency with previous chapters, but note previous chapters 1-5 had some inconsistencies (e.g., chapter 5 changed setting to city west, old cotton mill, Liu Kesong etc). But we need maintain earlier established details: protagonist He Zhiyuan, Zhao Tiesheng, warehouse, goods, now crackdown, A Bing arrested at Buji freight station, he burns ledgers, finds refrigerators have arrived. Need incorporate previous elements: Zhao Tiesheng maybe 'old Zhao' or '老赵'; in chapters 1-4 he was Zhao Tiesheng, but chapter 5 used Zhao Tiesheng as old squad leader? Wait chapter 5 says Zhao Tiesheng is from military, now county materials bureau driver, gave 5000. That seems inconsistent with earlier Zhao Tiesheng as speculator; but the prompt says "同伙阿炳在布吉货运站被扣。何志远连夜烧掉几本账本，却发现最要紧的那批冰箱已经到岸". We should respect prompt's chapter summary for chapter 6 more than trying to reconcile all. Could keep Zhao Tiesheng / 老赵 from earlier as speculator boss; A Bing as accomplice; Buji freight station; ledgers; refrigerators. We can include He Zhiyuan's铁皮屋 in 蛇口, the crackdown atmosphere.
+We need write chapter 7 of a Chinese novel. User wants only the chapter body, starting with markdown heading "## 第7章 兄弟的账本". Must continue previous chapters. Summary: Old Zhao (Lao Zhao) wants He Zhiyuan to take over Ah Bing's order, claiming it's loyalty/righteousness. He Zhiyuan finds Lao Zhao's private ledger showing embezzlement; trust between brothers begins to crack.
 
-Need narrative: Third-person limited close to He. Tense after A Bing arrested at Buji freight station. Rumors of严打投机倒把. He returns to his铁皮屋 or Zhao's warehouse, burns account books. But discovers crucial batch of refrigerators has arrived (maybe at river or freight station). Need psychological shift. Suspense at end.
+Need produce narrative, tight, period detail 1984 Shenzhen, third-person limited close to He Zhiyuan. Language: solid, crisp, era texture. No lyricism. Include suspense, details, psychology. Word count 1500-99999. Aim around 2500 maybe. Need keep consistency with prior chapters. Need handle names: Lao Zhao is Zhao Tiesheng? Wait prior chapters named 赵铁生 (Zhao Tiesheng). User summary says 老赵 (Lao Zhao) - yes same. Ah Bing is 阿炳. Need maintain He Zhiyuan's current situation: at end of chapter 6 he ran from a jeep at old ferry, guided by a thin tall man unknown, jumped onto a boat presumably. We need continue: chapter 7 should likely begin with him on the boat, then meeting Lao Zhao. We need ensure not resolving all threads; leave悬念.
 
-Need details consistent with era: 1984 Shenzhen, prices, goods, etc. Buji freight station. Maybe night, rain, neon? Need writing: robust, crisp, era texture. Use details and action, no lyricism.
+Need construct events: He on boat escapes? Who is thin man? Maybe reveal later not fully. He returns to Zhao, who pressures him to take Ah Bing's order (probably a shipment/order/contract). He discovers Zhao's private ledger hidden maybe in black artificial leather bag, records Zhao skimming money. He realizes Zhao not as brotherly.
 
-Let's craft a chapter with scenes:
-1. He at a noodle stall or somewhere hears crackdown rumors. Maybe news from old Zhou that A Bing detained. 
-2. He goes to Buji freight station to check, sees A Bing's tricycle, or men in制服. 
-3. Returns to铁皮屋, retrieves account books (notebooks of deals). Burns them in metal bucket in the alley. As he burns, watches pages curl.
-4. Realizes the most important batch of refrigerators has arrived: a note under door or a boy messenger, or he sees truck/ship? Need "already ashore" perhaps at Shenzhen river/warehouse. Maybe while burning, a van arrives, the driver says the refrigerator shipment is at the river. Or He had assumed it was delayed, but it is already there. Need suspense: he must decide whether to run, warn Zhao, or retrieve. End with a knock, him holding can of kerosene? Maybe the batch of fridges arrives at his door, or a boy says "goods are ashore, come now". This leaves the cliffhanger.
+Need ensure period plausibility: prices, wages, ration tickets, locations. Shenzhen 1984. Include details like Shenzhen River, customs, smuggling, documents.
 
-Need around 2500 words. Let's aim 2400-2600 Chinese characters? Wait 2500 字 means words/characters? Usually 字. We'll aim ~2500 Chinese characters. Need make it gripping.
+Need include no writing process, summary, explanation. Output only chapter. We must be careful no meta comments.
 
-Let's outline:
+We need write full chapter. Let's think of structure:
 
-- Evening, May? early 1984. He in 东门 or 罗湖 eating rice noodles? He hears two men talk about crackdown, "投机倒把严打". Then old Zhou runs over: "A Bing got caught at Buji freight station." Show action: he stands up, pays, goes.
-- Travel to Buji: takes truck? Buji freight station. Description: low buildings, floodlights, freight yard. Sees A Bing's bicycle/tricycle? maybe his Liberation cap. He hides. Sees a green jeep and 工商/公安. Sees A Bing handcuffed being pushed into jeep. A Bing looks at him? Or A Bing's eyes scan crowd; He steps behind oil drum. Maybe A Bing has his notebook? Risk.
-- Returns. He goes to warehouse where ledgers hidden. Ledgers are account books of deals: dates, quantities, buyers. He must burn them before police search. Also retrieve stash money. But the most important fridge shipment is due. He thinks it's not until next week.
-- At铁皮屋/warehouse, he builds fire in a metal barrel using kerosene, burns notebooks page by page. Details: flames lick paper, numbers disappear, red fingerprints of IOUs curl. He is sweating.
-- After burning, he goes back inside, checks hidden money (the 4500?). Door creaks. A note? Actually while burning, a small truck with covered cargo arrives; driver says "Are you He Zhiyuan? The refrigerators from Old Zhao are ashore." Or a boy messenger: "Goods at old ferry, tonight, don't miss." He realizes it's the batch that A Bing was supposed to receive; if he doesn't move it, it sits. He has no A Bing, no driver. He must decide.
-- Maybe end: He picks up a steel rebar / knife, money, and walks out into dark; or police arrive and knock. The prompt says "却发现最要紧的那批冰箱已经到岸" and "第10章末尾留下悬念，不要收束所有线索" but for chapter 6 ending suspense: He burns ledgers then finds fridges arrived; he looks at the packed truck, hears sirens approaching, he grabs a crowbar? Better: He is burning ledgers when a kid slides note: "Bing哥被扣，货已到岸，七号仓". He realizes he's trapped. Chapter ends with him standing by the burning barrel, holding the note, as men approach at alley mouth. Or open door and find fridge boxes already in his铁皮屋? Let's think.
+- Start: On the iron-hull boat, outboard motor low, river dark. He Zhiyuan panting, the thin tall man also aboard? Or just tells him to run, then disappears. Boat takes him downstream. He clutches bag, 3000 yuan. Boatman is maybe Ah Qiang? Unknown. They go to a hidden dock near Shekou? They arrive at an abandoned fish pond/warehouse.
 
-Need "最要紧的那批冰箱已经到岸" means the crucial batch of fridges has reached shore. Maybe He has hidden them at Shenzhen river? But after burning ledgers, he discovers they have arrived—maybe the delivery note. He may have to choose: abandon goods, or move them and risk arrest. Good suspense.
+- He meets Zhao Tiesheng in a dim warehouse. Zhao appears calm, smokes. He asks about the fridges (12 Toshiba). He tells He that the police took the fridges. Actually maybe He didn't get them. Lao Zhao already knows. He blames He? Or says Ah Bing's matter requires someone to take the order to protect brothers. "You take Ah Bing's share/order, that's loyalty."
 
-Let's integrate A Bing: A Bing is an accomplice, perhaps younger, introduced? He wasn't in previous chapters. But prompt says 同伙阿炳. We can introduce him through flashback or interaction? The chapter summary itself introduces him. We can mention he was the barefoot boy messenger? In earlier chapters, a boy delivered notes. Could be A Bing. He could be the one arrested. Maybe He and A Bing are partners in small-time; A Bing handled freight station. We'll show He's reaction: A Bing's arrest means everything is exposed.
+- He Zhiyuan suspicious. He recalls the note "TV is bait". He watches Zhao's artificial leather bag. Need find ledger. Maybe he notices Zhao counting money, a black notebook falls out or hidden in bag. When Zhao steps out to piss, He searches. Or ledger is in warehouse crate. It records each deal: steel 25t profit, TV shipments, etc, with actual prices vs what Zhao told He; shows Zhao skimmed. For example steel deal actual buyer paid maybe more, He only got 1500; Zhao recorded kept extra. Or Ah Bing's cut was swallowed.
 
-Need keep protagonist consistent: 26, from Hengyang, former repairman, practical, cautious but pushed. The era leaves him no way out. Show internal: he calculates money, realizes if A Bing talks, he's done; if he runs, loses everything; if he takes fridge shipment, maybe can buy his way out? He has no good options.
+- He reads entries: "6月3日，线材25吨，实收叁万伍仟，付何志远壹仟伍..."; "彩电十八台，实收五万二，付何贰仟..."; "阿炳份子扣..."; reveals Zhao has been cheating everyone. Also entries of bribes to officials. The summary says 老赵私下吞钱的账本.
 
-Let's write with concrete details:
-- Buji freight station: a concrete yard with weighing scales, stacks of gunny sacks, forklift idle, a green 212 jeep, men in white short-sleeve uniforms with red armbands (工商行政管理人员?), dark blue trousers. The station master office has a fan spinning. 
-- A Bing maybe wearing a white vest, hands cuffed behind, head down, being shoved into jeep. A crate of radios/TVs? He had ledgers? 
-- He hides behind a pile of scrap metal; smells diesel, raw pork from refrigerated car. 
-- Return: hitches on a sand truck or takes the last minibus? It costs, but he has no choice? Maybe he walks to highway and flags a truck. 
-- At铁皮屋 in Shekou? Actually in chapter 5铁皮屋 moved to city west cotton mill? But earlier he lived in Shekou石棉瓦棚屋, later铁皮屋 at工业区边上. For chapter 6, keep铁皮屋 near warehouse where ledgers hidden, maybe in 蛇口的杂院? But prompt says 连夜烧掉几本账本. Let's keep a rented shack in 罗湖以北 (as in chapter 5?). To avoid contradictions, focus on current location: a tin shed in a yard. We can say this is the warehouse near Shenzhen River used to stash fridges? Let's decide: He rents a small brick-and-iron warehouse in Buji/Rural fringe, behind a metalwork shop. He hides ledgers in a false-bottomed wooden box. He burns them in the yard at night. 
-- The refrigerator shipment: twelve Hitachi/Konosuke fridges? Need model: in 1984 fridges were imported from Japan, "日立" or "东芝". Maybe "东芝 GR-185E"? Not necessary.
+- Psychological shift: He realizes the "brother" relationship is transactional; Zhao uses loyalty rhetoric to make him take fall. He feels anger, fear, but hides. He must decide whether to confront or play along. End with suspense: maybe police arrive, or Zhao returns and catches him with the ledger, or He makes a decision to use ledger as leverage, but door opens...
 
-Let's produce text. Ensure no meta comments, no summary. Start with "## 第6章 风声紧". Then body.
+Need ensure not resolving all threads. End with suspense.
 
-Need word count. Let's draft around 2500 Chinese characters. We need to be careful not to exceed or be too short. Let's write roughly 2300-2600 characters. We'll count mentally; Chinese punctuation counts as characters too. We can be generous.
+Let's craft with detail and pacing. Need around 2500 words. Let's write rich sensory details.
 
-Also ensure no process. Fine.
+Important: Chapter heading exactly "## 第7章 兄弟的账本". Then text.
+
+Need avoid any prose about author. Let's start.
+
+We need ensure names and references consistent:
+- He Zhiyuan: 何志远
+- Zhao Tiesheng: 赵铁生 (Lao Zhao)
+- Ah Bing: 阿炳
+- Old Zhou: 老周
+- Liu Shuigen? Not needed.
+- Settings: Shenzhen River, Shekou, Luohu, etc.
+- Time: 1984, after Ah Bing arrested.
+
+Let's consider timeline: In ch6, He at old ferry (upstream) after receiving note "冰箱已到岸，老渡口，速来。赵。" He arrives, a光头 unloads 12 fridges. Then jeep arrives. A thin man tells him run. He runs to boat. So at start ch7, he is on boat. The fridges left behind, police got them. He escaped.
+
+He likely returns to an old warehouse in Shekou? Maybe the boat takes him to a muddy landing near Nantou or Shekou. He meets Zhao in a brick shed. Need plausible.
 
 Let's write.
 
-Body:
+Scene 1: Boat. Iron hull, no lights, engine throttled. The man steering maybe a teenager in a baseball cap? He asks no questions. He Zhiyuan sits on a gunwale, wet, clutching bag. The tall man who saved him is not on boat? He looks back, no one. He has escaped. They pass under a bridge (Shenzhen Bay? Lo Wu bridge?). On shore, neon and searchlights. They land at a broken wharf under a banyan.
 
-April or May? Let's set in early summer, maybe May. But world says 1984 spring. Keep spring. Maybe late April. It rains.
+Scene 2: Walks to warehouse. Meets Zhao. Zhao lights a cigarette, asks "冰箱呢？" He says left behind. Zhao not angry? Actually if police got them, Zhao lost. But Zhao is calm because maybe he planned it. He says "阿炳那边扛不住了，公安在找他开口。我得保他。" Then he tells He: "你那单，阿炳的货，你顶下来。" He asks what order: maybe a shipment of integrated circuits /批文 from Wenjindu due tomorrow, the one that would incriminate. Zhao says "讲义气" — taking it protects Ah Bing and brothers. He says "你一个人，没户口没单位，出事也牵连不到大家。进去蹲几年，出来我养你一辈子。"
 
-Scene 1: At a stall, 老周 comes.
+He feels sick. He remembers "电视是饵". He agrees outwardly. Zhao gives him a beer? They drink. Zhao goes out to piss or to meet someone.
 
-Detailed: He is eating rice noodle roll? Actually he no longer sells; he works for Zhao. He is at a 大排档 near 罗湖汽车站, eating 牛腩粉 for 8毛. The radio in stall plays news about "严厉打击经济领域违法犯罪活动". Old Zhou arrives, face ashen, says A Bing got caught at Buji freight station. He says "工商、公安联合行动，带走了人，也带走了三本账". He leaves immediately.
+Scene 3: He sees Zhao's black artificial leather bag (the one with brass buckle) left on a wooden crate. He debates, then opens. Inside: a brown notebook, not the business ledger he burned. He opens. Columns: date, item, actual receipt, payments to others, "落账" (pocketed). It shows:
+- Steel: actual buyer paid 35,000, He got 1,500, Zhao recorded "落33300"? Wait if cost? Need plausible. The steel deal: cost 520/t *25 =13,000. Buyer paid 1400/t*25 =35,000. Profit 22,000. He got 1,500. So Zhao kept ~20,500 maybe split with others. But ledger might show actual buyer paid more or Zhao pocketed He and Ah Bing shares.
+- Color TVs: actual receipt 52,000, He got 2,000 plus capital 3,000. Cost maybe ~18,000. Profit 34,000. Zhao kept most.
+- Ah Bing's share: "阿炳份子 叁仟，扣。" etc.
 
-Scene 2: Buji freight station. He goes there not to rescue but to see if goods were seized. He reaches around 8pm. Yard has sodium lights. He sees A Bing, handcuffed, pushed into a green jeep. A carton of Panasonic color TVs? Actually Buji freight station for refrigerators? The batch might be there. He sees the truck with "粤B" plate, cargo covered with canvas. The police seal it. He slips away.
+He sees entries of bribes: 贺德昌 TV 1680, plus cash 500; "送刘科" etc. The ledger reveals Zhao has private stash.
 
-Scene 3: He returns to his铁皮屋 by hitching a sand truck. He retrieves ledgers from a hole in wall/under floor. Ledgers: three cloth-bound notebooks with entries: dates, tons, names, red fingerprints. Also IOUs. He burns them in a kerosene drum. As flames rise, a boy arrives? Better: after burning, he checks water barrel? He finds a note: "货已到岸，老地方，速来。" But he doesn't know if it's a trap. Then a knock. He opens to find a small truck driver: "阿炳让我送来的，十二台冰箱，从河上刚下来的，再不走边防要来了." Wait, A Bing arrested, so driver sent by someone else? Could be Zhao's man. 
+Scene 4: Zhao returns; He quickly closes bag. Or maybe He is still reading when he hears footsteps. He shoves notebook back? Let's make suspense: He hears footsteps, not Zhao's plastic sandals but leather shoes? He hides ledger in his own bag? Or leaves. End: door opens, silhouettes; not Zhao but two men; or Zhao returns with police? Or He confronts Zhao holding ledger and a knife? The summary says trust begins to crack; perhaps not full confrontation. We can end with He realizing the choice ahead, and a knock at door, leaving uncertainty.
 
-Or while burning, he hears a truck engine in alley. He sees a covered truck; the driver is looking for him. The tailgate opens, revealing twelve carton fridges. The driver says "姓赵的让你收一下，船提前到了，阿炳联系不上". He realizes A Bing was arrested because he went to receive this shipment.
+Need ensure no resolution.
 
-He stands there, holding a half-burned page, knowing if he accepts the goods he is caught; if he refuses, he owes Zhao and loses deposit. End with headlights sweeping the alley—maybe a police patrol. He yells at driver to back in; or he runs.
+Let's create a tense ending: He hides the ledger inside his shirt/bag. Zhao returns with Old Zhou and another man. They talk about "阿炳已经吐了，公安在找何志远". Zhao asks He to sign/accept the order. He says "行". They toast. But He now knows. The chapter ends with He noticing Zhao's eyes and the bag, and a sound of sirens in distance. Maybe he palms a switchblade.
 
-Let's keep suspense: He burns ledgers, then finds fridge shipment already at his door. He must decide. End with him stepping toward the truck, or a voice from the dark "何志远，站着别动". But prompt: "第10章末尾留下悬念" is global, not chapter 6; chapter 6 can end with cliffhanger. Fine.
+But user summary: "老赵要何志远把阿炳那单顶下来，称这是讲义气。何志远翻到老赵私下吞钱的账本，兄弟之间的信任开始崩裂。" So chapter should contain both events, and trust cracking. End with suspense but not necessarily external police.
 
-Let's ensure the chapter title included.
+Let's structure accordingly.
 
-Let's write with detail and action. I'll compose in Chinese, maintaining tone.
+Now, produce text with details: 1984 Shenzhen, prices, ration coupons, wage levels. Include mention of "粮票"? Maybe he hasn't eaten. Include weather hot humid, mud, mosquitoes. Include language: Cantonese phrases? Keep Chinese.
 
-Potential issue: Need not include any content about the AI, no extra. Only output title + body.
+Let's write chapter. Need around 2500 Chinese characters? Actually target 2500 words (字). We can write ~2500-3000 characters. We must ensure >1500. Let's aim 2800 characters.
 
-Let's draft now.
+We need include some internal monologue but not lyrical.
+
+Let's draft in Chinese now, in final channel.
 [/思考过程]
 
-## 第7章 兄弟的账本
 
 铁壳船的马达声压得很低，像只病牛在喘。何志远趴在船舷上，河水腥气一个劲往鼻子里钻。他右手还攥着那只帆布袋，袋里的钢筋和电工刀硌着掌心，腰上缠着的三千块钱被汗浸透，贴着皮肉发凉。船尾没有灯，只有对岸深圳工地上的探照灯偶尔扫过来，把河面照成一条灰白的路，又倏地移走。
 
@@ -2036,86 +2116,74 @@ Let's draft now.
 何志远没有动。他回头看了一眼屋里，煤油灯已经灭了，可他知道那只黑色人造革包不在这里——赵铁生走的时候，把它带走了。
 
 而赵铁生刚才说的“你的账，我替你记着”，此刻像一根细线，慢慢收紧，勒进他的肉里。
+## 第8章 二选一
 
 [思考过程]
-We need write chapter 7 of a Chinese novel. User wants only the chapter body, starting with markdown heading "## 第7章 兄弟的账本". Must continue previous chapters. Summary: Old Zhao (Lao Zhao) wants He Zhiyuan to take over Ah Bing's order, claiming it's loyalty/righteousness. He Zhiyuan finds Lao Zhao's private ledger showing embezzlement; trust between brothers begins to crack.
+We need write chapter 8 in Chinese. Need only output chapter title ## 第8章 二选一 then body. Must not include any meta comments, writing process, explanation. Continue from chapter 7. Need length ~2500 words, 1500-99999. Need adhere to prior events. Let's recall prior: chapter 7 ends with 何志远 arrested? Police say 赵铁生 already sold him out. Need chapter 8: 何志远被工商局叫去问话，经办人递给他一份口供，让他指认老赵。他走出大门时，老赵的人在暗处盯着他.
 
-Need produce narrative, tight, period detail 1984 Shenzhen, third-person limited close to He Zhiyuan. Language: solid, crisp, era texture. No lyricism. Include suspense, details, psychology. Word count 1500-99999. Aim around 2500 maybe. Need keep consistency with prior chapters. Need handle names: Lao Zhao is Zhao Tiesheng? Wait prior chapters named 赵铁生 (Zhao Tiesheng). User summary says 老赵 (Lao Zhao) - yes same. Ah Bing is 阿炳. Need maintain He Zhiyuan's current situation: at end of chapter 6 he ran from a jeep at old ferry, guided by a thin tall man unknown, jumped onto a boat presumably. We need continue: chapter 7 should likely begin with him on the boat, then meeting Lao Zhao. We need ensure not resolving all threads; leave悬念.
+Note: Chapter summary says he is called by Administration for Industry and Commerce for questioning, officer hands him a statement to identify Old Zhao (老赵/赵铁生). When he walks out, Old Zhao's people watch in shadows. Need include psychological changes, suspense, details. The prompt's "故事走向" earlier says final forced choice between selling the brother who brought him into the trade and taking prison. This chapter should be the setup of that choice. Since prior chapter had police, but summary says 工商局 (maybe after police transferred to AIC?). Need consistent. We can reconcile: he was taken by public security first then transferred to AIC because economic crime. Maybe they mention x days later. Need mention events: 阿炳被捕，冰箱被查，赵铁生供出他? But summary says they ask him to identify 老赵. Could be trap? Need tight.
 
-Need construct events: He on boat escapes? Who is thin man? Maybe reveal later not fully. He returns to Zhao, who pressures him to take Ah Bing's order (probably a shipment/order/contract). He discovers Zhao's private ledger hidden maybe in black artificial leather bag, records Zhao skimming money. He realizes Zhao not as brotherly.
+Let's outline.
 
-Need ensure period plausibility: prices, wages, ration tickets, locations. Shenzhen 1984. Include details like Shenzhen River, customs, smuggling, documents.
+Opening: He is at 工商局 somewhere (maybe宝安县工商行政管理局/罗湖?), in interrogation/smoke-filled office. He has been held maybe two days. Details: handcuffs? no, administrative questioning. He sits on bench, smell of sweat/detergent. The handler (经办人) named something? Let's create a believable officer, perhaps 李科长 or 周干事. He hands a typed statement, says sign and fingerprint, identify 赵铁生 as principal smuggler/投机倒把， then you are a victim/helper, minor, can go. If not, you carry all, possible prison.
 
-Need include no writing process, summary, explanation. Output only chapter. We must be careful no meta comments.
+Explore 何志远's thoughts: he realizes赵铁生 likely already set him up; the statement may be fake? He reads it: says he, under Zhao's coercion/deception, participated; Zhao organized smuggling, profited; he just drove/ moved goods. Actually he profited too. Signing means betraying 赵铁生 but also maybe lying. He also recalls 老周? Maybe "老赵" could refer to 赵铁生 or another. In summary "老赵" is Zhao Tiesheng. Good.
 
-We need write full chapter. Let's think of structure:
+Need maintain realism: 1984 AIC, anti-speculation campaign. Smuggling electronic goods, no license. Double-track price. The officer may be local, knows the game, perhaps previously took bribes? Maybe hint he works with Zhao? Unclear.
 
-- Start: On the iron-hull boat, outboard motor low, river dark. He Zhiyuan panting, the thin tall man also aboard? Or just tells him to run, then disappears. Boat takes him downstream. He clutches bag, 3000 yuan. Boatman is maybe Ah Qiang? Unknown. They go to a hidden dock near Shekou? They arrive at an abandoned fish pond/warehouse.
+He wavers. Need detail physical: sweaty neck, handcuffs chafing, watery tea, mosquitoes, wall slogans. They might show him evidence: a confiscated ledger fragment? Actually Zhao's ledger was with Zhao. But police/AIC may have阿炳's ledger or赵铁生's statement implicating him. They mention 赵铁生 already confessed. But is that true? It could be pressure tactic. He thinks about Zhao's black ledger with names and "可弃". He understands Zhao marked him "可用，胆大，无家累". He feels anger. But also, Zhao brought him into business; if he signs, Zhao may be executed? Or long prison. If he doesn't, he takes blame, maybe 10 years? He has no family to care, only father dead? He could take it, but feels unjust. Also there is the person who saved him at river; unknown. He might think of铁皮屋、三千块钱、罗湖、蛇口的探照灯.
 
-- He meets Zhao Tiesheng in a dim warehouse. Zhao appears calm, smokes. He asks about the fridges (12 Toshiba). He tells He that the police took the fridges. Actually maybe He didn't get them. Lao Zhao already knows. He blames He? Or says Ah Bing's matter requires someone to take the order to protect brothers. "You take Ah Bing's share/order, that's loyalty."
+Scene: He asks to use toilet. They allow under guard. In courtyard, he sees a green jeep, a black人造革包? Maybe not. He sees a man in shadows watching: maybe老周 or Zhao's man. He notices a motorcycle. After refusing to sign? Or he signs? Summary says he walks out and Zhao's people watch. Wait summary says he is called for questioning, handler gives statement asking him to identify Zhao. He walks out of gate, Zhao's people in dark watching him. So in this chapter he leaves AIC (maybe released on bail? or after questioning not detained). They let him go temporarily. He steps out, twilight, rain? Heat. He feels being watched. He walks through streets, sees a man in a peaked cap leaning on motorcycle (old Wu?) or老周. He doesn't confront. He returns to铁皮屋? But铁皮屋 has been searched. Maybe he has nowhere.
 
-- He Zhiyuan suspicious. He recalls the note "TV is bait". He watches Zhao's artificial leather bag. Need find ledger. Maybe he notices Zhao counting money, a black notebook falls out or hidden in bag. When Zhao steps out to piss, He searches. Or ledger is in warehouse crate. It records each deal: steel 25t profit, TV shipments, etc, with actual prices vs what Zhao told He; shows Zhao skimmed. For example steel deal actual buyer paid maybe more, He only got 1500; Zhao recorded kept extra. Or Ah Bing's cut was swallowed.
+Need chapter ends with suspense, not resolving all threads. Maybe he holds the unsigned statement? Or he signs? Actually he could walk out without signing (released pending). The watchers imply Zhao wants to know if he talked. If he did sign, Zhao's people may kill him. If he didn't, he goes to prison? The choice still unresolved. That's the suspense.
 
-- He reads entries: "6月3日，线材25吨，实收叁万伍仟，付何志远壹仟伍..."; "彩电十八台，实收五万二，付何贰仟..."; "阿炳份子扣..."; reveals Zhao has been cheating everyone. Also entries of bribes to officials. The summary says 老赵私下吞钱的账本.
+But the summary says "经办人递给他一份口供，让他指认老赵。他走出大门时，老赵的人在暗处盯着他." That implies he is asked, but doesn't say whether he signed. We can end with him stepping out and seeing watcher. We can include internal monologue: he hasn't decided; he slips statement into pocket. Or he signed under duress but now feels sick.
 
-- Psychological shift: He realizes the "brother" relationship is transactional; Zhao uses loyalty rhetoric to make him take fall. He feels anger, fear, but hides. He must decide whether to confront or play along. End with suspense: maybe police arrive, or Zhao returns and catches him with the ledger, or He makes a decision to use ledger as leverage, but door opens...
+We need narrative compact with details and psychological change. Let's write around 2500 Chinese characters? The target 2500 words. In Chinese, 2500 words about 3500-4000 characters maybe. But the allowed range 1500-99999 words; maybe they count Chinese characters as words? Usually word count in Chinese is characters. We'll aim ~3000 characters to be safe. We need not be too long.
 
-Need ensure not resolving all threads. End with suspense.
+Let's produce a chapter. Need no section headings except title. Style: solid, crisp, period texture. No lyricism. Use details like 搪瓷杯，铝饭盒，红头文件，电风扇，汗渍， etc.
 
-Let's craft with detail and pacing. Need around 2500 words. Let's write rich sensory details.
+Let's think of concrete setting: 宝安县工商局投机倒把办公室，位于一栋三层旧楼，走廊贴标语“严厉打击投机倒把活动”。 Interrogation room with green paint walls, wooden desk, a “蝴蝶牌”电风扇摇头，窗上有铁栅栏，桌上玻璃板压着毛主席像？ Maybe too political but era. Use a portrait? Avoid. Maybe desk has red phone, ashtray made from铁盒盖，茶缸印着“打击投机倒把 1983”.
 
-Important: Chapter heading exactly "## 第7章 兄弟的账本". Then text.
+Handler: 周干事 maybe in his forties, glasses, short-sleeve white shirt, underarm sweat stains. Name 周维民 or just “老周” no that's Zhou from earlier. Use a different surname to avoid confusion: 陈干事. He offers him 恒大烟? He says: “小何，你还年轻，不要替人扛。赵铁生不是东西，他把阿炳和你都卖了。你签了，天亮前就能走。”
 
-Need avoid any prose about author. Let's start.
+Evidence: They have a printed 讯问笔录， several pages, typed. It says: “本人何志远，受赵铁生（绰号老赵）指使，于1984年4月至5月间，参与倒卖国家计划内钢材及走私进口彩色电视机、电冰箱等物……赵铁生系主犯，本人仅系从犯，所得由赵铁生分配。” The blanks for him to sign and fingerprint. They may ask him to read aloud.
 
-We need ensure names and references consistent:
-- He Zhiyuan: 何志远
-- Zhao Tiesheng: 赵铁生 (Lao Zhao)
-- Ah Bing: 阿炳
-- Old Zhou: 老周
-- Liu Shuigen? Not needed.
-- Settings: Shenzhen River, Shekou, Luohu, etc.
-- Time: 1984, after Ah Bing arrested.
+He hesitates. He asks for water. They bring a 搪瓷杯，杯沿有茶垢. He drinks. He thinks of Zhao's ledger, his own share, the price of things. He thinks if he signs, Zhao will know; if not, he'll be the scapegoat. He also thinks maybe Zhao actually didn't sell him; it's the cops' trick. But the账本 was gone.
 
-Let's consider timeline: In ch6, He at old ferry (upstream) after receiving note "冰箱已到岸，老渡口，速来。赵。" He arrives, a光头 unloads 12 fridges. Then jeep arrives. A thin man tells him run. He runs to boat. So at start ch7, he is on boat. The fridges left behind, police got them. He escaped.
+Maybe the officer shows him a page: a photocopy? In 1984 maybe mimeograph. “赵铁生自己都交代了，你还不认？” They slide over a handwritten confession with Zhao's signature? He recognizes Zhao's handwriting? Might be forged? He reads: Zhao claims何志远主动找上门要求入股，负责接货送货，利润平分，赵只提供信息。 This would shift blame to何. This is what Zhao “供出” means. The officer says “老赵把锅全扣你头上了。你要是不指认他，这口锅就你一个人背。” So signing is to counter. Good.
 
-He likely returns to an old warehouse in Shekou? Maybe the boat takes him to a muddy landing near Nantou or Shekou. He meets Zhao in a brick shed. Need plausible.
+He feels betrayal. But also thinks, if he signs, maybe he gets out, but Zhao's network will not let him live; if he stays silent, he goes to jail. He is 26, no family, maybe father dead? He could carry. But he doesn't want to be used. This is the psychological change: from loyal follower to realizing he's alone; he must choose. He asks to smoke. Handler gives him一根“大前门”， lights it. He inhales, coughs. He has not decided.
+
+After hours, maybe handler gets a phone call, says “你先回去，明天上午再来。” Or they release him because lack of detention warrant? He signs something like a receipt? The statement remains unsigned. He puts it in his pocket? Actually if unsigned official document, maybe he leaves it on table. But summary says he walks out. He might not sign and still released for further investigation.
+
+When exiting, the sky is dark, neon, rain? Maybe a warm drizzle, mud, street vendors. He sees a man across the road under a 芒果树， leaning on a bicycle, smoking. It's one of Zhao's watchers. Maybe 老吴 or a kid. He doesn't look directly. He walks. The man follows at a distance. He turns into alleys. Maybe he decides to go to赵铁生? Or to find 老周? He doesn't know. He passes a public telephone? He has no one to call. He ends at a dark corner, hearing footsteps. He stops, reaches for电工刀 in his bag but bag confiscated? He has nothing. The watcher steps into a patch of light; it's 老周? End.
+
+Need careful continuity: At end of chapter 7, he was arrested by public security. Chapter 8 starts at AIC; could mention he spent last night at公安拘留所，天亮被移送到工商局 because case定性为投机倒把. Maybe handcuffed to a bed? They took his帆布袋 and电工刀. He has no money. Good.
+
+Need include物价 and wages: A clerk salary 50-60/month; a TV 1600; 3000 is big. Mention his 4500 hidden in铁皮屋; police may have searched? Actually he didn't get to retrieve. Maybe AIC mentions they searched his铁皮屋 and found 1500 in胶鞋 and maybe 3000 on him? When arrested, he had 3000 on waist. They confiscated as赃款. This adds pressure: if he signs, maybe some money returned? Or they keep.
 
 Let's write.
 
-Scene 1: Boat. Iron hull, no lights, engine throttled. The man steering maybe a teenager in a baseball cap? He asks no questions. He Zhiyuan sits on a gunwale, wet, clutching bag. The tall man who saved him is not on boat? He looks back, no one. He has escaped. They pass under a bridge (Shenzhen Bay? Lo Wu bridge?). On shore, neon and searchlights. They land at a broken wharf under a banyan.
+Possible title line exactly "## 第8章 二选一". Then body.
 
-Scene 2: Walks to warehouse. Meets Zhao. Zhao lights a cigarette, asks "冰箱呢？" He says left behind. Zhao not angry? Actually if police got them, Zhao lost. But Zhao is calm because maybe he planned it. He says "阿炳那边扛不住了，公安在找他开口。我得保他。" Then he tells He: "你那单，阿炳的货，你顶下来。" He asks what order: maybe a shipment of integrated circuits /批文 from Wenjindu due tomorrow, the one that would incriminate. Zhao says "讲义气" — taking it protects Ah Bing and brothers. He says "你一个人，没户口没单位，出事也牵连不到大家。进去蹲几年，出来我养你一辈子。"
+We must not add "本章完" or anything. Need ensure only chapter content.
 
-He feels sick. He remembers "电视是饵". He agrees outwardly. Zhao gives him a beer? They drink. Zhao goes out to piss or to meet someone.
+Let's draft in Chinese.
 
-Scene 3: He sees Zhao's black artificial leather bag (the one with brass buckle) left on a wooden crate. He debates, then opens. Inside: a brown notebook, not the business ledger he burned. He opens. Columns: date, item, actual receipt, payments to others, "落账" (pocketed). It shows:
-- Steel: actual buyer paid 35,000, He got 1,500, Zhao recorded "落33300"? Wait if cost? Need plausible. The steel deal: cost 520/t *25 =13,000. Buyer paid 1400/t*25 =35,000. Profit 22,000. He got 1,500. So Zhao kept ~20,500 maybe split with others. But ledger might show actual buyer paid more or Zhao pocketed He and Ah Bing shares.
-- Color TVs: actual receipt 52,000, He got 2,000 plus capital 3,000. Cost maybe ~18,000. Profit 34,000. Zhao kept most.
-- Ah Bing's share: "阿炳份子 叁仟，扣。" etc.
+Start:
 
-He sees entries of bribes: 贺德昌 TV 1680, plus cash 500; "送刘科" etc. The ledger reveals Zhao has private stash.
+何志远被带到工商局投机倒把办公室时，天已经亮了。
 
-Scene 4: Zhao returns; He quickly closes bag. Or maybe He is still reading when he hears footsteps. He shoves notebook back? Let's make suspense: He hears footsteps, not Zhao's plastic sandals but leather shoes? He hides ledger in his own bag? Or leaves. End: door opens, silhouettes; not Zhao but two men; or Zhao returns with police? Or He confronts Zhao holding ledger and a knife? The summary says trust begins to crack; perhaps not full confrontation. We can end with He realizing the choice ahead, and a knock at door, leaving uncertainty.
+他先在县公安局的留置室里蹲了一夜。屋里没有床，只有一条长凳和一只没倒的痰盂。蚊子在耳边嗡嗡地飞，他一夜没合眼。天亮后，两个穿蓝制服的警察把他带出来，塞上一辆绿色的北京吉普，开了半个钟头，交到两个穿白工商制服的人手里。白制服没给他戴手铐，只让他坐在办公室外头的长条木椅上，椅面被汗浸得发黑。
 
-Need ensure no resolution.
+...
 
-Let's create a tense ending: He hides the ledger inside his shirt/bag. Zhao returns with Old Zhou and another man. They talk about "阿炳已经吐了，公安在找何志远". Zhao asks He to sign/accept the order. He says "行". They toast. But He now knows. The chapter ends with He noticing Zhao's eyes and the bag, and a sound of sirens in distance. Maybe he palms a switchblade.
+Need include the statement scene.
 
-But user summary: "老赵要何志远把阿炳那单顶下来，称这是讲义气。何志远翻到老赵私下吞钱的账本，兄弟之间的信任开始崩裂。" So chapter should contain both events, and trust cracking. End with suspense but not necessarily external police.
-
-Let's structure accordingly.
-
-Now, produce text with details: 1984 Shenzhen, prices, ration coupons, wage levels. Include mention of "粮票"? Maybe he hasn't eaten. Include weather hot humid, mud, mosquitoes. Include language: Cantonese phrases? Keep Chinese.
-
-Let's write chapter. Need around 2500 Chinese characters? Actually target 2500 words (字). We can write ~2500-3000 characters. We must ensure >1500. Let's aim 2800 characters.
-
-We need include some internal monologue but not lyrical.
-
-Let's draft in Chinese now, in final channel.
+Let's write full.
 [/思考过程]
 
-## 第8章 二选一
 
 何志远被带到工商局投机倒把办公室时，天已经亮了。
 
@@ -2372,74 +2440,55 @@ Let's draft in Chinese now, in final channel.
 何志远把手伸进衬衫内袋，摸了摸那份口供。纸张被他的体温焐得发热，边缘已经开始卷边。
 
 他深吸一口气，走进人潮里。身后，摩托车的引擎声响了，像一只兽低低地咆哮，远远地跟着他。
+## 第9章 最后一船货
 
 [思考过程]
-We need write chapter 8 in Chinese. Need only output chapter title ## 第8章 二选一 then body. Must not include any meta comments, writing process, explanation. Continue from chapter 7. Need length ~2500 words, 1500-99999. Need adhere to prior events. Let's recall prior: chapter 7 ends with 何志远 arrested? Police say 赵铁生 already sold him out. Need chapter 8: 何志远被工商局叫去问话，经办人递给他一份口供，让他指认老赵。他走出大门时，老赵的人在暗处盯着他.
+The user wants me to write Chapter 9 "The Last Shipment" of a novel titled "Shenzhen Past". I need to:
 
-Note: Chapter summary says he is called by Administration for Industry and Commerce for questioning, officer hands him a statement to identify Old Zhao (老赵/赵铁生). When he walks out, Old Zhao's people watch in shadows. Need include psychological changes, suspense, details. The prompt's "故事走向" earlier says final forced choice between selling the brother who brought him into the trade and taking prison. This chapter should be the setup of that choice. Since prior chapter had police, but summary says 工商局 (maybe after police transferred to AIC?). Need consistent. We can reconcile: he was taken by public security first then transferred to AIC because economic crime. Maybe they mention x days later. Need mention events: 阿炳被捕，冰箱被查，赵铁生供出他? But summary says they ask him to identify 老赵. Could be trap? Need tight.
+1. Start with Markdown heading "## 第9章 最后一船货"
+2. Continue from previous chapters
+3. Maintain character setting and world view consistency
+4. Tight narrative with details, suspense, and psychological changes
+5. Word count 1500-99999 (target 2500)
+6. Don't output writing process, summaries, explanations, or meta-comments
+7. End with suspense (as part of an ongoing story)
 
-Let's outline.
+Key plot points for this chapter from the synopsis:
+- Old Zhao arranges last shipment from Shekou Wharf
+- Promises to split after this job
+- He Zhiyuan discovers the ship holds not only refrigerators but also several boxes of unregistered video recorders (录像机)
 
-Opening: He is at 工商局 somewhere (maybe宝安县工商行政管理局/罗湖?), in interrogation/smoke-filled office. He has been held maybe two days. Details: handcuffs? no, administrative questioning. He sits on bench, smell of sweat/detergent. The handler (经办人) named something? Let's create a believable officer, perhaps 李科长 or 周干事. He hands a typed statement, says sign and fingerprint, identify 赵铁生 as principal smuggler/投机倒把， then you are a victim/helper, minor, can go. If not, you carry all, possible prison.
+I need to carefully maintain continuity with the previous 8 chapters:
+- He Zhiyuan is now out of the Industrial and Commercial Bureau
+- He has the prepared confession in his shirt pocket
+- He's being followed/pressured by both Zhao Tiesheng's people and possibly the authorities
+- The relationship with Zhao Tiesheng is now adversarial
+- He refused to sign the confession implicating Zhao as the main culprit
+- He's being tracked by a black Shanghai sedan
+- He has 3000 yuan confiscated as "illicit funds"
+- Old Zhou is working for Zhao Tiesheng
 
-Explore 何志远's thoughts: he realizes赵铁生 likely already set him up; the statement may be fake? He reads it: says he, under Zhao's coercion/deception, participated; Zhao organized smuggling, profited; he just drove/ moved goods. Actually he profited too. Signing means betraying 赵铁生 but also maybe lying. He also recalls 老周? Maybe "老赵" could refer to 赵铁生 or another. In summary "老赵" is Zhao Tiesheng. Good.
+The chapter should show the "last shipment" operation, the tension between He Zhiyuan and Zhao Tiesheng, the discovery of the unregistered video recorders, and leave suspense at the end.
 
-Need maintain realism: 1984 AIC, anti-speculation campaign. Smuggling electronic goods, no license. Double-track price. The officer may be local, knows the game, perhaps previously took bribes? Maybe hint he works with Zhao? Unclear.
+Let me write this in Chinese, maintaining the established style: solid, crisp, with period texture, details and actions driving the plot, no lyricism.
 
-He wavers. Need detail physical: sweaty neck, handcuffs chafing, watery tea, mosquitoes, wall slogans. They might show him evidence: a confiscated ledger fragment? Actually Zhao's ledger was with Zhao. But police/AIC may have阿炳's ledger or赵铁生's statement implicating him. They mention 赵铁生 already confessed. But is that true? It could be pressure tactic. He thinks about Zhao's black ledger with names and "可弃". He understands Zhao marked him "可用，胆大，无家累". He feels anger. But also, Zhao brought him into business; if he signs, Zhao may be executed? Or long prison. If he doesn't, he takes blame, maybe 10 years? He has no family to care, only father dead? He could take it, but feels unjust. Also there is the person who saved him at river; unknown. He might think of铁皮屋、三千块钱、罗湖、蛇口的探照灯.
+Key elements to include:
+- Shekou Wharf setting at night
+- The operation to unload refrigerators and video recorders
+- He Zhiyuan's discovery of the unregistered goods
+- The psychological shift: realizing Zhao Tiesheng is setting him up
+- Ending with a suspenseful moment, maybe confrontation or choice
 
-Scene: He asks to use toilet. They allow under guard. In courtyard, he sees a green jeep, a black人造革包? Maybe not. He sees a man in shadows watching: maybe老周 or Zhao's man. He notices a motorcycle. After refusing to sign? Or he signs? Summary says he walks out and Zhao's people watch. Wait summary says he is called for questioning, handler gives statement asking him to identify Zhao. He walks out of gate, Zhao's people in dark watching him. So in this chapter he leaves AIC (maybe released on bail? or after questioning not detained). They let him go temporarily. He steps out, twilight, rain? Heat. He feels being watched. He walks through streets, sees a man in a peaked cap leaning on motorcycle (old Wu?) or老周. He doesn't confront. He returns to铁皮屋? But铁皮屋 has been searched. Maybe he has nowhere.
+I should make sure the economic/historical details are plausible:
+- 1984 Shenzhen
+- Video recorders (录像机) were expensive imported goods, often smuggled
+- Refrigerators being imported
+- Shekou Wharf
+- Dual-track pricing system
 
-Need chapter ends with suspense, not resolving all threads. Maybe he holds the unsigned statement? Or he signs? Actually he could walk out without signing (released pending). The watchers imply Zhao wants to know if he talked. If he did sign, Zhao's people may kill him. If he didn't, he goes to prison? The choice still unresolved. That's the suspense.
-
-But the summary says "经办人递给他一份口供，让他指认老赵。他走出大门时，老赵的人在暗处盯着他." That implies he is asked, but doesn't say whether he signed. We can end with him stepping out and seeing watcher. We can include internal monologue: he hasn't decided; he slips statement into pocket. Or he signed under duress but now feels sick.
-
-We need narrative compact with details and psychological change. Let's write around 2500 Chinese characters? The target 2500 words. In Chinese, 2500 words about 3500-4000 characters maybe. But the allowed range 1500-99999 words; maybe they count Chinese characters as words? Usually word count in Chinese is characters. We'll aim ~3000 characters to be safe. We need not be too long.
-
-Let's produce a chapter. Need no section headings except title. Style: solid, crisp, period texture. No lyricism. Use details like 搪瓷杯，铝饭盒，红头文件，电风扇，汗渍， etc.
-
-Let's think of concrete setting: 宝安县工商局投机倒把办公室，位于一栋三层旧楼，走廊贴标语“严厉打击投机倒把活动”。 Interrogation room with green paint walls, wooden desk, a “蝴蝶牌”电风扇摇头，窗上有铁栅栏，桌上玻璃板压着毛主席像？ Maybe too political but era. Use a portrait? Avoid. Maybe desk has red phone, ashtray made from铁盒盖，茶缸印着“打击投机倒把 1983”.
-
-Handler: 周干事 maybe in his forties, glasses, short-sleeve white shirt, underarm sweat stains. Name 周维民 or just “老周” no that's Zhou from earlier. Use a different surname to avoid confusion: 陈干事. He offers him 恒大烟? He says: “小何，你还年轻，不要替人扛。赵铁生不是东西，他把阿炳和你都卖了。你签了，天亮前就能走。”
-
-Evidence: They have a printed 讯问笔录， several pages, typed. It says: “本人何志远，受赵铁生（绰号老赵）指使，于1984年4月至5月间，参与倒卖国家计划内钢材及走私进口彩色电视机、电冰箱等物……赵铁生系主犯，本人仅系从犯，所得由赵铁生分配。” The blanks for him to sign and fingerprint. They may ask him to read aloud.
-
-He hesitates. He asks for water. They bring a 搪瓷杯，杯沿有茶垢. He drinks. He thinks of Zhao's ledger, his own share, the price of things. He thinks if he signs, Zhao will know; if not, he'll be the scapegoat. He also thinks maybe Zhao actually didn't sell him; it's the cops' trick. But the账本 was gone.
-
-Maybe the officer shows him a page: a photocopy? In 1984 maybe mimeograph. “赵铁生自己都交代了，你还不认？” They slide over a handwritten confession with Zhao's signature? He recognizes Zhao's handwriting? Might be forged? He reads: Zhao claims何志远主动找上门要求入股，负责接货送货，利润平分，赵只提供信息。 This would shift blame to何. This is what Zhao “供出” means. The officer says “老赵把锅全扣你头上了。你要是不指认他，这口锅就你一个人背。” So signing is to counter. Good.
-
-He feels betrayal. But also thinks, if he signs, maybe he gets out, but Zhao's network will not let him live; if he stays silent, he goes to jail. He is 26, no family, maybe father dead? He could carry. But he doesn't want to be used. This is the psychological change: from loyal follower to realizing he's alone; he must choose. He asks to smoke. Handler gives him一根“大前门”， lights it. He inhales, coughs. He has not decided.
-
-After hours, maybe handler gets a phone call, says “你先回去，明天上午再来。” Or they release him because lack of detention warrant? He signs something like a receipt? The statement remains unsigned. He puts it in his pocket? Actually if unsigned official document, maybe he leaves it on table. But summary says he walks out. He might not sign and still released for further investigation.
-
-When exiting, the sky is dark, neon, rain? Maybe a warm drizzle, mud, street vendors. He sees a man across the road under a 芒果树， leaning on a bicycle, smoking. It's one of Zhao's watchers. Maybe 老吴 or a kid. He doesn't look directly. He walks. The man follows at a distance. He turns into alleys. Maybe he decides to go to赵铁生? Or to find 老周? He doesn't know. He passes a public telephone? He has no one to call. He ends at a dark corner, hearing footsteps. He stops, reaches for电工刀 in his bag but bag confiscated? He has nothing. The watcher steps into a patch of light; it's 老周? End.
-
-Need careful continuity: At end of chapter 7, he was arrested by public security. Chapter 8 starts at AIC; could mention he spent last night at公安拘留所，天亮被移送到工商局 because case定性为投机倒把. Maybe handcuffed to a bed? They took his帆布袋 and电工刀. He has no money. Good.
-
-Need include物价 and wages: A clerk salary 50-60/month; a TV 1600; 3000 is big. Mention his 4500 hidden in铁皮屋; police may have searched? Actually he didn't get to retrieve. Maybe AIC mentions they searched his铁皮屋 and found 1500 in胶鞋 and maybe 3000 on him? When arrested, he had 3000 on waist. They confiscated as赃款. This adds pressure: if he signs, maybe some money returned? Or they keep.
-
-Let's write.
-
-Possible title line exactly "## 第8章 二选一". Then body.
-
-We must not add "本章完" or anything. Need ensure only chapter content.
-
-Let's draft in Chinese.
-
-Start:
-
-何志远被带到工商局投机倒把办公室时，天已经亮了。
-
-他先在县公安局的留置室里蹲了一夜。屋里没有床，只有一条长凳和一只没倒的痰盂。蚊子在耳边嗡嗡地飞，他一夜没合眼。天亮后，两个穿蓝制服的警察把他带出来，塞上一辆绿色的北京吉普，开了半个钟头，交到两个穿白工商制服的人手里。白制服没给他戴手铐，只让他坐在办公室外头的长条木椅上，椅面被汗浸得发黑。
-
-...
-
-Need include the statement scene.
-
-Let's write full.
+Let me write the chapter now.
 [/思考过程]
 
-## 第9章 最后一船货
 
 何志远是在宝安县城一家招待所门口见到赵铁生的。
 
@@ -2763,56 +2812,7 @@ Let's write full.
 
 而在纸箱旁边，不知什么时候多了一个黑色人造革包，黄铜扣子在光柱下一闪一闪。
 
-那是赵铁生的包。
-
-[思考过程]
-The user wants me to write Chapter 9 "The Last Shipment" of a novel titled "Shenzhen Past". I need to:
-
-1. Start with Markdown heading "## 第9章 最后一船货"
-2. Continue from previous chapters
-3. Maintain character setting and world view consistency
-4. Tight narrative with details, suspense, and psychological changes
-5. Word count 1500-99999 (target 2500)
-6. Don't output writing process, summaries, explanations, or meta-comments
-7. End with suspense (as part of an ongoing story)
-
-Key plot points for this chapter from the synopsis:
-- Old Zhao arranges last shipment from Shekou Wharf
-- Promises to split after this job
-- He Zhiyuan discovers the ship holds not only refrigerators but also several boxes of unregistered video recorders (录像机)
-
-I need to carefully maintain continuity with the previous 8 chapters:
-- He Zhiyuan is now out of the Industrial and Commercial Bureau
-- He has the prepared confession in his shirt pocket
-- He's being followed/pressured by both Zhao Tiesheng's people and possibly the authorities
-- The relationship with Zhao Tiesheng is now adversarial
-- He refused to sign the confession implicating Zhao as the main culprit
-- He's being tracked by a black Shanghai sedan
-- He has 3000 yuan confiscated as "illicit funds"
-- Old Zhou is working for Zhao Tiesheng
-
-The chapter should show the "last shipment" operation, the tension between He Zhiyuan and Zhao Tiesheng, the discovery of the unregistered video recorders, and leave suspense at the end.
-
-Let me write this in Chinese, maintaining the established style: solid, crisp, with period texture, details and actions driving the plot, no lyricism.
-
-Key elements to include:
-- Shekou Wharf setting at night
-- The operation to unload refrigerators and video recorders
-- He Zhiyuan's discovery of the unregistered goods
-- The psychological shift: realizing Zhao Tiesheng is setting him up
-- Ending with a suspenseful moment, maybe confrontation or choice
-
-I should make sure the economic/historical details are plausible:
-- 1984 Shenzhen
-- Video recorders (录像机) were expensive imported goods, often smuggled
-- Refrigerators being imported
-- Shekou Wharf
-- Dual-track pricing system
-
-Let me write the chapter now.
-[/思考过程]
-
-## 第10章 河对岸的电话
+那是赵铁生的包。## 第10章 河对岸的电话
 
 何志远站在深圳河北岸的乱草里，裤脚还在滴水。
 

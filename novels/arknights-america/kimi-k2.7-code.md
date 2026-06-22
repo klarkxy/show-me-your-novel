@@ -13,7 +13,13 @@
 9. **第七十小时** — 第七十小时，谈判接近达成临时庇护条款，一支不明武装快艇却突然逼近舰艉。博士下令非致命拦截，但在混乱中，一声枪响划破甲板。他看见阿米娅倒下，双方所有无线电同时陷入死寂。
 10. **孤舟** — 阿米娅中弹生死未卜，美方舰队进入最高警戒，罗德岛武器系统自动锁定周围目标。博士的手指悬停在发射钮上，却看见云层中再度裂开一道空间缝隙。他不知道那是回家的路，还是另一艘正在坠落的孤舟。
 
+
 ## 第1章 深蓝色的天空
+
+[思考过程]
+We need generate first chapter in Chinese per prompt. Must output only chapter text, start with markdown title. User asks "陆上孤舟" chapter 1. We need produce about 2500 words? They give 1500-99999, target 2500. Need satisfy: third-person limited to Doctor, no inner US side, no explanations, no meta. Must be novel prose. Need include characters: Doctor, Kal'tsit, Amiya, Rhodes Island crew. Scene: after spatial rift, hovering over New York harbor, no Originium, atmosphere/gravity same, CNN broadcast. Doctor orders silent, but already broadcast. Tension. We need write in Chinese with careful detail and suspense. Need ensure word count around 2500 Chinese characters? They said words; Chinese character count roughly. We'll aim 2500+ characters. Need start with "## 第1章 深蓝色的天空". No other content before or after. Need not write summary. We'll produce prose. Let's craft. Need maybe mention no sourcestone, no Arts. Need show Doctor psychological change. Need include dialogue. Need show first black helicopter landing at end? Prompt says first black helicopter landing, visitors about to step on Terra land. Chapter summary says CNN signal. Could end with helicopter landing. Let's incorporate. Need maintain character: Kal'tsit concise, Amiya firm but emotional. Doctor S-tier commander, uncertain. Let's write. We need avoid US character perspective; we can describe helicopter as observed. Use descriptors: belly red lights, skyscraper glass, no nomadic city engine towers, clean sunlight. Use third person limited: only Doctor's thoughts/perceptions. Let's write in polished Chinese literary sci-fi style, restrained, dialogue. Include technical: spatial anomaly, silence order, comms intercept CNN, language translation (no universal translator). They likely need interpret English via ship AI or someone with language databases. Maybe Projekt Red? No, not needed. Could use existing operator translating? To keep realism, they pick up TV signal, decode English, and a Linguistics operator struggles. Let's include Logos? Maybe not. Could be an unnamed communications officer. Better use established characters? Maybe PRTS? Actually PRTS could attempt. Doctor orders. Include Doctor's monologue: "为什么是我们？" Not literal speech, internal. Also concern deliberate vs random. Let's write around 2600 characters. Ensure no meta. Let's proceed.
+[/思考过程]
+
 
 警报是在十四点十七分停止的。
 
@@ -194,12 +200,84 @@
 也许是和平。也许是另一场他还不理解其规则的开端。
 
 他把手背到身后，站直了身体，看着那架来自陌生世界的机器降落在泰拉的土地上。
+## 第2章 黑色直升机
 
 [思考过程]
-We need generate first chapter in Chinese per prompt. Must output only chapter text, start with markdown title. User asks "陆上孤舟" chapter 1. We need produce about 2500 words? They give 1500-99999, target 2500. Need satisfy: third-person limited to Doctor, no inner US side, no explanations, no meta. Must be novel prose. Need include characters: Doctor, Kal'tsit, Amiya, Rhodes Island crew. Scene: after spatial rift, hovering over New York harbor, no Originium, atmosphere/gravity same, CNN broadcast. Doctor orders silent, but already broadcast. Tension. We need write in Chinese with careful detail and suspense. Need ensure word count around 2500 Chinese characters? They said words; Chinese character count roughly. We'll aim 2500+ characters. Need start with "## 第1章 深蓝色的天空". No other content before or after. Need not write summary. We'll produce prose. Let's craft. Need maybe mention no sourcestone, no Arts. Need show Doctor psychological change. Need include dialogue. Need show first black helicopter landing at end? Prompt says first black helicopter landing, visitors about to step on Terra land. Chapter summary says CNN signal. Could end with helicopter landing. Let's incorporate. Need maintain character: Kal'tsit concise, Amiya firm but emotional. Doctor S-tier commander, uncertain. Let's write. We need avoid US character perspective; we can describe helicopter as observed. Use descriptors: belly red lights, skyscraper glass, no nomadic city engine towers, clean sunlight. Use third person limited: only Doctor's thoughts/perceptions. Let's write in polished Chinese literary sci-fi style, restrained, dialogue. Include technical: spatial anomaly, silence order, comms intercept CNN, language translation (no universal translator). They likely need interpret English via ship AI or someone with language databases. Maybe Projekt Red? No, not needed. Could use existing operator translating? To keep realism, they pick up TV signal, decode English, and a Linguistics operator struggles. Let's include Logos? Maybe not. Could be an unnamed communications officer. Better use established characters? Maybe PRTS? Actually PRTS could attempt. Doctor orders. Include Doctor's monologue: "为什么是我们？" Not literal speech, internal. Also concern deliberate vs random. Let's write around 2600 characters. Ensure no meta. Let's proceed.
+We need produce chapter 2 only, in Chinese, per instructions. Must start with markdown heading "## 第2章 黑色直升机". Narrative follows prior chapter. Need focus on black helicopter landing, US military/State Dept joint team, translation device malfunctions, conceptual mismatches about mobile city, armed neutrality, infected. Amiya uses courtesy to defuse hostility, Kal'tsit calmly conceals origin disease history, Doctor during handshake senses counterpart also afraid. Third person limited to Doctor. No US internal POV. Length 2500 target, range 1500-99999. Need write polished prose, dialogue/silence/body language/translation errors. Must include tension and suspense, no closure. Avoid meta commentary. We need ensure characters in-character: Kal'tsit cold/restrained; Amiya firm but emotional; Doctor S-tier commander. Language literary, not military power fantasy. Use Chinese. Must not output any extra content beyond chapter. Ensure chapter ends with suspense maybe after handshake or entering meeting; unresolved. We can write around 2500 Chinese characters. Need include translation device glitches perhaps an earpiece or tablet. The US team includes maybe a military officer and a diplomat/interpreter. Doctor's perspective only. Keep names in Chinese. Need avoid giving away too much. Let’s compose.
+
+Need maybe a scene: helicopter lands, rotors slow. Ramp opens. Figures emerge in suits/uniforms. Doctor, Kal'tsit, Amiya on deck with a small team. Doctor orders no weapons visible. The visitors: uniformed man (military), civilian woman (State Department), interpreter/tech with translation equipment. Initial attempts at communication: Doctor uses his limited linguistic ability? The translation device? Perhaps translation device is a portable tablet/earpiece deployed by US. They brought it assuming unknown language; it picks up patterns. It translates badly. Doctor deliberately speaks in Terran common language? The device can translate partially. Or they have a linguist. We can show miscommunications: "mobile city" translated as "city ship" or "mobile fortress"; "armed neutrality" becomes "neutral armed group" maybe interpreted as mercenary/private military; "Infected" as "patients" or "diseased". Kal'tsit notes no Originium reaction, so no disease here; but hides. Amiya bows, uses formal greetings. The US team seems tense, hands near holsters. They examine non-human races? The team includes maybe a soldier with an M4, a female diplomat, translator. Amiya is a donna (Cautus). Some characters in US team may be startled but hide. The leader maybe a Rear Admiral or a colonel. A State Department official maybe Ms. ... no need names. We only see via Doctor.
+
+Potential details: The black helicopter's rotor wash stirs dust; deck lights illuminate. The visitors wear body armor, helmets? First man out in plain suit with ballistic vest, holding a tablet. Military personnel in camouflage, rifles lowered but ready. They set down a portable ramp. They speak in English; translation devices lag and distort. Doctor notices fear in their movements: too precise, too rehearsed, hands on weapons, fingers hovering but not gripping. The diplomat's handshake palm is cold and damp. He realizes they are also scared. That's the key moment.
+
+Need conceptual mismatch: They ask "What is this vessel?" Doctor answers via translation: "This is Rhodes Island, a mobile city." Device returns "floating battleship"? The visitors exchange glances. They ask "Are you armed?" Doctor: "We are an armed neutral medical organization." Translation maybe "You are a private military medical group?" They ask "Do you have nuclear/chemical/biological weapons?" or "Are you contagious?" Kal'tsit interjects: "No biological agents. We are physicians." Hides Originium disease. But Amiya's rings catch attention; diplomat asks about "mineral deposits on your hands"? Amiya says they are personal items. 
+
+Maybe translation fails on key terms: "sourcestone/Originium" device outputs "radioactive ore?" They ask "Are you experiencing a radiation leak?" Doctor chooses not to explain Originium; says "No radiation." He senses the need to control information. 
+
+Need suspense at end: They are escorted to a conference room, or the diplomat hands Doctor a document/a phone with the President's message? Or a second wave approaching. Maybe chapter ends as Doctor notices on the helicopter's side a symbol, or a patch that suggests there are multiple agencies; or a radio call about "standing orders if hostilities commence"; or the diplomat says, "You are in United States territorial waters. You have one hour to declare your intentions." Then they hand him a tablet displaying live news of riots, military mobilization. Or the final line: The man in the suit looks at him and says something the translator renders incorrectly: "We come in peace" but Doctor hears grammatical nuance perhaps not peace but "we are here to contain." End with Doctor's realization they are being treated as a threat, and a decision pending.
+
+But the user specified: "第10章末尾留下悬念，不要收束所有线索" which is for overall? Actually the requirements list overall story ending; but we are writing chapter 2. The chapter summary says: need suspense. So ending of chapter 2 should leave suspense.
+
+Let's produce a chapter of ~2500 Chinese characters. Use markdown heading. Need ensure 3rd person limited to Doctor. Use descriptive prose.
+
+Let's write carefully.
+
+We can structure:
+- Opening: Deck, wind, helicopter touches down.
+- Doctor orders lights only, no weapons aimed. He is flanked by Kal'tsit and Amiya; behind them, a small security detail with shields (but no visible rifles?). Maybe they have sidearms holstered.
+- The visitors: a tall uniformed officer first, then a woman in suit, then a technician with translation equipment. They step onto deck; the soldier's hand near weapon. Amiya bows; official returns a nod. The tech sets up a portable speaker/translator. Communication begins.
+- Translation errors: initial greeting. Amiya says welcome, device garbles. Doctor introduces self as "commander". They ask "nationality" / "origin". He says "Rhodes Island, no country". Translation yields "stateless vessel". The officer frowns.
+- Concept mismatch: mobile city. They call it "vessel" / "ship". Doctor says "landship". The tech's device can't map "landship". It outputs "aircraft carrier?" The officer mutters.
+- They ask about weapons. Doctor says "armed neutrality, medical organization". The translation says "armed medical militia" perhaps. Diplomat asks "Are you a threat?" Doctor: "We do not wish to be." The officer notes flight deck, turrets? Actually Rhodes Island has weapons maybe. They ask to inspect. Kal'tsit refuses calmly: "This is a medical facility. External inspection can be arranged under reciprocal conditions." She hides. 
+- Infected concept: The diplomat notices Amiya's rings, Kal'tsit asks if any of their party require medical attention; official says no. Kal'tsit says "We carry no infectious disease." Hmm.
+- Handshake: The lead officer (maybe a general) extends hand. Doctor shakes. Palm is cold/sweaty. He notices the officer's thumb rests near a pulse? The officer's eyes not meeting. Doctor realizes fear. Or the diplomat's handshake; choose diplomat. Perhaps the uniformed officer extends hand firmly but his wrist is stiff, and Doctor feels a tremor. He notes the soldier behind has finger on trigger guard. The realization: they are also terrified.
+- Escort to interior. They walk through corridors; visitors stare at non-human features? Maybe a passerby has animal ears/tail. US soldiers tighten grips. Amiya uses gentle words to calm a young soldier? But maybe too much. 
+- Conference room. They sit. The diplomat places a device on table; it projects English text: "You are within U.S. territorial waters. Identify your intentions. Cooperate or face interception." Or maybe she opens a folder with satellite photos showing罗德岛. The officer says (translated) "No hostile acts. We request a liaison remain aboard." Doctor understands this is a form of custody. He asks for time to consult. They agree to one hour. End with Doctor looking at the closed helicopter outside, realizing they are now a prisoner of perception, and that the other side is moving faster than he can learn their rules.
+
+But maybe the chapter needs more detail and length. Let's aim for 2500-3000 characters. Need vivid details: smell of jet fuel, rotor wash, translation device's synthetic voice, body language.
+
+Also include translation glitches explicitly. Use the phrase "翻译设备" maybe like a tablet and earbuds.
+
+Let's write.
+
+Potential names: US side could be "那名穿西装的女人" and "军装男人". Avoid internal POV. They speak English; Doctor doesn't know English but the translation device decodes. The translation's artificial voice speaks Terran common. We'll render English dialogue in quotes, then translation output. But since we only have Doctor POV, maybe we can write as he hears English, then synthetic translation. The readers can understand English (because story in Chinese), but Doctor only understands via translation. To maintain limited POV, we should describe the English speech as "一串急促的、他听不懂的音节", then the device translates. However for readability, we might render the English as dialogue then provide translation? The prompt: "叙事视角：第三人称限知视角，紧贴博士。不要切换到美国方面角色的内心视角（美军行动只通过博士的观察和对话来展现）。" It doesn't say we can't show English and translation. Since it's limited to Doctor, his comprehension is through device. We can show the English as sounds and the device's output. Better to write: '“...Rhodes Island,” the woman said. The device emitted: “罗德岛。”' That may imply Doctor hears translation. We can include both for effect.
+
+But to avoid making the US dialogue too long in English, maybe use Chinese to represent the translated speech, with occasional English words in italics for ambiguity. The device translation is imperfect, so we can show discrepancies. For example, the woman says something; device translates: “你们……船只……国籍？” Then later it clarifies. The man says something; device: “放下……武装？” Doctor infers from tone/context.
+
+Need be careful: If we write the Americans speaking Chinese (translated), it may break limited POV. But the device translation output can be in Chinese. So the flow: US speaks English; Doctor hears a synthetic voice in his ear or a speaker translating. We can format like:
+
+“——” 那个女人开口，音节短促，尾音上扬。博士耳中的翻译器延迟了半秒，才用机械的女声说道：“这是……你们的……船只？”
+
+This keeps Doctor's perspective.
+
+Let's craft.
+
+Let's also include Amiya's action: She steps forward before security, greets with a formal bow: "欢迎来到罗德岛。我们没有敌意。" The device translates? Maybe the US tech hands earpieces to them; so they wear one-way translation earpieces? But initial contact might use speaker. Let's have a portable speaker on the deck, set by the technician; both sides speak into it. The device translates aloud in the other language. That allows misunderstandings.
+
+Kal'tsit: She stands slightly behind, arms not crossed but relaxed. She observes medical signs: the visitors' skin, respiration. She notices no signs of Oripathy; also notes their weapons are chemical-kinetic (gunpowder). She whispers to Doctor: "They rely on explosive propulsion, not Originium. Treat every firearm as lethal." She also declines to reveal infection status. When asked if there are diseases aboard, she says: "We maintain standard quarantine protocols. No infectious agents of concern." That hides Infected.
+
+Amiya: When a young soldier visibly startles at her ears, she smiles gently and says "Don't be afraid." The device translates; soldier flinches, then relaxes a little. She uses courtesy to reduce hostility. But later, when asked about her rings, she falters: "They are... a symbol of our work." Doctor notices her fingers tighten. He covers: "Personal ornamentation." The diplomat's eyes remain on them.
+
+Doctor's internal monologue: He tries to apply war assessment: numbers, intent, capability. But rules are off. The helicopter is unarmored but can call more. The ships below are not landships. Their weapons are small but numerous. He must decide if this is negotiation or siege. He notices their fear in handshake: the diplomat's hand is cold, controlled but damp; pulse rapid. The officer's pupils dilated. They are acting brave. This gives him leverage but also danger—scared people shoot.
+
+Let's include a moment when he realizes translation isn't just technical error but conceptual: The device translates "武装中立" as "armed neutrality" but they hear "neutral armed force"; "感染者" translated as "the infected" or "contagious persons". When Amiya says "我们保护感染者", the device outputs "We protect the carriers." The US team's posture shifts: "carriers" might mean disease carriers or aircraft carriers? Hmm. Better to make a deliberate mistranslation: Doctor says "感染者" (infected), device says "受感染的人" but the English word 'infected' may be understood as bioweapon? Actually 'infected' just means disease. But concept mismatch: In this world, infectious disease is not politicized like Oripathy. Maybe the mismatch is when the US asks "Are any of you infected?" Kal'tsit says "No," but Doctor sees an Infected crew member (with visible crystals?) in the corridor behind; the visitors notice and tense. But we want Kal'tsit hide. Perhaps she steps slightly to block line of sight when an Infected engineer passes, and answers "Chronic occupational exposure markers. Non-communicable." This is a lie. The visitors don't understand "源石" anyway. Good.
+
+Maybe include "源石" translation: When Doctor says "源石" (Originium), the device outputs "radioactive mineral?" The diplomat asks "Are you carrying nuclear material?" Doctor says "No." They decide not to mention Originium.
+
+End: They are led to a conference room. The diplomat presents a tablet with a map showing red lines: territorial waters. She says (translated): "You are here. You cannot stay." Doctor asks "What do you propose?" Device translates their reply: "One liaison. Unarmed. On your ship. Until sunrise." It's an ultimatum/inspection. The officer adds: "Or we will consider you a hostile unknown." But translation glitches: "consider you unknown hostile." Doctor sees the fear again in the officer's tone. He agrees to discuss with his council. The chapter ends as the conference room door closes, leaving Doctor, Kal'tsit, Amiya alone. Amiya whispers: "博士，他们怕我们。" Doctor: "他们也怕他们自己。" He looks at the glass wall: the helicopter on deck, the city beyond. He knows they have maybe hours before the fear turns into something else.
+
+This provides suspense.
+
+Need ensure no closure.
+
+Let's write in a style with varied sentence lengths, sensory details. We'll produce maybe 2700 words. We need count but not over 99999. Let's aim around 2800 Chinese characters (roughly 1700-2000 words? Chinese characters). The target says 2500 words; maybe characters. We can write around 2500 Chinese characters. We'll produce rich text.
+
+Let's begin with heading and content.
+
+We need not include any summary. Just output.
+
+Let's draft in final.
 [/思考过程]
 
-## 第2章 黑色直升机
 
 直升机落在主甲板上时，声音比博士预想的小。
 
@@ -452,84 +530,122 @@ We need generate first chapter in Chinese per prompt. Must output only chapter t
 博士没有回答。他看着窗外，那座城市的光点正在逐一亮起，像一张刚刚被点亮的棋盘。
 
 而他们，才刚刚落下第一颗子。
+## 第3章 十二海里
 
 [思考过程]
-We need produce chapter 2 only, in Chinese, per instructions. Must start with markdown heading "## 第2章 黑色直升机". Narrative follows prior chapter. Need focus on black helicopter landing, US military/State Dept joint team, translation device malfunctions, conceptual mismatches about mobile city, armed neutrality, infected. Amiya uses courtesy to defuse hostility, Kal'tsit calmly conceals origin disease history, Doctor during handshake senses counterpart also afraid. Third person limited to Doctor. No US internal POV. Length 2500 target, range 1500-99999. Need write polished prose, dialogue/silence/body language/translation errors. Must include tension and suspense, no closure. Avoid meta commentary. We need ensure characters in-character: Kal'tsit cold/restrained; Amiya firm but emotional; Doctor S-tier commander. Language literary, not military power fantasy. Use Chinese. Must not output any extra content beyond chapter. Ensure chapter ends with suspense maybe after handshake or entering meeting; unresolved. We can write around 2500 Chinese characters. Need include translation device glitches perhaps an earpiece or tablet. The US team includes maybe a military officer and a diplomat/interpreter. Doctor's perspective only. Keep names in Chinese. Need avoid giving away too much. Let’s compose.
+We need generate chapter 3 of a fanfiction, based on provided chapters 1 and 2. Need obey: output only chapter body, starting with Markdown heading "## 第3章 十二海里". No writing process, summary, meta. Third-person limited to Doctor. Focus on communication, miscommunication, language gaps, Doctor psychology. Events: US demands Rhodes Island move to designated anchorage and accept boarding inspection; Doctor refuses to hand over power core; deck negotiation nearly breaks due to language gap, a mistranslation conflates surrender and mooring; Amiya briefly tears up in front of operators then returns to Doctor's side. Target ~2500 words, range 1500-99999.
 
-Need maybe a scene: helicopter lands, rotors slow. Ramp opens. Figures emerge in suits/uniforms. Doctor, Kal'tsit, Amiya on deck with a small team. Doctor orders no weapons visible. The visitors: uniformed man (military), civilian woman (State Department), interpreter/tech with translation equipment. Initial attempts at communication: Doctor uses his limited linguistic ability? The translation device? Perhaps translation device is a portable tablet/earpiece deployed by US. They brought it assuming unknown language; it picks up patterns. It translates badly. Doctor deliberately speaks in Terran common language? The device can translate partially. Or they have a linguist. We can show miscommunications: "mobile city" translated as "city ship" or "mobile fortress"; "armed neutrality" becomes "neutral armed group" maybe interpreted as mercenary/private military; "Infected" as "patients" or "diseased". Kal'tsit notes no Originium reaction, so no disease here; but hides. Amiya bows, uses formal greetings. The US team seems tense, hands near holsters. They examine non-human races? The team includes maybe a soldier with an M4, a female diplomat, translator. Amiya is a donna (Cautus). Some characters in US team may be startled but hide. The leader maybe a Rear Admiral or a colonel. A State Department official maybe Ms. ... no need names. We only see via Doctor.
+Need craft narrative in Chinese, professional prose, not military power fantasy. Keep character voices: Kal'tsit calm restrained, Amiya determined but emotional. No American POV internal. All American actions through Doctor's observation and dialogue. Maintain worldbuilding consistency: no Originium, no Arts, translator device, cultural/linguistic barriers. This chapter after ch2: they've met initial three-person team, US contact woman asked demands: not move, not fire, allow liaison onboard. Doctor asked one hour. Now likely US returns with larger delegation, demand move inside 12 nautical miles? Wait title "Twelve Nautical Miles" likely refers to territorial sea boundary; Rhodes Island is just outside 12 nm? In ch1 they are 19.4 km from coast (~10.5 nautical miles) actually 19.4 km = 10.5 nautical miles, inside territorial sea? 12 nm = 22.2 km. So they are within 12 nautical miles of coast, but in international waters? Wait 19.4 km from coast = ~10.5 nm, inside 12 nm territorial sea. But chapter title "十二海里" might refer to the limit US demands they stay beyond? Maybe the US demands they move to a designated anchorage outside 12 nautical miles? Let's think.
 
-Potential details: The black helicopter's rotor wash stirs dust; deck lights illuminate. The visitors wear body armor, helmets? First man out in plain suit with ballistic vest, holding a tablet. Military personnel in camouflage, rifles lowered but ready. They set down a portable ramp. They speak in English; translation devices lag and distort. Doctor notices fear in their movements: too precise, too rehearsed, hands on weapons, fingers hovering but not gripping. The diplomat's handshake palm is cold and damp. He realizes they are also scared. That's the key moment.
+Territorial sea extends 12 nautical miles from baseline. If 19.4 km from coast (~10.5 nm), they are inside US territorial sea, hovering. The US could demand they move to a designated anchorage, perhaps outside territorial sea or inside a controlled anchorage. The chapter summary: "美方要求罗德岛驶入指定锚地并接受登船检查，博士拒绝交出动力核心。" So US wants Rhodes Island to sail/motor to a designated anchorage and accept boarding inspection. Doctor refuses to hand over power core. Deck negotiation nearly collapses because a mistranslation makes surrender and mooring synonyms. Amiya tears up before operators and returns.
 
-Need conceptual mismatch: They ask "What is this vessel?" Doctor answers via translation: "This is Rhodes Island, a mobile city." Device returns "floating battleship"? The visitors exchange glances. They ask "Are you armed?" Doctor: "We are an armed neutral medical organization." Translation maybe "You are a private military medical group?" They ask "Do you have nuclear/chemical/biological weapons?" or "Are you contagious?" Kal'tsit interjects: "No biological agents. We are physicians." Hides Originium disease. But Amiya's rings catch attention; diplomat asks about "mineral deposits on your hands"? Amiya says they are personal items. 
+Need set scene on deck, possibly the US returns with a ship alongside and a delegation via helicopter or boat. Maybe they communicate via translation device plus an interpreter. Maybe the negotiations happen on deck due to not allowing them inside. Doctor goes out to meet them. Need include the power core refusal. Possibly the US wants to inspect engine/core to understand propulsion and ensure no WMD. Doctor says no. There's tension, helicopters, warships. No Originium means Rhodes Island's weapons still function mechanically but they cannot use Arts; but their conventional weapons (cannons, firearms) maybe still work with Originium-based ammunition? Actually on Rhodes Island, most weaponry uses Originium? Some operators use guns with Originium shells. The lack of Originium affects Arts and some energy weapons, but ballistic weapons may still work. However the point: they have no advantage because no Arts, no resupply. US might assume it's a ship.
 
-Maybe translation fails on key terms: "sourcestone/Originium" device outputs "radioactive ore?" They ask "Are you experiencing a radiation leak?" Doctor chooses not to explain Originium; says "No radiation." He senses the need to control information. 
+Need include the mistranslation incident: e.g., English word "mooring" vs "surrender" maybe the translation device renders "系泊" (mooring) as "投锚/停泊" but due to machine error, the verb is translated as "缴械" or "投降"? Or a phrase like "submit to inspection" gets translated as "投降并接受检查". Doctor hears a word that sounds like both "moor" and "yield"? Let's design: The US negotiator says "You must heave to and permit boarding." Translator outputs "你们必须停下并允许登船." Then "heave to" or "stand down" gets translated as "放下武器/投降"? Hmm.
 
-Need suspense at end: They are escorted to a conference room, or the diplomat hands Doctor a document/a phone with the President's message? Or a second wave approaching. Maybe chapter ends as Doctor notices on the helicopter's side a symbol, or a patch that suggests there are multiple agencies; or a radio call about "standing orders if hostilities commence"; or the diplomat says, "You are in United States territorial waters. You have one hour to declare your intentions." Then they hand him a tablet displaying live news of riots, military mobilization. Or the final line: The man in the suit looks at him and says something the translator renders incorrectly: "We come in peace" but Doctor hears grammatical nuance perhaps not peace but "we are here to contain." End with Doctor's realization they are being treated as a threat, and a decision pending.
+The summary says "一个误译让投降与停泊混为一谈。" A mistranslation conflates surrender and mooring. Could be the American says "We require you to come to anchor and submit to inspection." The translation device renders "submit" as "投降". Or the word "moor" in their English is heard by the translation device and rendered as "屈服"? Let's make it concrete: The translation device uses a voice recognition error: English word "moor" (to secure a vessel) and "surrender" share some phonetic? Not really. Maybe the device translates the phrase "cast your anchor" as "缴锚" which sounds like "缴械" (surrender arms). In Chinese, "停泊" (tingbo) vs "投降" (touxiang). The characters don't overlap. But in machine translation, maybe "heave to" is rendered as "投降". Actually "heave to" is a nautical maneuver to stop; colloquially "heave to" maybe the device doesn't know nautical terms, translates as "屈服". Then Doctor sees a note handed by US side with coordinates labeled "Anchorage Area Yankee" or "Surrender Zone"? We'll craft.
 
-But the user specified: "第10章末尾留下悬念，不要收束所有线索" which is for overall? Actually the requirements list overall story ending; but we are writing chapter 2. The chapter summary says: need suspense. So ending of chapter 2 should leave suspense.
+Need character dynamics: Amiya tries to help, speaks gently to Americans, maybe misstates something. Kal'tsit stands by Doctor,冷静克制, maybe medical arguments. Doctor has psychological progression: initial instinct to treat this as siege negotiation, then realize language is the battlefield, then a moment of fear/anger, then chooses not to escalate.
 
-Let's produce a chapter of ~2500 Chinese characters. Use markdown heading. Need ensure 3rd person limited to Doctor. Use descriptive prose.
+Need also scene where Amiya cries: maybe after a tense exchange, she steps away to speak to operators, one asks if they are going to fight, she is overwhelmed, tears, then wipes them and returns. The summary says "阿米娅在干员面前短暂落泪，又重新站回博士身侧。" So include that.
 
-Let's write carefully.
+Need ensure only chapter body, start with heading. Use Chinese. Around 2500 words.
 
-We can structure:
-- Opening: Deck, wind, helicopter touches down.
-- Doctor orders lights only, no weapons aimed. He is flanked by Kal'tsit and Amiya; behind them, a small security detail with shields (but no visible rifles?). Maybe they have sidearms holstered.
-- The visitors: a tall uniformed officer first, then a woman in suit, then a technician with translation equipment. They step onto deck; the soldier's hand near weapon. Amiya bows; official returns a nod. The tech sets up a portable speaker/translator. Communication begins.
-- Translation errors: initial greeting. Amiya says welcome, device garbles. Doctor introduces self as "commander". They ask "nationality" / "origin". He says "Rhodes Island, no country". Translation yields "stateless vessel". The officer frowns.
-- Concept mismatch: mobile city. They call it "vessel" / "ship". Doctor says "landship". The tech's device can't map "landship". It outputs "aircraft carrier?" The officer mutters.
-- They ask about weapons. Doctor says "armed neutrality, medical organization". The translation says "armed medical militia" perhaps. Diplomat asks "Are you a threat?" Doctor: "We do not wish to be." The officer notes flight deck, turrets? Actually Rhodes Island has weapons maybe. They ask to inspect. Kal'tsit refuses calmly: "This is a medical facility. External inspection can be arranged under reciprocal conditions." She hides. 
-- Infected concept: The diplomat notices Amiya's rings, Kal'tsit asks if any of their party require medical attention; official says no. Kal'tsit says "We carry no infectious disease." Hmm.
-- Handshake: The lead officer (maybe a general) extends hand. Doctor shakes. Palm is cold/sweaty. He notices the officer's thumb rests near a pulse? The officer's eyes not meeting. Doctor realizes fear. Or the diplomat's handshake; choose diplomat. Perhaps the uniformed officer extends hand firmly but his wrist is stiff, and Doctor feels a tremor. He notes the soldier behind has finger on trigger guard. The realization: they are also terrified.
-- Escort to interior. They walk through corridors; visitors stare at non-human features? Maybe a passerby has animal ears/tail. US soldiers tighten grips. Amiya uses gentle words to calm a young soldier? But maybe too much. 
-- Conference room. They sit. The diplomat places a device on table; it projects English text: "You are within U.S. territorial waters. Identify your intentions. Cooperate or face interception." Or maybe she opens a folder with satellite photos showing罗德岛. The officer says (translated) "No hostile acts. We request a liaison remain aboard." Doctor understands this is a form of custody. He asks for time to consult. They agree to one hour. End with Doctor looking at the closed helicopter outside, realizing they are now a prisoner of perception, and that the other side is moving faster than he can learn their rules.
+Let's plan structure:
 
-But maybe the chapter needs more detail and length. Let's aim for 2500-3000 characters. Need vivid details: smell of jet fuel, rotor wash, translation device's synthetic voice, body language.
+1. Opening: Hour is almost up. Doctor on bridge or deck, observing sea. US response arrives: more ships, a guided-missile destroyer? coast guard? A rigid-hulled inflatable boat approaches with negotiators. He wears no helmet maybe hood. The sea is calm. A second helicopter hovers. They ask to come aboard. Doctor allows a small party on deck.
 
-Also include translation glitches explicitly. Use the phrase "翻译设备" maybe like a tablet and earbuds.
+2. Deck negotiation. US side includes the woman from before plus a uniformed officer (Navy? Coast Guard?) and an interpreter (maybe tech device plus a human interpreter). They spread a chart, point to an anchorage 12 nautical miles from coast? Actually title: Twelve Nautical Miles. They say: "You are within twelve nautical miles of the United States. Under international law, you are in our territorial sea. You must proceed to designated anchorage [X] and submit to boarding inspection." The translation device garbles "proceed to anchorage and heave to" as "surrender and stop." Tension spikes. Doctor corrects? They argue.
 
-Let's write.
+3. Power core demand. US wants to inspect propulsion system; Doctor refuses. He explains: "Our engines are not compatible with your technology. Accessing them without understanding is dangerous." He doesn't mention Originium. They suspect WMD or nuclear? Doctor sees them glance at radiation detectors. He offers alternative: allow a single unarmed liaison to remain on board, but no inspection of core or armory. Provide a tour of medical facilities. They counter: if no compliance, they will treat as hostile intrusion.
 
-Potential names: US side could be "那名穿西装的女人" and "军装男人". Avoid internal POV. They speak English; Doctor doesn't know English but the translation device decodes. The translation's artificial voice speaks Terran common. We'll render English dialogue in quotes, then translation output. But since we only have Doctor POV, maybe we can write as he hears English, then synthetic translation. The readers can understand English (because story in Chinese), but Doctor only understands via translation. To maintain limited POV, we should describe the English speech as "一串急促的、他听不懂的音节", then the device translates. However for readability, we might render the English as dialogue then provide translation? The prompt: "叙事视角：第三人称限知视角，紧贴博士。不要切换到美国方面角色的内心视角（美军行动只通过博士的观察和对话来展现）。" It doesn't say we can't show English and translation. Since it's limited to Doctor, his comprehension is through device. We can show the English as sounds and the device's output. Better to write: '“...Rhodes Island,” the woman said. The device emitted: “罗德岛。”' That may imply Doctor hears translation. We can include both for effect.
+4. Misunderstanding climax. The US officer uses the phrase "moor or be engaged" maybe? The translator says "投降，否则开火" or "停泊就是投降"? Operators raise weapons slightly; Doctor signals them down. Kal'tsit interjects in a cold tone. Amiya steps forward and says something like "We are not your enemy. Please let us prove it." This diffuses moment.
 
-But to avoid making the US dialogue too long in English, maybe use Chinese to represent the translated speech, with occasional English words in italics for ambiguity. The device translation is imperfect, so we can show discrepancies. For example, the woman says something; device translates: “你们……船只……国籍？” Then later it clarifies. The man says something; device: “放下……武装？” Doctor infers from tone/context.
+5. Amiya crying. After the Americans withdraw to their boat to consult, Amiya turns to a group of operators who have been watching. She tries to reassure them but breaks into tears briefly, then wipes them and returns to Doctor. Doctor sees this, feels responsibility.
 
-Need be careful: If we write the Americans speaking Chinese (translated), it may break limited POV. But the device translation output can be in Chinese. So the flow: US speaks English; Doctor hears a synthetic voice in his ear or a speaker translating. We can format like:
+6. Ending: Americans return with ultimatum or new proposal? Or the chapter ends with a standoff: they have until sunset to move, a countdown begins. Or the Americans present a document. Maybe the last line: a ship's loudspeaker repeats "Maintain position. Do not move." Or a sonar ping. Need leave suspense.
 
-“——” 那个女人开口，音节短促，尾音上扬。博士耳中的翻译器延迟了半秒，才用机械的女声说道：“这是……你们的……船只？”
+Need include sensory details: salt air, the absence of Originium dust, deck metal, helicopter downdraft, translation device delays, body language, uniforms. No internal US POV.
 
-This keeps Doctor's perspective.
+Need avoid military action. Keep communication central.
 
-Let's craft.
+Need not provide any meta. Start heading exactly "## 第3章 十二海里". Then body. No chapter summary or word count.
 
-Let's also include Amiya's action: She steps forward before security, greets with a formal bow: "欢迎来到罗德岛。我们没有敌意。" The device translates? Maybe the US tech hands earpieces to them; so they wear one-way translation earpieces? But initial contact might use speaker. Let's have a portable speaker on the deck, set by the technician; both sides speak into it. The device translates aloud in the other language. That allows misunderstandings.
+Let's write in Chinese. Make it around 2500 words. Need include title in Markdown. The final answer only includes that.
 
-Kal'tsit: She stands slightly behind, arms not crossed but relaxed. She observes medical signs: the visitors' skin, respiration. She notices no signs of Oripathy; also notes their weapons are chemical-kinetic (gunpowder). She whispers to Doctor: "They rely on explosive propulsion, not Originium. Treat every firearm as lethal." She also declines to reveal infection status. When asked if there are diseases aboard, she says: "We maintain standard quarantine protocols. No infectious agents of concern." That hides Infected.
+Let's draft carefully.
 
-Amiya: When a young soldier visibly startles at her ears, she smiles gently and says "Don't be afraid." The device translates; soldier flinches, then relaxes a little. She uses courtesy to reduce hostility. But later, when asked about her rings, she falters: "They are... a symbol of our work." Doctor notices her fingers tighten. He covers: "Personal ornamentation." The diplomat's eyes remain on them.
+Potential names for US negotiators? Since we can't know internal perspective, we can describe by appearance/title, no names needed. The woman from ch2 returns; a male officer in white/gray uniform with black sunglasses; an interpreter maybe.
 
-Doctor's internal monologue: He tries to apply war assessment: numbers, intent, capability. But rules are off. The helicopter is unarmored but can call more. The ships below are not landships. Their weapons are small but numerous. He must decide if this is negotiation or siege. He notices their fear in handshake: the diplomat's hand is cold, controlled but damp; pulse rapid. The officer's pupils dilated. They are acting brave. This gives him leverage but also danger—scared people shoot.
+Need be consistent: ch2 they agreed one-hour recess. The Americans return maybe by boat, not helicopter, to show heavier presence. They want to talk on deck rather than inside. Doctor agrees but sets chairs on deck? Maybe he has a folding table and chairs brought out. The Americans remain standing; later they sit.
 
-Let's include a moment when he realizes translation isn't just technical error but conceptual: The device translates "武装中立" as "armed neutrality" but they hear "neutral armed force"; "感染者" translated as "the infected" or "contagious persons". When Amiya says "我们保护感染者", the device outputs "We protect the carriers." The US team's posture shifts: "carriers" might mean disease carriers or aircraft carriers? Hmm. Better to make a deliberate mistranslation: Doctor says "感染者" (infected), device says "受感染的人" but the English word 'infected' may be understood as bioweapon? Actually 'infected' just means disease. But concept mismatch: In this world, infectious disease is not politicized like Oripathy. Maybe the mismatch is when the US asks "Are any of you infected?" Kal'tsit says "No," but Doctor sees an Infected crew member (with visible crystals?) in the corridor behind; the visitors notice and tense. But we want Kal'tsit hide. Perhaps she steps slightly to block line of sight when an Infected engineer passes, and answers "Chronic occupational exposure markers. Non-communicable." This is a lie. The visitors don't understand "源石" anyway. Good.
+Let's think about the exact mis-translation. The phrase "cast your anchor" could be misheard by the device as "cast down your arms"? But that's too convenient. Maybe the device is poor with nautical terms. The English word "moor" means to secure a vessel by cable/anchor. In Chinese the machine might render as "系留" (moor). But if the word is "yield" maybe means both surrender and give way (nautical). Actually in maritime communications, "I yield" not used. Another possibility: The American says "You must stand down and heave to." The translator outputs "你们必须放下武器并投降". Because "stand down" in military context often means cease aggressive posture, not surrender. But to tense ears it sounds like surrender. The summary specifically says "投降与停泊混为一谈" (surrender and mooring). So maybe the word "berthing" vs "submitting"?
 
-Maybe include "源石" translation: When Doctor says "源石" (Originium), the device outputs "radioactive mineral?" The diplomat asks "Are you carrying nuclear material?" Doctor says "No." They decide not to mention Originium.
+Let's create: The US officer points at map and says: "Proceed to this anchorage. Moor alongside the marker buoy. Then submit to inspection." The translator device, programmed with limited Chinese and no maritime lexicon, outputs: "驶向这个锚地。在那里停泊。然后投降接受检查。" Wait "submit to inspection" legitimately can mean "接受检查" not surrender. But "submit" might be rendered as "屈服/投降". Operators hear "投降接受检查". The Doctor catches it. He says "我们不是来投降的." The Americans confused: "We didn't say surrender." Interpreter says "Submit to inspection, not surrender." But damage done.
 
-End: They are led to a conference room. The diplomat presents a tablet with a map showing red lines: territorial waters. She says (translated): "You are here. You cannot stay." Doctor asks "What do you propose?" Device translates their reply: "One liaison. Unarmed. On your ship. Until sunrise." It's an ultimatum/inspection. The officer adds: "Or we will consider you a hostile unknown." But translation glitches: "consider you unknown hostile." Doctor sees the fear again in the officer's tone. He agrees to discuss with his council. The chapter ends as the conference room door closes, leaving Doctor, Kal'tsit, Amiya alone. Amiya whispers: "博士，他们怕我们。" Doctor: "他们也怕他们自己。" He looks at the glass wall: the helicopter on deck, the city beyond. He knows they have maybe hours before the fear turns into something else.
+Maybe better: The American says "You are required to surrender your vessel to the designated anchorage." The phrase "surrender your vessel to the anchorage" is nautical: deliver the vessel to a place (move to anchorage). But machine translates "surrender your vessel" as "投降你们的舰船". And "anchorage" as "锚地". Combined: "你必须将舰船投降至指定锚地" nonsensical. Doctor realizes the device confused "surrender" (to hand over/entrust) with "surrender" (yield). That's plausible. The summary says "一个误译让投降与停泊混为一谈"—so "surrender" and "moor" get mixed.
 
-This provides suspense.
+Maybe the word is "bring to". "Bring your ship to anchor" vs "bring your ship to submission"? Eh.
 
-Need ensure no closure.
+Let's design the incident: The officer says: "You will come to anchor in the designated area and submit your vessel for inspection." The translator renders as: "你们将在指定区域抛锚，并向我们的检查投降你们的舰船。" The word "submit" triggers the operators. Then later, the interpreter (maybe an American-Chinese speaker? But no Chinese in world? Wait this is Earth; there are Chinese speakers. But the Americans don't necessarily have one. However since they are near New York, there could be a translator. But the story uses a machine translator from ch2. It might be more tense if the Americans also rely on machine. Maybe a uniformed interpreter with a headset tries to correct. But Doctor doesn't trust them.
 
-Let's write in a style with varied sentence lengths, sensory details. We'll produce maybe 2700 words. We need count but not over 99999. Let's aim around 2800 Chinese characters (roughly 1700-2000 words? Chinese characters). The target says 2500 words; maybe characters. We can write around 2500 Chinese characters. We'll produce rich text.
+The Americans' concern: a floating object inside territorial waters. They want to ensure no weapons of mass destruction, no hostile intent. They demand to inspect power core because Rhodes Island is hovering without visible propulsion; they suspect nuclear or anti-gravity? In Earth, anti-gravity impossible, so they'd be alarmed.
 
-Let's begin with heading and content.
+Doctor refuses core access: "Our propulsion is proprietary and fragile. A forced inspection could destabilize it. If it fails, this ship will fall on your city." This is true: without Originium engines maybe levitation fails. He also refuses to move to anchorage because moving requires power and may be interpreted as hostile? Actually moving to designated anchorage could be acceptable but he worries it's a trap to isolate them. He counters: "We will not enter your territorial sea further. We will maintain position. We can allow a liaison." But they are already within territorial sea. Maybe he offers to move outward beyond 12 nm to international waters, but can't because of power? Hmm.
 
-We need not include any summary. Just output.
+Let's define positions: In ch1, distance 19.4 km (~10.5 nm) from coastline, so inside 12 nm. The US says "You are within twelve nautical miles. You must move to a designated anchorage outside the harbor channel" maybe to reduce threat. Or "You must exit territorial waters." Title "十二海里" may be the limit the Americans are enforcing. They might say: "Move to anchorage at coordinates, twelve nautical miles from shore, and remain there." That's outside territorial sea. Wait 12 nm from shore is boundary; "outside 12 nm" maybe international waters. If they are at 10.5 nm, moving to 12 nm is moving outward, away from city, perhaps to a holding area. This is plausible: US wants them to move to an anchorage at the 12-nautical-mile line. They would have to "sail" there. The Doctor is wary: any movement could be seen as hostile, and moving means using engines they can't spare. Also it would place them at the edge, isolated.
 
-Let's draft in final.
+Maybe the Americans say "proceed to the anchorage at twelve nautical miles" (i.e., a point 12 nm from shore). The translator might render "anchorage" and "nautical miles" unclearly. "Twelve nautical miles" as title.
+
+Could use nautical language: "Proceed to the holding anchorage at the twelve-mile limit." The device might produce "前往十二海里处的投降点". Eh.
+
+Let's include the number clearly.
+
+Need maintain suspense at end. Perhaps Americans deliver an ultimatum: "You have until sunset to begin transit. If not, we will board by force." Or a broadcast on loudspeaker. But summary says deck negotiation nearly breaks; the chapter might end with the Americans returning to their ship to await answer, leaving a countdown. End with Doctor standing on deck, Amiya returns. The sun setting. A warship turns broadside. PRTS displays countdown. Good.
+
+Need include Amiya tears scene in middle/end. Maybe after the Americans temporarily withdraw to their boat (consulting with higher command), tension eases, operators gather. Amiya tries to speak but cries. She returns to Doctor.
+
+Let's map word count. Aim around 2500 Chinese characters? Actually word count in Chinese characters maybe 2500 characters. The target says 2500 字. We can produce roughly 2500 Chinese characters. Need ensure above 1500. Let's produce a rich chapter maybe ~3000 Chinese characters.
+
+Now write.
+
+I need to be careful not to include meta, not explain.
+
+Let's craft the prose with literary details. Use present/past? The previous chapters use past tense. We'll continue.
+
+Let's think of exact content by paragraphs:
+
+- Opening: bridge, Doctor watching the sea. Time nearly up. He notes new ships: a gray hull with a sharp prow, number 76? Could be USS something; not necessary. A Coast Guard cutter with red stripe. A rigid inflatable with armed personnel. He orders deck cleared of nonessential, but keep medical staff visible. He wears hood; no helmet. Kal'tsit adjusts something on a tablet. Amiya stands.
+
+- Americans arrive by boat at the boarding ladder. They are six? No, initial agreement one unarmed? The US team maybe four: the woman (diplomatic), a Navy captain, a Coast Guard officer, interpreter. They come up ladder. Doctor receives them. They refuse to enter ship, prefer deck. Folding table and chairs set. Sun hot.
+
+- Negotiation begins through translator disc plus a human interpreter (a young woman with Asian features? But would be Earth; she might speak Chinese? Wait Earth has Chinese; but the Americans might not have a Chinese interpreter because Chinese not relevant? However they might have a State Department interpreter. But using machine translation is more alien. Maybe no human interpreter; the device from ch2 is used by both sides. It is on table. Let's stick with the device. The Americans speak English, device outputs Chinese. This allows mis-translation.
+
+- The woman speaks; the device says: "美国政府要求贵舰立即驶向指定锚地。坐标：北纬……西经……位于十二海里界线外侧。抵达后关闭主机，接受登船检查。" Doctor asks "surrender?" due to device wording "向检查投降"? He says no.
+
+- The Navy officer says something, device translates: "拒绝将被视为敌对行为。我方有权在领海内采取行动。" Doctor notes he uses "领海" (territorial sea). They are within 12 nm.
+
+- Doctor responds: "我们不是军舰。罗德岛是医疗移动城市。我们没有进入你们水域的意图，空间异常把我们放在这里。移动这艘船需要消耗不可再生的能源。我们不能在不了解后果的情况下驶往指定锚地。" He offers to remain stationary, allow liaison, allow medical inspection by their doctor. But not engine core. "动力核心不会交给任何人。"
+
+- The officer says something about "propulsion"; they suspect nuclear. Device: "如果你们拒绝检查推进系统，我们将假设你们运载大规模杀伤性武器。" Doctor says no WMD; our engines use a technology not present in this world, inspecting without precautions is dangerous. He thinks of Originium.
+
+- Mistranslation climax. The American captain points to map and says: "Your vessel will surrender to the anchorage at the twelve-mile line." Actually he says "must be surrendered to the anchorage" meaning delivered/moored. Device outputs: "你们的舰船必须向十二海里锚地投降。" Operators behind Doctor shift; weapons click. Kal'tsit raises voice, cold: "博士，他们在要求投降。" The American sees weapons and steps back; his guards grip rifles. The woman shouts at device; it mistranslates her clarification as something worse? Amiya intervenes, speaking to both sides in a calm voice. She says: "Please. We don't understand each other well. Let us not let a machine decide war or peace." The device translates. Pause. The captain lowers his hand. The tension recedes but not trust.
+
+- The Americans consult. The woman takes a satellite phone; the captain speaks into radio. The deck is quiet except wind and helicopter. Doctor tells Amiya to check on operators.
+
+- Amiya tear scene: She walks to a group of operators at a hatch. They look scared. One asks "博士是不是要带我们打仗？" Amiya says "不会的，我们在谈。" Another asks "可是他们说要检查我们的心脏——船的心脏，是不是要夺走它？" Amiya tries to explain; her voice cracks; tears come; she turns away quickly, wipes them with sleeve, takes a breath, returns. Doctor sees from table but pretends not to. He feels something heavy.
+
+- Americans return. The woman says: "Our government will accept a temporary arrangement. You will not move for now. A liaison will remain. But you must agree to inspection of non-military areas within twenty-four hours, and provide a manifest of all personnel and equipment." Or maybe they issue an ultimatum. The summary says美方要求驶入指定锚地并接受登船检查，博士拒绝交出动力核心。 That is the core event. The chapter may not resolve; the Americans might after consulting say "You have until 0600 to comply." Let's decide ending: After the woman speaks, the captain adds: "If you do not begin moving by dawn, we will consider you a hostile intrusion." The team leaves.
+
+- Ending: Doctor watches the boat pull away. He turns to Kal'tsit: "They don't believe us." Kal'tsit: "They don't believe anything they can't explain." Amiya returns to his side, eyes red but dry. The deck lights come on. A siren? The ship's clock counts. Final line: "在十二海里那条看不见的线上，天亮了第一场谈判，也落下了第一颗倒计时。" Something like that.
+
+Need ensure it's only chapter body. Let's write now, approx 2500 Chinese characters.
+
+Potential challenges: Ensure Amiya's brief tears in front of operators included. Ensure mistranslation between surrender and mooring. Ensure no meta.
+
+Let's produce final.
 [/思考过程]
 
-## 第3章 十二海里
 
 一小时差七分钟的时候，海面上出现了第二艘船。
 
@@ -813,123 +929,7 @@ Let's draft in final.
 
 博士站在甲板上，背脊挺直，手指无意识地敲击着护栏。
 
-四小时后，要么是黎明前的第一次移动，要么是第一场他还没有学会规则的战争。无论哪一种，他都会站在这里，在十二海里的界线上，把罗德岛和另一个世界的恐惧，一起扛在肩上。
-
-[思考过程]
-We need generate chapter 3 of a fanfiction, based on provided chapters 1 and 2. Need obey: output only chapter body, starting with Markdown heading "## 第3章 十二海里". No writing process, summary, meta. Third-person limited to Doctor. Focus on communication, miscommunication, language gaps, Doctor psychology. Events: US demands Rhodes Island move to designated anchorage and accept boarding inspection; Doctor refuses to hand over power core; deck negotiation nearly breaks due to language gap, a mistranslation conflates surrender and mooring; Amiya briefly tears up in front of operators then returns to Doctor's side. Target ~2500 words, range 1500-99999.
-
-Need craft narrative in Chinese, professional prose, not military power fantasy. Keep character voices: Kal'tsit calm restrained, Amiya determined but emotional. No American POV internal. All American actions through Doctor's observation and dialogue. Maintain worldbuilding consistency: no Originium, no Arts, translator device, cultural/linguistic barriers. This chapter after ch2: they've met initial three-person team, US contact woman asked demands: not move, not fire, allow liaison onboard. Doctor asked one hour. Now likely US returns with larger delegation, demand move inside 12 nautical miles? Wait title "Twelve Nautical Miles" likely refers to territorial sea boundary; Rhodes Island is just outside 12 nm? In ch1 they are 19.4 km from coast (~10.5 nautical miles) actually 19.4 km = 10.5 nautical miles, inside territorial sea? 12 nm = 22.2 km. So they are within 12 nautical miles of coast, but in international waters? Wait 19.4 km from coast = ~10.5 nm, inside 12 nm territorial sea. But chapter title "十二海里" might refer to the limit US demands they stay beyond? Maybe the US demands they move to a designated anchorage outside 12 nautical miles? Let's think.
-
-Territorial sea extends 12 nautical miles from baseline. If 19.4 km from coast (~10.5 nm), they are inside US territorial sea, hovering. The US could demand they move to a designated anchorage, perhaps outside territorial sea or inside a controlled anchorage. The chapter summary: "美方要求罗德岛驶入指定锚地并接受登船检查，博士拒绝交出动力核心。" So US wants Rhodes Island to sail/motor to a designated anchorage and accept boarding inspection. Doctor refuses to hand over power core. Deck negotiation nearly collapses because a mistranslation makes surrender and mooring synonyms. Amiya tears up before operators and returns.
-
-Need set scene on deck, possibly the US returns with a ship alongside and a delegation via helicopter or boat. Maybe they communicate via translation device plus an interpreter. Maybe the negotiations happen on deck due to not allowing them inside. Doctor goes out to meet them. Need include the power core refusal. Possibly the US wants to inspect engine/core to understand propulsion and ensure no WMD. Doctor says no. There's tension, helicopters, warships. No Originium means Rhodes Island's weapons still function mechanically but they cannot use Arts; but their conventional weapons (cannons, firearms) maybe still work with Originium-based ammunition? Actually on Rhodes Island, most weaponry uses Originium? Some operators use guns with Originium shells. The lack of Originium affects Arts and some energy weapons, but ballistic weapons may still work. However the point: they have no advantage because no Arts, no resupply. US might assume it's a ship.
-
-Need include the mistranslation incident: e.g., English word "mooring" vs "surrender" maybe the translation device renders "系泊" (mooring) as "投锚/停泊" but due to machine error, the verb is translated as "缴械" or "投降"? Or a phrase like "submit to inspection" gets translated as "投降并接受检查". Doctor hears a word that sounds like both "moor" and "yield"? Let's design: The US negotiator says "You must heave to and permit boarding." Translator outputs "你们必须停下并允许登船." Then "heave to" or "stand down" gets translated as "放下武器/投降"? Hmm.
-
-The summary says "一个误译让投降与停泊混为一谈。" A mistranslation conflates surrender and mooring. Could be the American says "We require you to come to anchor and submit to inspection." The translation device renders "submit" as "投降". Or the word "moor" in their English is heard by the translation device and rendered as "屈服"? Let's make it concrete: The translation device uses a voice recognition error: English word "moor" (to secure a vessel) and "surrender" share some phonetic? Not really. Maybe the device translates the phrase "cast your anchor" as "缴锚" which sounds like "缴械" (surrender arms). In Chinese, "停泊" (tingbo) vs "投降" (touxiang). The characters don't overlap. But in machine translation, maybe "heave to" is rendered as "投降". Actually "heave to" is a nautical maneuver to stop; colloquially "heave to" maybe the device doesn't know nautical terms, translates as "屈服". Then Doctor sees a note handed by US side with coordinates labeled "Anchorage Area Yankee" or "Surrender Zone"? We'll craft.
-
-Need character dynamics: Amiya tries to help, speaks gently to Americans, maybe misstates something. Kal'tsit stands by Doctor,冷静克制, maybe medical arguments. Doctor has psychological progression: initial instinct to treat this as siege negotiation, then realize language is the battlefield, then a moment of fear/anger, then chooses not to escalate.
-
-Need also scene where Amiya cries: maybe after a tense exchange, she steps away to speak to operators, one asks if they are going to fight, she is overwhelmed, tears, then wipes them and returns. The summary says "阿米娅在干员面前短暂落泪，又重新站回博士身侧。" So include that.
-
-Need ensure only chapter body, start with heading. Use Chinese. Around 2500 words.
-
-Let's plan structure:
-
-1. Opening: Hour is almost up. Doctor on bridge or deck, observing sea. US response arrives: more ships, a guided-missile destroyer? coast guard? A rigid-hulled inflatable boat approaches with negotiators. He wears no helmet maybe hood. The sea is calm. A second helicopter hovers. They ask to come aboard. Doctor allows a small party on deck.
-
-2. Deck negotiation. US side includes the woman from before plus a uniformed officer (Navy? Coast Guard?) and an interpreter (maybe tech device plus a human interpreter). They spread a chart, point to an anchorage 12 nautical miles from coast? Actually title: Twelve Nautical Miles. They say: "You are within twelve nautical miles of the United States. Under international law, you are in our territorial sea. You must proceed to designated anchorage [X] and submit to boarding inspection." The translation device garbles "proceed to anchorage and heave to" as "surrender and stop." Tension spikes. Doctor corrects? They argue.
-
-3. Power core demand. US wants to inspect propulsion system; Doctor refuses. He explains: "Our engines are not compatible with your technology. Accessing them without understanding is dangerous." He doesn't mention Originium. They suspect WMD or nuclear? Doctor sees them glance at radiation detectors. He offers alternative: allow a single unarmed liaison to remain on board, but no inspection of core or armory. Provide a tour of medical facilities. They counter: if no compliance, they will treat as hostile intrusion.
-
-4. Misunderstanding climax. The US officer uses the phrase "moor or be engaged" maybe? The translator says "投降，否则开火" or "停泊就是投降"? Operators raise weapons slightly; Doctor signals them down. Kal'tsit interjects in a cold tone. Amiya steps forward and says something like "We are not your enemy. Please let us prove it." This diffuses moment.
-
-5. Amiya crying. After the Americans withdraw to their boat to consult, Amiya turns to a group of operators who have been watching. She tries to reassure them but breaks into tears briefly, then wipes them and returns to Doctor. Doctor sees this, feels responsibility.
-
-6. Ending: Americans return with ultimatum or new proposal? Or the chapter ends with a standoff: they have until sunset to move, a countdown begins. Or the Americans present a document. Maybe the last line: a ship's loudspeaker repeats "Maintain position. Do not move." Or a sonar ping. Need leave suspense.
-
-Need include sensory details: salt air, the absence of Originium dust, deck metal, helicopter downdraft, translation device delays, body language, uniforms. No internal US POV.
-
-Need avoid military action. Keep communication central.
-
-Need not provide any meta. Start heading exactly "## 第3章 十二海里". Then body. No chapter summary or word count.
-
-Let's write in Chinese. Make it around 2500 words. Need include title in Markdown. The final answer only includes that.
-
-Let's draft carefully.
-
-Potential names for US negotiators? Since we can't know internal perspective, we can describe by appearance/title, no names needed. The woman from ch2 returns; a male officer in white/gray uniform with black sunglasses; an interpreter maybe.
-
-Need be consistent: ch2 they agreed one-hour recess. The Americans return maybe by boat, not helicopter, to show heavier presence. They want to talk on deck rather than inside. Doctor agrees but sets chairs on deck? Maybe he has a folding table and chairs brought out. The Americans remain standing; later they sit.
-
-Let's think about the exact mis-translation. The phrase "cast your anchor" could be misheard by the device as "cast down your arms"? But that's too convenient. Maybe the device is poor with nautical terms. The English word "moor" means to secure a vessel by cable/anchor. In Chinese the machine might render as "系留" (moor). But if the word is "yield" maybe means both surrender and give way (nautical). Actually in maritime communications, "I yield" not used. Another possibility: The American says "You must stand down and heave to." The translator outputs "你们必须放下武器并投降". Because "stand down" in military context often means cease aggressive posture, not surrender. But to tense ears it sounds like surrender. The summary specifically says "投降与停泊混为一谈" (surrender and mooring). So maybe the word "berthing" vs "submitting"?
-
-Let's create: The US officer points at map and says: "Proceed to this anchorage. Moor alongside the marker buoy. Then submit to inspection." The translator device, programmed with limited Chinese and no maritime lexicon, outputs: "驶向这个锚地。在那里停泊。然后投降接受检查。" Wait "submit to inspection" legitimately can mean "接受检查" not surrender. But "submit" might be rendered as "屈服/投降". Operators hear "投降接受检查". The Doctor catches it. He says "我们不是来投降的." The Americans confused: "We didn't say surrender." Interpreter says "Submit to inspection, not surrender." But damage done.
-
-Maybe better: The American says "You are required to surrender your vessel to the designated anchorage." The phrase "surrender your vessel to the anchorage" is nautical: deliver the vessel to a place (move to anchorage). But machine translates "surrender your vessel" as "投降你们的舰船". And "anchorage" as "锚地". Combined: "你必须将舰船投降至指定锚地" nonsensical. Doctor realizes the device confused "surrender" (to hand over/entrust) with "surrender" (yield). That's plausible. The summary says "一个误译让投降与停泊混为一谈"—so "surrender" and "moor" get mixed.
-
-Maybe the word is "bring to". "Bring your ship to anchor" vs "bring your ship to submission"? Eh.
-
-Let's design the incident: The officer says: "You will come to anchor in the designated area and submit your vessel for inspection." The translator renders as: "你们将在指定区域抛锚，并向我们的检查投降你们的舰船。" The word "submit" triggers the operators. Then later, the interpreter (maybe an American-Chinese speaker? But no Chinese in world? Wait this is Earth; there are Chinese speakers. But the Americans don't necessarily have one. However since they are near New York, there could be a translator. But the story uses a machine translator from ch2. It might be more tense if the Americans also rely on machine. Maybe a uniformed interpreter with a headset tries to correct. But Doctor doesn't trust them.
-
-The Americans' concern: a floating object inside territorial waters. They want to ensure no weapons of mass destruction, no hostile intent. They demand to inspect power core because Rhodes Island is hovering without visible propulsion; they suspect nuclear or anti-gravity? In Earth, anti-gravity impossible, so they'd be alarmed.
-
-Doctor refuses core access: "Our propulsion is proprietary and fragile. A forced inspection could destabilize it. If it fails, this ship will fall on your city." This is true: without Originium engines maybe levitation fails. He also refuses to move to anchorage because moving requires power and may be interpreted as hostile? Actually moving to designated anchorage could be acceptable but he worries it's a trap to isolate them. He counters: "We will not enter your territorial sea further. We will maintain position. We can allow a liaison." But they are already within territorial sea. Maybe he offers to move outward beyond 12 nm to international waters, but can't because of power? Hmm.
-
-Let's define positions: In ch1, distance 19.4 km (~10.5 nm) from coastline, so inside 12 nm. The US says "You are within twelve nautical miles. You must move to a designated anchorage outside the harbor channel" maybe to reduce threat. Or "You must exit territorial waters." Title "十二海里" may be the limit the Americans are enforcing. They might say: "Move to anchorage at coordinates, twelve nautical miles from shore, and remain there." That's outside territorial sea. Wait 12 nm from shore is boundary; "outside 12 nm" maybe international waters. If they are at 10.5 nm, moving to 12 nm is moving outward, away from city, perhaps to a holding area. This is plausible: US wants them to move to an anchorage at the 12-nautical-mile line. They would have to "sail" there. The Doctor is wary: any movement could be seen as hostile, and moving means using engines they can't spare. Also it would place them at the edge, isolated.
-
-Maybe the Americans say "proceed to the anchorage at twelve nautical miles" (i.e., a point 12 nm from shore). The translator might render "anchorage" and "nautical miles" unclearly. "Twelve nautical miles" as title.
-
-Could use nautical language: "Proceed to the holding anchorage at the twelve-mile limit." The device might produce "前往十二海里处的投降点". Eh.
-
-Let's include the number clearly.
-
-Need maintain suspense at end. Perhaps Americans deliver an ultimatum: "You have until sunset to begin transit. If not, we will board by force." Or a broadcast on loudspeaker. But summary says deck negotiation nearly breaks; the chapter might end with the Americans returning to their ship to await answer, leaving a countdown. End with Doctor standing on deck, Amiya returns. The sun setting. A warship turns broadside. PRTS displays countdown. Good.
-
-Need include Amiya tears scene in middle/end. Maybe after the Americans temporarily withdraw to their boat (consulting with higher command), tension eases, operators gather. Amiya tries to speak but cries. She returns to Doctor.
-
-Let's map word count. Aim around 2500 Chinese characters? Actually word count in Chinese characters maybe 2500 characters. The target says 2500 字. We can produce roughly 2500 Chinese characters. Need ensure above 1500. Let's produce a rich chapter maybe ~3000 Chinese characters.
-
-Now write.
-
-I need to be careful not to include meta, not explain.
-
-Let's craft the prose with literary details. Use present/past? The previous chapters use past tense. We'll continue.
-
-Let's think of exact content by paragraphs:
-
-- Opening: bridge, Doctor watching the sea. Time nearly up. He notes new ships: a gray hull with a sharp prow, number 76? Could be USS something; not necessary. A Coast Guard cutter with red stripe. A rigid inflatable with armed personnel. He orders deck cleared of nonessential, but keep medical staff visible. He wears hood; no helmet. Kal'tsit adjusts something on a tablet. Amiya stands.
-
-- Americans arrive by boat at the boarding ladder. They are six? No, initial agreement one unarmed? The US team maybe four: the woman (diplomatic), a Navy captain, a Coast Guard officer, interpreter. They come up ladder. Doctor receives them. They refuse to enter ship, prefer deck. Folding table and chairs set. Sun hot.
-
-- Negotiation begins through translator disc plus a human interpreter (a young woman with Asian features? But would be Earth; she might speak Chinese? Wait Earth has Chinese; but the Americans might not have a Chinese interpreter because Chinese not relevant? However they might have a State Department interpreter. But using machine translation is more alien. Maybe no human interpreter; the device from ch2 is used by both sides. It is on table. Let's stick with the device. The Americans speak English, device outputs Chinese. This allows mis-translation.
-
-- The woman speaks; the device says: "美国政府要求贵舰立即驶向指定锚地。坐标：北纬……西经……位于十二海里界线外侧。抵达后关闭主机，接受登船检查。" Doctor asks "surrender?" due to device wording "向检查投降"? He says no.
-
-- The Navy officer says something, device translates: "拒绝将被视为敌对行为。我方有权在领海内采取行动。" Doctor notes he uses "领海" (territorial sea). They are within 12 nm.
-
-- Doctor responds: "我们不是军舰。罗德岛是医疗移动城市。我们没有进入你们水域的意图，空间异常把我们放在这里。移动这艘船需要消耗不可再生的能源。我们不能在不了解后果的情况下驶往指定锚地。" He offers to remain stationary, allow liaison, allow medical inspection by their doctor. But not engine core. "动力核心不会交给任何人。"
-
-- The officer says something about "propulsion"; they suspect nuclear. Device: "如果你们拒绝检查推进系统，我们将假设你们运载大规模杀伤性武器。" Doctor says no WMD; our engines use a technology not present in this world, inspecting without precautions is dangerous. He thinks of Originium.
-
-- Mistranslation climax. The American captain points to map and says: "Your vessel will surrender to the anchorage at the twelve-mile line." Actually he says "must be surrendered to the anchorage" meaning delivered/moored. Device outputs: "你们的舰船必须向十二海里锚地投降。" Operators behind Doctor shift; weapons click. Kal'tsit raises voice, cold: "博士，他们在要求投降。" The American sees weapons and steps back; his guards grip rifles. The woman shouts at device; it mistranslates her clarification as something worse? Amiya intervenes, speaking to both sides in a calm voice. She says: "Please. We don't understand each other well. Let us not let a machine decide war or peace." The device translates. Pause. The captain lowers his hand. The tension recedes but not trust.
-
-- The Americans consult. The woman takes a satellite phone; the captain speaks into radio. The deck is quiet except wind and helicopter. Doctor tells Amiya to check on operators.
-
-- Amiya tear scene: She walks to a group of operators at a hatch. They look scared. One asks "博士是不是要带我们打仗？" Amiya says "不会的，我们在谈。" Another asks "可是他们说要检查我们的心脏——船的心脏，是不是要夺走它？" Amiya tries to explain; her voice cracks; tears come; she turns away quickly, wipes them with sleeve, takes a breath, returns. Doctor sees from table but pretends not to. He feels something heavy.
-
-- Americans return. The woman says: "Our government will accept a temporary arrangement. You will not move for now. A liaison will remain. But you must agree to inspection of non-military areas within twenty-four hours, and provide a manifest of all personnel and equipment." Or maybe they issue an ultimatum. The summary says美方要求驶入指定锚地并接受登船检查，博士拒绝交出动力核心。 That is the core event. The chapter may not resolve; the Americans might after consulting say "You have until 0600 to comply." Let's decide ending: After the woman speaks, the captain adds: "If you do not begin moving by dawn, we will consider you a hostile intrusion." The team leaves.
-
-- Ending: Doctor watches the boat pull away. He turns to Kal'tsit: "They don't believe us." Kal'tsit: "They don't believe anything they can't explain." Amiya returns to his side, eyes red but dry. The deck lights come on. A siren? The ship's clock counts. Final line: "在十二海里那条看不见的线上，天亮了第一场谈判，也落下了第一颗倒计时。" Something like that.
-
-Need ensure it's only chapter body. Let's write now, approx 2500 Chinese characters.
-
-Potential challenges: Ensure Amiya's brief tears in front of operators included. Ensure mistranslation between surrender and mooring. Ensure no meta.
-
-Let's produce final.
-[/思考过程]
-
-## 第4章 没有源石的夜晚
+四小时后，要么是黎明前的第一次移动，要么是第一场他还没有学会规则的战争。无论哪一种，他都会站在这里，在十二海里的界线上，把罗德岛和另一个世界的恐惧，一起扛在肩上。## 第4章 没有源石的夜晚
 
 夜幕降临时，罗德岛把自己藏进了黑暗里。
 
@@ -2062,7 +2062,81 @@ The chapter covers:
 Good to output.
 [/思考过程]
 
+
 ## 第6章 水面的裂痕
+
+[思考过程]
+We need write Chapter 6 title "## 第6章 水面的裂痕". Need continue immediately previous events. Word count 1500-99999. Need deliver only chapter text no process etc. We need craft detailed chapter. Let's recall summary: "快艇事件险些引发交火，博士用破碎的英语与灯光信号喊停盘旋的武装直升机。凯尔希救治落水者，向美方传递非敌意。但突破者被扣押后音讯全无，双方刚刚建立的微弱信任再次悬于一线。" So chapter should cover: after sonic repulsor incident, armed helicopter(s) approach, Doctor uses broken English and light signals to stop them from opening fire. Then a small boat maybe the intruder capsized, people in water; Kal'tits provides aid to survivors, communicates non-hostility. Then the breakthrough person/perpetrator detained by US side and no news, trust hangs by thread. Need maintain POV close to Doctor, limited 3rd person, not switch to US internals. Keep Kal'tits calm and Amiya with emotions. No source石. Narrative tight, detail, suspense, psychological changes. End with suspense, not tied.
+
+Need produce Chinese prose. Need around maybe 3000-4000 words? At least 2500. We'll aim maybe 3500. Title at start. Then scene.
+
+Let's outline: 1) Dawn breaking, armed helo closing. 2) Doctor on bridge sees missile/weapon pods maybe. Need avoid military-superpower fantasy; use communications. 3) He decides to use external lights and broken English over radio to halt helicopter. 4) Show tension, Amiya there, Kal'tits possibly ready med. 5) Helicopter stops/backs off after light signal; then they notice overturned/unresponsive fast boat in water, survivors. 6) Doctor launches rescue boat? But to avoid hostilities, asks US for permission/coordinates? Actually summary says Kal'tits救治落水者，向美方传递非敌意. Could be survivors from rogue boat. Maybe the boat was from breakaway faction or press? They pull them from water via US Coast Guard? Need craft carefully.
+
+7) After rescue, the person/breakthrougher who crossed line (maybe sole survivor or pilot) is taken by US, no news. Trust again fragile.
+
+Let's think about US forces: There are Coast Guard white boat, Navy ship, black helicopter with no markings (spec ops?), CNN helo. The rogue boat was unidentified; after repulsor it fled toward US white boat. The US might consider it hostile. An armed helicopter (maybe black) now approaches罗德岛 aggressively. Doctor uses lights and broken English to de-escalate. Then he sees the rogue boat capsized maybe because repulsor or collision; people in water. Kal'tits insists on rescue, goes with team onto deck; using a life raft or deployable rescue craft. US helo hovers; Doctor signals no weapons, hands raised. They recover two survivors: one injured, one possibly uninjured. Kal'tits treats them. She hands them over or they are taken by US boat? Actually "突破者被扣押后音讯全无" suggests the intruder/survivor is detained by US and no news. Maybe after rescue, US demands custody of survivor;罗德岛 transfers him; then no info. Or the survivor was the one who tried to approach, got detained by US, no news.
+
+Let's keep summary: The fast boat breaker is detained by the US after being rescued/treated? "但突破者被扣押后音讯全无" perhaps the one who broke through the perimeter (the boat operator) is taken away by US and no word. Could be a civilian/ thrill-seeker/independent actor? Or maybe an agent of some faction? The lack of news means both sides don't know who sent them, increasing distrust.
+
+Need incorporate Doctor's psychological change: from commander used to decisive war to one realizing every signal matters; mistakes in translation and light signals can mean war. He feels responsibility, helplessness, maybe begins to question if they were brought here intentionally.
+
+Let's write detailed scenes.
+
+Opening: Doctor on bridge, panoramic screen showing green afterimage of night vision. The armed helicopter (black, no markings) closing to 800 meters, nose down, weapons pods visible. US white boat also moving. The rogue boat has slowed and turned, then capsized/ stops. Doctor orders cease sonic defense. He knows helicopter may be preparing to fire missile;罗德岛 can't evade without源石 energy; one hit could breach reactor? Actually no reactor? But tense.
+
+He reaches for external radio microphone. He doesn't know English phrases, but remembers words: "No hostile." "Stop." "We help." "Wait." He decides to use light signal: Morse? They may not know. He orders deck lights to flash "S-T-O-P" or maybe a steady pattern. He speaks into radio in broken English repeating "No fire. We help. Stop." Also light: one long flash = hold fire? Could use semaphore? Simpler: floodlight pointed at helo, steady then flashing. The helo pilot might interpret.
+
+Alternatively he could use a spotlight with a handwritten sign? But radio plus light. Let's say he orders a searchlight directed upward at helo, slow pulse of three short flashes (international distress? Actually SOS). Hmm to mean "stop, do not fire" maybe red and green navigation lights? Not critical. We'll use a sequence: one long steady beam on罗德岛 bow, then three slow flashes, repeated, while he repeats on guard frequency: "This is Rhodes Island. Do not fire. We are helping people in water. I say again, do not fire."
+
+He speaks English with heavy accent; translator maybe not needed. Amiya behind him, trembling but holding microphone. Kal'tits arrives with med kit. The helo holds at 600m, then banks right, not leaving but not attacking. Maybe because US command ordered hold, maybe because signals.
+
+Then they see the fast boat is sinking, people in water waving. Distance 800m from罗德岛. Doctor orders launch a rescue craft: a small inflatable (non源石 motor? Battery?) but they need permission? The US white boat also approaching survivors. To avoid competition/trigger, Doctor contacts via light/radio: "We rescue. You watch. No weapons." He sends Kal'tits and two unarmed medics in a lifeboat with white flag. The black helo circles overhead. US white boat stops short, observing. This conveys non-hostility.
+
+Kal'tits treats a woman with head wound and hypothermia; another man conscious but incoherent. She identifies source石? no. She communicates with US via hand signals / light? She uses a red cross panel. The helo's medic maybe descends? Let's make it: US Coast Guard boat sends a rescue swimmer; Kal'tits allows them to take custody? Actually summary says Kal'tits救治落水者，向美方传递非敌意. She can treat them on罗德岛 deck or in lifeboat and then hand over to US. Hmm.
+
+Let's have: The two survivors brought aboard罗德岛 to medical staging area under guard. Kal'tits stabilizes. Then the white boat requests to take them for questioning. Doctor agrees on condition a罗德岛 medical observer accompanies; US refuses/accepts? The summary says breakthrough person detained and no news; maybe after transfer no word. So he allows transfer to avoid conflict, despite wanting identity. Then no news.
+
+Need maybe the "breakthrough者" is the person who piloted the boat; one survivor, maybe a young man with a go-pro/camera, not military. He was live-streaming? Could be a daredevil who saw CNN and tried to reach the alien ship. That would explain unmarked boat, no flag, no weapons, and fleeing after sonic warning. The US would detain him as security threat. No info because government won't share. This makes sense and fits CNN theme. But the summary says "突破者被扣押后音讯全无" (the one who broke through is detained and no news). That could be this reckless individual.
+
+But the initial incident nearly triggered exchange of fire with helicopter; Doctor halts helicopter. Then rescue. Then after Kal'tits hands over survivor, no news. The trust built by humanitarian rescue is undermined because US won't share info, and罗德岛 wonders if the US staged the boat as probe? Or if it was independent. Lack of transparency.
+
+Let's write with this angle.
+
+Need include Amiya: She is on bridge, holds a clipboard, fists clenched, rings no glow. When Doctor uses broken English, she offers to speak? No, she can't. She listens, perhaps quietly translates from memory? But she doesn't know English. She shows anxiety but supports. Maybe she says "They can see we are helping, right?" with hope. Kal'tits remains composed but firm: "If we don't rescue, the next message is that we let people drown." Good.
+
+Need maintain no internal US POV; only Doctor's observations: helicopter movements, boats, lights. We can describe from outside: helo nose tilts, weapons pod glistening, red anti-collision lights, rotor wash. No knowledge of pilot thoughts.
+
+Let's plan scenes:
+
+Scene 1: Bridge, night/dawn. Helicopter closing. Doctor's dread. He orders comms open all frequencies. He speaks broken English. Light signal. Helo pauses, hovers, then backs off into a holding orbit. Tension.
+
+Scene 2: They spot survivors. Doctor orders rescue. Kal'tits prepares. Argument? Maybe safety concerns: sending medics outside with a hostile helo overhead. Kal'tits says "I'm going." Doctor says no initially? She insists: "You stay here and keep them from shooting. I'll go." This shows her character. He agrees. Amiya wants to help but Kal'tits says stay with博士. They launch a lifeboat from starboard side (opposite helo). US white boat approaches; Doctor signals with light/panel: red cross, "MEDICAL RESCUE". The white boat slows, keeps distance. Black helo watches.
+
+Scene 3: Rescue in water. Kal'tits and medics pull two people. One is a young man with camera helmet, semi-conscious; other older, maybe boat owner, bleeding. Kal'tits does field treatment: CPR, bandage, warm blanket. The black helo lowers a rescue basket? Or US boat sends an inflatable with armed crew. Kal'tits stands, hands visible, points to survivors then to US boat, indicating transfer. A Coast Guardsman boards lifeboat to verify? They take survivors. The white boat officer (maybe same woman from previous chapters? Let's call her "那个女人" / American liaison woman) arrives in small inflatable. She looks at Kal'tits and nods? They use translation device. Kal'tits: "They need hospital. Not interrogation first." US woman: "We take them." They are transferred.
+
+Scene 4: Aboard罗德岛 after rescue, deck wet, sunrise. Doctor meets Kal'tits returning. She reports both alive; one maybe has head trauma; no ID, equipment suggests civilian: GoPro, phone, branded cap. The woman US liaison arrives to request any belongings? Doctor hands over the waterproof bag (camera/phone) as gesture of transparency. She leaves. Amiya asks "Will they tell us who sent them?" Doctor: "They won't." Kal'tits: "They don't know either, perhaps." The black helo remains overhead, further out. Then news: US side has detained the survivor, no statement. CNN now reporting "Alien ship attacks civilian boat?" or "Mysterious vessel fired on small craft"? This undermines trust.
+
+Maybe include a TV/radio intercept: CNN broadcast fragments. Translator renders "攻击...平民...未知力量..." causing fear among干员. Doctor knows it's distorted but can't refute. He realizes narrative war has started.
+
+Scene 5: Internal meeting? Could keep external. Doctor and Amiya on deck. The US liaison returns with message: survivor is in custody, no further info; request罗德岛 provide full sensor logs of incident. Doctor refuses? Maybe offers partial. She warns "If you don't share, we can't protect your narrative." He says "And if we do, you'll use it to demand core access." Trust hangs.
+
+Ending: Helicopter departs at dawn; white boat retreats to 3 nm. But the waterline between罗德岛 and US forces feels like a crack. Doctor watches sunrise, thinks: someone out there wants the crack to widen. He resolves to find who sent the boat. Amiya asks "博士，那个人……会被怎样？" No answer. Last line maybe about a crack in the water that doesn't close.
+
+Need ensure tension, detail, psychological progression. Word count target at least 2500; we can do 3500.
+
+Let's write in Chinese.
+
+I should also preserve consistency: previous chapters use "那个女人" for female liaison, "白色制服的男人" Coast Guard officer maybe. The black helicopter no marking. There is translation device "圆盘". Use these.
+
+Let's start with title. Use markdown.
+
+Be careful not to output meta comments.
+
+I will compose in Chinese, perhaps using literary style, no bullet lists. Keep close 3rd person Dr. No US internal. Use dialogue, silence, body language, translation errors. Keep Kal'tits calm, Amiya emotional but firm.
+
+Let's produce final answer.
+[/思考过程]
+
 
 那架黑色直升机是从东侧切进来的。
 
@@ -2347,80 +2421,43 @@ MEDICAL — NO WEAPON — TRANSFER?
 他朝着舰桥走去，背脊挺直，步伐稳定。在他身后，海面一如既往地平缓起伏，仿佛什么都没有发生过。
 
 但水面下的裂痕，已经存在。
+## 第7章 交换谎言与真相
 
 [思考过程]
-We need write Chapter 6 title "## 第6章 水面的裂痕". Need continue immediately previous events. Word count 1500-99999. Need deliver only chapter text no process etc. We need craft detailed chapter. Let's recall summary: "快艇事件险些引发交火，博士用破碎的英语与灯光信号喊停盘旋的武装直升机。凯尔希救治落水者，向美方传递非敌意。但突破者被扣押后音讯全无，双方刚刚建立的微弱信任再次悬于一线。" So chapter should cover: after sonic repulsor incident, armed helicopter(s) approach, Doctor uses broken English and light signals to stop them from opening fire. Then a small boat maybe the intruder capsized, people in water; Kal'tits provides aid to survivors, communicates non-hostility. Then the breakthrough person/perpetrator detained by US side and no news, trust hangs by thread. Need maintain POV close to Doctor, limited 3rd person, not switch to US internals. Keep Kal'tits calm and Amiya with emotions. No source石. Narrative tight, detail, suspense, psychological changes. End with suspense, not tied.
+We need write Chapter 7 titled "交换谎言与真相". User wants only chapter text, no meta. Must continue plot from previous chapters. Need keep characters consistent. Target 2500 words but can 1500-99999. We'll write a chapter around 2500 words. Need use third-person limited to Doctor. Not internal US characters. Plot summary provided: UN observers allowed aboard, bring real professional translators. Doctor chooses limited disclosure on Originium, infected, mobile city civilization. Amiya first speaks to Earth cameras, promises no first use of force, not knowing this footage ignites another storm of fear.
 
-Need produce Chinese prose. Need around maybe 3000-4000 words? At least 2500. We'll aim maybe 3500. Title at start. Then scene.
+Need ensure continuity: previous ended after incident with unknown speedboat, black helicopter, rescue, and Doctor worrying. Next chapter should follow. Include UN team arrival with proper translators (earlier translation device was limited). Doctor makes strategic choice to disclose limited truth. Amiya makes public statement to Earth cameras. Build tension around translation nuance, lies/truths, reactions.
 
-Let's outline: 1) Dawn breaking, armed helo closing. 2) Doctor on bridge sees missile/weapon pods maybe. Need avoid military-superpower fantasy; use communications. 3) He decides to use external lights and broken English over radio to halt helicopter. 4) Show tension, Amiya there, Kal'tits possibly ready med. 5) Helicopter stops/backs off after light signal; then they notice overturned/unresponsive fast boat in water, survivors. 6) Doctor launches rescue boat? But to avoid hostilities, asks US for permission/coordinates? Actually summary says Kal'tits救治落水者，向美方传递非敌意. Could be survivors from rogue boat. Maybe the boat was from breakaway faction or press? They pull them from water via US Coast Guard? Need craft carefully.
+Need avoid switching to US perspective; all through Doctor's observations and dialogues. Include details: UN observers maybe a small team, diplomatic, professional interpreter (maybe older woman). They meet in conference room. Need handle language translations accurately? We can write in Chinese; include translations maybe as Doctor hears. Need maintain POV; no internal thoughts of US characters.
 
-7) After rescue, the person/breakthrougher who crossed line (maybe sole survivor or pilot) is taken by US, no news. Trust again fragile.
+Need ensure style: not military confrontation power fantasy. Communication, silence, body language, translation errors important. Amiya firm with occasional emotion. Kelsey calm restrained. Doctor's internal struggle.
 
-Let's think about US forces: There are Coast Guard white boat, Navy ship, black helicopter with no markings (spec ops?), CNN helo. The rogue boat was unidentified; after repulsor it fled toward US white boat. The US might consider it hostile. An armed helicopter (maybe black) now approaches罗德岛 aggressively. Doctor uses lights and broken English to de-escalate. Then he sees the rogue boat capsized maybe because repulsor or collision; people in water. Kal'tits insists on rescue, goes with team onto deck; using a life raft or deployable rescue craft. US helo hovers; Doctor signals no weapons, hands raised. They recover two survivors: one injured, one possibly uninjured. Kal'tits treats them. She hands them over or they are taken by US boat? Actually "突破者被扣押后音讯全无" suggests the intruder/survivor is detained by US and no news. Maybe after rescue, US demands custody of survivor;罗德岛 transfers him; then no info. Or the survivor was the one who tried to approach, got detained by US, no news.
+Need not output anything else, no summary. Start with markdown heading. Write chapter. Let's plan content in detail.
 
-Let's keep summary: The fast boat breaker is detained by the US after being rescued/treated? "但突破者被扣押后音讯全无" perhaps the one who broke through the perimeter (the boat operator) is taken away by US and no word. Could be a civilian/ thrill-seeker/independent actor? Or maybe an agent of some faction? The lack of news means both sides don't know who sent them, increasing distrust.
+Chapter arc:
+- Morning after rescue. Dr on bridge, sees new contact: a larger white or blue helicopter with UN marking? maybe a UN-marked helicopter arrives with observers. US liaison woman returns, introduces UN team. They have proper interpreter(s). Maybe an older interpreter named Ms. ??? (no need names) and a younger translator. They set up real-time translation headsets.
+- They go to conference room. Dr with Kelsey, Amiya. UN observer leader maybe a Swedish diplomat? But not internal. Doctor observes badges, demeanor. Interpreter enables fluent dialogue. The dynamic shifts because now every word is precise and recorded.
+- UN observer requests explanation of what Rhodes Island is, where from, why here. Doctor chooses limited disclosure: tells them Rhodes Island is a mobile medical city from another world; suffered spatial anomaly; not here by choice. About Originium: says their civilization uses a substance called Originium as energy source, which doesn't exist here and is inert in this universe. He avoids saying "infected" as disease vector, frames it as people with a chronic condition linked to exposure to that substance; they are patients, not contagious under Earth's conditions. He says they need medical supplies and energy alternatives.
+- Kelsey adds clinical details: Originium inert, no contagion risk in this environment; patients stable for now but need support. Amiya speaks about Rhodes Island ideals. 
+- US representative suspicious; maybe asks about weapons, the incident last night. Doctor explains non-lethal defense against unidentified craft. Says no first use of lethal force. They discuss footage.
+- Camera crew? UN team has media pool? Or CNN cameras are outside. The UN observer asks Amiya to make a statement to international audience. Amiya agrees. Dr hesitant but sees necessity. They arrange on deck: cameras, microphones, Earth journalists at safe distance on ship? Better: statement broadcast via UN/press pool on a helicopter or ship. Dr watches Amiya stand before cameras, wearing罗德岛 uniform, ears visible. She speaks carefully: "We are not invaders. We are lost travelers. We will not use force first. We ask for time and help." The interpreter translates. 
+- Reactions: journalists' body language, camera flashes; the US liaison looks uneasy; Kelsey stands beside Doctor. Amiya finishes, slightly trembling but steady. Dr notices one of the UN observers quietly recording or a journalist whispering. As they leave, the UN observer says something to Dr, maybe a warning about the statement: "Truth will be tested." The chapter ends with them watching broadcast on a portable screen: news coverage with sensational headlines, pundits, images of Amiya's ears, "Alien girl promises no first strike," etc., igniting fear. End suspense: UN team leaves, Dr realizes they have revealed too much and too little, and now the world will react. Maybe also hints about identity of speedboat attacker not resolved.
 
-Need incorporate Doctor's psychological change: from commander used to decisive war to one realizing every signal matters; mistakes in translation and light signals can mean war. He feels responsibility, helplessness, maybe begins to question if they were brought here intentionally.
+Need maybe include a scene where Dr sees the professional translator correcting the machine translation errors from before, showing stakes. Could have a moment where the UN interpreter clarifies "moor" vs "surrender". 
 
-Let's write detailed scenes.
+Need careful handling: Doctor's perspective. We can describe US/UN actions externally only, no internal. Their dialogue can be translated in Chinese in text (since writing in Chinese). Could show translation happening; e.g., interpreter speaks English and then Chinese. But POV is Doctor hearing translation via earpiece. Need maybe write dialogue in Chinese but indicate language tags? Since target Chinese readers, easiest: write spoken lines as Chinese translation (the interpreter's words) and note when English is heard. But avoid overcomplicating. We can write something like: The interpreter said in English (Dr doesn't understand), then the earpiece gave Chinese: "..." But since limited, we can just render in Chinese as if translated. Maybe include English phrases in italics for flavor: "First use of force". 
 
-Opening: Doctor on bridge, panoramic screen showing green afterimage of night vision. The armed helicopter (black, no markings) closing to 800 meters, nose down, weapons pods visible. US white boat also moving. The rogue boat has slowed and turned, then capsized/ stops. Doctor orders cease sonic defense. He knows helicopter may be preparing to fire missile;罗德岛 can't evade without源石 energy; one hit could breach reactor? Actually no reactor? But tense.
+Need ensure no internal US thoughts. We can describe facial expressions.
 
-He reaches for external radio microphone. He doesn't know English phrases, but remembers words: "No hostile." "Stop." "We help." "Wait." He decides to use light signal: Morse? They may not know. He orders deck lights to flash "S-T-O-P" or maybe a steady pattern. He speaks into radio in broken English repeating "No fire. We help. Stop." Also light: one long flash = hold fire? Could use semaphore? Simpler: floodlight pointed at helo, steady then flashing. The helo pilot might interpret.
+Word count target ~2500. Let's draft around 2500-3000.
 
-Alternatively he could use a spotlight with a handwritten sign? But radio plus light. Let's say he orders a searchlight directed upward at helo, slow pulse of three short flashes (international distress? Actually SOS). Hmm to mean "stop, do not fire" maybe red and green navigation lights? Not critical. We'll use a sequence: one long steady beam on罗德岛 bow, then three slow flashes, repeated, while he repeats on guard frequency: "This is Rhodes Island. Do not fire. We are helping people in water. I say again, do not fire."
+Let's produce in Chinese.
 
-He speaks English with heavy accent; translator maybe not needed. Amiya behind him, trembling but holding microphone. Kal'tits arrives with med kit. The helo holds at 600m, then banks right, not leaving but not attacking. Maybe because US command ordered hold, maybe because signals.
+Need include title exactly: "## 第7章 交换谎言与真相". Then text.
 
-Then they see the fast boat is sinking, people in water waving. Distance 800m from罗德岛. Doctor orders launch a rescue craft: a small inflatable (non源石 motor? Battery?) but they need permission? The US white boat also approaching survivors. To avoid competition/trigger, Doctor contacts via light/radio: "We rescue. You watch. No weapons." He sends Kal'tits and two unarmed medics in a lifeboat with white flag. The black helo circles overhead. US white boat stops short, observing. This conveys non-hostility.
-
-Kal'tits treats a woman with head wound and hypothermia; another man conscious but incoherent. She identifies source石? no. She communicates with US via hand signals / light? She uses a red cross panel. The helo's medic maybe descends? Let's make it: US Coast Guard boat sends a rescue swimmer; Kal'tits allows them to take custody? Actually summary says Kal'tits救治落水者，向美方传递非敌意. She can treat them on罗德岛 deck or in lifeboat and then hand over to US. Hmm.
-
-Let's have: The two survivors brought aboard罗德岛 to medical staging area under guard. Kal'tits stabilizes. Then the white boat requests to take them for questioning. Doctor agrees on condition a罗德岛 medical observer accompanies; US refuses/accepts? The summary says breakthrough person detained and no news; maybe after transfer no word. So he allows transfer to avoid conflict, despite wanting identity. Then no news.
-
-Need maybe the "breakthrough者" is the person who piloted the boat; one survivor, maybe a young man with a go-pro/camera, not military. He was live-streaming? Could be a daredevil who saw CNN and tried to reach the alien ship. That would explain unmarked boat, no flag, no weapons, and fleeing after sonic warning. The US would detain him as security threat. No info because government won't share. This makes sense and fits CNN theme. But the summary says "突破者被扣押后音讯全无" (the one who broke through is detained and no news). That could be this reckless individual.
-
-But the initial incident nearly triggered exchange of fire with helicopter; Doctor halts helicopter. Then rescue. Then after Kal'tits hands over survivor, no news. The trust built by humanitarian rescue is undermined because US won't share info, and罗德岛 wonders if the US staged the boat as probe? Or if it was independent. Lack of transparency.
-
-Let's write with this angle.
-
-Need include Amiya: She is on bridge, holds a clipboard, fists clenched, rings no glow. When Doctor uses broken English, she offers to speak? No, she can't. She listens, perhaps quietly translates from memory? But she doesn't know English. She shows anxiety but supports. Maybe she says "They can see we are helping, right?" with hope. Kal'tits remains composed but firm: "If we don't rescue, the next message is that we let people drown." Good.
-
-Need maintain no internal US POV; only Doctor's observations: helicopter movements, boats, lights. We can describe from outside: helo nose tilts, weapons pod glistening, red anti-collision lights, rotor wash. No knowledge of pilot thoughts.
-
-Let's plan scenes:
-
-Scene 1: Bridge, night/dawn. Helicopter closing. Doctor's dread. He orders comms open all frequencies. He speaks broken English. Light signal. Helo pauses, hovers, then backs off into a holding orbit. Tension.
-
-Scene 2: They spot survivors. Doctor orders rescue. Kal'tits prepares. Argument? Maybe safety concerns: sending medics outside with a hostile helo overhead. Kal'tits says "I'm going." Doctor says no initially? She insists: "You stay here and keep them from shooting. I'll go." This shows her character. He agrees. Amiya wants to help but Kal'tits says stay with博士. They launch a lifeboat from starboard side (opposite helo). US white boat approaches; Doctor signals with light/panel: red cross, "MEDICAL RESCUE". The white boat slows, keeps distance. Black helo watches.
-
-Scene 3: Rescue in water. Kal'tits and medics pull two people. One is a young man with camera helmet, semi-conscious; other older, maybe boat owner, bleeding. Kal'tits does field treatment: CPR, bandage, warm blanket. The black helo lowers a rescue basket? Or US boat sends an inflatable with armed crew. Kal'tits stands, hands visible, points to survivors then to US boat, indicating transfer. A Coast Guardsman boards lifeboat to verify? They take survivors. The white boat officer (maybe same woman from previous chapters? Let's call her "那个女人" / American liaison woman) arrives in small inflatable. She looks at Kal'tits and nods? They use translation device. Kal'tits: "They need hospital. Not interrogation first." US woman: "We take them." They are transferred.
-
-Scene 4: Aboard罗德岛 after rescue, deck wet, sunrise. Doctor meets Kal'tits returning. She reports both alive; one maybe has head trauma; no ID, equipment suggests civilian: GoPro, phone, branded cap. The woman US liaison arrives to request any belongings? Doctor hands over the waterproof bag (camera/phone) as gesture of transparency. She leaves. Amiya asks "Will they tell us who sent them?" Doctor: "They won't." Kal'tits: "They don't know either, perhaps." The black helo remains overhead, further out. Then news: US side has detained the survivor, no statement. CNN now reporting "Alien ship attacks civilian boat?" or "Mysterious vessel fired on small craft"? This undermines trust.
-
-Maybe include a TV/radio intercept: CNN broadcast fragments. Translator renders "攻击...平民...未知力量..." causing fear among干员. Doctor knows it's distorted but can't refute. He realizes narrative war has started.
-
-Scene 5: Internal meeting? Could keep external. Doctor and Amiya on deck. The US liaison returns with message: survivor is in custody, no further info; request罗德岛 provide full sensor logs of incident. Doctor refuses? Maybe offers partial. She warns "If you don't share, we can't protect your narrative." He says "And if we do, you'll use it to demand core access." Trust hangs.
-
-Ending: Helicopter departs at dawn; white boat retreats to 3 nm. But the waterline between罗德岛 and US forces feels like a crack. Doctor watches sunrise, thinks: someone out there wants the crack to widen. He resolves to find who sent the boat. Amiya asks "博士，那个人……会被怎样？" No answer. Last line maybe about a crack in the water that doesn't close.
-
-Need ensure tension, detail, psychological progression. Word count target at least 2500; we can do 3500.
-
-Let's write in Chinese.
-
-I should also preserve consistency: previous chapters use "那个女人" for female liaison, "白色制服的男人" Coast Guard officer maybe. The black helicopter no marking. There is translation device "圆盘". Use these.
-
-Let's start with title. Use markdown.
-
-Be careful not to output meta comments.
-
-I will compose in Chinese, perhaps using literary style, no bullet lists. Keep close 3rd person Dr. No US internal. Use dialogue, silence, body language, translation errors. Keep Kal'tits calm, Amiya emotional but firm.
-
-Let's produce final answer.
+Let's write.
 [/思考过程]
 
-## 第7章 交换谎言与真相
 
 来的是一架白色直升机。
 
@@ -2702,44 +2739,7 @@ Let's produce final answer.
 
 博士把手从护栏上收回，转身走向舰桥。他的步伐很稳，但他的脑子里只有一个念头：
 
-下一回合，对方会出什么价？
-
-[思考过程]
-We need write Chapter 7 titled "交换谎言与真相". User wants only chapter text, no meta. Must continue plot from previous chapters. Need keep characters consistent. Target 2500 words but can 1500-99999. We'll write a chapter around 2500 words. Need use third-person limited to Doctor. Not internal US characters. Plot summary provided: UN observers allowed aboard, bring real professional translators. Doctor chooses limited disclosure on Originium, infected, mobile city civilization. Amiya first speaks to Earth cameras, promises no first use of force, not knowing this footage ignites another storm of fear.
-
-Need ensure continuity: previous ended after incident with unknown speedboat, black helicopter, rescue, and Doctor worrying. Next chapter should follow. Include UN team arrival with proper translators (earlier translation device was limited). Doctor makes strategic choice to disclose limited truth. Amiya makes public statement to Earth cameras. Build tension around translation nuance, lies/truths, reactions.
-
-Need avoid switching to US perspective; all through Doctor's observations and dialogues. Include details: UN observers maybe a small team, diplomatic, professional interpreter (maybe older woman). They meet in conference room. Need handle language translations accurately? We can write in Chinese; include translations maybe as Doctor hears. Need maintain POV; no internal thoughts of US characters.
-
-Need ensure style: not military confrontation power fantasy. Communication, silence, body language, translation errors important. Amiya firm with occasional emotion. Kelsey calm restrained. Doctor's internal struggle.
-
-Need not output anything else, no summary. Start with markdown heading. Write chapter. Let's plan content in detail.
-
-Chapter arc:
-- Morning after rescue. Dr on bridge, sees new contact: a larger white or blue helicopter with UN marking? maybe a UN-marked helicopter arrives with observers. US liaison woman returns, introduces UN team. They have proper interpreter(s). Maybe an older interpreter named Ms. ??? (no need names) and a younger translator. They set up real-time translation headsets.
-- They go to conference room. Dr with Kelsey, Amiya. UN observer leader maybe a Swedish diplomat? But not internal. Doctor observes badges, demeanor. Interpreter enables fluent dialogue. The dynamic shifts because now every word is precise and recorded.
-- UN observer requests explanation of what Rhodes Island is, where from, why here. Doctor chooses limited disclosure: tells them Rhodes Island is a mobile medical city from another world; suffered spatial anomaly; not here by choice. About Originium: says their civilization uses a substance called Originium as energy source, which doesn't exist here and is inert in this universe. He avoids saying "infected" as disease vector, frames it as people with a chronic condition linked to exposure to that substance; they are patients, not contagious under Earth's conditions. He says they need medical supplies and energy alternatives.
-- Kelsey adds clinical details: Originium inert, no contagion risk in this environment; patients stable for now but need support. Amiya speaks about Rhodes Island ideals. 
-- US representative suspicious; maybe asks about weapons, the incident last night. Doctor explains non-lethal defense against unidentified craft. Says no first use of lethal force. They discuss footage.
-- Camera crew? UN team has media pool? Or CNN cameras are outside. The UN observer asks Amiya to make a statement to international audience. Amiya agrees. Dr hesitant but sees necessity. They arrange on deck: cameras, microphones, Earth journalists at safe distance on ship? Better: statement broadcast via UN/press pool on a helicopter or ship. Dr watches Amiya stand before cameras, wearing罗德岛 uniform, ears visible. She speaks carefully: "We are not invaders. We are lost travelers. We will not use force first. We ask for time and help." The interpreter translates. 
-- Reactions: journalists' body language, camera flashes; the US liaison looks uneasy; Kelsey stands beside Doctor. Amiya finishes, slightly trembling but steady. Dr notices one of the UN observers quietly recording or a journalist whispering. As they leave, the UN observer says something to Dr, maybe a warning about the statement: "Truth will be tested." The chapter ends with them watching broadcast on a portable screen: news coverage with sensational headlines, pundits, images of Amiya's ears, "Alien girl promises no first strike," etc., igniting fear. End suspense: UN team leaves, Dr realizes they have revealed too much and too little, and now the world will react. Maybe also hints about identity of speedboat attacker not resolved.
-
-Need maybe include a scene where Dr sees the professional translator correcting the machine translation errors from before, showing stakes. Could have a moment where the UN interpreter clarifies "moor" vs "surrender". 
-
-Need careful handling: Doctor's perspective. We can describe US/UN actions externally only, no internal. Their dialogue can be translated in Chinese in text (since writing in Chinese). Could show translation happening; e.g., interpreter speaks English and then Chinese. But POV is Doctor hearing translation via earpiece. Need maybe write dialogue in Chinese but indicate language tags? Since target Chinese readers, easiest: write spoken lines as Chinese translation (the interpreter's words) and note when English is heard. But avoid overcomplicating. We can write something like: The interpreter said in English (Dr doesn't understand), then the earpiece gave Chinese: "..." But since limited, we can just render in Chinese as if translated. Maybe include English phrases in italics for flavor: "First use of force". 
-
-Need ensure no internal US thoughts. We can describe facial expressions.
-
-Word count target ~2500. Let's draft around 2500-3000.
-
-Let's produce in Chinese.
-
-Need include title exactly: "## 第7章 交换谎言与真相". Then text.
-
-Let's write.
-[/思考过程]
-
-## 第8章 无源石的手术
+下一回合，对方会出什么价？## 第8章 无源石的手术
 
 博士是在凌晨三点十七分被叫醒的。
 
