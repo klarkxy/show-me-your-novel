@@ -62,7 +62,7 @@ code {
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
 }
 .site-header .brand {
@@ -72,7 +72,50 @@ code {
   letter-spacing: -0.02em;
 }
 .site-header .brand:hover { text-decoration: none; color: var(--accent); }
-.site-header .tagline { color: var(--text-dim); font-size: 0.9rem; }
+.site-header .tagline {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── GitHub 按钮（页头右侧，shields.io 徽章带实时 Star 数） ── */
+.gh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  flex: 0 0 auto;
+}
+.gh-button:hover {
+  text-decoration: none;
+  color: var(--text);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+.gh-button .gh-icon {
+  color: #f1c40f;
+  font-size: 1rem;
+  line-height: 1;
+}
+.gh-button .gh-text { line-height: 1; }
+.gh-button .gh-badge {
+  display: inline-block;
+  height: 20px;
+  border-radius: 4px;
+}
 
 .site-footer {
   margin-top: 4rem;
@@ -82,6 +125,10 @@ code {
   font-size: 0.85rem;
   text-align: center;
 }
+.site-footer p { margin: 0.3rem 0; }
+.site-footer-links a { color: var(--text-dim); margin: 0 0.25rem; }
+.site-footer-links a:hover { color: var(--accent); }
+.site-footer-links .dim { color: var(--text-light); margin: 0 0.25rem; }
 
 .container {
   max-width: var(--maxw-wide);
@@ -106,6 +153,48 @@ code {
   color: var(--text-dim);
   margin: 0 auto;
   max-width: 560px;
+}
+.hero-cta {
+  margin: 1.75rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.cta-primary, .cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.cta-primary {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+}
+.cta-primary:hover {
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+.cta-secondary {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.cta-secondary:hover {
+  text-decoration: none;
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
 }
 
 .story-section {
@@ -426,7 +515,10 @@ details.thinking .thinking-content p {
 .empty { color: var(--text-dim); }
 
 @media (max-width: 640px) {
-  .header-inner { padding: 0.9rem 1.2rem; flex-direction: column; gap: 0.15rem; align-items: flex-start; }
+  .header-inner { padding: 0.9rem 1.2rem; gap: 0.5rem; }
+  .site-header .tagline { display: none; }
+  .gh-button .gh-text { display: none; }
+  .gh-button { padding: 0.4rem 0.55rem; }
   .container { padding: 1.2rem; }
   .hero { padding: 2.5rem 1rem 2rem; }
   .hero-title { font-size: 1.9rem; }

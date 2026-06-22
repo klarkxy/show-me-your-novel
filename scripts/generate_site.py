@@ -289,6 +289,29 @@ def main() -> int:
     # -----------------------------------------------------------------------
     SITE_TITLE = "Show Me Your Novel"
     SITE_SUB = "同一个提示词，不同模型写的小说"
+    # 仓库地址：页头 GitHub 按钮、shields.io 徽章、软文里都从这里派生，避免四处散落
+    REPO_URL = "https://github.com/klarkxy/show-me-your-novel"
+    REPO_OWNER = "klarkxy"
+    REPO_NAME = "show-me-your-novel"
+
+    def github_button_html(depth: str) -> str:
+        """页头右侧的 GitHub 入口。
+
+        shields.io 徽章自带 Star 数实时刷新：用户看到的是一个会动的数字，比静态文字更能引起点击。
+        点击跳到仓库页（不是 /stargazers），让用户自己决定要不要 Star / Fork。
+        """
+        star_img = (
+            f"https://img.shields.io/github/stars/{REPO_OWNER}/{REPO_NAME}"
+            f"?style=social"
+        )
+        return (
+            f'<a class="gh-button" href="{REPO_URL}" target="_blank" rel="noopener" '
+            f'title="在 GitHub 上查看 / Star 本项目">'
+            f'<span class="gh-icon" aria-hidden="true">★</span>'
+            f'<span class="gh-text">Star on GitHub</span>'
+            f'<img class="gh-badge" src="{star_img}" alt="GitHub stars" loading="lazy">'
+            f'</a>'
+        )
 
     def page_head(title: str, depth: str, body_class: str = "") -> str:
         body_attr = f' class="{body_class}"' if body_class else ""
@@ -305,15 +328,23 @@ def main() -> int:
   <div class="header-inner">
     <a class="brand" href="{depth}index.html">{SITE_TITLE}</a>
     <span class="tagline">{html.escape(SITE_SUB)}</span>
+    {github_button_html(depth)}
   </div>
 </header>
 <main class="container">
 """
 
-    PAGE_FOOT = """
+    PAGE_FOOT = f"""
 </main>
 <footer class="site-footer">
   <p>由 <code>show-me-your-novel</code> 生成 · 统一提示词 + 直连 LLM API 分章生成 · 多模型对比</p>
+  <p class="site-footer-links">
+    <a href="{REPO_URL}" target="_blank" rel="noopener">GitHub 仓库</a>
+    <span class="dim">·</span>
+    <a href="{REPO_URL}#readme" target="_blank" rel="noopener">查看 README</a>
+    <span class="dim">·</span>
+    <a href="{REPO_URL}/issues" target="_blank" rel="noopener">反馈 / 提需求</a>
+  </p>
 </footer>
 </body>
 </html>
@@ -325,7 +356,8 @@ def main() -> int:
     cards = []
     for s in stories:
         done = len(s["versions"])
-        total = len(models)
+        # 用 model_by_id 的尺寸而不是 cfg.models：避免 config 出现重复 id 时把分母撑大
+        total = len(model_by_id)
         badge = (
             "completed"
             if done == total and total
@@ -347,8 +379,12 @@ def main() -> int:
 
     index_content = page_head(SITE_TITLE, "", "page-home") + f"""
 <section class="hero">
-  <h1 class="hero-title">同一个提示词<br>不同模型写的小说</h1>
-  <p class="hero-desc">把大模型们的长篇小说并排摆放，对比笔法、节奏与细节。</p>
+  <h1 class="hero-title">同一段提示词<br>七个模型写的同一部小说</h1>
+  <p class="hero-desc">把 DeepSeek / GLM / Kimi / MiMo / Qwen 等模型的十万字长篇并排摆放，直接对比笔法、节奏、人物与细节。挑出最像「人」写的那个。</p>
+  <p class="hero-cta">
+    <a class="cta-primary" href="novels/red-february/index.html">从《赤红二月》开始看 →</a>
+    <a class="cta-secondary" href="{REPO_URL}" target="_blank" rel="noopener">在 GitHub 上看源码 / Star</a>
+  </p>
 </section>
 
 <section class="story-section">
@@ -401,7 +437,7 @@ def main() -> int:
   <h1 class="story-title">{html.escape(s['title'])}</h1>
   <div class="story-meta-row">
     <span class="badge badge-genre">{html.escape(s['genre'] or '小说')}</span>
-    <span class="story-count">{len(s['versions'])}/{len(models)} 个模型已完成</span>
+    <span class="story-count">{len(s['versions'])}/{len(model_by_id)} 个模型已完成</span>
   </div>
 </header>
 
