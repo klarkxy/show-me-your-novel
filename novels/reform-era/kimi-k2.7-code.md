@@ -13,7 +13,6 @@
 9. **最后一船货** — 老赵安排最后一船货从蛇口码头上岸，承诺做完这单就散伙。何志远发现船舱里藏的不仅是冰箱，还有几箱没报备的录像机。
 10. **河对岸的电话** — 何志远站在深圳河边等消息，对岸元朗仍黑黢黢的。口袋里的大哥大突然响了，老赵的声音沙哑：货被查，阿炳把你供了，你自己选。
 
-
 ## 第1章 三千块与一栋楼
 
 [思考过程]
@@ -186,6 +185,7 @@ Now ensure final only text, no commentary. Need not include chapter summary. Out
 没有署名。
 
 他把纸条凑到煤油灯上，看着火苗舔上去，纸角卷起来，化成一团黑灰落在地上。铁皮屋外，一辆香港过来的货柜车正轰隆隆地驶过，车灯从门缝里扫进来，在墙上晃了一下，又灭了。
+
 ## 第2章 老赵的批条
 
 [思考过程]
@@ -456,6 +456,7 @@ Let's write now.
 迷迷糊糊间，他听见外头传来脚步声，停在门口。何志远没睁眼，手却下意识伸到枕头下，握住了那包钱。
 
 门板上，响起了三声不紧不慢的敲门声。
+
 ## 第3章 第一单钢材
 
 [思考过程]
@@ -745,6 +746,7 @@ Let's begin drafting.
 “贺德昌收了电视，也收了你的钱。快跑。”
 
 何志远盯着那行字，手慢慢攥紧。铁皮屋外，探照灯的光从远处扫过来，在墙上晃了一下，又灭了。
+
 ## 第4章 彩电与河水
 
 [思考过程]
@@ -1047,6 +1049,7 @@ Let's draft in Chinese now.
 远处，一辆货柜车正轰隆隆驶过，车灯从他脸上扫过去。
 
 他没有开门。
+
 ## 第5章 官倒的价码
 
 [思考过程]
@@ -1417,6 +1420,7 @@ Let's draft in Chinese now.
 何志远对着镜子里的人笑了笑。
 
 "晚上见，刘科长。"
+
 ## 第6章 风声紧
 
 [思考过程]
@@ -1784,6 +1788,7 @@ Let's draft now.
 身后，吉普车的引擎重新发动，车灯把整片竹林照得一片惨白。
 
 而河面上，那艘本该开走的铁壳船，果然还停在那里，像一只张着嘴的兽，等着他跳进去。
+
 ## 第7章 兄弟的账本
 
 [思考过程]
@@ -2116,6 +2121,7 @@ Let's draft in Chinese now, in final channel.
 何志远没有动。他回头看了一眼屋里，煤油灯已经灭了，可他知道那只黑色人造革包不在这里——赵铁生走的时候，把它带走了。
 
 而赵铁生刚才说的“你的账，我替你记着”，此刻像一根细线，慢慢收紧，勒进他的肉里。
+
 ## 第8章 二选一
 
 [思考过程]
@@ -2440,6 +2446,7 @@ Let's write full.
 何志远把手伸进衬衫内袋，摸了摸那份口供。纸张被他的体温焐得发热，边缘已经开始卷边。
 
 他深吸一口气，走进人潮里。身后，摩托车的引擎声响了，像一只兽低低地咆哮，远远地跟着他。
+
 ## 第9章 最后一船货
 
 [思考过程]
@@ -2812,7 +2819,60 @@ Let me write the chapter now.
 
 而在纸箱旁边，不知什么时候多了一个黑色人造革包，黄铜扣子在光柱下一闪一闪。
 
-那是赵铁生的包。## 第10章 河对岸的电话
+那是赵铁生的包。
+
+## 第10章 河对岸的电话
+
+[思考过程]
+We need write chapter 10 exactly. User provided extensive chapters 1-9 with many characters. We must continue from chapter 9 ending. Need only output chapter 10 in Chinese, markdown title "## 第10章 河对岸的电话". No meta comments. Word count 1500-99999. Need create suspense. Main character He Zhiyuan. Plot: previous: he at warehouse raid, Zhao Tiesheng's bag appears, he was set up, and officers surround. We need chapter 10: he is by Shenzhen River waiting for news; across Yuen Long still dark; mobile phone rings; Zhao's voice hoarse: cargo seized, Ah Bing ratted you out, choose yourself. Need reconcile with previous ending? Actually in previous chapter 9, he was at warehouse during raid with Zhao's bag appearing; chapter 10 summary says he stands by Shenzhen River waiting for news, with big brother phone. This might imply after the raid he escaped? Or the chapter 10 may occur in a different scene after some events; we need adapt. User says "本章摘要：何志远站在深圳河边等消息，对岸元朗仍黑黢黢的。口袋里的大哥大突然响了，老赵的声音沙哑：货被查，阿炳把你供了，你自己选。" That is the summary. Need write scene where He is by river, mobile phone rings, Zhao gives him choice: sell out the brother (probably A Bing or Zhao?) who brought him into the business, or go to prison taking all charges. Need maintain world/character. Use third person limited, tight on He. Language: solid, crisp, era texture, details, no lyricism. End with suspense; don't resolve all threads.
+
+Need plan: start at river. It is after warehouse raid? Maybe He escaped (because he didn't sign and maybe cops only targeted Zhao; maybe he was released/let go? But he was holding statement. Could be he made it out? Let's craft: after raid, he slips away amid chaos? Or he was questioned and released? The summary says he waits by river for news. So he is at large, maybe waiting to hear from Zhao. He has a mobile phone (大哥大) — Zhao gave him earlier? Actually in chapter 4 buyer had a 大哥大; in chapter 9 Zhao not present. We can establish He has a borrowed/purchased brick phone. He is waiting for Zhao after Zhao didn't show at warehouse. He suspects. He observes river: across Yuen Long dark, Shenzhen lit. Details: mosquitoes, diesel smell, ferry sounds, construction lights, barge etc.
+
+Then phone rings. Zhao tells him: cargo checked (at warehouse? or at river?), Ah Bing gave him up. Zhao says "你自己选" — either point finger at the one who brought him in (maybe 老周/赵?), or take all charges. We need leave suspense. Maybe He says "要我怎么做？" Then Zhao gives instruction. End before he decides or as he hears something else.
+
+Need maintain continuity with previous: He still has the unsigned confession? In chapter 9 he held it. At raid, Zhao's bag appeared. We can briefly allude to how he got to river: escaped through back door of warehouse? But chapter should focus on current scene. Need not over-explain.
+
+Need ensure word count around 2500 target. Let's aim ~2500-3000. Write in Chinese.
+
+Important: user requested only one chapter. So output exactly "## 第10章 河对岸的电话" then text. No intro/outro.
+
+Let's consider details and setting. Chapter 10: He Zhiyuan at Shenzhen River maybe near old ferry. Time? Night. He waits. The river black, fast, stinks. Across Yuen Long no lights, Shenzhen side bright. He has a Motorola DynaTAC-style 大哥大 in pocket, heavy, bought with money? Actually he had only 3000 seized. But in story, after warehouse raid maybe he retrieved his money? Hmm. We can have the phone be given to him by Zhao before the last job: "拿着，有情况我打给你。" Or he has it from the warehouse (Zhao's bag?). Wait Zhao's bag appeared in warehouse. Maybe He took the bag? He saw bag, maybe he grabbed it? Could be he has the phone. But he is at river after raid, perhaps after escaping; phone belongs to Zhao, a black Motorola brick with antenna. In 1984, 大哥大 existed in Hong Kong and imported into Shenzhen; very rare, symbol of wealth. He might not own it. But the summary says "口袋里的大哥大突然响了" — in his pocket. Could be Zhao gave it to him before the warehouse run. We'll say Zhao handed him a black brick phone before he got in the car: "拿着，今晚用它。" He didn't know how to use; now it rings.
+
+Need build atmosphere: He waits; across river black; behind him Shenzhen like daylight; he feels the city growing; he is small. He remembers A Bing being dragged away, the ledger, etc. He has a cigarette (economic brand). He is wet, dirty. He holds unsigned statement maybe. The phone rings; he doesn't know how to answer; fumbles. Zhao's voice says: "货被查，阿炳把你供了，你自己选。" Then reveals details: A Bing told them He was the one who handled steel, color TVs, fridges; A Bing's ledger copied etc. Zhao says: "现在有条路，把老周（or 带你入行的人）的名字点了，说你一切都是他指使，你就能出来。要么你全扛，进去十年八年。" Actually the story direction says final forced choice between "出卖带自己入行的兄弟" and "蹲监狱扛下所有罪名". In chapter 2 老周 introduced him to Zhao. But 老周 may be the one who brought him into business. Or could be A Bing? But "带自己入行的兄弟" likely 老周 (Lao Zhou) who first told him about Zhao. The choice: betray Lao Zhou, or take blame. However the phone call from Zhao says "阿炳把你供了" and "你自己选". Need articulate the choice: sell out the brother who introduced you (老周) or take all charges. Zhao says police/prosecutors want a bigger fish; if He names Lao Zhou as mastermind, they can close case; Zhao will make sure He walks. If He doesn't, he goes in. Maybe He realizes Zhao is the real target? Wait Zhao is on phone; he wouldn't ask He to take charges against himself. Maybe Zhao wants He to name A Bing? No, "带自己入行的兄弟" means the person who brought him in. That could be 老周. So Zhao says: "他们现在要老周。你点他，事情就算到你头上为止。不点，你自己进去。" But Zhao might also want to protect himself; if He names Lao Zhou, chain stops before Zhao. He suspects.
+
+We need end with suspense: He stands, looks at dark Yuen Long, hears something; perhaps a boat engine, or headlights behind him, or police sirens. The phone call ends ambiguously: Zhao says "我数到三"; He doesn't answer; then he hears footsteps; maybe a second voice. Need leave unresolved.
+
+We must ensure no moralizing, no lyrical descriptions. Use concrete nouns and actions.
+
+Let's produce around 2500 Chinese characters. Need correct era details: 大哥大 (big brother phone), 摩托罗拉, 天线, 电池. 1984 Shenzhen River, border, Bao'an County Public Security/Industry and Commerce. Cigarettes: 经济烟. Money: 三千块. Maybe he has a paper with names.
+
+Let's write.
+
+Opening: "何志远站在深圳河北岸的乱草里，裤脚还在滴水。" Then describe. He got here after leaving warehouse? Briefly: he didn't sign, cops rushed, he slipped out back. He has Zhao's phone (given before). Across river dark; Shenzhen side bright. Mosquitoes. He lights a cigarette. The phone heavy in pocket. He thinks about A Bing, Zhao's ledger, the unsigned confession still in shirt (maybe wet). He checks phone; black Motorola, red LED. It rings suddenly. He fumbles. Zhao's hoarse voice.
+
+Dialogue. Zhao: "货被查，阿炳把你供了。" He asks what to do. Zhao explains choice: name 老周 or take blame. He realizes Zhao wants him to be the cut-off. He says "老周是你的人". Zhao says "他也是带你入行的人". Then threat: if he doesn't decide before a boat arrives or police arrive, both options gone.
+
+At end: He hears motor behind him; maybe a police jeep or Zhao's boat. He looks at phone, at river, at dark Yuen Long. Does not answer. Chapter ends with "电话那头，老赵还在数：一、二……" and a footstep on gravel. Good suspense.
+
+Need integrate details: he still has the signed/unsigned confession? In chapter 8 he had a chance to sign; he didn't. In chapter 9 he held it up at raid. Maybe it's now damp, ink smeared. Could be he reads it? But focus on phone.
+
+Need mention he has no money? His 3000 was seized. But perhaps he has some cash left. Not necessary.
+
+Need be careful not to contradict prior: In chapter 9, the black bag appeared in warehouse, Zhao wasn't there. Chapter 10 could happen after He escaped the warehouse and took the bag? But if he took Zhao's bag, the phone could be in it. But the summary says phone in his pocket. We can say after the raid he grabbed the bag and ran, but maybe lost it? Let's decide: He does not have the bag; he has only the mobile phone that Zhao gave him at the dock before loading: "这玩意儿你拿着，有动静我找你。" It fits.
+
+Let's craft the escape from warehouse briefly: when the lights hit and police shouted, he didn't freeze; he saw a back door near the cement pipes, slipped out while everyone looked at the cars. He ran through construction site, lost the officers. Now by river. No need over-detail.
+
+Let's also include his internal thought: not chosen path, only path. The prompt says make reader feel not that he chose this path, but era left only this path. We can show through his reflection: each step from selling rice rolls to carrying steel to river smuggling, there was no ladder; the city only offered this ladder if you wanted to climb. But no lyricism. Keep concrete.
+
+Need maybe incorporate the "letter on cigarette paper" from earlier? Maybe he still has the note "电视是饵" in pocket. Good detail: he finds the wet cigarette paper note. He crumples it.
+
+Let's write in Chinese, controlled style. Use short sentences.
+
+Check word count. Let's target ~2500 Chinese characters. We'll estimate.
+
+Let's produce final.
+[/思考过程]
+
 
 何志远站在深圳河北岸的乱草里，裤脚还在滴水。
 
@@ -3015,55 +3075,5 @@ Let me write the chapter now.
 他望着那几个人影，喉咙里像卡了一口痰。
 
 对岸的元朗还是黑的。深圳这边的探照灯从他头顶扫过去，把他的影子拉得很长，一直投到河面上，被水一冲，碎成无数片。
-
-[思考过程]
-We need write chapter 10 exactly. User provided extensive chapters 1-9 with many characters. We must continue from chapter 9 ending. Need only output chapter 10 in Chinese, markdown title "## 第10章 河对岸的电话". No meta comments. Word count 1500-99999. Need create suspense. Main character He Zhiyuan. Plot: previous: he at warehouse raid, Zhao Tiesheng's bag appears, he was set up, and officers surround. We need chapter 10: he is by Shenzhen River waiting for news; across Yuen Long still dark; mobile phone rings; Zhao's voice hoarse: cargo seized, Ah Bing ratted you out, choose yourself. Need reconcile with previous ending? Actually in previous chapter 9, he was at warehouse during raid with Zhao's bag appearing; chapter 10 summary says he stands by Shenzhen River waiting for news, with big brother phone. This might imply after the raid he escaped? Or the chapter 10 may occur in a different scene after some events; we need adapt. User says "本章摘要：何志远站在深圳河边等消息，对岸元朗仍黑黢黢的。口袋里的大哥大突然响了，老赵的声音沙哑：货被查，阿炳把你供了，你自己选。" That is the summary. Need write scene where He is by river, mobile phone rings, Zhao gives him choice: sell out the brother (probably A Bing or Zhao?) who brought him into the business, or go to prison taking all charges. Need maintain world/character. Use third person limited, tight on He. Language: solid, crisp, era texture, details, no lyricism. End with suspense; don't resolve all threads.
-
-Need plan: start at river. It is after warehouse raid? Maybe He escaped (because he didn't sign and maybe cops only targeted Zhao; maybe he was released/let go? But he was holding statement. Could be he made it out? Let's craft: after raid, he slips away amid chaos? Or he was questioned and released? The summary says he waits by river for news. So he is at large, maybe waiting to hear from Zhao. He has a mobile phone (大哥大) — Zhao gave him earlier? Actually in chapter 4 buyer had a 大哥大; in chapter 9 Zhao not present. We can establish He has a borrowed/purchased brick phone. He is waiting for Zhao after Zhao didn't show at warehouse. He suspects. He observes river: across Yuen Long dark, Shenzhen lit. Details: mosquitoes, diesel smell, ferry sounds, construction lights, barge etc.
-
-Then phone rings. Zhao tells him: cargo checked (at warehouse? or at river?), Ah Bing gave him up. Zhao says "你自己选" — either point finger at the one who brought him in (maybe 老周/赵?), or take all charges. We need leave suspense. Maybe He says "要我怎么做？" Then Zhao gives instruction. End before he decides or as he hears something else.
-
-Need maintain continuity with previous: He still has the unsigned confession? In chapter 9 he held it. At raid, Zhao's bag appeared. We can briefly allude to how he got to river: escaped through back door of warehouse? But chapter should focus on current scene. Need not over-explain.
-
-Need ensure word count around 2500 target. Let's aim ~2500-3000. Write in Chinese.
-
-Important: user requested only one chapter. So output exactly "## 第10章 河对岸的电话" then text. No intro/outro.
-
-Let's consider details and setting. Chapter 10: He Zhiyuan at Shenzhen River maybe near old ferry. Time? Night. He waits. The river black, fast, stinks. Across Yuen Long no lights, Shenzhen side bright. He has a Motorola DynaTAC-style 大哥大 in pocket, heavy, bought with money? Actually he had only 3000 seized. But in story, after warehouse raid maybe he retrieved his money? Hmm. We can have the phone be given to him by Zhao before the last job: "拿着，有情况我打给你。" Or he has it from the warehouse (Zhao's bag?). Wait Zhao's bag appeared in warehouse. Maybe He took the bag? He saw bag, maybe he grabbed it? Could be he has the phone. But he is at river after raid, perhaps after escaping; phone belongs to Zhao, a black Motorola brick with antenna. In 1984, 大哥大 existed in Hong Kong and imported into Shenzhen; very rare, symbol of wealth. He might not own it. But the summary says "口袋里的大哥大突然响了" — in his pocket. Could be Zhao gave it to him before the warehouse run. We'll say Zhao handed him a black brick phone before he got in the car: "拿着，今晚用它。" He didn't know how to use; now it rings.
-
-Need build atmosphere: He waits; across river black; behind him Shenzhen like daylight; he feels the city growing; he is small. He remembers A Bing being dragged away, the ledger, etc. He has a cigarette (economic brand). He is wet, dirty. He holds unsigned statement maybe. The phone rings; he doesn't know how to answer; fumbles. Zhao's voice says: "货被查，阿炳把你供了，你自己选。" Then reveals details: A Bing told them He was the one who handled steel, color TVs, fridges; A Bing's ledger copied etc. Zhao says: "现在有条路，把老周（or 带你入行的人）的名字点了，说你一切都是他指使，你就能出来。要么你全扛，进去十年八年。" Actually the story direction says final forced choice between "出卖带自己入行的兄弟" and "蹲监狱扛下所有罪名". In chapter 2 老周 introduced him to Zhao. But 老周 may be the one who brought him into business. Or could be A Bing? But "带自己入行的兄弟" likely 老周 (Lao Zhou) who first told him about Zhao. The choice: betray Lao Zhou, or take blame. However the phone call from Zhao says "阿炳把你供了" and "你自己选". Need articulate the choice: sell out the brother who introduced you (老周) or take all charges. Zhao says police/prosecutors want a bigger fish; if He names Lao Zhou as mastermind, they can close case; Zhao will make sure He walks. If He doesn't, he goes in. Maybe He realizes Zhao is the real target? Wait Zhao is on phone; he wouldn't ask He to take charges against himself. Maybe Zhao wants He to name A Bing? No, "带自己入行的兄弟" means the person who brought him in. That could be 老周. So Zhao says: "他们现在要老周。你点他，事情就算到你头上为止。不点，你自己进去。" But Zhao might also want to protect himself; if He names Lao Zhou, chain stops before Zhao. He suspects.
-
-We need end with suspense: He stands, looks at dark Yuen Long, hears something; perhaps a boat engine, or headlights behind him, or police sirens. The phone call ends ambiguously: Zhao says "我数到三"; He doesn't answer; then he hears footsteps; maybe a second voice. Need leave unresolved.
-
-We must ensure no moralizing, no lyrical descriptions. Use concrete nouns and actions.
-
-Let's produce around 2500 Chinese characters. Need correct era details: 大哥大 (big brother phone), 摩托罗拉, 天线, 电池. 1984 Shenzhen River, border, Bao'an County Public Security/Industry and Commerce. Cigarettes: 经济烟. Money: 三千块. Maybe he has a paper with names.
-
-Let's write.
-
-Opening: "何志远站在深圳河北岸的乱草里，裤脚还在滴水。" Then describe. He got here after leaving warehouse? Briefly: he didn't sign, cops rushed, he slipped out back. He has Zhao's phone (given before). Across river dark; Shenzhen side bright. Mosquitoes. He lights a cigarette. The phone heavy in pocket. He thinks about A Bing, Zhao's ledger, the unsigned confession still in shirt (maybe wet). He checks phone; black Motorola, red LED. It rings suddenly. He fumbles. Zhao's hoarse voice.
-
-Dialogue. Zhao: "货被查，阿炳把你供了。" He asks what to do. Zhao explains choice: name 老周 or take blame. He realizes Zhao wants him to be the cut-off. He says "老周是你的人". Zhao says "他也是带你入行的人". Then threat: if he doesn't decide before a boat arrives or police arrive, both options gone.
-
-At end: He hears motor behind him; maybe a police jeep or Zhao's boat. He looks at phone, at river, at dark Yuen Long. Does not answer. Chapter ends with "电话那头，老赵还在数：一、二……" and a footstep on gravel. Good suspense.
-
-Need integrate details: he still has the signed/unsigned confession? In chapter 8 he had a chance to sign; he didn't. In chapter 9 he held it up at raid. Maybe it's now damp, ink smeared. Could be he reads it? But focus on phone.
-
-Need mention he has no money? His 3000 was seized. But perhaps he has some cash left. Not necessary.
-
-Need be careful not to contradict prior: In chapter 9, the black bag appeared in warehouse, Zhao wasn't there. Chapter 10 could happen after He escaped the warehouse and took the bag? But if he took Zhao's bag, the phone could be in it. But the summary says phone in his pocket. We can say after the raid he grabbed the bag and ran, but maybe lost it? Let's decide: He does not have the bag; he has only the mobile phone that Zhao gave him at the dock before loading: "这玩意儿你拿着，有动静我找你。" It fits.
-
-Let's craft the escape from warehouse briefly: when the lights hit and police shouted, he didn't freeze; he saw a back door near the cement pipes, slipped out while everyone looked at the cars. He ran through construction site, lost the officers. Now by river. No need over-detail.
-
-Let's also include his internal thought: not chosen path, only path. The prompt says make reader feel not that he chose this path, but era left only this path. We can show through his reflection: each step from selling rice rolls to carrying steel to river smuggling, there was no ladder; the city only offered this ladder if you wanted to climb. But no lyricism. Keep concrete.
-
-Need maybe incorporate the "letter on cigarette paper" from earlier? Maybe he still has the note "电视是饵" in pocket. Good detail: he finds the wet cigarette paper note. He crumples it.
-
-Let's write in Chinese, controlled style. Use short sentences.
-
-Check word count. Let's target ~2500 Chinese characters. We'll estimate.
-
-Let's produce final.
-[/思考过程]
 
 【未完待续】
