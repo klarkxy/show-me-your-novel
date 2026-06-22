@@ -1,0 +1,3069 @@
+# 深圳往事
+
+## 大纲
+
+1. **三千块与一栋楼** — 何志远凌晨三点出摊卖肠粉，收摊后数出三千块。他盯着国贸大厦的脚手架，把三轮车卖给同乡，租下工业区边一间铁皮屋，决定不再卖早点。
+2. **老赵的批条** — 经工友介绍，他认识了倒卖电子元器件的赵铁生。老赵带他走过罗湖桥海关外的巷子，见识了批条、港币和堆积的进口三极管。
+3. **第一单钢材** — 何志远用全部积蓄做保证金，跟着老赵做成第一单计划内钢材指标。钱到手很快，但他发现批条背后连着工厂供销科长和一台日立彩电。
+4. **彩电与河水** — 尝到甜头后，他辞掉工地零工，专门跑批文和走私电器。在一次深圳河边的夜间交易中，他第一次看见麻袋里的松下彩电和对面香港的漆黑田野。
+5. **官倒的价码** — 市里大户刘经理压价收购他们的批条，并暗示有工商局关系。老赵决定绕过中间人，直接从香港船运一批东芝冰箱，风险陡增。
+6. **风声紧** — 严打投机倒把的风声传开，同伙阿炳在布吉货运站被扣。何志远连夜烧掉几本账本，却发现最要紧的那批冰箱已经到岸。
+7. **兄弟的账本** — 老赵要何志远把阿炳那单顶下来，称这是讲义气。何志远翻到老赵私下吞钱的账本，兄弟之间的信任开始崩裂。
+8. **二选一** — 何志远被工商局叫去问话，经办人递给他一份口供，让他指认老赵。他走出大门时，老赵的人在暗处盯着他。
+9. **最后一船货** — 老赵安排最后一船货从蛇口码头上岸，承诺做完这单就散伙。何志远发现船舱里藏的不仅是冰箱，还有几箱没报备的录像机。
+10. **河对岸的电话** — 何志远站在深圳河边等消息，对岸元朗仍黑黢黢的。口袋里的大哥大突然响了，老赵的声音沙哑：货被查，阿炳把你供了，你自己选。
+
+## 第1章 三千块与一栋楼
+
+凌晨三点，何志远就醒了。
+
+他住在蛇口旧码头后面一间用石棉瓦搭的棚屋里，月租十二块，压一付一。棚屋没有窗，门是用几块木板钉的，夜里能听见 rats 在瓦缝里跑。他摸黑起床，从床底下拖出一只铁皮桶，桶里盛着昨晚泡好的大米。米是江西米，六毛八一斤，他一次买五十斤，用蛇皮袋装着，藏在床板底下防老鼠。
+
+他用一只改装过的手摇磨浆机把米磨成浆。磨浆机是他用工地捡的废铁和一根自行车链条自己改的，摇起来嘎嘎响，像台快散架的柴油机。磨好的米浆要过一遍纱布，再加一点薯粉，这样蒸出来的粉皮才透亮。他生了煤油炉，把一只三层铝皮蒸屉架上去，又切了葱花、蒜末，把猪油和酱油分别倒进两只豁了口的搪瓷杯里。
+
+三点五十分，他把蒸屉、米浆桶、调料、一只盛零钱的大口玻璃瓶搬上三轮车，用麻绳捆紧。玻璃瓶里是他全部周转的零钱：一分、两分、五分，还有几张皱巴巴的一角。他数也没数，揣进车斗。然后跨上车，往国贸大厦工地骑去。
+
+四月的深圳，天亮得早。这时候街上还没什么人，只有从香港过来的货柜车一辆接一辆地往蛇口港方向开，车灯把路面照得白花花的。路是泥沙路，刚下过一场雨，三轮车颠一下，车斗里的搪瓷杯就碰出清脆的响声。何志远怕把酱油颠洒了，骑得很慢。
+
+国贸大厦工地在罗湖。他骑了差不多四十分钟，赶到时，天还是黑的，但工地门口已经亮着几盏大功率碘钨灯，照得方圆几十米跟白天一样。塔吊的轮廓在灯影里一动一动，钢筋碰撞的声音从高处传下来，像无数把铁锤在敲。门口的水泥牌上写着红漆大字：“时间就是金钱，效率就是生命。”
+
+何志远把三轮车停在工地大门右侧一棵芒果树下。这里是他固定的摊位。他支起一块木板当案板，摆好碗筷，把蒸屉坐到煤炉上。水烧开的时候，第一拨工人从门里涌出来了。
+
+“靓仔，三条肠粉，加蛋！”一个穿帆布工装的广东佬把一只搪瓷碗往案板上一放。
+
+何志远没应声，掀开蒸屉盖，一股白汽腾上来。他用一只长柄木勺舀了一勺米浆，倒在垫了白纱布的蒸屉上，手腕一抖，米浆均匀地铺开。再撒上一撮肉末、几粒虾米，推进蒸屉。不到一分钟，粉皮鼓起泡，他用一把薄铁片沿着边缘一铲，粉皮就揭了下来。卷成筒，切成三段，码进碗里，淋一勺猪油，倒半杯酱油，撒上葱花。
+
+“一块五。”
+
+“不是一毛五一条吗？”
+
+“加蛋两毛，三条六毛。”
+
+广东佬咕哝了一句，从兜里摸出一张皱巴巴的五毛和一枚两分硬币。何志远接过来，从玻璃瓶里数出三毛二分的找零。硬币是湿的，沾着汗。
+
+接下来一个多小时，他几乎没停过手。蒸屉里一层接一层地冒汽，碗筷在水桶里洗得哗哗响。来吃粉的大多是国贸工地的工人，也有附近修路的、搬水泥的、开货柜车的司机。有人操湖南话，有人讲客家话，有人讲一口他半句都听不懂的潮汕话。他们站在路边，端着碗，呼噜呼噜地吃，吃完把碗往桶里一扔，抹抹嘴就走。
+
+六点刚过，一个穿中山装、戴顶旧军帽的中年男人走过来，不是工人。他站在摊位前，眼睛没看肠粉，往工地大门里望。
+
+“老板，来碗粉。”他说。
+
+何志远给他做了一碗素的，没加肉末。男人接过碗，没吃，低声问：“听说你每晚都在这儿？”
+
+“差不多。”
+
+“有批日本彩电从文锦渡过来，没批文不敢动。你认不认识有路子的人？”
+
+何志远把找零的硬币往玻璃瓶里一扔，说：“我不认得。我只卖粉。”
+
+男人看了他一眼，没再说话，把碗放下，走了。碗里的粉一口没动。
+
+何志远盯着那碗凉掉的肠粉看了一会儿，然后端起来，倒进自己胃里。粉已经坨了，酱油发苦。他知道那男人不是来吃粉的。最近工地上常有这样的“倒爷”转悠，嘴里说的都是“批文”“指标”“外汇券”。他不沾这些。他父亲在衡阳农机厂当了一辈子钳工，最恨的就是投机倒把。他来深圳，是为了挣钱，不是蹲牢房。
+
+可他也知道，卖肠粉挣不了大钱。
+
+他算了算今天的账：卖出九十三碗，加蛋的三十一碗，净赚大概十一块四毛。换成半年前，这是他想都不敢想的数字。可从年初到现在，他每天早上数钱，数来数去，发现一天最多也就挣这么多了。他的时间、体力、锅灶、三轮车的容量，都是上限。三百块钱他能挣到，三千块钱他已经攒到了，可三万、三十万，靠卖粉永远不可能。
+
+七点半，太阳升高了，工地上的广播开始放《在希望的田野上》。何志远开始收摊。他把剩下的米浆倒进桶里——中午回去还能自己煮了吃——把碗筷、调料、蒸屉一一搬上车。最后他抬起头，看了国贸大厦一眼。
+
+楼已经盖到二十多层了。红色的塔吊在高处缓缓转动，钢筋骨架一圈一圈往上长。工地围墙上贴着另一条标语：“三天一层楼，深圳速度。”他不知道这栋楼最后会有多高，只知道它每往上升一层，就有人从里面赚到钱，也有人从脚手架上摔下来。他听工友说过，上个月有个从四川来的小伙子，夜里扛水泥板，一脚踩空，从十二楼摔下来，摔成了肉饼。赔了两百块钱，尸体用草席一卷，拉走了。
+
+何志远把三轮车蹬到蛇口旧码头后面的废品收购站，找到了刘水根。
+
+刘水根是他衡阳老乡，比他晚来深圳两个月，现在在码头扛包，一天两块五，累得腰都直不起来。何志远之前跟他提过，想把三轮车连家伙一起转手。
+
+“两百块。”何志远说。
+
+刘水根蹲在地上，用手抹了抹三轮车的车把，又敲了敲车斗：“志远哥，这车轱辘都磨平了，一百五差不多。”
+
+“一百八，蒸屉、煤炉、桶、碗筷，全给你。你明天就能出摊。”
+
+“你当真不卖了？”
+
+“不卖了。”
+
+刘水根从怀里掏出一只塑料袋，里面裹着一沓零碎的钱，数了一百八递过来。何志远没数，塞进裤兜。
+
+“志远哥，你挣够了？”
+
+“没有。”何志远点了根烟，是市面上最便宜的经济烟，八分钱一包，“再卖下去，也就这样了。”
+
+刘水根把三轮车推走时，回头看了他一眼：“那你做啥？”
+
+何志远没回答。他也不知道自己要做啥。他只知道自己不能一辈子站在芒果树下蒸粉皮。
+
+下午，他在工业区边上找到一间铁皮屋。
+
+铁皮屋原来是一间临时仓库，主人姓梁，是个讲白话的本地老头，年轻时在村里养过鱼。屋子只有十来个平方，铁皮顶，木板床，地上铺着一层水泥。门口有条排水沟，沟里漂着机油和烂菜叶。离最近的大路不到三十米，货柜车一过，铁皮墙就嗡嗡地颤。
+
+“三十五一个月，押两个月。”梁伯伸出三根手指，“电自己接，水去前面公用水龙头打。不能住人太多，查到我要罚的。”
+
+何志远给了他一百零五块。梁伯收了钱，把钥匙往他手里一塞，转身走了，拖鞋在泥地上拖出啪嗒啪嗒的声响。
+
+屋子里什么都没有。何志远把门关上，从怀里掏出一只用旧报纸包着的小包，打开，里面是一叠钱。他盘腿坐在木板床上，把钱一张一张地摊开。十块的、五块的、一块的，还有一些毛票和硬币。他数得很慢，生怕数错。
+
+第一遍，二千九百八十七块五。
+
+第二遍，三千零一块。
+
+第三遍，三千块整。
+
+他把钱重新包好，塞进枕头底下，和衣躺下。铁皮屋里很热，铁皮顶被太阳晒得发烫，空气里有一股铁锈和机油混合的味道。他听见外面有人在喊：“香港手表，电子表，十五块一只！”又有人喊：“可乐，香港可乐，两块五一瓶！”
+
+他闭上眼睛，脑子里却全是国贸大厦的脚手架。那些纵横交错的钢架，像一张巨大的网，把人罩在里面。他想起自己刚到深圳的时候，口袋里只剩六块五，在火车站睡了两晚，第三天去蛇口工地扛钢筋。三个月后，他花四十五块钱买了这辆三轮车，又花八块钱买了只旧蒸屉。从那以后，他一天都没休息过。
+
+现在三轮车卖了，蒸屉也卖了。他只剩下这三千块钱、一床棉被、几件旧衣服，和这间会嗡嗡响的铁皮屋。
+
+他不知道自己下一步该往哪走。但他知道，从今晚开始，他不再卖肠粉了。
+
+傍晚，何志远出去买了一包方便面、两个馒头。回来时点煤油灯，发现门缝底下塞着一张纸条。纸条是用烟盒纸背面裁的，上面歪歪扭扭写着两行字：
+
+“何志远，想做大生意，明晚八点，蛇口码头三号仓库。带上你的钱。”
+
+没有署名。
+
+他把纸条凑到煤油灯上，看着火苗舔上去，纸角卷起来，化成一团黑灰落在地上。铁皮屋外，一辆香港过来的货柜车正轰隆隆地驶过，车灯从门缝里扫进来，在墙上晃了一下，又灭了。
+
+[思考过程]
+We need respond with chapter 1 only, in Chinese, no meta. Must be fiction text. Need incorporate setting: 1984 spring Shenzhen, protagonist He Zhiyuan 26 from Hengyang, former repairman, came with 80 yuan and blanket, worked 3 months carrying steel, bought tricycle selling breakfast and late-night food. Has saved 3000 yuan, standing under IFC scaffolding, deciding bigger plan. Chapter title in markdown ## 第1章 三千块与一栋楼. Need 2500 words approx within range.
+
+We need craft narrative: early morning 3 am, selling cheung fun (rice noodle rolls) at street stall, details of era, ingredients, customers, Shenzhen atmosphere. After collecting, count 3000. Look at building. Sells tricycle to fellow townsman. Rents tin shack at edge of industrial zone. Decides not to sell breakfast. End with suspense. Need third-person limited, no lyricism. Language tough, crisp, period texture.
+
+We need ensure historically plausible details: prices, wages, ration tickets, Shenzhen 1984. 三千块 significant. Rent? Tin shack maybe tens/month. Tricycle used maybe 150-200? Breakfast cheung fun price maybe 0.15-0.2 yuan per serving. Worker salary ~50-80/month. IFC coffee expensive. He sells to construction workers. Details: rice milk, steam box, lard, soy sauce, chopped scallion, chili. Customers pay with paper tickets? 粮票? but in Shenzhen ration system still existed, but for food maybe cash. He has no license? "走鬼"? Police maybe. He works early morning to avoid management.
+
+Need not over-explain. Tight scenes. Include conflict maybe dispute with customer over change, or city management inspection, or encounter with someone from home, or notice of people selling electronic goods /批文. Since it's chapter 1, set up. Include the buyer of tricycle, fellow countryman. Include landlord/rent. End with him standing in tin shack and seeing something/ someone, or a telegram/letter, or promise.
+
+Need maintain word count ~2500 Chinese characters. Let's aim ~2400-2800.
+
+Let's plan sections:
+1. 3am wake, prep in rented space? He currently lives in a squatter area? He packs steam box, rice milk, lard. Rides tricycle to Shekou construction site gate. The street dark, sounds, harbor lights. Sets up.
+2. Customers arrive: workers from IFC, steelworkers, truck drivers. Dialogue. Transactions. A young worker from Hunan, a Cantonese foreman. Details of money: notes, coins. He counts bowls. Steam. 肠粉 made on cloth over steamer. Price: two fen? Let's set 1毛5一份 (0.15). Workers earn maybe 2-3 yuan/day. Plausible.
+3. He reflects on arriving, savings, not wanting to be a porter. He watches the tower growing. The slogan "Time is money..." on a billboard. He feels the building's pull.
+4. After dawn, he rides to old market/bike shop, meets 老周/同乡 阿强 from Hunan, negotiates selling tricycle. They settle 180 yuan? But his tricycle is his livelihood; he sells it plus steam box? He decides to rent a tin shack instead. He shows 3000 cash wrapped in oil paper. Emotion.
+5. Renting tin shack: at edge of industrial zone, near a dirt road, 铁皮屋 from an old Cantonese landlord. 30 yuan/month? He pays deposit. Landlord warns about electricity/water/no license.
+6. He sits in empty shack, no tricycle, just money and blanket. He makes decision: no more selling breakfast. Outside he hears trucks, sees a banner about "发展才是硬道理"? That's 1992; avoid. Use 1984 slogans. He unfolds money, counts again. A knock or a man appears: maybe a thin guy named 阿灿 who says "何老板，听说你想做电器?" or a police notice. End suspense.
+
+Need ensure "不是这个人选择了这条路，是这个时代只给他留了这条路" by showing limited options: mechanical repair state job dead, construction exhausting, street vendor capped, bigger opportunity only through trade/venture.
+
+Let's write.
+
+Word count target: about 2500 Chinese characters. Need maybe 5-6 paragraphs per section. Let's draft carefully.
+
+Potential title in markdown. No other headings? Could include chapter title only as requested. Maybe no subheadings.
+
+Let's compose.
+
+Open with He waking, environment: darkness, kerosene stove, smell of diesel, neighbor coughing, mosquito net? He rents a corner in an old factory dorm? Actually he lives in a shared dwelling in Shekou. He lights kerosene lamp. Gets rice milk (he ground rice last night). The steam box (三层铝皮抽屉). Lard in tin. Sauce. He loads tricycle.
+
+Describe ride through Shekou at 3:30. Road not paved, puddles reflect container truck lights. Harbor cranes. A dog barks. Construction site gates: IFC?国贸大厦工地. Workers on night shift exit at 6? Actually he sells from 4 to 7. Setup outside gate.
+
+Make cheung fun: he lifts lid, steam rolls, ladles thin rice milk onto white cloth, adds minced pork/dried shrimp maybe? Rolls with scraper, cuts into strips, brushes lard, pours soy sauce and chili. Price 1毛5. Some eat standing; others take away in enamel bowls.
+
+Customers speak dialects. A worker pays with 1 yuan note, no change? He has a tobacco tin of coins/fen notes. A foreman orders ten portions for crew, pays with a stack. This shows cash flow. Maybe a city management jeep passes; he tenses, but it doesn't stop. Era detail: urban management or "市管会" maybe.
+
+He reflects: one bowl costs ~3 fen ingredients, profit 1毛2; three hours can sell 80-120 bowls; net ~10 yuan/day; saved for half year 3000. He had come with 6.5, worked steel, then bought tricycle for 45 yuan. Hardship: slept under bridge first nights.
+
+When sun rises, he looks up at the tower, steel frame, red flags, "三天一层楼" sign. He feels small and hungry. The slogan "时间就是金钱，效率就是生命" on a wall. He doesn't understand fully but feels money in speed.
+
+After cleanup, he rides to 蛇口旧码头旁 where migrants gather. Sells tricycle to 同乡 刘水根 from Hengyang who arrived last month, wants to sell fruit. Bargain: tricycle plus steam box and two buckets for 200 yuan (he bought tricycle for 120?). He counts money; Liu's cash is damp. They share a cigarette. He tells Liu "别再做肠粉了，你做不过河南帮". He keeps only the money and blanket.
+
+Then he rents铁皮屋. Location: 工业区边，深圳湾大道旁？ Actually 1984 maybe 深南大道 still under construction. Use "工业大道旁". The landlord 梁伯, Cantonese, owns a row of tin shacks near a drainage ditch. Rent 35 yuan/month, two months deposit. No papers; electricity tapped from construction site. He pays 105 yuan. Shack has a plank bed, kerosene lamp, a padlock. Empty. He spreads the 3000 yuan on the bed: mostly ten-yuan notes, some fives, coins in oil paper. He counts twice. It's all there.
+
+He lies on the plank bed. The shack vibrates from passing trucks. Outside someone is selling Hong Kong watches from a canvas bag; police whistles; a woman calls out "可乐，香港可乐". He closes his eyes. The building is still growing. He thinks: three thousand can buy a pallet of watches? Or a few hundred cassette recorders? But he doesn't know the channel.
+
+Then a knock. He opens door. A man in a dirty polyester jacket, maybe 30, with a canvas bag, asks "何志远？我姓马，马国梁。你老乡说你手上有三千，想做大生意。" He doesn't answer. End. That creates suspense.
+
+Need maybe include "出卖带自己入行的兄弟" setup? The first chapter can introduce the brother figure later. We can introduce 带他入行的人 maybe at the end? Or not. Fine.
+
+Check historical references: 1984 Shenzhen, 国贸大厦 (International Trade Centre) under construction; slogan "时间就是金钱，效率就是生命" erected 1984 in Shekou by 袁庚. Good. "三天一层楼" indeed Shenzhen speed. 双轨制物价, 官倒 mentioned in world building but not necessarily this chapter. Could hint: a customer mentions buying a Hong Kong TV needs "指标", a批文. That builds. Maybe at stall, a truck driver says "有批日本彩电到文锦渡，没批文不敢动." This hints.
+
+Need no lyricism. Use plain descriptions.
+
+Let's produce ~2500 characters. Counting Chinese characters: average 1.5-2 per token. We'll write perhaps 2400 Chinese characters. Let's draft in Chinese now.
+
+(Internal drafting complete.)
+
+Now ensure final only text, no commentary. Need not include chapter summary. Output just "## 第1章 三千块与一栋楼" then text. Let's write.
+[/思考过程]
+
+## 第2章 老赵的批条
+
+铁皮屋到天亮时已经热得像个蒸笼。何志远一夜没睡踏实，枕在脑后的手一直能碰着那包钱。外头公鸡刚叫第一遍，他就起来了，从床底提出一只铁皮桶，到公用水龙头接了一桶水，把脸埋进去。水是温的，带着铁锈味。
+
+他锁上门，沿着排水沟往外走。工业区边上有个露天的粥棚，三块木板搭的台子，一口大铁锅，老板娘是惠州人，一碗白粥三分钱，配一碟咸菜再收两分。何志远要了一碗粥，没要咸菜。他坐在一只倒扣的木桶上，看着路上来往的货柜车。八点不到，太阳已经晒得地面发白。
+
+“哟，不蒸粉了？”
+
+何志远抬头，看见老周走过来。老周是湖北人，以前在蛇口工地扎钢筋，右手少了半截小指，听说是被钢缆绞掉的。他穿着件洗得发白的汗衫，肩上搭着一条分不清颜色的毛巾。
+
+“不蒸了。”何志远把碗里的粥喝完。
+
+老周在他旁边蹲下，从兜里摸出一只皱巴巴的烟盒，抽出一根递过来。何志远摆手，他自己点上，狠狠吸了一口。
+
+“你那点心思，工地上早传开了。”老周吐出一口烟，“想挣大钱，卖粉不行。扛包也不行。你得倒货。”
+
+何志远没接话。
+
+“我认识一个人，姓赵，叫赵铁生。倒电子元器件的，三极管、二极管、集成块。手上有批文，能从香港走货。”老周压低声音，“他这两天要一个跑腿的，腿脚利索、嘴严、敢熬夜。我跟他说了你。”
+
+何志远盯着粥棚老板娘用围裙擦碗的动作：“什么条件？”
+
+“本钱。你有多少？”
+
+“三千。”
+
+老周眉毛挑了一下：“不少了。晚上八点，蛇口码头三号仓库，你提我老周的名字。去不去，你自己定。”
+
+说完，老周把烟屁股往地上一扔，用脚碾灭，起身走了。
+
+何志远在粥棚坐到天大亮。粥棚后来陆续来了几个下班的工人，吵吵嚷嚷地要粥。他站起身，沿着原路走回铁皮屋。
+
+屋里闷得像一口倒扣的锅。他从枕头底下掏出那包钱，报纸已经磨破了边。他把钱倒在木板床上，又数了一遍。三千块，一分不多，一分不少。他分出一千五，用一块旧蓝布包好，塞进裤腰里，用皮带勒紧。剩下的一千五，他用报纸重新包严，掀开床头一块松动的木板，塞了进去，再把木板压实。
+
+下午他睡了一觉，没睡实，耳朵里全是铁皮被太阳晒得“咔咔”作响的声音。六点，他起床，用冷水洗了把脸，把几件旧衣服塞进一只帆布袋，出了门。
+
+蛇口码头三号仓库在一排旧仓库中间，墙皮斑驳，门口堆着烂木头和生锈的脚手架管。没有灯，只有一盏挂在电线杆上的白炽灯，被海风吹得晃来晃去。何志远走到门口，看见一个穿背心的男人靠在一辆解放牌卡车的保险杠上抽烟。
+
+“找谁？”男人问。
+
+“赵老板。老周让我来的。”
+
+男人上下打量他，目光在他腰间停了一下，然后朝仓库里头努努嘴：“进去。”
+
+仓库里弥漫着一股海水和机油混合的味道。靠窗的地方摆着一只木箱，一个男人坐在木箱上抽烟。他四十来岁，瘦，脸色发黄，左眉到颧骨有一道浅白色的疤。上身一件灰色的确良短袖，下身一条军绿裤，裤腿卷到膝盖，脚上一双黑色塑料凉鞋。旁边一只黑色人造革包，黄铜扣子擦得发亮。
+
+何志远走进去，男人抬起头，眼神在他脸上停了两秒。
+
+“老周的人？”
+
+“嗯。我叫何志远。”
+
+“坐。”赵铁生用脚尖点了点地上的另一只木箱，“带钱了？”
+
+“带了。”
+
+“多少？”
+
+“一千五在身上，还有一千五搁屋里。”
+
+赵铁生笑了一下，露出一口被烟熏黄的牙：“挺谨慎。老周没看错。”
+
+他把烟头往地上一扔，站起来，何志远才发现他比坐着时还要瘦，像根绷直的钢丝。
+
+“走吧，带你去看看货。”
+
+仓库外头停着那辆解放牌，驾驶室已经坐了一个人，戴一顶压得很低的解放帽，看不清脸。赵铁生拉开车门，何志远跟着爬上去。车厢里装着几只鼓鼓囊囊的麻袋，一晃动就发出窸窸窣窣的声响，像装了一车干豆子。
+
+卡车发动，顺着蛇口往罗湖的方向开。路还是泥沙路，坑多，车颠得厉害。何志远一只手抓着车门上的把手，另一只手护着腰间的钱。赵铁生靠在后座上，眼睛闭着，像是在养神。司机一句话不说，只偶尔按一下喇叭。
+
+车开了一个多钟头，路边的楼渐渐多了起来。何志远看见国贸大厦的轮廓在远处立着，塔吊上的红灯一闪一闪。又过了十几分钟，卡车在一条小巷口停下。巷口挂着一只昏黄的白炽灯，灯下有几个摆地摊的，卖电子表、计算器、进口香烟。
+
+“下车。”赵铁生睁开眼。
+
+何志远跟着他走进巷子。巷子很窄，两边是两层高的旧楼，墙上贴着褪色的标语，楼下是门板搭的铺面。有人用蛇皮袋背着货匆匆走过，有人蹲在墙根数一沓沓的外汇券，还有人低声喊：“港币，港币，换港币。”一个穿碎花衫的女人抱着孩子坐在门槛上，孩子已经睡着了，手里还攥着半块面包。
+
+他们走到巷子尽头，拐进一个院子。院子里有两间铁皮顶的仓库，门口拴着一条黄狗，见人来只是抬了抬眼皮。一个胖子坐在竹椅上，正用一把小刀削苹果，看见赵铁生，把苹果往地上一扔，站起来开铁门。
+
+“老赵，今天人多。”胖子低声说。
+
+“嗯。”赵铁生应了一声，回头示意何志远跟上。
+
+仓库里比外头还热，一盏一百瓦的灯泡吊在房梁上，照得满地都是白花花的光。四面墙根堆着纸箱，一直码到房顶。箱子上印着日文和英文，何志远只认得“SONY”和“TOSHIBA”几个字母。两个女人坐在小马扎上，借着灯泡的光，用镊子把一粒粒黑色的小东西从塑料袋里夹出来，分装进更小的纸袋里。她们手边的木盒里已经分好了几十包。
+
+赵铁生走到一张三屉桌前，打开那只黑色人造革包，从里面抽出几张纸。
+
+“过来看。”
+
+何志远走过去。纸上印着红字，最上头一行是“进口电子元器件审批单”，下面盖着一枚鲜红的圆章，章上的字他认不全，只看见“省电子工业”几个字。单子上手写着货物品名、数量、金额，墨迹已经有些发灰。
+
+“这就是批条。”赵铁生把纸在桌上磕了磕，“没这东西，货从文锦渡过来，海关直接扣下，人还得进去。有了这东西，三极管就是国家需要的生产资料，谁敢拦？”
+
+何志远没说话。
+
+赵铁生从一只打开的纸箱里抓出一把黑色的小零件，摊在掌心。那些零件只有米粒大小，带着三根细得像针的金属腿。
+
+“三极管。香港那边论袋卖，一袋一万只，成本不到一块钱一只。卖到广州、佛山的无线电厂里，八块、十块一只都有人抢。你知道为什么？”
+
+何志远摇头。
+
+“厂里机器要修，产品要升级，计划内指标不够用。厂长手里有钱，没处买货。我们有货，有批条，就能填这个窟窿。”赵铁生把三极管往纸箱里一扔，“这一箱，够你卖一年肠粉。”
+
+何志远伸出手，从箱子里捏起一只三极管。那东西轻得几乎没有重量，黑塑料壳上印着一行小字：“2SC945”。他想起自己卖粉的时候，一天站五个钟头，蒸九十三碗粉，净赚十一块四毛。而这一粒小东西，可能抵得上十几碗粉。
+
+“这事……”他斟酌着开口，“犯法不？”
+
+赵铁生看着他，眼神里没有笑意：“批文是真的，章是真的，货是真的。你说呢？”
+
+何志远把三极管放回纸箱。他没再追问。他知道赵铁生说的“真”是什么意思。
+
+“你那一千五，算入股。”赵铁生把批条收回包里，“后天晚上有一批货从文锦渡到，你跟我去接。接完送到福田一家厂子，转手就能分你一千。跑顺了，你自己拿一联批条去提货，挣的全归你，给我三成。”
+
+何志远的心跳了一下。一千块，也就是他卖三个月肠粉的数。
+
+就在这时，外头突然传来一阵狗叫，紧接着是几声急促的呼喊。仓库里的人全停下手里的活。赵铁生脸色没变，只是飞快地把人造革包合上，拉链一拉。
+
+“走后门。”他说。
+
+胖子已经拉开仓库后墙上的一扇小门。赵铁生一把拽住何志远的手腕，把他往外推。门外是另一条更窄的巷子，堆满了破纸箱和烂菜叶。他们深一脚浅一脚地往外走，身后传来汽车刹车的声音，还有人在喊：“查仓！查仓！”
+
+何志远回头看了一眼，巷子口闪过一道红蓝相间的车灯。赵铁生手上用力：“别看，走你的。”
+
+他们穿过两条巷子，到了一条小马路边。赵铁生拦下一辆经过的东风牌货车，跟司机说了句什么，把何志远推上副驾驶，自己从另一边爬上来。
+
+车开出去老远，赵铁生才松开何志远的手腕。他掏出烟，点上一根，慢慢吸了两口。
+
+“不是冲我们。”他说，“隔壁那家没批条，硬走货，被点了。”
+
+何志远的手心全是汗。他低头看了看自己的手腕，已经被赵铁生攥出一圈红印。
+
+“怕不怕？”赵铁生问。
+
+何志远没回答。
+
+赵铁生笑了一下：“怕就对了。不怕的人，死得快。”
+
+他摇下车窗，把烟灰弹到风里：“这行吃饭，靠三样。眼快，嘴紧，心黑。你眼不快，能学；嘴不紧，我帮你缝上；心要是不黑，那就一辈子卖粉去吧。”
+
+何志远望着窗外。路灯昏黄，照得路边的招牌忽明忽暗。他想起铁皮屋里那一千五百块钱，想起父亲在衡阳农机厂干了三十年，最后落得一身肺病。父亲最恨的就是“投机倒把”，小时候他只要听见有人说起黑市，父亲就会骂：“这些人迟早吃枪子。”
+
+可现在，他手里捏着别人的三极管，腰里勒着自己的本钱，坐在一辆不知道开往哪里的货车上。
+
+“为什么找我？”他问赵铁生。
+
+赵铁生把烟叼在嘴里，眯着眼看他：“老周说你卖粉，三个月没缺过斤两。这种人，信得过。再说你在深圳没家、没户口、没单位，出了事，牵不出别人。”
+
+何志远心里一沉。
+
+车把他送回蛇口码头时，已经过了十一点。赵铁生没下车，只从车窗里伸出头：“后天晚上七点，三号仓库。带不带钱，你自己想。”
+
+卡车调了个头，消失在夜色里。
+
+何志远走回铁皮屋，腿像灌了铅。他推开门，没点灯，先蹲下去，把床底那块木板掀开，摸了摸里面的布包。一千五还在。然后他解开皮带，把腰间那一千五也取出来，两包钱并排放在一起。
+
+他没数，只是坐在床板上，盯着那两叠钱看。
+
+外头有辆货柜车驶过，铁皮墙嗡嗡地颤。他想起赵铁生包里那几张批条，红章盖在发灰的纸上，像血。他又想起那只轻得几乎没有重量的三极管，箱子里有成千上万只，每一只都值他十几碗粉。
+
+他躺下来，把钱塞进枕头底下，和衣而眠。
+
+迷迷糊糊间，他听见外头传来脚步声，停在门口。何志远没睁眼，手却下意识伸到枕头下，握住了那包钱。
+
+门板上，响起了三声不紧不慢的敲门声。
+
+[思考过程]
+We need write chapter 2 of novel, titled 老赵的批条. Must be in Chinese, only chapter body, no meta commentary. Must start with markdown heading "## 第2章 老赵的批条". Should continue from chapter 1. Protagonist He Zhiyuan, 26, ex street food vendor, has 3000 yuan, lives in iron sheet room, got anonymous note. This chapter introduces Zhao Tiesheng via coworker, takes him through area near Luohu Bridge customs, shows permits/批条, HK dollars, piles of imported transistors. Need narrative tight, details, suspense, psychological change. Target ~2500 words, range 1500-99999. We need output a single chapter, no extra content.
+
+We need carefully craft. We must be historically accurate 1984 Shenzhen:批条 (import permits), 三极管 (transistors), 罗湖桥 customs, 文锦渡 maybe, HK dollars, 走私 electronics components. The protagonist is poor; 3000 yuan is capital. He doesn't want prison but wants bigger money.
+
+Let's plan:
+
+Chapter starts after he burns note, next day? He meets coworker/工友 who introduces Zhao Tiesheng. Maybe Liu Shuigen (who bought tricycle) or another named Zhou? The summary says "经工友介绍，他认识了倒卖电子元器件的赵铁生". Use a coworker from construction site: "周大勇" or "郑大头"? Let's create "老周", a steel fixer at Shekou site, older, from Hubei or something. He sees He no longer selling breakfast and invites him.
+
+Events:
+- Morning, He returns to old construction site? Actually he had sold tricycle; he is idle in铁皮屋. He goes out for water / food. At工业区 he runs into 老周，钢筋工，曾一起扛钢筋，知他卖粉。老周说最近有活，问他愿不愿意见一个人。
+- Evening, they go to Shekou Wharf warehouse No.3? The note said 三号仓库， but maybe coincidence. He brings money? He might hide most, bring some. He meets Zhao Tiesheng: middle-aged, lean, with a scar, wears a short-sleeve shirt, plastic sandals, carries a人造革 briefcase, smokes Hongtashan? Zhao inspects him, asks about capital. He says 3000. Zhao says small but enough for a test.
+- Zhao leads him through narrow lanes behind Luohu Bridge customs: 船步路/建设路 area, near罗湖桥， crowds, people carrying sacks, plainclothes, money changers, stalls. They pass a shop with transistor radios, cassette players. Enter a dim warehouse stacked with cardboard boxes labeled Japanese/Taiwan electronics: transistors 2SCxxx, resistors, integrated circuits. Workers sorting with tweezers. Zhao pulls out a批条 (official import approval) from briefcase: pink paper, red seal "××省电子工业局" maybe photocopied? He explains: with this, goods can come through文锦渡/沙头角; without it, customs seizes. Prices: buy here at HK dollar price, sell to factories in Guangzhou/Shenzhen at multiples.
+- He Zhiyuan handles a transistor, sees it tiny but worth more than a bowl of肠粉. He mentally calculates: one box maybe 1000 units, cost 2 yuan each, sell 8 yuan, profit 6000. A month's粉 equals one box.
+- Zhao offers him a trial: put 3000 in a shipment of transistors from Hong Kong, delivered tomorrow night to warehouse, he can earn 1500 if all goes well. But need to be at customs side to "receive". The risk: no批条 means they might be raided; but Zhao has one. He suspects trap? Or sees the money and desperation. He also notices a young man with a knife/alert, maybe police? Suspense: a motorcycle passes, Zhao quickly closes briefcase, they leave.
+- On way back, Zhao warns him: "这条船上的人多，嘴要紧，钱要狠。" He asks why Zhao chose him. Zhao says "你没有根，没有退路。这种人最敢干，也最好管。" Or something.
+- He returns to铁皮屋 at night, counts money again. He thinks about his father's hatred of speculation, but also that he has nothing else. The chapter ends with him making a decision? But chapter 10 ending suspense. For chapter 2, maybe he decides to bring money to warehouse next night, or is already caught? We need leave a small suspense: he hides 1500 under bed, puts 1500 in belt; tomorrow. Or he sees police raiding a nearby house as he returns. That sets tension.
+
+Need include sensory details: heat, diesel smell, Cantonese chatter, currency exchange, '外汇券', '港币', '蛇皮袋', '三合板' boxes, '红塔山', '羊城' etc.
+
+Word count target 2500. Let's aim around 2500-3000 Chinese characters? Actually 2500 words probably Chinese characters. Need write in prose, not too short. We'll aim ~2600 characters. But instructions say 字数 1500-99999 字; target 2500. In Chinese word count often characters. Let's produce maybe 2800 characters. Need be careful.
+
+Let's craft chapter.
+
+Important: third-person limited, close to He Zhiyuan. No lyrical, use concrete details. Avoid meta, no summary. Just output.
+
+Potential issues: Need not output the previous chapter. Only chapter 2.
+
+Let's write in sections but no subheadings; just paragraphs. Start with heading.
+
+Title: "## 第2章 老赵的批条"
+
+Opening: Next morning, after night of little sleep,何志远被铁皮屋顶晒醒. He goes to工业区 to find老周. Or老周找上门. The note remains a mystery; maybe he decides to ignore it. Let's integrate: He ignores note, but老周 introduces Zhao as if arranged. Maybe Zhao sent note? Could be.
+
+Let's make: In the morning he goes to蛇口码头附近找零工/打探. He sees a group of workers playing cards under a banyan. 老周 from steelwork sees him, calls him. 老周 says he heard He wants bigger business. He mentions a man "赵铁生" who deals in electronics. If interested, meet at six at the wharf.
+
+He is wary but agrees. He spends day at铁皮屋; in evening goes. Zhao appears. They talk. Zhao leads him to罗湖桥外. etc.
+
+We should make He carry all 3000? He might bring it. Let's make him bring 3000 in a cloth belt. Zhao glances but doesn't count. They take bus? Or walk? From Shekou to Luohu far; in 1984 maybe they take a "小巴" or hitch truck. Let's have Zhao has a motorcycle? Or they take a chartered 货车. Realistic: From Shekou to Luohu maybe 30 km; they take a "东风" truck driven by a friend. More detail.
+
+Actually, Zhao could lead him first to a shed near Shekou, then take a truck. But summary says "带他走过罗湖桥海关外的巷子，见识了批条、港币和堆积的进口三极管". So they go to Luohu Bridge customs alleys.
+
+Let's write: They take a rusty 解放牌 truck from Shekou, sharing cabin with driver and two men. Arrive at Shenzhen railway station near Luohu Bridge. Then walk through back alleys behind联检大楼. At night alleys crowded. They enter a courtyard with warehouses, guarded by a dog? Boxes. Zhao shows批条.
+
+Need maintain suspense: police presence, plainclothes, a raid nearby? Maybe at the end, as they leave, they hear sirens and people scattering. That hooks.
+
+Character Zhao: maybe ex-soldier, from Northeast? Or local? Let's make him from四川 or湖南 to connect? "赵铁生" sounds northern. We'll make him a former warehouse clerk at省电子局， knows permits. He is 40ish, has a long scar on forearm, wears a faded的确良 shirt, carries a black人造革包 with a brass clasp. Speaks Mandarin with Hunan accent maybe.
+
+He Zhiyuan's psychological change: Starts resistant, then calculates profits, then tempted. The chapter title "老赵的批条" suggests the批条 is key object of power. He realizes批条 is worth more than money. He feels both awe and fear. He thinks of father but also铁皮屋 and wanting not to fall back.
+
+Let's write with dialogue and action, sensory detail.
+
+Need be historically grounded:
+- 三极管 prices in 1984: imported transistors maybe a few yuan. For example 2SC9014 used in radios, cost 0.5-1 yuan, sold for 3-5 yuan? But maybe boxes. Let's use figures: A carton has 5000 pieces, bought at HK$0.15 each (~0.06 RMB?), sold in Guangzhou at 0.8-1 RMB. But dual exchange rate: official 1 HKD=0.3 RMB? Actually 1984 official rate ~1 USD=2.8 RMB, HKD ~0.36 RMB. Black market higher. Let's avoid precise unrealistic figures, use general "一块钱进，八块钱出".
+- Wage: construction worker maybe 2-3 yuan/day, monthly ~60-80. He earned 11 yuan/day selling粉, already good. 3000 is huge.
+- A bowl of肠粉 price 0.15? In chapter 1 they said "一毛五一条"? Actually肠粉一条一毛五? He sold bowl three pieces with egg 一块五? Wait chapter 1 had inconsistency: one says "三条肠粉加蛋" price 一块五, he replies "不是一毛五一条吗?" "加蛋两毛，三条六毛." That suggests base 0.15 each, egg 0.05, total 0.6, but he charged 1.5? That seems off, maybe they meant 0.15一条 with egg 0.2? Hmm not our concern. We'll not reference.
+
+Let's focus.
+
+Detailed outline for writing:
+
+Para1: Morning after the note. Sun heats铁皮屋. He wakes on木板床， pillow still holding money. He gets up, splashes water on face at公用水龙头. Goes to工业区路口吃一碗粥 (0.1 yuan). Sees老周.
+
+Para2: 老周 about 45, rebar worker, from Hubei, has a right hand missing half finger. They greet.老周 asks why not selling. He says quit.老周 says heard he wants to make money and knows a guy "赵铁生" who does electronic components, needs a young able runner. "晚上八点，蛇口码头三号仓。你自己去，他认得我，你提我名。" He also warns don't ask too much.
+
+Para3: He spends day uneasy. He counts money; hides half under a loose floorboard. In evening, he wraps 1500 in a cloth belt around waist, puts remaining in a canvas包. He leaves铁皮屋.
+
+Para4: Arrives码头三号仓库. Area of freight sheds, forklifts, container smell. A man leaning against a rusty 解放牌. He asks "找谁？" He says "老周让我来找赵老板。" The man sizes him up, opens shed door. Inside dim, Zhao sitting on a木箱 smoking.
+
+Para5: Zhao looks up. He is lean, sallow, with a scar from left eyebrow to cheek? Wears grey short-sleeve, plastic sandals, black人造革包 on box beside him. Says老周介绍的人？坐下。 He offers a cigarette; He refuses (or accepts?). Zhao asks capital. He says three thousand. Zhao laughs: "三千块，胆子倒不小。" Then says fine.
+
+Para6: Zhao says let's go see货. They get into truck cabin. Driver is young, cap low, doesn't speak. The truck rattles along Shennan Road? Dust, headlights. Two hours? Actually in 1984 road may be rough. They pass Shenzhen railway station, then to Luohu.
+
+Para7: Arrive near联检大楼. Neon? Actually 1984 maybe not much neon. They walk through back lanes behind the customs building: narrow, wet, reeking of urine and diesel. Crowds: people with sacks, money changers hissing "换港币换港币", women selling soda, a child sleeping on cardboard. They pass a stall with transistor radios playing Cantonese pop. Zhao walks fast, doesn't look around.
+
+Para8: Enter a courtyard behind a restaurant. Warehouses with tin roofs. A padlocked gate; a fat man opens it after Zhao taps a code. Inside, cardboard boxes stacked to roof. Two women under a bare bulb sorting small parts into plastic bags with tweezers. A scale on a木桌.
+
+Para9: Zhao opens his briefcase, takes out a batch of papers. "批条". Pink official forms with red seals, handwritten numbers: "进口电子元器件审批单", "广东省电子工业供销公司" or "深圳经济特区发展公司". He holds one up. "没有这东西，货到文锦渡就扣下；有了它，三极管就是生产资料，谁敢查？" He explains the profit: buy from Hong Kong at HK dollar, use批条 to clear customs, sell to state factories at domestic price. "一个三极管，香港进来成本不到一块钱，广州厂里愿意出八块十块。票子他们自己有，但他们缺的就是这个。" He taps the paper.
+
+Para10: He Zhiyuan holds a transistor in palm: black plastic cylinder with three metal legs. It's lighter than a纽扣. He thinks this tiny thing equals dozens of bowls of肠粉. He asks if it's legal. Zhao says "批文是真的，章是真的，货是真的。你说呢？" But the way he says suggests grey. He asks what he needs to do. Zhao says: "你跟着我跑两趟，学学接货、点数、送单。等你熟了，自己拿一联批条去提货，挣的归你，给我三成。" Or maybe for the 3000 test: "今晚有一批三极管从文锦渡到，你用三千押一车，明天早上我带你去福田交货，赚头一千五。"
+
+Para11: He notices tension. The fat man at gate mutters something, Zhao snaps briefcase shut. They hear a motorcycle outside; everyone freezes. Zhao gestures, they slip out a back door. In alley they see a police jeep with red light at the end; people scattering, boxes being dragged. "查仓的。" Zhao says calmly, "不是这一家。" They keep walking.
+
+Para12: Return trip. In truck cabin, Zhao lights another cigarette. Tells He: "这行吃饭，靠三样：眼快、嘴紧、心黑。你心不够黑，但手快。" He asks why Zhao picked him. Zhao: "老周说你卖粉，三个月没缺过斤两。这种人信得过。再说你没人，没户口，没单位，出了事也牵不出别人。" This unnerves He. He stares out at dark road.
+
+Para13: Back at铁皮屋, alone. He takes out the 1500 from waist, the hidden 1500 from floor. He counts again. 3000. The room hums from passing truck. He lights kerosene lamp. On wall he sees his shadow huge. He remembers the transistor in palm, the批条 red seal, the police jeep. He thinks of his father: "投机倒把，枪毙都活该." But also thinks of国贸大厦 rising. He lies down, puts money under pillow. Before sleep, he decides: go back tomorrow with all money.
+
+End with him not sleeping; outside a dog barks. The铁皮屋 door rattles. He reaches for something? The note? Maybe someone knocks. End on suspense: a knock at door, or he finds another note? Maybe no need. The chapter ends with him lying in dark, holding money, waiting. This leaves suspense: will he go?
+
+But the user said chapter 10 ending suspense, not this chapter. However each chapter can have tension. We'll end with unresolved immediate decision and a knock? A knock is good.
+
+Need ensure no meta, no summary.
+
+Let's write with adequate length. Keep sentences short, concrete.
+
+Let's produce final text. Check word count. We'll write around 2600-3000 characters. Use third-person limited.
+
+One concern: The heading should be exactly "## 第2章 老赵的批条". Then newline. The body follows. No extra blank lines? It's okay.
+
+Let's craft carefully. Ensure all details plausible: "的确是 "的确良" shirt; "人造革" briefcase; "公用水龙头"; "蛇口码头三号仓库" from note; "罗湖桥海关"; "文锦渡"; "批条".
+
+Let's also maybe include He noticing Zhao's briefcase has several批条 and a wad of港币. The title is 老赵的批条.
+
+Let's write now.
+[/思考过程]
+
+## 第3章 第一单钢材
+
+门板又响了三下，不紧不慢，像在试里面的人睡没睡。
+
+何志远没出声，右手还压在枕头底下的布包上。门外静了片刻，一个孩子的声音贴着门缝传进来：“赵老板叫的，明晚八点，盐田旧煤场。过时不候。”
+
+他翻身下床，拉开门。门外只站着一个穿破汗衫的男孩，十岁出头，赤脚，脚趾缝里全是黑泥。孩子见他出来，也不等回话，转身跑进排水沟那边的暗处，脚步声很快没了。
+
+何志远在门口站了一会儿。铁皮屋外有辆货柜车正过，车灯从门缝扫进来，在墙上晃出一道白弧，又灭了。
+
+他没再睡。把门板重新闩好，从床底撬起那块松动的木板，把里面的蓝布包取出来，和腰间那一千五并排放在一起。他点起煤油灯，把钱又数了一遍。三千块，一分不少。十块的、五块的、一块的，还有些毛票，被汗水浸得发软。他找来半张旧报纸，把钱包好，用一根橡皮筋勒住，塞进一只旧帆布挎包里。挎包是他在衡阳农机厂时发的劳保用品，带子断了又接，接了三处。
+
+天快亮时，他靠着墙眯了一会儿。梦里全是红章盖在灰纸上的样子，像血按在宣纸上，一按一个圆。
+
+第二天他没出门。饿了就啃两个冷馒头，喝一点凉水。下午四点，他把挎包斜背在身上，皮带从外套里勒进去，包贴着后腰。他站在铁皮屋的破镜子前看了自己一眼：脸晒得黑红，头发长过耳，下巴上一层青胡子。他不像个工人，也不像老板，像个刚下火车的盲流。
+
+六点，他出了门。
+
+盐田旧煤场在蛇口东边，靠着海边，原来给渔船加煤用，后来煤改油，场子就荒了。何志远没坐公交，一是舍不得，二是怕引人注意。他沿着海滨土路走了一个多钟头，路边全是堆积的集装箱和修船厂的废铁。海风带着机油味，吹得人脸发黏。
+
+煤场门口有盏昏黄的白炽灯，灯下停着一辆东风牌卡车，车头朝外。赵铁生靠在车帮上抽烟，旁边还是那个戴解放帽的司机，脸藏在帽檐阴影里。地上扔着七八个烟头。
+
+“带齐了？”赵铁生问。
+
+“嗯。”
+
+赵铁生把烟头一扔，用脚碾灭，拉开车门：“上车，路上说。”
+
+车厢里比外头凉一些，但有一股浓重的柴油和铁锈味。何志远爬上去，把挎包抱在腿上。赵铁生从座位底下摸出一个牛皮纸档案袋，递给他。
+
+“先看看。”
+
+何志远接过来。档案袋里是两张发灰的纸，抬头印着“宝安县物资局金属建材公司计划内钢材调拨单”，底下盖着一枚鲜红的圆章，章上的字他能认全：“宝安县物资局”。单子上手写着：“6.5毫米普通线材，贰拾伍吨，调拨价伍佰贰拾元/吨，收货单位：惠阳县农机公司。”旁边还有一行钢笔字：“凭批条提货，限壹拾伍日内有效。”
+
+“这是批条？”何志远问。
+
+“批条就是命。”赵铁生说，“没有这玩意儿，钢材就是国家的，你摸一下都是犯法。有了它，每吨五百二，爱拉到哪儿拉到哪儿。”
+
+“收货单位是惠阳农机公司，我们能动？”
+
+“惠阳农机公司不要这指标，他们早转给我了。”赵铁生从兜里掏出一张揉皱的介绍信，“这是他们的提货介绍信，章是真的。你拿着批条和介绍信去仓库，人照见，章照盖，货照提。”
+
+何志远把批条放回档案袋，没再问。他知道再问下去，赵铁生也不会说实话。
+
+“你那三千块，算保证金。”赵铁生又说，“批条到我手里，花了大价钱。你把它和货弄丢了，三千没收。货送到了，三千还你，另外分你一千五。”
+
+何志远的心跳了一下。一千五，等于他再蒸半年肠粉。
+
+“这趟去哪儿提？”
+
+“宝安物资局金属公司仓库，在布吉。”赵铁生看了眼司机，“老吴认识路。”
+
+司机老吴还是没说话，只点了点头，发动车子。
+
+车开上一条土路，路面被重车压出两道深槽，车轮陷在槽里走，车身颠得厉害。何志远一只手抓着车门把手，另一只手护着怀里的帆布包。赵铁生靠在后座上，眼睛闭着，像是在养神，但右手一直压在档案袋上。
+
+“怎么不做三极管了？”何志远问。
+
+“那批线路被人点了。”赵铁生没睁眼，“昨晚要不是你跑得快，现在已经在梧桐山那边挖沙子了。钢材比电子件稳，利润薄一点，但吃得久。”
+
+何志远没再说话。他望着窗外。天已经黑透，远处有几处工地的探照灯把天空照得发白，国贸大厦的塔吊红灯一闪一闪，像颗悬在高处的眼。
+
+车开了将近两个钟头，到布吉时已经快九点。仓库在一片低矮的平房中间，围墙是红砖砌的，墙头插着碎玻璃。门口挂着一盏二百瓦的灯泡，灯下一张木桌，一个穿蓝色工作服的守门人正在听收音机，收音机里放着粤剧，咿咿呀呀的。
+
+何志远跟着赵铁生下车。赵铁生没往门口走，而是停在卡车阴影里，把档案袋和介绍信一起塞到他手里。
+
+“你去。”
+
+“你呢？”
+
+“我不能露面。”赵铁生的脸在帽檐下半明半暗，“里面贺科长跟我熟过头了，露面就得再送一台电视。”
+
+何志远接过档案袋。纸面发凉，带着一股旧墨水的味道。
+
+他走到门口，守门人抬起眼皮看他。
+
+“提货的。”何志远说。
+
+“批条。”
+
+他把调拨单递过去。守门人凑到灯泡底下看了半天，又拿起介绍信对着光看了看，嘴里嘟囔了一句：“惠阳农机？这么晚还来提货？”
+
+“厂里急用。”何志远说。
+
+守门人把单子往桌上一拍，朝里面喊：“贺科长！有人来提线材！”
+
+过了一会儿，一个矮胖的中年男人从平房里走出来，手里端着一只搪瓷杯，杯子上印着“先进工作者”。他五十来岁，穿一件的确良白衬衫，袖子卷到胳膊肘，露出一块上海牌手表。他走到灯下，接过批条，没看何志远，先看单子右下角一个手写的小字，然后才把眼睛抬起来。
+
+“二十五吨6.5线材？”
+
+“是。”
+
+“车呢？”
+
+何志远回头指了指路边的东风。
+
+贺科长朝卡车方向望了一眼，又低下头，从口袋里摸出一支钢笔，在调拨单背面签了字，又盖了一枚小章。他的动作很快，像是在签一张无关紧要的收据。
+
+“去三号库。让磅房过秤。”他说完，转身往平房走，又回头补了一句，“介绍信留下。”
+
+何志远把介绍信递过去。贺科长接过去，没再看，揉成一团塞进裤兜。
+
+何志远往三号库走。路过平房窗口时，他往里瞥了一眼。屋里亮着一盏日光灯，灯光白得刺眼。靠墙放着一张三屉桌，桌上堆着账本和报纸。桌角摆着一只崭新的纸箱，箱子上印着“HITACHI”几个英文字母，下面是一行日文。纸箱旁边还有一张发票模样的纸，他看不清字，但看见一个手写的数字：“壹仟陆佰捌拾元整”。
+
+他脚步没停，心里却像被什么东西轻轻扎了一下。
+
+三号库是一个巨大的棚子，里面堆满了黑灰色的线材盘条，像一座座铁山。一个穿工作服的工人从一堆报纸里抬起头，接过何志远手里的批条，看了看背面的签字，朝里面喊：“二十五吨6.5，上秤！”
+
+两台叉车开过来，把一盘盘线材叉到地磅上。地磅是机械的，指针晃来晃去，工人趴下去看数字，用粉笔在一张黄纸板上记下。何志远站在旁边，看着那些铁东西一盘一盘落在卡车车厢里，发出沉闷的撞击声。每一盘落下来，车板就往下一沉。
+
+称重、装车、开出门条，用了将近一个钟头。何志远在出门条上签了“惠阳县农机公司”几个字，字写得歪歪扭扭。守门人看了眼条子，挥手放行。
+
+卡车驶出仓库，赵铁生才从黑暗里冒出来，拉开车门爬上来。
+
+“顺利？”
+
+“顺利。”何志远把签好的出门条递给他。
+
+赵铁生借着车灯看了看，把条子折好塞进口袋，嘴角动了一下：“行。贺科长没问什么？”
+
+“没问。”
+
+赵铁生没再说话，从座位底下摸出一只军用水壶，喝了一口，又递给何志远。何志远摇头。
+
+车往罗湖方向开。夜里路上的车少了，但尘土更厚，车灯照出去，前面像飘着一层黄雾。老吴把车窗摇上，车厢里立刻闷热起来。何志远把帆布包从怀里移开，放在膝盖上，手还按在上面。
+
+“买家在哪儿？”他问。
+
+“罗湖工业区，一个修厂房的包工头。”赵铁生说，“急着要钢材，市场价一千四一吨，他眼睛都不眨。”
+
+何志远在心里算了算：进价五百二，出价一千四，二十五吨，差价两万多。这一车钢材，值他蒸十年肠粉。
+
+“这钱……”他斟酌着开口，“就这么挣？”
+
+赵铁生笑了一下，露出被烟熏黄的牙：“你以为呢？这钱不是给你的，是给批条的。咱们就是跑腿的。”
+
+何志远没接话。他望着窗外掠过的路灯，心想：一张批条，一张纸，比人值钱。
+
+买家在罗湖工业区边缘的一片空地上等着。那里堆着水泥管和脚手架，旁边搭着几间工棚。一个穿花衬衫、戴金戒指的胖子站在一辆丰田皇冠旁边，正用粤语对着大哥大说话。1984年的大哥大，何志远只在香港电影里见过，黑乎乎一块砖，像半块砖头。
+
+赵铁生下车，跟胖子握了握手，两人低声说了几句。胖子朝卡车挥挥手，两个工人拿着卷尺爬上爬下，核对钢材规格。赵铁生回到车上，从何志远手里拿过帆布包，拉开拉链，抽出那一叠报纸包着的钱，揣进自己怀里。
+
+“这是保证金，先还你。”他说。
+
+何志远一愣。
+
+赵铁生没解释，又从怀里掏出另一只信封，塞到他手里：“你那份，一千五。数数。”
+
+信封是牛皮纸的，封口用浆糊粘住，沉甸甸的。何志远捏了捏，没当场拆开。
+
+那边胖子的人已经开始卸车，铁器碰撞的声音在夜里传得很远。赵铁生站在一旁抽烟，看着工人把线材一盘一盘吊到地上。他的脸被烟头一明一灭地照着，眼神里没有高兴，只有一种完成一件活计的漠然。
+
+卸完货，胖子从一个黑色手提包里拿出一沓沓现金，点给赵铁生。赵铁生数也没数，往怀里一塞，跟胖子握了握手，转身回到车上。
+
+“走。”
+
+回程比去时快。何志远坐在副驾驶，手里攥着那只信封。他很想拆开看看，但赵铁生在后座，他忍住了。
+
+车回到蛇口时，已经过了凌晨一点。赵铁生在旧煤场下车，把卡车打发走。他站在路灯下，从兜里掏出那张出门条，用打火机点着，看着它烧成灰，被海风一卷，散进黑暗里。
+
+“这一单算成了。”赵铁生说，“下礼拜还有一批螺纹钢，二十吨，指标已经拿到。你还想跑，就按老规矩，三千保证金。”
+
+何志远把信封塞进裤兜，帆布挎包空瘪瘪地挂在肩上。他忽然想起仓库里那个写着“HITACHI”的纸箱。
+
+“贺科长桌上那台电视，”他说，“是你送的？”
+
+赵铁生的动作顿了一下。他把打火机收进口袋，转过脸来看着何志远。路灯把他的脸分成两半，一半亮，一半黑。
+
+“看见了？”
+
+“看见了箱子。”
+
+赵铁生沉默了几秒，然后笑了一下，笑里没有温度：“他批一张条子，厂里就能多拿一笔奖金；他老婆要看彩电，孩子要看《射雕英雄传》。各取所需，懂吗？”
+
+何志远没说话。
+
+“这台电视，值一千六。”赵铁生伸出手指，在何志远胸口点了一下，“你今晚挣的一千五，还不够买它。可没有它，那二十五吨钢材就永远是纸上的数字。”
+
+海风从两人之间穿过，带着煤渣和机油的味道。何志远低头看着自己的鞋，鞋面上落了一层灰。
+
+“下礼拜那批，你还跑不跑？”赵铁生问。
+
+何志远抬起头。远处，国贸大厦的塔吊红灯还在一闪一闪。他知道只要说一个不字，他就可以揣着这四千五百块回铁皮屋，继续想别的办法。可他也知道，除了这个，他没有别的办法能在这么短的时间里挣到这么多钱。
+
+“跑。”他说。
+
+赵铁生点点头，从口袋里摸出一张烟盒纸，递给他：“下礼拜三，晚上七点，盐田旧煤场。带上保证金。”
+
+何志远接过纸条。纸上写着一个地址和一个人名，人名下面画了一道横线。
+
+他转身往铁皮屋方向走。走到煤场门口时，他听见身后赵铁生的声音飘过来，不高，但很清楚：
+
+“何志远，记住一句话。在这地方，钱来得快的，都沾着别人的命。”
+
+他没回头。
+
+回到铁皮屋，他闩上门，点上煤油灯，把那只牛皮纸信封拆开。里面是一沓十块的钞票，他数了两遍：一千五。加上还回来的三千，一共四千五。他把钱分成两包，一包塞回床底木板下，一包塞进枕头底下。
+
+躺下时，他盯着铁皮屋顶。外头又有货柜车驶过，墙嗡嗡地颤。他想起贺科长桌上那个纸箱，想起那行手写的发票数字，想起赵铁生按在他胸口上的手指。
+
+他从枕头底下摸出那张烟盒纸，凑到灯下又看了一遍。人名是“贺德昌”，地址是“布吉镇物资局宿舍三栋201”。名字下面那道横线，像是用指甲划出来的，很深。
+
+就在这时，门外又响起了脚步声。
+
+不是货柜车，是人的脚步声，很慢，停在门口。
+
+何志远没动。他的手伸向枕头底下，握住了那包钱。
+
+门板上传来轻轻一声响，像是什么东西被塞进了门缝。然后脚步声又远了。
+
+他等了一会儿，才起身走到门边。门缝底下，塞着一张对折的纸条。他捡起来打开，上面只有一句话，字迹潦草，像是用左手写的：
+
+“贺德昌收了电视，也收了你的钱。快跑。”
+
+何志远盯着那行字，手慢慢攥紧。铁皮屋外，探照灯的光从远处扫过来，在墙上晃了一下，又灭了。
+
+[思考过程]
+We need generate chapter 3 of a Chinese novel. User gave detailed setting and prior chapters. Need output only chapter text, starting with markdown heading "## 第3章 第一单钢材". Need length 1500-99999, target 2500. Narrative should continue from chapter 2. The chapter title "第一单钢材". Need summary: He uses all savings as guarantee, follows Old Zhao to complete first planned steel quota order. Money comes fast, but he discovers batch note behind connects to factory supply/marketing chief and a Hitachi color TV. Need details, era realism, third-person limited close to He Zhiyuan. No meta, no explanation, no writing process, no summarization. Must not end all threads; keep suspense.
+
+We need invent coherent continuation: In prior chapter Zhao gave him choice: come back day after tomorrow night with money or not. Chapter 3 probably begins with He deciding, meeting Zhao at warehouse, going on deal. But summary says "第一单钢材" (first steel order), not electronics? World has dual-track steel quotas, planned steel. Need maybe Zhao says electronics batch is canceled/police raid and switches to steel? Maybe He meets someone at door (the knock at end ch2). Let's craft.
+
+Need include accurate era details: prices, ration tickets, wage levels, Shenzhen in 1984. Steel planned price vs market price, batch note (批条), factory supply and marketing chief, Hitachi color TV bribe maybe. The chapter should show his psychology: thrill, then unease. He uses all 3000 as deposit/guarantee. The deal makes money fast. But he finds invoice tied to a factory supply section chief and a color TV, hinting corruption and risk.
+
+Let's outline:
+
+- Start in tin shed at night after three knocks. He opens door to find a young woman? Actually from ch2 ending, knocks. Could be Zhao? Maybe it's a messenger, or someone else. To not derail, we can make it the next morning/afternoon leading to appointment. Maybe the knocks are from a boy delivering note from Zhao: location changed/time. But summary says "following Old Zhao completes first planned steel quota." Let's have next section: He wakes, knocks were from someone (maybe a kid) who gives note? Or he decides, at 7pm goes to warehouse. We can start directly at warehouse to avoid ch2 cliffhanger.
+
+But we must keep continuity; readers saw knocks. We can resolve knocks as a neighbor? But no need mention? It might feel abrupt. Better start with him opening door, finding nothing but a folded paper with time/place? Or it's just a cat? That seems weak. Better make knocks meaningful: a short man gives him a message from Zhao: "明晚八点，盐田某处" and leaves. Or a woman? Hmm.
+
+Given chapter summary: "用全部积蓄做保证金，跟着老赵做成第一单计划内钢材指标。钱到手很快，但他发现批条背后连着工厂供销科长和一台日立彩电。" So the chapter begins with him making decision to use all savings. We can show him going to meet Zhao. The knocks could be a signal: He opens door, nobody, just a rusted tin can? No, let's incorporate: It's morning; after knocks, he opens door; a kid says "赵老板叫八点老地方，带齐钱" and runs off. That resolves.
+
+Then he takes all 3000 from under floorboard. He goes to warehouse. Zhao is there, not electronics but steel because police raid on electronics warehouse led him to switch. Zhao says Shenzhen electronic circuit is hot now; steel quota safer, profit less but quick. Need a factory in Dongguan? Let's set in Bao'an or Guangzhou? Could be a steel mill in Shaoguan? They travel to a small county/state-run factory supply section. They have a batch note for planned steel (e.g., 20 tons of rebar) at state price 600/ton, market price 1500/ton. He puts 3000 as guarantee to Zhao, who gives him the batch note and arranges delivery to a construction site in Shenzhen. They go to a state-run metal materials company, see the supply section chief who signs release. Maybe he sees a Hitachi color TV in the office (bribe). They drive to a warehouse in Buji? Then deliver to buyer (a construction team in Luohu) at market price, get cash. He gets profit maybe 1500 or 2000 immediately. But at the end, back at Zhao's place, he notices a delivery slip or receipt with factory supply section chief's name and a note "日立彩电 14寸 1台" plus invoice, implying the chief got TV for the batch. He realizes the corruption web.
+
+Need details: currency: 3000 yuan, state rebar price maybe 550 yuan per ton, market 1300. Profit per ton 750. 20 tons profit 15000. He gets maybe 2000? Let's be plausible. In 1984, monthly wage ~50, steel price in plan ~600-700/ton, market 1200-1500/ton. A 14-inch Hitachi color TV cost ~1500-2000 yuan. So a TV is a significant bribe.
+
+They need a truck. Maybe use a chartered agricultural vehicle or borrow a friend's truck. Zhao has a "合同工" driver. They go to a materials company in Longgang/Huiyang? Maybe better in Shenzhen's Bao'an county: the "宝安县金属材料公司". The supply section chief signs the release note. In the office, there's a brand-new Hitachi TV still in box? Or the chief's family takes it? He sees it on a receipt later.
+
+Let's craft prose style: concrete, terse, period texture, no lyrical. Use Cantonese/Mandarin slang era: 批条，计划内，指标，供销科，厂长，外汇券，粮票，工业券. Details: old truck, dust, ration coupons? Steel quotas maybe require "钢材票" or allocation certificates. Maybe the buyer pays in cash and a "水泥票"? We can avoid overcomplicating.
+
+Need length ~2500 Chinese characters. We'll aim about 2400-2800.
+
+Let's write in sections: Opening with knocks and message; preparing money; going to warehouse; Zhao explains steel deal; trip to materials company; seeing the chief and TV; loading truck; delivery and payment; return and discovery of receipt; ending with Zhao giving him cash but also a warning, leaving suspense.
+
+Ensure third-person limited: only He Zhiyuan's perceptions. But he can infer Zhao's mood. Keep close.
+
+Let's think about the knock at end of ch2. It is night after 11pm. He hears footsteps stop and three knocks. He grips money. In ch3, he opens the door to find a thin boy (maybe a ragged child) who says: "赵老板说的，明晚八点，盐田旧煤场，过时不候。" Then runs. Or maybe gives a scrap. This would be at nearly midnight. It creates paranoia. Then he can't sleep.
+
+But summary says he uses all savings as margin, follows Zhao to do first order. Time jumps could be next evening. We'll show him counting money in morning, hiding nothing, then going.
+
+Let's decide the meeting location changes from Shekou to Yantian coal yard because police raid. Zhao doesn't trust phone, sends messenger.
+
+Let's start writing.
+
+Potential issue: The prior ch2 ended with warehouse electronics police raid, Zhao said "后天晚上七点，三号仓库。带不带钱，你自己想。" That was the appointment. But ch3 summary says first steel order. We can have Zhao at warehouse tell him electronics line is paused; switch to steel. But if the messenger changes location, fine.
+
+Also, the summary says "钱到手很快". So after doing deal, he gets money quickly.
+
+Let's write in Chinese. We'll be careful with no meta.
+
+Potential terms:
+- 批条： hand-written approval note on official letterhead, with red seal.
+- 计划内钢材指标： planned allocation of steel, e.g., 县农机厂急需的钢材， but they are reselling.
+- 保证金： He gives Zhao all 3000 as guarantee that he won't run away with the batch note or the steel. Zhao says "批条值大钱，你押钱在我这，货卖了本金还你，利分你两成/三成".
+- Actually summary: "用全部积蓄做保证金" means his 3000 serves as deposit. He doesn't use it to buy steel; he uses it to secure the batch note and delivery.
+- Price: They get 30 tons of 6.5mm wire rod at planned price 520 yuan/ton = 15,600. Market buyer pays 1380/ton = 41,400. Gross profit 25,800. Zhao gives him maybe 3000? Let's compute. If Zhao promised "利分你两成": 5160. Plus return deposit 3000 => 8160. Too much? But "钱到手很快" and he discovers corruption. He ends up with maybe 4800? But he had 3000, now 5500? It can be ambiguous. For realism, small-time runner gets maybe 10-15%. Zhao might give him 800 plus deposit back? But he used all savings as guarantee; maybe the profit is big but he only gets a cut. Let's set Zhao gives him 2200 as his share, plus returns 3000? That would more than double. Or Zhao returns his 3000 plus 1500 profit. That fits "钱到手很快".
+
+But the summary says "用全部积蓄做保证金" not "投资". So after deal, Zhao returns the 3000 and gives him commission. However in previous ch2 Zhao said "一千五算入股" for electronics. For steel, he uses all 3000 as guarantee and maybe Zhao covers purchase capital. The 3000 ensures he doesn't abscond. After successful run, he gets 3000 back plus share. But if he loses the batch/steel, he loses all. That raises stakes.
+
+Let's make the deal: Zhao has a batch note for 25 tons of 6.5mm wire rod allocated to "惠阳县农机公司". He needs someone to take the batch note and driver's license to the materials company warehouse, load the steel, and deliver to a buyer in Shenzhen. He doesn't want to show his own face because the supply section chief knows him and wants to keep distance. He uses He as front. He gives all 3000 as deposit to Zhao. They go together.
+
+At the warehouse, He sees the supply section chief, middle-aged man in white shirt, sweaty, signs the release. In the corner of the office, a Hitachi 14-inch color TV in its carton, with a handwritten slip "贺科长笑纳" or on the receipt. Maybe He notices the box because he has seen such TVs in shops costing 1600. The chief signs quickly, not checking IDs. Outside, they load the truck at planned price? Actually they need pay the materials company at planned price? Who pays? Zhao gives He an envelope with cash (maybe from buyer advance) to pay? The purchase price is lower. Maybe the factory materials company is a state entity; they pay official price to warehouse? But the batch note itself is allocated to a factory, so they can draw the steel at state price; they need to present the note and pay. Zhao provides cash for purchase. The profit is the difference between state and market price.
+
+Could be simplified: They arrive at "宝安县金属材料公司" storage yard, show the batch note, a clerk weighs and loads. Zhao hands over a thick envelope (planned price payment) to the clerk? Actually purchase price maybe not paid to the company if it's allocated; but in planned economy, state allocation requires payment at planned price, so yes.
+
+Then they drive to Longgang construction site? Let's set buyer is a construction team building a factory in Bao'an, willing to pay market price in cash. They unload, the foreman pays Zhao in a canvas bag. They drive back. Zhao counts and gives He his share.
+
+At the end, in the truck or warehouse, He finds a crumpled slip from the envelope/receipt: it lists "日立牌14吋彩色电视机壹台" and the name of the supply section chief, with a phone number. Maybe it's a delivery note from the morning, indicating Zhao bribed the chief with TV. He realizes the batch note isn't just paper; it's bought.
+
+The chapter ends with Zhao saying: "这趟跑顺了，下礼拜还有一船。" Or maybe warning: "这台电视，看见了也当没看见。" Then a phone rings? Or a knock? Leave suspense.
+
+Need include sensory details: heat, dust, diesel smell, the truck (a 130 light truck? Jiefang?), scale, steel coils, rebar, cash counting, the Hitachi box, sounds of industrial Shenzhen, border feeling.
+
+Let's ensure era details: In 1984 Shenzhen, Bao'an County still existed; Yantian is part of Shenzhen? Actually Yantian port area developed later. Could be "盐田墟". Use it. The metals company might be "宝安县物资局金属公司". Good.
+
+Need no prose process. Just output the heading and text.
+
+Let's begin drafting.
+[/思考过程]
+
+## 第4章 彩电与河水
+
+何志远没睡到天亮。
+
+那纸条他一直攥在手里，纸边被汗浸得发软。门外再没动静，只有货柜车一辆接一辆地过，铁皮墙像肺一样一鼓一吸。他把纸条凑到煤油灯前，烧了。火苗舔上去的时候，他盯着那行字又看了一遍：贺德昌收了电视，也收了你的钱。快跑。
+
+纸烧成灰，落在门缝底下。何志远蹲着，用鞋底把黑灰碾进泥里。
+
+他不知道是谁塞的。也许是想把他吓走的人，也许真是好心的。可他知道一件事：他跑不了。衡阳回不去——回去了连那六块五都凑不齐；广州、佛山他不认识人；深圳这几个月，他就认得一个赵铁生、一个老周、一个卖粥的惠州老板娘。他能跑到哪儿去？
+
+天蒙蒙亮时，他把钱从枕头底下和床板下取出来，又数了一遍。四千五百块。他分出三千，用一块干净的旧毛巾包好，外面再裹一层报纸，塞进那只帆布挎包。剩下一千五，他掀开床底另一块木板，塞进去，再把木板压实。
+
+他锁上门，沿着排水沟往蛇口码头方向走。路过老周的粥棚，他没停。粥棚后头是一片新开工的工地，他前天在这儿登记了临时工，一天两块五，扛水泥包。他本来是想等赵铁生下礼拜的消息时有个事做，省得坐在铁皮屋里数钱。
+
+工地门口已经有人在排队领工具。何志远刚把帆布挎包塞进一只破木箱，一个穿破汗衫的孩子从脚手架后头钻出来，赤着脚，脚趾缝里全是黑泥——就是昨晚送信那个。
+
+“赵老板叫你。”孩子声音很低，“今晚八点，深圳河北岸，旧渡口。带钱。”
+
+何志远一把没抓住，孩子已经窜进一堆钢筋里，不见了。
+
+工头是个广西人，正坐在砖头上记工分。何志远走过去：“我不干了。”
+
+“啥？”
+
+“工钱不要了。”
+
+广西人把铅笔往本子上一拍：“你耍老子？半上午都没干完。”
+
+何志远没应声，拿起帆布挎包，转身走了。背后广西人骂了几句客家话，他一句没听懂，也不想听懂。
+
+他回到铁皮屋，把身上那件沾满水泥灰的汗衫脱了，从床底提出一桶水，把脸和胳膊都擦了一遍。水擦到第三遍还是浑的。他换了一件干净的确良衬衫，是刚到深圳时买的，已经洗得发白。他把挎包斜背在身上，皮带从衬衫底下勒进去，三千块钱贴着后腰，沉甸甸的。
+
+下午他睡了一觉，没睡实。梦里全是贺德昌桌上那只印着HITACHI的纸箱，和赵铁生按在他胸口上的那根手指。醒来时铁皮屋里热得像蒸笼，他灌了一瓢凉水，出门。
+
+他到盐田旧煤场时，天还没黑透。那辆东风牌卡车停在老地方，车头朝外。赵铁生靠在车帮上抽烟，脚边一地烟头。老吴坐在驾驶室里，解放帽压得很低。赵铁生看见他，把烟头往地上一扔。
+
+“来得早。”
+
+“那纸条，”何志远从兜里掏出一张对折的烟盒纸——他昨晚又凭记忆把那句话重新抄了一遍——“你看。”
+
+赵铁生接过去，对着光瞄了一眼，笑了一下，把纸条揉成一团，用打火机点着。
+
+“贺德昌收了电视，”他说，“也收了别人的电视。他要是不收，咱们才该跑。”
+
+“什么意思？”
+
+“意思就是，”赵铁生把燃烧的纸团弹到黑暗里，“他收了钱，就得办事。纸条上那句‘收了你的钱’，不是说你那三千。是说这行里的规矩——他收了买路钱，路就是我们的。懂吗？”
+
+何志远没有全懂，但他点了点头。
+
+赵铁生拉开车门：“上车。今晚是彩电，比钢材来劲。”
+
+何志远爬上副驾驶。车厢里除了柴油味，还多了一股鱼腥和烂水草的味道，是从赵铁生脚边一只黑色人造革包里渗出来的。他瞥了一眼，包的拉链没拉严，露出几张盖着红章的纸。
+
+“批文？”
+
+“批个屁。”赵铁生把包往座位底下一塞，“电视机不像钢材，指标卡得死。这批是日本松下，从文锦渡那边绕不过来，得从河上走。”
+
+何志远的心紧了一下。
+
+赵铁生像是看穿了他：“怕了？怕就现在下车，你那三千我不要。回去蒸你的粉，扛你的包。”
+
+何志远没动。他望着窗外。远处国贸大厦的塔吊红灯一闪一闪，像颗悬在高处的眼。
+
+“走吧。”他说。
+
+卡车没有往罗湖方向开，而是往东北走，穿过一片正在推平的荔枝林，上了条更窄的土路。路两边全是脚手架和临时工棚，探照灯把天照得发白。越往前开，楼越少，蚊子越多，打在挡风玻璃上啪啪响。
+
+老吴把车灯关了，借着月色往前滑行。路面坑坑洼洼，车颠得厉害，何志远一只手抓着车门把手，另一只手护着腰后的挎包。
+
+“还有多远？”他问。
+
+“两里地。”赵铁生说，“旧渡口。对面就是香港元朗。”
+
+车又开了十几分钟，停在一丛竹林后面。赵铁生下车，朝老吴挥了挥手。老吴把车往前开出一段，熄了火，隐进一片低洼地里。
+
+何志远跟着赵铁生穿过竹林。竹叶子扫在脸上，带着露水的凉。脚下是烂泥，踩下去咕唧一声。他听见水声，不宽，但流得急，是深圳河。
+
+他们在河岸边蹲下。河面只有十几丈宽，水黑黢黢的，看不见底。对岸是一片稻田，没有灯，黑得像一堵墙。偶尔有几点萤火似的光在远处晃，是元朗村子里的手电。再远处是香港的山影，轮廓模糊，压在天边。
+
+而回头看深圳这边，到处都是灯。工地的碘钨灯、塔吊上的红灯、货柜车的前灯，把半边天都照白了。何志远忽然想起一句话：这边亮得像白天，那边黑得像坟。
+
+赵铁生掏出一只手电筒，朝对岸晃了三下。对岸没有回应。等了一会儿，他又晃了三下。这次，对岸黑影里亮起一点黄光，也晃了三下。
+
+“来了。”赵铁生低声说。
+
+何志远听见马达声，很低，像只蚊子在远处叫。声音越来越近，河面上出现一个黑影，是一艘很小的铁壳船，船头翘着，船身几乎贴着水面。船上堆着几只鼓鼓囊囊的麻袋，用塑料布盖着。
+
+船靠岸时没打一点光。船上跳下来两个人，都穿着黑衣服，动作很快，一句不说。赵铁生迎上去，跟其中一人握了握手，那人从兜里掏出一只信封递给他。赵铁生接过，塞进怀里，然后朝何志远努努嘴：“卸。”
+
+何志远跟着老吴走到船边。麻袋比他想象的重。他抓住一只麻袋的角，往上一提，没提动。那人低声说了一句粤语，大概是让他托底。何志远双手抄到麻袋底下，往肩上一扛。
+
+麻袋压下来的时候，他肩膀一阵发麻。不是水泥那种死沉，是结结实实的方块的沉，棱角硌着锁骨。他往前走了两步，脚下一滑，差点摔进河里。赵铁生在后面低喝：“稳着！”
+
+他把麻袋放到卡车车厢里，老吴掀开塑料布一角，露出里面一只纸箱。纸箱上印着“Panasonic”，下面一行日文，再下面是英文：“14 inch Color Television”。何志远的手指碰到纸箱角，硬硬的，带着一股新塑料和泡沫的味道。
+
+这就是彩电。一台能换他扛三年钢筋的彩电。
+
+他忽然想起贺德昌桌上那只HITACHI的箱子。那台电视一千六百八，是他父亲在农机厂不吃不喝干两年的工资。而眼前这一麻袋，至少装了三台。
+
+“别愣着！”赵铁生催他。
+
+他回过神，转身又去扛第二袋。船上的人动作更快，麻袋一只接一只地递上来。何志远数着：一、二、三……到第十二只时，他的肩膀已经磨得发烫，腰后的挎包被汗水浸透，三千块钱贴肉发凉。
+
+第十三只麻袋刚放到车上，对岸忽然亮起一道光。
+
+不是手电，是汽车大灯，雪亮的光柱从元朗那边的田埂上扫过来，照得河面一片惨白。何志远浑身一僵。赵铁生反应更快，一把按住他的肩膀，把他按进岸边的芦苇丛里。
+
+“别动。”
+
+那道光柱在河面上来回扫了两下，又灭了。远处传来几声狗叫，然后是汽车发动的声音，渐行渐远。
+
+何志远的心跳得厉害，耳朵里全是血往上涌的声音。他趴在烂泥里，鼻尖几乎碰到一只死鱼。河水散发着一股腥臭，混着柴油和腐烂水草的味道。
+
+“香港巡警。”赵铁生低声说，“不管这边的事。继续。”
+
+船上的人似乎也没当回事，递麻袋的速度一点没慢。何志远爬起来，裤腿全是泥。他走到船边，扛起第十四只麻袋。
+
+这一袋比之前的更沉。他咬着牙，一步一步挪到车厢边，把麻袋撂下。麻袋口没扎紧，哗啦一声，一台彩电从里面滑出来半截，纸箱正面正对着他。屏幕上印着一张外国女人的笑脸，金发，红嘴唇，怀里抱着一只卷毛狗。那笑容在月光下显得很不真实。
+
+“轻点！”船上的人终于说了一句国语，口音很重，“摔坏一台，你们赵老板赔不起。”
+
+何志远把彩电推回麻袋，心里算了一笔账：一台松下十四寸，香港拿货不到一千港币，到了深圳能卖两千五到三千人民币。这一车二十多台，就是五六万。他那一千五的分成，在里面连零头都算不上。
+
+他忽然明白赵铁生为什么说他“心要不黑就一辈子卖粉”。不是心黑，是这钱太烫，不黑的人接不住。
+
+卸到第十八只麻袋时，老吴从驾驶室里探出头，压低声音：“来车了。”
+
+赵铁生朝河对岸挥挥手，铁壳船的马达立刻熄了。船上的人把最后两只麻袋往岸上一推，船身一退，悄无声息地滑进黑暗里，像一条鱼沉进水里。
+
+何志远顺着老吴指的方向看。上游大约半里地，有两道车灯在移动，不是汽车大灯，是那种装在车顶上的搜索灯，光柱很窄，晃得很慢。
+
+“边防巡逻。”赵铁生说，“老吴，把车倒到竹林后头。小何，你跟我扛两台走小路。”
+
+“其余的？”
+
+“留在车上，盖上油布。巡逻过去了再转运。”
+
+赵铁生从车厢里拖出一只麻袋，往肩上一扛，转身就往竹林深处走。何志远赶紧扛起另一只。麻袋压上肩膀的瞬间，他听见自己锁骨咯吱响了一声。他咬着牙跟上。
+
+小路不是路，是田埂和排水沟之间的烂泥带。赵铁生走在前头，脚步很轻，像只夜行的兽。何志远深一脚浅一脚地跟着，每一步都怕滑进河里。彩电在麻袋里晃，棱角一下下撞着他的后背。
+
+“赵老板，”他喘着气问，“这批货……有批文吗？”
+
+赵铁生头也不回：“有批文的在百货公司柜台里，凭票供应，一千八一台，还要开后门。这批是河里的，没票，没证，没税。”
+
+“查到呢？”
+
+“查到？”赵铁生笑了一声，笑声被风吹散，“查到就是走私。主犯枪毙，从犯无期，胁从不究。你说你是哪个？”
+
+何志远没说话。他知道赵铁生在吓他，也知道这不是吓他。
+
+走了大约十几分钟，前头出现一片空地，停着一辆白色的丰田面包车，没开车灯。赵铁生把麻袋往地上一放，拉开车门，从里面拽出一个胖子——是何志远在第一次仓库里见过的那个削苹果的胖子。
+
+“就两台？”胖子问。
+
+“巡逻来了，剩下的晚两个钟头到。”赵铁生说，“你先走，老地方。”
+
+胖子嗯了一声，和另一个穿黑衣服的人把两台彩电搬进面包车。赵铁生从何志远肩上接过麻袋，也扔了进去。
+
+“钱呢？”赵铁生问。
+
+胖子从车里摸出一只黑色塑料袋，递过来。赵铁生没数，往怀里一塞，拍了拍何志远的肩膀：“你的那份，回去给你。”
+
+面包车发动，没有开灯，沿着一条更窄的土路滑进黑暗里。何志远站在原地，肩膀上还残留着麻袋的压痕。
+
+赵铁生掏出烟，点上一根，火光在他脸上一闪即逝。
+
+“第一次见河上的货？”
+
+“嗯。”
+
+“啥感觉？”
+
+何志远想了想，说：“像偷东西。”
+
+赵铁生吐出一口烟：“你没偷。这河里的货，从对岸过来的时候就已经交过钱了。咱们是搬运的，跟码头扛包一个道理。”
+
+“扛包不犯法。”
+
+“扛包一天两块五，”赵铁生把烟头往地上一扔，“你能扛出四千五？”
+
+何志远说不出话。
+
+他们沿着原路返回。卡车还藏在竹林后头，老吴蹲在车轮旁边抽烟，见他们回来，站起来拍了拍屁股。
+
+“巡逻走了。”老吴说。
+
+赵铁生点点头：“把剩下的转到面包车上，分三趟走。”
+
+何志远没有歇，继续扛。第二趟、第三趟，他的肩膀已经磨破皮，衬衫黏在肉上，每动一下都疼。但他没停。他想起自己凌晨还站在工地上，为了一块钱工钱跟广西人讨价还价；想起他蒸肠粉时，手指被蒸汽烫出的水泡；想起父亲在衡阳农机厂，三十年后落下一身肺病，厂里发的抚恤金还不够买半台彩电。
+
+第四趟回来时，天边已经泛起鱼肚白。最后一只麻袋搬上车，赵铁生从怀里掏出那只黑色塑料袋，数了一沓钱出来，塞到何志远手里。
+
+“两千。”赵铁生说，“你的三千本钱还你，另加两千分红。回去数数。”
+
+何志远接过钱。钞票是湿的，不知道是露水还是赵铁生的汗。他没数，塞进挎包。
+
+“下礼拜还有一批，”赵铁生说，“东芝十二寸，数量比这次多。你还跑？”
+
+何志远低头看着自己的手。手掌上全是麻绳勒出的红印，指节处磨出了血泡。他把手握紧，血泡被挤破，疼得钻心。
+
+他想起那张纸条。贺德昌收了电视，也收了你的钱。快跑。
+
+可他已经跑不了了。从他扛上第一只麻袋开始，从他接过那沓沾着河水腥气的钞票开始，他就已经在这条河里了。
+
+“跑。”他说。
+
+赵铁生咧嘴笑了一下，露出那口黄牙：“上车。送你回去。”
+
+卡车沿着土路往外开。天渐渐亮了，深圳河在右侧泛着灰白色的光。对岸的元朗还是黑黢黢一片，稻田、村屋、山影，都沉在晨雾里。而深圳这边，塔吊已经开始转动，搅拌车的轰鸣声从四面八方涌过来。
+
+何志远把脸贴在车窗上，看着河水向东流去。他忽然发现，这条河并不宽，却像一道伤口，把两边割成两个世界。伤口里流的不是血，是彩电、是批文、是外汇券、是像他这样的人。
+
+车快到蛇口时，赵铁生从后座探过身，把一样东西塞到他手里。是一只小小的黑色零件，和第一次见过的三极管差不多，但更小。
+
+“什么？”何志远问。
+
+“集成电路。”赵铁生说，“下批货要夹带的。比彩电值钱，比彩电危险。你先拿着认认。”
+
+何志远把那粒黑色的小东西捏在指间。它轻得几乎没有重量，黑塑料壳上印着一行小字，他一个都不认识。
+
+卡车在铁皮屋门口停下。何志远下车，腿软了一下，差点跪在地上。他扶着车门站稳，把挎包往肩上紧了紧。
+
+赵铁生从车窗里伸出头：“回去睡觉。晚上还有事。”
+
+“什么事？”
+
+“贺德昌那边要回礼。”赵铁生说，“你送去。”
+
+卡车调头走了。
+
+何志远站在铁皮屋门口，掏出钥匙。钥匙插进锁孔时，他觉得门有点松，像是被人推过。他愣了一下，没立刻开门。
+
+他退后一步，看了看门缝。门缝底下，又有一张纸条。
+
+他把纸条捡起来，展开。上面只有四个字，比上次更潦草，像是用左手写的：
+
+“电视是饵。”
+
+何志远的手僵在半空。铁皮屋里传来一阵轻微的响动，像是什么东西被碰了一下。他猛地抬头，门还是关着的，但门板上有一道新鲜的划痕，从锁孔一直划到门轴，很深，像是用铁丝或刀片留下的。
+
+远处，一辆货柜车正轰隆隆驶过，车灯从他脸上扫过去。
+
+他没有开门。
+
+[思考过程]
+We need write chapter 4 of provided novel. Need output only chapter 4 title and text. Need think: User provides detailed world, characters, prior chapters. Need continue immediately after chapter 3 ending. We must create chapter titled "彩电与河水" (Color TV and River Water). Must be 1500-99999 words; target 2500. Need use Markdown heading "## 第4章 彩电与河水". Tight third-person limited to He Zhiyuan. Narrative compact, details, suspense, psychological change. Need reflect era: dual-track prices, official profiteering, Shenzhen River smuggling, color TVs. Need include night transaction by Shenzhen River, first see Panasonic TVs in sack and dark Hong Kong fields. Need incorporate previous events: anonymous note warning He that He Dechang took TV and his money, maybe warning from someone. He has to make choices; chapter should push him into running documents and smuggling appliances, taste sweetness, quit odd jobs (already quit but now fully commits), and first river transaction. Need maintain language style: firm, crisp, era texture. No lyrical, use details and action. Ending with suspense maybe police raid or betrayal. Need not resolve all threads.
+
+Let's outline chapter 4. Start right after note under door. He Zhiyuan reads warning. He must decide: run? But he needs money, not run. He will seek Zhao Tiesheng maybe. Could go to Zhao. Or not trust note. Maybe it's from Zhou? Or someone trying to scare him. Need realistic: In 1984, official profiteering; He Dechang accepted bribe and He Zhiyuan's "deposit"? Wait note says "也收了你的钱" which is odd, because Zhao took deposit. Maybe note means He Dechang accepted bribe and He Zhiyuan's money is at risk? Actually previous note: "贺德昌收了电视，也收了你的钱。快跑。" Could be implying that He Dechang has been paid off but will also turn them in? Or He Dechang took He Zhiyuan's deposit? But he didn't give He Dechang money. Maybe note author mistakes. But He Zhiyuan might interpret as setup: He Dechang took the TV and the bribe money (Zhao's?), and is going to sell them out, so run.
+
+He can go to Zhao to warn or ask. Zhao maybe calm, says stay low, next job is TV sets via Shenzhen River. This chapter should show He Zhiyuan going to Zhao at盐田 old coal yard, with deposit. Or maybe first he investigates note. He could go to Zhao's warehouse #3 at Shekou at evening. The chapter should include him quitting whatever odd jobs he still had? In chapter 1 he sold breakfast; chapter 2 3 he already doing Zhao jobs. The summary says "尝到甜头后，他辞掉工地零工，专门跑批文和走私电器。" But he already quit breakfast. Maybe he had been still doing some construction odd jobs? Actually after chapter 1 he sold breakfast? Wait summary says he started street vending, then got involved. In ch1 he sold breakfast and quit. In ch2-3 he was doing Zhao jobs. Maybe "工地零工" refers to part-time construction; maybe he did a few odd jobs before breakfast? But by chapter 4 he has tasted profits from steel; now fully commits. Maybe he is summoned for a night deal at Shenzhen River with electronics (color TVs) smuggling. He needs to drop odd jobs. We can insert that he did one last day of loading at dock? Or still had a temporary job? The summary mentions 辞掉工地零工，专门跑批文和走私电器. We can have him earlier in chapter at码头扛包 (Liu Shuigen). But by chapter 4 he is already with Zhao. Maybe we can show him telling Liu Shuigen he won't do odd jobs anymore; or he helps Liu for half day then leaves after receiving news. But to align with summary, he needs to officially quit all remaining side jobs and become full-time runner. Perhaps he still kept a part-time dock job? In Chapter 1 he sold breakfast after construction; after selling breakfast he had no job except Zhao. But summary says he had a工地零工 maybe from original synopsis: He did construction, then breakfast, then steel. In our chapters, he did breakfast then steel. Could keep a minor job like he occasionally goes to construction site. But for consistency, perhaps he is still registered as a temporary worker at a site? Hmm.
+
+Maybe we can interpret: In chapter 1 he quit breakfast and didn't work construction. In chapter 2-3 he worked for Zhao but considered it temporary. Now in chapter 4, after the sweetness of 1500 yuan, he fully quits any pretense of legitimate work and commits to running documents and smuggling. He doesn't need an explicit construction job; "工地零工" can refer to Zhao's steel runs (as a runner). But the summary specifically says "专门跑批文和走私电器". So chapter should transition to electronics smuggling.
+
+Let's craft a plot:
+
+- Night after note. He Zhiyuan sits in tin house, holding note, money under pillow. He doesn't sleep. Early morning, he goes to a public telephone? In 1984 phone scarce. Or he goes to盐田 old coal yard earlier than scheduled to find Zhao. But Zhao may not be there. Instead he goes to a construction site where Liu Shuigen works? Actually no. Maybe he goes to 周？老周 introduced him. But he doesn't know where老周 lives. Better: he goes to Shekou pier warehouse #3 where he first met Zhao, arriving at dusk as scheduled. There he meets Zhao, shows note. Zhao reads, burns it, says "有人想把你吓跑，这样他吃你的份。" Or "贺德昌那边没事，我昨晚又给他送了电视。" Then offers a bigger job: color TV sets from Hong Kong via Shenzhen River, no document, need to receive at riverbank and move to a warehouse in Nantou/Futian. Payment huge. He Zhiyuan agrees, bringing his 3000 deposit? Actually he has 4500. Zhao says for this one need 5000? He can use 3000. He invests 3000.
+
+- Preparation: they drive to a spot along Shenzhen River near Lo Wu/文锦渡? At night. They wait in a dark field. On other side is Hong Kong Yuen Long, black. Suddenly a light flashes from opposite bank three times, answered by their side. A rubber boat or raft crosses with sacks. They unload onto a truck. He sees Panasonic color TV boxes in sacks, maybe 14-inch National/Panasonic. He touches one. The river smells, mosquitoes. Hong Kong side dark. Shenzhen side lit by construction. They load quickly. Then a dog barks, or a patrol flashlight. They scatter. Maybe the truck gets stopped? Or He is told to carry one TV on his back through fields to a road. He runs with a TV, falls into mud, the TV maybe breaks? He keeps going. Ends with him reaching a prearranged spot, but Zhao not there; instead a police jeep appears, or someone points a flashlight. Or he finds Zhao waiting but Zhao has a gun? Suspense.
+
+Need include his psychological shift: he chose this, not because he likes crime, but because era leaves no path. Show calculations: 4500 vs wages. Color TV profit maybe each set cost 800 HK? sell 2000 RMB? Huge. He realizes the risks but sees no alternative. The anonymous note triggers fear but also pushes him to double down? Or he thinks of running away but has no home. Need reflect his father's voice, his own rationalization.
+
+Need era details: 1984 Shenzhen, two-track price, foreign exchange certificates, "官倒", Panasonic TV (National/Panasonic), Shenzhen River, border fence, Yuen Long fields dark, Shenzhen lit by searchlights, barbed wire, patrol, mosquito, smell of river, mud, humidity. Wages: state worker monthly ~50-80, a color TV costs ~1500-2000 RMB or black-market price. Smuggled TVs from Hong Kong. Document details: maybe Zhao has a "进口电视机审批单" but not enough, so they smuggle the rest. Maybe they mix legal and illegal.
+
+Need avoid being too explicit on law? But fine.
+
+Need also ensure no extra content beyond chapter. Output begins with "## 第4章 彩电与河水". Then text. No summary, no meta. Let's write around 2500 Chinese characters? The target says 2500 words (1500-99999). The Chinese word count generally equals characters. We should aim ~2500 Chinese characters. Let's plan content length.
+
+Let's structure:
+
+1. The note under the door. He reads, doesn't sleep. He folds note, keeps it. Morning he decides not to run because he has no place to go. He counts money: 4500. He wraps 3000 to take. He goes to a noodle stall for breakfast; sees police? Or sees a man watching? Suspense.
+
+2. He goes to Shekou pier warehouse #3 at night, as previously arranged? Actually he was told next Wed. But after note, he might go earlier? That could create conflict: he arrives early, Zhao not there, only the driver? Better to stick to time: he goes Wednesday evening, as scheduled, with money. Or perhaps the note is from Zhao's rival, and Zhao has moved location. To incorporate the note, maybe he arrives at warehouse #3 but it's empty, and a kid gives him a new address: Shenzhen River. This creates suspense.
+
+Let's incorporate summary: He quits all remaining odd jobs. Maybe before going, he passes by Liu Shuigen at dock and tells him he won't be coming back, gives him the tin house key? Hmm. In chapter 1 he sold cart; no construction job. We can create a minor part-time: after the steel run, he had taken a two-day unloading job at Shekou dock to pass time? Actually he wouldn't because he made 1500. But summary says "尝到甜头后，他辞掉工地零工"—so maybe he did have a construction odd job between steel runs. We can have a short scene where he works a half day hauling cement at a site and then quits after Zhao sends word. But must fit chapter. Could start with him on a construction site at dawn, carrying steel bars, then someone tells him "赵老板找你". He quits, gets unpaid wages? That shows him leaving legitimate work. Yes, summary: "尝到甜头后，他辞掉工地零工，专门跑批文和走私电器。" So at beginning of chapter 4, he can be at a construction site doing odd labor. It fits: after first steel deal, he still had a casual site job? But with 4500 yuan, why? Maybe because next Zhao job is a week later and he doesn't want to sit idle, so he took a temporary dock/construction job for 2.5/day? That fits his character—cautious, doesn't know if Zhao will call again. But after tasting 1500, carrying steel for 2.5 is unbearable. So he quits.
+
+Let's start: He didn't sleep; at dawn, he goes to a construction site at Shekou/Lo Wu? He registers as a casual laborer, carries steel. Foreman pays daily. During work, the same barefoot boy appears: "赵老板叫你，今晚八点，深圳河北岸，旧渡口。" He quits, foreman scolds and withholds half-day wage. He returns tin house, bathes, counts money. He wraps 3000 into a bag, puts rest hidden. Then goes.
+
+This addresses summary nicely. We can also show Liu Shuigen? Maybe not necessary. But a construction site scene with details.
+
+Then he meets Zhao. Where? They drive to Shenzhen River. Could be at a spot near 文锦渡 or 罗湖桥. They wait in dark. The driver and a new guy "瘦高个". Maybe Zhao gives him a cigarette. They discuss the note: He shows it; Zhao laughs and burns it, says "贺德昌要是不收钱，咱才该跑。" This confirms official corruption. But also foreshadows betrayal.
+
+Then the river crossing. Description: black water, smell, mosquitoes, barbed wire on far bank, Hong Kong side dark, Shenzhen side lights. Flashlight signals. A raft with outboard motor appears, low in water, loaded with sacks. They unload onto truck. He sees a Panasonic TV box when a sack tears. The driver says hush. The price: each set cost 1200 HKD? They will sell for 2600 RMB. He realizes one TV equals his three years wages? Actually a worker's annual wage maybe 800, so one TV maybe 2000 = 2.5 years. Good.
+
+Maybe there's a near-miss: border patrol flashlight from Hong Kong side? Or Shenzhen patrol. They hide. A dog barks. They must move fast. They load 30 sets. Then the truck can't go by road because of checkpoint, so they divide: He and another guy carry two sets each across a muddy path to a van waiting on a road. During this, he slips, one TV falls into mud. The screen maybe not broken because boxed. He picks it up; mud on box. They reach the van. Zhao pays him on spot? Or promises.
+
+Ending suspense: As they finish loading, headlights appear; not the van, a jeep. They scatter into fields. He runs with a TV, perhaps toward the tin house? Or hides in a drainage ditch. The chapter ends with him crouched in reeds, holding the TV, watching the jeep's red tail lights, and the realization he is now fully in it. Or he reaches the drop point and finds Zhao waiting with a gun? Maybe better: after escaping, he arrives at the warehouse, but the door is padlocked and there is a fresh chalk mark? Or someone follows him.
+
+We need leave cliffhanger. The note earlier warned "快跑". At end, perhaps he sees Zhao's driver talking to a man in uniform; or he returns to tin house and finds the door broken, his hidden money gone/present? Hmm. Since chapter 4 is a middle chapter, we can end with him being left alone by the river with a single TV and Zhao's truck gone, while a patrol jeep approaches. That's suspense.
+
+But maybe more aligned with summary: The night transaction is the climax of this chapter. After the transaction, he sees the dark fields of Hong Kong and the lit Shenzhen. Then a patrol appears. End. Let's decide.
+
+Let's craft detailed scenes with sensory details: mud, mosquitoes, river smell, diesel, rope burns, weight of TV, Panasonic box art, "Panasonic" roman letters, made in Japan. Use era details: 外汇券, 电视机票? Wait color TV required ticket in mainland. Smuggled sets avoid tickets. Price: In 1984, a 14-inch domestic color TV maybe 1000+ RMB but scarce; imported Panasonic maybe 2000-2500. A worker's monthly wage 50-70. A bowl of noodles 0.2. A pack of cigarettes 0.08. Use such details.
+
+Need keep third-person limited close to He Zhiyuan's perceptions. Show his inner thoughts: calculations, fear, rationalization, memory of father. Not lyrical but crisp.
+
+Let's write. We need to produce around 2500 Chinese characters. Let's aim 2300-2600. Need use no headings except chapter title. Use paragraphs.
+
+Let's draft in Chinese now.
+[/思考过程]
+
+## 第5章 官倒的价码
+
+何志远没有立刻开门。
+
+他贴着门缝站了约莫一袋烟工夫，直到外头有穿校服的孩童跑过，嘴里念着拼音。那声音脆生生的，像一把小石子落在铁皮屋顶上。他竖起耳朵，听着脚步声由近及远，混进巷口卖豆浆的梆子声里，这才松了半口气。
+
+这间屋子是他去年秋天租下的，在城西老棉纺厂后头的杂院。院子原是工厂的仓库，后来改成了单身宿舍，住着拉板车的、修自行车的、在菜市场摆摊的，什么人都有。房东是个退休女工，姓刘，一只眼睛不好，看人时总歪着头。每月十五号收租，从未提前来过。
+
+他把帆布挎包从肩上卸下来，攥在手里，另一只手从墙根摸起半截锈钢筋，用脚尖把门顶开。
+
+门轴吱呀一声，像是有人从里头呻吟。何志远没急着迈腿，先让门敞开半边，自己侧身贴在门框上，借着外头的天光往里瞧。屋里的气味先涌出来——煤油、汗酸、墙缝里霉烂的木屑味，还有一股说不清的腥甜，像是耗子死在了什么角落。
+
+屋里比外头还闷。
+
+铁皮桶倒了，桶沿磕出几个新印子，在泥地上划出浅浅的沟。煤油灯滚在墙角，灯罩裂成两半，玻璃碴子撒了一地，被进门的风一吹，亮晶晶地闪。床板被撬起一块，露出发黑的稻草和几根锈钉子。褥子掀到地上，沾了半块泥脚印，看那大小，是个穿四十二码解放鞋的男人。枕头裂开一道口子，荞麦皮撒了一地，像谁在这屋里下了一场小雪。
+
+何志远的心猛地一沉。
+
+他先没进去，站在门口扫了一圈。灶台上那口铝锅扣着，旁边两只碗摞得整整齐齐——这不是他早上出门时的样子。他记得清楚，自己临走前喝了一碗凉水，碗是反扣在锅台上的，碗底还留着一个湿印子。现在那两只碗却正扣着，像是有人故意摆回原位，又摆得太过规矩。
+
+他又看墙角。那只装旧衣服的破木箱被挪过，箱底的煤灰拖出一道弧形的印子，停在离原处两寸远的地方。箱盖没锁，露出里头一件洗得发白的军绿色棉袄。那是他当兵时穿过的，袖口还补着块蓝布。搜的人显然翻过了，又觉得一件旧棉袄不值什么，随手扔了回去。
+
+何志远这才走进去。
+
+脚下的荞麦皮被踩得咯吱作响。他绕过铁皮桶，走到床前，把那块没被撬动的木板掀开。木板下面有一个浅坑，是他用半个月晚上偷偷刨出来的，坑里垫着一层塑料布，塑料布上端端正正放着一个蓝布包。
+
+蓝布包还在。
+
+他用两根手指捏住布包一角，轻轻提起来，又抖了抖。里头的报纸包着的钱还在。他把布包放在膝上，一层一层揭开——最外层是蓝布，中间是两张《人民日报》，里头是牛皮纸，牛皮纸再打开，露出一叠整整齐齐的钞票。十元一张，一百五十张，一千五，一张不少。
+
+他长长地吐出一口气，这才觉得后背的汗已经湿透衬衫，风从门缝灌进来，凉飕飕地贴着脊梁。
+
+可这事没完。
+
+他又摸了摸挎包。那五千块是昨晚赵铁生在河边给他的，还没离身。赵铁生是他部队上的老班长，退伍后分到县物资局当司机，专门给局长开车。这五千块不是小数目，赵铁生说是他攒了五年的老婆本，借给何志远"翻本"用。何志远当时站在河堤上，听着水拍岸的声音，接过那包钱时手都在抖。他知道这钱烫手，可他也知道，没有这钱，他连"官倒"的门朝哪边开都摸不着。
+
+"官倒"这个词，是去年冬天他在火车站听一个穿呢子大衣的人说的。那人抽着带过滤嘴的烟，跟旁边的人说，现在钢材紧张，有计划内计划外之分，计划内的价低，计划外的价高，中间隔着一条河。谁能从河里捞一把，谁就能发大财。何志远当时蹲在一边啃馒头，听得入了神。后来他找赵铁生打听，赵铁生犹豫了好几天，才吐出一句话："局里的刘科长手里有批条，一张条子能提二十吨钢材，每吨差价三百。你想要，得先送礼。"
+
+送礼。送什么？送钱。
+
+他解开皮带，把钱取出来，和蓝布包并在一起，重新数了一遍：六千五。
+
+钞票是新崭崭的，还带着银行捆钱的纸条。他把钱分成三叠，一叠一千五，是他自己的本钱；一叠三千，是准备送给刘科长的；剩下两千，是留给中间人老张的跑腿费和"茶水钱"。六千五百块，一分一厘都不能差。
+
+数完钱，他没立刻收起来。他坐在床沿上，把那半截锈钢筋横在膝头，眼睛盯着地上的荞麦皮。
+
+是谁来过？
+
+他第一个想到的是房东刘婶。可刘婶那只坏眼虽然歪，人心却不坏，收租时从不进他屋。再说她一个寡妇，要翻也翻不出什么名堂。
+
+第二个想到的是隔壁卖豆腐的王老三。王老三每天晚上打呼噜，白天推着车沿街叫卖，哪有这闲工夫？而且他那双手只会磨豆腐，撬床板这种事，他做不来。
+
+第三个想到的是码头上的疤脸刘。上个月何志远从他手里赊过一批木料，说好月底结账，可他现在手里攥着的是钢材批条的生意，木料的事被他搁在了一边。疤脸刘放出话来，说何志远要是赖账，就让他"在城里待不下去"。可疤脸刘那帮人做事粗鲁，真要搜屋，早就把屋顶掀了，不会只撬一块床板。
+
+还有一种可能，何志远最不愿意想，却越想越觉得像。
+
+那就是刘科长那边的人。
+
+赵铁生说帮他牵线，可赵铁生也说过，刘科长这人胃口大，心眼多，办事之前喜欢"摸摸对方的底"。也许刘科长派人来，就是想看看他何志远手里到底有多少本钱，值不值得把批条卖给他。这种"摸底"不偷钱，只翻屋，翻完了还要把东西摆回原样，装作没来过，好让买卖双方面上都过得去。
+
+可如果真是这样，那这"官倒"的价码就不仅仅是钱了。
+
+何志远低头看着膝上的钞票。六千五百块，在普通工人眼里是十年的工资，在刘科长眼里也许只是一顿饭钱。他要拿这些钱去买一张批条，批条到手后再去钢厂提货，提到货后倒卖给乡镇企业，一倒手就能赚六七千。可万一批条是假的，万一钢厂不认，万一货运到半道被人截住，他何志远就什么都没了，连赵铁生的老婆本都得赔进去。
+
+他把手掌按在钱上，掌心被纸币的边角硌得生疼。
+
+外头忽然传来一阵脚步声，停在门口。
+
+何志远浑身一紧，攥住锈钢筋，把钱往身后一推。他盯着那扇半开的门，看见一个影子投在地上，拉得很长。
+
+"何哥？在屋呢？"
+
+是赵铁生的声音。
+
+何志远没有立刻应声。他先把钱胡乱塞进蓝布包，又塞进床板下的坑里，把木板盖回去，用脚把地上的荞麦皮往床边踢了踢，这才站起身，把锈钢筋别在腰后。
+
+"在呢，门没锁。"
+
+赵铁生推门进来，一眼看见屋里的狼藉，脸色变了。
+
+"这是……遭贼了？"
+
+何志远摇摇头，又点点头："来过了，钱没丢。"
+
+赵铁生愣了一下，随即明白过来。他反手把门带上，压低声音："刘科长那边？"
+
+"说不准。"何志远从兜里摸出烟盒，抖出一根皱巴巴的烟，"也可能是疤脸刘，也可能是别的什么人。"
+
+赵铁生接过烟，没点，在手里捻着："那批条的事，还办不办？"
+
+何志远把火柴划着，凑到赵铁生烟前。火光映着两个人的脸，一跳一跳的。
+
+"办。"他说，"都到这份上了，不办也得办。六千五，一分没动，全在这儿。你告诉刘科长，我要见他。"
+
+赵铁生深深地看了他一眼，把烟点上，猛吸一口："志远，你可要想清楚。这'官倒'的买卖，做好了能翻身，做不好……"
+
+"做不好就是个死。"何志远替他把话说完，嘴角扯出一个笑，"老班长，我爹临死前跟我说，穷死也是死，饿死也是死，横竖都是死，不如搏一把。"
+
+赵铁生沉默半晌，把烟头扔在地上，用脚碾灭："行。晚上八点，城西老码头，三号仓库。刘科长爱喝二锅头，你备两瓶好的。"
+
+"备好了。"何志远从床底下拖出一个纸箱，里头码着四瓶红星二锅头，还有一条大前门香烟，"酒是正宗的，烟是托人从上海带来的。另外还有这个——"他从怀里掏出一个小布包，打开，里头是一只老式的上海牌手表，"给刘科长夫人的。"
+
+赵铁生拿起手表，对着门缝的光照了照，又放下："志远，你这是把家底都押上了。"
+
+"不押不行。"何志远重新坐回床沿，看着地上那道被箱子拖出的弧形印子，"人家来搜过我的底，知道我有六千五。我要是这时候缩回去，他们更瞧不起我。这'官倒'的价码，表面上是钱，实际上是个胆。你敢不敢赌，敢不敢把全部身家押在一张条子上。"
+
+他顿了顿，又补充道："我现在敢了。"
+
+赵铁生没再说什么，只是把烟盒里剩下的烟都倒出来，揣进自己兜里："晚上我来接你。换身干净衣裳，别穿这件，袖口都磨破了。"
+
+何志远低头看看自己的袖口，确实磨出了毛边。他点点头，把赵铁生送到门口。
+
+赵铁生走了两步，又回头："志远，屋里这烂摊子，要不要我帮你收拾？"
+
+"不用。"何志远扶着门框，"我自己来。收拾干净了，晚上还得请刘科长来坐呢。"
+
+赵铁生看了他一眼，那眼神里有担忧，也有一种说不清的佩服。他摆摆手，拐出了巷子。
+
+何志远站在门口，看着赵铁生的背影消失在卖豆浆的梆子声里。他回过身，重新走进屋里，把门关上。
+
+屋里又暗了下来。
+
+他没有立刻收拾。他先走到床前，再次掀开那块木板，把蓝布包取出来，把钱重新数了一遍。六千五，一张不少。他把钱分成三叠，分别用报纸包好，一叠塞进蓝布包放回坑里，一叠藏进棉袄的内衬，还有一叠——最大的一叠，三千块——他仔细地用塑料布裹好，贴身绑在腰上。
+
+做完这一切，他才拿起扫帚，开始扫地上的荞麦皮。
+
+扫到墙角时，他停了一下。煤油灯的玻璃碎片里，混着一小片东西，不是玻璃，是棕色的，像是从什么皮具上掉下来的。他蹲下去，捏起来看了看，是一片人造革，边缘还带着针脚，像是公文包的边角料。
+
+何志远把那片人造革捏在手心里，看了很久。
+
+他知道，这不是疤脸刘留下的。疤脸刘那帮人不会背人造革的公文包。这也不是王老三的，王老三背的是装豆腐的木箱。这是另一种人留下的——穿中山装、坐吉普车、手里拿着批条的人。
+
+他把人造革收进兜里，继续扫地。
+
+窗外的天色渐渐暗了，巷口传来收摊的吆喝声。何志远把铁皮桶扶起来，把煤油灯碎片扫进簸箕，把褥子重新铺好。他没有换枕头套，裂口就那么敞着，像一张无声的嘴。
+
+他坐在收拾干净的床边，从怀里摸出赵铁生剩下的那根烟，点上。
+
+烟雾在昏暗的屋里升腾，他看着那缕烟，想起小时候在村里看戏，戏台上的老爷们穿着官服，一拍惊堂木，底下的人就得跪下。那时候他觉得，那些老爷高不可攀。可现在他明白了，老爷也是人，也要喝酒，也要抽烟，也要收礼。你只要摸准了他的胃口，老爷的批条就能从你手里过一遍。
+
+六千五，买一张批条，批条换二十吨钢材，钢材换一万多块现金。这就是"官倒"的价码。
+
+何志远把烟吸到尽头，烫了手指才扔掉。他站起来，从床底下拖出脸盆，到院里的公用水龙头打了半盆水，回到屋里，对着那块裂了缝的镜子，仔细地刮了胡子，洗了脸，把头发梳得一丝不乱。
+
+然后他从木箱里取出唯一一件没有补丁的蓝色中山装，换上，又把腰上的钱按了按，确认不会掉出来。
+
+镜子里的男人三十出头，浓眉大眼，肩膀宽厚，除了眼底那两道因为熬夜而泛青的影子，看起来精神头还不错。
+
+何志远对着镜子里的人笑了笑。
+
+"晚上见，刘科长。"
+
+[思考过程]
+用户要求我作为专业中文小说编辑，只输出修改后的章节正文，不解释。原文第5章《官倒的价码》只有260字，需要扩充到1500-99999字之间，建议2500字。
+
+ 我需要：
+ 1. 保持章节标题 "## 第5章 官倒的价码" 在最前面
+ 2. 保持情节连贯
+ 3. 增加细节描写、环境渲染、人物心理或对话
+ 4. 只输出修改后的正文，不解释
+ 5. 字数要达标（至少1500字）
+
+ 原文情节：
+ - 何志远没有立刻开门
+ - 贴门缝站了一袋烟工夫，听外头孩童念拼音
+ - 卸下帆布挎包，攥手里，从墙根摸起半截锈钢筋，用脚顶开门
+ - 屋里比外头闷，铁皮桶倒了，煤油灯滚在墙角，灯罩裂了
+ - 床板被撬起，褥子掀地上，枕头裂口，荞麦皮撒一地
+ - 他没进去，门口扫一圈，走到床前掀开没被撬动的木板
+ - 蓝布包还在，报纸包着的钱也在，一千五一张不少
+ - 摸挎包，五千块是昨晚赵铁生在河边给的，没离身
+ - 解下皮带，取出钱，和蓝布包并一起，重新数了一遍：六千五
+ - 最后一句"有人来过"未完
+
+ 我需要把这个场景扩充。可以添加：
+ - 何志远的心理活动：对搜查者的猜测，对钱的重视
+ - 环境细节：出租屋的陈设、气味、光线
+ - 动作细节：他的谨慎，检查痕迹
+ - 人物背景：这钱是救命钱/本钱，赵铁生是谁，为什么给钱
+ - 情节延伸：发现搜查者留下了什么线索，或者门外又有人来了
+ - 对话：可以加入内心独白，或者与后来者的对话
+
+ 时代背景应该是改革开放初期，"官倒"指官员倒卖物资。何志远可能是个做小买卖的，赵铁生可能是他的战友/朋友，给了他五千块做生意或者办事。
+
+ 让我构思情节：
+ - 何志远是退伍军人，在城里租房做钢材生意
+ - "官倒"指有权有势的人倒卖紧俏物资，他要从中买批条/指标
+ - 六千五百块是他的全部家当，用来打点关系买批条
+ - 有人先来搜过，可能是竞争对手或者对方派来的人
+ - 他检查钱是否还在，然后思考谁干的
+ - 可以安排他出门后遇到房东或者其他人物
+
+ 但用户要求只输出修改后正文，我不能解释。我需要把字数扩充到2500字左右。
+
+ 让我开始写：
+
+ ## 第5章 官倒的价码
+
+ 何志远没有立刻开门。
+
+ 他贴着门缝站了约莫一袋烟工夫，直到外头有穿校服的孩童跑过，嘴里念着拼音。那声音脆生生的，像一把小石子落在铁皮屋顶上。他竖起耳朵，听着脚步声由近及远，混进巷口卖豆浆的梆子声里，这才松了半口气。
+
+ 这间屋子是他去年秋天租下的，在城西老棉纺厂后头的杂院。院子原是工厂的仓库，后来改成了单身宿舍，住着拉板车的、修自行车的、在菜市场摆摊的，什么人都有。房东是个退休女工，姓刘，一只眼睛不好，看人时总歪着头。每月十五号收租，从未提前来过。
+
+ 他把帆布挎包从肩上卸下来，攥在手里，另一只手从墙根摸起半截锈钢筋，用脚尖把门顶开。
+
+ 门轴吱呀一声，像是有人从里头呻吟。何志远没急着迈腿，先让门敞开半边，自己侧身贴在门框上，借着外头的天光往里瞧。屋里的气味先涌出来——煤油、汗酸、墙缝里霉烂的木屑味，还有一股说不清的腥甜，像是耗子死在了什么角落。
+
+ 屋里比外头还闷。
+
+ 铁皮桶倒了，桶沿磕出几个新印子，在泥地上划出浅浅的沟。煤油灯滚在墙角，灯罩裂成两半，玻璃碴子撒了一地，被进门的风一吹，亮晶晶地闪。床板被撬起一块，露出发黑的稻草和几根锈钉子。褥子掀到地上，沾了半块泥脚印，看那大小，是个穿四十二码解放鞋的男人。枕头裂开一道口子，荞麦皮撒了一地，像谁在这屋里下了一场小雪。
+
+ 何志远的心猛地一沉。
+
+ 他先没进去，站在门口扫了一圈。灶台上那口铝锅扣着，旁边两只碗摞得整整齐齐——这不是他早上出门时的样子。他记得清楚，自己临走前喝了一碗凉水，碗是反扣在锅台上的，碗底还留着一个湿印子。现在那两只碗却正扣着，像是有人故意摆回原位，又摆得太过规矩。
+
+ 他又看墙角。那只装旧衣服的破木箱被挪过，箱底的煤灰拖出一道弧形的印子，停在离原处两寸远的地方。箱盖没锁，露出里头一件洗得发白的军绿色棉袄。那是他当兵时穿过的，袖口还补着块蓝布。搜的人显然翻过了，又觉得一件旧棉袄不值什么，随手扔了回去。
+
+ 何志远这才走进去。
+
+ 脚下的荞麦皮被踩得咯吱作响。他绕过铁皮桶，走到床前，把那块没被撬动的木板掀开。木板下面有一个浅坑，是他用半个月晚上偷偷刨出来的，坑里垫着一层塑料布，塑料布上端端正正放着一个蓝布包。
+
+ 蓝布包还在。
+
+ 他用两根手指捏住布包一角，轻轻提起来，又抖了抖。里头的报纸包着的钱还在。他把布包放在膝上，一层一层揭开——最外层是蓝布，中间是两张《人民日报》，里头是牛皮纸，牛皮纸再打开，露出一叠整整齐齐的钞票。十元一张，一百五十张，一千五，一张不少。
+
+ 他长长地吐出一口气，这才觉得后背的汗已经湿透衬衫，风从门缝灌进来，凉飕飕地贴着脊梁。
+
+ 可这事没完。
+
+ 他又摸了摸挎包。那五千块是昨晚赵铁生在河边给他的，还没离身。赵铁生是他部队上的老班长，退伍后分到县物资局当司机，专门给局长开车。这五千块不是小数目，赵铁生说是他攒了五年的老婆本，借给何志远"翻本"用。何志远当时站在河堤上，听着水拍岸的声音，接过那包钱时手都在抖。他知道这钱烫手，可他也知道，没有这钱，他连"官倒"的门朝哪边开都摸不着。
+
+ "官倒"这个词，是去年冬天他在火车站听一个穿呢子大衣的人说的。那人抽着带过滤嘴的烟，跟旁边的人说，现在钢材紧张，有计划内计划外之分，计划内的价低，计划外的价高，中间隔着一条河。谁能从河里捞一把，谁就能发大财。何志远当时蹲在一边啃馒头，听得入了神。后来他找赵铁生打听，赵铁生犹豫了好几天，才吐出一句话："局里的刘科长手里有批条，一张条子能提二十吨钢材，每吨差价三百。你想要，得先送礼。"
+
+ 送礼。送什么？送钱。
+
+ 他解开皮带，把钱取出来，和蓝布包并在一起，重新数了一遍：六千五。
+
+ 钞票是新崭崭的，还带着银行捆钱的纸条。他把钱分成三叠，一叠一千五，是他自己的本钱；一叠三千，是准备送给刘科长的；剩下两千，是留给中间人老张的跑腿费和"茶水钱"。六千五百块，一分一厘都不能差。
+
+ 数完钱，他没立刻收起来。他坐在床沿上，把那半截锈钢筋横在膝头，眼睛盯着地上的荞麦皮。
+
+ 是谁来过？
+
+ 他第一个想到的是房东刘婶。可刘婶那只坏眼虽然歪，人心却不坏，收租时从不进他屋。再说她一个寡妇，要翻也翻不出什么名堂。
+
+ 第二个想到的是隔壁卖豆腐的王老三。王老三每天晚上打呼噜，白天推着车沿街叫卖，哪有这闲工夫？而且他那双手只会磨豆腐，撬床板这种事，他做不来。
+
+ 第三个想到的是码头上的疤脸刘。上个月何志远从他手里赊过一批木料，说好月底结账，可他现在手里攥着的是钢材批条的生意，木料的事被他搁在了一边。疤脸刘放出话来，说何志远要是赖账，就让他"在城里待不下去"。可疤脸刘那帮人做事粗鲁，真要搜屋，早就把屋顶掀了，不会只撬一块床板。
+
+ 还有一种可能，何志远最不愿意想，却越想越觉得像。
+
+ 那就是刘科长那边的人。
+
+ 赵铁生说帮他牵线，可赵铁生也说过，刘科长这人胃口大，心眼多，办事之前喜欢"摸摸对方的底"。也许刘科长派人来，就是想看看他何志远手里到底有多少本钱，值不值得把批条卖给他。这种"摸底"不偷钱，只翻屋，翻完了还要把东西摆回原样，装作没来过，好让买卖双方面上都过得去。
+
+ 可如果真是这样，那这"官倒"的价码就不仅仅是钱了。
+
+ 何志远低头看着膝上的钞票。六千五百块，在普通工人眼里是十年的工资，在刘科长眼里也许只是一顿饭钱。他要拿这些钱去买一张批条，批条到手后再去钢厂提货，提到货后倒卖给乡镇企业，一倒手就能赚六七千。可万一批条是假的，万一钢厂不认，万一货运到半道被人截住，他何志远就什么都没了，连赵铁生的老婆本都得赔进去。
+
+ 他把手掌按在钱上，掌心被纸币的边角硌得生疼。
+
+ 外头忽然传来一阵脚步声，停在门口。
+
+ 何志远浑身一紧，攥住锈钢筋，把钱往身后一推。他盯着那扇半开的门，看见一个影子投在地上，拉得很长。
+
+ "何哥？在屋呢？"
+
+ 是赵铁生的声音。
+
+ 何志远没有立刻应声。他先把钱胡乱塞进蓝布包，又塞进床板下的坑里，把木板盖回去，用脚把地上的荞麦皮往床边踢了踢，这才站起身，把锈钢筋别在腰后。
+
+ "在呢，门没锁。"
+
+ 赵铁生推门进来，一眼看见屋里的狼藉，脸色变了。
+
+ "这是……遭贼了？"
+
+ 何志远摇摇头，又点点头："来过了，钱没丢。"
+
+ 赵铁生愣了一下，随即明白过来。他反手把门带上，压低声音："刘科长那边？"
+
+ "说不准。"何志远从兜里摸出烟盒，抖出一根皱巴巴的烟，"也可能是疤脸刘，也可能是别的什么人。"
+
+ 赵铁生接过烟，没点，在手里捻着："那批条的事，还办不办？"
+
+ 何志远把火柴划着，凑到赵铁生烟前。火光映着两个人的脸，一跳一跳的。
+
+ "办。"他说，"都到这份上了，不办也得办。六千五，一分没动，全在这儿。你告诉刘科长，我要见他。"
+
+ 赵铁生深深地看了他一眼，把烟点上，猛吸一口："志远，你可要想清楚。这'官倒'的买卖，做好了能翻身，做不好……"
+
+ "做不好就是个死。"何志远替他把话说完，嘴角扯出一个笑，"老班长，我爹临死前跟我说，穷死也是死，饿死也是死，横竖都是死，不如搏一把。"
+
+ 赵铁生沉默半晌，把烟头扔在地上，用脚碾灭："行。晚上八点，城西老码头， third 仓库。刘科长爱喝二锅头，你备两瓶好的。"
+
+ "备好了。"何志远从床底下拖出一个纸箱，里头码着四瓶红星二锅头，还有一条大前门香烟，"酒是正宗的，烟是托人从上海带来的。另外还有这个——"他从怀里掏出一个小布包，打开，里头是一只老式的上海牌手表，"给刘科长夫人的。"
+
+ 赵铁生拿起手表，对着门缝的光照了照，又放下："志远，你这是把家底都押上了。"
+
+ "不押不行。"何志远重新坐回床沿，看着地上那道被箱子拖出的弧形印子，"人家来搜过我的底，知道我有六千五。我要是这时候缩回去，他们更瞧不起我。这'官倒'的价码，表面上是钱，实际上是个胆。你敢不敢赌，敢不敢把全部身家押在一张条子上。"
+
+ 他顿了顿，又补充道："我现在敢了。"
+
+ 赵铁生没再说什么，只是把烟盒里剩下的烟都倒出来，揣进自己兜里："晚上我来接你。换身干净衣裳，别穿这件，袖口都磨破了。"
+
+ 何志远低头看看自己的袖口，确实磨出了毛边。他点点头，把赵铁生送到门口。
+
+ 赵铁生走了两步，又回头："志远，屋里这烂摊子，要不要我帮你收拾？"
+
+ "不用。"何志远扶着门框，"我自己来。收拾干净了，晚上还得请刘科长来坐呢。"
+
+ 赵铁生看了他一眼，那眼神里有担忧，也有一种说不清的佩服。他摆摆手，拐出了巷子。
+
+ 何志远站在门口，看着赵铁生的背影消失在卖豆浆的梆子声里。他回过身，重新走进屋里，把门关上。
+
+ 屋里又暗了下来。
+
+ 他没有立刻收拾。他先走到床前，再次掀开那块木板，把蓝布包取出来，把钱重新数了一遍。六千五，一张不少。他把钱分成三叠，分别用报纸包好，一叠塞进蓝布包放回坑里，一叠藏进棉袄的内衬，还有一叠——最大的一叠，三千块——他仔细地用塑料布裹好，贴身绑在腰上。
+
+ 做完这一切，他才拿起扫帚，开始扫地上的荞麦皮。
+
+ 扫到墙角时，他停了一下。煤油灯的玻璃碎片里，混着一小片东西，不是玻璃，是棕色的，像是从什么皮具上掉下来的。他蹲下去，捏起来看了看，是一片人造革，边缘还带着针脚，像是公文包的边角料。
+
+ 何志远把那片人造革捏在手心里，看了很久。
+
+ 他知道，这不是疤脸刘留下的。疤脸刘那帮人不会背人造革的公文包。这也不是王老三的，王老三背的是装豆腐的木箱。这是另一种人留下的——穿中山装、坐吉普车、手里拿着批条的人。
+
+ 他把人造革收进兜里，继续扫地。
+
+ 窗外的天色渐渐暗了，巷口传来收摊的吆喝声。何志远把铁皮桶扶起来，把煤油灯碎片扫进簸箕，把褥子重新铺好。他没有换枕头套，裂口就那么敞着，像一张无声的嘴。
+
+ 他坐在收拾干净的床边，从怀里摸出赵铁生剩下的那根烟，点上。
+
+ 烟雾在昏暗的屋里升腾，他看着那缕烟，想起小时候在村里看戏，戏台上的老爷们穿着官服，一拍惊堂木，底下的人就得跪下。那时候他觉得，那些老爷高不可攀。可现在他明白了，老爷也是人，也要喝酒，也要抽烟，也要收礼。你只要摸准了他的胃口，老爷的批条就能从你手里过一遍。
+
+ 六千五，买一张批条，批条换二十吨钢材，钢材换一万多块现金。这就是"官倒"的价码。
+
+ 何志远把烟吸到尽头，烫了手指才扔掉。他站起来，从床底下拖出脸盆，到院里的公用水龙头打了半盆水，回到屋里，对着那块裂了缝的镜子，仔细地刮了胡子，洗了脸，把头发梳得一丝不乱。
+
+ 然后他从木箱里取出唯一一件没有补丁的蓝色中山装，换上，又把腰上的钱按了按，确认不会掉出来。
+
+ 镜子里的男人三十出头，浓眉大眼，肩膀宽厚，除了眼底那两道因为熬夜而泛青的影子，看起来精神头还不错。
+
+ 何志远对着镜子里的人笑了笑。
+
+ "晚上见，刘科长。"
+
+ 字数统计一下，应该超过2500字了。我注意到用了"third 仓库"这种中英混杂，应该改为"三号仓库"更好。
+
+ 再检查一遍，确保流畅自然。我需要把"third"改成中文。
+
+ 其他部分看起来还可以。让我再补充一些细节，确保字数足够。
+
+ 不过先计算一下，现在大概有多少字。让我估算：
+
+ 标题：9字
+ 第一段到"拼音"：约50字
+ 第二段到"来过"：约150字
+ 第三段"他把帆布..."：约50字
+ 第四到第十段：约600字
+ 第十一段到结尾：约1500字
+
+ 总共应该有2500字以上了。
+
+ 我再润色一下，去掉英文。
+
+ 最终输出只需要正文，不需要任何说明。
+[/思考过程]
+
+## 第6章 风声紧
+
+何志远是在罗湖汽车站后面那家“老蔡牛腩粉”摊上听到风声的。
+
+摊子是露天的，四根竹竿支着一块油布，底下摆六张矮桌，桌腿用铁丝绑过。他坐在最靠里的一张，面前一碗牛腩粉，八毛钱，粉上漂着一层红油。他没怎么动筷子，光用牙签剔着牙，听旁边两个穿的确良衬衫的人说话。那两人不是工人，也不是司机，袖口干净，指甲缝里没泥，说话声音压得很低。
+
+“……听说这次动真格的了，省里下了文，专打投机倒把。”
+
+“早该打了。布吉那边听说已经抓了十几个，货全扣了，连车都拖走。”
+
+“抓了也没用。你看这街上，哪样东西不是倒出来的？总不能把整条街都封了。”
+
+何志远把牙签往桌上一扔，端起碗，把汤喝了一半。他刚掏出钱，还没喊老板，一个人影就堵在了摊前。
+
+是老周。
+
+老周的脸色比头顶的油布还灰，汗衫前襟湿了一片，不是热的，是汗。他两只手撑在桌沿上，指节发白，声音压得几乎听不见：
+
+“阿炳在布吉货运站被扣了。”
+
+何志远的手停在半空。碗里的红油还在晃。
+
+“什么时候？”
+
+“就刚才。六点多，工商和公安联合出动，把人从磅房里拖出来的。听说还抄走了三本账。”
+
+何志远没说话。他慢慢把钱放到桌上，纸币被汗浸得发软。老板找零时，他摆摆手，起身就走。
+
+老周跟上来，抓住他胳膊：“你去哪儿？”
+
+“看看。”
+
+“看个屁！”老周的手像铁钳，“现在那边全是制服，你去了就是送死。阿炳那小子嘴紧不紧你还不知道？”
+
+何志远停下脚步。
+
+阿炳嘴紧不紧，他确实不知道。阿炳是三个月前才跟上他们的，二十出头，东莞人，以前在码头扛包，后来给赵铁生开车。人瘦，话多，爱笑，笑起来左边缺半颗门牙。何志远跟他喝过几次酒，酒桌上阿炳把胸脯拍得砰砰响，说“何哥，有事我顶着，绝不会连累你”。可那是酒话。酒话值几个钱？
+
+“他知不知道仓库？”何志远问。
+
+“知道个大概。”老周咬着牙，“但账本上有没有地址，我不清楚。”
+
+何志远抬头看了眼天色。太阳已经落尽，罗湖这一片到处是霓虹灯初上的招牌，红的绿的照在脸上，像一层油彩。他忽然觉得这一切都很假，像戏台子上的布景，风一吹就会倒。
+
+“你先走。”他对老周说，“别跟着我。”
+
+“那你呢？”
+
+“我得去看看货。”
+
+老周还想说什么，何志远已经转身拐进了巷子。他没回头。
+
+去布吉他没坐车。这个点公交车早就没了，打车太显眼。他沿着广深公路往北走，路上全是重载货车，车灯把路面照得一片惨白。走了约莫两里地，他拦住一辆拉沙子的东风卡车，跟司机说给五块钱，捎他到布吉货运站。司机是个广西人，打量他两眼，让他爬上了后车厢。
+
+车厢里全是河沙，堆得像座小山。何志远把身子埋进沙堆里，只露出脑袋。沙子被太阳晒了一天，还是烫的，风一吹，细沙扑进眼睛和嘴里。他咬着牙，一声不吭。
+
+车到布吉货运站时，已经快八点。
+
+货运站比他想的大。一圈红砖围墙，墙头拉着铁丝网，门口两盏水银灯，照得方圆几十米雪亮。院里停着七八辆卡车，有的盖着帆布，有的敞着车厢，露出里头码得整整齐齐的纸箱和麻袋。地磅旁边围着一堆人，穿白制服、蓝制服的都有，红袖章在灯光下一闪一闪。
+
+何志远没有走正门。他绕到围墙东边，那里有一道排水沟，沟上搭着几块水泥板。他踩着水泥板翻过去，跳进一堆废旧的木托盘后面。
+
+院子里气氛很紧。
+
+靠近办公室的地方停着两辆绿色的北京吉普，车顶上的警灯没亮，但车窗开着，能看见里面坐着穿蓝裤子的人。地磅房门口，两个穿工商制服的男人正往一个蛇皮袋里装东西，袋口露出几叠纸角，像是账本。
+
+何志远的目光移向院子西南角。
+
+那里停着一辆白色的解放牌卡车，车头朝外，车厢盖着军绿色帆布，帆布四角用麻绳扎紧。车牌是深圳的，粤B开头。他认得这辆车。三天前，阿炳就是开着这辆车去布吉接一批日本东芝冰箱，说是从广州方向发过来的，有铁路联运单。
+
+可现在，卡车旁边站着一个穿白制服的年轻人，正用一张封条往车门上贴。
+
+何志远的心沉了下去。
+
+他蹲得更低，从木托盘缝隙里往外看。地磅房的门开了，两个男人押着一个人走出来。那人低着头，双手反剪在背后，手腕上银光一闪，是手铐。
+
+是阿炳。
+
+阿炳的白背心已经被汗湿透，贴在背上，显出肋骨的形状。他左边脸颊肿了一块，嘴角有血，半颗缺了的门牙在灯光下格外显眼。他没挣扎，只是低着头，被两个穿制服的人一左一右夹着，往吉普车方向走。
+
+快到车门口时，阿炳忽然抬起头，往院子里扫了一圈。
+
+何志远连忙把脑袋缩回木托盘后面。他屏住呼吸，听见自己的心跳声大得像鼓。沙粒还黏在头发里，顺着额角往下滑，痒得像蚂蚁在爬，他不敢擦。
+
+吉普车的门砰地关上。发动机响了两声，车灯亮起，缓缓开出大门。另一辆吉普跟在后面。院子里的人散开一些，但白制服们还在翻查磅房里的东西。
+
+何志远在木托盘后面又蹲了约莫一支烟工夫，直到确认没人注意这边，才顺着原路翻出围墙。他的裤腿被铁丝网刮破一道口子，小腿上划出一道血痕，他也没觉得疼。
+
+回罗湖的路上，他没有再搭车，而是沿着铁路线走。
+
+铁轨两侧全是碎石，走起来硌脚。远处有火车经过，汽笛声尖利地划破夜空。他一边走，一边在心里算：阿炳被抓，账本被抄，那批冰箱被扣，赵铁生那边的线就断了。可赵铁生这个人，做事从来留后手，他不会只把赌注押在阿炳一个人身上。
+
+问题是，阿炳知道多少？
+
+他知道布吉货运站这个点，知道那辆白色解放牌，知道这批东芝冰箱。可他不一定知道蛇口那边的小仓库，不一定知道何志远的铁皮屋。账本呢？账本上记的是什么？何志远自己那本，有没有写地址？
+
+想到这里，何志远加快脚步，几乎是小跑起来。
+
+铁皮屋在罗湖以北一片待拆迁的棚户区里。院子门口有棵老榕树，树下常年蹲着个修鞋的老头。何志远回来时，老头已经收摊了，只剩一只空木箱歪在树根旁。他掏出钥匙，手有点抖，插了两次才插进锁孔。
+
+门推开，一股闷热扑面而来。
+
+他没点灯，先站在门口，让眼睛适应黑暗。屋里很静，只有铁皮屋顶被风吹得“哐哐”响。他侧耳听了一会儿，确认没有别人的呼吸声，才闪身进去，反手把门闩上。
+
+他摸到床沿，掀开褥子，又撬起床头那块松动的木板。木板下面的浅坑里，蓝布包还在。他把布包取出来，没打开，先塞到枕头底下。然后他从床底拖出一只生锈的洋铁皮桶，桶里还剩半桶煤油，是他冬天用来生炉子的。
+
+接着，他走到墙角，挪开那只装旧衣服的破木箱。
+
+木箱后面有一块墙皮脱落的地方，露出里头的青砖。他伸手进去，从砖缝里抠出一个用油布包着的小包。打开油布，是三本黑皮笔记本，三十二开，封面已经磨得起毛。这是他的账。
+
+第一本记的是钢材：日期、吨数、买家、成交价。第二本记的是彩电和电子元件：数量、型号、送货地点、分成。第三本最薄，却最要命，上面记着几个名字和电话，还有几次送礼的数目：贺德昌，一千六的电视；罗湖工业区王胖子，两条烟；宝安物资局老贺，手表一只……
+
+何志远把这些本子翻到煤油桶旁边，又找来一盒火柴。
+
+他蹲下去，划着一根火柴，凑到第一本下角。火苗舔上纸页，先是卷边，然后发黑，最后“呼”地一下窜起来。他看着第一页上的数字在火焰里扭曲、变形，最后化成灰落在桶底。那些他一笔一笔记下来的“利润”“分成”“回扣”，此刻都成了黑色的蝴蝶，在火光里扑腾。
+
+他一本一本地烧。烧到第三本时，火光映着他的脸，半边亮，半边黑。他想起赵铁生说过的话：“嘴不紧，我帮你缝上。”可现在不用缝了，纸上的嘴，一把火就全封上了。
+
+烧完账本，他又从床底摸出几张散落的纸条，都是送货地址和联系人。他也扔进桶里。最后，他从枕头底下取出蓝布包，打开，把里面的钱重新数了一遍。
+
+四千五百块。一分不少。
+
+他把钱分成两叠，一叠三千，用塑料布裹紧，贴腰绑好。另一叠一千五，塞进一只旧胶鞋里，再把胶鞋塞回床底的烂棉絮堆里。做完这些，他端起煤油桶，把剩下的煤油泼到桶里未烧尽的纸灰上，火苗又蹿起来一下，很快熄灭，只剩一股焦糊味在屋里弥漫。
+
+他打开门，把铁桶提到院子角落的排水沟边，把纸灰倒进去。黑色的灰被污水一冲，打着旋儿往下水道里钻，转眼就没了踪影。
+
+回到屋里，他靠着门板站了一会儿。
+
+外头传来几声狗叫，然后是远处工地上塔吊的轰鸣。深圳的夜晚从不安静，总有地方在亮着灯，总有地方在往上长。可何志远觉得，今晚的空气和往常不一样，像是有人在远处拉紧了一根弦，随时会断。
+
+他还没想好下一步怎么办。
+
+跑？他能跑到哪儿去？衡阳老家回不去，广州佛山没有熟人，香港那边更是隔着一条河。留？阿炳要是吐了口，公安明天就能找上门。躲到赵铁生那儿去？赵铁生这人精得像鬼，这种时候未必肯收留他。
+
+他摸了摸腰间的三千块。这是他全部的家当。有了这笔钱，他能买一张去外地的车票，能在小县城盘下一间铺子，能重新蒸粉、修车、扛包。可这也意味着，前几个月他经历的一切——批条、钢材、彩电、深圳河上的夜——全成了过眼云烟。
+
+他不甘心。
+
+就在这时，门外传来一阵轻微的脚步声。
+
+何志远浑身一紧，手摸到门后那根半截钢筋。脚步声在门口停住，没敲门，也没说话。他屏住呼吸，听见门外有纸张摩擦的窸窣声，然后脚步声又远了。
+
+他没立刻开门。等了三分钟，直到确认人已经走远，他才拉开门板，低头一看。
+
+门缝底下塞着一张对折的纸条。
+
+他捡起来，走到煤油灯下，展开。纸条是从一张货运单的背面撕下来的，上面是铅笔字，歪歪扭扭，像是用左手写的：
+
+“冰箱已到岸，老渡口，速来。赵。”
+
+何志远盯着那个“赵”字，心跳猛地快起来。
+
+那批东芝冰箱，不是已经被扣在布吉货运站了吗？阿炳就是去接那批货时出的事。怎么现在又有人说冰箱到岸了？
+
+他脑子转得飞快。有两种可能：一种是阿炳在布吉接的根本不是正主，真正的货从另一条线走了；另一种是这张纸条是诱饵，是公安或者别的什么人设下的套，就等他钻进去。
+
+他把纸条凑到煤油灯上，看着它烧成灰。然后他开始收拾东西：钢筋、火柴、一卷尼龙绳、一把电工刀，还有那三千块钱。他把这些都塞进一只帆布袋，挎在肩上。
+
+出门前，他最后看了一眼这间铁皮屋。
+
+褥子翻着，床板撬着，墙角还残留着烧纸的焦味。这里已经不能住了。无论今晚他是去老渡口，还是直接往火车站跑，他都不会再回来。
+
+他拉开门，走进夜色里。
+
+老渡口在深圳河上游，离棚户区大约四里地。何志远没有走大路，而是沿着河堤走。河堤上的草已经长到膝盖高，踩上去沙沙响。河水在黑夜里泛着灰白色的光，流得很急，偶尔漂过一些垃圾和烂树枝。
+
+对岸的元朗还是黑黢黢的，只有几点稀疏的灯光，像快要熄灭的火星。而深圳这边，到处都是探照灯和塔吊的红灯，把半边天照得发白。何志远一边走，一边想起第一次跟赵铁生过河接货的那个晚上。那时候他觉得这条河是一道伤口，把两边割成两个世界。现在他才发现，自己早就掉进了伤口里，爬不上去了。
+
+老渡口原来是一片废弃的煤场，岸边停着几艘破船，船底都烂了，半沉在水里。何志远远远就看见河面上有一个黑影，是一艘铁壳船，没有灯，但船身随着水波轻轻晃动，说明上面有人。
+
+他蹲在芦苇丛里，没立刻出去。
+
+船上传来低低的说话声，是粤语，听不清内容。过了一会儿，一个男人的声音用国语喊了一声：“何志远！出来吧，赵老板让我等你的！”
+
+何志远没动。
+
+那人又喊了一声：“阿炳出事了，货不能搁在这儿！你不过来，这批冰箱就得沉到河里去！”
+
+何志远的心揪紧了。他慢慢从芦苇丛里站起身，右手伸进帆布袋，握住了那根钢筋。
+
+他朝岸边走了几步，借着天光看清了船上的人。不是赵铁生，是一个陌生的中年男人，矮壮，光头，穿一件黑色无袖汗衫，胳膊上纹着一条青龙。船舱里堆着十几个纸箱，用塑料布盖着，纸箱一角露出“TOSHIBA”的字样。
+
+“赵铁生呢？”何志远问。
+
+“赵老板不会来。”光头男人跳下船，踩到岸边的烂泥里，“他说了，这批货交给你。十二台东芝电冰箱，香港那边已经收了钱，你今晚务必送到罗湖工业区七号仓库。有人在等。”
+
+“送到之后呢？”
+
+“送到之后，你拿两千块。”光头男人咧嘴笑了一下，“赵老板还说，阿炳那边的事，跟你没关系。你只管把货运到，其他的他摆平。”
+
+何志远没说话。
+
+他走到船边，掀开塑料布一角。纸箱上印着日文和英文，型号是“GR-205E”，二百零五升双门冰箱。他伸出手指敲了敲纸箱，声音闷闷的，里头确实是实心的。
+
+十二台冰箱，每台市价三千五到四千，这一船货值四五万。赵铁生把这么大一批货交给他，说明他已经没有别人可用了。
+
+“车呢？”何志远问。
+
+“没有车。”光头男人说，“阿炳那辆车被扣了。你得自己想办法。”
+
+何志远的手指僵在纸箱上。
+
+没有车，他怎么把十二台冰箱从河边运到罗湖工业区？靠扛？一台冰箱一百多公斤，十二台就是一千多公斤，他一个人就是累死也搬不完。而且河边到工业区还有十几里路，到处都是巡逻队和检查站。
+
+“赵铁生这是什么意思？”何志远的声音冷下来。
+
+光头男人摊开手：“我也不知道。他让我把货送到，别的没交代。你要是不接，我现在就把船开走，货沉河里，大家一拍两散。”
+
+何志远盯着光头男人的眼睛。那双眼睛里没有敌意，也没有善意，只有一种看热闹的漠然。他知道这人不是赵铁生的核心手下，只是个跑船的，拿钱办事，出了事第一个跑。
+
+他回头看了眼来时的路。
+
+河堤上黑漆漆的，只有风吹过芦苇的沙沙声。可何志远总觉得，那黑暗里有什么东西在等着他。也许是公安，也许是赵铁生的对头，也许是别的倒爷。只要他接了这批货，就等于把自己绑在了船上。
+
+“我接。”他说。
+
+光头男人点点头，转身朝船上喊了一声。两个穿黑衣服的年轻人从船舱里钻出来，开始把纸箱往岸上搬。冰箱比彩电沉得多，两个人抬一台，走起来摇摇晃晃。何志远也上去搭手，把一台冰箱扛到岸边一片竹林后面的空地上。
+
+十二台冰箱全部上岸，用了将近四十分钟。
+
+光头男人没再停留，跳上船，马达低低地响了一声，铁壳船悄无声息地滑进黑暗里，转眼就看不见了。
+
+何志远站在竹林后面，看着眼前这堆纸箱，脑子里一片空白。
+
+他不知道下一步该怎么办。
+
+就在这时，河堤上传来一阵汽车引擎声。
+
+不是普通货车的声音，是那种低速行驶的吉普车声音，还带着无线电的杂音。何志远浑身一僵，抓起帆布袋，闪身躲到一台冰箱后面。
+
+两道雪亮的光柱从河堤上扫下来，照在刚才卸货的岸边。光柱停了一会儿，又缓缓移动，朝着竹林方向扫过来。
+
+何志远的心提到了嗓子眼。
+
+他握紧钢筋，屏住呼吸，看着那道光柱离自己越来越近。冰箱纸箱上的“TOSHIBA”字母在光柱下一闪一闪，像十二个沉默的证人。
+
+光柱照到了他的脚尖。
+
+他下意识往后缩了缩，后背抵上一只纸箱的棱角，疼得他咬紧牙关。
+
+吉普车停了下来。
+
+车门打开，有人下车，皮鞋踩在烂泥里发出“咕唧”一声。一个男人的声音在黑暗中响起，不高，但很清楚：
+
+“何志远，出来吧。我们知道你在这儿。”
+
+何志远没有动。
+
+他的手指把钢筋攥得死紧，指节发出咯咯的声响。腰间的三千块贴肉发凉，像一块冰。他脑子里飞速转着：跑？往哪儿跑？河对岸是元朗，他不会水；往竹林深处跑，两条腿跑不过吉普车。打？对方有几个人？有没有枪？
+
+“何志远，”那个声音又响起来，带着一点不耐烦，“别撑了。阿炳都交代了。你出来，把事情说清楚，还能争取宽大处理。”
+
+何志远闭上眼睛。
+
+阿炳果然没撑住。
+
+他想起阿炳缺了半颗门牙的笑，想起他拍着胸脯说的“有事我顶着”。那些话此刻像沙子一样被风吹散了，什么都没留下。
+
+他慢慢站起身，把钢筋扔在地上。
+
+“我出来。”他说。
+
+可就在他往前迈了一步的时候，竹林深处忽然传来一声低喝：
+
+“别动！”
+
+不是吉普车那边的人。声音更近，就在他身后。
+
+何志远猛地回头。
+
+黑暗中，一个瘦高的身影从竹林里走出来，手里似乎握着什么东西，闪着金属的冷光。
+
+“何志远，”那人压低声音说，“你要是想活命，就听我的。往河边跑，船还在下头五十米的地方等着。”
+
+何志远愣住了。
+
+他不认识这个人。可对方显然认识他。
+
+吉普车那边的人听到了动静，手电光柱立刻扫了过来。瘦高男人一把拽住何志远的胳膊，把他往竹林深处拖：
+
+“跑！”
+
+何志远下意识跟着跑了两步，又回头看了眼那十二台冰箱。
+
+光柱已经照到了纸箱上。有人在喊：“那边有人！追！”
+
+他没时间再想了。
+
+他甩开瘦高男人的手，朝河边狂奔而去。芦苇抽在脸上，像无数根鞭子。他的帆布袋在腰间拍得啪啪响，三千块钱随着脚步一下下撞击着胯骨。
+
+身后，吉普车的引擎重新发动，车灯把整片竹林照得一片惨白。
+
+而河面上，那艘本该开走的铁壳船，果然还停在那里，像一只张着嘴的兽，等着他跳进去。
+
+[思考过程]
+We need write chapter 6 in Chinese. Need follow style. Output only chapter title then body. No explanations. Need around 2500 words. Need keep consistency with previous chapters, but note previous chapters 1-5 had some inconsistencies (e.g., chapter 5 changed setting to city west, old cotton mill, Liu Kesong etc). But we need maintain earlier established details: protagonist He Zhiyuan, Zhao Tiesheng, warehouse, goods, now crackdown, A Bing arrested at Buji freight station, he burns ledgers, finds refrigerators have arrived. Need incorporate previous elements: Zhao Tiesheng maybe 'old Zhao' or '老赵'; in chapters 1-4 he was Zhao Tiesheng, but chapter 5 used Zhao Tiesheng as old squad leader? Wait chapter 5 says Zhao Tiesheng is from military, now county materials bureau driver, gave 5000. That seems inconsistent with earlier Zhao Tiesheng as speculator; but the prompt says "同伙阿炳在布吉货运站被扣。何志远连夜烧掉几本账本，却发现最要紧的那批冰箱已经到岸". We should respect prompt's chapter summary for chapter 6 more than trying to reconcile all. Could keep Zhao Tiesheng / 老赵 from earlier as speculator boss; A Bing as accomplice; Buji freight station; ledgers; refrigerators. We can include He Zhiyuan's铁皮屋 in 蛇口, the crackdown atmosphere.
+
+Need narrative: Third-person limited close to He. Tense after A Bing arrested at Buji freight station. Rumors of严打投机倒把. He returns to his铁皮屋 or Zhao's warehouse, burns account books. But discovers crucial batch of refrigerators has arrived (maybe at river or freight station). Need psychological shift. Suspense at end.
+
+Need details consistent with era: 1984 Shenzhen, prices, goods, etc. Buji freight station. Maybe night, rain, neon? Need writing: robust, crisp, era texture. Use details and action, no lyricism.
+
+Let's craft a chapter with scenes:
+1. He at a noodle stall or somewhere hears crackdown rumors. Maybe news from old Zhou that A Bing detained. 
+2. He goes to Buji freight station to check, sees A Bing's tricycle, or men in制服. 
+3. Returns to铁皮屋, retrieves account books (notebooks of deals). Burns them in metal bucket in the alley. As he burns, watches pages curl.
+4. Realizes the most important batch of refrigerators has arrived: a note under door or a boy messenger, or he sees truck/ship? Need "already ashore" perhaps at Shenzhen river/warehouse. Maybe while burning, a van arrives, the driver says the refrigerator shipment is at the river. Or He had assumed it was delayed, but it is already there. Need suspense: he must decide whether to run, warn Zhao, or retrieve. End with a knock, him holding can of kerosene? Maybe the batch of fridges arrives at his door, or a boy says "goods are ashore, come now". This leaves the cliffhanger.
+
+Need around 2500 words. Let's aim 2400-2600 Chinese characters? Wait 2500 字 means words/characters? Usually 字. We'll aim ~2500 Chinese characters. Need make it gripping.
+
+Let's outline:
+
+- Evening, May? early 1984. He in 东门 or 罗湖 eating rice noodles? He hears two men talk about crackdown, "投机倒把严打". Then old Zhou runs over: "A Bing got caught at Buji freight station." Show action: he stands up, pays, goes.
+- Travel to Buji: takes truck? Buji freight station. Description: low buildings, floodlights, freight yard. Sees A Bing's bicycle/tricycle? maybe his Liberation cap. He hides. Sees a green jeep and 工商/公安. Sees A Bing handcuffed being pushed into jeep. A Bing looks at him? Or A Bing's eyes scan crowd; He steps behind oil drum. Maybe A Bing has his notebook? Risk.
+- Returns. He goes to warehouse where ledgers hidden. Ledgers are account books of deals: dates, quantities, buyers. He must burn them before police search. Also retrieve stash money. But the most important fridge shipment is due. He thinks it's not until next week.
+- At铁皮屋/warehouse, he builds fire in a metal barrel using kerosene, burns notebooks page by page. Details: flames lick paper, numbers disappear, red fingerprints of IOUs curl. He is sweating.
+- After burning, he goes back inside, checks hidden money (the 4500?). Door creaks. A note? Actually while burning, a small truck with covered cargo arrives; driver says "Are you He Zhiyuan? The refrigerators from Old Zhao are ashore." Or a boy messenger: "Goods at old ferry, tonight, don't miss." He realizes it's the batch that A Bing was supposed to receive; if he doesn't move it, it sits. He has no A Bing, no driver. He must decide.
+- Maybe end: He picks up a steel rebar / knife, money, and walks out into dark; or police arrive and knock. The prompt says "却发现最要紧的那批冰箱已经到岸" and "第10章末尾留下悬念，不要收束所有线索" but for chapter 6 ending suspense: He burns ledgers then finds fridges arrived; he looks at the packed truck, hears sirens approaching, he grabs a crowbar? Better: He is burning ledgers when a kid slides note: "Bing哥被扣，货已到岸，七号仓". He realizes he's trapped. Chapter ends with him standing by the burning barrel, holding the note, as men approach at alley mouth. Or open door and find fridge boxes already in his铁皮屋? Let's think.
+
+Need "最要紧的那批冰箱已经到岸" means the crucial batch of fridges has reached shore. Maybe He has hidden them at Shenzhen river? But after burning ledgers, he discovers they have arrived—maybe the delivery note. He may have to choose: abandon goods, or move them and risk arrest. Good suspense.
+
+Let's integrate A Bing: A Bing is an accomplice, perhaps younger, introduced? He wasn't in previous chapters. But prompt says 同伙阿炳. We can introduce him through flashback or interaction? The chapter summary itself introduces him. We can mention he was the barefoot boy messenger? In earlier chapters, a boy delivered notes. Could be A Bing. He could be the one arrested. Maybe He and A Bing are partners in small-time; A Bing handled freight station. We'll show He's reaction: A Bing's arrest means everything is exposed.
+
+Need keep protagonist consistent: 26, from Hengyang, former repairman, practical, cautious but pushed. The era leaves him no way out. Show internal: he calculates money, realizes if A Bing talks, he's done; if he runs, loses everything; if he takes fridge shipment, maybe can buy his way out? He has no good options.
+
+Let's write with concrete details:
+- Buji freight station: a concrete yard with weighing scales, stacks of gunny sacks, forklift idle, a green 212 jeep, men in white short-sleeve uniforms with red armbands (工商行政管理人员?), dark blue trousers. The station master office has a fan spinning. 
+- A Bing maybe wearing a white vest, hands cuffed behind, head down, being shoved into jeep. A crate of radios/TVs? He had ledgers? 
+- He hides behind a pile of scrap metal; smells diesel, raw pork from refrigerated car. 
+- Return: hitches on a sand truck or takes the last minibus? It costs, but he has no choice? Maybe he walks to highway and flags a truck. 
+- At铁皮屋 in Shekou? Actually in chapter 5铁皮屋 moved to city west cotton mill? But earlier he lived in Shekou石棉瓦棚屋, later铁皮屋 at工业区边上. For chapter 6, keep铁皮屋 near warehouse where ledgers hidden, maybe in 蛇口的杂院? But prompt says 连夜烧掉几本账本. Let's keep a rented shack in 罗湖以北 (as in chapter 5?). To avoid contradictions, focus on current location: a tin shed in a yard. We can say this is the warehouse near Shenzhen River used to stash fridges? Let's decide: He rents a small brick-and-iron warehouse in Buji/Rural fringe, behind a metalwork shop. He hides ledgers in a false-bottomed wooden box. He burns them in the yard at night. 
+- The refrigerator shipment: twelve Hitachi/Konosuke fridges? Need model: in 1984 fridges were imported from Japan, "日立" or "东芝". Maybe "东芝 GR-185E"? Not necessary.
+
+Let's produce text. Ensure no meta comments, no summary. Start with "## 第6章 风声紧". Then body.
+
+Need word count. Let's draft around 2500 Chinese characters. We need to be careful not to exceed or be too short. Let's write roughly 2300-2600 characters. We'll count mentally; Chinese punctuation counts as characters too. We can be generous.
+
+Also ensure no process. Fine.
+
+Let's write.
+
+Body:
+
+April or May? Let's set in early summer, maybe May. But world says 1984 spring. Keep spring. Maybe late April. It rains.
+
+Scene 1: At a stall, 老周 comes.
+
+Detailed: He is eating rice noodle roll? Actually he no longer sells; he works for Zhao. He is at a 大排档 near 罗湖汽车站, eating 牛腩粉 for 8毛. The radio in stall plays news about "严厉打击经济领域违法犯罪活动". Old Zhou arrives, face ashen, says A Bing got caught at Buji freight station. He says "工商、公安联合行动，带走了人，也带走了三本账". He leaves immediately.
+
+Scene 2: Buji freight station. He goes there not to rescue but to see if goods were seized. He reaches around 8pm. Yard has sodium lights. He sees A Bing, handcuffed, pushed into a green jeep. A carton of Panasonic color TVs? Actually Buji freight station for refrigerators? The batch might be there. He sees the truck with "粤B" plate, cargo covered with canvas. The police seal it. He slips away.
+
+Scene 3: He returns to his铁皮屋 by hitching a sand truck. He retrieves ledgers from a hole in wall/under floor. Ledgers: three cloth-bound notebooks with entries: dates, tons, names, red fingerprints. Also IOUs. He burns them in a kerosene drum. As flames rise, a boy arrives? Better: after burning, he checks water barrel? He finds a note: "货已到岸，老地方，速来。" But he doesn't know if it's a trap. Then a knock. He opens to find a small truck driver: "阿炳让我送来的，十二台冰箱，从河上刚下来的，再不走边防要来了." Wait, A Bing arrested, so driver sent by someone else? Could be Zhao's man. 
+
+Or while burning, he hears a truck engine in alley. He sees a covered truck; the driver is looking for him. The tailgate opens, revealing twelve carton fridges. The driver says "姓赵的让你收一下，船提前到了，阿炳联系不上". He realizes A Bing was arrested because he went to receive this shipment.
+
+He stands there, holding a half-burned page, knowing if he accepts the goods he is caught; if he refuses, he owes Zhao and loses deposit. End with headlights sweeping the alley—maybe a police patrol. He yells at driver to back in; or he runs.
+
+Let's keep suspense: He burns ledgers, then finds fridge shipment already at his door. He must decide. End with him stepping toward the truck, or a voice from the dark "何志远，站着别动". But prompt: "第10章末尾留下悬念" is global, not chapter 6; chapter 6 can end with cliffhanger. Fine.
+
+Let's ensure the chapter title included.
+
+Let's write with detail and action. I'll compose in Chinese, maintaining tone.
+
+Potential issue: Need not include any content about the AI, no extra. Only output title + body.
+
+Let's draft now.
+[/思考过程]
+
+## 第7章 兄弟的账本
+
+铁壳船的马达声压得很低，像只病牛在喘。何志远趴在船舷上，河水腥气一个劲往鼻子里钻。他右手还攥着那只帆布袋，袋里的钢筋和电工刀硌着掌心，腰上缠着的三千块钱被汗浸透，贴着皮肉发凉。船尾没有灯，只有对岸深圳工地上的探照灯偶尔扫过来，把河面照成一条灰白的路，又倏地移走。
+
+开船的是个后生，十七八岁，戴一顶洗得发白的军帽，一句话不说。何志远没见过他。那个在竹林里拽他跑的瘦高男人没有上船，只在岸边推了他一把，转身又钻进黑暗里，像条鱼滑回水里，连脸都没看清。
+
+船没有往下游去，而是贴着元朗那边的岸，绕了一个大弯，又折回深圳一侧。何志远不知道这是要去哪儿。他也不敢问。他只知道身后那十二台东芝冰箱已经落到公安手里，阿炳也落了网，而自己像只被扔上案板的鱼，鳃还在张，血已经往外渗。
+
+约莫半个钟头，船在一处废弃的砖码头边停下。码头只剩半截，水泥板塌了一半，露出里头的红砖头。岸上有棵大榕树，树冠把天都遮住，树下停着一辆没有牌照的嘉陵摩托车。
+
+“到了。”后生出声，是潮汕口音。
+
+何志远跳下船，烂泥没到脚踝。他回头看了一眼，铁壳船已经掉头，马达声渐渐消失在河面上。
+
+榕树下站着一个人，正在抽烟。火光一亮，照出赵铁生那张瘦长的脸，左眉到颧骨的疤像一条白蛇。
+
+“冰箱没了？”赵铁生问。
+
+“没了。”何志远说，“公安追到河边，十二台全落在竹林后头。”
+
+赵铁生没说话，只把烟头往地上一扔，用脚慢慢碾灭。碾了四五下，才开口：“人呢？”
+
+“就我一个。”
+
+“老吴没露面？”
+
+“没有。”
+
+赵铁生点点头，像是松了口气，又像是早就料到。他转身朝榕树后头走：“跟我来。”
+
+树后是一排废弃的砖瓦房，原是早年养蚝人的棚屋，现在墙皮剥落，窗洞用木板钉死。赵铁生推开其中一间的门，里头点着一盏煤油灯，灯芯捻得很小，火苗只有黄豆大。地上摆着两只木箱，箱盖上放着一只黑色人造革包，黄铜扣子擦得发亮——何志远认得这只包，批文、批条、钱，赵铁生从不离身。
+
+“坐。”赵铁生用脚把一只倒扣的塑料桶踢过来。
+
+何志远没坐。他站在门口，手还扶着门框，眼睛在屋里扫了一圈。墙角堆着几捆麻袋，散发着鱼腥味；一只铁皮炉子上坐着铝壶，水已经烧干了，壶底结着一层白垢。屋里没有床，只有一块铺在地上的草席，席上有一床薄被，卷成一团。
+
+“阿炳的事，你知道多少？”赵铁生从木箱上拿起那只人造革包，抱在怀里，像是抱着一个孩子。
+
+“老周说，他在布吉货运站被扣了，账本抄了三本。”
+
+“三本。”赵铁生冷笑一声，“阿炳那小子，识字不多，记账倒记得勤快。”
+
+何志远没接话。他看着赵铁生从包里摸出一只皱巴巴的烟盒，抖出一根，又摸出一盒火柴。火柴是廉价的“工农”牌，一盒两分钱。赵铁生的手指很细，指节突出，划火柴时手稳得像机器。
+
+“志远，”赵铁生吐出一口烟，声音忽然放软，“你跟了我几个月了？”
+
+“四个月。”
+
+“四个月。”赵铁生重复了一遍，“四个月里，我亏待过你没有？”
+
+何志远想了想，摇头。
+
+“第一单钢材，你拿了一千五。彩电那趟，你拿了两千。你那三千本钱，我一分没动。”赵铁生掰着手指，像在算一笔明白账，“这行情里，哪个老板能对跟班的这么仗义？”
+
+何志远还是没说话。他知道赵铁生不是在问他，是在给他铺一条路。
+
+“现在阿炳出事了。”赵铁生把烟叼在嘴角，眯着眼看他，“布吉那边抄了账本，阿炳知道的不多，可他知道下一单。下礼拜从文锦渡进来的一批集成电路，指标是阿炳联系的，收货单上写的是他的名字。公安现在就在查这条线。”
+
+何志远的心跳了一下。
+
+“这批货，得有人顶下来。”赵铁生把烟从嘴边取下，在木箱沿上磕了磕灰，“你把阿炳那单顶了。批文我用你的名头重开，收货人换成你。阿炳进去以后，咬死他什么都不知道，就是个开车的。货送到，钱照分，阿炳那份，我先替他收着，等他出来。”
+
+何志远盯着赵铁生的眼睛。那双眼睛在煤油灯下泛着黄光，没有波澜，像在谈一筐虾的价钱。
+
+“为什么是我？”何志远问。
+
+“因为你干净。”赵铁生说，“你没单位、没户口、没家小。出了事，牵连最小。再说——”他顿了顿，把烟往地上一扔，“你讲义气。老周跟我说，你在衡阳老家，工友得了急病，你把自己三个月工资全掏了。这种人，我信得过。”
+
+何志远觉得喉咙里像是卡了一口痰。他想说那三百块工资是他爹的抚恤金里省出来的，想说他当时是因为那工友替他挡过一次机器。可他说不出口。这些话在赵铁生面前，轻得像屁。
+
+“我要是顶了，进去呢？”他问。
+
+“不会进去。”赵铁生摆摆手，“批文是真的，指标是真的，收货单位也是真的。就算查到，也就是手续不全，罚点款，关几天。我找人，两三天就能出来。”
+
+“那阿炳怎么没出来？”
+
+赵铁生的脸色变了一下，很快又恢复。他弯下腰，把那只人造革包放到木箱上，手按在包上：“阿炳不一样。那小子贪，自己吞了买路钱，把人得罪了。他那是活该。”
+
+何志远没有错过赵铁生说这话时手指的动作。他的拇指在人造革包上轻轻摩挲了一下，那动作很轻微，像是在确认包还在，又像是在护着什么。
+
+“你让我想想。”何志远说。
+
+“行。”赵铁生站起身，伸了个懒腰，“我去外头撒泡尿。你想清楚。这单你要不接，阿炳就全完了，咱们这一窝都得散。你接了，就是救了大家，往后在深圳，你何志远就是我赵铁生的兄弟。”
+
+他说完，推门出去，脚步声在泥地上远了。
+
+何志远站在屋里，听着那脚步声消失。煤油灯的火苗跳了一下，屋里暗了一瞬，又亮起来。他的目光落在那只黑色人造革包上。
+
+赵铁生从不让他碰这只包。每次交货、分钱，包都在赵铁生怀里，拉链只拉开一半，钱和批文从里头掏出来，又塞回去。何志远只知道这只包很沉，里头的钱和纸，比人命还重。
+
+他走到木箱前，低头看着那只包。黄铜扣子在灯光下发着温润的光。他伸手，指尖碰到包的表面，人造革已经磨得发软，边角有一道裂口，露出里头灰色的衬里。
+
+他想起那天晚上在贺德昌办公室门外，门缝里塞进来的纸条：“贺德昌收了电视，也收了你的钱。快跑。”又想起另一条：“电视是饵。”
+
+他还想起赵铁生每次分钱时，总是一只手按着包，另一只手把钱递出来，从不让他看包的里面。
+
+何志远把包的黄铜扣子拨开。
+
+包里很满。最上面是一只牛皮纸信封，封口用浆糊粘着，鼓囊囊的，不知道装了什么。他掀开信封，底下是一叠批文和介绍信，红章叠着红章，像几块凝固的血。再底下，是一本黑色塑料皮的笔记本，三十二开，封面角上卷了毛。
+
+他把笔记本抽出来。
+
+翻开第一页，是一行钢笔字，字迹工整，带着几分秀气，不像赵铁生那种粗人写的：
+
+“一九八四年三月起账。”
+
+何志远蹲下去，把煤油灯往跟前挪了挪。
+
+第一页记着钢材那单：
+
+“四月七日，6.5线材贰拾伍吨。进价伍佰贰拾元/吨，合计壹万叁仟元。出货价壹仟肆佰元/吨，实收叁万伍仟元。付何志远壹仟伍佰元，付老吴伍佰元，付贺德昌电视壹台折壹仟陆佰捌拾元、现金伍佰元。落账壹万玖仟叁佰贰拾元。”
+
+何志远盯着那行字，眼前一阵发黑。
+
+他以为那单自己拿了一千五，已经不少。可账本上写着，赵铁生一个人落账近两万。那两万是从差价里抠出来的，是从批条里榨出来的，也是从他何志远的汗水里漏过去的。
+
+他翻到下一页。
+
+“四月十七日，松下彩电贰拾台。香港拿货捌佰元港币/台，折人民币合计约贰万肆仟元。出货价贰仟捌佰元/台，实收伍万陆仟元。付何志远贰仟元、还本叁仟元，付船上伍佰元，付胖子提成壹仟元。落账贰万柒仟伍佰元。”
+
+再下一页：
+
+“五月三日，东芝冰箱壹拾贰台。香港拿货……实收……”
+
+这一行没有写完，墨迹还新，只写到“实收”两个字，后面空着，像一张没填完的死亡证。
+
+何志远的手开始发抖。他继续往后翻。账本的后半部分记得更细，不是货，是人：
+
+“阿炳，份子应得叁仟元，暂扣。”
+
+“老周，介绍费应付伍佰元，暂扣。”
+
+“贺德昌，第二批电视定金壹仟元，已收。”
+
+“刘科长，钢材指标费贰仟元，已付。”
+
+每一页底下都有一条“落账”，数字或大或小，加起来已经有七八万。而在这些数字旁边，偶尔会出现几个名字，被红笔圈住，有的打了个叉，有的画了个问号。何志远的名字出现在第三页，没有圈，没有叉，只有一行小字：“可用，胆大，无家累。”
+
+他盯着那六个字，觉得后脖颈一阵发凉。
+
+原来他在赵铁生眼里，从来不是兄弟，是一件“可用”的东西。胆大，是因为敢扛货；无家累，是因为出了事没人找他。
+
+门外传来脚步声。
+
+何志远猛地合上账本，心跳得像擂鼓。他看了一眼门口，又看了一眼手里的账本。他不能放回去——赵铁生马上就会进来，一旦发觉他翻过包，他走不出这间屋子。可他也不能带走——包空了，赵铁生一眼就能看出来。
+
+他飞快地把账本塞回包里，把信封和批文照原样盖好，扣上黄铜扣子。然后他从自己怀里摸出那张一直带在身上的烟盒纸——上面是他凭记忆抄下的“电视是饵”四个字——揉成一团，塞进包的角落里。
+
+他刚直起身，门就被推开了。
+
+赵铁生走进来，身后还跟着一个人。是老周。
+
+老周的脸色比在外面时更灰，汗衫换了一件，但前襟还是湿的。他看见何志远，眼神躲了一下，随即又盯住地面。
+
+“想好了吗？”赵铁生问。
+
+何志远把手从包上移开，垂到身侧。他感觉到自己的指尖还在抖，于是把手插进裤兜，用力攥成拳头。
+
+“想好了。”他说，“我顶。”
+
+赵铁生脸上露出笑容，那种没有温度的笑。他走过来，拍了拍何志远的肩膀：“好兄弟。我就知道你讲义气。”
+
+他从木箱上拿起那只人造革包，抱回怀里，手按在包上，拇指习惯性地摩挲了一下。
+
+何志远的目光落在那只手上。
+
+“今晚你先在这儿歇着。”赵铁生说，“明天一早，老周带你去见一个人。文锦渡那边的关系，得重新接上线。批文我今晚就改。”
+
+“见谁？”何志远问。
+
+“阿炳的上线。”赵铁生说，“一个在海关做事的。本来这事该阿炳自己去，现在你去。记住，少说话，多看眼色。他把条子给你，你就回来。”
+
+老周在一旁开口，声音沙哑：“志远，赵老板这是抬举你。你好好干。”
+
+何志远没有看老周。他看着赵铁生怀里那只包，忽然觉得那包像一只熟透的果子，外头光鲜，里头爬满了虫。
+
+“知道了。”他说。
+
+赵铁生从包里掏出一只信封，递过来：“这是五百块，明天打点用。不够再找我。”
+
+何志远接过信封。信封是干的，里头钞票硬挺。他知道这五百块只是诱饵，就像贺德昌桌上那台日立彩电。
+
+赵铁生和老周转身往外走。到门口时，赵铁生忽然停下，回头看了何志远一眼。
+
+“对了，志远，你那本账——自己烧了吧？”
+
+何志远的心猛地一紧。他面上没动，只点了点头：“烧了。”
+
+“烧了好。”赵铁生说，“这行里，纸比人短命。记住，往后你的账，我替你记着。”
+
+门吱呀一声关上，脚步声远了。
+
+何志远站在煤油灯下，听着外头摩托车的引擎声发动，又远去。他慢慢松开裤兜里那只攥得发麻的拳头，掌心已经被指甲掐出四个月牙。
+
+他走到木箱前，把赵铁生给的那只信封放下。他没有打开。
+
+然后他从自己帆布袋里摸出那根钢筋，又摸出电工刀，一起放在木箱上。刀身很短，刀刃上有锈，但在灯光下还是能照出人影。
+
+他想起账本最后一页，赵铁生用红笔圈住的几个名字。阿炳的名字被圈了两道，旁边写着“可弃”。老周的名字打了个问号。而他自己的名字底下，那六个字像六枚钉子：
+
+“可用，胆大，无家累。”
+
+何志远把电工刀握在手里，刀柄上的塑料被体温焐热。他走到门口，把耳朵贴在门板上。外头没有声音，只有远处深圳河的水声，一下一下，拍打着岸。
+
+他忽然很想笑。
+
+赵铁生说讲义气。可讲义气的价码，是让他去顶阿炳的单，去填赵铁生自己吞下去的那本账。而赵铁生怀里的账本，把每一个人的命都标了价，连“兄弟”两个字都能论斤卖。
+
+他把刀插回帆布袋，又从怀里摸出那张烟盒纸——刚才他塞进赵铁生包里的，其实不是原来那张，而是他在翻开账本时顺手撕下的一角，上面只有半行字：
+
+“……实收叁万伍仟元。付何志远壹仟伍佰元……”
+
+他把这角纸凑到煤油灯上，看着它卷起、变黑，最后变成灰烬落在地上。
+
+就在这时，门外又响起了脚步声。
+
+不是赵铁生的塑料凉鞋，也不是老周的布鞋。是皮鞋，硬底的，踩在泥地上发出沉闷的声响。不止一个人。
+
+脚步声在门外停住。
+
+何志远吹灭煤油灯，屋里顿时一片漆黑。他摸到墙根，把身子缩进那堆麻袋后面，右手握住了电工刀。
+
+门板上传来三声敲门声，不紧不慢。
+
+然后一个男人的声音在门外响起，不高，但字字清楚：
+
+“何志远，开门。我们是宝安县公安局的。”
+
+何志远没有应声。他听见自己的心跳声在黑暗里回荡，像有人在胸腔里抡锤。
+
+门外那人又说了一句：
+
+“赵铁生已经把你供出来了。再不开门，我们踹了。”
+
+何志远的手指攥紧刀柄。他的目光落在地上那堆刚烧尽的纸灰上，忽然想起赵铁生出门时按在包上的那只手。
+
+那不是怕他发觉。
+
+那是已经把账本换了地方。
+
+何志远慢慢站起身，把电工刀插回袋中。他走到门口，深吸一口气，拉开门闩。
+
+门外站着三个人。两个穿蓝色警服，一个穿白色工商制服。手电光柱打在他脸上，刺得他睁不开眼。
+
+“何志远？”
+
+“是我。”
+
+“跟我们走一趟。”
+
+何志远没有动。他回头看了一眼屋里，煤油灯已经灭了，可他知道那只黑色人造革包不在这里——赵铁生走的时候，把它带走了。
+
+而赵铁生刚才说的“你的账，我替你记着”，此刻像一根细线，慢慢收紧，勒进他的肉里。
+
+[思考过程]
+We need write chapter 7 of a Chinese novel. User wants only the chapter body, starting with markdown heading "## 第7章 兄弟的账本". Must continue previous chapters. Summary: Old Zhao (Lao Zhao) wants He Zhiyuan to take over Ah Bing's order, claiming it's loyalty/righteousness. He Zhiyuan finds Lao Zhao's private ledger showing embezzlement; trust between brothers begins to crack.
+
+Need produce narrative, tight, period detail 1984 Shenzhen, third-person limited close to He Zhiyuan. Language: solid, crisp, era texture. No lyricism. Include suspense, details, psychology. Word count 1500-99999. Aim around 2500 maybe. Need keep consistency with prior chapters. Need handle names: Lao Zhao is Zhao Tiesheng? Wait prior chapters named 赵铁生 (Zhao Tiesheng). User summary says 老赵 (Lao Zhao) - yes same. Ah Bing is 阿炳. Need maintain He Zhiyuan's current situation: at end of chapter 6 he ran from a jeep at old ferry, guided by a thin tall man unknown, jumped onto a boat presumably. We need continue: chapter 7 should likely begin with him on the boat, then meeting Lao Zhao. We need ensure not resolving all threads; leave悬念.
+
+Need construct events: He on boat escapes? Who is thin man? Maybe reveal later not fully. He returns to Zhao, who pressures him to take Ah Bing's order (probably a shipment/order/contract). He discovers Zhao's private ledger hidden maybe in black artificial leather bag, records Zhao skimming money. He realizes Zhao not as brotherly.
+
+Need ensure period plausibility: prices, wages, ration tickets, locations. Shenzhen 1984. Include details like Shenzhen River, customs, smuggling, documents.
+
+Need include no writing process, summary, explanation. Output only chapter. We must be careful no meta comments.
+
+We need write full chapter. Let's think of structure:
+
+- Start: On the iron-hull boat, outboard motor low, river dark. He Zhiyuan panting, the thin tall man also aboard? Or just tells him to run, then disappears. Boat takes him downstream. He clutches bag, 3000 yuan. Boatman is maybe Ah Qiang? Unknown. They go to a hidden dock near Shekou? They arrive at an abandoned fish pond/warehouse.
+
+- He meets Zhao Tiesheng in a dim warehouse. Zhao appears calm, smokes. He asks about the fridges (12 Toshiba). He tells He that the police took the fridges. Actually maybe He didn't get them. Lao Zhao already knows. He blames He? Or says Ah Bing's matter requires someone to take the order to protect brothers. "You take Ah Bing's share/order, that's loyalty."
+
+- He Zhiyuan suspicious. He recalls the note "TV is bait". He watches Zhao's artificial leather bag. Need find ledger. Maybe he notices Zhao counting money, a black notebook falls out or hidden in bag. When Zhao steps out to piss, He searches. Or ledger is in warehouse crate. It records each deal: steel 25t profit, TV shipments, etc, with actual prices vs what Zhao told He; shows Zhao skimmed. For example steel deal actual buyer paid maybe more, He only got 1500; Zhao recorded kept extra. Or Ah Bing's cut was swallowed.
+
+- He reads entries: "6月3日，线材25吨，实收叁万伍仟，付何志远壹仟伍..."; "彩电十八台，实收五万二，付何贰仟..."; "阿炳份子扣..."; reveals Zhao has been cheating everyone. Also entries of bribes to officials. The summary says 老赵私下吞钱的账本.
+
+- Psychological shift: He realizes the "brother" relationship is transactional; Zhao uses loyalty rhetoric to make him take fall. He feels anger, fear, but hides. He must decide whether to confront or play along. End with suspense: maybe police arrive, or Zhao returns and catches him with the ledger, or He makes a decision to use ledger as leverage, but door opens...
+
+Need ensure not resolving all threads. End with suspense.
+
+Let's craft with detail and pacing. Need around 2500 words. Let's write rich sensory details.
+
+Important: Chapter heading exactly "## 第7章 兄弟的账本". Then text.
+
+Need avoid any prose about author. Let's start.
+
+We need ensure names and references consistent:
+- He Zhiyuan: 何志远
+- Zhao Tiesheng: 赵铁生 (Lao Zhao)
+- Ah Bing: 阿炳
+- Old Zhou: 老周
+- Liu Shuigen? Not needed.
+- Settings: Shenzhen River, Shekou, Luohu, etc.
+- Time: 1984, after Ah Bing arrested.
+
+Let's consider timeline: In ch6, He at old ferry (upstream) after receiving note "冰箱已到岸，老渡口，速来。赵。" He arrives, a光头 unloads 12 fridges. Then jeep arrives. A thin man tells him run. He runs to boat. So at start ch7, he is on boat. The fridges left behind, police got them. He escaped.
+
+He likely returns to an old warehouse in Shekou? Maybe the boat takes him to a muddy landing near Nantou or Shekou. He meets Zhao in a brick shed. Need plausible.
+
+Let's write.
+
+Scene 1: Boat. Iron hull, no lights, engine throttled. The man steering maybe a teenager in a baseball cap? He asks no questions. He Zhiyuan sits on a gunwale, wet, clutching bag. The tall man who saved him is not on boat? He looks back, no one. He has escaped. They pass under a bridge (Shenzhen Bay? Lo Wu bridge?). On shore, neon and searchlights. They land at a broken wharf under a banyan.
+
+Scene 2: Walks to warehouse. Meets Zhao. Zhao lights a cigarette, asks "冰箱呢？" He says left behind. Zhao not angry? Actually if police got them, Zhao lost. But Zhao is calm because maybe he planned it. He says "阿炳那边扛不住了，公安在找他开口。我得保他。" Then he tells He: "你那单，阿炳的货，你顶下来。" He asks what order: maybe a shipment of integrated circuits /批文 from Wenjindu due tomorrow, the one that would incriminate. Zhao says "讲义气" — taking it protects Ah Bing and brothers. He says "你一个人，没户口没单位，出事也牵连不到大家。进去蹲几年，出来我养你一辈子。"
+
+He feels sick. He remembers "电视是饵". He agrees outwardly. Zhao gives him a beer? They drink. Zhao goes out to piss or to meet someone.
+
+Scene 3: He sees Zhao's black artificial leather bag (the one with brass buckle) left on a wooden crate. He debates, then opens. Inside: a brown notebook, not the business ledger he burned. He opens. Columns: date, item, actual receipt, payments to others, "落账" (pocketed). It shows:
+- Steel: actual buyer paid 35,000, He got 1,500, Zhao recorded "落33300"? Wait if cost? Need plausible. The steel deal: cost 520/t *25 =13,000. Buyer paid 1400/t*25 =35,000. Profit 22,000. He got 1,500. So Zhao kept ~20,500 maybe split with others. But ledger might show actual buyer paid more or Zhao pocketed He and Ah Bing shares.
+- Color TVs: actual receipt 52,000, He got 2,000 plus capital 3,000. Cost maybe ~18,000. Profit 34,000. Zhao kept most.
+- Ah Bing's share: "阿炳份子 叁仟，扣。" etc.
+
+He sees entries of bribes: 贺德昌 TV 1680, plus cash 500; "送刘科" etc. The ledger reveals Zhao has private stash.
+
+Scene 4: Zhao returns; He quickly closes bag. Or maybe He is still reading when he hears footsteps. He shoves notebook back? Let's make suspense: He hears footsteps, not Zhao's plastic sandals but leather shoes? He hides ledger in his own bag? Or leaves. End: door opens, silhouettes; not Zhao but two men; or Zhao returns with police? Or He confronts Zhao holding ledger and a knife? The summary says trust begins to crack; perhaps not full confrontation. We can end with He realizing the choice ahead, and a knock at door, leaving uncertainty.
+
+Need ensure no resolution.
+
+Let's create a tense ending: He hides the ledger inside his shirt/bag. Zhao returns with Old Zhou and another man. They talk about "阿炳已经吐了，公安在找何志远". Zhao asks He to sign/accept the order. He says "行". They toast. But He now knows. The chapter ends with He noticing Zhao's eyes and the bag, and a sound of sirens in distance. Maybe he palms a switchblade.
+
+But user summary: "老赵要何志远把阿炳那单顶下来，称这是讲义气。何志远翻到老赵私下吞钱的账本，兄弟之间的信任开始崩裂。" So chapter should contain both events, and trust cracking. End with suspense but not necessarily external police.
+
+Let's structure accordingly.
+
+Now, produce text with details: 1984 Shenzhen, prices, ration coupons, wage levels. Include mention of "粮票"? Maybe he hasn't eaten. Include weather hot humid, mud, mosquitoes. Include language: Cantonese phrases? Keep Chinese.
+
+Let's write chapter. Need around 2500 Chinese characters? Actually target 2500 words (字). We can write ~2500-3000 characters. We must ensure >1500. Let's aim 2800 characters.
+
+We need include some internal monologue but not lyrical.
+
+Let's draft in Chinese now, in final channel.
+[/思考过程]
+
+## 第8章 二选一
+
+何志远被带到工商局投机倒把办公室时，天已经亮了。
+
+他先在县公安局的留置室里蹲了一夜。屋里没有床，只有一条长凳和一只没倒的痰盂。蚊子在耳边嗡嗡地飞，他一夜没合眼。天亮后，两个穿蓝制服的警察把他带出来，塞上一辆绿色的北京吉普，开了半个钟头，交到两个穿白工商制服的人手里。白制服没给他戴手铐，只让他坐在办公室外头的长条木椅上，椅面被汗浸得发黑。
+
+办公室在二楼，走廊尽头。墙上贴着一条红纸标语，墨汁还没干透：“严厉打击投机倒把活动，维护社会主义经济秩序。”旁边是一块小黑板，上面写着今日市价：猪肉一斤一元二角八，鸡蛋每斤九角六，外汇券一比一点八。何志远盯着那块黑板看了一会儿。四个月前他卖肠粉，一碗粉一毛五；现在他坐在这里，腰里的三千块钱已经被搜走，当“赃款”扣下。
+
+走廊里有三台吊扇，有一台不转，另外两台摇头时发出咔咔的声响，像老头咳嗽。何志远坐在两台吊扇中间的死角里，汗顺着后颈往下淌，把衬衫领口浸出一圈黑印。他的帆布袋和电工刀被收走了，身上只剩一条裤子和一件衬衫，衬衫口袋里还有半包揉皱的经济烟。
+
+九点刚过，一个穿白短袖衬衫的中年男人从办公室里走出来，手里拿着一只搪瓷杯，杯子上印着“先进工作者”。他四十来岁，皮肤白，眼镜腿用胶布缠着，腋下两块汗渍已经发黄。他在何志远面前站定，低头看了他一眼。
+
+“何志远？”
+
+“是。”
+
+“进来。”
+
+办公室不大，一张三屉桌，两把藤椅，墙上挂着一幅深圳经济特区地图。窗户朝西，窗框上焊着铁栅栏。一台“蝴蝶牌”电风扇在桌上摇头，吹得满桌子的纸哗啦响。中年男人坐到桌子后面，从抽屉里摸出一个铝制烟盒，打开，抽出一根“大前门”扔过来。
+
+“抽。”
+
+何志远接住烟，没点。他的手是干的，指节处还留着昨晚攥电工刀时磨出的红印。
+
+“我叫陈维民，投机倒把办公室的。”中年人自己点上一根，把打火机往桌上一撂，“赵铁生，认识吧？”
+
+何志远没应声。
+
+“老赵，赵老板，眉毛上有道疤。”陈维民吐出一口烟，“别装。我们在他包里搜出一张单子，上头有你的名字。还有阿炳，阿炳你总认识吧？那小子现在还在号子里哭呢。”
+
+何志远把烟夹在耳朵后面，抬起头：“找我什么事？”
+
+陈维民笑了一下，不是和善的笑，是看见鱼已经进了网的那种笑。他从抽屉里拿出一个牛皮纸档案袋，往桌上一拍，抽出几页纸。
+
+“看看。”
+
+何志远接过那几页纸。纸是油印的，最上头印着“讯问笔录”四个字，底下是密密麻麻的仿宋字。他先看落款，落款处已经签了一个名字，字迹歪歪扭扭，但他一眼就认出是赵铁生的笔迹。
+
+“本人赵铁生，男，四十一岁，无业……”
+
+何志远没有继续往下看。他的目光停在中间一段：
+
+“……何志远系经人介绍主动找上本人，要求参与倒卖钢材及进口电器。其负责接货、送货、收钱，所得利润由何志远提议平分。本人仅提供信息，未直接参与搬运及销售……”
+
+他的手抖了一下。纸页发出轻微的哗啦声。
+
+陈维民靠在椅背上，把双脚跷到桌沿：“看明白了？老赵把锅全扣你头上了。阿炳那本账也记着你，四月七号钢材，四月十七号彩电，五月三号冰箱。每一笔都清楚。按这个数，够判你个十年八年。”
+
+何志远把纸页翻过来，继续看。赵铁生的供述后面，还附着另一份东西，是一份已经拟好的“补充说明”，空白处留着签名和按手印的位置。
+
+“这是什么？”
+
+“给你的机会。”陈维民把脚放下来，身体前倾，隔着桌子盯着何志远，“这是另一份口供。你签了，就说你本来就是外地盲流，被赵铁生蒙骗、胁迫，参与倒卖国家计划物资和走私电器。赵铁生是主犯，你是从犯，赃款大部被赵铁生拿走。你签个字，按个手印，明天就能出去。”
+
+何志远看着那份口供。字印得很清楚，连标点符号都像是早就想好了的：
+
+“……本人何志远，在赵铁生威胁利诱下，为其搬运、销售走私电器，从中获取少量报酬。本人现已认识到错误，愿意揭发赵铁生等人的违法犯罪事实，争取宽大处理……”
+
+陈维民又从抽屉里摸出一只印泥盒，红色的，盖子已经裂了。他把印泥盒推到何志远面前。
+
+“签吧。小何，你还年轻，不要替人扛。赵铁生那种人，出了事第一个卖的就是兄弟。阿炳替他跑了多少趟，他说弃就弃。你替他扛，值不值？”
+
+何志远没有看印泥。他盯着桌上的电风扇，扇叶转得飞快，把陈维民吐出的烟吹散，又聚拢，再吹散。
+
+他的脑子也在转。
+
+赵铁生真的把他供了。这他并不意外。在养蚝棚那间屋里，他翻开赵铁生的黑皮账本，看见自己的名字底下写着“可用，胆大，无家累”六个字时，他就知道自己在赵铁生眼里是什么东西。一件趁手的工具。工具用完了，脏了，就可以扔。
+
+可要他签这份口供，把赵铁生指成主犯，他也没有那么痛快。
+
+不是因为他讲义气。
+
+是因为他知道，赵铁生在外头还有人。老吴、胖子、河上的船家、罗湖工业区七号仓库那些人，甚至工商局里头也许都有人收过赵铁生的电视。他今天签了字，明天走出这扇门，未必能活到后天。
+
+“我要是签了，”他开口，声音有点哑，“赵铁生会怎样？”
+
+陈维民耸耸肩：“该怎么处理怎么处理。主犯，数额巨大，又是投机倒把又是走私，够他喝一壶的。”
+
+“那我会怎样？”
+
+“你？”陈维民把烟头摁灭在一只铁皮烟灰缸里，烟灰缸是用“麦乳精”罐头盒改的，“罚款，退赃，拘留几天，教育释放。运气好的话，连案底都不留。”
+
+何志远沉默了一会儿，又问：“我要是不签呢？”
+
+陈维民笑了，笑里带着点可惜的意思：“不签，那就按赵铁生说的办。你是主谋，他是从犯。钢材、彩电、冰箱，加起来六七万，够你把牢底坐穿。再说了——”他压低声音，像是要说什么贴心的悄悄话，“你签了，你那三千块钱还能还你一部分。你不签，连本带利全没收，还要补罚款。你一个小青年，有多少钱够罚？”
+
+何志远的手指在膝盖上蜷了蜷。
+
+三千块。那是他卖三轮车、卖蒸屉、卖米粉，一毛钱一毛钱攒起来的。后来跟赵铁生跑了几趟，变成四千五。昨晚被搜身时，腰里那三千块被当场扯下来，用一个牛皮纸袋封了。那是他的命。
+
+可如果他签了字，赵铁生身后那帮人也不会放过他。他不认识那些人，但他见过他们做事。深圳河上的光头男人，竹林里拽他跑的瘦高个，罗湖工业区七号仓库门口那些不说话的工人。他们都是赵铁生的影子。影子不会跟你讲道理。
+
+“给我根烟。”何志远说。
+
+陈维民把烟盒推过来。何志远抽出一根，没接陈维民的打火机，自己从兜里摸出火柴。火柴是“工农”牌，潮了，划了三根才点着。他吸了一口，呛得咳嗽起来。他已经很久没抽过这么好的烟了。
+
+陈维民不催他。他端起搪瓷杯，喝了一口茶，又翻开桌上的一本卷宗，假装在看。电风扇咔咔地转，把卷宗边角吹得卷起来。
+
+何志远又看了一遍那份口供。
+
+“赵铁生真是这么说的？”他问。
+
+“白纸黑字，还能有假？”
+
+“他人呢？”
+
+“在隔壁。”陈维民朝左边努努嘴，“比你早到两个钟头。该说的都说了，现在就差你这份口供对上。”
+
+何志远朝左边的墙看了一眼。墙是木板隔的，隔音很差，那边有人走动，地板吱呀响。他不知道赵铁生是不是真的在隔壁。也许这只是陈维民的话术。可他昨晚确实在公安局看见阿炳被押走，看见赵铁生把账本、把人造革包都带走了。赵铁生那种人，不会等公安上门，他只会先下手。
+
+“你让我想想。”何志远说。
+
+“行。”陈维民把搪瓷杯往桌上一放，“想清楚了再签。不过我可提醒你，机会不等人。外头还有人等着接你的班呢。”
+
+何志远没接话。他一口一口抽烟，抽到过滤嘴发烫，才把烟头摁进烟灰缸里。
+
+他想起了很多事。
+
+想起刚到深圳那晚，口袋里只剩六块五，在火车站的长椅上躺了一夜，旁边是一个断了腿的老人，老人枕着一只蛇皮袋，袋口露出半截发霉的馒头。想起自己卖肠粉时，每天凌晨三点起床，摇那台破磨浆机，米浆溅到脸上，干了以后像一层白皮。想起第一次扛钢材，二十五吨6.5线材，一盘一盘落进车厢，每一声闷响都像砸在他骨头上。想起深圳河对岸的元朗黑黢黢的，而这边探照灯把天空照得发白。想起赵铁生按在他胸口上的那根手指，说：“这台电视，值一千六。你今晚挣的一千五，还不够买它。”
+
+他想起那本黑皮账本。
+
+“可用，胆大，无家累。”
+
+不是兄弟。从来都不是兄弟。
+
+烟抽完了。陈维民抬头看他，眼镜片后的眼睛带着询问。
+
+何志远伸出手，指尖碰到那份口供的纸角。纸角有点卷，被汗浸得发软。
+
+就在这时，门外有人敲门。
+
+“进来。”陈维民说。
+
+一个年轻办事员推门进来，递给他一张纸条。陈维民接过来看了一眼，眉头皱了一下，又松开。他把纸条揉成一团，扔进废纸篓。
+
+“有点事，我先出去一下。”陈维民站起来，把那份口供和印泥盒往何志远跟前推了推，“你想清楚，签了就放人。不签——”他没说完，拍了拍何志远的肩膀，转身走出去。
+
+门没有关严，留了一条缝。
+
+何志远独自坐在办公室里。电风扇还在咔咔转，把桌上的烟灰吹得满桌都是。他拿起那份口供，又看了一遍。
+
+“……本人何志远，在赵铁生威胁利诱下……”
+
+他忽然觉得这几个字很可笑。威胁？利诱？赵铁生从来没有拿刀架在他脖子上。是他会错了意，以为跟着赵铁生就能从这条河里爬上去。是他自己把腿迈进河里的。
+
+可河水太急，他现在爬不上来了。
+
+他拿起桌上的钢笔。钢笔是“英雄”牌，笔尖有点分叉，墨水是蓝黑色的。他在签名栏上方停住，笔尖悬在纸上，一滴墨水滴下来，洇出一个越来越大的圆。
+
+他盯着那个圆，看了很久。
+
+走廊里传来脚步声，由远及近，又远去。有人在低声说话，像是陈维民和那个年轻办事员。他听不清内容，只听见“赵铁生”“冰箱”“老周”几个词断断续续地飘进来。
+
+他把钢笔放下。
+
+不是不想签。是不敢签。
+
+他想起赵铁生包里的账本，阿炳名字旁边画着两个红圈，写着“可弃”。他自己的名字底下虽然只写着“可用”，但“可用”的人一旦变成“不可用”，下场不会比阿炳好到哪里去。
+
+他拿起口供，折了两折，塞进自己衬衫的内袋。他不知道为什么要这么做，也许是想留着，也许是想带出去给赵铁生看看。这个动作没有道理，但他做了。
+
+然后他站起来，走到窗边。铁栅栏把天空割成一条一条的。远处国贸大厦的塔吊还在转，红色的警示灯一闪一闪。工地上的打桩声传过来，闷闷的，像从另一个世界传来的雷声。
+
+门被推开了。
+
+陈维民走进来，看见桌上没有签名，脸色没什么变化，只是眼神冷了一点。
+
+“想好了？”
+
+“没签。”何志远说。
+
+陈维民点点头，像早就料到。他拿起桌上那份赵铁生的口供，重新装进档案袋，又看了何志远一眼。
+
+“既然你不配合，那就按程序走。先回去，明天上午再来。这段时间不要离开深圳，随传随到。”
+
+何志远愣了一下：“让我走？”
+
+“暂时让你走。”陈维民把档案袋锁进抽屉，“手续不全，还不能拘你。但你别想着跑，跑了就是畏罪潜逃，罪加一等。”
+
+何志远没有说话。他转身朝门口走，手碰到门把手时，陈维民又叫住他。
+
+“小何。”
+
+何志远回头。
+
+陈维民从桌上拿起那半包经济烟，扔过来：“你的烟。别忘了，明天上午八点。”
+
+何志远接住烟，攥在手里。烟盒已经空了，只剩一张锡纸。
+
+他走下二楼。楼梯是水泥的，扶手被无数只手摸得发亮。走廊里的吊扇还在转，投下一片片转动的影子。他走出工商局大门时，太阳已经偏西，空气里带着一股闷热的潮气，像是快要下雨。
+
+门口是一条泥沙路，路边有几棵芒果树，树下摆着几个西瓜摊。一个穿花衬衫的女人正用蒲扇赶苍蝇，见他出来，抬头看了一眼，又低下头去。
+
+何志远没有立刻走。他站在台阶上，点了一根烟，假装在看路边的招牌。他的眼角余光扫向马路对面。
+
+马路对面停着一辆黑色的上海牌轿车，车窗关着，看不见里面。轿车旁边是一个修自行车的摊子，一个穿白色汗衫的男人蹲在地上，手里拿着一把扳手，正在摆弄一只车轮。那男人脸朝着自行车，可眼睛时不时地往工商局门口瞟。
+
+何志远认得那把扳手。那是老赵的人。准确地说，是赵铁生手下一个专门“看场子”的，何志远只在罗湖工业区七号仓库见过一次，绰号叫“扳手”。
+
+他把烟叼在嘴里，走下台阶，朝东边走去。
+
+他没有回头，但能感觉到背后有一道目光黏在他身上。走了大约十几米，他拐进一条小巷。巷子里有户人家在炒菜，油烟味呛人。他放慢脚步，耳朵听着身后的动静。
+
+果然，有脚步声跟了进来，不紧不慢，保持五六米的距离。
+
+何志远继续往前走，拐了两个弯，到了一条更窄的巷子。巷子尽头是一堵墙，墙根堆着碎砖头。他假装没路了，停下来，转过身。
+
+跟踪他的人站在巷口，逆光，只能看见一个轮廓。个子不高，穿着一件洗得发白的蓝色工装，头戴一顶旧军帽。不是“扳手”，是另一个人。
+
+“何哥。”那人开口，声音有点熟。
+
+何志远眯起眼睛。那人往前走了两步，露出脸来。是老周。
+
+老周的脸色比早上更灰，眼窝深陷，像是也没睡。他左右看了看，快步走到何志远跟前，压低声音：“赵老板让我问你一句话。”
+
+何志远没应声。
+
+老周转过脸，朝巷子两头看了看，确认没人，才说：“赵老板问，那份口供，你签了没有？”
+
+何志远盯着老周的眼睛。那双眼睛里有焦急，也有一种他说不清的东西，像是在看一个即将被抬上案板的人。
+
+“签了怎样，没签怎样？”何志远问。
+
+老周舔了舔干裂的嘴唇：“签了，赵老板说你走不出罗湖。没签——”他顿了一下，“没签，你就是自己人。赵老板在北边给你留了条船，今晚十点，老渡口。”
+
+何志远笑了一下，笑里没有温度。
+
+“老周，”他说，“赵铁生真在隔壁吗？”
+
+老周一愣。
+
+“工商局的隔壁，”何志远说，“陈维民说他就在隔壁，口供都录完了。可我不信。他要真被抓了，你还能在这儿跟我说话？”
+
+老周的脸色变了一下，但很快又镇定下来：“赵老板什么路子，你还不清楚？他能进去，就能出来。你现在只要回答我，签没签。”
+
+何志远没有回答。他从兜里掏出那份折好的口供，在老周眼前晃了一下，又塞回内袋。
+
+老周盯着他的胸口，眼神闪了闪。
+
+“走吧。”何志远说，“带我去见赵铁生。”
+
+老周没动。他站在原地，脸上的肌肉绷得很紧，像是一张被水浸过的纸。
+
+“何哥，”他说，“你变了。”
+
+“没变。”何志远转身朝巷子外走，“我只是不想再当‘可用’的人。”
+
+他的脚步声在巷子里回响。老周没有跟上来。
+
+走到巷口时，何志远停下脚步，回头看了一眼。老周还站在那堆碎砖头旁边，身影被夕阳拉得很长，像一根插在泥里的竹竿。
+
+而在巷子另一头，那辆黑色的上海牌轿车不知什么时候已经停在路口，车窗摇下一条缝，一只夹着烟的手搭在窗沿上，烟灰被风吹散，落在车轮旁边。
+
+何志远把手伸进衬衫内袋，摸了摸那份口供。纸张被他的体温焐得发热，边缘已经开始卷边。
+
+他深吸一口气，走进人潮里。身后，摩托车的引擎声响了，像一只兽低低地咆哮，远远地跟着他。
+
+[思考过程]
+We need write chapter 8 in Chinese. Need only output chapter title ## 第8章 二选一 then body. Must not include any meta comments, writing process, explanation. Continue from chapter 7. Need length ~2500 words, 1500-99999. Need adhere to prior events. Let's recall prior: chapter 7 ends with 何志远 arrested? Police say 赵铁生 already sold him out. Need chapter 8: 何志远被工商局叫去问话，经办人递给他一份口供，让他指认老赵。他走出大门时，老赵的人在暗处盯着他.
+
+Note: Chapter summary says he is called by Administration for Industry and Commerce for questioning, officer hands him a statement to identify Old Zhao (老赵/赵铁生). When he walks out, Old Zhao's people watch in shadows. Need include psychological changes, suspense, details. The prompt's "故事走向" earlier says final forced choice between selling the brother who brought him into the trade and taking prison. This chapter should be the setup of that choice. Since prior chapter had police, but summary says 工商局 (maybe after police transferred to AIC?). Need consistent. We can reconcile: he was taken by public security first then transferred to AIC because economic crime. Maybe they mention x days later. Need mention events: 阿炳被捕，冰箱被查，赵铁生供出他? But summary says they ask him to identify 老赵. Could be trap? Need tight.
+
+Let's outline.
+
+Opening: He is at 工商局 somewhere (maybe宝安县工商行政管理局/罗湖?), in interrogation/smoke-filled office. He has been held maybe two days. Details: handcuffs? no, administrative questioning. He sits on bench, smell of sweat/detergent. The handler (经办人) named something? Let's create a believable officer, perhaps 李科长 or 周干事. He hands a typed statement, says sign and fingerprint, identify 赵铁生 as principal smuggler/投机倒把， then you are a victim/helper, minor, can go. If not, you carry all, possible prison.
+
+Explore 何志远's thoughts: he realizes赵铁生 likely already set him up; the statement may be fake? He reads it: says he, under Zhao's coercion/deception, participated; Zhao organized smuggling, profited; he just drove/ moved goods. Actually he profited too. Signing means betraying 赵铁生 but also maybe lying. He also recalls 老周? Maybe "老赵" could refer to 赵铁生 or another. In summary "老赵" is Zhao Tiesheng. Good.
+
+Need maintain realism: 1984 AIC, anti-speculation campaign. Smuggling electronic goods, no license. Double-track price. The officer may be local, knows the game, perhaps previously took bribes? Maybe hint he works with Zhao? Unclear.
+
+He wavers. Need detail physical: sweaty neck, handcuffs chafing, watery tea, mosquitoes, wall slogans. They might show him evidence: a confiscated ledger fragment? Actually Zhao's ledger was with Zhao. But police/AIC may have阿炳's ledger or赵铁生's statement implicating him. They mention 赵铁生 already confessed. But is that true? It could be pressure tactic. He thinks about Zhao's black ledger with names and "可弃". He understands Zhao marked him "可用，胆大，无家累". He feels anger. But also, Zhao brought him into business; if he signs, Zhao may be executed? Or long prison. If he doesn't, he takes blame, maybe 10 years? He has no family to care, only father dead? He could take it, but feels unjust. Also there is the person who saved him at river; unknown. He might think of铁皮屋、三千块钱、罗湖、蛇口的探照灯.
+
+Scene: He asks to use toilet. They allow under guard. In courtyard, he sees a green jeep, a black人造革包? Maybe not. He sees a man in shadows watching: maybe老周 or Zhao's man. He notices a motorcycle. After refusing to sign? Or he signs? Summary says he walks out and Zhao's people watch. Wait summary says he is called for questioning, handler gives statement asking him to identify Zhao. He walks out of gate, Zhao's people in dark watching him. So in this chapter he leaves AIC (maybe released on bail? or after questioning not detained). They let him go temporarily. He steps out, twilight, rain? Heat. He feels being watched. He walks through streets, sees a man in a peaked cap leaning on motorcycle (old Wu?) or老周. He doesn't confront. He returns to铁皮屋? But铁皮屋 has been searched. Maybe he has nowhere.
+
+Need chapter ends with suspense, not resolving all threads. Maybe he holds the unsigned statement? Or he signs? Actually he could walk out without signing (released pending). The watchers imply Zhao wants to know if he talked. If he did sign, Zhao's people may kill him. If he didn't, he goes to prison? The choice still unresolved. That's the suspense.
+
+But the summary says "经办人递给他一份口供，让他指认老赵。他走出大门时，老赵的人在暗处盯着他." That implies he is asked, but doesn't say whether he signed. We can end with him stepping out and seeing watcher. We can include internal monologue: he hasn't decided; he slips statement into pocket. Or he signed under duress but now feels sick.
+
+We need narrative compact with details and psychological change. Let's write around 2500 Chinese characters? The target 2500 words. In Chinese, 2500 words about 3500-4000 characters maybe. But the allowed range 1500-99999 words; maybe they count Chinese characters as words? Usually word count in Chinese is characters. We'll aim ~3000 characters to be safe. We need not be too long.
+
+Let's produce a chapter. Need no section headings except title. Style: solid, crisp, period texture. No lyricism. Use details like 搪瓷杯，铝饭盒，红头文件，电风扇，汗渍， etc.
+
+Let's think of concrete setting: 宝安县工商局投机倒把办公室，位于一栋三层旧楼，走廊贴标语“严厉打击投机倒把活动”。 Interrogation room with green paint walls, wooden desk, a “蝴蝶牌”电风扇摇头，窗上有铁栅栏，桌上玻璃板压着毛主席像？ Maybe too political but era. Use a portrait? Avoid. Maybe desk has red phone, ashtray made from铁盒盖，茶缸印着“打击投机倒把 1983”.
+
+Handler: 周干事 maybe in his forties, glasses, short-sleeve white shirt, underarm sweat stains. Name 周维民 or just “老周” no that's Zhou from earlier. Use a different surname to avoid confusion: 陈干事. He offers him 恒大烟? He says: “小何，你还年轻，不要替人扛。赵铁生不是东西，他把阿炳和你都卖了。你签了，天亮前就能走。”
+
+Evidence: They have a printed 讯问笔录， several pages, typed. It says: “本人何志远，受赵铁生（绰号老赵）指使，于1984年4月至5月间，参与倒卖国家计划内钢材及走私进口彩色电视机、电冰箱等物……赵铁生系主犯，本人仅系从犯，所得由赵铁生分配。” The blanks for him to sign and fingerprint. They may ask him to read aloud.
+
+He hesitates. He asks for water. They bring a 搪瓷杯，杯沿有茶垢. He drinks. He thinks of Zhao's ledger, his own share, the price of things. He thinks if he signs, Zhao will know; if not, he'll be the scapegoat. He also thinks maybe Zhao actually didn't sell him; it's the cops' trick. But the账本 was gone.
+
+Maybe the officer shows him a page: a photocopy? In 1984 maybe mimeograph. “赵铁生自己都交代了，你还不认？” They slide over a handwritten confession with Zhao's signature? He recognizes Zhao's handwriting? Might be forged? He reads: Zhao claims何志远主动找上门要求入股，负责接货送货，利润平分，赵只提供信息。 This would shift blame to何. This is what Zhao “供出” means. The officer says “老赵把锅全扣你头上了。你要是不指认他，这口锅就你一个人背。” So signing is to counter. Good.
+
+He feels betrayal. But also thinks, if he signs, maybe he gets out, but Zhao's network will not let him live; if he stays silent, he goes to jail. He is 26, no family, maybe father dead? He could carry. But he doesn't want to be used. This is the psychological change: from loyal follower to realizing he's alone; he must choose. He asks to smoke. Handler gives him一根“大前门”， lights it. He inhales, coughs. He has not decided.
+
+After hours, maybe handler gets a phone call, says “你先回去，明天上午再来。” Or they release him because lack of detention warrant? He signs something like a receipt? The statement remains unsigned. He puts it in his pocket? Actually if unsigned official document, maybe he leaves it on table. But summary says he walks out. He might not sign and still released for further investigation.
+
+When exiting, the sky is dark, neon, rain? Maybe a warm drizzle, mud, street vendors. He sees a man across the road under a 芒果树， leaning on a bicycle, smoking. It's one of Zhao's watchers. Maybe 老吴 or a kid. He doesn't look directly. He walks. The man follows at a distance. He turns into alleys. Maybe he decides to go to赵铁生? Or to find 老周? He doesn't know. He passes a public telephone? He has no one to call. He ends at a dark corner, hearing footsteps. He stops, reaches for电工刀 in his bag but bag confiscated? He has nothing. The watcher steps into a patch of light; it's 老周? End.
+
+Need careful continuity: At end of chapter 7, he was arrested by public security. Chapter 8 starts at AIC; could mention he spent last night at公安拘留所，天亮被移送到工商局 because case定性为投机倒把. Maybe handcuffed to a bed? They took his帆布袋 and电工刀. He has no money. Good.
+
+Need include物价 and wages: A clerk salary 50-60/month; a TV 1600; 3000 is big. Mention his 4500 hidden in铁皮屋; police may have searched? Actually he didn't get to retrieve. Maybe AIC mentions they searched his铁皮屋 and found 1500 in胶鞋 and maybe 3000 on him? When arrested, he had 3000 on waist. They confiscated as赃款. This adds pressure: if he signs, maybe some money returned? Or they keep.
+
+Let's write.
+
+Possible title line exactly "## 第8章 二选一". Then body.
+
+We must not add "本章完" or anything. Need ensure only chapter content.
+
+Let's draft in Chinese.
+
+Start:
+
+何志远被带到工商局投机倒把办公室时，天已经亮了。
+
+他先在县公安局的留置室里蹲了一夜。屋里没有床，只有一条长凳和一只没倒的痰盂。蚊子在耳边嗡嗡地飞，他一夜没合眼。天亮后，两个穿蓝制服的警察把他带出来，塞上一辆绿色的北京吉普，开了半个钟头，交到两个穿白工商制服的人手里。白制服没给他戴手铐，只让他坐在办公室外头的长条木椅上，椅面被汗浸得发黑。
+
+...
+
+Need include the statement scene.
+
+Let's write full.
+[/思考过程]
+
+## 第9章 最后一船货
+
+何志远是在宝安县城一家招待所门口见到赵铁生的。
+
+招待所门口挂着一块白底红字的牌子："宝安县人民招待所"，牌子右边的搪瓷字掉了半个，露出里头的锈铁皮。赵铁生坐在门厅里一张绿色人造革沙发上，跷着腿，正看一份《南方日报》。报纸是昨天的，版面上有一行大标题："经济特区建设取得新成就"。
+
+他穿着件白色的确良短袖，灰色军裤，塑料凉鞋擦得干干净净，左眉到颧骨的疤在灯光下泛着浅白。若不是何志远亲眼见过他半夜扛麻袋、烧批条的模样，这会儿看上去倒像个供销科的干部。
+
+"坐。"赵铁生把报纸折好，放到茶几上。
+
+何志远没有坐。他站在门厅中央，右手插进裤兜，左手按在衬衫内袋上。那份口供还在，被体温焐得发软。
+
+"陈维民放你出来的？"赵铁生问。
+
+"嗯。"
+
+"签没签？"
+
+何志远盯着赵铁生的眼睛："我说没签，你信吗？"
+
+赵铁生笑了一下，从沙发上站起来。他比何志远矮半个头，但走近时，何志远还是感到一股压迫。那是常年在河边、在仓库、在夜里做事的人身上带着的寒意。
+
+"我信。"赵铁生说，"你何志远要是签了字，就不会站在这儿了。"
+
+他从茶几底下拎出一只黑色人造革包，正是何志远在养蚝棚里翻过的那只。包还是那只包，但何志远知道，里头的账本已经不是原来那本了。
+
+"今晚有船。"赵铁生说，"最后一船。做完这单，咱们散伙。"
+
+何志远的心跳了一下。不是高兴，是警觉。
+
+"什么货？"
+
+"东芝冰箱，十二台，补上次那批。"赵铁生把包夹在腋下，朝门外走，"另外还有几台录像机，香港那边要的急，顺道夹带。"
+
+何志远没动："上次的冰箱被扣了，怎么又有一批？"
+
+"上次的不是一批。"赵铁生回头看他，眼神像在看一个不懂事的孩子，"阿炳走的是陆路，从布吉货运站绕。这次走水路，直接从蛇口上岸。两条线，互不搭界。"
+
+他走到门口，夜风吹进来，把他的裤腿吹得轻轻摆动。
+
+"做完这单，你那三千块还你。"赵铁生说，"另外再分你五千。咱们两清。"
+
+何志远的手指在裤兜里攥紧。三千块是他的本钱，被工商局当赃款扣了。赵铁生现在要还他，还额外加五千。这钱不是分手费，是买命钱。
+
+"五千？"他问，"什么货值这么多？"
+
+赵铁生停下脚步，转过身。门外的路灯把他的脸分成两半，一半亮，一半黑。
+
+"录像机。"他说，"松下 VHS，一台能卖八九千。几台下来，比你扛一年钢材都强。"
+
+何志远想起陈维民办公室黑板上的字。猪肉一块二毛八一斤，鸡蛋九毛六。一台录像机八九千，是普通工人二十年的工资。这种钱，赵铁生会分给他五千？
+
+他没有问出口。他只是跟着赵铁生走出招待所。
+
+门外停着那辆黑色的上海牌轿车。开车的是老吴，解放帽压得比往常更低。何志远上车时，老吴从后视镜里看了他一眼，目光在他脸上停了一秒，又移开了。
+
+车里有一股淡淡的汽油味，混着赵铁生身上那股烟草和机油混合的气味。何志远坐在后排，赵铁生坐在他旁边，黑色人造革包横在膝头。轿车驶出宝安县城，上了往蛇口方向的路。
+
+夜里的广深公路没有灯，只有车灯照出去的两道光柱。路两边是黑压压的荔枝林，偶尔闪过几处工地的灯火。远处国贸大厦的塔吊红灯一闪一闪，像颗悬在天上的眼。
+
+"陈维民跟你说了什么？"赵铁生忽然开口。
+
+"说只要我签字，就能出去。"
+
+"你怎么不签？"
+
+何志远转过头，看着赵铁生："签了，我能活到今天？"
+
+赵铁生沉默了几秒，然后笑出声来，笑声在车厢里回荡。他伸出手，拍了拍何志远的肩膀："聪明。我就喜欢你这点。"
+
+何志远没有回应。他望着窗外掠过的树影，心想：聪明？不是聪明。是怕死。怕签了字，走出工商局大门就被一辆黑色轿车接走，拉到某个没人的地方，像阿炳那本账一样被烧掉。
+
+车在蛇口旧码头附近停下。
+
+码头比何志远想象的热闹。虽然是夜里十点多，但岸边停着七八辆各式各样的车，有解放牌卡车，有白色的丰田面包车，还有几辆没有牌照的摩托车。灯光都被熄了，人影在黑暗中移动，像一群在岸边觅食的水鸟。
+
+赵铁生下车后没有立刻往码头走，而是站在一棵榕树下，掏出一只钢笔形状的手电筒，朝海面晃了三下。海面上回应了一道更短的光。
+
+"船到了。"赵铁生说。
+
+何志远跟着他往岸边走。脚下的泥很软，踩下去能陷到脚踝。海水的腥味混着柴油味扑面而来，远处传来低沉的马达声。一艘铁壳船从黑暗中滑出来，船身压得极低，几乎贴着水面。
+
+船上跳下来三个人。为首的何志远见过，是上次那个胳膊上纹着青龙的光头男人。另外两个人一胖一瘦，都穿着黑衣服，一句话不说，只顾从船舱里往外搬东西。
+
+第一个搬上来的是一只纸箱。纸箱上印着"TOSHIBA"，是冰箱的包装。和上次一样，每台冰箱都沉得像口棺材，两个人抬一台，走起来摇摇晃晃。
+
+何志远上去搭手。他抓住一只纸箱的角，往上一抬，肩膀立刻一阵发麻。二百多升的冰箱，裸机就有一百二三十公斤，加上包装和泡沫，两个人抬都费劲。
+
+"慢点。"光头男人低声说，"摔坏一台，你们这边赔不起。"
+
+何志远没有应声。他把冰箱抬到岸边一片堆着破渔网的空地上，按赵铁生的示意码好。第一趟、第二趟、第三趟，他的肩膀已经热得发烫，衬衫黏在背上，每动一下都疼。
+
+第四趟回到船边时，光头男人从船舱里拖出几只小一些的纸箱。这些箱子比冰箱包装小一半，但看起来更结实，纸箱上印着"Panasonic NV-7500"的字样，底下有一行日文，再底下是英文："Video Cassette Recorder"。
+
+录像机。
+
+何志远的手停在半空。
+
+赵铁生走过来，用脚轻轻踢了踢纸箱："这就是我说的那东西。一台顶两台冰箱。"
+
+"不是说几台吗？"何志远问。
+
+"八台。"赵铁生压低声音，"批文上只报了冰箱，没报这个。你帮着搬到车上，别的不用管。"
+
+何志远的心跳快起来。没报备的录像机，意味着一旦被查，八台录像机全是走私。而他和赵铁生刚才都碰过这些箱子，指纹、脚印、证人，全齐了。
+
+"为什么不报备？"他问。
+
+赵铁生冷笑一声："报备？一台录像机进口关税多少你知道吗？百分之八十。再加上这证那证，一台八九千的货，到了手里连本钱都收不回来。"他拍了拍何志远的肩膀，"放心，查不到。这批货不进城，直接送到罗湖那边一个单位，人家自己内部消化。"
+
+"什么单位？"
+
+"你不用知道。"赵铁生的声音沉下来，"知道多了，对你没好处。"
+
+何志远没再问。他弯下腰，和另一个人一起把一台录像机抬起来。箱子比他想象的沉，里头的机器用泡沫和木板固定得死死的，重心偏在一侧。他咬紧牙，一步一步往岸边挪。
+
+八台录像机全部上岸，用了不到二十分钟。加上十二台冰箱，岸边堆起了一座小小的纸箱山。赵铁生站在纸箱旁边，掏出烟点上，火光在他脸上一闪即逝。
+
+"老吴，把车开过来。"他说。
+
+老吴把上海牌轿车开到岸边，又从后备箱里取出一捆麻绳和几块旧油布。几个人开始把纸箱往轿车后备箱和后排座椅上塞。轿车不是货车，塞了四台冰箱就已经满满当当，剩下的只能等后面的卡车来转运。
+
+何志远站在一旁，看着他们把录像机往轿车后座底下塞。那几台机器被藏在冰箱后面，用油布盖着，从外头看，只像是一车旧家电。
+
+"你的车呢？"何志远问赵铁生。
+
+"这就是我的车。"赵铁生把烟头扔在地上，用脚碾灭，"老吴开这辆，把货运到罗湖。你坐后面，跟着货。"
+
+何志远愣了一下："我？"
+
+"对，你。"赵铁生看着他，"这批货金贵，不能出岔子。你跟着我跑了几个月，路子熟。送到地方，五千块当场点给你。"
+
+何志远没说话。他看着轿车后座底下那几台录像机，忽然明白了什么。
+
+赵铁生让他跟车，不是因为信得过他。是因为一旦路上被查到，坐在车里的人就是他何志远。批文上只报了冰箱，没报录像机，查出来，随车的人第一个跑不了。赵铁生自己坐另一辆车，远远地跟在后面，出了事一脚油门就能走。
+
+"你呢？"何志远问。
+
+"我坐面包车。"赵铁生朝后面努努嘴，"胖子那辆。录像机的事，他知道怎么处理。"
+
+何志远回头看了眼。黑暗中果然停着一辆白色的丰田面包车，车窗关着，看不清里面。
+
+他没再争辩。争辩没有用。他只是把手伸进衬衫内袋，摸了摸那份口供。纸张还在，边角已经磨破。
+
+老吴发动了轿车。何志远钻进后排，坐在两只冰箱纸箱中间，膝盖抵着前排座椅。车里空间狭小，纸箱的棱角硌着他的肋骨，柴油味和纸箱里泡沫的味道混在一起，闷得他透不过气。
+
+赵铁生站在车外，从车窗里递进来一只信封。
+
+"五百块。"他说，"路上打点用。要是遇到检查站，你知道怎么做。"
+
+何志远接过信封，没打开。他知道"打点"是什么意思。给看门的递一根烟，说几句好话，必要时塞几张票子。这些事他以前做过，但现在做起来，每一步都像踩在刀尖上。
+
+"走吧。"赵铁生拍了拍车顶。
+
+轿车沿着海滨土路往外开。何志远从后窗望出去，赵铁生的身影越来越小，最后消失在夜色里。岸边那艘铁壳船已经掉头，马达声低低地响着，朝香港方向驶去。
+
+车里很安静。老吴一句话不说，只偶尔按一下喇叭。何志远坐在黑暗中，听着发动机的声音，感受着身下纸箱随着路面颠簸而传来的震动。
+
+他想起陈维民说的话："赵铁生那种人，出了事第一个卖的就是兄弟。"
+
+又想起赵铁生说的："最后一船。做完这单，咱们散伙。"
+
+这两句话在他脑子里绕来绕去，像两条蛇互相咬着尾巴。
+
+车开了约莫二十分钟，前头的路忽然亮起来。不是路灯，是两道雪白的光柱，横在路中间。老吴踩了一脚刹车，何志远的额头差点撞上前排座椅。
+
+"检查站。"老吴低声说。
+
+何志远没有慌。他见过检查站，之前跟赵铁生跑货时也遇到过。大多是交警查超载，或者工商查走私，给包烟、说几句就能过。但这次不一样。车后头藏着八台没报备的录像机，一旦被开箱检查，他和老吴都完了。
+
+他把手伸进裤兜，摸到赵铁生给的那只信封。信封里硬硬的，是钱。他又摸了摸衬衫内袋，那份口供也在。
+
+老吴把车缓缓开到光柱前，停住。两个穿蓝色制服的人走过来，一个年轻，一个年长。年长的那个用手电往车里照了照，光柱从何志远脸上扫过去，刺得他眯起眼。
+
+"干什么的？"年长的问。
+
+"送货。"老吴的声音很稳，"蛇口家电公司，给罗湖商场送的冰箱。"
+
+"批条呢？"
+
+老吴从驾驶台上摸出一张纸，递出去。何志远看见那张纸的边角，知道是赵铁生从黑色人造革包里拿出来的那张，上面盖着鲜红的章。
+
+年长的拿手电照着批条看了半天，又走到车后，掀开油布一角。何志远的心提到了嗓子眼。油布下面是冰箱纸箱，印着"TOSHIBA"的英文字母。
+
+"十二台冰箱。"年长的说，"批条上写的也是十二台。"
+
+"对，一台不多，一台不少。"老吴说。
+
+年长的没再说话。他拿手电在车厢里扫了一圈，光柱从何志远脸上停了一秒，又移开。然后他走回老吴窗前，把批条递还。
+
+"走吧。"
+
+老吴接过批条，发动车子。轿车缓缓驶过检查站，何志远从后窗看见那两个穿蓝制服的人站在原地，手电光柱照向下一辆车。
+
+他的后背已经湿透。
+
+"过了。"老吴说。这是上车以来他说的第二句话。
+
+何志远没应声。他知道这只是第一道关。罗湖那边还有更多的眼睛在等着。
+
+车继续往前开。何志远靠在冰箱纸箱上，从兜里摸出赵铁生给的那只信封。他打开封口，抽出里面的钞票。不是五百，是三百。另外两百不知道是老吴提前用了，还是赵铁生本来就没给够。
+
+他把三百块钱塞回信封，又塞进裤兜。
+
+车快到罗湖工业区时，老吴忽然开口："赵老板让我跟你说，到了地方，你先进去。"
+
+"什么意思？"
+
+"收货的人在七号仓库等。"老吴从后视镜里看了他一眼，"你把货卸进去，拿到签收单，出来找我。我在外头接应。"
+
+何志远盯着老吴的后脑勺。七号仓库他去过，在罗湖工业区边缘，周围全是脚手架和临时工棚。那里白天热闹，夜里冷清，只有几盏昏黄的路灯。
+
+"为什么是我进去？"他问。
+
+"赵老板说你熟。"老吴的声音没有起伏，"这笔生意，他不想再露面。"
+
+何志远明白了。
+
+赵铁生根本不在这辆车上。他说坐面包车，但那辆白色面包车在码头就没跟上来。现在赵铁生可能在某个安全的地方等着消息，而他和老吴，就是两只被放进笼子探路的麻雀。
+
+"我要是不进去呢？"何志远问。
+
+老吴沉默了几秒，然后说："那五千块，你拿不到。"
+
+何志远笑了一下，笑声在车厢里显得很空。
+
+车停在罗湖工业区七号仓库门口。仓库是铁皮顶的，门半开着，里头亮着一盏灯。门口站着一个人，穿花衬衫，戴金戒指，正是上次买钢材的那个胖子。
+
+何志远下车，把衬衫内袋里的口供往里塞了塞。那纸已经被他的汗浸得发软，折痕处快要断开。
+
+胖子迎上来，朝车里看了一眼："货都在？"
+
+"都在。"何志远说。
+
+"录像机呢？"
+
+何志远看了胖子一眼。这人果然知道录像机的事。也就是说，他也是局中人。
+
+"在车里，冰箱后头。"
+
+胖子点点头，朝仓库里挥挥手。两个穿黑衣服的人走出来，开始卸货。何志远没有帮忙，他站在一旁，看着他们把冰箱一台一台搬进仓库，又把录像机从车后座底下拖出来，动作熟练，像是演练过无数遍。
+
+仓库里弥漫着一股水泥和铁锈的味道。何志远走进去，借着灯光看清了里面的布局。仓库不大，四面墙根堆着水泥管和钢筋，中间空出一块地方，摆着一张三屉桌。桌上有一只算盘，一本打开的账本，一只搪瓷杯。
+
+何志远的目光落在那只搪瓷杯上。杯子上印着"先进工作者"，和贺德昌办公室里那只一模一样。
+
+他的心猛地一紧。
+
+"胖子，"他转过身，"收货单位是哪家？"
+
+胖子正在数录像机的台数，头也不抬："你不用管。签收单在这儿，你签了字，拿钱走人。"
+
+他从桌上拿起一张纸，递给何志远。纸上只写着："收到家电一批，数量正确。"没有抬头，没有单位名称，没有盖章的位置。
+
+何志远没接。
+
+"这单子我不能签。"他说。
+
+胖子的手停在半空。他抬起头，脸上的肉把眼睛挤成两条缝："你说什么？"
+
+"这单子没有抬头，没有单位，签了就是白条。"何志远说，"赵老板让我送货，没让我替他背黑锅。"
+
+仓库里的空气忽然凝固了。两个搬货的人停下来，直起腰，看着何志远。老吴没有进来，还在外头的车里。
+
+胖子把签收单放回桌上，慢慢走到何志远面前。他的个子比何志远矮，但体型宽出一倍，站在跟前像一堵墙。
+
+"小何，"胖子说，"赵老板看得起你，才让你跑这单。你别不识抬举。"
+
+"我不是不识抬举。"何志远把手伸进衬衫内袋，握住那份口供，"我是怕死。"
+
+胖子笑了一下，脸上的肉抖动起来："怕死？怕死你还敢跟赵老板做生意？"
+
+何志远没有回答。他的眼睛盯着仓库门口。门外一片漆黑，只有老吴那辆上海牌轿车的尾灯亮着，像一只野兽的眼睛。
+
+他知道，只要自己签了这份白条，所有的事都会落到他一个人头上。十二台冰箱、八台录像机、没报备的批文、假收货单位，全是他何志远一个人干的。赵铁生会从黑暗里走出来，拍拍他的肩膀，说："好兄弟，辛苦了。"然后拿着签收单消失，留他在这里等公安。
+
+"我不签。"他又说了一遍。
+
+胖子的脸色变了。他朝那两个搬货的人使了个眼色。那两个人放下手里的活，朝何志远走过来。
+
+就在这时，仓库外头忽然传来一阵汽车引擎声。不是一辆，是好几辆，从几个方向同时逼近。何志远听见轮胎碾过碎石路的声音，还有车门打开时金属碰撞的脆响。
+
+胖子猛地转过头。
+
+"谁？"
+
+没人回答他。几秒钟后，几道雪白的光柱同时从仓库门口和窗户照进来，把整个仓库照得像白昼一样。何志远下意识地抬起手遮住眼睛，耳朵里传来一个扩音器放大后的声音：
+
+"里面的人听着，我们是宝安县公安局和工商局的。放下东西，双手抱头，不准动！"
+
+胖子的脸在光柱下惨白如纸。他看了何志远一眼，那眼神里有惊愕，也有愤怒，像是在质问：是不是你报的警？
+
+何志远没有看他。他把手从衬衫内袋里抽出来，那份口供还攥在手里。
+
+门口传来杂乱的脚步声。何志远慢慢转过身，面对着门口的光柱。
+
+在那一瞬间，他看见老吴那辆上海牌轿车不知什么时候已经不在原地了。门口停着几辆绿色的吉普车和白色的工商执法车，红蓝相间的警灯在夜空中一闪一闪。
+
+而更远处的黑暗里，有一双眼睛正在看着他。
+
+何志远知道那是谁。
+
+赵铁生没有来。他一直都在某个能看见这一切的地方，看着何志远走进仓库，看着胖子把签收单递过来，看着公安的车灯亮起。
+
+这一切，或许都是赵铁生安排好的。
+
+何志远把手里的口供慢慢展开，纸张在他手里发出轻微的哗啦声。他看着纸上那行字：
+
+"……本人何志远，在赵铁生威胁利诱下……"
+
+他忽然笑了一下。
+
+门口的人影越来越近了。何志远没有抱头，也没有蹲下。他只是站在那里，把那份口供举到灯光下，像举着一面旗帜，又像举着一份判决书。
+
+"何志远！"一个熟悉的声音在喊他。
+
+是陈维民。
+
+何志远没有应声。他的目光穿过光柱，穿过那些朝他跑过来的人影，落在仓库角落里那台还未来得及搬进去的录像机上。
+
+纸箱上印着"Panasonic NV-7500"，在灯光下显得格外刺眼。
+
+而在纸箱旁边，不知什么时候多了一个黑色人造革包，黄铜扣子在光柱下一闪一闪。
+
+那是赵铁生的包。
+
+[思考过程]
+The user wants me to write Chapter 9 "The Last Shipment" of a novel titled "Shenzhen Past". I need to:
+
+1. Start with Markdown heading "## 第9章 最后一船货"
+2. Continue from previous chapters
+3. Maintain character setting and world view consistency
+4. Tight narrative with details, suspense, and psychological changes
+5. Word count 1500-99999 (target 2500)
+6. Don't output writing process, summaries, explanations, or meta-comments
+7. End with suspense (as part of an ongoing story)
+
+Key plot points for this chapter from the synopsis:
+- Old Zhao arranges last shipment from Shekou Wharf
+- Promises to split after this job
+- He Zhiyuan discovers the ship holds not only refrigerators but also several boxes of unregistered video recorders (录像机)
+
+I need to carefully maintain continuity with the previous 8 chapters:
+- He Zhiyuan is now out of the Industrial and Commercial Bureau
+- He has the prepared confession in his shirt pocket
+- He's being followed/pressured by both Zhao Tiesheng's people and possibly the authorities
+- The relationship with Zhao Tiesheng is now adversarial
+- He refused to sign the confession implicating Zhao as the main culprit
+- He's being tracked by a black Shanghai sedan
+- He has 3000 yuan confiscated as "illicit funds"
+- Old Zhou is working for Zhao Tiesheng
+
+The chapter should show the "last shipment" operation, the tension between He Zhiyuan and Zhao Tiesheng, the discovery of the unregistered video recorders, and leave suspense at the end.
+
+Let me write this in Chinese, maintaining the established style: solid, crisp, with period texture, details and actions driving the plot, no lyricism.
+
+Key elements to include:
+- Shekou Wharf setting at night
+- The operation to unload refrigerators and video recorders
+- He Zhiyuan's discovery of the unregistered goods
+- The psychological shift: realizing Zhao Tiesheng is setting him up
+- Ending with a suspenseful moment, maybe confrontation or choice
+
+I should make sure the economic/historical details are plausible:
+- 1984 Shenzhen
+- Video recorders (录像机) were expensive imported goods, often smuggled
+- Refrigerators being imported
+- Shekou Wharf
+- Dual-track pricing system
+
+Let me write the chapter now.
+[/思考过程]
+
+## 第10章 河对岸的电话
+
+何志远站在深圳河北岸的乱草里，裤脚还在滴水。
+
+他是从七号仓库后头的排水沟爬出来的。公安的手电把仓库照成白昼那会儿，他正背靠着那台东芝冰箱的纸箱，手里还攥着那份没签字的口供。胖子扭过头瞪他，眼里是“果然是你”的光。何志远没有辩解。他看见仓库西墙根堆着水泥管，管口朝着黑漆漆的野地，便趁着所有人被门口的光柱钉住的当口，矮身钻了进去。水泥管里一股尿骚味和烂泥味，他顾不上，手脚并用地往前爬，铁皮边缘把掌心割开一道口子，血混着泥，黏糊糊地糊在手腕上。
+
+等他再从另一头爬出来，已经在罗湖工业区外的一片荒地里。远处警灯一闪一闪，像谁把几颗熟透的柿子挂在天上。他沿着河堤往北跑，一路上撞断了不少芦苇，直到肺里像塞了一把热沙子，才停下来。
+
+现在他站在河边，背后是深圳，对岸是元朗。
+
+元朗黑黢黢的，一点声息都没有。稻田、鱼塘、村屋，全都沉在黑暗里，只有偶尔几点萤火似的手电光在远处晃一下，又灭了。而深圳这边，塔吊上的红灯、工地的碘钨灯、货柜车的前灯，把半边天照得发白。河面上泛着灰白色的光，水流得急，带着一股腥臭，偶尔漂过一截烂木头、一只死老鼠、几片塑料布。
+
+何志远从兜里摸出烟盒，抖出一根经济烟。烟盒已经空了，这是最后一根。他划了三根火柴才点着，火柴是“工农”牌，潮了。他深吸一口，烟味呛进肺里，反而让他清醒了一点。
+
+他的另一只手插在裤兜里，握着那只大哥大。
+
+手机是赵铁生在码头给他的。黑色的摩托罗拉，像半块砖头，天线抽出来有一拃长，电池鼓鼓囊囊，拿在手里死沉。赵铁生把手机塞给他的时候说：“拿着，今晚用它。”他没问为什么。那时候他刚从铁壳船上下来，肩膀上还扛着录像机的纸箱，赵铁生拍着他的肩膀说：“最后一单，做完散伙。”
+
+他把手机从兜里掏出来，借着身后的灯光看了看。屏幕是暗的，没有按键灯，只有顶端一个红色的指示灯，像一只闭着的眼睛。
+
+他不知道赵铁生会不会打过来。他更不知道，自己到底希不希望这玩意儿响。
+
+河里传来一阵马达声，很低，像只蚊子在叫。何志远猛地抬起头，手伸进衬衫内袋，摸到那份口供。纸已经被汗和河水浸得发软，折痕处快要断开。他把纸往里塞了塞，目光扫向河面。
+
+一艘铁壳船从下游缓缓驶上来，没有灯，船身压得极低。何志远往后退了一步，躲进芦苇丛里。船经过他面前时，速度放慢了一些，船上有个人影朝岸上望了一眼，又转了回去。马达声渐渐远去，朝元朗方向去了。
+
+不是找他的。
+
+何志远松开握着口供的手，发现掌心全是汗。
+
+他把烟抽到过滤嘴，烫了手指才扔掉。烟头落在烂泥里，发出“嗤”的一声。他低头看着自己的鞋，一双解放鞋，鞋头已经磨穿，露出里头的袜子。这双鞋是他刚到深圳时买的，八块钱，穿了八个月。他每天凌晨三点起床卖肠粉，蹬三轮车，扛钢筋，后来扛彩电、扛冰箱，全是这双鞋。现在鞋面上糊着泥、血、机油，还有河里漂来的绿藻。
+
+他忽然想起父亲。
+
+父亲在衡阳农机厂当了三十年钳工，死的时候肺里全是铁末子。临死前一天，父亲把何志远叫到床前，说：“人穷不能志短，违法的事，一辈子不能碰。”何志远当时点头。可现在他站在深圳河边，身上带着走私电器的味道，手里握着大哥大，等着一个倒爷的电话。
+
+他不是没碰过别的路。他卖过肠粉，扛过包，修过自行车，可那些路走到头，一天也就十几块。而深圳在往上长，钢筋、彩电、冰箱、录像机，一样一样从河里爬上来，堆成山，变成楼。你不爬，楼也长，跟你没关系；你爬，就得踩着这些东西，踩着别人的命，也踩着自己的命。
+
+他不知道这是自己选的，还是时代只给他留了这条路。
+
+手机突然响了。
+
+铃声很刺耳，是那种老式电子蜂鸣，“嘀嘀嘀”地响，在寂静的河边像一把锥子扎进耳朵里。何志远浑身一僵，差点把手机扔进河里。他盯着屏幕，红色的指示灯一闪一闪，屏幕上没有任何名字，只有一排行数字。
+
+他按下接听键，手有点抖。
+
+“喂。”
+
+电话那头没有立刻说话。只有一阵很重的呼吸声，像谁在抽烟，又像谁在忍着咳嗽。然后一个沙哑的声音响起来，是何志远听了四个月的声音。
+
+“货被查。”赵铁生说。
+
+何志远没有应声。他听见自己的心跳声，一下一下，敲在耳膜上。
+
+“胖子跑了。”赵铁生又说，声音像是被砂纸磨过，“老吴的车在罗湖桥被扣了。八台录像机，十二台冰箱，全在里头。”
+
+何志远攥紧手机。塑料外壳被他的汗浸得发滑。
+
+“阿炳呢？”他问。
+
+赵铁生在电话那头笑了一下，笑声很短，像一口痰卡在喉咙里。
+
+“阿炳把你供了。”
+
+何志远闭上眼睛。他想起阿炳缺了半颗门牙的笑，想起他拍着胸脯说“何哥，有事我顶着”。他也想起阿炳被押上吉普车时肿起来的脸，嘴角那道血痕。那时候他就知道，阿炳撑不住。不是阿炳不义气，是这地方不让人义气。
+
+“他说了什么？”何志远问。
+
+“该说的，不该说的，都说了。”赵铁生的声音很轻，像是在讲一件跟自己无关的事，“钢材是你提的，彩电是你扛的，冰箱是你送的，录像机是你签收的。账本上有你的名字，收货单上有你的字。他一条一条，说得清楚。”
+
+何志远低头看着河水。河面上漂过一只白色的塑料袋，被水推着，撞上一块石头，又飘走。
+
+“我没有签收。”他说。
+
+“签没签不重要。”赵铁生说，“重要的是，有人愿意信。阿炳愿意信，公安就愿意信。你懂吗？”
+
+何志远懂。
+
+他懂这行的规矩。证据不是真相，证据是别人愿意拿出来的那部分真相。阿炳要减刑，就得咬出更大的鱼。而他何志远，没有单位，没有户口，没有家小，正是最合适的那个。
+
+“现在有两条路。”赵铁生说。
+
+何志远的手把大哥大攥得更紧，指节发白。
+
+“第一条，”赵铁生顿了顿，像是在抽烟，“你进去。把所有事都扛下来。钢材、彩电、冰箱、录像机，全是你一个人做的。赵铁生、老周、阿炳，谁都不认识。你扛了，十年八年，表现好，五六年出来。你那三千块，我替你保管，等你出来，一分不少。”
+
+何志远没有说话。他看着对岸的元朗，黑黢黢的，像一只趴着不动的兽。
+
+“第二条，”赵铁生的声音更哑了，“你点一个人。把带你入行的人点了。就说一切都是他指使的，你只是个跑腿的。公安要的是主犯，有了主犯，从犯就能活。你点了他，明天就能出来，五千块我当场给你，你再做别的买卖，没人拦你。”
+
+何志远的喉咙动了一下。
+
+“带我入行的人？”他问。
+
+“老周。”赵铁生说，“老周介绍你认识我。老周带你进仓库。老周告诉你怎么提货、怎么送货、怎么打点。没有老周，你还在蛇口卖肠粉。他不是带你入行的人，谁是？”
+
+何志远想起老周。想起老周缺了半截小指的手，想起他把烟递过来时的样子，想起他第一次说“我认识一个人，姓赵，叫赵铁生”时的神情。老周不是坏人。至少在他何志远最难的时候，老周给了他一个机会。
+
+可那机会，原来是个绳套。
+
+“我点了老周，”何志远慢慢说，“你呢？”
+
+赵铁生在电话那头又笑了一下：“我？我还是赵铁生。我做我的生意，你过你的桥。咱们两清。”
+
+“那老周呢？”
+
+“老周？”赵铁生的声音冷下来，“他自己做的事，自己担。这行里，谁不是提着脑袋吃饭？他介绍你进来，就该想到有今天。”
+
+何志远低下头。他的目光落在河水里自己的倒影上，扭曲、破碎，像一张被揉皱的纸。
+
+“为什么是我选？”他问。
+
+“因为你站在河边。”赵铁生说，“因为阿炳点了你。因为公安明天一早就会发通缉。因为你手里还有一份没签的口供——陈维民给你的那份，对吧？你以为我不知道？”
+
+何志远的心猛地一沉。他下意识地摸向衬衫内袋，那份口供还在，隔着布料硌着他的胸口。
+
+“那份口供，”赵铁生的声音像是从牙缝里挤出来的，“你要是签了，就是揭发我。你不签，就是对抗组织。何志远，你手里攥着的不是纸，是催命符。你要活，就得把它用出去。用它点老周，点阿炳，点谁都行，就是不能点我。”
+
+何志远沉默了很久。
+
+河水流动的声音在耳边响着，远处工地上传来打桩机的闷响，一下，又一下，像谁在敲棺材盖。身后城市的灯光把天空照得发白，可他却觉得越来越冷。
+
+“我要是不选呢？”他问。
+
+赵铁生没有立刻回答。电话那头传来一阵窸窣声，像是他在换一只手拿手机。然后他的声音又响起来，更轻，也更冷：
+
+“你不选，我就替你选。何志远，咱们认识四个月，我没亏待过你。可你要是挡我的路，就别怪我不念旧情。”
+
+电话挂断了。
+
+“嘀嘀嘀”的忙音像一根针，扎在何志远的耳膜上。他握着手机，站在河边，忽然不知道自己该往哪边走。
+
+对岸还是黑的。元朗没有探照灯，没有塔吊，没有大哥大，只有几声狗叫远远地传过来，很快被风吹散。而深圳这边，一切都亮着，一切都长着，一切都像在喊：往前，往前，别停。
+
+他慢慢蹲下去，把手机放在脚边。然后从衬衫内袋里掏出那份口供，展开。纸已经被他的体温焐得发软，蓝黑色的墨水洇开了一片，像一块洗不掉的污渍。他一字一句地看：
+
+“……本人何志远，在赵铁生威胁利诱下……”
+
+他忽然觉得这几个字很可笑。
+
+威胁？利诱？赵铁生从来没有拿刀架在他脖子上。是他自己把三轮车卖了，是他自己把三千块钱交到赵铁生手里，是他自己把彩电麻袋扛上肩，是他自己把录像机纸箱搬进仓库。每一步，他都以为自己在往上爬。可爬到现在，他才发现，自己只是爬进了一个更深的坑。
+
+他想起赵铁生账本上的那六个字：“可用，胆大，无家累。”
+
+原来从一开始，他就是被选中来扛事的人。不是兄弟，是工具。不是人，是账。
+
+河面上又传来马达声。这一次更近，更低，像一头兽贴着水面游过来。何志远没有抬头。他知道那艘船可能是赵铁生派来的，可能是公安的，也可能是别的什么人。不管是什么，都跟他手里的这份口供有关。
+
+他把口供折好，塞回内袋。然后拿起手机，按下重拨键。
+
+电话只响了一声就接通了。赵铁生的声音传来，带着一点不易察觉的得意：
+
+“想好了？”
+
+何志远没有回答。他望着对岸的元朗，黑黢黢的，像一片没有尽头的夜。
+
+“老赵，”他说，“我要是点了老周，你怎么保证我没事？”
+
+赵铁生在电话那头笑了一下，笑声被电流切得支离破碎：
+
+“你点了他，我就能让你没事。你要是不信，我可以先给你一样东西。”
+
+“什么？”
+
+“阿炳没说完的话。”赵铁生的声音忽然压得很低，“他不止供了你。他还供了老周。他把你们俩绑在一块，说你们是一伙的。你现在点老周，不是害他，是救你自己。你们俩，只能活一个。”
+
+何志远的手指僵在手机上。
+
+“你选吧。”赵铁生说，“我数到三。”
+
+何志远没有出声。他的耳朵里只剩下赵铁生的呼吸声，和河水流动的声音。身后的城市依然在亮着，塔吊上的红灯一闪一闪，像一只不肯闭上的眼睛。
+
+“一。”
+
+何志远闭上眼睛。他想起老周跟他说话时的样子，想起他蹲在粥棚地上抽烟，想起他说“赵老板看得起你，你好好干”时的眼神。那眼神里没有恶意，只有一种看热闹的人特有的漠然。
+
+“二。”
+
+他想起阿炳。想起他被押上吉普车时，抬头往院子里扫的那一眼。那眼神里没有怨恨，只有一种认命的疲惫。他知道自己扛不住，他也知道别人也扛不住。
+
+“三——”
+
+何志远张开嘴，刚要说话，身后忽然传来一阵脚步声。
+
+脚步声很轻，踩在碎石和烂泥上，发出“咯吱咯吱”的声响。不是一个人，是两个人，或者更多。何志远没有回头。他的后背绷得像一块铁板，右手不自觉地伸进裤兜，握住那把从仓库带出来的电工刀。
+
+电话那头，赵铁生的声音还在继续：
+
+“何志远，说话。你点不点？”
+
+何志远没有回答。他慢慢转过身，看向身后。
+
+芦苇丛外站着几个人影，逆光，看不清脸。为首的那个手里似乎拿着一样东西，在手电光下一闪一闪。
+
+不是公安的制服，也不是赵铁生的塑料凉鞋。
+
+“何志远？”一个陌生的声音喊他。
+
+何志远把手机从耳边拿开，却没有挂断。红色的指示灯还在一闪一闪，像一只不肯闭上的眼。
+
+他望着那几个人影，喉咙里像卡了一口痰。
+
+对岸的元朗还是黑的。深圳这边的探照灯从他头顶扫过去，把他的影子拉得很长，一直投到河面上，被水一冲，碎成无数片。
+
+[思考过程]
+We need write chapter 10 exactly. User provided extensive chapters 1-9 with many characters. We must continue from chapter 9 ending. Need only output chapter 10 in Chinese, markdown title "## 第10章 河对岸的电话". No meta comments. Word count 1500-99999. Need create suspense. Main character He Zhiyuan. Plot: previous: he at warehouse raid, Zhao Tiesheng's bag appears, he was set up, and officers surround. We need chapter 10: he is by Shenzhen River waiting for news; across Yuen Long still dark; mobile phone rings; Zhao's voice hoarse: cargo seized, Ah Bing ratted you out, choose yourself. Need reconcile with previous ending? Actually in previous chapter 9, he was at warehouse during raid with Zhao's bag appearing; chapter 10 summary says he stands by Shenzhen River waiting for news, with big brother phone. This might imply after the raid he escaped? Or the chapter 10 may occur in a different scene after some events; we need adapt. User says "本章摘要：何志远站在深圳河边等消息，对岸元朗仍黑黢黢的。口袋里的大哥大突然响了，老赵的声音沙哑：货被查，阿炳把你供了，你自己选。" That is the summary. Need write scene where He is by river, mobile phone rings, Zhao gives him choice: sell out the brother (probably A Bing or Zhao?) who brought him into the business, or go to prison taking all charges. Need maintain world/character. Use third person limited, tight on He. Language: solid, crisp, era texture, details, no lyricism. End with suspense; don't resolve all threads.
+
+Need plan: start at river. It is after warehouse raid? Maybe He escaped (because he didn't sign and maybe cops only targeted Zhao; maybe he was released/let go? But he was holding statement. Could be he made it out? Let's craft: after raid, he slips away amid chaos? Or he was questioned and released? The summary says he waits by river for news. So he is at large, maybe waiting to hear from Zhao. He has a mobile phone (大哥大) — Zhao gave him earlier? Actually in chapter 4 buyer had a 大哥大; in chapter 9 Zhao not present. We can establish He has a borrowed/purchased brick phone. He is waiting for Zhao after Zhao didn't show at warehouse. He suspects. He observes river: across Yuen Long dark, Shenzhen lit. Details: mosquitoes, diesel smell, ferry sounds, construction lights, barge etc.
+
+Then phone rings. Zhao tells him: cargo checked (at warehouse? or at river?), Ah Bing gave him up. Zhao says "你自己选" — either point finger at the one who brought him in (maybe 老周/赵?), or take all charges. We need leave suspense. Maybe He says "要我怎么做？" Then Zhao gives instruction. End before he decides or as he hears something else.
+
+Need maintain continuity with previous: He still has the unsigned confession? In chapter 9 he held it. At raid, Zhao's bag appeared. We can briefly allude to how he got to river: escaped through back door of warehouse? But chapter should focus on current scene. Need not over-explain.
+
+Need ensure word count around 2500 target. Let's aim ~2500-3000. Write in Chinese.
+
+Important: user requested only one chapter. So output exactly "## 第10章 河对岸的电话" then text. No intro/outro.
+
+Let's consider details and setting. Chapter 10: He Zhiyuan at Shenzhen River maybe near old ferry. Time? Night. He waits. The river black, fast, stinks. Across Yuen Long no lights, Shenzhen side bright. He has a Motorola DynaTAC-style 大哥大 in pocket, heavy, bought with money? Actually he had only 3000 seized. But in story, after warehouse raid maybe he retrieved his money? Hmm. We can have the phone be given to him by Zhao before the last job: "拿着，有情况我打给你。" Or he has it from the warehouse (Zhao's bag?). Wait Zhao's bag appeared in warehouse. Maybe He took the bag? He saw bag, maybe he grabbed it? Could be he has the phone. But he is at river after raid, perhaps after escaping; phone belongs to Zhao, a black Motorola brick with antenna. In 1984, 大哥大 existed in Hong Kong and imported into Shenzhen; very rare, symbol of wealth. He might not own it. But the summary says "口袋里的大哥大突然响了" — in his pocket. Could be Zhao gave it to him before the warehouse run. We'll say Zhao handed him a black brick phone before he got in the car: "拿着，今晚用它。" He didn't know how to use; now it rings.
+
+Need build atmosphere: He waits; across river black; behind him Shenzhen like daylight; he feels the city growing; he is small. He remembers A Bing being dragged away, the ledger, etc. He has a cigarette (economic brand). He is wet, dirty. He holds unsigned statement maybe. The phone rings; he doesn't know how to answer; fumbles. Zhao's voice says: "货被查，阿炳把你供了，你自己选。" Then reveals details: A Bing told them He was the one who handled steel, color TVs, fridges; A Bing's ledger copied etc. Zhao says: "现在有条路，把老周（or 带你入行的人）的名字点了，说你一切都是他指使，你就能出来。要么你全扛，进去十年八年。" Actually the story direction says final forced choice between "出卖带自己入行的兄弟" and "蹲监狱扛下所有罪名". In chapter 2 老周 introduced him to Zhao. But 老周 may be the one who brought him into business. Or could be A Bing? But "带自己入行的兄弟" likely 老周 (Lao Zhou) who first told him about Zhao. The choice: betray Lao Zhou, or take blame. However the phone call from Zhao says "阿炳把你供了" and "你自己选". Need articulate the choice: sell out the brother who introduced you (老周) or take all charges. Zhao says police/prosecutors want a bigger fish; if He names Lao Zhou as mastermind, they can close case; Zhao will make sure He walks. If He doesn't, he goes in. Maybe He realizes Zhao is the real target? Wait Zhao is on phone; he wouldn't ask He to take charges against himself. Maybe Zhao wants He to name A Bing? No, "带自己入行的兄弟" means the person who brought him in. That could be 老周. So Zhao says: "他们现在要老周。你点他，事情就算到你头上为止。不点，你自己进去。" But Zhao might also want to protect himself; if He names Lao Zhou, chain stops before Zhao. He suspects.
+
+We need end with suspense: He stands, looks at dark Yuen Long, hears something; perhaps a boat engine, or headlights behind him, or police sirens. The phone call ends ambiguously: Zhao says "我数到三"; He doesn't answer; then he hears footsteps; maybe a second voice. Need leave unresolved.
+
+We must ensure no moralizing, no lyrical descriptions. Use concrete nouns and actions.
+
+Let's produce around 2500 Chinese characters. Need correct era details: 大哥大 (big brother phone), 摩托罗拉, 天线, 电池. 1984 Shenzhen River, border, Bao'an County Public Security/Industry and Commerce. Cigarettes: 经济烟. Money: 三千块. Maybe he has a paper with names.
+
+Let's write.
+
+Opening: "何志远站在深圳河北岸的乱草里，裤脚还在滴水。" Then describe. He got here after leaving warehouse? Briefly: he didn't sign, cops rushed, he slipped out back. He has Zhao's phone (given before). Across river dark; Shenzhen side bright. Mosquitoes. He lights a cigarette. The phone heavy in pocket. He thinks about A Bing, Zhao's ledger, the unsigned confession still in shirt (maybe wet). He checks phone; black Motorola, red LED. It rings suddenly. He fumbles. Zhao's hoarse voice.
+
+Dialogue. Zhao: "货被查，阿炳把你供了。" He asks what to do. Zhao explains choice: name 老周 or take blame. He realizes Zhao wants him to be the cut-off. He says "老周是你的人". Zhao says "他也是带你入行的人". Then threat: if he doesn't decide before a boat arrives or police arrive, both options gone.
+
+At end: He hears motor behind him; maybe a police jeep or Zhao's boat. He looks at phone, at river, at dark Yuen Long. Does not answer. Chapter ends with "电话那头，老赵还在数：一、二……" and a footstep on gravel. Good suspense.
+
+Need integrate details: he still has the signed/unsigned confession? In chapter 8 he had a chance to sign; he didn't. In chapter 9 he held it up at raid. Maybe it's now damp, ink smeared. Could be he reads it? But focus on phone.
+
+Need mention he has no money? His 3000 was seized. But perhaps he has some cash left. Not necessary.
+
+Need be careful not to contradict prior: In chapter 9, the black bag appeared in warehouse, Zhao wasn't there. Chapter 10 could happen after He escaped the warehouse and took the bag? But if he took Zhao's bag, the phone could be in it. But the summary says phone in his pocket. We can say after the raid he grabbed the bag and ran, but maybe lost it? Let's decide: He does not have the bag; he has only the mobile phone that Zhao gave him at the dock before loading: "这玩意儿你拿着，有动静我找你。" It fits.
+
+Let's craft the escape from warehouse briefly: when the lights hit and police shouted, he didn't freeze; he saw a back door near the cement pipes, slipped out while everyone looked at the cars. He ran through construction site, lost the officers. Now by river. No need over-detail.
+
+Let's also include his internal thought: not chosen path, only path. The prompt says make reader feel not that he chose this path, but era left only this path. We can show through his reflection: each step from selling rice rolls to carrying steel to river smuggling, there was no ladder; the city only offered this ladder if you wanted to climb. But no lyricism. Keep concrete.
+
+Need maybe incorporate the "letter on cigarette paper" from earlier? Maybe he still has the note "电视是饵" in pocket. Good detail: he finds the wet cigarette paper note. He crumples it.
+
+Let's write in Chinese, controlled style. Use short sentences.
+
+Check word count. Let's target ~2500 Chinese characters. We'll estimate.
+
+Let's produce final.
+[/思考过程]
+
+【未完待续】

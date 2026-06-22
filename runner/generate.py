@@ -295,7 +295,9 @@ def chat_completion(
     if response_format:
         payload["response_format"] = response_format
     if thinking:
-        payload["thinking"] = {"type": "enabled"}
+        # 兼容不同的 thinking 格式：True → "enabled"，字符串直接使用
+        thinking_val = thinking if isinstance(thinking, str) else "enabled"
+        payload["thinking"] = {"type": thinking_val}
 
     data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(
@@ -397,6 +399,7 @@ def generate_outline(
     temperature: float,
     max_tokens: int,
     thinking: bool = False,
+    outline_json: bool = True,
 ) -> dict[str, Any]:
     messages = build_outline_messages(prompt_text)
     for attempt in range(1, MAX_RETRIES + 1):
@@ -408,7 +411,7 @@ def generate_outline(
                 messages=messages,
                 temperature=temperature,
                 max_tokens=max_tokens,
-                response_format={"type": "json_object"},
+                response_format={"type": "json_object"} if outline_json else None,
                 thinking=thinking,
             )
             return parse_outline(text)
@@ -614,6 +617,15 @@ def merge_chapters(outline: dict[str, Any], chapters: list[str], thinkings: list
 
     # 确保结尾有【未完待续】
     full_text = "\n".join(lines).rstrip()
+
+    # 若章节数 > 10，截断到第 10 章（模型有时会多写）
+    ch_pattern = re.compile(r"^##\s+第1?\d章", re.MULTILINE)
+    ch_matches = list(ch_pattern.finditer(full_text))
+    expected = len(outline.get("chapters") or [10])
+    if len(ch_matches) > expected:
+        cut = ch_matches[expected].start()
+        full_text = full_text[:cut].rstrip()
+
     if not full_text.endswith("【未完待续】"):
         full_text += "\n\n【未完待续】"
     return full_text
@@ -733,6 +745,7 @@ def main() -> int:
             temperature = model_cfg.get("temperature", DEFAULT_TEMPERATURE)
             max_tokens = model_cfg.get("max_tokens", DEFAULT_MAX_TOKENS)
             thinking_enabled = model_cfg.get("thinking", False)
+            outline_json = model_cfg.get("outline_json", True)
 
             try:
                 log(f"  └ {model_cfg['name']} → 生成中…（provider={provider_id}, model={model_cfg['model']}）")
@@ -751,6 +764,7 @@ def main() -> int:
                         temperature=temperature,
                         max_tokens=max_tokens,
                         thinking=thinking_enabled,
+                        outline_json=outline_json,
                     )
                     outline_path.write_text(json.dumps(outline, ensure_ascii=False, indent=2), encoding="utf-8")
                     meta["outline_generated"] = True

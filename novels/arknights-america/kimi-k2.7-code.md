@@ -1,0 +1,3088 @@
+# 陆上孤舟
+
+## 大纲
+
+1. **深蓝色的天空** — 罗德岛穿过空间裂隙，悬停于纽约港外海。凯尔希确认这个世界没有源石，大气与重力却与泰拉惊人吻合。博士下令全舰静默，但CNN的直播信号已将这艘钢铁巨兽投放到亿万屏幕之上。
+2. **黑色直升机** — 美军与国务院联合小组乘直升机登舰，翻译设备故障频发。双方对移动城市、武装中立、感染者等概念产生错位理解。阿米娅以礼仪缓和敌意，凯尔希冷静隐瞒源石病史，博士在握手时察觉到对方同样在恐惧。
+3. **十二海里** — 美方要求罗德岛驶入指定锚地并接受登船检查，博士拒绝交出动力核心。甲板谈判因语言裂隙几近破裂，一个误译让投降与停泊混为一谈。阿米娅在干员面前短暂落泪，又重新站回博士身侧。
+4. **没有源石的夜晚** — 第一个夜晚，罗德岛实施灯火管制。凯尔希发现泰拉人体内的源石结晶进入惰性状态，却无法预测何时恶化。地球方面送来补给，博士亲自检查每一件物资，警惕任何可能突破检疫的采样行为。
+5. **两种逻辑** — 内部会议上，作战干员主张强行登陆，医疗干员要求全面合作。博士以残局棋喻说服众人：这里不是乌萨斯，也不是卡兹戴尔。此时一艘未识别快艇突破警戒线，触发了舰上最后一道非源石自动防御。
+6. **水面的裂痕** — 快艇事件险些引发交火，博士用破碎的英语与灯光信号喊停盘旋的武装直升机。凯尔希救治落水者，向美方传递非敌意。但突破者被扣押后音讯全无，双方刚刚建立的微弱信任再次悬于一线。
+7. **交换谎言与真相** — 联合国观察员获准登舰，带来真正的专业翻译。博士选择有限披露源石、感染者与移动城市文明。阿米娅首次面对地球镜头讲话，承诺不首先使用武力，却不知这段画面正在点燃另一场关于恐惧的舆论风暴。
+8. **无源石的手术** — 一名重症感染者突发并发症，凯尔希在无源石环境下用地球器械完成手术，证明两种医学可以互补。手术成功的同一时刻，美方情报机构截获舰内加密通讯，政治压力骤增，临时庇护协议濒临推倒重来。
+9. **第七十小时** — 第七十小时，谈判接近达成临时庇护条款，一支不明武装快艇却突然逼近舰艉。博士下令非致命拦截，但在混乱中，一声枪响划破甲板。他看见阿米娅倒下，双方所有无线电同时陷入死寂。
+10. **孤舟** — 阿米娅中弹生死未卜，美方舰队进入最高警戒，罗德岛武器系统自动锁定周围目标。博士的手指悬停在发射钮上，却看见云层中再度裂开一道空间缝隙。他不知道那是回家的路，还是另一艘正在坠落的孤舟。
+
+## 第1章 深蓝色的天空
+
+警报是在十四点十七分停止的。
+
+不是渐次平息，而是像被人从中间一刀斩断。前一秒舰桥里还充斥着空间震荡带来的金属呻吟、过载回路的尖啸，以及 PRTS 用合成音不断重复的结构性损伤报告；下一秒，所有声音骤然退场，只剩下通风系统低沉的嗡鸣，和几十名干员压低的呼吸。
+
+博士站在全景屏幕前，手指还悬停在战术台的紧急制动键上方，没来得及按下去。
+
+屏幕上是一片深蓝色的水面。
+
+不是泰拉的任何一片荒原或盐沼。那颜色太干净了，干净得近乎不真实，像是一块被不断打磨的金属，一直铺展到天边。水面上没有源石结晶的反光，没有天灾过境后沉淀的灰白粉尘，也没有移动城市碾过时留下的焦黑履带痕。只有风，只有阳光，以及远处一条被无数桥梁贯穿的海岸线。
+
+海岸线之上，矗立着密密麻麻的高楼。
+
+它们不会移动。博士第一个注意到的就是这件事。那些建筑物的轮廓里没有集成引擎塔，没有支撑移动城区所需的液压缓冲柱，没有随时可能启动的履带基座。它们只是笔直地、沉默地立在那里，玻璃幕墙在日光下反射出一片冰冷的银白色，仿佛这个世界已经习惯了静止。
+
+“博士……”
+
+阿米娅的声音从他身后传来，很轻，像怕惊动什么。他没有回头，只是把手从制动键上放下来，垂到身侧。他能感觉到自己的掌心在出汗，但这不合常理——他的体温调节从来都不太好，尤其是在穿上这套防护服之后。
+
+“凯尔希。”他开口，声音比想象中更哑，“报告。”
+
+凯尔希站在扫描仪前，背脊挺直，绿色的长发在舰桥冷光下像是某种金属丝。她没有立刻回答。博士从屏幕的倒影里看见她的手指在操作面板上滑动，一遍又一遍，动作精确得近乎机械，却又在第五次重复时停顿了不到半秒。
+
+那半秒让他脊背发凉。
+
+“大气成分与泰拉高度吻合。”她终于说，语调平稳，像在读一份再普通不过的任务简报，“氮氧比例、气压、重力常数、电磁频谱……误差都在可接受范围内。”
+
+“然后呢？”
+
+“没有源石反应。”
+
+舰桥里没有人动。但博士能感觉到空气变了——某种他熟悉了很多年的、像背景噪音一样无处不在的东西，突然之间被抽走了。他下意识地去感受它，就像感受自己的心跳，然后发现那里是空的。
+
+没有源石。没有感染者与非感染者之间的那条界线。没有法术，没有技艺，没有他们用来驱动引擎、治愈伤口、杀死敌人的那种根本性的力量。
+
+罗德岛在泰拉的一切根基，在这里都不存在。
+
+“这不可能。”有人在角落里低声说，博士没有转头去看是谁。他不需要。他自己也正在把这句话在舌尖上碾碎。
+
+“距离海岸线多远？”他问。
+
+“十九点四公里。”凯尔希说，“我们正悬停在水面上方约四百米处。没有推进器输出功率的异常读数，也没有源石引擎的反噬迹象。换句话说，我们……是被放置在这里的。”
+
+“放置。”博士重复了一遍这个词。它很重。
+
+他向前走了一步，靠近屏幕。远处那些不会移动的高楼之间，有一些更小的影子在移动。天空中飞行的不是羽兽，也不是任何源石驱动的飞行器。它们的形状太过规则，金属机身在日光下闪闪发亮，腹部闪烁着规律的红光。它们绕着罗德岛盘旋，保持距离，像是在观察，又像是在等待某种命令。
+
+“那是……什么？”阿米娅走到他身边，双手不自觉地攥紧。她的戒指在舰桥灯光下黯淡无光——没有源石环境，它们只是金属。
+
+“飞机。”博士说。他不知道自己是凭什么认出这个词的。也许是从某份尘封的档案里，也许是某个他早已忘记的梦境。“没有源石引擎。它们用……别的东西飞。”
+
+“别的什么东西？”
+
+“我不知道。”
+
+这句话从他嘴里说出来的时候，舰桥里的温度似乎又降了几度。他是博士，是罗德岛的指挥官，是在无数场不可能打赢的战役里把干员们带回来的人。在这种时刻，他应该给出一个答案，哪怕只是暂时的。
+
+但他没有。
+
+他脑子里只有一个问题，像一颗被吞下去的冰：为什么是我们？
+
+不是为什么罗德岛会遭遇空间异常——泰拉的天灾和源石异常已经足够让人习惯意外。他问的是另一件事：这场穿越，是随机的，还是有人——或者有某种东西——故意把他们推到这里？
+
+如果是随机的，那么他们面对的是一个完全无法理解的宇宙玩笑。如果是故意的，那么推他们过来的人想要什么？又为什么要选择一个没有源石的世界？
+
+“全舰静默。”他说。
+
+命令下达得很快。灯光没有变化，但博士能感觉到整艘战舰的神经在收缩。武器系统转入锁定状态，外部照明熄灭，通讯频道切换到最低功率，所有非必要岗位的人员被命令原地待命。罗德岛像一头受了伤的猛兽，在海面上屏住呼吸。
+
+但已经太晚了。
+
+“博士，”通讯台前的干员抬起头，脸色苍白，“我们截获了一段……民用广播信号。画面信号。”
+
+“接上来。”
+
+屏幕切换了一瞬。深蓝色的水面消失了，取而代之的是一个狭小的演播室，一个穿着西装的男人坐在桌子后面，语速极快地说着什么。博士听不懂那些音节——它们的发音方式和泰拉的通用语完全不同，咬字急促，尾音上扬，带着一种他无法判断是紧张还是兴奋的情绪。
+
+但画面右上角的小窗口里，他看见了自己的战舰。
+
+罗德岛。从高空俯瞰。钢铁巨兽悬浮在蔚蓝的海面上，移动城市的引擎塔投下长长的影子，像一只不属于这个世界的昆虫掉进了水杯里。画面不断切换，有从直升机上拍摄的侧面特写，有海面上警船拉出的白色尾迹，还有远处城市天际线的剪影。
+
+博士的嘴唇抿成一条线。
+
+“他们在直播。”通讯干员的声音发颤，“不是军用加密频道，是……是面向公众的。这艘战舰的影像，正在被传送到这个世界的每一个角落。”
+
+“能不能确定覆盖范围？”
+
+“至少是这个国家的全部领土。可能更广。”
+
+博士闭上眼睛。
+
+在泰拉，信息是最重要的武器之一。他知道如何在敌军间谍网络中散布谣言，如何利用移动城市的广播系统稳定民心，如何在谈判桌上用一份恰到好处的情报换取生存空间。但那些经验全部建立在一个前提之上：他了解对手，了解这个世界运转的规则。
+
+而现在，他们才是被观看的对象。亿万双眼睛正透过屏幕审视这艘钢铁巨兽，而他甚至不知道那些观众说的是什么语言，信仰什么神明，拥有怎样的武器。
+
+“关闭外部信号接收。”他说，“不要回应任何呼叫，不要发出任何可能被解读为敌意的动作。让工程部检查所有武器系统，确保没有自动防御程序误触发。”
+
+“是。”
+
+“凯尔希。”他转过身，“医疗部和后勤呢？”
+
+“伤员已经在收容。”她头也没抬，继续操作着另一台终端，“没有源石环境下，部分依赖源石技艺维持的生命体征监测设备失效了。但基础医疗设备可以正常运转。储备能源……按最低消耗计算，可以支撑十二周。”
+
+十二周。博士把这个数字在嘴里含了一会儿。听起来很长，但如果他们无法找到替代能源，或者无法与这个世界建立任何联系，十二周不过是另一种倒计时。
+
+“阿米娅。”
+
+“我在，博士。”
+
+他这才真正看向她。少女的脸色有些苍白，眼眶微微发红，但声音是稳的。她总是这样。即使在最糟糕的时候，她也会先把背挺直，再去处理那些快要溢出来的情绪。
+
+“去通知各小队负责人，保持冷静，不要离开指定区域。任何对外接触都必须经过舰桥批准。”
+
+“明白。”
+
+她转身要走，却又停住，回头看了他一眼。那一眼里有很多东西——信任，恐惧，还有某种他知道自己无法辜负的期待。
+
+“博士，我们会找到办法的，对吗？”
+
+他没有立刻回答。
+
+在泰拉，他总是能找到办法。因为泰拉的战争有规则：资源、地形、人心、源石技艺的克制关系。但这个世界没有源石。这意味着他熟悉的所有杠杆都消失了。他必须重新学习一切——从重力的细节到天空的颜色，从那些金属飞鸟的飞行原理到对面城市沉默的秩序。
+
+“我们会找到办法。”他终于说。
+
+这不是谎言，也不是承诺。这是一个指挥官在这种情况下必须说出的句子。
+
+阿米娅点了点头，快步离开舰桥。博士重新转向屏幕。民用广播已经切断，画面回到了外部摄像头的实时影像。那些金属飞鸟还在盘旋，数量似乎比刚才多了一架。更远处的海平面上，出现了几个小小的黑点，正朝着罗德岛的方向移动。
+
+“博士，”凯尔希走到他身边，声音压得很低，只有他能听见，“你有没有想过，如果这个世界真的没有源石，那么它对罗德岛意味着什么？”
+
+“意味着我们失去了所有优势。”
+
+“也意味着，”她说，“这里没有矿石病。没有因为感染而被驱逐的人。没有移动城市为了躲避天灾而碾过的村庄。”
+
+博士侧过头看她。她的表情没有任何变化，但这句话本身就像一块投入深水的石头。
+
+“你在说什么？”
+
+“我在说，”凯尔希的目光仍停留在屏幕上那片深蓝色的水面上，“我们可能站在一个完全不同的文明面前。不要用泰拉的逻辑去预判他们。否则我们失去的将不止是能源和武器。”
+
+他沉默了很久。
+
+海面上的黑点越来越近。博士能辨认出那是船只，形状低矮，外壳呈现出一种他从未见过的灰蓝色。它们没有源石引擎的特征，也没有移动城市的厚重装甲，但它们的速度很快，而且显然是朝着罗德岛来的。
+
+天空中，一架金属飞鸟脱离了盘旋编队，开始降低高度。它的腹部红灯闪烁频率变了，变得更加急促，像是在发送某种信号。
+
+然后博士看见了它身后的另一架。
+
+那是一架黑色的直升机，没有任何标识，机身线条锋利得像是用刀削出来的。它没有靠近到足以让舰桥看清驾驶舱里人员的距离，但博士能感觉到那上面有人在看他。
+
+不止一个人。
+
+“博士，”通讯干员的声音再次响起，这次更低，“那架黑色直升机正在请求降落。用的是通用无线电频率，明文。我们……听得懂频段，但内容还在解析中。”
+
+博士盯着那架悬停在四百米外的黑色机器。
+
+在泰拉，当一个陌生人请求进入你的移动城市时，通常只有两种可能：他带来了交易，或者他带来了战争。而区分这两者的方法，往往需要先用子弹试探。
+
+但这里没有源石。他的子弹不一定有用，对方的也不一定遵循他理解的物理规律。
+
+“打开甲板照明。”他说。
+
+“博士？”
+
+“只开降落的引导灯。让他们知道我们看见了。不要开启武器锁定，不要做出任何包围姿态。”他顿了顿，“然后，通知阿米娅和凯尔希，到主甲板来。”
+
+“您要亲自去？”
+
+“总要有人去。”
+
+他没有再说更多。舰桥里的灯光在他脸上投下一半阴影，另一半被屏幕上的深蓝色海水照亮。博士想起很久以前——也许是巴别塔时期，也许更早——有人对他说过一句话：指挥官不是最勇敢的人，指挥官是那个在所有人都想开枪的时候，还能想起问一句“你是谁”的人。
+
+他现在就想问这一句。
+
+黑色直升机缓缓下降，螺旋桨搅动着海面上方的空气，在罗德岛的主甲板上掀起一阵没有源石粉尘的风。舱门没有打开，但博士知道，很快就会有某种东西踏上来。
+
+也许是和平。也许是另一场他还不理解其规则的开端。
+
+他把手背到身后，站直了身体，看着那架来自陌生世界的机器降落在泰拉的土地上。
+
+[思考过程]
+We need generate first chapter in Chinese per prompt. Must output only chapter text, start with markdown title. User asks "陆上孤舟" chapter 1. We need produce about 2500 words? They give 1500-99999, target 2500. Need satisfy: third-person limited to Doctor, no inner US side, no explanations, no meta. Must be novel prose. Need include characters: Doctor, Kal'tsit, Amiya, Rhodes Island crew. Scene: after spatial rift, hovering over New York harbor, no Originium, atmosphere/gravity same, CNN broadcast. Doctor orders silent, but already broadcast. Tension. We need write in Chinese with careful detail and suspense. Need ensure word count around 2500 Chinese characters? They said words; Chinese character count roughly. We'll aim 2500+ characters. Need start with "## 第1章 深蓝色的天空". No other content before or after. Need not write summary. We'll produce prose. Let's craft. Need maybe mention no sourcestone, no Arts. Need show Doctor psychological change. Need include dialogue. Need show first black helicopter landing at end? Prompt says first black helicopter landing, visitors about to step on Terra land. Chapter summary says CNN signal. Could end with helicopter landing. Let's incorporate. Need maintain character: Kal'tsit concise, Amiya firm but emotional. Doctor S-tier commander, uncertain. Let's write. We need avoid US character perspective; we can describe helicopter as observed. Use descriptors: belly red lights, skyscraper glass, no nomadic city engine towers, clean sunlight. Use third person limited: only Doctor's thoughts/perceptions. Let's write in polished Chinese literary sci-fi style, restrained, dialogue. Include technical: spatial anomaly, silence order, comms intercept CNN, language translation (no universal translator). They likely need interpret English via ship AI or someone with language databases. Maybe Projekt Red? No, not needed. Could use existing operator translating? To keep realism, they pick up TV signal, decode English, and a Linguistics operator struggles. Let's include Logos? Maybe not. Could be an unnamed communications officer. Better use established characters? Maybe PRTS? Actually PRTS could attempt. Doctor orders. Include Doctor's monologue: "为什么是我们？" Not literal speech, internal. Also concern deliberate vs random. Let's write around 2600 characters. Ensure no meta. Let's proceed.
+[/思考过程]
+
+## 第2章 黑色直升机
+
+直升机落在主甲板上时，声音比博士预想的小。
+
+它不是砸下来的，而是像一片被风托着的金属叶子，轻轻贴上钢铁地面，轮胎与防滑涂层接触的瞬间发出一声短促的摩擦。螺旋桨的转速慢下来，气流把甲板上的灰尘和海水咸味搅在一起，扑在博士脸上。没有源石粉尘。他再次确认了这件事——风是干净的，带着一种他几乎不认识的、潮湿的咸味。
+
+“灯保持原状，不要调亮。”他说。
+
+身后的甲板照明已经降到了最低限度，只够勾勒出停机区域的黄线。他不想让对面觉得自己在炫耀什么，也不想让他们误以为这是陷阱。在泰拉，一个移动城市打开甲板灯迎接陌生人，通常意味着两种意思：要么交易，要么处刑。他希望对面不要学到这个习惯。
+
+阿米娅站在他左侧半步远的地方，双手交叠在身前。她的戒指在冷光下没有反应，像几块普通的深色石头。凯尔希在他右侧，白大褂的下摆被风掀起，她没有按住，只是站着，目光落在直升机还在转动的桨叶上。
+
+“他们没有下机。”阿米娅低声说。
+
+“他们在看。”凯尔希说。
+
+博士没有回头，但他能想象自己身后甲板上那些隐蔽的枪口和监控探头。他下令撤掉了所有会对准停机区的武器锁定，可他知道，对面的热成像和夜视设备里，罗德岛仍然是一头浑身长满棱角的东西。你无法让一头钢铁巨兽看起来无害，尤其当它刚刚从天而降。
+
+舱门终于打开了。
+
+先下来的是一名军人。迷彩作战服，战术背心，头戴没有任何标识的黑色头盔。他的右手没有离开胸前那把短武器的握把，但也没有抬起。博士注意到那把武器的形状——细长、笔直，没有源石共鸣槽，没有法术激发单元。纯机械。凯尔希的判断是对的：这个世界的杀戮依靠的是爆炸和金属，而不是源石技艺。
+
+军人身后是一名穿深色西装的女人，没有头盔，头发束得很紧，被风吹得贴在颈侧。她手里没有武器，但另一只手扶着一个挂在胸前的平板电脑。最后下来的是一个年轻些的男人，背着一只金属箱，箱盖上贴着几条反光胶带。他刚踏出舱门就绊了一下，被军人伸手扶住。
+
+博士看见那个年轻人的脸色发白。不是因为晕机，是因为害怕。
+
+女人说了什么。语速很快，音节短促，尾音向上挑。博士听不懂，但他捕捉到几个重复出现的词：“罗德岛”“降落”“代表”。她的目光扫过甲板，扫过他身后的阿米娅，最后停在博士脸上。她在评估，就像他也在评估她。
+
+“翻译设备。”她身后的年轻男人打开金属箱，取出一只巴掌大的黑色圆盘，放在甲板中央。圆盘展开成三片扇形天线，中央亮起一盏绿灯。他对着圆盘说了几句话，又调整了几下。
+
+一阵轻微的电流噪音之后，圆盘里传出一个机械的女声，说的居然是泰拉通用语，但带着明显的断裂：
+
+“——美国……联合……小组。请求……对话。重复。请求……对话。”
+
+阿米娅微微吸了一口气。
+
+博士没有动。他看着那个女人的眼睛，然后用通用语说：“罗德岛接受对话。这里是罗德岛指挥官，博士。我们没有敌意。”
+
+圆盘上的绿灯闪了几下，把这句话转换成一串急促的英文。女人的表情没有变化，但她身旁的军人肩膀绷得更紧了。
+
+“他们听懂了，”凯尔希用只有他能听见的声音说，“但没有放松。”
+
+女人又开口了。圆盘延迟了两秒才翻译出来：
+
+“你们……船只……国籍？”
+
+“罗德岛不属于任何国家。”博士说。
+
+圆盘发出一串英文。女人和军人交换了一个眼神。那个眼神里没有信任，只有一种谨慎的确认，像是两个人在核对一份他们都不希望是真的情报。
+
+“移动……城市？”机械女声把对方的问句译回来，但“city”这个词被发成了一个生硬的音节，听起来像“城”后面跟了一声咳嗽。
+
+“对。”博士说，“罗德岛是一座移动城市，也是医疗设施。我们现在处于——”他顿了一下，寻找一个不会引起误解的词，“非战斗状态。”
+
+圆盘再次翻译。这次军人和女人同时皱了皱眉。
+
+“它把‘非战斗状态’译成了什么？”阿米娅小声问。
+
+“不重要。”博士说，“重要的是他们听到的不是他们想听的。”
+
+女人低头在平板上划了几下，然后把屏幕转向他们。屏幕上是一张卫星照片：罗德岛悬浮在蔚蓝的海面上，巨大的阴影投在水面，像一滴墨汁落进清水里。照片边缘有一行不断跳动的坐标和字母。
+
+“美国……领海。”圆盘翻译道，“你们……必须……解释。”
+
+“我们并非自愿来到这里。”博士说，“这是一次空间异常事故。我们没有侵略意图，也没有补充能源的能力。我们需要对话，而不是对抗。”
+
+机械女声把这些话切碎了送过去。女人听着，嘴唇抿成一条线。她身后那个年轻的技术员偷偷抬眼看了看阿米娅的耳朵，又飞快低下头，手指在箱子上敲出一串慌乱的节奏。
+
+阿米娅向前走了一步。
+
+她的动作很慢，没有任何威胁性。她微微鞠躬，用她最轻的声音说：“感谢你们愿意先来见我们。我知道这很可怕。我们也一样。”
+
+圆盘迟疑了一下，才把这句话译过去。女人的表情第一次有了变化——不是软化，而是一种更复杂的松动，像是一个人突然意识到自己面对的敌人也许会说“谢谢”。
+
+军人却没有任何松动。他的手 still 扶着武器握把，食指悬在扳机护圈外。博士认得那种姿势。那不是准备开火，而是准备“决定”是否开火。这种姿势在泰拉的雇佣兵身上很常见。
+
+“你的名字？”女人转向阿米娅，圆盘翻译道。
+
+“阿米娅。罗德岛的公开代表。”
+
+“你……多大？”
+
+这个问题出乎所有人意料。阿米娅愣了一下，然后回答：“十四岁。”
+
+圆盘把这个数字译过去时，女人眼中闪过一丝博士无法忽略的情绪。他不知道那是怜悯、警惕，还是某种更深层的不安。在这个世界，十四岁也许不该站在一艘战舰的甲板上和陌生人谈判。但泰拉没有给过阿米娅别的选择。
+
+“你手上有病？”军人突然开口，声音比女人粗哑。圆盘把他的话译成：“你的手……疾病？”
+
+所有人的目光落在阿米娅的戒指上。
+
+阿米娅的手指微微蜷缩了一下。那是一个很小的动作，但博士看见了。他也看见凯尔希的身体有一瞬间的前倾，像是在准备介入。
+
+“不。”阿米娅平静地说，声音里没有颤抖，“这只是我们的装饰。一种……身份的标记。”
+
+博士没有纠正她。在这个没有源石的世界里，“感染者”这个词一旦出口，翻译设备会把它变成什么？他不敢赌。也许是“病人”，也许是“带菌者”，也许是“被污染者”。无论哪一种，都会让对面立刻后退三步，然后举起武器。
+
+凯尔希适时地上前一步，白大褂在风里轻轻摆动。她的声音平稳得像在陈述一份病历：“我们是医疗机构。船上有完整的隔离和检疫程序。如果你们担心生化风险，我们可以提供我们的标准协议。”
+
+圆盘把这句话译过去。女人听完后，低头在平板上记了些什么。军人没有动，但他的视线从阿米娅的戒指移到了凯尔希的脸上，像是在判断这个绿发女人是不是这艘船上最危险的人。
+
+博士觉得他的判断有一半是对的。
+
+“我们要……检查。”圆盘翻译着女人的话，“外部。无武装。”
+
+“不可能。”凯尔希说。
+
+空气凝固了一秒。
+
+女人的眉头皱了起来。军人扶在武器上的手动了动，不是拔枪，而是一个下意识的小调整。博士知道，那是紧张的前奏。
+
+“我们可以讨论相互视察。”博士说，在凯尔希和女人之间截住话头，“你们派一个人，我们派一个人。在指定区域。不能进入核心舱室。这是对我们双方安全的尊重。”
+
+圆盘把这个提议译过去。女人和军人低声交谈了几句，声音压得很低，圆盘没有捕捉到。博士看着他们嘴唇的翕动，意识到自己正在学习一种新的战争规则：这里的谈判不靠源石技艺的威慑，也不靠移动城市的吨位，而靠一种他还没有完全掌握的、关于“信任”的精确计算。
+
+“一个人。”圆盘最后翻译道，“无武装。留下。”
+
+“可以。”博士说。
+
+女人伸出手。
+
+博士看着她。那只手很细，指甲修剪得整整齐齐，但在掌心靠近拇指的地方有一道浅浅的压痕——那是长期握笔或者握枪留下的。他握住它，发现她的皮肤冰凉，指节僵硬，脉搏快得不像一个表面镇定的人。
+
+她也在害怕。
+
+这个认知像一滴冷水落进博士的脊椎。他忽然意识到，眼前这些人不是来自某个强大到可以无视未知威胁的文明。他们也是凡人，穿着制服和西装，坐进一架黑色直升机，飞向一艘从天而降的钢铁城市。他们可能昨天还在办公室里处理文件，今天就被命令来和一个完全不同的世界握手。
+
+博士握得更稳了一些，没有用力，只是让对方感觉到：他的手是干燥的，不会突然收紧。
+
+女人松开手，迅速退后半步，用手势示意军人收起某种已经准备好的姿态。军人没有放下手，但他的肩膀微微下沉了一寸。
+
+“请跟我们来。”博士说，“我们有一间会议室。”
+
+他们穿过甲板，进入舰体内部的通道。博士有意放慢了脚步，让身后的人能看清周围。这不是慷慨，是计算——让他们看见走廊里忙碌的医疗人员，看见墙上“急救”和“隔离区”的标识，看见穿着白大褂的卡特斯少女推着药品车匆匆走过。让他们知道这艘船首先是医院，其次才是别的。
+
+但事情没有按他的剧本发展。
+
+在一个拐角处，一名菲林工程师正蹲在地上检修管线。他的耳朵和尾巴在灯光下清晰可见，毛色灰白，尾巴尖有一处旧伤疤。他抬头看了这群陌生人一眼，礼貌地点点头，又低下头继续工作。
+
+军人猛地停住脚步。
+
+他身后的技术员差点撞上他的背。女人也愣住了，她的目光从菲林的耳朵移到尾巴，再回到博士脸上，嘴唇微微张开，却没有发出声音。
+
+阿米娅立刻开口，声音柔和：“他受伤了，在修理供暖管道。如果你们不介意，我们最好不要打扰他。”
+
+圆盘把这句话译过去。女人的表情从震惊变成一种克制的茫然，像是有人在试图把两个不可能兼容的事实塞进同一个脑子。军人则缓缓转过头，用一种博士看不懂的眼神盯着他。
+
+那眼神里有恐惧，但不是对暴力的恐惧。是对“规则”的恐惧——他世界观里的规则刚刚被撬动了一条裂缝。
+
+“继续走。”博士说。
+
+他们没有说话，但跟了上来。
+
+会议室在二层甲板的医疗区旁边，不大，陈设简单。博士特意没有带他们去舰桥，也没有去战术室。这里是中立的地方，一张长桌，几把椅子，一盏柔和的顶灯。墙上挂着罗德岛的标志：一艘在风浪中航行的船。
+
+女人和军人坐在一侧，技术员把翻译圆盘放在桌子中央。博士、凯尔希和阿米娅坐在另一侧。门在身后关上，发出一声沉闷的轻响。
+
+女人从文件夹里取出一张纸，铺在桌上。那是一张海图，罗德岛的位置被标成一个红色的圆圈，圆圈边缘紧贴着一条弯曲的蓝色岸线。
+
+“纽约。”圆盘翻译着她的手指指向的地方，“美国……最大城市之一。你们……在这里。不到二十公里。”
+
+“我们明白了。”博士说。
+
+女人又取出另一张纸。这一次是一张照片，从直升机上拍摄的罗德岛侧影。照片被红线圈出了几处：主炮塔、引擎排气口、起降甲板、舰桥。
+
+“这些……是什么？”
+
+“自卫武器。”博士说，“我们没有使用它们的意图。在这座……纽约……受到任何威胁之前，我们不会开火。”
+
+圆盘翻译完，军人的嘴角动了一下。那不是笑，是一种苦涩的确认。
+
+女人和军人又低声交谈了几句。这一次博士听清了其中一个词，因为它被重复了两遍：“CNN”。他想起舰桥里截获的那段民用广播。这个世界已经在看着他们了，不只是眼前的几个人。
+
+最后，女人坐直身体，双手交叠放在桌上。她的指甲轻轻敲击桌面，发出规律的、像倒计时的声音。
+
+“美国……政府……要求。”圆盘翻译道，“第一，不移动。第二，不开火。第三，允许一名……联络官……登船。直到……我们理解彼此。”
+
+“如果我们拒绝呢？”博士问。
+
+圆盘把这个问句送过去。女人的眼神没有躲闪。
+
+“那么……你们将被视为……不明威胁。”机械女声停顿了一下，似乎在寻找一个合适的词，“……并被……相应处理。”
+
+会议室里安静了很久。
+
+博士没有立刻回答。他看着桌上那张海图，红色圆圈像一只正在收紧的网。他知道，眼前这两个人没有权力决定战争或和平，他们只是一根伸出来的触角。真正做决定的人在那座城市里，在无数的屏幕后面，在某种他还无法命名的政治结构里。
+
+而在他身后，阿米娅和凯尔希正在等他。
+
+“我们需要时间商议。”博士说。
+
+“多久？”
+
+博士本想要求十二小时，但他说出口的却是：“一个小时。”
+
+女人有些意外，但很快点了点头。她站起身，军人紧随其后。技术员手忙脚乱地收起圆盘。
+
+当他们走到门口时，博士忽然开口：“你们害怕我们。”
+
+这句话没有通过翻译圆盘。他说的是英文——一个他不知道自己为什么会记得的词。
+
+女人停下脚步，没有回头。军人也没有。
+
+沉默在会议室里停留了两秒钟。然后女人轻声说了一句什么，声音低得让博士几乎以为她没有说话。但圆盘仍然开着，机械女声在空气中吐出最后的翻译：
+
+“我们也害怕……我们自己。”
+
+门在他们身后关上了。
+
+博士站在桌前，听着走廊里渐远的脚步声。阿米娅走到他身边，声音轻得像呼吸：“博士，他们刚才说的‘相应处理’……是什么意思？”
+
+“我不知道。”博士说。
+
+凯尔希走到窗前，看着甲板上那架黑色直升机。它的螺旋桨又开始转动，准备起飞。
+
+“但他们不是来开战的。”她说，“如果他们想开战，就不会只派三个人、一架直升机，还有一个会绊倒自己的技术员。”
+
+“他们是来评估的。”博士说，“评估我们是不是可以被控制。”
+
+“那我们的答案呢？”阿米娅问。
+
+博士没有回答。他看着窗外，直升机缓缓升起，像一只被收回去的黑色眼睛。远处的海平面上，那些灰蓝色的船只仍然停在那里，没有靠近，也没有离开。
+
+在他的战术地图上，这些船只是一个模糊的概念。他不知道它们的火力范围，不知道它们的指挥链条，不知道它们背后的国家拥有怎样的历史、恐惧和偏见。他只知道一件事：它们和他一样，都在等待对方先露出破绽。
+
+而这个世界上，没有源石，没有天灾，没有感染者与非感染者之间那条被反复撕裂又缝合的界线。
+
+也许正因为如此，这里的恐惧才更加纯粹。没有源石技艺可以把敌人烧成灰，没有移动城市可以碾碎城市再扬长而去。这里的恐惧只能依靠话语、协议、握手的力度和翻译设备里的延迟来缓解。
+
+博士把手掌按在冰冷的桌面上。
+
+“通知各部门负责人。”他说，“一小时内，我要一个方案。一个能让美国人把联络官派上来、同时不让他们看见任何不该看见的东西的方案。”
+
+阿米娅点头，转身要走，又停住：“博士，如果一个小时不够呢？”
+
+博士看着窗外。直升机已经变成海面上的一个小黑点，正朝着那座灯火通明的城市飞去。而在那个方向的更远处，天空正在一点点变暗。
+
+“那就让他们以为够了。”他说。
+
+门再次关上，留下博士和凯尔希在会议室里。凯尔希没有看他，但她的声音从窗边传来，冷静得像是从某个很远的地方传来：
+
+“你刚才握她手的时候，在想什么？”
+
+博士沉默了一会儿。
+
+“在想，”他说，“如果她先扣扳机，我会不会比她的恐惧更快。”
+
+凯尔希终于转过身。她的眼睛在会议室的灯光下没有波澜。
+
+“在这里，”她说，“恐惧扣动的扳机，可能比我们想象的更多。”
+
+博士没有回答。他看着窗外，那座城市的光点正在逐一亮起，像一张刚刚被点亮的棋盘。
+
+而他们，才刚刚落下第一颗子。
+
+[思考过程]
+We need produce chapter 2 only, in Chinese, per instructions. Must start with markdown heading "## 第2章 黑色直升机". Narrative follows prior chapter. Need focus on black helicopter landing, US military/State Dept joint team, translation device malfunctions, conceptual mismatches about mobile city, armed neutrality, infected. Amiya uses courtesy to defuse hostility, Kal'tsit calmly conceals origin disease history, Doctor during handshake senses counterpart also afraid. Third person limited to Doctor. No US internal POV. Length 2500 target, range 1500-99999. Need write polished prose, dialogue/silence/body language/translation errors. Must include tension and suspense, no closure. Avoid meta commentary. We need ensure characters in-character: Kal'tsit cold/restrained; Amiya firm but emotional; Doctor S-tier commander. Language literary, not military power fantasy. Use Chinese. Must not output any extra content beyond chapter. Ensure chapter ends with suspense maybe after handshake or entering meeting; unresolved. We can write around 2500 Chinese characters. Need include translation device glitches perhaps an earpiece or tablet. The US team includes maybe a military officer and a diplomat/interpreter. Doctor's perspective only. Keep names in Chinese. Need avoid giving away too much. Let’s compose.
+
+Need maybe a scene: helicopter lands, rotors slow. Ramp opens. Figures emerge in suits/uniforms. Doctor, Kal'tsit, Amiya on deck with a small team. Doctor orders no weapons visible. The visitors: uniformed man (military), civilian woman (State Department), interpreter/tech with translation equipment. Initial attempts at communication: Doctor uses his limited linguistic ability? The translation device? Perhaps translation device is a portable tablet/earpiece deployed by US. They brought it assuming unknown language; it picks up patterns. It translates badly. Doctor deliberately speaks in Terran common language? The device can translate partially. Or they have a linguist. We can show miscommunications: "mobile city" translated as "city ship" or "mobile fortress"; "armed neutrality" becomes "neutral armed group" maybe interpreted as mercenary/private military; "Infected" as "patients" or "diseased". Kal'tsit notes no Originium reaction, so no disease here; but hides. Amiya bows, uses formal greetings. The US team seems tense, hands near holsters. They examine non-human races? The team includes maybe a soldier with an M4, a female diplomat, translator. Amiya is a donna (Cautus). Some characters in US team may be startled but hide. The leader maybe a Rear Admiral or a colonel. A State Department official maybe Ms. ... no need names. We only see via Doctor.
+
+Potential details: The black helicopter's rotor wash stirs dust; deck lights illuminate. The visitors wear body armor, helmets? First man out in plain suit with ballistic vest, holding a tablet. Military personnel in camouflage, rifles lowered but ready. They set down a portable ramp. They speak in English; translation devices lag and distort. Doctor notices fear in their movements: too precise, too rehearsed, hands on weapons, fingers hovering but not gripping. The diplomat's handshake palm is cold and damp. He realizes they are also scared. That's the key moment.
+
+Need conceptual mismatch: They ask "What is this vessel?" Doctor answers via translation: "This is Rhodes Island, a mobile city." Device returns "floating battleship"? The visitors exchange glances. They ask "Are you armed?" Doctor: "We are an armed neutral medical organization." Translation maybe "You are a private military medical group?" They ask "Do you have nuclear/chemical/biological weapons?" or "Are you contagious?" Kal'tsit interjects: "No biological agents. We are physicians." Hides Originium disease. But Amiya's rings catch attention; diplomat asks about "mineral deposits on your hands"? Amiya says they are personal items. 
+
+Maybe translation fails on key terms: "sourcestone/Originium" device outputs "radioactive ore?" They ask "Are you experiencing a radiation leak?" Doctor chooses not to explain Originium; says "No radiation." He senses the need to control information. 
+
+Need suspense at end: They are escorted to a conference room, or the diplomat hands Doctor a document/a phone with the President's message? Or a second wave approaching. Maybe chapter ends as Doctor notices on the helicopter's side a symbol, or a patch that suggests there are multiple agencies; or a radio call about "standing orders if hostilities commence"; or the diplomat says, "You are in United States territorial waters. You have one hour to declare your intentions." Then they hand him a tablet displaying live news of riots, military mobilization. Or the final line: The man in the suit looks at him and says something the translator renders incorrectly: "We come in peace" but Doctor hears grammatical nuance perhaps not peace but "we are here to contain." End with Doctor's realization they are being treated as a threat, and a decision pending.
+
+But the user specified: "第10章末尾留下悬念，不要收束所有线索" which is for overall? Actually the requirements list overall story ending; but we are writing chapter 2. The chapter summary says: need suspense. So ending of chapter 2 should leave suspense.
+
+Let's produce a chapter of ~2500 Chinese characters. Use markdown heading. Need ensure 3rd person limited to Doctor. Use descriptive prose.
+
+Let's write carefully.
+
+We can structure:
+- Opening: Deck, wind, helicopter touches down.
+- Doctor orders lights only, no weapons aimed. He is flanked by Kal'tsit and Amiya; behind them, a small security detail with shields (but no visible rifles?). Maybe they have sidearms holstered.
+- The visitors: a tall uniformed officer first, then a woman in suit, then a technician with translation equipment. They step onto deck; the soldier's hand near weapon. Amiya bows; official returns a nod. The tech sets up a portable speaker/translator. Communication begins.
+- Translation errors: initial greeting. Amiya says welcome, device garbles. Doctor introduces self as "commander". They ask "nationality" / "origin". He says "Rhodes Island, no country". Translation yields "stateless vessel". The officer frowns.
+- Concept mismatch: mobile city. They call it "vessel" / "ship". Doctor says "landship". The tech's device can't map "landship". It outputs "aircraft carrier?" The officer mutters.
+- They ask about weapons. Doctor says "armed neutrality, medical organization". The translation says "armed medical militia" perhaps. Diplomat asks "Are you a threat?" Doctor: "We do not wish to be." The officer notes flight deck, turrets? Actually Rhodes Island has weapons maybe. They ask to inspect. Kal'tsit refuses calmly: "This is a medical facility. External inspection can be arranged under reciprocal conditions." She hides. 
+- Infected concept: The diplomat notices Amiya's rings, Kal'tsit asks if any of their party require medical attention; official says no. Kal'tsit says "We carry no infectious disease." Hmm.
+- Handshake: The lead officer (maybe a general) extends hand. Doctor shakes. Palm is cold/sweaty. He notices the officer's thumb rests near a pulse? The officer's eyes not meeting. Doctor realizes fear. Or the diplomat's handshake; choose diplomat. Perhaps the uniformed officer extends hand firmly but his wrist is stiff, and Doctor feels a tremor. He notes the soldier behind has finger on trigger guard. The realization: they are also terrified.
+- Escort to interior. They walk through corridors; visitors stare at non-human features? Maybe a passerby has animal ears/tail. US soldiers tighten grips. Amiya uses gentle words to calm a young soldier? But maybe too much. 
+- Conference room. They sit. The diplomat places a device on table; it projects English text: "You are within U.S. territorial waters. Identify your intentions. Cooperate or face interception." Or maybe she opens a folder with satellite photos showing罗德岛. The officer says (translated) "No hostile acts. We request a liaison remain aboard." Doctor understands this is a form of custody. He asks for time to consult. They agree to one hour. End with Doctor looking at the closed helicopter outside, realizing they are now a prisoner of perception, and that the other side is moving faster than he can learn their rules.
+
+But maybe the chapter needs more detail and length. Let's aim for 2500-3000 characters. Need vivid details: smell of jet fuel, rotor wash, translation device's synthetic voice, body language.
+
+Also include translation glitches explicitly. Use the phrase "翻译设备" maybe like a tablet and earbuds.
+
+Let's write.
+
+Potential names: US side could be "那名穿西装的女人" and "军装男人". Avoid internal POV. They speak English; Doctor doesn't know English but the translation device decodes. The translation's artificial voice speaks Terran common. We'll render English dialogue in quotes, then translation output. But since we only have Doctor POV, maybe we can write as he hears English, then synthetic translation. The readers can understand English (because story in Chinese), but Doctor only understands via translation. To maintain limited POV, we should describe the English speech as "一串急促的、他听不懂的音节", then the device translates. However for readability, we might render the English as dialogue then provide translation? The prompt: "叙事视角：第三人称限知视角，紧贴博士。不要切换到美国方面角色的内心视角（美军行动只通过博士的观察和对话来展现）。" It doesn't say we can't show English and translation. Since it's limited to Doctor, his comprehension is through device. We can show the English as sounds and the device's output. Better to write: '“...Rhodes Island,” the woman said. The device emitted: “罗德岛。”' That may imply Doctor hears translation. We can include both for effect.
+
+But to avoid making the US dialogue too long in English, maybe use Chinese to represent the translated speech, with occasional English words in italics for ambiguity. The device translation is imperfect, so we can show discrepancies. For example, the woman says something; device translates: “你们……船只……国籍？” Then later it clarifies. The man says something; device: “放下……武装？” Doctor infers from tone/context.
+
+Need be careful: If we write the Americans speaking Chinese (translated), it may break limited POV. But the device translation output can be in Chinese. So the flow: US speaks English; Doctor hears a synthetic voice in his ear or a speaker translating. We can format like:
+
+“——” 那个女人开口，音节短促，尾音上扬。博士耳中的翻译器延迟了半秒，才用机械的女声说道：“这是……你们的……船只？”
+
+This keeps Doctor's perspective.
+
+Let's craft.
+
+Let's also include Amiya's action: She steps forward before security, greets with a formal bow: "欢迎来到罗德岛。我们没有敌意。" The device translates? Maybe the US tech hands earpieces to them; so they wear one-way translation earpieces? But initial contact might use speaker. Let's have a portable speaker on the deck, set by the technician; both sides speak into it. The device translates aloud in the other language. That allows misunderstandings.
+
+Kal'tsit: She stands slightly behind, arms not crossed but relaxed. She observes medical signs: the visitors' skin, respiration. She notices no signs of Oripathy; also notes their weapons are chemical-kinetic (gunpowder). She whispers to Doctor: "They rely on explosive propulsion, not Originium. Treat every firearm as lethal." She also declines to reveal infection status. When asked if there are diseases aboard, she says: "We maintain standard quarantine protocols. No infectious agents of concern." That hides Infected.
+
+Amiya: When a young soldier visibly startles at her ears, she smiles gently and says "Don't be afraid." The device translates; soldier flinches, then relaxes a little. She uses courtesy to reduce hostility. But later, when asked about her rings, she falters: "They are... a symbol of our work." Doctor notices her fingers tighten. He covers: "Personal ornamentation." The diplomat's eyes remain on them.
+
+Doctor's internal monologue: He tries to apply war assessment: numbers, intent, capability. But rules are off. The helicopter is unarmored but can call more. The ships below are not landships. Their weapons are small but numerous. He must decide if this is negotiation or siege. He notices their fear in handshake: the diplomat's hand is cold, controlled but damp; pulse rapid. The officer's pupils dilated. They are acting brave. This gives him leverage but also danger—scared people shoot.
+
+Let's include a moment when he realizes translation isn't just technical error but conceptual: The device translates "武装中立" as "armed neutrality" but they hear "neutral armed force"; "感染者" translated as "the infected" or "contagious persons". When Amiya says "我们保护感染者", the device outputs "We protect the carriers." The US team's posture shifts: "carriers" might mean disease carriers or aircraft carriers? Hmm. Better to make a deliberate mistranslation: Doctor says "感染者" (infected), device says "受感染的人" but the English word 'infected' may be understood as bioweapon? Actually 'infected' just means disease. But concept mismatch: In this world, infectious disease is not politicized like Oripathy. Maybe the mismatch is when the US asks "Are any of you infected?" Kal'tsit says "No," but Doctor sees an Infected crew member (with visible crystals?) in the corridor behind; the visitors notice and tense. But we want Kal'tsit hide. Perhaps she steps slightly to block line of sight when an Infected engineer passes, and answers "Chronic occupational exposure markers. Non-communicable." This is a lie. The visitors don't understand "源石" anyway. Good.
+
+Maybe include "源石" translation: When Doctor says "源石" (Originium), the device outputs "radioactive mineral?" The diplomat asks "Are you carrying nuclear material?" Doctor says "No." They decide not to mention Originium.
+
+End: They are led to a conference room. The diplomat presents a tablet with a map showing red lines: territorial waters. She says (translated): "You are here. You cannot stay." Doctor asks "What do you propose?" Device translates their reply: "One liaison. Unarmed. On your ship. Until sunrise." It's an ultimatum/inspection. The officer adds: "Or we will consider you a hostile unknown." But translation glitches: "consider you unknown hostile." Doctor sees the fear again in the officer's tone. He agrees to discuss with his council. The chapter ends as the conference room door closes, leaving Doctor, Kal'tsit, Amiya alone. Amiya whispers: "博士，他们怕我们。" Doctor: "他们也怕他们自己。" He looks at the glass wall: the helicopter on deck, the city beyond. He knows they have maybe hours before the fear turns into something else.
+
+This provides suspense.
+
+Need ensure no closure.
+
+Let's write in a style with varied sentence lengths, sensory details. We'll produce maybe 2700 words. We need count but not over 99999. Let's aim around 2800 Chinese characters (roughly 1700-2000 words? Chinese characters). The target says 2500 words; maybe characters. We can write around 2500 Chinese characters. We'll produce rich text.
+
+Let's begin with heading and content.
+
+We need not include any summary. Just output.
+
+Let's draft in final.
+[/思考过程]
+
+## 第3章 十二海里
+
+一小时差七分钟的时候，海面上出现了第二艘船。
+
+博士站在左舷护栏旁，没有用望远镜，也没用舰桥的电子瞄准具。他看着那个灰白色的船影从海岸线的方向切过来，船首很尖，像一把被磨薄的刀，在水面上划出一道笔直的白浪。它的身后还跟着一艘更小的船，船壳是白色的，侧面有一道猩红的斜杠。没有源石引擎的轰鸣，也没有移动城市那种履带碾过地面的震动，只有柴油或某种他尚未理解的燃料燃烧时发出的低吼。
+
+“海岸警卫队。”凯尔希走到他身侧，声音压得很低，“和前面那艘军舰不同。那艘大的舷号我认不出，但火力足够在这个距离上给我们造成结构性损伤。”
+
+“他们知道。”博士说。
+
+“我们也知道。”
+
+阿米娅从后面走上来，手里捧着一杯水，杯壁上凝着细密的水珠。她把水递给博士，他没有接。
+
+“我不渴。”
+
+“您的嘴唇裂了。”阿米娅说。
+
+博士这才意识到自己确实很久没有喝过东西。他接过杯子，喝了一口，水是温的，带着金属管道的味道。他把杯子递回去，眼睛没有离开那两艘船。
+
+“他们带了多少人？”
+
+“小船上六个，大船停在两海里外。”凯尔希说，“还有两架直升机在空中，一架是民用涂装，另一架……和昨天那架一样，没有标识。”
+
+“他们在等我们答复。”阿米娅说。
+
+“不，”博士说，“他们在等我们犯错。”
+
+三分钟后，对方发出信号：要求登船谈判。无线电频道里没有图像，只有一段重复的英文，翻译设备把它切成断断续续的中文送过来：
+
+“……联合……小组……登船……重复……谈判……”
+
+博士下令放下舷梯。他只允许四个人上船，并且要求他们在甲板上交谈，不进入舰体内部。对方没有争辩，很快，一艘黑色的硬壳充气艇从白色快艇后方驶出，像一片被浪推着的叶子，靠上了罗德岛的侧舷。
+
+上来的第一个人是昨天那个女人。她今天换了一件深色的风衣，头发依然束得很紧，手里仍然拿着那只平板电脑。她身后跟着一名穿白色制服的男人，四十岁左右，肩上有金色的徽章，脸上的表情像是被冻住的。再后面是一名穿迷彩服的军人，背着一支长枪，枪管比泰拉的铳械更粗，也更短。最后是一个年轻的技术员，手里提着翻译圆盘的金属箱，脸色比昨天更白。
+
+博士注意到，那名军人上船之后，目光第一个扫向的不是他，而是甲板边缘那几座被防水布半盖着的炮塔轮廓。
+
+“欢迎回来。”博士用通用语说。
+
+翻译圆盘亮起绿灯，把这句话译成一串短促的英文。女人点了点头，没有伸手。白色制服的男人向前一步，从文件夹里取出一张更大的海图，铺在甲板上，用几个小磁扣压住被风吹起的边角。
+
+海图上，罗德岛的位置被标成一个红色的三角形。三角形的边缘几乎贴着一条用虚线画出的弧线，弧线旁边印着一行英文：TERRITORIAL SEA LIMIT — 12 NM。
+
+“十二海里。”博士低声说。
+
+女人开口了。她的语速比昨天慢，像是在刻意配合翻译设备的节奏。圆盘里的机械女声延迟了两秒才响起：
+
+“你们……现在……位于美国……领海……以内。根据……国际法……美国政府……要求……你们……立即……驶往……指定……锚地。”
+
+她用手指在海图上点了点。那是一个位于弧线外侧、靠近深海的位置，旁边标注着一组坐标。
+
+“十二海里……界线……外侧。”机械女声继续说，“到达后……关闭……主机……接受……登船……检查。”
+
+博士盯着那个点。
+
+“如果我们不动呢？”
+
+圆盘翻译过去。白色制服的男人嘴唇动了动，女人代为回答：
+
+“那么……你们将被……视为……非法侵入……并受到……相应……处置。”
+
+“你们昨天说的也是‘相应处置’。”博士说，“这个词对我们来说没有具体含义。是开火？是封锁？还是把我们从屏幕上剪掉？”
+
+女人没有笑。她身后的军人把枪的背带换到另一个肩膀，动作很轻，但博士听见了金属扣环碰撞的声音。
+
+“博士，”凯尔希用只有他能听见的声音说，“他们在等我们的态度。每一句话都会被记录。”
+
+博士点了点头。他向前走了一步，蹲下身，让自己的手指落在海图上的红色三角形旁边。他没有去碰女人，也没有去碰那名军官。
+
+“罗德岛不是军舰。”他说，“它是一座移动城市，也是一座医院。我们没有主动进入你们的水域。我们被某种力量放置在这里。移动这艘船需要消耗我们无法补充的能源。如果你们要求我们在不理解后果的情况下驶往指定地点，那么这不是谈判，这是命令。”
+
+他停顿了一下，让翻译设备把这些话切碎送过去。
+
+“而我不接受命令。”
+
+白色制服的男人第一次开口了。他的声音很低，带着一种被训练出来的平稳，像是从喉咙深处挤出来的。
+
+圆盘翻译道：
+
+“那么……解释……你们的……推进……方式。你们……悬浮……没有……螺旋桨……没有……喷口……没有……可见……升力。这……违反……物理。”
+
+博士没有立刻回答。
+
+他知道对方真正想问的不是物理。在没有源石的世界里，一艘悬浮在空中的钢铁岛屿意味着未知，而未知在最坏的情况下会被自动翻译成武器。他们不是在问罗德岛怎么飞，他们在问罗德岛会不会像陨石一样砸下去，或者在某个瞬间变成一朵蘑菇云。
+
+“我们的动力核心使用一种你们这里没有的物质。”博士说，“这种物质在你们的仪器上读不出任何反应，但它不稳定。如果不懂操作方法的人强行进入核心舱，后果会比一艘船坠落更严重。”
+
+“你……在……威胁？”白色制服的男人眉头皱紧。
+
+“不是威胁。”博士说，“是事实。我们没有核武器，没有你们所理解的生化武器。我们唯一的武器是自保用的常规火力。但我们的动力核心不会交给任何人检查。”
+
+海风吹过海图，把女人的头发吹得贴在脸上。她没有去拢，只是用手指按住图纸的一角。
+
+“博士，”阿米娅轻声说，“也许我们可以让他们参观医疗区？让他们看到我们没有敌意。”
+
+博士想了想，转向女人，用通用语说：
+
+“我们可以接受一名联络官长期驻船。我们可以开放部分医疗和非军事区域供你们观察。但核心舱、武器库和指挥系统不开放。这是我们的底线。”
+
+圆盘把这段话译过去。女人和白色制服的男人低声交谈了几句，语速很快，圆盘没有捕捉到全部内容。博士只听见几个零碎的词：“CNN”“Pentagon”“president”。他不需要听懂每一个词，他知道他们也在等待更高处的指令。
+
+然后白色制服的男人直起身，用一种近乎宣告的语气说出了一句话。
+
+圆盘里的机械女声停顿了比平时更长的时间，像是在处理一个它无法拆解的短语。当它终于出声时，甲板上的空气仿佛被冻住了：
+
+“你们的舰船……必须……向……十二海里……锚地……投降……”
+
+博士的后背瞬间绷直了。
+
+他身后的甲板上传来一阵轻微的金属摩擦声。不用回头，他也知道那是几名近卫干员的手指滑上了刀柄，或者一名狙击干员调整姿态时发出的声音。那名军人立刻后退了半步，右手搭上了胸前那把短武器的握把。白色制服的男人举起一只手，似乎想阻止什么，但女人的脸色已经变了。
+
+“不是投降。”她急急地说出一串英文，又转向技术员，用手势让他调整翻译设备。
+
+但圆盘仍然用那种生硬的机械女声重复着：
+
+“投降……并接受……检查……重复……投降……”
+
+凯尔希向前跨出半步，她的白大褂下摆被风吹得扬起，声音冷得像是从深海里捞上来的：
+
+“博士，他们要求投降。”
+
+“不，”博士说，他的眼睛盯着白色制服男人的脸，“这是一个误译。”
+
+“但干员们听到的就是投降。”凯尔希说。
+
+博士没有回头。他知道凯尔希说得对。在泰拉的语言里，“交出动力核心”“进入指定锚地”“接受登船检查”——这些词组合在一起，和“战败后缴械”几乎没有区别。而在他们的世界里，一旦指挥官在谈判桌上让步，船上的所有人都会变成俘虏，或者更糟。
+
+他举起一只手，掌心向下，做了一个压低的手势。
+
+“所有人，不要动。”
+
+他的声音不高，但甲板上的干员们都听见了。金属摩擦声停住了。白色制服的男人慢慢放下那只举起的手，女人则飞快地在平板上敲击着什么，同时用英文对技术员喊着什么。
+
+阿米娅从博士身侧走了出来。
+
+她的脚步很轻，像踩在玻璃上。她没有走向美国人，而是站在博士和那名军人之间，把自己的身体放在了可能的弹道中间。
+
+“请听我说。”她说的是通用语，声音很轻，但圆盘把它送了出去，“我们不懂你们的语言。你们也不懂我们的。但这台机器刚才说了一个我们都害怕的词。请不要让它替我们决定战争还是和平。”
+
+她顿了顿，转向博士，又转向美国人。
+
+“我们不是来投降的。我们也不是来打仗的。我们只是迷路了。”
+
+圆盘把这句话译了过去。机械女声说出的英文也许失去了阿米娅声音里所有的柔软，但意思还在。
+
+白色制服的男人看了阿米娅很久。他的目光从她的脸移到她的耳朵，移到她手上的戒指，最后移回她的眼睛。他做了一个深呼吸，肩膀下沉了一寸。
+
+“我们……没有……说……投降。”他一字一句地说，像是在对一个聋子解释，“我们说的是……停泊。Moor。把船……停到……锚地。”
+
+圆盘把这个解释译成中文，但“moor”被译成了“系泊”，而“surrender”的残音似乎还悬在空气里。博士能听见身后某个干员发出一声克制的吐气。
+
+“Moor，”博士重复了一遍那个英文词。它的发音和“more”一样，和“surrender”没有一点相似，但在翻译设备的逻辑里，它们刚才短暂地重叠在了一起，像两个从不同的世界掉下来的碎片，恰好卡进了同一个缝隙。
+
+“停泊。”博士用中文说，“不是投降。停泊。”
+
+他转向自己身后的干员们，提高了一点声音：
+
+“他们要求我们把船开到指定锚地停泊，然后接受检查。不是投降。听清楚了没有？”
+
+没有人回答，但博士能感觉到紧绷的空气松开了一些。那名军人也把手从武器上移开了，但他没有放松警惕，只是换了一个更方便观察的姿势。
+
+女人说话了，这一次她的语速很慢，几乎是一个词一个词地往外吐，像是在避免翻译设备再次犯错：
+
+“我们……不要求……武器……投降。我们要求……船只……移动……到……安全……距离。”
+
+“十二海里。”博士说。
+
+“对。”
+
+博士低头看着海图。那个红色的三角形和十二海里弧线之间的距离，用肉眼看不远。但对罗德岛来说，那可能是几个小时的全功率推进，是他们储备能源里他不愿轻易挥霍的一部分。而且一旦移动，他们就从“被放置在这里的受害者”变成了“主动选择位置的入侵者”。在法律上也许没有区别，但在叙事上，在CNN的直播画面里，那将是完全不同的两回事。
+
+“我需要时间。”博士说。
+
+“多久？”
+
+“十二小时。”
+
+女人和白色制服的男人交换了一个眼神。男人摇了摇头。
+
+“四……小时。”圆盘翻译道，“黎明前……必须……开始……移动。”
+
+“六小时。”博士说，“而且检查范围只限于甲板以上的非军事区域和医疗区。核心舱和指挥系统除外。联络官必须无武装，并且遵守我们的安全协议。”
+
+男人皱起眉头。女人低头在平板上写了些什么，然后把它转向博士。屏幕上是一行英文大写，下面附着翻译设备的中文：
+
+“NO POWER CORE ACCESS = NO AGREEMENT.”
+
+“没有动力核心的准入，就没有协议。”
+
+博士盯着那行字。
+
+“那就没有协议。”他说。
+
+甲板上一片死寂。
+
+女人的嘴角抽动了一下，像是想说什么，但白色制服的男人抬手制止了她。他从文件夹里取出另一张纸，放在海图上，然后用手掌按住。那是一份印满英文的表格，顶部有一个徽章，下面是一排签名栏。
+
+“这是……最后通牒？”博士问。
+
+“这是……备忘录。”圆盘翻译道，“记录……我们……各自的……立场。四小时后……我们的……船只……将……靠近……到……五千米。如果你们……没有……开始……移动……我们将……采取……强制……登船……检查。”
+
+他说完，站起身，没有再看博士一眼。女人收起平板，技术员手忙脚乱地合上金属箱。那名军人最后一个转身，他的目光在阿米娅身上停留了一秒，然后落在博士脸上。那不是一个威胁的眼神，那是一个人在评估另一个人的眼神——评估他是否真的会为自己的底线开枪。
+
+博士没有动。
+
+四个人顺着舷梯下了船。黑色充气艇的马达声响起，像一只不耐烦的昆虫，很快消失在起伏的蓝色里。
+
+博士仍然站在甲板上。海风把海图吹得翻卷起来，他弯下腰，把磁扣重新压好。他的手指很稳，但他发现自己的指节有些发白。
+
+“博士。”阿米娅在他身后叫他。
+
+“去通知各部门。”博士没有回头，“四小时后，我们可能要有客人了。让工程部准备两套方案：一套是移动船只到指定锚地的最低能耗路线，另一套是如果对方强行登船，如何在不动用致命火力的前提下把他们拦在甲板上。”
+
+“是。”阿米娅说，但她的脚步没有立刻离开。
+
+博士转过身。
+
+阿米娅的眼眶是红的，但她没有哭。她只是站在那里，双手紧紧地握在一起，戒指在日光下黯淡无光。
+
+“阿米娅。”博士的声音软了下来，“怎么了？”
+
+“没事。”她说，但声音里有一点颤抖，“我只是……去通知大家。”
+
+她快步走向甲板中部的舱门。那里聚集着几名干员，他们一直在阴影里看着谈判。博士看见阿米娅走到他们面前，开始说话。她的手势很轻，像是在抚平一群受惊的动物。然后一名年轻的萨卡兹干员问了什么，阿米娅摇了摇头，又点了点头，忽然用手捂住了嘴。
+
+她没有发出声音，但博士看见她的肩膀在抖。
+
+一名菲林医疗干员上前扶住她，把自己的肩膀借给她。阿米娅只让泪水流了不到十秒钟，然后用袖子狠狠擦了擦脸，重新站直，对所有看着她的人笑了笑。那个笑容很勉强，但确实是一个笑容。
+
+然后她走回博士身边，站到他左侧半步远的地方，像他最初站在这里时一样。
+
+“大家都知道了。”她说，声音已经恢复了平稳，“没有人想打仗。”
+
+“但他们会打吗？”博士问。
+
+“如果我们让他们害怕的话。”阿米娅说。
+
+凯尔希走过来，站在博士的另一侧。她没有看阿米娅，只是把一份数据板递给博士。
+
+“四小时内，如果我们以最低功率推进，刚好可以到达那个锚地。但能源储备会下降到危险线以下。如果他们在检查期间切断我们的补给，或者要求我们长期停泊，我们将无法维持全舰系统。”
+
+“所以没有选择。”博士说。
+
+“有一个选择。”凯尔希说，“我们不动。”
+
+博士看着她。
+
+“如果不动，他们就会登船。”他说。
+
+“那就在他们登船之前，”凯尔希说，“让他们明白，这艘船上最重要的不是武器，也不是动力核心。”
+
+“是什么？”
+
+凯尔希没有立刻回答。她的目光越过护栏，落在远处那艘白色快艇上。它已经退回到十二海里弧线附近，像一只正在耐心织网的蜘蛛。
+
+“是人。”她说。
+
+博士沉默了很久。
+
+海面上，太阳正在向西倾斜，把那些玻璃幕墙的高楼染成橙红色。城市里的灯光开始一盏一盏地亮起来，像是无数只刚刚睁开的眼睛。而在罗德岛和海岸线之间，那道看不见的十二海里界线，正在暮色中变得越来越清晰。
+
+博士想起那个白色制服男人最后的眼神。那不是仇恨，也不是傲慢。那是一种更深的东西——一种在面对无法理解的事物时，人类的本能反应。
+
+害怕。
+
+他们害怕罗德岛。他们也害怕自己会因为害怕而做出什么。
+
+“博士，”阿米娅轻声说，“接下来怎么办？”
+
+博士把手放在护栏上，金属被太阳晒了一整天， still 带着余温。
+
+“等。”他说。
+
+“等什么？”
+
+“等他们再派一个人来。”博士说，“或者等他们终于意识到，我们也是人。”
+
+风从海面上吹过来，带着咸味和远处城市的烟火气息。没有源石尘，没有天灾云，只有干净的、陌生的空气。
+
+罗德岛悬浮在深蓝色的水面上，像一艘搁浅在另一个世界尽头的船。而在它周围，那些来自地球的船只正缓缓收紧包围，像是在等待一个答案。
+
+博士站在甲板上，背脊挺直，手指无意识地敲击着护栏。
+
+四小时后，要么是黎明前的第一次移动，要么是第一场他还没有学会规则的战争。无论哪一种，他都会站在这里，在十二海里的界线上，把罗德岛和另一个世界的恐惧，一起扛在肩上。
+
+[思考过程]
+We need generate chapter 3 of a fanfiction, based on provided chapters 1 and 2. Need obey: output only chapter body, starting with Markdown heading "## 第3章 十二海里". No writing process, summary, meta. Third-person limited to Doctor. Focus on communication, miscommunication, language gaps, Doctor psychology. Events: US demands Rhodes Island move to designated anchorage and accept boarding inspection; Doctor refuses to hand over power core; deck negotiation nearly breaks due to language gap, a mistranslation conflates surrender and mooring; Amiya briefly tears up in front of operators then returns to Doctor's side. Target ~2500 words, range 1500-99999.
+
+Need craft narrative in Chinese, professional prose, not military power fantasy. Keep character voices: Kal'tsit calm restrained, Amiya determined but emotional. No American POV internal. All American actions through Doctor's observation and dialogue. Maintain worldbuilding consistency: no Originium, no Arts, translator device, cultural/linguistic barriers. This chapter after ch2: they've met initial three-person team, US contact woman asked demands: not move, not fire, allow liaison onboard. Doctor asked one hour. Now likely US returns with larger delegation, demand move inside 12 nautical miles? Wait title "Twelve Nautical Miles" likely refers to territorial sea boundary; Rhodes Island is just outside 12 nm? In ch1 they are 19.4 km from coast (~10.5 nautical miles) actually 19.4 km = 10.5 nautical miles, inside territorial sea? 12 nm = 22.2 km. So they are within 12 nautical miles of coast, but in international waters? Wait 19.4 km from coast = ~10.5 nm, inside 12 nm territorial sea. But chapter title "十二海里" might refer to the limit US demands they stay beyond? Maybe the US demands they move to a designated anchorage outside 12 nautical miles? Let's think.
+
+Territorial sea extends 12 nautical miles from baseline. If 19.4 km from coast (~10.5 nm), they are inside US territorial sea, hovering. The US could demand they move to a designated anchorage, perhaps outside territorial sea or inside a controlled anchorage. The chapter summary: "美方要求罗德岛驶入指定锚地并接受登船检查，博士拒绝交出动力核心。" So US wants Rhodes Island to sail/motor to a designated anchorage and accept boarding inspection. Doctor refuses to hand over power core. Deck negotiation nearly collapses because a mistranslation makes surrender and mooring synonyms. Amiya tears up before operators and returns.
+
+Need set scene on deck, possibly the US returns with a ship alongside and a delegation via helicopter or boat. Maybe they communicate via translation device plus an interpreter. Maybe the negotiations happen on deck due to not allowing them inside. Doctor goes out to meet them. Need include the power core refusal. Possibly the US wants to inspect engine/core to understand propulsion and ensure no WMD. Doctor says no. There's tension, helicopters, warships. No Originium means Rhodes Island's weapons still function mechanically but they cannot use Arts; but their conventional weapons (cannons, firearms) maybe still work with Originium-based ammunition? Actually on Rhodes Island, most weaponry uses Originium? Some operators use guns with Originium shells. The lack of Originium affects Arts and some energy weapons, but ballistic weapons may still work. However the point: they have no advantage because no Arts, no resupply. US might assume it's a ship.
+
+Need include the mistranslation incident: e.g., English word "mooring" vs "surrender" maybe the translation device renders "系泊" (mooring) as "投锚/停泊" but due to machine error, the verb is translated as "缴械" or "投降"? Or a phrase like "submit to inspection" gets translated as "投降并接受检查". Doctor hears a word that sounds like both "moor" and "yield"? Let's design: The US negotiator says "You must heave to and permit boarding." Translator outputs "你们必须停下并允许登船." Then "heave to" or "stand down" gets translated as "放下武器/投降"? Hmm.
+
+The summary says "一个误译让投降与停泊混为一谈。" A mistranslation conflates surrender and mooring. Could be the American says "We require you to come to anchor and submit to inspection." The translation device renders "submit" as "投降". Or the word "moor" in their English is heard by the translation device and rendered as "屈服"? Let's make it concrete: The translation device uses a voice recognition error: English word "moor" (to secure a vessel) and "surrender" share some phonetic? Not really. Maybe the device translates the phrase "cast your anchor" as "缴锚" which sounds like "缴械" (surrender arms). In Chinese, "停泊" (tingbo) vs "投降" (touxiang). The characters don't overlap. But in machine translation, maybe "heave to" is rendered as "投降". Actually "heave to" is a nautical maneuver to stop; colloquially "heave to" maybe the device doesn't know nautical terms, translates as "屈服". Then Doctor sees a note handed by US side with coordinates labeled "Anchorage Area Yankee" or "Surrender Zone"? We'll craft.
+
+Need character dynamics: Amiya tries to help, speaks gently to Americans, maybe misstates something. Kal'tsit stands by Doctor,冷静克制, maybe medical arguments. Doctor has psychological progression: initial instinct to treat this as siege negotiation, then realize language is the battlefield, then a moment of fear/anger, then chooses not to escalate.
+
+Need also scene where Amiya cries: maybe after a tense exchange, she steps away to speak to operators, one asks if they are going to fight, she is overwhelmed, tears, then wipes them and returns. The summary says "阿米娅在干员面前短暂落泪，又重新站回博士身侧。" So include that.
+
+Need ensure only chapter body, start with heading. Use Chinese. Around 2500 words.
+
+Let's plan structure:
+
+1. Opening: Hour is almost up. Doctor on bridge or deck, observing sea. US response arrives: more ships, a guided-missile destroyer? coast guard? A rigid-hulled inflatable boat approaches with negotiators. He wears no helmet maybe hood. The sea is calm. A second helicopter hovers. They ask to come aboard. Doctor allows a small party on deck.
+
+2. Deck negotiation. US side includes the woman from before plus a uniformed officer (Navy? Coast Guard?) and an interpreter (maybe tech device plus a human interpreter). They spread a chart, point to an anchorage 12 nautical miles from coast? Actually title: Twelve Nautical Miles. They say: "You are within twelve nautical miles of the United States. Under international law, you are in our territorial sea. You must proceed to designated anchorage [X] and submit to boarding inspection." The translation device garbles "proceed to anchorage and heave to" as "surrender and stop." Tension spikes. Doctor corrects? They argue.
+
+3. Power core demand. US wants to inspect propulsion system; Doctor refuses. He explains: "Our engines are not compatible with your technology. Accessing them without understanding is dangerous." He doesn't mention Originium. They suspect WMD or nuclear? Doctor sees them glance at radiation detectors. He offers alternative: allow a single unarmed liaison to remain on board, but no inspection of core or armory. Provide a tour of medical facilities. They counter: if no compliance, they will treat as hostile intrusion.
+
+4. Misunderstanding climax. The US officer uses the phrase "moor or be engaged" maybe? The translator says "投降，否则开火" or "停泊就是投降"? Operators raise weapons slightly; Doctor signals them down. Kal'tsit interjects in a cold tone. Amiya steps forward and says something like "We are not your enemy. Please let us prove it." This diffuses moment.
+
+5. Amiya crying. After the Americans withdraw to their boat to consult, Amiya turns to a group of operators who have been watching. She tries to reassure them but breaks into tears briefly, then wipes them and returns to Doctor. Doctor sees this, feels responsibility.
+
+6. Ending: Americans return with ultimatum or new proposal? Or the chapter ends with a standoff: they have until sunset to move, a countdown begins. Or the Americans present a document. Maybe the last line: a ship's loudspeaker repeats "Maintain position. Do not move." Or a sonar ping. Need leave suspense.
+
+Need include sensory details: salt air, the absence of Originium dust, deck metal, helicopter downdraft, translation device delays, body language, uniforms. No internal US POV.
+
+Need avoid military action. Keep communication central.
+
+Need not provide any meta. Start heading exactly "## 第3章 十二海里". Then body. No chapter summary or word count.
+
+Let's write in Chinese. Make it around 2500 words. Need include title in Markdown. The final answer only includes that.
+
+Let's draft carefully.
+
+Potential names for US negotiators? Since we can't know internal perspective, we can describe by appearance/title, no names needed. The woman from ch2 returns; a male officer in white/gray uniform with black sunglasses; an interpreter maybe.
+
+Need be consistent: ch2 they agreed one-hour recess. The Americans return maybe by boat, not helicopter, to show heavier presence. They want to talk on deck rather than inside. Doctor agrees but sets chairs on deck? Maybe he has a folding table and chairs brought out. The Americans remain standing; later they sit.
+
+Let's think about the exact mis-translation. The phrase "cast your anchor" could be misheard by the device as "cast down your arms"? But that's too convenient. Maybe the device is poor with nautical terms. The English word "moor" means to secure a vessel by cable/anchor. In Chinese the machine might render as "系留" (moor). But if the word is "yield" maybe means both surrender and give way (nautical). Actually in maritime communications, "I yield" not used. Another possibility: The American says "You must stand down and heave to." The translator outputs "你们必须放下武器并投降". Because "stand down" in military context often means cease aggressive posture, not surrender. But to tense ears it sounds like surrender. The summary specifically says "投降与停泊混为一谈" (surrender and mooring). So maybe the word "berthing" vs "submitting"?
+
+Let's create: The US officer points at map and says: "Proceed to this anchorage. Moor alongside the marker buoy. Then submit to inspection." The translator device, programmed with limited Chinese and no maritime lexicon, outputs: "驶向这个锚地。在那里停泊。然后投降接受检查。" Wait "submit to inspection" legitimately can mean "接受检查" not surrender. But "submit" might be rendered as "屈服/投降". Operators hear "投降接受检查". The Doctor catches it. He says "我们不是来投降的." The Americans confused: "We didn't say surrender." Interpreter says "Submit to inspection, not surrender." But damage done.
+
+Maybe better: The American says "You are required to surrender your vessel to the designated anchorage." The phrase "surrender your vessel to the anchorage" is nautical: deliver the vessel to a place (move to anchorage). But machine translates "surrender your vessel" as "投降你们的舰船". And "anchorage" as "锚地". Combined: "你必须将舰船投降至指定锚地" nonsensical. Doctor realizes the device confused "surrender" (to hand over/entrust) with "surrender" (yield). That's plausible. The summary says "一个误译让投降与停泊混为一谈"—so "surrender" and "moor" get mixed.
+
+Maybe the word is "bring to". "Bring your ship to anchor" vs "bring your ship to submission"? Eh.
+
+Let's design the incident: The officer says: "You will come to anchor in the designated area and submit your vessel for inspection." The translator renders as: "你们将在指定区域抛锚，并向我们的检查投降你们的舰船。" The word "submit" triggers the operators. Then later, the interpreter (maybe an American-Chinese speaker? But no Chinese in world? Wait this is Earth; there are Chinese speakers. But the Americans don't necessarily have one. However since they are near New York, there could be a translator. But the story uses a machine translator from ch2. It might be more tense if the Americans also rely on machine. Maybe a uniformed interpreter with a headset tries to correct. But Doctor doesn't trust them.
+
+The Americans' concern: a floating object inside territorial waters. They want to ensure no weapons of mass destruction, no hostile intent. They demand to inspect power core because Rhodes Island is hovering without visible propulsion; they suspect nuclear or anti-gravity? In Earth, anti-gravity impossible, so they'd be alarmed.
+
+Doctor refuses core access: "Our propulsion is proprietary and fragile. A forced inspection could destabilize it. If it fails, this ship will fall on your city." This is true: without Originium engines maybe levitation fails. He also refuses to move to anchorage because moving requires power and may be interpreted as hostile? Actually moving to designated anchorage could be acceptable but he worries it's a trap to isolate them. He counters: "We will not enter your territorial sea further. We will maintain position. We can allow a liaison." But they are already within territorial sea. Maybe he offers to move outward beyond 12 nm to international waters, but can't because of power? Hmm.
+
+Let's define positions: In ch1, distance 19.4 km (~10.5 nm) from coastline, so inside 12 nm. The US says "You are within twelve nautical miles. You must move to a designated anchorage outside the harbor channel" maybe to reduce threat. Or "You must exit territorial waters." Title "十二海里" may be the limit the Americans are enforcing. They might say: "Move to anchorage at coordinates, twelve nautical miles from shore, and remain there." That's outside territorial sea. Wait 12 nm from shore is boundary; "outside 12 nm" maybe international waters. If they are at 10.5 nm, moving to 12 nm is moving outward, away from city, perhaps to a holding area. This is plausible: US wants them to move to an anchorage at the 12-nautical-mile line. They would have to "sail" there. The Doctor is wary: any movement could be seen as hostile, and moving means using engines they can't spare. Also it would place them at the edge, isolated.
+
+Maybe the Americans say "proceed to the anchorage at twelve nautical miles" (i.e., a point 12 nm from shore). The translator might render "anchorage" and "nautical miles" unclearly. "Twelve nautical miles" as title.
+
+Could use nautical language: "Proceed to the holding anchorage at the twelve-mile limit." The device might produce "前往十二海里处的投降点". Eh.
+
+Let's include the number clearly.
+
+Need maintain suspense at end. Perhaps Americans deliver an ultimatum: "You have until sunset to begin transit. If not, we will board by force." Or a broadcast on loudspeaker. But summary says deck negotiation nearly breaks; the chapter might end with the Americans returning to their ship to await answer, leaving a countdown. End with Doctor standing on deck, Amiya returns. The sun setting. A warship turns broadside. PRTS displays countdown. Good.
+
+Need include Amiya tears scene in middle/end. Maybe after the Americans temporarily withdraw to their boat (consulting with higher command), tension eases, operators gather. Amiya tries to speak but cries. She returns to Doctor.
+
+Let's map word count. Aim around 2500 Chinese characters? Actually word count in Chinese characters maybe 2500 characters. The target says 2500 字. We can produce roughly 2500 Chinese characters. Need ensure above 1500. Let's produce a rich chapter maybe ~3000 Chinese characters.
+
+Now write.
+
+I need to be careful not to include meta, not explain.
+
+Let's craft the prose with literary details. Use present/past? The previous chapters use past tense. We'll continue.
+
+Let's think of exact content by paragraphs:
+
+- Opening: bridge, Doctor watching the sea. Time nearly up. He notes new ships: a gray hull with a sharp prow, number 76? Could be USS something; not necessary. A Coast Guard cutter with red stripe. A rigid inflatable with armed personnel. He orders deck cleared of nonessential, but keep medical staff visible. He wears hood; no helmet. Kal'tsit adjusts something on a tablet. Amiya stands.
+
+- Americans arrive by boat at the boarding ladder. They are six? No, initial agreement one unarmed? The US team maybe four: the woman (diplomatic), a Navy captain, a Coast Guard officer, interpreter. They come up ladder. Doctor receives them. They refuse to enter ship, prefer deck. Folding table and chairs set. Sun hot.
+
+- Negotiation begins through translator disc plus a human interpreter (a young woman with Asian features? But would be Earth; she might speak Chinese? Wait Earth has Chinese; but the Americans might not have a Chinese interpreter because Chinese not relevant? However they might have a State Department interpreter. But using machine translation is more alien. Maybe no human interpreter; the device from ch2 is used by both sides. It is on table. Let's stick with the device. The Americans speak English, device outputs Chinese. This allows mis-translation.
+
+- The woman speaks; the device says: "美国政府要求贵舰立即驶向指定锚地。坐标：北纬……西经……位于十二海里界线外侧。抵达后关闭主机，接受登船检查。" Doctor asks "surrender?" due to device wording "向检查投降"? He says no.
+
+- The Navy officer says something, device translates: "拒绝将被视为敌对行为。我方有权在领海内采取行动。" Doctor notes he uses "领海" (territorial sea). They are within 12 nm.
+
+- Doctor responds: "我们不是军舰。罗德岛是医疗移动城市。我们没有进入你们水域的意图，空间异常把我们放在这里。移动这艘船需要消耗不可再生的能源。我们不能在不了解后果的情况下驶往指定锚地。" He offers to remain stationary, allow liaison, allow medical inspection by their doctor. But not engine core. "动力核心不会交给任何人。"
+
+- The officer says something about "propulsion"; they suspect nuclear. Device: "如果你们拒绝检查推进系统，我们将假设你们运载大规模杀伤性武器。" Doctor says no WMD; our engines use a technology not present in this world, inspecting without precautions is dangerous. He thinks of Originium.
+
+- Mistranslation climax. The American captain points to map and says: "Your vessel will surrender to the anchorage at the twelve-mile line." Actually he says "must be surrendered to the anchorage" meaning delivered/moored. Device outputs: "你们的舰船必须向十二海里锚地投降。" Operators behind Doctor shift; weapons click. Kal'tsit raises voice, cold: "博士，他们在要求投降。" The American sees weapons and steps back; his guards grip rifles. The woman shouts at device; it mistranslates her clarification as something worse? Amiya intervenes, speaking to both sides in a calm voice. She says: "Please. We don't understand each other well. Let us not let a machine decide war or peace." The device translates. Pause. The captain lowers his hand. The tension recedes but not trust.
+
+- The Americans consult. The woman takes a satellite phone; the captain speaks into radio. The deck is quiet except wind and helicopter. Doctor tells Amiya to check on operators.
+
+- Amiya tear scene: She walks to a group of operators at a hatch. They look scared. One asks "博士是不是要带我们打仗？" Amiya says "不会的，我们在谈。" Another asks "可是他们说要检查我们的心脏——船的心脏，是不是要夺走它？" Amiya tries to explain; her voice cracks; tears come; she turns away quickly, wipes them with sleeve, takes a breath, returns. Doctor sees from table but pretends not to. He feels something heavy.
+
+- Americans return. The woman says: "Our government will accept a temporary arrangement. You will not move for now. A liaison will remain. But you must agree to inspection of non-military areas within twenty-four hours, and provide a manifest of all personnel and equipment." Or maybe they issue an ultimatum. The summary says美方要求驶入指定锚地并接受登船检查，博士拒绝交出动力核心。 That is the core event. The chapter may not resolve; the Americans might after consulting say "You have until 0600 to comply." Let's decide ending: After the woman speaks, the captain adds: "If you do not begin moving by dawn, we will consider you a hostile intrusion." The team leaves.
+
+- Ending: Doctor watches the boat pull away. He turns to Kal'tsit: "They don't believe us." Kal'tsit: "They don't believe anything they can't explain." Amiya returns to his side, eyes red but dry. The deck lights come on. A siren? The ship's clock counts. Final line: "在十二海里那条看不见的线上，天亮了第一场谈判，也落下了第一颗倒计时。" Something like that.
+
+Need ensure it's only chapter body. Let's write now, approx 2500 Chinese characters.
+
+Potential challenges: Ensure Amiya's brief tears in front of operators included. Ensure mistranslation between surrender and mooring. Ensure no meta.
+
+Let's produce final.
+[/思考过程]
+
+## 第4章 没有源石的夜晚
+
+夜幕降临时，罗德岛把自己藏进了黑暗里。
+
+主甲板上的航行灯一盏盏熄灭，舷窗被遮光板封死，连医疗区走廊那几盏常年不灭的长明灯也被调到了仅能辨认轮廓的亮度。整艘船像一头学会了屏住呼吸的巨兽，静静悬浮在纽约港外的海面上。博士站在舰桥的全景屏幕前，看着屏幕里那片被压缩成灰蓝与漆黑的世界。远处的城市没有熄灭，反而越发明亮，楼宇的轮廓被无数灯火切割成一块块发光的积木，倒映在深蓝色的水里，仿佛那里沉睡着另一座更巨大的城市。
+
+“灯火管制完成，全舰非必要光源已关闭。”通讯干员的声音低得像是怕惊醒什么。
+
+博士点了点头，没有回头。他数着海面上的光点。白色快艇停在左舷约六千米外，只亮着一盏桅灯，像一粒冷掉的星。更远处，那艘灰白色军舰的轮廓几乎融进了夜色，只有舰桥顶端闪烁的红色防撞灯在提醒他，那边有人在值班。空中偶尔传来直升机旋翼的嗡鸣，但今晚没有探照灯扫过来。对方也在等。等天亮，等他做出选择，等某个远在华盛顿或五角大楼的人按下按钮。
+
+“博士。”凯尔希的声音从身后传来，比平常更轻。她没穿白大褂，只是一件深色的内衬，袖口卷到手肘，露出的小臂上有一道旧疤，“医疗部需要你。”
+
+博士转身。她的表情没有变化，但他看见她的手指捏着一块数据板，指节发白。
+
+“病人？”
+
+“所有病人。”凯尔希说，“跟我来。”
+
+医疗区在三层甲板深处，比舰桥低，也比海水低。走廊里的应急灯把每个人的影子拉得很长。博士跟在她身后，路过一间间舱室。门大多是开着的，里面躺着或坐着的干员们在黑暗中沉默，有些人在低声交谈，有些人在盯着天花板。没有人使用源石技艺照明，连最普通的微光法术也释放不出来。一个萨卡兹孩子坐在床沿，手里攥着一块本该能发出暖光的源石碎片，此刻它只是一块冰冷的灰白石子。
+
+“从什么时候开始的？”博士问。
+
+“日落前一小时。”凯尔希推开一间隔离室的门，“所有体表白源石结晶样本的粒子放射读数归零。不是下降，是归零。就像有人把开关关掉了。”
+
+隔离室里只亮着一盏猩红的观察灯。床上躺着一名菲林女性，前襟拉开，左肩到锁骨的位置覆盖着一片暗色的结晶。博士认得她，工程部的焊工，矿石病二期。在泰拉，那些结晶即使在夜里也会渗出微弱的荧光，像埋在皮肤下的冷火。现在它们黯淡无光，边缘甚至显得有些……干枯。
+
+“她怎么样？”
+
+“生命体征平稳。”凯尔希把数据板递给他，“血源石结晶密度没有继续升高。体细胞与源石融合速率……停滞了。”
+
+博士低头看着屏幕上那条平直的线。在泰拉，这条线要么缓慢上扬，宣告死亡倒计时，要么在药物干预下勉强走平。他从未见过它完全静止。
+
+“这是好事？”
+
+“暂时是。”凯尔希说。她走到床边，用一支冷光灯照向那片结晶。结晶表面没有反光，像烧尽的炭，“但我不清楚它为什么停止。没有源石环境，体内的结晶失去了外部共振，进入惰性状态。问题是——”
+
+她停顿了一下，把手里的笔放到托盘上，发出一声清脆的响动。
+
+“——它们不会一直睡下去。结晶是外来物，一旦免疫系统重新识别到它们，可能会引发急性排斥。或者，当它们再次接触源石辐射时，会一次性释放出所有积累的内能。无论哪种，我都无法预测时间。”
+
+博士看着那条平直的线，忽然觉得它比任何上升的曲线都更让人窒息。
+
+“也就是说，我们每个人的身体里都埋着一颗没有引信的炸弹。”
+
+“可以这么理解。”凯尔希说，“包括我。”
+
+博士猛地抬头。
+
+凯尔希没有避开他的目光。她的声音依然平稳，像是在陈述一份别人的病历：“我的脊柱里有三处源石结晶。过去它们和泰拉的环境保持某种平衡。现在这种平衡被打破了。目前我没有症状，但这不意味着安全。”
+
+隔离室外传来轻微的脚步声。博士不用回头也知道是谁。阿米娅站在门口，穿着过大的防护服，帽子没戴，头发有些乱。她的耳朵无精打采地垂着，手指无意识地摩挲着那枚黯淡的戒指。
+
+“凯尔希医生说……所有人都有危险？”
+
+“目前只是假设。”凯尔希说。
+
+“可您从不说没有根据的假设。”阿米娅说。
+
+凯尔希沉默了片刻，然后转身把观察灯关掉。黑暗里，三个人的呼吸声几乎同步。
+
+“去吃饭。”她对阿米娅说，“你已经十八个小时没有进食。”
+
+“我不饿。”
+
+“那就去喝水。”凯尔希说，“然后睡觉。明天我们需要一个能站稳的公开代表，不是一个会因为低血糖在镜头前晕倒的孩子。”
+
+阿米娅的肩膀绷了一下，但很快又松开。她点了点头，没有反驳。
+
+博士把数据板还给凯尔希。“如果补给来了，优先给重症患者分配营养剂和干净水。”
+
+“补给？”阿米娅看向他。
+
+“美国人送来了。”博士说，“二十三分钟前，一艘小船靠近到左舷三百米，用信号灯发送了‘人道补给’的请求。我让他们把东西留在甲板上。”
+
+“您让他们上船了？”
+
+“没有。他们自己也没有上船。起重机把货物放到甲板就撤了。”
+
+凯尔希挑了挑眉，这是她今晚第一次露出近似表情的变化。“你在拿全舰人员的安全赌一箱来路不明的食物。”
+
+“不是赌。”博士说，“是观察。如果他们想毒杀我们，不会用这么慢的方式。如果他们想采样，东西会送到我手里，而不是病人嘴里。”
+
+“你亲自检查？”
+
+“每一件。”
+
+补给箱被集中放在四号货舱隔壁的临时检疫室里。十二只塑料箱，两只金属冷藏箱，外加一桶用防水布裹着的淡水。箱子外面贴着英文标签，有些印着美国国旗的缩小图案，有些印着“USAID”和“USCG”的字母。两名后勤干员穿着全套隔离服站在角落，手里拿着扫描仪，却没有动手。
+
+“没人碰过？”博士问。
+
+“按您的命令，等您来。”其中一名卡特斯干员回答，声音透过面罩显得有些闷。
+
+博士点了点头，从架子上取出一副手套。手套是泰拉产的合成橡胶，在没有源石微粒的空气里显得格外干净。他先绕着箱子走了一圈，用肉眼检查封条、接缝、外包装有没有二次封装的痕迹。然后他打开第一只箱子。
+
+里面整齐地码着瓶装水。透明的塑料瓶，蓝色的瓶盖，标签上印着一座他认不出的雪山。他用掌心托住一瓶，对着检疫室的顶灯照了照。水很清，没有悬浮物，瓶壁也没有被钻孔的痕迹。
+
+“扫描。”他说。
+
+卡特斯干员走上前，用一台手持式电磁探测器贴着瓶身缓缓滑过。仪器发出单调的蜂
+
+[思考过程]
+We need produce chapter 4 "没有源石的夜晚" in Chinese, markdown heading. Must follow style: third person limited to Doctor, no US internal thoughts, only observations/dialogue. Tense? Chinese narrative past. Need coherent with previous chapters. Word count target 2500, range 1500-99999. So output chapter ~2500 Chinese characters? Since range wide, aim 2500 words (Chinese characters maybe ~2500). We need write whole chapter: first night, blackout, Kal'tsit discovers Terra people's originium crystals become inert but unpredictable; Earth sends supplies; Doctor inspects each item for quarantine/sampling. Need include Doctor's psychological change, tension, suspense, no explanations, just text.
+
+We need generate in Chinese. Ensure names: 凯尔希，阿米娅，博士，PRTS maybe. Use no meta commentary. Need not repeat previous chapters. Chapter 4 begins after chapter 3's ending: first night, supplies, etc.
+
+We need make up events: After negotiations, Americans maybe deliver supplies? Why would they? Maybe as gesture, after stalemate? Could be a crate dropped by helicopter or boat, with food/water/medical. Doctor personally inspects each item. Kal'tsit analyzes Earth's food/water safety. She examines infected patients: sourcestone crystals inert, no activity. The lack of originium maybe causes crystal dormancy but risk of rejection? We need medical detail.
+
+Let's draft. Need maintain limited Doctor perspective; don't show US side internals. We can show US soldiers/crew actions through Doctor's observations. Translation device awkwardness. Blackout. Atmosphere: city lights across water, ships.
+
+Possible scene structure:
+- Night falls.罗德岛 implements blackout. Doctor on bridge watching city lights and US ships. Reflects on the "twelve nautical miles" deadline in morning; 6 hours left? In chapter 3 they had four hours until dawn movement, but at end says 4 hours either move or war. Now night. Need decide timeline: maybe after agreeing to move? Actually previous: final "ultimatum" four hours; they didn't agree. Then night. Americans perhaps sent supplies as a goodwill gesture? Could be because CNN/public pressure; they deliver MREs and water. Or a smaller boat approached with boxes, left them on deck? We'll invent.
+
+- Kal'tsit calls Doctor to medical bay. She shows scans: originium crystals in a patient's body no longer emit radiation/particles; cellular assimilation rate stable. "Inert." But she can't predict when they might reactivate or deteriorate. Could be dangerous if crystals become soluble in this environment? Or if lack of originium causes immune response. She explains with clinical detachment. Doctor asks what it means for them. Kal'tsit: "It means we are walking around with dormant munitions under our skin." Nice line.
+
+- They discuss no sourcestone environment affects Arts? Infected can't use Arts? Actually no sourcestone particles means Arts not possible; maybe those who relied on originium arts have issues. But focus: patients.
+
+- Supplies arrive. Maybe a Coast Guard small boat approaches with a flashing signal "SUPPLIES"? Translation. They request to leave crates on deck. Doctor agrees but sends unarmed team. Americans don't board, just offload via crane. This seems plausible after standoff: human gesture.
+
+- Doctor inspects each crate in a quarantine bay. Wears gloves. Items: MRE pouches, bottled water, glucose, electrolyte packets, canned food, batteries? But no sourcestone batteries; maybe chemical. He checks for tracking devices, sample containers, needles. Use a scanner (no sourcestone). Finds a small cylinder in water crate? A data logger/temperature sensor? Or perhaps an innocuous label with adhesive that could contain biological sampling? He removes suspicious items. Kal'tsit tests food/water for toxins/pathogens. Finds safe but irradiated? Not necessary.
+
+- Suspense: while inspecting, a US drone or helicopter observes. PRTS detects RF emissions from crate? Maybe a hidden tracker. Doctor decides to leave tracker on deck to mislead? Or disable it. But need be careful. Keep tense but not action.
+
+- Interactions:阿米娅 appears, tired, but trying to hold morale. She helps. Doctor tells her to rest; she refuses. Shows her determination and emotion. Maybe she reveals she tried to sense emotions (her Arts) and felt nothing; her arts don't work; she is frightened but hides. Doctor comforts minimally.
+
+- Ending with suspense: after inspection, Doctor steps onto deck in blackout. The city across water is lit, and he sees a new ship approaching in darkness, or a helicopter descending. Or a communication from Earth: a video broadcast of protests/support? Or he finds a note in supplies: "We are watching." Could end with a discovery: among supplies, a sealed vial labeled "Source?" no. Maybe a tiny vial of Earth seawater? Hmm.
+
+Need unresolved tension: at chapter's end maybe Kal'tsit informs him one patient’s crystal has shifted, not inert but migrating? Or supplies contain something unexpected: a biological sample collection kit hidden in food crate. Or a message from Americans requesting something impossible. We need leave悬念.
+
+Let's decide detailed plot.
+
+Timeline: After the four-hour ultimatum, perhaps they negotiated a temporary arrangement:罗德岛 will not move tonight; Americans send supplies to build trust; deadline extended to morning. So first night is a pause. Maybe because the American liaison officer (the woman) returns? In chapter 2 they agreed one liaison officer could stay, but in chapter 3 not implemented yet. We can have the woman return with supplies as a gesture and stay as liaison? But chapter 3 ended with 4-hour deadline; first night is before dawn. Could be Americans decide to deliver supplies and allow night to pass, maybe public pressure. The Doctor hasn't agreed to move.
+
+Let's make the supplies delivered via small boat by Coast Guard at night under a white flag/truce light. They don't board. Translator device used. Woman maybe on radio. Supplies are "humanitarian". Doctor suspects but accepts to avoid appearing hostile. He orders quarantine.
+
+Kal'tsit in medical: She monitored an infected patient (maybe a young girl with originium crystals on skin). She shows readings to Doctor. Crystals dark, no particle emission. Cellular indices stable, but she warns that without originium environment, crystals may destabilize and release toxins if disturbed, or the body's adaptation may fail. She says "I've never seen a case of forced abstinence from originium on this scale." She cannot predict timeline. The longer they stay, the more unpredictable. This creates suspense.
+
+Doctor then inspects supplies. Details: Twelve crates, plastic-wrapped, marked with US government/Coast Guard labels. Bottled water (clear plastic, labels with English). MRE pouches with colorful packaging and tiny instructions. Some boxes of medical gauze, saline, antibiotics? He uses a handheld scanner; detects an electronic tag on one water bottle? Or he finds a small device embedded in crate foam: a GPS/logger. He removes it, gives it to engineering to study but not destroy (so as not to provoke). He checks for biological hazards: no needles, no spray. Each item logged.
+
+While inspecting, a helicopter noise outside. He doesn't stop. The liaison? Maybe no.
+
+阿米娅 enters quarantine bay in protective gown. She helps him. They discuss food. She opens a packet? No, he warns her not to consume before tests. She apologizes. She says she can't feel the city's emotions; the silence of this world scares her. Doctor tells her they will adapt. She asks "Will we lose ourselves?" He: "Not if we remember why we are here." Nice.
+
+凯尔希 returns with test results: food and water are chemically safe for most species but contain microorganisms Earth bacteria? She says their gut microbiomes may not handle Earth's pathogens; risk of infection. They decide to sterilize before distribution. Also she found no toxins, but one crate contained a "cold box" with blood plasma? Wait, Earth wouldn't send blood. Maybe a crate with "medical samples" intended for them to analyze? Hmm.
+
+Could be a crate contains an emergency radio with a note in English: "Use this frequency. Do not move." Or a camera. Maybe hidden tracker. Let's embed a device: inside a sealed medical cold-pack, a small vial of Earth seawater? Not needed.
+
+Suspense ending: After inspecting all crates and deeming them acceptable (with tracker removed), Doctor exits quarantine. On deck, blackout. He sees the city lights and US ships. PRTS alerts: a new vessel is approaching from the northeast, moving fast, no running lights. Or a small boat launched from the white cutter. It stops at 300 meters. Then a bright spotlight sweeps罗德岛’s hull. It doesn't respond to hails. Doctor orders no reaction. The spotlight turns off. Then a package is dropped overboard from the mystery boat? It drifts toward罗德岛. Or the boat withdraws. It leaves something in water? Maybe a buoy with antenna? The Doctor watches it; unknown if surveillance or weapon. Ends with him staring at the dark water and the buoy's tiny blinking light. That is悬念.
+
+But need tie to chapter title: "没有源石的夜晚". Emphasize darkness, quiet, no originium. Could include Doctor noticing stars: more stars than泰拉 because no dust. He feels exposed.
+
+Let's craft. Use literary prose. Keep tight. Aim approx 2500 Chinese characters (maybe 2000-2500 words in Chinese? The instruction says target 2500 words; in Chinese, characters ~2500). Let's aim around 2400-2600 Chinese characters.
+
+Need ensure no internal US POV. Only Doctor's observations. American characters speak through translator.
+
+Let's write step by step. We'll generate final output with heading and no extra content.
+
+Potential issues: We must keep consistency with game characters. Kal'tsit clinical, gives unwelcome truths. Amiya strong with emotions. Doctor calculating.
+
+Let's compose:
+
+## 第4章 没有源石的夜晚
+
+夜幕降临时，罗德岛把自己藏进了黑暗里。
+
+主甲板上的航行灯一盏盏熄灭，舷窗被遮光板封死，连医疗区走廊那几盏常年不灭的长明灯也被调到了仅能辨认轮廓的亮度。整艘船像一头学会了屏住呼吸的巨兽，静静悬浮在纽约港外的海面上。博士站在舰桥的全景屏幕前，看着屏幕里那片被压缩成灰蓝与漆黑的世界。远处的城市没有熄灭，反而越发明亮，楼宇的轮廓被无数灯火切割成一块块发光的积木，倒映在深蓝色的水里，仿佛那里沉睡着另一座更巨大的城市。
+
+“灯火管制完成，全舰非必要光源已关闭。”通讯干员的声音低得像是怕惊醒什么。
+
+博士点了点头，没有回头。他数着海面上的光点。白色快艇停在左舷约六千米外，只亮着一盏桅灯，像一粒冷掉的星。更远处，那艘灰白色军舰的轮廓几乎融进了夜色，只有舰桥顶端闪烁的红色防撞灯在提醒他，那边有人在值班。空中偶尔传来直升机旋翼的嗡鸣，但 tonight 没有探照灯扫过来。对方也在等。等天亮，等他做出选择，等某个远在华盛顿或五角大楼的人按下按钮。
+
+“博士。”凯尔希的声音从身后传来，比平常更轻。她没穿白大褂，只是一件深色的内衬，袖口卷到手肘，露出的小臂上有一道旧疤。“医疗部需要你。”
+
+博士转身。她的表情没有变化，但他看见她的手指捏着一块数据板，指节发白。
+
+“病人？”
+
+“所有病人。”凯尔希说，“跟我来。”
+
+医疗区在三层甲板深处，比舰桥低，也比海水低。走廊里的应急灯把每个人的影子拉得很长。博士跟在她身后，路过一间间舱室。门大多是开着的，里面躺着或坐着的干员们在黑暗中沉默，有些人在低声交谈，有些人在盯着天花板。没有人使用源石技艺照明，连最普通的微光法术也释放不出来。一个萨卡兹孩子坐在床沿，手里攥着一块本该能发出暖光的源石碎片，此刻它只是一块冰冷的灰白石子。
+
+“从什么时候开始的？”博士问。
+
+“日落前一小时。”凯尔希推开一间隔离室的门，“所有体表白源石结晶样本的粒子放射读数归零。不是下降，是归零。就像有人把开关关掉了。”
+
+隔离室里只亮着一盏猩红的观察灯。床上躺着一名菲林女性，前襟拉开，左肩到锁骨的位置覆盖着一片暗色的结晶。博士认得她，工程部的焊工，矿石病二期。在泰拉，那些结晶即使在夜里也会渗出微弱的荧光，像埋在皮肤下的冷火。现在它们黯淡无光，边缘甚至显得有些……干枯。
+
+“她怎么样？”
+
+“生命体征平稳。”凯尔希把数据板递给他，“血源石结晶密度没有继续升高。体细胞与源石融合速率……停滞了。”
+
+博士低头看着屏幕上那条平直的线。在泰拉，这条线要么缓慢上扬，宣告死亡倒计时，要么在药物干预下勉强走平。他从未见过它完全静止。
+
+“这是好事？”
+
+“暂时是。”凯尔希说。她走到床边，用一支冷光灯照向那片结晶。结晶表面没有反光，像烧尽的炭。“但我不清楚它为什么停止。没有源石环境，体内的结晶失去了外部共振，进入惰性状态。问题是——”
+
+她停顿了一下，把手里的笔放到托盘上，发出一声清脆的响动。
+
+“——它们不会一直睡下去。结晶是外来物，一旦免疫系统重新识别到它们，可能会引发急性排斥。或者，当它们再次接触源石辐射时，会一次性释放出所有积累的内能。无论哪种，我都无法预测时间。”
+
+博士看着那条平直的线，忽然觉得它比任何上升的曲线都更让人窒息。
+
+“也就是说，我们每个人的身体里都埋着一颗没有引信的炸弹。”
+
+“可以这么理解。”凯尔希说，“包括我。”
+
+博士猛地抬头。
+
+凯尔希没有避开他的目光。她的声音依然平稳，像是在陈述一份别人的病历：“我的脊柱里有三处源石结晶。过去它们和泰拉的环境保持某种平衡。现在这种平衡被打破了。目前我没有症状，但这不意味着安全。”
+
+隔离室外传来轻微的脚步声。博士不用回头也知道是谁。阿米娅站在门口，穿着过大的防护服，帽子没戴，头发有些乱。她的耳朵无精打采地垂着，手指无意识地摩挲着那枚黯淡的戒指。
+
+“凯尔希医生说……所有人都有危险？”
+
+“目前只是假设。”凯尔希说。
+
+“可您从不说没有根据的假设。”阿米娅说。
+
+凯尔希沉默了片刻，然后转身把观察灯关掉。黑暗里，三个人的呼吸声几乎同步。
+
+“去吃饭。”她对阿米娅说，“你已经十八个小时没有进食。”
+
+“我不饿。”
+
+“那就去喝水。”凯尔希说，“然后睡觉。明天我们需要一个能站稳的公开代表，不是一个会因为低血糖在镜头前晕倒的孩子。”
+
+阿米娅的肩膀绷了一下，但很快又松开。她点了点头，没有反驳。
+
+博士把数据板还给凯尔希。“如果 supplies 来了，优先给重症患者分配营养剂和干净水。”
+
+“ supplies？”阿米娅看向他。
+
+“美国人送来了。”博士说，“二十三分钟前，一艘小船靠近到左舷三百米，用信号灯发送了‘人道补给’的请求。我让他们把东西留在甲板上。”
+
+“您让他们上船了？”
+
+“没有。他们自己也没有上船。起重机把货物放到甲板就撤了。”
+
+凯尔希挑了挑眉，这是她今晚第一次露出近似表情的变化。“你在拿全舰人员的安全赌一箱来路不明的食物。”
+
+“不是赌。”博士说，“是观察。如果他们想 poison us，不会用这么慢的方式。如果他们想采样，东西会送到我手里，而不是病人嘴里。”
+
+“你亲自检查？”
+
+“每一件。”
+
+补给箱被集中放在四号货舱隔壁的临时检疫室里。十二只塑料箱，两只金属冷藏箱，外加一桶用防水布裹着的淡水。箱子外面贴着英文标签，有些印着美国国旗的缩小图案，有些印着“USAID”和“USCG”的字母。两名后勤干员穿着全套隔离服站在角落，手里拿着扫描仪，却没有动手。
+
+“没人碰过？”博士问。
+
+“按您的命令，等您来。”其中一名卡特斯干员回答，声音透过面罩显得有些闷。
+
+博士点了点头，从架子上取出一副手套。手套是泰拉产的合成橡胶，在没有源石微粒的空气里显得格外干净。他先绕着箱子走了一圈，用肉眼检查封条、接缝、外包装有没有二次封装的痕迹。然后他打开第一只箱子。
+
+里面整齐地码着瓶装水。透明的塑料瓶，蓝色的瓶盖，标签上印着一座他认不出的雪山。他用掌心托住一瓶，对着检疫室的顶灯照了照。水很清，没有悬浮物，瓶壁也没有被钻孔的痕迹。
+
+“扫描。”他说。
+
+卡特斯干员走上前，用一台手持式电磁探测器贴着瓶身缓缓滑过。仪器发出单调的蜂鸣。
+
+“没有金属，没有电子信号。”
+
+“不一定非得是金属。”博士说。他把瓶子翻过来，检查瓶底的注塑痕迹，然后拧开瓶盖，闻了闻。没有异味。他把水倒进一个透明烧杯，放到一边，没有喝。
+
+第二只箱子里是MRE——即食口粮。花花绿绿的铝箔袋，每一袋上都印着一行英文说明和一张小小的热量表。博士一袋一袋地取出来，捏了捏，确认里面没有硬质异物，又对着灯光检查封口。他拆开其中一袋，倒出里面的小包装：饼干、花生酱、糖果、电解质粉末、加热袋。他把加热袋单独放到一个托盘里，用手指捻开，里面的铁粉混合物散发出一股干燥的金属味。
+
+“这个拿给工程部。”他说，“告诉他们，这可能是化学发热装置，不要拆开，看看能不能逆向。”
+
+第三只箱子是医疗物资：绷带、纱布、生理盐水、一次性注射器、抗生素。博士拿起一支抗生素的包装盒，上面的化学名他大部分不认识，但凯尔希之前给过他一份对照表。他把它们和注射器分开，注射器全部标记为“待定”。
+
+第四只、第五只箱子都是水和食物。第六只箱子里装着毛毯和手电筒，第七只是电池、胶带、绳索。
+
+第八只箱子打开时，博士的动作停住了。
+
+里面装的是水果。苹果和橙子，用网状袋子兜着，表皮还带着水汽。在泰拉，新鲜水果是移动城市里只有儿童病房才能偶尔见到的奢侈品。博士拿起一个苹果，在灯光下转动。果皮完好，没有针孔，没有虫蛀，颜色鲜艳得近乎不真实。
+
+“博士……”阿米娅的声音从门口传来。她已经脱掉了防护服的上衣，只把帽子攥在手里。“这些都是……给我们的？”
+
+“看起来像。”博士没有抬头。他用一把小刀在苹果表面刮下一小片果皮，放进采样袋里，然后把苹果轻轻放回网兜。
+
+“可以吃吗？”
+
+“还不能。”
+
+“可是大家已经很饿了。”阿米娅说。她的声音很低，带着一种被压下去的渴望。博士知道那渴望不是为她自己。走廊里有几十双眼睛在等着这些食物。
+
+“再等六小时。”他说，“凯尔希会把样本送进培养舱。如果没有任何异常，早餐时分发。”
+
+阿米娅走到他身边，低头看着那箱水果。她的手指在网兜上方悬停了一秒，最终还是缩了回去。
+
+“他们为什么要给我们这些？”她问。
+
+“因为害怕。”博士说。
+
+“害怕我们，还要给我们食物？”
+
+“这就是这个世界的规则。”博士说，“他们先用枪指着你，再递给你面包。如果你接受面包，说明你还可以谈判；如果你拒绝，说明你只有枪。”
+
+阿米娅沉默了。检疫室里只剩下箱子被打开时塑料摩擦的声音，和远处通风系统低沉的嗡鸣。
+
+博士继续检查。第九只、第十只箱子都是水和罐头。第十一只箱子里是一些折叠整齐的衣物，T恤、袜子、内衣，尺码不一，标签上印着各种陌生的品牌。第十二只箱子最小，用泡沫塑料固定着一台设备：一台黑色的收音机，旁边放着两节电池和一张折叠的卡片。
+
+博士把那台收音机拿起来。它比泰拉的任何通讯设备都轻，外壳是哑光的，没有天线，只有一排按钮和一个调频旋钮。卡片上印着一行英文，字迹工整，像是从某本手册上剪下来的：
+
+“FOR EMERGENCY USE. CHANNEL 16. DO NOT MOVE.”
+
+“第十六频道。”博士低声念道。他不记得自己什么时候学会了这几个词，但它们的意思自然而然地浮现在脑海里。他把收音机放到一边，没有装电池。
+
+两只冷藏箱里分别是冷冻肉类和乳制品。博士打开其中一只，一股白雾涌出，带着奶油和血水的气味。他皱了皱眉，让后勤干员把它们连箱封好，优先检测微生物。
+
+最后，他检查那只桶装淡水。桶是半透明的蓝色塑料，盖子用金属箍封着。博士绕着它走了两圈，然后蹲下来，用手指敲了敲桶壁。声音沉闷，没有夹层。
+
+“把这只桶单独隔离。”他说，“每天取样，不要直接饮用。”
+
+“是。”
+
+博士直起身，摘下沾满水汽的手套。他的后背有些酸，手腕也有些僵。他看了一眼墙上的计时器：凌晨两点十七分。距离美国人给出的最后期限，还有不到四个小时。
+
+“把这些全部登记造册。”他对后勤干员说，“可疑物品单独存放。任何没有我签字的消耗，按战时纪律处理。”
+
+“明白。”
+
+他转身走出检疫室，阿米娅跟在他身后。走廊里的应急灯把她的脸照得半明半暗。
+
+“博士，您真的觉得这些食物没问题吗？”
+
+“我不知道。”博士说，“但我知道他们送来的不是善意，是测试。他们想知道我们吃不吃、怎么吃、吃多少。他们想知道我们是不是和他们一样。”
+
+“那我们要不要……让他们看到我们和他们一样？”
+
+博士停下脚步。
+
+他看着阿米娅。少女的眼睛下面有淡淡的青黑，但目光仍然清澈。她问的不是战术，是某种更深层的东西——一个关于身份的问题。
+
+“我们不是他们。”博士说，“但我们可以学着不被他们发现这一点。”
+
+阿米娅低下头，用脚尖蹭了蹭地板。“我刚才……试了一下。”
+
+“试什么？”
+
+“我的能力。”她抬起一只手，看着那枚戒指，“我想感知一下那些送东西来的人的情绪。哪怕一点点也好。可是……什么都没有。不是被屏蔽了，是根本没有。博士，这里的世界是不是……没有情感？”
+
+“不是没有情感。”博士说，“是你的能力依赖源石共鸣。这里没有源石，所以你的耳朵听不见他们。”
+
+“那我是不是也听不见大家了？”
+
+博士沉默了。
+
+阿米娅的眼眶红了，但她立刻眨了眨眼，把那点湿意逼回去。她深吸一口气，抬起头，努力笑了笑。“没关系。就算听不见，我也会好好看着大家。用眼睛看，也比以前什么都依赖能力要好。”
+
+博士想说什么，但凯尔希的声音从走廊另一头传来，打断了他。
+
+“博士。”
+
+她手里拿着一份新的数据板，脚步比平时快。博士注意到她的脸色在昏暗的灯光下显得有些苍白。
+
+“结果出来了？”
+
+“食物和水的基础毒性测试通过了。”凯尔希说，“但我发现了别的东西。”
+
+她把数据板转向博士。屏幕上是一张放大后的显微图像，旁边是一串数值。
+
+“这是什么？”
+
+“地球微生物。”凯尔希说，“水源、水果表皮、乳制品里都有。细菌、真菌、病毒……它们和泰拉的病原体完全不同谱系。我们的免疫系统对它们没有记忆。”
+
+“会致病吗？”
+
+“短期不会。”凯尔希说，“但长期食用未经处理的地球食物，等于让我们的肠道菌群重新洗牌。可能会腹泻、过敏，更严重的可能引发免疫系统紊乱。”
+
+“能处理吗？”
+
+“加热、过滤、紫外线。大部分可以灭活。”凯尔希顿了顿，“但这不是重点。重点是他们送来的东西里，有一件不应该出现在人道补给里。”
+
+博士的脊背绷直了。“什么？”
+
+凯尔希没有说话，只是朝检疫室的方向抬了抬下巴。博士跟着她走回去。后勤干员们已经退到墙边。凯尔希径直走到那只装收音机的箱子前，从泡沫塑料的夹层里取出一个小金属盒。
+
+盒子只有拇指大小，表面没有任何标识。凯尔希用镊子把它夹起来，放到一盏强光下。
+
+“这是什么？”阿米娅问。
+
+“生物采样器。”凯尔希说，“里面有微量的培养液和一根毛细管。设计用途是采集血液或组织液样本，在常温下保存七十二小时。”
+
+博士盯着那个小盒子。它在灯光下泛着冷冷的银光，像一只沉睡的昆虫。
+
+“它藏在收音机包装里？”
+
+“不。”凯尔希说，“它嵌在收音机的天线槽里。如果不是我把机器拆开，根本不会发现。”
+
+房间里安静了很长时间。
+
+博士伸出手，凯尔希把镊子递给他。他用手指轻轻碰了碰那个小盒子的表面。金属冰凉，没有任何反应。
+
+“他们想取我们的样本。”阿米娅的声音发紧，“他们想确认我们是什么。”
+
+“他们一直在确认。”博士说。他的声音很平静，但阿米娅看见他的下颌绷紧了。“从直升机降落的那一刻起，他们就在看我们的耳朵、尾巴、戒指、皮肤。他们需要数据，需要把‘我们’放进他们的分类系统里。”
+
+“那我们要怎么处理？”凯尔希问。
+
+博士把盒子从镊子上取下来，走到检疫室的角落。那里有一只密封的金属废料箱，专门用来存放可能危险的地球物品。他打开盖子，把盒子轻轻扔了进去。
+
+“先留着。”他说，“不要破坏它。如果他们问起，就说我们检查了所有物资，没有发现异常。”
+
+“你在让他们继续以为自己的采样成功了？”凯尔希问。
+
+“不。”博士说，“我在让他们继续以为我们不知道。这样他们就会继续用同样的方式试探，而不是换更隐蔽的方法。”
+
+凯尔希看着他，眼神里有某种很难辨认的东西。过了几秒，她点了点头。“明白。”
+
+阿米娅走到废料箱旁边，低头看着那个金属盒子。“博士，如果他们真的拿到了我们的血，会怎么样？”
+
+“我不知道。”博士说，“但这个世界的人会知道我们不是他们。然后呢？他们可能会害怕，也可能会想要更多。无论哪种，都不是现在我们能控制的。”
+
+他转身走出检疫室。走廊里比刚才更安静了，安静得让他能听见自己血液在耳膜里流动的声音。没有源石，没有天灾的轰鸣，没有移动城市履带碾过荒原的震动。这是一个没有背景噪音的夜晚，每一丝响动都被无限放大。
+
+他走上主甲板。灯火管制仍在继续，甲板上只有边缘几盏不亮灯的导航标识在黑暗中勾勒出舰体的轮廓。远处的纽约灯火通明，像一艘永不沉没的船。而在罗德岛和海岸之间，那些美国人的船只仍然漂浮着，沉默地等待着。
+
+博士走到左舷护栏边，把手放在冰冷的金属上。
+
+海风比白天更凉，带着咸味和一种他说不上来的气息——也许是汽车的尾气，也许是远处某个工厂的排放，也许是这座巨大城市里千万个人同时呼吸的味道。这个世界活着，用他不知道的方式活着。
+
+他抬起头。
+
+星空比他见过的任何一次都要清晰。在泰拉，源石尘和天灾云会把夜空染成一种浑浊的暗红色，星星是稀疏而遥远的点缀。而这里的星星密密麻麻，像有人把碎钻撒进黑色的水里。银河横亘在天顶，明亮得几乎让人以为那是一道裂缝，漏出了另一个世界的光。
+
+博士看着那些星星，忽然意识到自己在想什么。
+
+他在想，那些星星之间，有没有一扇关上的门。有没有人正从某颗星星后面看着他们，就像看一只掉进玻璃罐里的甲虫。
+
+“博士。”
+
+阿米娅的声音从身后传来。她没有靠近，只是站在舱门口，披着他的外套——他不知道她什么时候拿走的。
+
+“您该休息了。”
+
+“你也是。”博士说。
+
+“我等您一起。”
+
+博士没有拒绝。他最后看了一眼海面，然后转过身。
+
+就在这时，PRTS 的合成音突然在黑暗中响起，压得很低，却足够让甲板上的每一个人都听见：
+
+“警告。侦测到 unidentified surface contact，方位零九三，距离四千两百米，速度二十二节，无航行灯。特征与此前登记船只不符。”
+
+博士的脚步顿住了。
+
+他快步走向最近的舷侧观察位。那里有一名狙击干员正用夜视仪观察海面。博士接过仪器，贴到眼前。
+
+视野里是绿色的、颗粒状的海面。远处，一个模糊的影子正在高速移动，没有灯光，没有轮廓标识。它从罗德岛的侧后方切过，在距离约三千米的地方突然减速，然后静止。
+
+“它放下了什么。”狙击干员低声说。
+
+博士调整焦距。在那艘船的后方，海面上出现了一个更小的物体，大约篮球大小，正随着波浪轻轻起伏。它在黑暗中发出一点极微弱的、规律闪烁的红光。
+
+“不是武器。”狙击干员说，“没有热源，没有金属反应。像是……浮标？”
+
+博士没有回答。他继续盯着那个红点。
+
+它在海面上漂浮着，一闪，一闪，像是一只从黑暗里睁开的眼睛。它不看向罗德岛，也不看向海岸，只是自顾自地闪烁，像是在等待某个指令，又像是在记录某种数据。
+
+“要不要打掉它？”狙击干员问。
+
+“不。”博士说。他把夜视仪还给对方，声音低得只有两人能听见，“让它漂着。”
+
+“可是——”
+
+“它在看我们。”博士说，“如果我们动了，它就证实了我们在看。如果我们不动，它只能继续猜。”
+
+他转过身，朝舱门走去。阿米娅还站在那里，外套的下摆被风吹得轻轻摆动。
+
+“那是什么？”她问。
+
+“一个新的观众。”博士说。
+
+他们走下舷梯，把甲板和海面上的红点一起留在身后。舱门在身后关上的瞬间，博士忽然觉得，这个没有源石的夜晚才刚刚开始。
+
+而在某个他看不见的地方，那只红色的眼睛仍在水面上呼吸。
+
+(end)
+
+Need check word count. Let's estimate around 2500-3000 characters? Actually Chinese text seems maybe 2800-3000 characters. Good within range.
+
+Need ensure no internal US POV. We have Americans only via supplies, no dialogue. Good.
+
+Need keep Kal'tsit, Amiya character. Good.
+
+Need not include meta. Final output only chapter heading and text.
+
+Let's refine the Chinese prose. Ensure quality. Maybe adjust some phrasing, make more literary and compact. Need avoid anachronisms. Since no sourcestone, Arts don't work; mention Amiya can't sense emotions. Good.
+
+Let's review for continuity: Chapter 3 ended with 4-hour deadline. Chapter 4 says first night. They have ~4 hours until deadline at end. Good. Supplies delivered by Americans after standoff. Is that plausible? Maybe due to public pressure/humanitarian. We can add brief mention: "after the broadcast, some Coast Guard boat delivered supplies". We didn't explain but can include via Doctor thinking. Fine.
+
+Need ensure translation device not used because no US present. Good.
+
+Let's check for any meta/explanation in text: There's some exposition in Doctor's explanations. That's okay; it's narrative. No writing process.
+
+Let's improve certain sentences for style and consistency.
+
+Potential issues: "PRTS" in English maybe should be PRTS. Fine.
+
+Maybe mention "no sourcestone particles in air" earlier. Good.
+
+Let's produce final. Ensure markdown heading exactly as requested: "## 第4章 没有源石的夜晚". Then body.
+
+Double-check if any Chinese punctuation issue. Use full-width punctuation. Good.
+
+Let's write final.
+[/思考过程]
+
+## 第5章 两种逻辑
+
+会议室里的人比博士预想的多。
+
+他不记得自己批准过这么多人参加内部会议。战术室的长桌两侧坐满了人，椅背贴着墙根排成第二排，门口还站着几个挤不进来的。作战干员占了一半，医疗和后勤占了另一半，中间夹杂着工程部与情报组的面孔。没有人交头接耳，但空气里像是埋着无数根绷紧的弦，只要谁的手指一松，就会全部弹起来。
+
+博士推开门时，所有的目光都转向他。
+
+他数了数：十七个人。加上站在角落的凯尔希和坐在桌尾的阿米娅，十九个。罗德岛核心的十九个人，此刻挤在一间没有舷窗的舱室里，围着一盏发出嗡嗡低响的顶灯。
+
+“坐下。”博士说。
+
+他自己没有坐。他走到长桌的最前端，背对着那块写满坐标和时间的黑板。黑板上用粉笔圈出一个数字：03:12。距离美国人说的四小时，还剩三小时十二分钟。
+
+“谁先开口？”他问。
+
+短暂的沉默。然后一个声音从左侧炸开。
+
+“我。”
+
+说话的是煌。她站在作战干员那一排的尽头，双臂抱胸，尾巴焦躁地拍打着身后的金属墙。她的源石技艺在这里使不出来，但她整个人的姿态仍然像一团被强行压住的火。
+
+“我们不能停在这儿。”她说，“那些小船在外面绕来绕去，直升机就在头顶上转。他们要是真想谈，不会把枪管子都快戳到我们脸上了。要我说，趁着天还没亮，直接登陆。罗德岛的装甲不是这些铁皮船能拦住的。”
+
+“登陆哪里？”博士问。
+
+“城里。纽约。他们最怕这个。”煌的嘴角扯了一下，像是在笑，但眼睛里没笑意，“只要我们的履带压上他们的马路，他们就会明白——这艘船不是博物馆展品，是能打仗的。”
+
+“然后？”
+
+“然后？”煌愣了一下，“然后他们就知道不能轻举妄动。我们拿到谈判权。”
+
+“谈判权。”博士重复了一遍这个词。他没有反驳，只是把视线移向桌子的另一侧，“其他人呢？”
+
+“我反对。”
+
+这次站起来的是华法琳。她的脸色比平时更苍白，手指紧紧攥着一份病历夹。
+
+“煌小姐，你看见船上有多少重症感染者吗？你看见今天医疗区有多少人因为源石结晶失活而出现急性反应吗？我们没有药品补充，没有外部医疗资源，甚至连最基本的水和食物都只能指望对方施舍。你想登陆？登陆之后呢？我们拿什么维持病人的生命？用枪指着他们的医院，让他们把药交出来？”
+
+“总比等死强。”煌说。
+
+“等死？”华法琳的声音尖了起来，“你以为现在是谁在维持这艘船不倒？是那些病人，是那些还在值班的工程师，是医疗部从早上忙到现在没有合过眼的人。你把他们拖进一场战争，他们死得更快。”
+
+“那你说怎么办？把动力核心交给他们检查？打开所有舱门让他们进来拍照？然后我们就成标本了，华法琳医生！”
+
+“我没有说交——”
+
+“够了。”
+
+博士的声音不大，但会议室里立刻安静下来。煌和华法琳都闭上了嘴，但两个人的眼神还在空中撞了一下，像两把没有出鞘的刀。
+
+博士慢慢绕过桌角，走到煌面前。他能闻到她身上还没散尽的海水咸味和机油味。
+
+“煌，”他说，“在纽约港登陆，我们需要多少能源？”
+
+“以最低功率推进，加上登陆后的姿态维持……”煌迟疑了一下，“大概会耗尽储备的百分之七十。”
+
+“然后呢？”
+
+“然后……”
+
+“然后罗德岛就变成了一座搁浅在对方沙滩上的铁棺材。”博士替她说完，“没有能源，我们无法升空，无法移动，无法维持全舰系统。美国人不需要开枪，只要切断我们的补给线，三个月之后船上的人会自己走出来。”
+
+煌的尾巴不再拍打墙壁了。
+
+博士转向华法琳：“那你呢？全面合作，开放所有区域，配合检查。你觉得对方会满意吗？”
+
+华法琳张了张嘴，没有立刻回答。
+
+“他们不会满意。”博士替她说了，“因为他们要的不是参观，是控制。他们不理解源石，不理解我们的动力核心，不理解船上为什么会有长着兽耳和尾巴的人。他们越检查，越会害怕。而人害怕的时候，第一反应是把害怕的东西关起来，或者毁掉。”
+
+会议室里一片沉默。
+
+博士走回自己的位置，双手撑在桌面上。他的手指在光滑的木纹上张开，像是要按住什么看不见的东西。
+
+“这里不是乌萨斯。”他说，“在乌萨斯，我们知道帝国的底线在哪里。我们知道贵族之间怎么交换利益，知道军队什么时候会撤退，知道哪一座城市可以收买，哪一座城市必须绕开。这里也不是卡兹戴尔。在卡兹戴尔，战争是空气，每个人从出生就知道怎么在废墟里求生。”
+
+他抬起头，目光扫过每一个人的脸。
+
+“这里不是泰拉。这里没有源石，没有源石技艺，没有感染者与非感染者的分野。这里没有我们熟悉的任何规则。你们用泰拉的逻辑去推断这个世界，就像——”
+
+他停顿了一下，看向桌角。
+
+“就像用残局棋的思路去下开局。”
+
+阿米娅抬起头看着他。
+
+博士直起身，从口袋里掏出几颗象棋子。那是他从某个干员的娱乐柜里借来的，木质，上面刻着泰拉风格的符号。他把它们一颗一颗摆在桌面上。
+
+“残局棋是什么？”他问。
+
+没有人回答。
+
+“残局棋是当你已经没有多少子力可用的时候下的棋。”博士用食指按住一枚卒子，“你的国王暴露在棋盘中央，你的皇后早就换了，车和象各剩一个。你没有资本再主动出击，因为每一步失误都会让你直接输掉。所以残局棋的原则不是赢，是——”
+
+他移动那枚卒子，把它从棋盘中央推到角落。
+
+“是让棋子留在棋盘上。是不被将死。是把和棋当作胜利。”
+
+他把另一枚棋子也推过去，两枚卒子并肩停在最后一排的格子前。
+
+“美国人围着我们，不是因为想立刻开战。他们想确认我们不是威胁。他们想让我们按他们的规则移动，按他们的规则停泊，按他们的规则接受检查。为什么？因为这个世界也有他们自己的残局——他们自己的恐惧，自己的政治，自己的镜头和选票。他们不能在CNN面前把一艘从天而降的陌生巨兽轰成碎片，除非我们先开火。”
+
+他收回手，棋子停在桌面上。
+
+“所以我们不能强攻。强攻等于告诉全世界：我们是怪物，是入侵者，是必须先被消灭的东西。我们也不能全面投降。投降等于把自己变成标本，任人宰割。”
+
+“那我们到底要做什么？”煌问，声音已经低了很多。
+
+“下和棋。”博士说，“让他们看到我们不会攻击，但也让他们明白，我们不会被拆开。我们移动到一个双方都能接受的位置，开放有限的区域，接受一名联络官，遵守一部分他们的规则——同时守住我们的核心。”
+
+“他们会接受吗？”这次是阿米娅问。
+
+博士看着她。她的眼睛下面有淡淡的青色，手指交叠放在桌面上，戒指压着桌面发出很轻的响声。
+
+“不接受，也得先让他们以为我们可能接受。”博士说，“谈判不是一次性决出胜负。谈判是把对方的恐惧，慢慢变成他们的耐心。”
+
+凯尔希从角落里开口了。她的声音很轻，但所有人都听见了。
+
+“博士说得对。但有一个变量你没有算进去。”
+
+“什么？”
+
+“时间。”凯尔希走到桌前，把那份数据板放到棋盘上，“船上重症感染者的急性排斥反应已经开始。如果七十二小时内我们无法建立稳定的外部医疗联系，或者找到替代源石技艺的治疗手段，第一批死亡病例会出现。这不是谈判筹码，这是生物学事实。美国人的耐心也许可以被拖延，但病人的身体不会。”
+
+博士看着数据板上的曲线。那些原本平缓的线条现在开始出现尖刺，像是某种沉睡的东西正在醒来。
+
+“七十二小时。”他说。
+
+“最多。”凯尔希说。
+
+博士沉默了片刻。然后他伸出手，把棋盘上的卒子重新摆回中央。
+
+“那就七十二小时。”他说，“在这七十二小时里，我们要让美国人相信，帮助他们理解我们对他们更有利。我们要用医疗合作换能源通道，用信息透明换行动自由。不是投降，是交换。”
+
+“如果他们不交换呢？”华法琳问。
+
+博士没有立刻回答。他把那枚代表国王的棋子拿起来，在指尖转了一圈。
+
+“那就让他们看见，不交换的代价。”
+
+会议室里的空气变了。不是变得更紧张，而是变得更有形状——像是一群本来各自漂浮的碎片，忽然被某种共同的理解黏在了一起。煌没有点头，但她坐回了椅子上。华法琳叹了口气，把病历夹放到桌上。
+
+阿米娅站了起来。
+
+“我愿意负责联络官的接待。”她说，“我会让美国人看到，罗德岛不是武器。”
+
+博士看着她，想说些什么，但凯尔希先开口了：“不。你不能去。”
+
+“为什么？”阿米娅的声音有些急促。
+
+“因为你是罗德岛的公开代表。”凯尔希说，“你的每一次露面都会被他们的镜头记录，被他们的政府分析。如果你太急于亲近，他们会认为我们在示弱。如果你太冷淡，他们会认为我们在隐瞒。你需要保持距离，但不是消失。”
+
+阿米娅抿了抿嘴，但最终没有反驳。
+
+博士正要说什么，警报突然响了。
+
+不是舰桥那种空间震荡的尖啸，而是一种更低沉、更短促的蜂鸣。红灯开始在天花板边缘闪烁，把每个人的脸都染上一层血色。
+
+“报告！”门口的通讯干员撞开门，脸色惨白，“左舷三点五海里，一艘未识别快艇突破外围警戒线，速度超过四十节，正在直接向本舰驶来！”
+
+“国籍？”博士问。
+
+“没有旗帜，没有应答，没有灯光！雷达反射特征与美军船只不符！”
+
+会议室里瞬间站起了一半的人。煌第一个冲向门口，手已经按在了腰间的武器上。
+
+“全体待命！”博士的声音切开了混乱，“煌，回来。没有我的命令，任何人不准登上甲板。医疗组立即返回岗位。工程部切断非必要能源，启动应急协议。”
+
+“博士！”煌回头瞪着他，“那是快艇！四十节！如果他们携带炸药——”
+
+“那就让自动防御处理。”博士说。
+
+他快步走向舰桥，凯尔希和阿米娅紧跟在后。走廊里的应急灯把他们的影子撕成一段一段。博士的心跳很快，但他的脚步很稳。他在想一件事：那艘快艇是谁派来的？美国人？如果是美国人，他们为什么要用一艘没有标识的船？如果不是美国人，那又是谁？
+
+舰桥的全景屏幕已经亮了起来。夜视模式把海面染成一片惨绿的荧光。在屏幕中央偏左的位置，一个白色的小点正在以惊人的速度穿过水面，身后拖着一道长长的尾迹。它像一支从黑暗中射出的箭，笔直地指向罗德岛。
+
+“距离？”
+
+“两海里！速度四十二节，还在加速！”
+
+“美军反应？”
+
+“白色快艇和军舰都没有动！但他们的直升机正在转向！”
+
+博士盯着那个白点。它太明显了。如果是自杀式袭击，它不应该这么明显。如果是侦察，它不应该这么快。它像是在故意被看见。
+
+“打开外部扩音。”他说，“用所有频道广播：未识别船只，立即停船，说明来意。英、中、通用语，循环播放。”
+
+“是！”
+
+扩音器打开，三语警告被送入夜空。但快艇没有减速。它越来越近，已经能看清船首切开浪花时扬起的白色水雾。
+
+“距离一海里！”
+
+“启动最后一道非源石自动防御。”博士说。
+
+他的声音很平静，但凯尔希猛地转头看向他。
+
+“博士，那是——”
+
+“我知道那是什么。”博士说。
+
+那是罗德岛在缺少源石技艺支持时的最后一道防线。不是武器，至少不是传统意义上的武器。它是一套基于声波和电磁脉冲的近程拒止系统，设计用来驱散暴民和小型船只，不需要源石驱动，只消耗大量电能。在泰拉，它几乎没有被使用过，因为源石技艺能更高效地解决大多数问题。
+
+在这里，它是唯一的选项。
+
+“设定范围：舰体前方三百米。强度：三级。”
+
+“博士，三级强度可能会对人体造成永久性损伤！”工程干员喊道。
+
+“先设定一级。”博士改口，“警告性照射。”
+
+指令下达。舰体左舷下方的某个舱盖滑开，露出几排黑色的蜂窝状发射器。它们转向海面，对准那艘疾驰而来的快艇。
+
+一秒钟后，海水在快艇前方约四百米处突然沸腾起来。
+
+那不是爆炸，而是一种更诡异的现象：一大片海面像是被无形的巨手搅动，水柱冲天而起，形成一道白色的水墙。快艇的船首猛然扎进浪里，又高高弹起，船身剧烈倾斜，几乎侧翻。
+
+水墙持续了大约五秒，然后平息。
+
+快艇的速度慢了下来，但没有停。它在原地打了几个转，引擎发出断断续续的轰鸣，然后又开始加速——这一次是朝着另一个方向，朝着美军白色快艇的方向驶去。
+
+“它在逃？”阿米娅问。
+
+“它在跑向美国人。”凯尔希说。
+
+博士盯着屏幕。那艘快艇在夜视画面里像一只受伤的甲虫，踉踉跄跄地划过海面。而在它身后，罗德岛的自动防御系统仍然暴露在空气中，黑色的发射器像一只只睁开的眼睛。
+
+他知道，从现在开始，一切都不一样了。
+
+无论那艘快艇上是谁，无论他们想做什么，美国人现在都看见了罗德岛的牙齿。那不是他们要求的“非致命武力”，那是某种他们还没有命名的能力。CNN的镜头也许没有拍到，但美军的雷达和声纳一定记录下了每一个细节。
+
+“回收防御系统。”博士说。
+
+“博士，它还在射程内！”
+
+“回收。”
+
+发射器缓缓缩回舱内，舱盖合上。舰桥里只剩下通风系统的低鸣和干员们压抑的呼吸。
+
+博士转过身，看着凯尔希和阿米娅。
+
+“现在，”他说，“美国人真的害怕了。”
+
+凯尔希没有说话。她的目光落在屏幕上，那里，美军的直升机已经开始下降高度，探照灯第一次扫过海面，像一把白色的刀，在寻找那艘刚刚逃离的白色快艇。
+
+阿米娅走到博士身边，声音很轻：“博士，刚才那艘船上的人……他们是谁？”
+
+“我不知道。”博士说。
+
+这是他今晚第二次说出这四个字。第一次是在会议室，面对煌和华法琳的争论。第二次是此刻，面对着一片刚刚被声波撕裂的海面。
+
+他不知道那艘快艇是谁派来的。他不知道对方想要什么。他只知道，有人正在试图把这场棋局从和棋推向死棋。
+
+而他和罗德岛，正站在这盘残局的中央，手里已经没有几颗可以牺牲的子了。
+
+窗外，海面上的灯光开始移动。白色快艇启动了引擎，军舰的红色防撞灯改变了闪烁频率，一架直升机脱离编队，朝罗德岛的方向飞来。
+
+天还没有亮。但夜晚已经结束了。
+
+博士把手掌按在冰冷的战术台上，感受着金属下方微弱但持续的震动。那是罗德岛的心跳，也是它在这片没有源石的海洋里，唯一还能发出的声音。
+
+“打开全舰广播。”他说。
+
+通讯干员把麦克风递给他。博士深吸一口气，对着那个小小的黑色圆孔，说出了今晚的最后一句话：
+
+“罗德岛全体干员，进入一级戒备。记住——不要先开枪。但也不要，让任何人以为我们不敢。”
+
+麦克风的电流声在空气中停留了一秒，然后消失。
+
+而在舰桥的全景屏幕里，那座城市的天际线正在渐渐变亮。新的一天即将到来，带着无数双眼睛，无数种恐惧，和一个博士还没有答案的问题：
+
+到底是谁，不希望这场棋局和棋？
+
+[思考过程]
+The user wants me to write Chapter 5 of the novel "陆上孤舟" (Lone Ship on Land). Let me review the requirements:
+
+1. Title: "## 第5章 两种逻辑"
+2. Word count: 1500-99999 characters
+3. Continue from previous chapters
+4. Tight narrative with details, suspense, and protagonist psychological changes
+5. No writing process, summary, explanation, or meta-comments
+6. Only return the chapter body
+
+Chapter summary: Internal meeting where combat operators advocate forceful landing, medical staff demand full cooperation. Dr. convinces everyone using a chess endgame metaphor: this isn't Ursus, nor Kazdel. Then an unidentified speedboat breaks through the cordon, triggering the ship's last non-Sourcestone automatic defense.
+
+I need to write this carefully, maintaining character consistency:
+- Dr.: Tactical, calculating, uncertain inside but outwardly steady
+- Kal'tsit: Calm, restrained, medical/scientific perspective
+- Amiya: Determined but occasionally emotional
+- Setting: No Sourcestone, no Originium Arts,罗德岛 stranded near New York, Americans surrounding them
+
+I should write in Chinese, third-person limited to Dr.
+
+Key events to include:
+1. Internal meeting with factions arguing
+2. Dr. using chess endgame metaphor
+3. Unidentified speedboat approaching
+4. Non-Sourcestone automatic defense triggering
+5. Suspense at the end
+
+Let me draft this carefully. I need to make sure the tone is not military action-fantasy, but focused on communication, silence, body language. The chapter should end with suspense.
+
+Let me think about the structure:
+- Opening: Dr. entering meeting room, tension palpable
+- Arguments from both sides
+- Amiya's input
+- Kal'tsit's input
+- Dr.'s chess metaphor speech
+- Moment of decision/consensus
+- Sudden alarm - unidentified vessel
+- The automatic defense triggers
+- Cliffhanger ending
+
+I need to be careful with the chess metaphor - "残局棋" meaning endgame. The metaphor should be that in an endgame, you don't try to win quickly, you try to keep pieces on the board, avoid stalemate, survive.
+
+Also need to reference the four hours deadline from Chapter 4 - the meeting should be happening within that window.
+
+Let me write this now in Chinese.
+
+Word count target is 2500, with range 1500-99999. I should aim for around 2500 Chinese characters, maybe a bit more.
+
+Let me compose:
+
+## 第5章 两种逻辑
+
+会议室里的人比博士预想的多。
+
+他不记得自己批准过这么多人参加内部会议。战术室的长桌两侧坐满了人，椅背贴着墙根排成第二排，门口还站着几个挤不进来的。作战干员占了一半，医疗和后勤占了另一半，中间夹杂着工程部与情报组的面孔。没有人交头接耳，但空气里像是埋着无数根绷紧的弦，只要谁的手指一松，就会全部弹起来。
+
+博士推开门时，所有的目光都转向他。
+
+他数了数：十七个人。加上站在角落的凯尔希和坐在桌尾的阿米娅，十九个。罗德岛核心的十九个人，此刻挤在一间没有舷窗的舱室里，围着一盏发出嗡嗡低响的顶灯。
+
+“坐下。”博士说。
+
+他自己没有坐。他走到长桌的最前端，背对着那块写满坐标和时间的黑板。黑板上用粉笔圈出一个数字：03:12。距离美国人说的四小时，还剩三小时十二分钟。
+
+“谁先开口？”他问。
+
+短暂的沉默。然后一个声音从左侧炸开。
+
+“我。”
+
+说话的是煌。她站在作战干员那一排的尽头，双臂抱胸，尾巴焦躁地拍打着身后的金属墙。她的源石技艺在这里使不出来，但她整个人的姿态仍然像一团被强行压住的火。
+
+“我们不能停在这儿。”她说，“那些小船在外面绕来绕去，直升机就在头顶上转。他们要是真想谈，不会把枪管子都快戳到我们脸上了。要我说，趁着天还没亮，直接登陆。罗德岛的装甲不是这些铁皮船能拦住的。”
+
+“登陆哪里？”博士问。
+
+“城里。纽约。他们最怕这个。”煌的嘴角扯了一下，像是在笑，但眼睛里没笑意，“只要我们的履带压上他们的马路，他们就会明白——这艘船不是博物馆展品，是能打仗的。”
+
+“然后？”
+
+“然后？”煌愣了一下，“然后他们就知道不能轻举妄动。我们拿到谈判权。”
+
+“谈判权。”博士重复了一遍这个词。他没有反驳，只是把视线移向桌子的另一侧，“其他人呢？”
+
+“我反对。”
+
+这次站起来的是华法琳。她的脸色比平时更苍白，手指紧紧攥着一份病历夹。
+
+“煌小姐，你看见船上有多少重症感染者吗？你看见今天医疗区有多少人因为源石结晶失活而出现急性反应吗？我们没有药品补充，没有外部医疗资源，甚至连最基本的水和食物都只能指望对方施舍。你想登陆？登陆之后呢？我们拿什么维持病人的生命？用枪指着他们的医院，让他们把药交出来？”
+
+“总比等死强。”煌说。
+
+“等死？”华法琳的声音尖了起来，“你以为现在是谁在维持这艘船不倒？是那些病人，是那些还在值班的工程师，是医疗部从早上忙到现在没有合过眼的人。你把他们拖进一场战争，他们死得更快。”
+
+“那你说怎么办？把动力核心交给他们检查？打开所有舱门让他们进来拍照？然后我们就成标本了，华法琳医生！”
+
+“我没有说交——”
+
+“够了。”
+
+博士的声音不大，但会议室里立刻安静下来。煌和华法琳都闭上了嘴，但两个人的眼神还在空中撞了一下，像两把没有出鞘的刀。
+
+博士慢慢绕过桌角，走到煌面前。他能闻到她身上还没散尽的海水咸味和机油味。
+
+“煌，”他说，“在纽约港登陆，我们需要多少能源？”
+
+“以最低功率推进，加上登陆后的姿态维持……”煌迟疑了一下，“大概会耗尽储备的百分之七十。”
+
+“然后呢？”
+
+“然后……”
+
+“然后罗德岛就变成了一座搁浅在对方沙滩上的铁棺材。”博士替她说完，“没有能源，我们无法升空，无法移动，无法维持全舰系统。美国人不需要开枪，只要切断我们的补给线，三个月之后船上的人会自己走出来。”
+
+煌的尾巴不再拍打墙壁了。
+
+博士转向华法琳：“那你呢？全面合作，开放所有区域，配合检查。你觉得对方会满意吗？”
+
+华法琳张了张嘴，没有立刻回答。
+
+“他们不会满意。”博士替她说了，“因为他们要的不是参观，是控制。他们不理解源石，不理解我们的动力核心，不理解船上为什么会有长着兽耳和尾巴的人。他们越检查，越会害怕。而人害怕的时候，第一反应是把害怕的东西关起来，或者毁掉。”
+
+会议室里一片沉默。
+
+博士走回自己的位置，双手撑在桌面上。他的手指在光滑的木纹上张开，像是要按住什么看不见的东西。
+
+“这里不是乌萨斯。”他说，“在乌萨斯，我们知道帝国的底线在哪里。我们知道贵族之间怎么交换利益，知道军队什么时候会撤退，知道哪一座城市可以收买，哪一座城市必须绕开。这里也不是卡兹戴尔。在卡兹戴尔，战争是空气，每个人从出生就知道怎么在废墟里求生。”
+
+他抬起头，目光扫过每一个人的脸。
+
+“这里不是泰拉。这里没有源石，没有源石技艺，没有感染者与非感染者的分野。这里没有我们熟悉的任何规则。你们用泰拉的逻辑去推断这个世界，就像——”
+
+他停顿了一下，看向桌角。
+
+“就像用残局棋的思路去下开局。”
+
+阿米娅抬起头看着他。
+
+博士直起身，从口袋里掏出几颗象棋子。那是他从某个干员的娱乐柜里借来的，木质，上面刻着泰拉风格的符号。他把它们一颗一颗摆在桌面上。
+
+“残局棋是什么？”他问。
+
+没有人回答。
+
+“残局棋是当你已经没有多少子力可用的时候下的棋。”博士用食指按住一枚卒子，“你的国王暴露在棋盘中央，你的皇后早就换了，车和象各剩一个。你没有资本再主动出击，因为每一步失误都会让你直接输掉。所以残局棋的原则不是赢，是——”
+
+他移动那枚卒子，把它从棋盘中央推到角落。
+
+“是让棋子留在棋盘上。是不被将死。是把和棋当作胜利。”
+
+他把另一枚棋子也推过去，两枚卒子并肩停在最后一排的格子前。
+
+“美国人围着我们，不是因为想立刻开战。他们想确认我们不是威胁。他们想让我们按他们的规则移动，按他们的规则停泊，按他们的规则接受检查。为什么？因为这个世界也有他们自己的残局——他们自己的恐惧，自己的政治，自己的镜头和选票。他们不能在CNN面前把一艘从天而降的陌生巨兽轰成碎片，除非我们先开火。”
+
+他收回手，棋子停在桌面上。
+
+“所以我们不能强攻。强攻等于告诉全世界：我们是怪物，是入侵者，是必须先被消灭的东西。我们也不能全面投降。投降等于把自己变成标本，任人宰割。”
+
+“那我们到底要做什么？”煌问，声音已经低了很多。
+
+“下和棋。”博士说，“让他们看到我们不会攻击，但也让他们明白，我们不会被拆开。我们移动到一个双方都能接受的位置，开放有限的区域，接受一名联络官，遵守一部分他们的规则——同时守住我们的核心。”
+
+“他们会接受吗？”这次是阿米娅问。
+
+博士看着她。她的眼睛下面有淡淡的青色，手指交叠放在桌面上，戒指压着桌面发出很轻的响声。
+
+“不接受，也得先让他们以为我们可能接受。”博士说，“谈判不是一次性决出胜负。谈判是把对方的恐惧，慢慢变成他们的耐心。”
+
+凯尔希从角落里开口了。她的声音很轻，但所有人都听见了。
+
+“博士说得对。但有一个变量你没有算进去。”
+
+“什么？”
+
+“时间。”凯尔希走到桌前，把那份数据板放到棋盘上，“船上重症感染者的急性排斥反应已经开始。如果七十二小时内我们无法建立稳定的外部医疗联系，或者找到替代源石技艺的治疗手段，第一批死亡病例会出现。这不是谈判筹码，这是生物学事实。美国人的耐心也许可以被拖延，但病人的身体不会。”
+
+博士看着数据板上的曲线。那些原本平缓的线条现在开始出现尖刺，像是某种沉睡的东西正在醒来。
+
+“七十二小时。”他说。
+
+“最多。”凯尔希说。
+
+博士沉默了片刻。然后他伸出手，把棋盘上的卒子重新摆回中央。
+
+“那就七十二小时。”他说，“在这七十二小时里，我们要让美国人相信，帮助他们理解我们对他们更有利。我们要用医疗合作换能源通道，用信息透明换行动自由。不是投降，是交换。”
+
+“如果他们不交换呢？”华法琳问。
+
+博士没有立刻回答。他把那枚代表国王的棋子拿起来，在指尖转了一圈。
+
+“那就让他们看见，不交换的代价。”
+
+会议室里的空气变了。不是变得更紧张，而是变得更有形状——像是一群本来各自漂浮的碎片，忽然被某种共同的理解黏在了一起。煌没有点头，但她坐回了椅子上。华法琳叹了口气，把病历夹放到桌上。
+
+阿米娅站了起来。
+
+“我愿意负责联络官的接待。”她说，“我会让美国人看到，罗德岛不是武器。”
+
+博士看着她，想说些什么，但凯尔希先开口了：“不。你不能去。”
+
+“为什么？”阿米娅的声音有些急促。
+
+“因为你是罗德岛的公开代表。”凯尔希说，“你的每一次露面都会被他们的镜头记录，被他们的政府分析。如果你太急于亲近，他们会认为我们在示弱。如果你太冷淡，他们会认为我们在隐瞒。你需要保持距离，但不是消失。”
+
+阿米娅抿了抿嘴，但最终没有反驳。
+
+博士正要说什么，警报突然响了。
+
+不是舰桥那种空间震荡的尖啸，而是一种更低沉、更短促的蜂鸣。红灯开始在天花板边缘闪烁，把每个人的脸都染上一层血色。
+
+“报告！”门口的通讯干员撞开门，脸色惨白，“左舷三点五海里，一艘未识别快艇突破外围警戒线，速度超过四十节，正在直接向本舰驶来！”
+
+“国籍？”博士问。
+
+“没有旗帜，没有应答，没有灯光！雷达反射特征与美军船只不符！”
+
+会议室里瞬间站起了一半的人。煌第一个冲向门口，手已经按在了腰间的武器上。
+
+“全体待命！”博士的声音切开了混乱，“煌，回来。没有我的命令，任何人不准登上甲板。医疗组立即返回岗位。工程部切断非必要能源，启动应急协议。”
+
+“博士！”煌回头瞪着他，“那是快艇！四十节！如果他们携带炸药——”
+
+“那就让自动防御处理。”博士说。
+
+他快步走向舰桥，凯尔希和阿米娅紧跟在后。走廊里的应急灯把他们的影子撕成一段一段。博士的心跳很快，但他的脚步很稳。他在想一件事：那艘快艇是谁派来的？美国人？如果是美国人，他们为什么要用一艘没有标识的船？如果不是美国人，那又是谁？
+
+舰桥的全景屏幕已经亮了起来。夜视模式把海面染成一片惨绿的荧光。在屏幕中央偏左的位置，一个白色的小点正在以惊人的速度穿过水面，身后拖着一道长长的尾迹。它像一支从黑暗中射出的箭，笔直地指向罗德岛。
+
+“距离？”
+
+“两海里！速度四十二节，还在加速！”
+
+“美军反应？”
+
+“白色快艇和军舰都没有动！但他们的直升机正在转向！”
+
+博士盯着那个白点。它太明显了。如果是自杀式袭击，它不应该这么明显。如果是侦察，它不应该这么快。它像是在故意被看见。
+
+“打开外部扩音。”他说，“用所有频道广播：未识别船只，立即停船，说明来意。英、中、通用语，循环播放。”
+
+“是！”
+
+扩音器打开，三语警告被送入夜空。但快艇没有减速。它越来越近，已经能看清船首切开浪花时扬起的白色水雾。
+
+“距离一海里！”
+
+“启动最后一道非源石自动防御。”博士说。
+
+他的声音很平静，但凯尔希猛地转头看向他。
+
+“博士，那是——”
+
+“我知道那是什么。”博士说。
+
+那是罗德岛在缺少源石技艺支持时的最后一道防线。不是武器，至少不是传统意义上的武器。它是一套基于声波和电磁脉冲的近程拒止系统，设计用来驱散暴民和小型船只，不需要源石驱动，只消耗大量电能。在泰拉，它几乎没有被使用过，因为源石技艺能更高效地解决大多数问题。
+
+在这里，它是唯一的选项。
+
+“设定范围：舰体前方三百米。强度：三级。”
+
+“博士，三级强度可能会对人体造成永久性损伤！”工程干员喊道。
+
+“先设定一级。”博士改口，“警告性照射。”
+
+指令下达。舰体左舷下方的某个舱盖滑开，露出几排黑色的蜂窝状发射器。它们转向海面，对准那艘疾驰而来的快艇。
+
+一秒钟后，海水在快艇前方约四百米处突然沸腾起来。
+
+那不是爆炸，而是一种更诡异的现象：一大片海面像是被无形的巨手搅动，水柱冲天而起，形成一道白色的水墙。快艇的船首猛然扎进浪里，又高高弹起，船身剧烈倾斜，几乎侧翻。
+
+水墙持续了大约五秒，然后平息。
+
+快艇的速度慢了下来，但没有停。它在原地打了几个转，引擎发出断断续续的轰鸣，然后又开始加速——这一次是朝着另一个方向，朝着美军白色快艇的方向驶去。
+
+“它在逃？”阿米娅问。
+
+“它在跑向美国人。”凯尔希说。
+
+博士盯着屏幕。那艘快艇在夜视画面里像一只受伤的甲虫，踉踉跄跄地划过海面。而在它身后，罗德岛的自动防御系统仍然暴露在空气中，黑色的发射器像一只只睁开的眼睛。
+
+他知道，从现在开始，一切都不一样了。
+
+无论那艘快艇上是谁，无论他们想做什么，美国人现在都看见了罗德岛的牙齿。那不是他们要求的“非致命武力”，那是某种他们还没有命名的能力。CNN的镜头也许没有拍到，但美军的雷达和声纳一定记录下了每一个细节。
+
+“回收防御系统。”博士说。
+
+“博士，它还在射程内！”
+
+“回收。”
+
+发射器缓缓缩回舱内，舱盖合上。舰桥里只剩下通风系统的低鸣和干员们压抑的呼吸。
+
+博士转过身，看着凯尔希和阿米娅。
+
+“现在，”他说，“美国人真的害怕了。”
+
+凯尔希没有说话。她的目光落在屏幕上，那里，美军的直升机已经开始下降高度，探照灯第一次扫过海面，像一把白色的刀，在寻找那艘刚刚逃离的白色快艇。
+
+阿米娅走到博士身边，声音很轻：“博士，刚才那艘船上的人……他们是谁？”
+
+“我不知道。”博士说。
+
+这是他今晚第二次说出这四个字。第一次是在会议室，面对煌和华法琳的争论。第二次是此刻，面对着一片刚刚被声波撕裂的海面。
+
+他不知道那艘快艇是谁派来的。他不知道对方想要什么。他只知道，有人正在试图把这场棋局从和棋推向死棋。
+
+而他和罗德岛，正站在这盘残局的中央，手里已经没有几颗可以牺牲的子了。
+
+窗外，海面上的灯光开始移动。白色快艇启动了引擎，军舰的红色防撞灯改变了闪烁频率，一架直升机脱离编队，朝罗德岛的方向飞来。
+
+天还没有亮。但夜晚已经结束了。
+
+博士把手掌按在冰冷的战术台上，感受着金属下方微弱但持续的震动。那是罗德岛的心跳，也是它在这片没有源石的海洋里，唯一还能发出的声音。
+
+"打开全舰广播。"他说。
+
+通讯干员把麦克风递给他。博士深吸一口气，对着那个小小的黑色圆孔，说出了今晚的最后一句话：
+
+"罗德岛全体干员，进入一级戒备。记住——不要先开枪。但也不要，让任何人以为我们不敢。"
+
+麦克风的电流声在空气中停留了一秒，然后消失。
+
+而在舰桥的全景屏幕里，那座城市的天际线正在渐渐变亮。新的一天即将到来，带着无数双眼睛，无数种恐惧，和一个博士还没有答案的问题：
+
+到底是谁，不希望这场棋局和棋？
+
+I think this is good. Let me check the word count and make sure it fits. It's probably around 2500-3000 Chinese characters, which is within range. The tone is right, the characters are consistent, and it ends on a suspenseful note.
+
+Let me review the requirements once more:
+- Markdown title "## 第5章 两种逻辑" ✓
+- 1500-99999 words ✓
+- Continues from previous chapters ✓
+- Tight narrative with details, suspense, psychological changes ✓
+- No writing process/summary/meta-comments ✓
+- Only chapter body ✓
+
+The chapter covers:
+- Internal meeting with factions ✓
+- Dr. uses chess endgame metaphor ✓
+- Unidentified speedboat breaks through ✓
+- Triggers last non-Sourcestone automatic defense ✓
+- Suspenseful ending ✓
+
+Good to output.
+[/思考过程]
+
+## 第6章 水面的裂痕
+
+那架黑色直升机是从东侧切进来的。
+
+舰桥的全景屏幕上，它的轮廓像一片被风撕下来的夜色，机身压得很低，旋翼搅动的气流把海面扫出一圈又圈同心圆。它没有开探照灯，只有腹部的红色防撞灯在暗里规律地明灭，像某种冷血动物的呼吸。博士数着它与罗德岛之间的距离：八百米、七百米、六百米。每近一百米，他都能听见自己指节在战术台边缘发出的轻微摩擦声。
+
+“它带了武器。”凯尔希的声音从身后传来，平静得像在念一份化验单。
+
+博士没有回头。他看见了。直升机短翼下方的两个挂架，细长、匀称，被 dawn 前的灰光照出一层哑光。那不是探照灯，不是救生吊篮。在泰拉，他会立刻把它识别为某种法术增幅器或源石投射舱；在这里，它只是纯粹的金属，带着一种他尚未完全理解、却毫无疑问致命的简洁。
+
+“距离五百米。速度在降低，但航向没有变化。”通讯干员的声音绷得很紧，“它在锁定我们。”
+
+“所有甲板人员，隐蔽。”博士说。
+
+命令传下去，甲板上最后几个人影消失在舱口和掩体后面。博士知道这种隐蔽毫无意义。如果那东西发射它挂载的武器，罗德岛的装甲或许能挡住一部分，但在没有源石护盾、没有机动规避能力的情况下，他们只是一块悬停在水面上的靶子。
+
+“博士，”阿米娅走到他身边，声音低得几乎被通风系统的嗡鸣盖住，“他们要开火吗？”
+
+“他们在等命令。”博士说。
+
+“谁的命令？”
+
+“他们自己的。”
+
+他说完才意识到这句话有多空洞。在泰拉，他至少知道命令链的另一端是谁：一个军阀，一个贵族，一个被恐惧逼疯的委员会。而在这里，在两千公里外的那座城市里，在无数电视屏幕和投票箱后面，命令的源头被层层叠叠地藏了起来。可能是一个将军，一个总统，一个临时凑起来的专家小组，也可能只是某个在屏幕上看到罗德岛后认定“必须先下手为强”的普通人。
+
+直升机又近了五十米。它的机头微微下压，像一条准备扑击的蛇。
+
+“打开外部扩音。”博士说。
+
+“所有频道？”
+
+“所有频道。还有，把舰首的高功率探照灯对准它，但不要直射驾驶舱。斜上方三十度，慢闪。”
+
+通讯干员迟疑了半秒：“博士，闪光可能会被视为挑衅——”
+
+“挑衅比沉默好。”博士说，“沉默会被读作默认。让他们看见我们在尝试说话。”
+
+扩音器打开了，电流声在空旷的舰桥里回荡。博士接过麦克风，金属外壳冰凉，沾着他掌心的汗。他清了清嗓子，用他仅存的那几个英文单词，一个字一个字地往外挤：
+
+“Rhodes Island. No hostile. Do not fire. I say again, do not fire.”
+
+他的发音很破碎，重音落在错误的音节上，尾音被无线电的压缩弄得有些失真。他听见自己的声音被扩音器放大，抛向海面，又被直升机的旋翼绞碎。对方没有回应。
+
+他又说了一遍，这次加了一个词：“People in water. We help. No fire.”
+
+与此同时，舰首的探照灯亮了。一束惨白的光柱斜斜地刺向天空，在直升机下方几十米处停下，然后以三短三长的节奏缓慢闪烁。那不是任何一种标准信号，博士不知道对方能不能看懂。他只是在赌：在一个没有源石的世界里，光仍然是最原始的沟通方式，而一个愿意先开口的人，通常不会立刻扣下扳机。
+
+直升机停住了。
+
+不是悬停，而是那种真正意义上的停住——机头不再下压，机身微微侧转，旋翼的转速没有改变，但整架机器像被一只无形的手按在了空中。它距离罗德岛四百三十米。这个距离，博士后来才知道，恰好是某种短程导弹的最小有效射程边缘。
+
+“它没有离开。”阿米娅说。
+
+“它也没有开火。”凯尔希说。
+
+博士把麦克风放下，没有松开。他的手心黏在金属上，像是被冻住了。
+
+“再闪一次。”他说，“同样的节奏。”
+
+探照灯又完成了一次三短三长。这一次，直升机的机身出现了更明显的倾斜，它开始向右移动，不是撤离，而是绕到罗德岛的侧翼，保持一个稳定的圆周。它的武器挂架仍然指向这边，但机头的指向已经从舰桥移向了海面。
+
+“它在观察。”凯尔希说，“我们争取到了时间。”
+
+“多少？”
+
+“不知道。”
+
+博士转过头，第一次正视她。凯尔希的脸上没有任何胜利的表情，只有那种他熟悉的、属于医者的冷静——她已经把下一步算好了。
+
+“水里有两个人。”她说。
+
+博士顺着她的目光看向屏幕。在夜视模式的惨绿中，那艘白色快艇正在左舷约八百米外缓缓倾覆。船尾翘出水面，船首已经沉下去，只剩一个模糊的轮廓像鲸鱼背脊一样起伏。两个小小的人影抓着浮出水面的船体残骸，在浪花里时隐时现。其中一个还在挥动手臂，另一个一动不动。
+
+“自动防御系统造成的？”博士问。
+
+“也可能是他们自己的速度加上浪。”凯尔希说，“这不重要。重要的是，如果我们不救，下一次那架直升机就不会只是盘旋。”
+
+“派出救生艇。两名医疗干员，加上你。”
+
+“不。”凯尔希说，“加上我，但不能只派医疗干员。需要一个能在他们登船时解释我们意图的人。阿米娅。”
+
+“我在。”阿米娅的声音有些发紧，但立刻站直了。
+
+“你留在舰桥。”博士说。
+
+凯尔希看了他一眼，那一眼里没有反对，只有一种“你心里清楚”的确认。
+
+“让美国人看见一个孩子在甲板上对他们挥手，”凯尔希说，“比看见我更有用。”
+
+“但她不是孩子——”
+
+“在他们眼里是。”凯尔希打断他，“在他们昨天的问题里，她是十四岁。他们记得这个。让阿米娅到侧舷去，穿医疗部的白外套，不要靠近护栏，只是站在那里。这会告诉他们，我们派出去的是救人的人，不是战斗人员。”
+
+博士沉默了不到一秒。
+
+“阿米娅，”他说，“你愿意吗？”
+
+“我愿意。”她说，声音很轻，但没有犹豫。
+
+凯尔希转身走向舱门，白大褂的下摆在身后扬起。“我需要一艘硬壳充气艇，电池驱动，不要任何源石设备。带上急救箱、保温毯、颈托。两个人，除了我之外，只要一名菲林护理干员。我们不带武器。”
+
+“如果那两个人有武器呢？”博士问。
+
+“那他们会在水里开枪。”凯尔希停下脚步，回头看着他，“而你会从舰桥上看见。”
+
+门在她身后关上，发出一声沉闷的撞击。
+
+博士重新拿起麦克风。直升机还在侧翼盘旋，像一颗悬而未决的子弹。他切换到美国 Coast Guard 的白色快艇频道——那是他们昨天用过的频率——用同样破碎的英语说：
+
+“Rhodes Island sending boat. Medical only. Two people. We rescue. You watch. No weapon.”
+
+对方没有回答。但屏幕上的白色快艇减慢了速度，在距离沉船约三百米处停下，没有继续靠近。
+
+“他们听见了。”阿米娅说。
+
+“他们听见了，但不一定相信。”博士说。
+
+救生艇从罗德岛右舷放下去了。电池马达发出一种高频的轻响，像是一只被放飞的昆虫。凯尔希坐在船首，穿着白大褂，双手举在肩膀两侧，掌心向外。菲林护理干员跪在船尾，控制着方向。艇身两侧贴着两块临时找来的红色十字布标，在晨曦里显得格外醒目。
+
+博士看着屏幕，心跳得很快。他注意到自己的手指又在无意识敲击战术台，那是一种他在泰拉战场上养成的习惯，用来在 waiting 中保持清醒。但在这里，每一次敲击都像是在催促某种他无法控制的东西。
+
+“距离沉船两百米。”通讯干员报告。
+
+那架黑色直升机突然动了。
+
+它不是冲向罗德岛，而是压低高度，朝着救生艇的方向飞去。旋翼卷起的风把海面压出一道凹陷，救生艇在浪里剧烈摇晃。凯尔希没有抬头，只是用手扶住船舷，让护理干员继续驾驶。
+
+“博士！”阿米娅抓住了他的手臂。
+
+“不要动任何防御。”博士说，“它在试探。看我们会不会先开枪。”
+
+直升机在救生艇上方约五十米处悬停了不到五秒，然后拉起，重新爬升到之前的盘旋高度。那五秒钟里，博士觉得空气凝固成了某种可以被掰碎的固体。他看见凯尔希的白大褂被风吹得贴在背上，但她始终保持着那个双手可见的姿势。
+
+“她没事。”阿米娅低声说，像是在对自己说。
+
+救生艇靠近了沉船。凯尔希和护理干员协力把第一个人拉上船。那是个中年男人，腹部鼓胀，不断咳嗽，腿上有很深的割伤。然后是第二个人，一个年轻男子，穿着防水的夹克，头上戴着某种固定装置——后来他们才知道那是运动相机。他比第一个人清醒，一上船就挣扎着要坐起来，眼睛直直地盯着罗德岛的舰体，嘴里说着一连串他们听不懂的话。
+
+凯尔希按住他的肩膀，用泰拉通用语说了一句什么，语调平稳。年轻人显然听不懂，但他看见了她的白大褂和红十字，挣扎的幅度小了一些。
+
+“把他固定住。”凯尔希对护理干员说，“检查头部外伤。给另一个吸氧。”
+
+她抬起头，望向罗德岛的方向，然后举起一只手，做了一个握拳的动作。
+
+博士松了一口气。那是“还活着”的信号。
+
+但事情没有结束。
+
+美国白色快艇缓缓靠近了救生艇，在二十米外停下。艇上站着几名穿白色制服的人，手里没有举着武器，但他们的姿态显示出一种随时准备跃入水中的紧张。其中一人用扩音器喊了一句英文，语速很快。
+
+凯尔希没有立刻回应。她从救生艇的储物格里取出一块防水写字板，用马克笔写了几个英文字母，举过头顶：
+
+MEDICAL — NO WEAPON — TRANSFER?
+
+对方沉默了片刻。然后白色快艇上的人做了一个手势：食指和中指并拢，指向自己的船，再指向凯尔希的艇。
+
+“他们要人。”博士说。
+
+“他们知道活着的比死的有价值。”凯尔希的声音从救生艇的通讯器里传回来，带着轻微的电流噪音，“博士，我决定把轻的交给他们，重的先送回罗德岛处理。理由是他需要手术，我们的设备更完备。”
+
+博士沉默了。把一个人带回罗德岛，意味着让美国人进入他们的医疗区——哪怕只是通过担架。但如果不这样做，就等于承认罗德岛没有能力救治，或者更糟，承认他们不在乎一条人命。
+
+“同意。”他说，“但只能到隔离急救室。全程有我们的人陪同。不允许他们的任何人登舰。”
+
+“明白。”
+
+凯尔希用写字板把决定传达给白色快艇。对方犹豫了一会儿，最终点了点头。他们派出一只小橡皮艇，接走了那个头部仅有擦伤的年轻人。年轻人被转移时还在回头看着罗德岛，嘴里喊着什么，声音被海风吹散，听不清内容。
+
+凯尔希带着重伤者返回罗德岛。充气艇靠上舷梯时，天已经亮了。阳光从城市方向斜射过来，把海面和钢铁甲板都染上一层虚假的温暖。博士亲自到侧舷去接她。
+
+重伤者被抬上担架，是一个四十多岁的男人，脸色灰白，嘴唇发紫，左腿有开放性骨折。凯尔希一边走一边下达指令：“输液、升温、准备手术室。血源石浓度 irrelevant——这里没有源石环境，按常规创伤处理。联系华法琳，我需要O型血储备。”
+
+博士看着她的背影消失在舱门里，才意识到自己的手一直握着护栏，指节已经发白。
+
+“博士。”阿米娅走到他身边。她已经脱掉了那件过大的白外套，头发被海风吹得贴在脸颊上，“那个年轻人……被美国船带走了。”
+
+“我知道。”
+
+“他们会怎么对他？”
+
+博士没有回答。他看着白色快艇正在转向，那名年轻人被两名穿制服的人夹在中间，低着头，看不见表情。快艇的船尾激起一道白色的浪，朝着海岸线的方向驶去。
+
+“他会先被审问。”凯尔希的声音从身后传来。她已经回来了，白大褂上沾着血和盐水的痕迹，手里拎着一只透明的防水袋，袋子里装着一部手机、一块运动相机电池，和一张被水泡湿的卡片，“然后会被关押。在他们搞清楚他是谁、为什么来这里之前，他不会出现在任何新闻里。”
+
+“他是谁？”博士问。
+
+“一个蠢货。”凯尔希把防水袋递给他，“也可能是某个聪明人派来的蠢货。他的船是租来的，船东在岸上有二十艘同样的快艇。他戴着直播设备，说明他觉得自己在做什么英勇的事——或者他以为有人想看。”
+
+博士接过防水袋。手机屏幕上还有水珠，外壳上印着一行英文和一个被咬了一口的苹果图案。他不懂那是什么意思，但他能猜出那是一部个人通讯设备。
+
+“他在直播？”
+
+“ camera 是开着的。”凯尔希说，“不确定信号有没有传回去。如果有，现在全世界都看到了一艘外星巨兽用某种‘武器’把他打翻在水里，然后一艘印着红十字的小艇把他救了上来。两种叙事，取决于他们怎么剪辑。”
+
+博士闭上眼睛。
+
+在泰拉，他从来不担心剪辑。移动城市的广播系统是单向的，战争的叙事由胜利者书写。但这个世界有亿万台屏幕，每一台屏幕后面都有一个会愤怒、会恐惧、会投票的人。没有人能控制所有叙事，尤其是当他自己也看不懂那些屏幕上的语言时。
+
+“我们需要他的身份。”博士说，“也需要他为什么来这里。如果他是单独行动，我们可以把这件事包装成一次人道主义救援。如果他是受人指使——”
+
+“那指使他的人，想让我们的牙齿露出来。”凯尔希替他说完。
+
+博士睁开眼，看向海面。黑色直升机已经退到三公里外，只剩一个模糊的黑点。白色快艇带走了年轻人，那艘灰色军舰仍然停在原来的位置，像一块沉默的礁石。在更远的地方，城市的轮廓已经完全被阳光照亮，玻璃幕墙反射出刺眼的光芒。
+
+一切看起来都恢复了平静。但他知道，水面下已经裂开了一道缝。
+
+“美国人会告诉我们他是谁吗？”阿米娅问。
+
+“不会。”博士说。
+
+“为什么？”
+
+“因为他们也不确定。”凯尔希说，“如果他们确定他是平民，他们会急着宣布，把自己打扮成保护者的角色。如果他们确定他是敌人，他们会向我们展示证据，要求我们配合调查。现在他们什么都不说，说明他们和我们一样，在等。”
+
+“等什么？”
+
+“等一个对双方都有利的解释。”博士说，“或者等一个可以让某一方先开火的借口。”
+
+阿米娅低下头，看着自己手上的戒指。阳光照在上面，依然没有反应。她忽然用力握了握拳，像是在确认自己的手指还能动。
+
+“博士，”她说，“我们救了他。他们看见了。这应该算是一件好事，对吗？”
+
+博士看着她。她的眼睛里有血丝，但更多的是一种他既心疼又不敢辜负的期待。她总是这样，在所有人都在计算利害的时候，先问一句“这是不是对的”。
+
+“对。”他说，“但我们救的是一条人命，阿米娅。人命换不来信任，信任需要时间。而我们最缺的，就是时间。”
+
+阿米娅没有再说话。她转过身，朝着医疗区的方向走去，步伐很快，像是在追赶什么。
+
+博士留在甲板上。海风吹来，带着咸腥味和远处城市的烟火气。他低头看着手里的防水袋，那张被水泡湿的卡片上，隐约能看到几个英文字母和一个数字。他把它们记在心里，准备交给情报组——如果情报组还能从一部没电的异世界手机里找出什么的话。
+
+身后传来脚步声。博士没有回头。他知道是谁。
+
+“你在想什么？”凯尔希问。
+
+“想那架直升机。”博士说，“它本来可以开火。它没有。”
+
+“因为我们让它看见了白大褂和红十字。”
+
+“也许。”博士说，“但也可能只是因为它收到的命令是‘观察，不要攻击’。下一次，命令可能会变。”
+
+凯尔希走到他身边，和他一起看着海面。她的白大褂上血迹已经干了，变成深褐色的斑块。
+
+“你做得很好。”她说。
+
+“我做了什么？”博士的声音有些沙哑，“我说了几句没人教过我的英文，闪了几次灯，然后眼睁睁看着一个可能是陷阱的人被带走。这不是指挥，这是拖延。”
+
+“拖延也是一种战术。”凯尔希说，“在没有规则的战场上，能活到下一回合的人，才有资格定义规则。”
+
+博士转过头看她。她的侧脸在阳光下显得格外清晰，每一道细纹都像是被刻上去的。他忽然意识到，她已经活了太久，久到“等待”本身对她来说都是一种熟悉的武器。
+
+“你相信他只是一个平民吗？”博士问。
+
+“我相信他快死了。”凯尔希说，“至于他是谁，那是另一件事。”
+
+她顿了顿，又补充道：“但我相信一件事：不管他是谁派来的，那个派他来的人，现在一定很失望。”
+
+“失望？”
+
+“因为他没能让我们开火。”凯尔希说，“那架直升机才是试探。快艇只是鱼钩。鱼没有咬钩，钓鱼的人就会再下一次饵。”
+
+博士沉默了很久。海面上，一只白色的海鸟掠过水面，翅膀尖几乎触到浪花。它的影子在蓝色的水面上碎成一片，又迅速愈合。
+
+“通知全舰。”他终于说，“从今天起，任何未经确认接近罗德岛五百米范围的船只，先以灯光和无线电警告。警告无效，再启动非致命拒止。但任何情况下，没有我的直接命令，不得使用致命火力。”
+
+“是。”
+
+“还有，”博士说，“让工程部检查那套声波防御系统的所有日志。如果对方要我们提供‘事件数据’，我们只能给一部分。但我们要先知道，自己手里到底有什么。”
+
+凯尔希点了点头，转身离开。她的脚步声在甲板上渐行渐远，最后消失在舱门里。
+
+博士独自站在护栏旁，望着那片刚刚吞没过一艘快艇、又吐出两个活人的海面。阳光越来越强烈，把他身后的影子越拉越短。他想起那名年轻人被带走时回头的眼神——那不是恐惧，也不是感激，而是一种他无法解读的狂热，仿佛他终于触碰到了某种他一直相信存在的东西。
+
+而在两千公里外的陆地上，无数台屏幕正在把这一刻切成碎片，配上不同的语言、音乐和字幕，喂给一群同样饥渴的人。
+
+他不知道那些人会相信什么。
+
+他只知道，罗德岛和这个世界之间，那道刚刚被红十字和白大褂勉强粘合起来的裂痕，正在海水的压力下慢慢扩大。下一次涨潮的时候，它可能会变成一道深渊。
+
+也可能，变成一座桥。
+
+博士把手从护栏上收回，插进口袋里。他的手指碰到了那块被咬了一口的苹果图案手机，冰冷，潮湿，像一个来自另一个世界的、没有说完的句子。
+
+他朝着舰桥走去，背脊挺直，步伐稳定。在他身后，海面一如既往地平缓起伏，仿佛什么都没有发生过。
+
+但水面下的裂痕，已经存在。
+
+[思考过程]
+We need write Chapter 6 title "## 第6章 水面的裂痕". Need continue immediately previous events. Word count 1500-99999. Need deliver only chapter text no process etc. We need craft detailed chapter. Let's recall summary: "快艇事件险些引发交火，博士用破碎的英语与灯光信号喊停盘旋的武装直升机。凯尔希救治落水者，向美方传递非敌意。但突破者被扣押后音讯全无，双方刚刚建立的微弱信任再次悬于一线。" So chapter should cover: after sonic repulsor incident, armed helicopter(s) approach, Doctor uses broken English and light signals to stop them from opening fire. Then a small boat maybe the intruder capsized, people in water; Kal'tits provides aid to survivors, communicates non-hostility. Then the breakthrough person/perpetrator detained by US side and no news, trust hangs by thread. Need maintain POV close to Doctor, limited 3rd person, not switch to US internals. Keep Kal'tits calm and Amiya with emotions. No source石. Narrative tight, detail, suspense, psychological changes. End with suspense, not tied.
+
+Need produce Chinese prose. Need around maybe 3000-4000 words? At least 2500. We'll aim maybe 3500. Title at start. Then scene.
+
+Let's outline: 1) Dawn breaking, armed helo closing. 2) Doctor on bridge sees missile/weapon pods maybe. Need avoid military-superpower fantasy; use communications. 3) He decides to use external lights and broken English over radio to halt helicopter. 4) Show tension, Amiya there, Kal'tits possibly ready med. 5) Helicopter stops/backs off after light signal; then they notice overturned/unresponsive fast boat in water, survivors. 6) Doctor launches rescue boat? But to avoid hostilities, asks US for permission/coordinates? Actually summary says Kal'tits救治落水者，向美方传递非敌意. Could be survivors from rogue boat. Maybe the boat was from breakaway faction or press? They pull them from water via US Coast Guard? Need craft carefully.
+
+7) After rescue, the person/breakthrougher who crossed line (maybe sole survivor or pilot) is taken by US, no news. Trust again fragile.
+
+Let's think about US forces: There are Coast Guard white boat, Navy ship, black helicopter with no markings (spec ops?), CNN helo. The rogue boat was unidentified; after repulsor it fled toward US white boat. The US might consider it hostile. An armed helicopter (maybe black) now approaches罗德岛 aggressively. Doctor uses lights and broken English to de-escalate. Then he sees the rogue boat capsized maybe because repulsor or collision; people in water. Kal'tits insists on rescue, goes with team onto deck; using a life raft or deployable rescue craft. US helo hovers; Doctor signals no weapons, hands raised. They recover two survivors: one injured, one possibly uninjured. Kal'tits treats them. She hands them over or they are taken by US boat? Actually "突破者被扣押后音讯全无" suggests the intruder/survivor is detained by US and no news. Maybe after rescue, US demands custody of survivor;罗德岛 transfers him; then no info. Or the survivor was the one who tried to approach, got detained by US, no news.
+
+Let's keep summary: The fast boat breaker is detained by the US after being rescued/treated? "但突破者被扣押后音讯全无" perhaps the one who broke through the perimeter (the boat operator) is taken away by US and no word. Could be a civilian/ thrill-seeker/independent actor? Or maybe an agent of some faction? The lack of news means both sides don't know who sent them, increasing distrust.
+
+Need incorporate Doctor's psychological change: from commander used to decisive war to one realizing every signal matters; mistakes in translation and light signals can mean war. He feels responsibility, helplessness, maybe begins to question if they were brought here intentionally.
+
+Let's write detailed scenes.
+
+Opening: Doctor on bridge, panoramic screen showing green afterimage of night vision. The armed helicopter (black, no markings) closing to 800 meters, nose down, weapons pods visible. US white boat also moving. The rogue boat has slowed and turned, then capsized/ stops. Doctor orders cease sonic defense. He knows helicopter may be preparing to fire missile;罗德岛 can't evade without源石 energy; one hit could breach reactor? Actually no reactor? But tense.
+
+He reaches for external radio microphone. He doesn't know English phrases, but remembers words: "No hostile." "Stop." "We help." "Wait." He decides to use light signal: Morse? They may not know. He orders deck lights to flash "S-T-O-P" or maybe a steady pattern. He speaks into radio in broken English repeating "No fire. We help. Stop." Also light: one long flash = hold fire? Could use semaphore? Simpler: floodlight pointed at helo, steady then flashing. The helo pilot might interpret.
+
+Alternatively he could use a spotlight with a handwritten sign? But radio plus light. Let's say he orders a searchlight directed upward at helo, slow pulse of three short flashes (international distress? Actually SOS). Hmm to mean "stop, do not fire" maybe red and green navigation lights? Not critical. We'll use a sequence: one long steady beam on罗德岛 bow, then three slow flashes, repeated, while he repeats on guard frequency: "This is Rhodes Island. Do not fire. We are helping people in water. I say again, do not fire."
+
+He speaks English with heavy accent; translator maybe not needed. Amiya behind him, trembling but holding microphone. Kal'tits arrives with med kit. The helo holds at 600m, then banks right, not leaving but not attacking. Maybe because US command ordered hold, maybe because signals.
+
+Then they see the fast boat is sinking, people in water waving. Distance 800m from罗德岛. Doctor orders launch a rescue craft: a small inflatable (non源石 motor? Battery?) but they need permission? The US white boat also approaching survivors. To avoid competition/trigger, Doctor contacts via light/radio: "We rescue. You watch. No weapons." He sends Kal'tits and two unarmed medics in a lifeboat with white flag. The black helo circles overhead. US white boat stops short, observing. This conveys non-hostility.
+
+Kal'tits treats a woman with head wound and hypothermia; another man conscious but incoherent. She identifies source石? no. She communicates with US via hand signals / light? She uses a red cross panel. The helo's medic maybe descends? Let's make it: US Coast Guard boat sends a rescue swimmer; Kal'tits allows them to take custody? Actually summary says Kal'tits救治落水者，向美方传递非敌意. She can treat them on罗德岛 deck or in lifeboat and then hand over to US. Hmm.
+
+Let's have: The two survivors brought aboard罗德岛 to medical staging area under guard. Kal'tits stabilizes. Then the white boat requests to take them for questioning. Doctor agrees on condition a罗德岛 medical observer accompanies; US refuses/accepts? The summary says breakthrough person detained and no news; maybe after transfer no word. So he allows transfer to avoid conflict, despite wanting identity. Then no news.
+
+Need maybe the "breakthrough者" is the person who piloted the boat; one survivor, maybe a young man with a go-pro/camera, not military. He was live-streaming? Could be a daredevil who saw CNN and tried to reach the alien ship. That would explain unmarked boat, no flag, no weapons, and fleeing after sonic warning. The US would detain him as security threat. No info because government won't share. This makes sense and fits CNN theme. But the summary says "突破者被扣押后音讯全无" (the one who broke through is detained and no news). That could be this reckless individual.
+
+But the initial incident nearly triggered exchange of fire with helicopter; Doctor halts helicopter. Then rescue. Then after Kal'tits hands over survivor, no news. The trust built by humanitarian rescue is undermined because US won't share info, and罗德岛 wonders if the US staged the boat as probe? Or if it was independent. Lack of transparency.
+
+Let's write with this angle.
+
+Need include Amiya: She is on bridge, holds a clipboard, fists clenched, rings no glow. When Doctor uses broken English, she offers to speak? No, she can't. She listens, perhaps quietly translates from memory? But she doesn't know English. She shows anxiety but supports. Maybe she says "They can see we are helping, right?" with hope. Kal'tits remains composed but firm: "If we don't rescue, the next message is that we let people drown." Good.
+
+Need maintain no internal US POV; only Doctor's observations: helicopter movements, boats, lights. We can describe from outside: helo nose tilts, weapons pod glistening, red anti-collision lights, rotor wash. No knowledge of pilot thoughts.
+
+Let's plan scenes:
+
+Scene 1: Bridge, night/dawn. Helicopter closing. Doctor's dread. He orders comms open all frequencies. He speaks broken English. Light signal. Helo pauses, hovers, then backs off into a holding orbit. Tension.
+
+Scene 2: They spot survivors. Doctor orders rescue. Kal'tits prepares. Argument? Maybe safety concerns: sending medics outside with a hostile helo overhead. Kal'tits says "I'm going." Doctor says no initially? She insists: "You stay here and keep them from shooting. I'll go." This shows her character. He agrees. Amiya wants to help but Kal'tits says stay with博士. They launch a lifeboat from starboard side (opposite helo). US white boat approaches; Doctor signals with light/panel: red cross, "MEDICAL RESCUE". The white boat slows, keeps distance. Black helo watches.
+
+Scene 3: Rescue in water. Kal'tits and medics pull two people. One is a young man with camera helmet, semi-conscious; other older, maybe boat owner, bleeding. Kal'tits does field treatment: CPR, bandage, warm blanket. The black helo lowers a rescue basket? Or US boat sends an inflatable with armed crew. Kal'tits stands, hands visible, points to survivors then to US boat, indicating transfer. A Coast Guardsman boards lifeboat to verify? They take survivors. The white boat officer (maybe same woman from previous chapters? Let's call her "那个女人" / American liaison woman) arrives in small inflatable. She looks at Kal'tits and nods? They use translation device. Kal'tits: "They need hospital. Not interrogation first." US woman: "We take them." They are transferred.
+
+Scene 4: Aboard罗德岛 after rescue, deck wet, sunrise. Doctor meets Kal'tits returning. She reports both alive; one maybe has head trauma; no ID, equipment suggests civilian: GoPro, phone, branded cap. The woman US liaison arrives to request any belongings? Doctor hands over the waterproof bag (camera/phone) as gesture of transparency. She leaves. Amiya asks "Will they tell us who sent them?" Doctor: "They won't." Kal'tits: "They don't know either, perhaps." The black helo remains overhead, further out. Then news: US side has detained the survivor, no statement. CNN now reporting "Alien ship attacks civilian boat?" or "Mysterious vessel fired on small craft"? This undermines trust.
+
+Maybe include a TV/radio intercept: CNN broadcast fragments. Translator renders "攻击...平民...未知力量..." causing fear among干员. Doctor knows it's distorted but can't refute. He realizes narrative war has started.
+
+Scene 5: Internal meeting? Could keep external. Doctor and Amiya on deck. The US liaison returns with message: survivor is in custody, no further info; request罗德岛 provide full sensor logs of incident. Doctor refuses? Maybe offers partial. She warns "If you don't share, we can't protect your narrative." He says "And if we do, you'll use it to demand core access." Trust hangs.
+
+Ending: Helicopter departs at dawn; white boat retreats to 3 nm. But the waterline between罗德岛 and US forces feels like a crack. Doctor watches sunrise, thinks: someone out there wants the crack to widen. He resolves to find who sent the boat. Amiya asks "博士，那个人……会被怎样？" No answer. Last line maybe about a crack in the water that doesn't close.
+
+Need ensure tension, detail, psychological progression. Word count target at least 2500; we can do 3500.
+
+Let's write in Chinese.
+
+I should also preserve consistency: previous chapters use "那个女人" for female liaison, "白色制服的男人" Coast Guard officer maybe. The black helicopter no marking. There is translation device "圆盘". Use these.
+
+Let's start with title. Use markdown.
+
+Be careful not to output meta comments.
+
+I will compose in Chinese, perhaps using literary style, no bullet lists. Keep close 3rd person Dr. No US internal. Use dialogue, silence, body language, translation errors. Keep Kal'tits calm, Amiya emotional but firm.
+
+Let's produce final answer.
+[/思考过程]
+
+## 第7章 交换谎言与真相
+
+来的是一架白色直升机。
+
+博士在舰桥上看着它从海岸线方向飞来，机身侧面有一圈浅蓝色的图案，不是任何国家的军徽，倒像是从某份旧档案里见过的、联合国旗帜的变形。它比之前的黑色直升机大一圈，飞得更慢，旋翼搅动的气流把海面揉出一道道细纹。它的腹部没有武器挂架，只有两扇宽大的舷窗，窗后隐约能看见几张人脸，正贴着玻璃朝罗德岛张望。
+
+“联合国观察团。”凯尔希站在他身后，手里拿着一份刚打印出来的信号记录，“美方在凌晨四点通过无线电发来的照会。他们要求第三方在场，作为‘降级的姿态’。”
+
+“姿态？”博士没有回头，“还是监督？”
+
+“在地球的政治语法里，这两个词经常是同义词。”
+
+博士轻轻哼了一声。他注意到自己的右手正无意识地摩挲着战术台的边缘，于是把手收进口袋。口袋里还装着那部被咬了一口的苹果图案手机，外壳已经被体温焐干，但摸起来仍有一种陌生的滑腻。
+
+直升机在甲板上空悬停了一会儿，没有立刻降落。舱门打开，一个人探出身子，手里举着一面不大的蓝白旗帜，迎风抖开。旗帜上的图案和机身侧面的图案一致：一个被橄榄枝环绕的地球。
+
+“他们在表明身份。”阿米娅说。她站在博士左侧，穿着那件过大的白外套，下摆还没完全干透，“不是军队。”
+
+“不是军队，但可能带着军队的问题。”博士说。
+
+他下令放下舷梯，但只许三个人进入停机区，其余人员留在机上。对方没有争辩。直升机缓缓下降，轮胎触地时发出一声比平时更轻的闷响。舱门打开，先下来的是那个美国女人——三天前第一个踏上罗德岛的人。她今天没有穿风衣，而是一身深灰色的西装套裙，手里没有平板，只捏着一只黑色的文件夹。她身后跟着两个人，一男一女，都穿着便装，胸前挂着带有照片的证件。
+
+最后下来的是一个年轻男人，手里提着一只银色的箱子。不是武器箱，是那种用来装精密电子设备的防震箱。
+
+“翻译设备。”凯尔希低声说，“比上次的圆盘专业。”
+
+女人走到博士面前，停下脚步。她没有立刻说话，而是侧过身，让出半步，向身后那位年长的女性做了一个介绍的手势。
+
+那位女性大约五十岁上下，灰白色的短发剪得很利落，戴着一副细框眼镜，身材瘦小，穿着一件没有任何标识的米色风衣。她从口袋里取出一张折叠的卡片，双手递给博士。卡片一面印着联合国徽章，另一面是英文和另一种博士看不懂的文字，最下方是一行烫金的名字：Elena Varga，United Nations Office for Outer Space Affairs。
+
+博士接过卡片，指尖触到卡片的边缘。纸张质量很好，厚实，带着一种被精心印刷过的安全感。他把卡片递给身后的凯尔希，然后向那位名叫瓦加的女士微微点头。
+
+“罗德岛指挥官，博士。”他用通用语说。
+
+瓦加女士没有说话。她身后那个年轻男人打开银色箱子，取出三只小巧的耳机，分别递给博士、凯尔希和阿米娅。耳机是黑色的，比指甲盖大不了多少，内侧有柔软的硅胶垫。
+
+“同声传译。”美国女人用英文说了一句。年轻男人用中文——非常标准的中文——补充道：“请戴上。瓦加女士会说法语、英语、俄语和中文，但现场由我和另外两位同事进行实时转译。频道已经调好。”
+
+博士接过耳机，没有立刻戴上。他看了看凯尔希，凯尔希已经把耳机塞进了耳廓，表情没有任何变化。阿米娅犹豫了一下，也戴上了。
+
+博士把耳机戴上。一阵轻微的电流声之后，他听见自己的呼吸被放大了一瞬，然后恢复正常。
+
+“测试。”年轻男人用中文说，然后转向瓦加女士，说了一句法文。
+
+耳机里立刻传出平和的女声，说的是泰拉通用语：“博士先生，很高兴终于能以更清晰的方式交谈。”
+
+博士愣了一下。不是因为内容，而是因为那声音里没有机械翻译的断裂。它流畅、自然，甚至带着一点说话人的温度。
+
+“你的泰拉语……”
+
+“不是。”瓦加女士笑了笑，通过耳机，那个笑容被同步成一句泰拉通用语，“这是我们的同传系统在实时转译。但它比三天前那台圆盘准确得多。我们可以减少很多误会。”
+
+博士看向那个年轻男人。年轻男人正低头盯着一只小型控制终端，手指在屏幕上飞快地滑动。
+
+“请跟我来。”博士说。
+
+他没有去握瓦加女士的手。上一次握手之后，美国人对他有了更多的评估，而不是信任。这一次他决定保持距离。
+
+会议室还是那间。长桌、顶灯、墙上的罗德岛标志。但此刻桌上多了一只黑色话筒、两只小型摄像机和一盏从联合国直升机上搬下来的便携式灯具。灯光比顶灯更白，把每个人的影子压得很淡，几乎贴在地上。
+
+瓦加女士和美国女人坐在一侧，年轻翻译坐在瓦加身后，另外两名联合国人员——一男一女，都挂着“观察员”证件——坐在长桌末端，没有说话，只是安静地记录。博士、凯尔希和阿米娅坐在另一侧。门在身后关上时，博士听见走廊里传来一阵轻微的脚步声——那是煌带着两名近卫干员守在门口，没有他的命令不会离开。
+
+瓦加女士先开口了。她的语速很慢，每个词都经过耳机打磨成清晰的泰拉通用语：
+
+“博士先生，美国政府邀请联合国作为第三方，参与这次接触。我的角色不是谈判代表，而是记录者和建议者。我不会代表任何国家做出承诺，但我希望你们知道：今天在这里说出的每一句话，都会被整理成报告，提交给联合国安理会。”
+
+博士点了点头。他注意到她说的是“接触”，而不是“冲突”，也不是“交涉”。她在选择一个中立的词。
+
+“那么，”博士说，“你们想知道什么？”
+
+瓦加女士从文件夹里取出一张纸，放在桌上。那是一份打印好的问题清单，用三种语言写成。她把纸推给博士。
+
+“首先，你们的来源。”
+
+博士低头看着纸上的问题。第一条用中文写着：“贵舰来自何处？是否属于地球已知国家或政治实体？”
+
+他沉默了两秒钟。
+
+在泰拉，这个问题的答案会引出无数连锁反应。乌萨斯、卡兹戴尔、炎国、维多利亚——每一个名字都带着血和条约的重量。但在这里，这些名字没有意义。他们来自另一个世界，而这个世界的人对那个世界一无所知。
+
+“我们来自一个你们尚未命名的世界。”博士说，“我们的语言里称它为‘泰拉’。它不是地球的一部分，也不是你们已知的任何星球。罗德岛是一座移动城市兼医疗设施，在我们的世界属于一个独立的医疗组织。我们不隶属于任何国家。”
+
+耳机里传来一阵轻微的电流噪音，然后年轻翻译用英文重复了他的话。瓦加女士听着，笔尖在纸上移动。美国女人的眉头没有松开，但她的手也没有去碰那只文件夹。
+
+“你们是如何来到这里的？”瓦加女士问。
+
+“空间异常。”博士说，“我们的船正在进行一次常规的源石勘探任务——”
+
+他停住了。
+
+“源石”这个词从耳机里传回去时，年轻翻译的手指在终端上停顿了一下。瓦加女士的表情没有变化，但美国女人的身体微微前倾。
+
+博士意识到自己刚才说了一个可能无法翻译的词。
+
+“源石，”他慢慢地重复了一遍，“是一种在我们的世界广泛存在的矿物。它是我们的主要能源，也是许多……医学现象的根源。但在你们这里，它不存在。我们的仪器读不出任何源石反应。这就是为什么我们的很多设备现在无法运转。”
+
+瓦加女士和美国女人低声交谈了几句。耳机没有转译，因为那不是对罗德岛说的话。博士只能看见她们的嘴唇在动，看见美国女人摇了摇头，瓦加女士点了点头。
+
+“这种物质，”瓦加女士转向博士，“是否具有传染性？是否对地球环境构成威胁？”
+
+“不。”凯尔希开口了。她的声音比博士更冷，也更确定，“源石在泰拉具有特定的物理和生物活性，但在这个宇宙——如果这里可以被称为另一个宇宙——它表现为惰性。我们的携带样本没有释放出任何可探测的辐射、微粒或能量波动。从医学角度，它对你们的星球和你们的人民没有已知威胁。”
+
+“已知。”美国女人重复了一遍这个词。她的中文口音很重，但足够清晰。这是博士第一次听见她直接说中文。
+
+“科学的诚实要求我说‘已知’。”凯尔希说，“我们对这个世界的规则知之甚少。但我可以保证，罗德岛不会故意释放任何危险物质。如果我们发现源石在这里发生变化，我们会第一时间告知。”
+
+瓦加女士记录了几句，然后抬头：“第二个问题。船上的‘特殊人员’——那些长着兽耳、尾巴，或者其他非人类特征的人——是什么？”
+
+会议室里的空气凝固了一瞬。
+
+博士没有立刻回答。他感觉到阿米娅的身体在他身侧微微僵硬了一下。他也没有去看凯尔希。这个问题他准备过，但准备过不代表容易回答。
+
+“他们是泰拉的人类。”博士说。
+
+瓦加女士的笔尖停住了。
+
+“在我们的世界，”博士继续说，“人类这个词包含更广泛的形态。耳、尾、角、羽毛——这些都是不同种族的特征，就像地球上的不同肤色、发色、眼形。他们不是外星人，不是实验产物，也不是武器。他们是医生、工程师、病人、士兵。他们和我们一样，会害怕，会受伤，会想要回家。”
+
+他说完，年轻翻译的声音在耳机里持续了几秒，才把所有内容送过去。瓦加女士的眼睛在镜片后眨了一下。美国女人没有动，但她的手指在文件夹上敲出了一个很短促的节奏。
+
+“第三个问题。”瓦加女士说，“你们是否拥有核武器、生化武器，或者其他大规模杀伤性武器？”
+
+“没有。”博士说。
+
+“你们昨晚使用的那套系统是什么？”美国女人插话，语气比瓦加女士更直接，“它让海面沸腾，把一艘船掀翻。那不是医疗设施。”
+
+博士看着她的眼睛。她的眼睛是浅褐色的，带着一种疲惫的锐利。博士知道，她今天不是来听故事的，她是来确认威胁等级的。
+
+“那是非致命性的近程拒止系统。”博士说，“设计用来驱散小型船只和人群，不会造成结构性破坏，也不会致命——如果使用得当。昨晚有一艘未识别的快艇以高速冲向罗德岛，没有回应任何警告。我们使用的是最低功率。船上两个人都被救活了，其中一个现在正在我们的医疗区接受治疗。”
+
+“另一个呢？”
+
+“被你们的船带走了。”博士说，“我假设你们正在审问他。”
+
+美国女人的嘴角抽动了一下，没有承认，也没有否认。
+
+瓦加女士轻轻咳嗽了一声，把话题拉了回来：“第四个问题。你们的要求是什么？”
+
+博士把手放在桌面上。他的手掌平展，手指微微张开，像一个正在摊开筹码的人。
+
+“第一，安全的位置。我们需要把船移动到一个不会让你们感到威胁、同时也能让我们维持基本运转的地方。第二，能源和医疗物资。我们的储备有限，船上有病人，他们需要继续治疗。第三，时间。我们需要时间理解这个世界的规则，也需要时间找到回家的方法。”
+
+“作为交换，”凯尔希补充，“我们可以开放部分医疗区供观察，可以提供我们的检疫和生物安全协议，也可以分享关于泰拉的基础信息——在不影响罗德岛安全的前提下。”
+
+瓦加女士点了点头，把这些都记录下来。美国女人却没有动笔，她只是看着博士，眼神里有一种他读不懂的东西。
+
+“最后一个问题。”瓦加女士说。她放下笔，双手交叠放在桌上，“你们对地球的态度是什么？你们是来征服的，还是来寻求和平的？”
+
+这个问题比之前的所有问题都重。
+
+博士感觉到阿米娅的目光落在自己脸上。他也能感觉到凯尔希的视线——她没有看他，但她的肩膀线条显示出一种极轻的紧绷。
+
+他可以选择最安全的答案：我们只是迷路的旅人。他也可以选择最强硬的答案：我们不想打仗，但我们也不怕。他还可以选择最诚恳的答案：我不知道。
+
+最后他说的是：“我们不想成为你们的敌人。我们也不想成为你们的客人。我们只想成为……一个可以被理解的意外。”
+
+耳机里，翻译的声音把他的话送了过去。瓦加女士听着，然后缓缓点头。美国女人的表情没有任何变化，但她把文件夹合上了。
+
+会议室里安静了很长一段时间。
+
+然后瓦加女士说：“博士先生，联合国希望能够向国际媒体发布一份声明。一个简短的、由你们亲口说出的声明。如果你们同意，这会极大地缓解外界的紧张情绪。”
+
+博士没有立刻回答。
+
+他知道那意味着什么。镜头、屏幕、亿万双眼睛。他和阿米娅站在地球面前，每一句话都会被放大、剪辑、重新配音，变成无数个版本，在无数个客厅里播放。他们不再只是面对一艘军舰或一架直升机，而是面对一个由图像和情绪构成的巨大生物。
+
+“谁来说？”博士问。
+
+“你。”瓦加女士说，“或者这位阿米娅小姐。或者你们一起。”
+
+博士沉默了。他知道自己不适合出现在镜头前。他的脸对地球人来说太普通，也太阴郁，没有亲和力。而凯尔希的脸太冷，太像某种会发出警告的人。阿米娅则不同。她年轻，有耳朵，有戒指，有那种让人既心疼又信任的脆弱。
+
+但让她站在镜头前，等于把她放进一个比战场更危险的地方。
+
+“我来。”阿米娅说。
+
+博士转过头。阿米娅已经站了起来，双手垂在身侧，握成拳。她的脸色有些发白，但声音是稳的。
+
+“阿米娅——”
+
+“博士，”她说，“你教过我，罗德岛的形象和它的装甲一样重要。他们需要的不是指挥官的威胁，也不是医生的数据。他们需要看见一个人。”
+
+凯尔希没有说话。她只是看着阿米娅，目光里有一种博士很熟悉的东西——不是反对，而是一种已经计算过风险的默许。
+
+博士闭了闭眼。
+
+“好。”他说，“但只录一次。没有重录。没有剪辑权交给他们。如果他们要翻译，必须由我们的翻译在场。”
+
+瓦加女士点了点头：“可以理解。但我们也希望……能够实时直播。”
+
+“不行。”博士说，“先录制，再释放。我们需要看到最终版本。”
+
+“这会让新闻价值打折扣。”美国女人说。
+
+“但会让我们的生命更安全。”博士说。
+
+他们最终达成了妥协：允许三家国际通讯社的摄像机在甲板上拍摄，但画面必须在发布前经过罗德岛方面的审阅——审阅权仅限于涉及罗德岛安全和人员身份的内容。翻译由联合国团队提供，但罗德岛可以要求重译某些关键语句。
+
+拍摄地点选在舰桥前方的上层甲板。那里可以看见远处的海岸线，也可以看见罗德岛的医疗区入口。博士特意让人在背景里挂起一面简单的白色横幅，上面用泰拉通用语和英文写着同一句话：罗德岛——医疗组织，非武装避难所。
+
+阿米娅站在横幅前，海风把她的头发和耳朵吹得微微颤动。她没有穿防护服，只穿着罗德岛的标准制服，胸前别着那枚小小的罗德岛徽章。她的戒指在日光下黯淡无光，但她的手指没有刻意去遮掩它们。
+
+三台摄像机对准她。联合国的工作人员在她身侧支起一块小型提词板，上面用泰拉通用语和中文印着博士和凯尔希为她拟好的稿子。但阿米娅只看了一眼，就把目光移开了。
+
+“开始。”有人说。
+
+阿米娅深吸一口气，然后开口。
+
+“我叫阿米娅。我是罗德岛的公开代表。”
+
+她的声音不高，但海风没有把声音吹散。博士站在摄像机拍不到的位置，距离她大约十米，手背着身后，指甲掐进掌心。
+
+“我们的船来自一个你们不知道的世界。我们不是被派来的，我们是被一场意外带到这里。我们不想伤害任何人。我们船上有很多病人，他们需要的不是战争，而是药品和时间。”
+
+她停顿了一下，看向镜头。博士知道，她没有在看摄像机，她在看镜头后面那些他看不见的、坐在屏幕前的人。
+
+“我向你们承诺：罗德岛不会首先使用武力。无论发生什么，我们都会先伸出手，而不是先拔出武器。请给我们一点时间。请让我们证明，一个迷路的人，也可以是一个好人。”
+
+说完，她微微鞠了一躬。
+
+摄像机还在运转。阿米娅直起身，耳朵因为紧张而微微向后贴着。她没有笑，但她的眼神里没有敌意。
+
+博士看着那三台机器，看着它们黑色的镜头像三只没有瞳孔的眼睛，把阿米娅的每一个毛孔都吞进去。他忽然有一种强烈的不祥预感。
+
+瓦加女士走到他身边，轻声说：“她说得很好。”
+
+博士没有回答。
+
+拍摄结束后，联合国团队和美国女人一起离开。他们带走了录像带——或者说，是带走了存储卡，那是这个时代的语言。博士站在甲板上，看着白色直升机缓缓升起，朝着海岸线飞去。
+
+阿米娅走到他身边，把一只手搭在护栏上。
+
+“博士，”她说，“我刚才……说错什么了吗？”
+
+“没有。”博士说，“你做得很好。”
+
+“那为什么您看起来不高兴？”
+
+博士转过头，看着她。她的眼眶有些红，但还没有哭。她的手在护栏上轻轻颤抖。
+
+“因为真话和谎言之间，有一大片灰色地带。”他说，“你说的是真话，但真话到了别人的屏幕上，可能会变成他们想要的颜色。”
+
+阿米娅低下头，看着自己的戒指。
+
+“我只是想让他们知道，我们不是怪物。”
+
+“我知道。”博士说。
+
+凯尔希从后面走上来，手里拿着一块便携屏幕。屏幕上正在播放某个新闻频道的实时画面——那是他们截获的民用信号。画面里，阿米娅的脸被放大到占据整个屏幕，她的耳朵被红圈圈了出来，旁边配着一行英文标题。标题下方，一名男主持人正在用飞快的语速说着什么，他的表情夸张，手势激烈。
+
+博士看不懂全部英文，但他看懂了那几个词：
+
+“Alien Girl,” “No First Strike,” “Promise or Threat?”
+
+他把屏幕还给凯尔希。
+
+“他们已经开始了。”他说。
+
+凯尔希没有说话。她只是把屏幕关掉，放回口袋里。
+
+远处的海面上，那艘灰色军舰仍然停在那里，像一块沉默的礁石。而在更远处，城市的高楼正在夕阳下燃烧，玻璃幕墙反射出一片血红色的光芒。
+
+博士把手放在阿米娅的肩上，轻轻按了一下。
+
+“去休息。”他说，“剩下的交给我。”
+
+阿米娅点了点头，慢慢朝舱门走去。她的背影很小，但背脊挺得很直。
+
+博士留在甲板上。海风变冷了，带着夜晚即将来临的气息。他看着那道看不见的十二海里界线，想起瓦加女士最后对他说的话——那句话没有通过耳机翻译，是她用英文直接说的，很慢，像是特意让他能听懂：
+
+“Words are currency here. Spend them carefully.”
+
+言语在这里是货币。谨慎花费。
+
+博士把这句话在嘴里反复咀嚼。他知道，今天他和阿米娅都花出去了一些。有些买到了理解，有些买到了恐惧。而他还不知道，哪一种会在天亮之前变成账单。
+
+海面上，第一盏城市的夜灯亮起。然后是一盏，又一盏。很快，整座城市像一头苏醒的巨兽，用无数只眼睛注视着罗德岛。
+
+而在那些眼睛的后面，某种更庞大的东西正在醒来。不是军队，不是政府，而是亿万个屏幕后面的人心。它们可以被安抚，也可以被点燃。
+
+博士把手从护栏上收回，转身走向舰桥。他的步伐很稳，但他的脑子里只有一个念头：
+
+下一回合，对方会出什么价？
+
+[思考过程]
+We need write Chapter 7 titled "交换谎言与真相". User wants only chapter text, no meta. Must continue plot from previous chapters. Need keep characters consistent. Target 2500 words but can 1500-99999. We'll write a chapter around 2500 words. Need use third-person limited to Doctor. Not internal US characters. Plot summary provided: UN observers allowed aboard, bring real professional translators. Doctor chooses limited disclosure on Originium, infected, mobile city civilization. Amiya first speaks to Earth cameras, promises no first use of force, not knowing this footage ignites another storm of fear.
+
+Need ensure continuity: previous ended after incident with unknown speedboat, black helicopter, rescue, and Doctor worrying. Next chapter should follow. Include UN team arrival with proper translators (earlier translation device was limited). Doctor makes strategic choice to disclose limited truth. Amiya makes public statement to Earth cameras. Build tension around translation nuance, lies/truths, reactions.
+
+Need avoid switching to US perspective; all through Doctor's observations and dialogues. Include details: UN observers maybe a small team, diplomatic, professional interpreter (maybe older woman). They meet in conference room. Need handle language translations accurately? We can write in Chinese; include translations maybe as Doctor hears. Need maintain POV; no internal thoughts of US characters.
+
+Need ensure style: not military confrontation power fantasy. Communication, silence, body language, translation errors important. Amiya firm with occasional emotion. Kelsey calm restrained. Doctor's internal struggle.
+
+Need not output anything else, no summary. Start with markdown heading. Write chapter. Let's plan content in detail.
+
+Chapter arc:
+- Morning after rescue. Dr on bridge, sees new contact: a larger white or blue helicopter with UN marking? maybe a UN-marked helicopter arrives with observers. US liaison woman returns, introduces UN team. They have proper interpreter(s). Maybe an older interpreter named Ms. ??? (no need names) and a younger translator. They set up real-time translation headsets.
+- They go to conference room. Dr with Kelsey, Amiya. UN observer leader maybe a Swedish diplomat? But not internal. Doctor observes badges, demeanor. Interpreter enables fluent dialogue. The dynamic shifts because now every word is precise and recorded.
+- UN observer requests explanation of what Rhodes Island is, where from, why here. Doctor chooses limited disclosure: tells them Rhodes Island is a mobile medical city from another world; suffered spatial anomaly; not here by choice. About Originium: says their civilization uses a substance called Originium as energy source, which doesn't exist here and is inert in this universe. He avoids saying "infected" as disease vector, frames it as people with a chronic condition linked to exposure to that substance; they are patients, not contagious under Earth's conditions. He says they need medical supplies and energy alternatives.
+- Kelsey adds clinical details: Originium inert, no contagion risk in this environment; patients stable for now but need support. Amiya speaks about Rhodes Island ideals. 
+- US representative suspicious; maybe asks about weapons, the incident last night. Doctor explains non-lethal defense against unidentified craft. Says no first use of lethal force. They discuss footage.
+- Camera crew? UN team has media pool? Or CNN cameras are outside. The UN observer asks Amiya to make a statement to international audience. Amiya agrees. Dr hesitant but sees necessity. They arrange on deck: cameras, microphones, Earth journalists at safe distance on ship? Better: statement broadcast via UN/press pool on a helicopter or ship. Dr watches Amiya stand before cameras, wearing罗德岛 uniform, ears visible. She speaks carefully: "We are not invaders. We are lost travelers. We will not use force first. We ask for time and help." The interpreter translates. 
+- Reactions: journalists' body language, camera flashes; the US liaison looks uneasy; Kelsey stands beside Doctor. Amiya finishes, slightly trembling but steady. Dr notices one of the UN observers quietly recording or a journalist whispering. As they leave, the UN observer says something to Dr, maybe a warning about the statement: "Truth will be tested." The chapter ends with them watching broadcast on a portable screen: news coverage with sensational headlines, pundits, images of Amiya's ears, "Alien girl promises no first strike," etc., igniting fear. End suspense: UN team leaves, Dr realizes they have revealed too much and too little, and now the world will react. Maybe also hints about identity of speedboat attacker not resolved.
+
+Need maybe include a scene where Dr sees the professional translator correcting the machine translation errors from before, showing stakes. Could have a moment where the UN interpreter clarifies "moor" vs "surrender". 
+
+Need careful handling: Doctor's perspective. We can describe US/UN actions externally only, no internal. Their dialogue can be translated in Chinese in text (since writing in Chinese). Could show translation happening; e.g., interpreter speaks English and then Chinese. But POV is Doctor hearing translation via earpiece. Need maybe write dialogue in Chinese but indicate language tags? Since target Chinese readers, easiest: write spoken lines as Chinese translation (the interpreter's words) and note when English is heard. But avoid overcomplicating. We can write something like: The interpreter said in English (Dr doesn't understand), then the earpiece gave Chinese: "..." But since limited, we can just render in Chinese as if translated. Maybe include English phrases in italics for flavor: "First use of force". 
+
+Need ensure no internal US thoughts. We can describe facial expressions.
+
+Word count target ~2500. Let's draft around 2500-3000.
+
+Let's produce in Chinese.
+
+Need include title exactly: "## 第7章 交换谎言与真相". Then text.
+
+Let's write.
+[/思考过程]
+
+## 第8章 无源石的手术
+
+博士是在凌晨三点十七分被叫醒的。
+
+不是警报，是医疗部的直接呼叫。凯尔希的声音从通讯器里传出来，比平时低了一个八度，像是从很远的水下浮上来的。
+
+“来医疗区。现在。”
+
+他没换衣服。防护服还裹在身上，面罩挂在颈侧，三天没刮的下巴被粗糙的合成纤维磨得发痒。走廊里的应急灯把他和身后两名近卫干员的影子拉得很长，像三条被拖在地上的黑色带子。没有人说话，只有靴子踩在金属甲板上的声音，规律得近乎残忍。
+
+医疗区隔离舱外的观察窗前已经站了几个人。华法琳、一名菲林麻醉师、还有两名戴着联合国观察员证件的地球人——一男一女，是白天随瓦加女士留下的，负责“监督但不干涉”。他们看见博士走来，自觉地退开半步，给他让出那片长方形的玻璃。
+
+玻璃后面，凯尔希正站在无影灯下。
+
+她的白大褂被血浸透了一侧，但她的手很稳。手术台上方悬挂着三只机械臂，不是罗德岛的原装设备，而是下午刚从纽约港送来的——一批贴着“人道医疗援助”标签的地球器械。当时博士亲自监督卸货，每一件都经过扫描和拆解检查。他记得自己摸过那只不锈钢托盘边缘时，指尖传来的冰凉触感：光滑、精密、没有任何源石微粒的粗糙。
+
+现在那三只机械臂正在凯尔希的指挥下，把一根比头发丝还细的探针送入病人的胸腔。
+
+病人是工程部的焊工，三天前第一个在走廊里被美国人看见兽耳和尾巴的菲林男性。左肩到锁骨的那片源石结晶已经扩散到了肺部。白天他的生命体征还是平稳的，但两小时前，他的体温骤然升高到四十一度，血压断崖式下跌，血氧饱和度跌破六十。
+
+免疫排斥。凯尔希在通讯器里只说了这四个字。
+
+“为什么是现在？”博士问。他没有看华法琳，而是看着玻璃后面的凯尔希。
+
+“结晶进入惰性状态后，免疫系统重新识别到了它们。”华法琳的声音从面罩后面传出来，闷闷的，“身体突然意识到，这些石头不是自己的一部分。开始攻击。高热、休克、多器官衰竭。如果没有手术清除病灶，他撑不过六小时。”
+
+“手术风险？”
+
+“在这个环境下，风险是泰拉的三倍以上。”华法琳顿了顿，“我们没有源石技艺止血。没有法术麻醉。没有能够感知结晶边界的源石共振探头。我们只能依靠那台地球CT、那套机械臂，还有凯尔希医生的手。”
+
+博士没有回答。他看着玻璃后面。
+
+凯尔希的侧脸被无影灯照得惨白，绿发被手术帽束紧，只有几缕贴在耳后。她的眼睛没有离开手术台上方悬浮的三块屏幕。那上面是地球风格的黑白断层影像，没有泰拉医疗设备常见的彩色源石浓度梯度，只有骨骼、肌肉和那片高密度阴影的轮廓。
+
+她伸出左手，一名萨卡兹护理干员立刻把一把地球产的止血钳拍进她掌心。动作默契得像是在战场上交换弹匣。
+
+“她在用地球器械做源石剥离。”华法琳低声说，声音里有一种博士从未听过的、近乎敬畏的东西，“这在泰拉是不可能的。源石结晶会对外来金属产生微共振，手术刀越精确，结晶边缘越碎裂。但在这里——”
+
+“在这里，源石是死的。”博士说。
+
+“对。它是死的，所以它不会反抗。但它也不会告诉我们它在哪里。”华法琳指着屏幕，“凯尔希医生必须完全依靠影像判断边界。误差不能超过零点三毫米。否则肺动脉——”
+
+她没有说完。
+
+博士也不需要她说完。
+
+观察窗里，凯尔希忽然停下了动作。她的左手还保持着递止血钳的姿势，右手悬停在病人胸腔上方两厘米处。整个手术室里的人都静止了，只有监护仪发出单调的蜂鸣。
+
+“博士。”
+
+通讯器里传来凯尔希的声音。她没有抬头，但她知道他站在玻璃后面。她似乎总是知道。
+
+“我需要你做一个决定。”
+
+博士把通讯器贴近嘴边：“说。”
+
+“病灶中心有一块结晶嵌入了左肺上叶的血管丛。如果完整剥离，出血量可能超过我们的备血。如果不剥离，姑息处理，他能活过今晚，但三个月内会复发。”凯尔希的声音没有任何起伏，像是在读一份设备清单，“地球器械可以做血管吻合，但我们的吻合线和他们的规格不匹配。我需要用他们的缝合材料，配合我们的针法。这是第一次。没有先例。”
+
+“成功概率？”
+
+“百分之四十七。”
+
+博士闭上眼睛。
+
+百分之四十七。在泰拉，这个数字会被他毫不犹豫地接受——任何超过四成的胜算都值得下注。但在这里，在这个没有源石的手术台上，这个数字背后是一个活生生的人，一个三天前还在走廊里对美国客人点头微笑的工程师。
+
+“做。”他说。
+
+“需要你的书面授权。这是跨技术体系的手术，如果失败——”
+
+“我做授权。”博士睁开眼睛，“但如果成功，凯尔希，你要记住这一刻。”
+
+玻璃后面，凯尔希的嘴角似乎动了一下。也许是笑，也许只是无影灯光造成的错觉。
+
+“我会记住的，博士。”
+
+授权很快被送到。博士用颤抖的手指在电子板上签下自己的名字，然后把它还给华法琳。他注意到自己的指甲缝里还有白天检查时沾上的灰尘，还有那个被咬了一口的苹果图案手机留下的金属气味。
+
+他转身看向走廊尽头。
+
+阿米娅站在那里，穿着睡衣，怀里抱着一只枕头。她不知道已经站了多久，耳朵无精打采地垂着，眼睛下面有青黑色的阴影。
+
+“你怎么来了？”博士走过去，声音放轻。
+
+“我睡不着。”阿米娅说。她的目光越过博士，落在观察窗上，“是马克西姆先生吗？”
+
+“是。”
+
+“他会好吗？”
+
+博士没有立刻回答。他把手放在阿米娅的头顶，感受到她耳朵尖微弱的颤抖。
+
+“凯尔希在努力。”
+
+“您总是这样回答。”阿米娅说。她的声音很轻，但没有责备的意思，“每次我问某个病人会不会好，您都说‘医生在努力’。您不骗我，但您也不给我答案。”
+
+“因为答案不在我手里。”博士说。
+
+阿米娅低下头，把额头抵在博士的肩膀上。她抱得很轻，像是怕弄皱他的防护服。
+
+“博士，如果马克西姆先生死了，美国人会怎么想？他们会不会觉得……我们没有能力救人？我们要求他们提供医疗援助，却连自己的病人都救不活？”
+
+博士的手停在半空。
+
+他忽然意识到，阿米娅担心的不只是一个人的生死。她在担心罗德岛的叙事——那台刚刚把她变成“Alien Girl”的媒体机器。一个人的死亡，在这里可能会被剪辑成一千种含义：外星技术的失败，未知疾病的威胁，或者一个不值得信任的物种的软弱。
+
+“阿米娅，”他说，“如果我们因为他可能被别人怎么解读而放弃救他，那我们就真的不值得信任了。”
+
+阿米娅抬起头。她的眼眶是红的，但没有泪。
+
+“您说得对。”她说，“我总是先想到别人会怎么看。”
+
+“因为你总是想保护所有人。”博士说，“但有时候，你只需要保护一个人。”
+
+他们沉默地站在走廊里，听着观察窗后面传来的、被隔音玻璃削弱后的器械碰撞声。那声音很轻，但每一声都像敲在博士的肋骨上。
+
+手术进行了四个小时。
+
+博士没有离开。他坐在走廊长椅上，背脊挺直，双手交握放在膝前。阿米娅蜷缩在他身边，头靠在他肩上，终于睡了过去。她的呼吸很轻，带着一种孩子般的、不设防的节奏。两名近卫干员守在走廊两端，他们的影子被晨光拉得越来越淡。
+
+联合国观察员在凌晨五点离开了医疗区。他们留下了一句话，由女观察员用蹩脚的中文说出：“We will report the humanitarian effort.”博士点了点头，没有回应。他不知道这句话是承诺还是警告。
+
+六点零九分，手术室的门开了。
+
+凯尔希走出来。她的手术帽已经被汗水浸透，白大褂上的血迹干了又湿，变成一片深褐色的地图。她的眼睛下面有青黑色的阴影，但她的脚步很稳。
+
+博士轻轻把阿米娅的头从肩上移开，站起身。
+
+“成功了。”凯尔希说。
+
+她说得很轻，像是在说一件再普通不过的事。但博士看见她的手——那双在手术台上稳如磐石的手——此刻正微微颤抖。她把手背到身后，不让人看见。
+
+“出血量？”博士问。
+
+“超出预期百分之十二，但在可控范围内。病灶完整剥离，左肺上叶保留。他会在ICU观察四十八小时。”凯尔希顿了顿，“地球器械比我想象的精确。他们的缝合材料延展性很好，和我们的止血凝胶配合得当。没有源石共振干扰，视野反而更清晰。”
+
+“这意味着什么？”
+
+凯尔希看着他。晨光从走廊尽头的舷窗斜射进来，把她的绿发染成一种接近透明的金色。
+
+“意味着两种医学可以互补。”她说，“他们的技术可以填补我们没有源石技艺时的空白。我们的知识可以帮他们理解一种他们从未见过的病理。如果我们能建立稳定的交流，这里——”她指向窗外，指向那座正在苏醒的城市，“——也许能成为病人的第二个家。”
+
+博士没有回答。他看着凯尔希的眼睛，在那双古老的眼睛里看见了一丝他从未见过的东西。不是希望，希望对她来说太年轻了。那是一种更冷静的东西：可能性。
+
+“你去休息。”他说。
+
+“你呢？”
+
+“我陪阿米娅坐一会儿。然后我要去舰桥。”
+
+凯尔希点了点头，转身离开。她的白大褂在身后轻轻摆动，像一面刚刚经历过风暴的船帆。
+
+博士重新坐下，让阿米娅的头靠回自己肩上。她的耳朵在睡梦中动了动，发出一声含糊的呢喃。他听不清她在说什么，但他猜那是一个病人的名字，或者一个故乡的地名。
+
+六点三十一分，舰桥紧急呼叫。
+
+博士没有立刻起身。他先把阿米娅轻轻放平在长椅上，脱下自己的外套盖在她身上，然后才走向通讯器。
+
+“说。”
+
+“博士，”通讯干员的声音绷得像一根即将断裂的弦，“美方通过瓦加女士的渠道发来照会。他们说……他们说截获了我们的加密通讯。”
+
+博士的脚步停住了。
+
+“什么通讯？”
+
+“内部频道。PRTS 和医疗区之间的数据链，还有工程部和武器组之间的常规汇报。对方声称他们破译了部分内容，并将其定义为‘军事协调信息’。”
+
+博士的后背一阵发凉。
+
+“具体是什么内容？”
+
+“一份关于最低能耗航行路线的计算，还有一份甲板防御系统的维护清单。都是常规操作，但美国人把它解读为……‘准备突破封锁的部署’。”
+
+博士闭上眼睛。
+
+他想起白天会议室里瓦加女士的话：Words are currency here. Spend them carefully.
+
+而现在，有人告诉他们，罗德岛的账本被人翻过了。
+
+“他们还说了什么？”
+
+“要求暂停临时庇护协议的谈判。要求罗德岛在四十八小时内提交全部内部通讯密钥，接受‘全面透明度审查’。否则……”通讯干员停顿了一下，“否则他们将重新评估罗德岛的威胁等级。”
+
+博士没有立刻回答。
+
+他转过身，透过走廊的玻璃窗，看着医疗区里那台刚刚救了一条命的地球器械。它正安静地悬挂在手术室天花板上，三只机械臂像疲倦的鸟翼一样收拢。在它的旁边，是罗德岛自己的监测设备，上面跳动着马克西姆平稳下来的心跳曲线。
+
+两种医学刚刚证明了它们可以互补。
+
+两个世界刚刚找到了一个可以握手的地方。
+
+而现在，一只手已经握成了拳。
+
+“博士？”通讯干员在等他。
+
+博士走到舷窗前。清晨的海面呈现出一种近乎虚假的蓝，平静得没有一丝波澜。远处那艘灰色军舰仍然停在原地，但甲板上似乎多了一些人影，正忙碌地移动着什么。一艘黑色快艇从军舰尾部放下，朝着罗德岛的方向驶来。
+
+博士数着它的距离。
+
+“通知全舰，”他说，“一级戒备解除。进入二级静默。所有非必要通讯转用物理线路。医疗区继续正常运转，但禁止任何未经授权的人员接触病人。”
+
+“是。”
+
+“还有，”博士说，“把凯尔希医生叫回来。不是去休息，是去会议室。”
+
+“是。”
+
+通讯切断。走廊里重新安静下来，只剩下通风系统的低鸣和阿米娅轻微的呼吸。
+
+博士低头看着自己的双手。它们很干净，没有血迹，没有源石粉尘。但不知为什么，他觉得它们比刚才更重了。
+
+他想起手术开始前凯尔希问他的那个问题：如果失败，谁来负责？
+
+他当时说：我做授权。
+
+现在他意识到，那不仅仅是一份手术授权。那是一个隐喻。每一次他下达命令，每一次他在协议上签字，每一次他选择相信或者选择防备，都是在一份更大的、无法撤销的授权书上按下手印。
+
+而此刻，那份授权书的背面，正有人用他看不见的手，写下新的条款。
+
+走廊尽头传来脚步声。博士不用回头也知道是凯尔希。她的脚步比平时更慢，但仍然稳定。
+
+“我听说了。”她在他身边停下，没有看他，“你打算怎么办？”
+
+“谈判。”博士说。
+
+“用什么东西谈判？”
+
+博士转过身，看着她的眼睛。
+
+“用真相。”他说，“告诉他们，那份通讯里没有任何进攻意图。告诉他们，刚刚有一台他们的手术器械救了一个我们的病人。告诉他们，合作比猜疑对我们双方都更安全。”
+
+“他们会信吗？”
+
+“不会。”博士说，“但我们在他们不信之前，必须先说出来。否则等他们相信自己的解读时，就太晚了。”
+
+凯尔希沉默了很久。然后她伸出手，帮博士把颈侧的面罩扶正。她的手指冰凉，带着消毒水的气味。
+
+“你变了。”她说。
+
+“哪里？”
+
+“在泰拉，你会先准备好三套欺骗方案，再考虑要不要说真话。”
+
+博士苦笑了一下。
+
+“在这里，我连一套欺骗方案都编不圆。”他说，“所以只好说真话。至少真话不需要记台词。”
+
+凯尔希没有笑。她只是收回手，看向窗外的海面。
+
+那艘黑色快艇已经靠近到三千米内。它的船首被晨光镀上一层冷硬的银边，船尾拖出一道细长的白色尾迹，像是一把正在切开水面的刀。
+
+“那艘船上的人会信你吗？”凯尔希问。
+
+“我不知道。”博士说，“但我知道，如果他们带着枪来，我们不能先用枪指着他们。因为一旦开了第一枪，昨天晚上阿米娅在镜头前说的每一个字，都会变成笑话。”
+
+凯尔希点了点头。
+
+“那就去吧。”她说，“我在医疗区守着马克西姆。如果他醒了，我会告诉他，你为了他去和另一个世界谈判。”
+
+“不要告诉他这个。”博士说，“告诉他，是他自己活下来的。我们只是在旁边看着。”
+
+凯尔希看着他，那双古老的眼睛里闪过一丝几乎可以被称作温柔的东西。但她很快转过身，朝着医疗区的方向走去。
+
+博士独自站在舷窗前，看着那艘黑色快艇越来越近。
+
+他的口袋里还装着那部被咬了一口的苹果图案手机。他把它取出来，在晨光下端详了一会儿。屏幕是黑的，像一面镜子，照出他疲惫的脸。
+
+然后他把它放回口袋，整理了一下防护服的领口，朝着舰桥走去。
+
+在他身后，长椅上的阿米娅动了动，发出一声梦呓。她的手指抓紧了盖在身上的外套，像是抓住了某种她不愿放手的东西。
+
+而在医疗区里，马克西姆的心电图正在平稳地跳动。那是这个清晨里，唯一一个好消息。
+
+罗德岛悬浮在深蓝色的水面上，刚刚完成了一台没有源石的手术。但手术的成功并没有带来和平，反而像一块被抛入水中的石头，让水面下更深的暗流开始涌动。
+
+博士走到舰桥门口时，停下脚步，回头看了一眼。
+
+走廊尽头的舷窗外，那座城市已经完全被晨光点亮。玻璃幕墙反射出刺眼的光芒，像无数面镜子同时对准了罗德岛。在那些镜子的后面，他不知道有多少双眼睛正在看着。
+
+他只知道，从今天起，每一句他说出的话，都会被人用另一种语言重新说一遍。每一个他信任的人，都可能成为别人眼中的把柄。每一次他伸出手，都可能被解读成某种他无法预料的姿势。
+
+但他还是推开了舰桥的门。
+
+因为他是博士。因为罗德岛还在呼吸。因为在那片没有源石的海洋上，除了继续往前走，他们没有别的方向可以选。
+
+[思考过程]
+Let me carefully analyze the request and the provided context to write Chapter 8.
+
+Key requirements:
+1. Title: "## 第8章 无源石的手术"
+2. Word count: 1500-99999 (target 2500)
+3. Follow previous plot, maintain character consistency
+4. Tight narrative with details, suspense, protagonist psychological changes
+5. Third-person limited perspective, stick to Doctor
+6. No US character internal POV (only through Doctor's observation/dialogue)
+7. Chapter summary: A severely ill infected patient has complications, Kal'tsit completes surgery using Earth equipment in sourcestone-free environment, proving two medical systems can complement each other. At the same moment surgery succeeds, US intelligence intercepts encrypted internal ship communications, political pressure suddenly increases, temporary shelter agreement is on the verge of collapse.
+
+I need to:
+- Continue from Chapter 7 where they negotiated with UN/US, filmed Amiya's statement
+- Show medical crisis with infected patient
+- Kal'tsit performing surgery with Earth equipment
+- Doctor's perspective and psychological state
+- US side intercepting encrypted comms (shown only through Doctor's observation)
+- Tension rising, agreement at risk
+- End with suspense
+
+Let me plan the chapter structure:
+
+1. Opening: Doctor after the UN delegation leaves, restless, going to medical bay
+2. Discovery of patient crisis - infected patient with complications from sourcestone inactivity
+3. Kal'tsit explaining the problem and needing to use Earth medical equipment
+4. The surgery preparation - showing Earth equipment being adapted
+5. Doctor's tension during surgery, flashbacks/connections to broader situation
+6. Surgery succeeds
+7. At same moment, news arrives of intercepted comms/political pressure
+8. End with suspense
+
+Character notes:
+- Doctor: Strategic, burdened, protective of Amiya, questions why they're there
+- Kal'tsit: Calm, clinical, ancient knowledge, rarely emotional
+- Amiya: Young but determined, sometimes emotional, caring
+
+I should avoid US internal POV. The intercepted comms can be reported by a communications officer or relayed through a message, with Doctor interpreting the implications.
+
+Let me write this in Chinese, in the established style - atmospheric, detail-focused, with dialogue and silence. No meta commentary.
+
+Word count target around 2500. Let me aim for that.
+
+Key details from previous chapters:
+- Sourcestone is inert in Earth environment
+- Infected patients' sourcestone crystals have gone dormant but may cause immune rejection
+- 72 hour deadline from Kal'tsit
+- They agreed to move ship to designated anchorage outside 12 nautical miles
+- Temporary shelter agreement being negotiated
+- UN woman Elena Varga, US woman in gray suit
+- Encrypted comms intercepted by US intelligence
+- The temporary shelter agreement is at risk
+
+Let me craft the surgery around Kal'tsit using Earth equipment - maybe an MRI/CT or surgical tools, anesthesia, etc. Since there's no sourcestone, she can't use sourcestone-based surgical techniques and must rely on Earth technology. The success proves complementarity.
+
+The intercepted comms - perhaps PRTS internal network traffic was intercepted, or radio traffic. US intelligence interprets it as military coordination, increasing threat perception. This coincides with surgery success.
+
+I'll write now, maintaining the established tone and perspective.
+[/思考过程]
+
+【未完待续】
