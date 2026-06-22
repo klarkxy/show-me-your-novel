@@ -306,7 +306,8 @@ def main() -> int:
         )
         return (
             f'<a class="gh-button" href="{REPO_URL}" target="_blank" rel="noopener" '
-            f'title="仓库在这 → {REPO_URL}">'
+            f'title="Star on GitHub">'
+            f'<span class="gh-icon" aria-hidden="true">★</span>'
             f'<img class="gh-badge" src="{star_img}" alt="GitHub stars" loading="lazy">'
             f'</a>'
         )

@@ -1,7 +1,5 @@
 # show-me-your-novel
 
-> 同一段提示词，交给不同的大模型来写，把结果并排放在 GitHub Pages 上对比。
-
 **在线站点**：[https://klarkxy.github.io/show-me-your-novel/](https://klarkxy.github.io/show-me-your-novel/)
 
 这个项目用来横向对比不同中文大模型的长篇小说写作能力。每部小说对应 `novels/` 下的一个目录，里面只有一份 `prompt.md`；`runner/generate.py` 会让 `config.yaml` 里配置的所有模型各生成一版 10 章小说；最后 `scripts/generate_site.py` 渲染成静态站点，推送到 GitHub Pages。
