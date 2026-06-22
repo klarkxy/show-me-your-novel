@@ -339,6 +339,130 @@ def chat_completion(
 
 
 # ---------------------------------------------------------------------------
+# A口（Anthropic Messages API）
+# ---------------------------------------------------------------------------
+def chat_completion_anthropic(
+    base_url: str,
+    api_key: str,
+    model: str,
+    messages: list[dict[str, str]],
+    temperature: float = DEFAULT_TEMPERATURE,
+    max_tokens: int = DEFAULT_MAX_TOKENS,
+    timeout: int = 180,
+    thinking: bool = False,
+) -> tuple[str, str]:
+    """同步调用 Anthropic-compatible messages API（A口）。
+
+    返回 (content, reasoning_content)，用于 minimax、qwen 等 A口 模型。
+    """
+    base = base_url.rstrip("/")
+    if not base.endswith("/v1"):
+        base = f"{base}/v1"
+    url = f"{base}/messages"
+
+    # Anthropic 格式：system 是顶层字段，messages 不含 system
+    system_msg = ""
+    user_msgs: list[dict[str, str]] = []
+    for m in messages:
+        if m["role"] == "system":
+            system_msg = m["content"]
+        else:
+            user_msgs.append(m)
+
+    payload: dict[str, Any] = {
+        "model": model,
+        "max_tokens": max_tokens,
+        "messages": user_msgs,
+        "temperature": temperature,
+    }
+    if system_msg:
+        payload["system"] = system_msg
+    if thinking:
+        thinking_val = thinking if isinstance(thinking, str) else "enabled"
+        payload["thinking"] = {"type": thinking_val}
+
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    req = urllib.request.Request(
+        url,
+        data=data,
+        headers={
+            "Content-Type": "application/json",
+            "x-api-key": api_key,
+            "User-Agent": "show-me-your-novel/1.0 (python-urllib)",
+            "anthropic-version": "2023-06-01",
+        },
+        method="POST",
+    )
+
+    last_error: Exception | None = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                result = json.loads(resp.read().decode("utf-8"))
+                content_blocks = result.get("content") or []
+                content = ""
+                reasoning = ""
+                for block in content_blocks:
+                    if block.get("type") == "text":
+                        content = block.get("text", "")
+                    elif block.get("type") == "thinking":
+                        reasoning = block.get("thinking", "")
+                if not content.strip():
+                    raise RuntimeError("API 返回空内容")
+                return content, reasoning
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="ignore")[:500]
+            last_error = RuntimeError(f"HTTP {e.code}: {body}")
+        except Exception as e:
+            last_error = e
+        if attempt < MAX_RETRIES:
+            wait = 2 ** (attempt - 1)
+            warn(f"API 调用失败（{attempt}/{MAX_RETRIES}），{wait}s 后重试：{last_error}")
+            time.sleep(wait)
+
+    raise last_error or RuntimeError("API 调用失败")
+
+
+# ---------------------------------------------------------------------------
+# API 路由：根据 api_format 选择 O口 或 A口
+# ---------------------------------------------------------------------------
+def api_chat_completion(
+    api_format: str,
+    base_url: str,
+    api_key: str,
+    model: str,
+    messages: list[dict[str, str]],
+    temperature: float = DEFAULT_TEMPERATURE,
+    max_tokens: int = DEFAULT_MAX_TOKENS,
+    response_format: dict[str, str] | None = None,
+    timeout: int = 180,
+    thinking: bool = False,
+) -> tuple[str, str]:
+    if api_format == "anthropic":
+        return chat_completion_anthropic(
+            base_url=base_url,
+            api_key=api_key,
+            model=model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            timeout=timeout,
+            thinking=thinking,
+        )
+    return chat_completion(
+        base_url=base_url,
+        api_key=api_key,
+        model=model,
+        messages=messages,
+        temperature=temperature,
+        max_tokens=max_tokens,
+        response_format=response_format,
+        timeout=timeout,
+        thinking=thinking,
+    )
+
+
+# ---------------------------------------------------------------------------
 # 大纲生成
 # ---------------------------------------------------------------------------
 def build_outline_messages(prompt_text: str) -> list[dict[str, str]]:
@@ -400,19 +524,27 @@ def generate_outline(
     max_tokens: int,
     thinking: bool = False,
     outline_json: bool = True,
+    api_format: str = "openai",
 ) -> dict[str, Any]:
     messages = build_outline_messages(prompt_text)
+
+    # A口 不支持 response_format，由 parse_outline 从自由文本中提取 JSON
+    rf: dict[str, str] | None = None
+    if outline_json and api_format != "anthropic":
+        rf = {"type": "json_object"}
+
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            text, _reasoning = chat_completion(
+            text, _reasoning = api_chat_completion(
                 base_url=base_url,
                 api_key=api_key,
                 model=model,
                 messages=messages,
                 temperature=temperature,
                 max_tokens=max_tokens,
-                response_format={"type": "json_object"} if outline_json else None,
+                response_format=rf,
                 thinking=thinking,
+                api_format=api_format,
             )
             return parse_outline(text)
         except Exception as e:
@@ -535,6 +667,7 @@ def generate_single_chapter(
     temperature: float,
     max_tokens: int,
     thinking: bool = False,
+    api_format: str = "openai",
     work_dir: Path | None = None,
 ) -> str:
     """生成一章，含清洗与质检，失败会重试。"""
@@ -543,7 +676,7 @@ def generate_single_chapter(
 
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            raw_text, reasoning = chat_completion(
+            raw_text, reasoning = api_chat_completion(
                 base_url=base_url,
                 api_key=api_key,
                 model=model,
@@ -551,6 +684,7 @@ def generate_single_chapter(
                 temperature=temperature,
                 max_tokens=max_tokens,
                 thinking=thinking,
+                api_format=api_format,
             )
             if work_dir is not None:
                 raw_dir = work_dir / "raw"
@@ -746,6 +880,7 @@ def main() -> int:
             max_tokens = model_cfg.get("max_tokens", DEFAULT_MAX_TOKENS)
             thinking_enabled = model_cfg.get("thinking", False)
             outline_json = model_cfg.get("outline_json", True)
+            api_format = model_cfg.get("api_format", "openai")
 
             try:
                 log(f"  └ {model_cfg['name']} → 生成中…（provider={provider_id}, model={model_cfg['model']}）")
@@ -765,6 +900,7 @@ def main() -> int:
                         max_tokens=max_tokens,
                         thinking=thinking_enabled,
                         outline_json=outline_json,
+                        api_format=api_format,
                     )
                     outline_path.write_text(json.dumps(outline, ensure_ascii=False, indent=2), encoding="utf-8")
                     meta["outline_generated"] = True
@@ -801,6 +937,7 @@ def main() -> int:
                         temperature=temperature,
                         max_tokens=max_tokens,
                         thinking=thinking_enabled,
+                        api_format=api_format,
                         work_dir=story_work_dir,
                     )
                     chapter_file.write_text(ch_text, encoding="utf-8")

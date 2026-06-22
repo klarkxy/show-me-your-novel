@@ -60,8 +60,27 @@ models:
     thinking: true
     provider: opencode-go
 
+  - id: minimax-m3
+    name: MiniMax M3
+    model: minimax-m3
+    thinking: adaptive
+    api_format: anthropic
+    provider: opencode-go
+
+  - id: qwen3.7-max
+    name: Qwen3.7 Max
+    model: qwen3.7-max
+    api_format: anthropic
+    provider: opencode-go
+
   - id: qwen3.7-plus
     name: Qwen3.7 Plus
     model: qwen3.7-plus
+    thinking: true
+    provider: opencode-go
+
+  - id: qwen3.7-max
+    name: Qwen3.7 Max
+    model: qwen3.7-max
     thinking: true
     provider: opencode-go
