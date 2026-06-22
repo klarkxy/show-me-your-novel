@@ -337,14 +337,7 @@ def main() -> int:
     PAGE_FOOT = f"""
 </main>
 <footer class="site-footer">
-  <p>由 <code>show-me-your-novel</code> 生成 · 统一提示词 + 直连 LLM API 分章生成 · 多模型对比</p>
-  <p class="site-footer-links">
-    <a href="{REPO_URL}" target="_blank" rel="noopener">GitHub 仓库</a>
-    <span class="dim">·</span>
-    <a href="{REPO_URL}#readme" target="_blank" rel="noopener">查看 README</a>
-    <span class="dim">·</span>
-    <a href="{REPO_URL}/issues" target="_blank" rel="noopener">反馈 / 提需求</a>
-  </p>
+  <p><a href="{REPO_URL}" target="_blank" rel="noopener">klarkxy/show-me-your-novel</a></p>
 </footer>
 </body>
 </html>
@@ -366,32 +359,22 @@ def main() -> int:
         cards.append(
             f"""<a class="card" href="novels/{html.escape(s['slug'])}/index.html">
   <div class="card-top">
-    <span class="card-genre">{html.escape(s['genre'] or '小说')}</span>
     <span class="card-arrow" aria-hidden="true">→</span>
   </div>
   <h2 class="card-title">{html.escape(s['title'])}</h2>
   <p class="card-intro">{html.escape(s['intro'] or '（无简介）')}</p>
   <div class="card-meta">
-    <span class="badge badge-{badge}">{done}/{total} 模型</span>
+    <span class="badge badge-{badge}">{done}/{total}</span>
   </div>
 </a>"""
         )
 
     index_content = page_head(SITE_TITLE, "", "page-home") + f"""
 <section class="hero">
-  <h1 class="hero-title">同一段提示词<br>七个模型写的同一部小说</h1>
-  <p class="hero-desc">把 DeepSeek / GLM / Kimi / MiMo / Qwen 等模型的十万字长篇并排摆放，直接对比笔法、节奏、人物与细节。挑出最像「人」写的那个。</p>
-  <p class="hero-cta">
-    <a class="cta-primary" href="novels/red-february/index.html">从《赤红二月》开始看 →</a>
-    <a class="cta-secondary" href="{REPO_URL}" target="_blank" rel="noopener">在 GitHub 上看源码 / Star</a>
-  </p>
+  <h1 class="hero-title">同一段提示词<br>不同模型写的同一部小说</h1>
 </section>
 
 <section class="story-section">
-  <div class="section-header">
-    <h2 class="section-title">小说列表</h2>
-    <span class="section-count">{len(stories)} 部</span>
-  </div>
   <div class="card-grid">
 {chr(10).join(cards) if cards else '<p class="empty">还没有小说。在 <code>novels/&lt;slug&gt;/prompt.md</code> 放一份提示词，然后运行生成脚本。</p>'}
   </div>
@@ -432,24 +415,18 @@ def main() -> int:
             )
 
         detail_content = page_head(s["title"], "../../", "page-detail") + f"""
-<a class="back" href="../../index.html">← 返回小说列表</a>
+<a class="back" href="../../index.html">←</a>
 <header class="story-header">
   <h1 class="story-title">{html.escape(s['title'])}</h1>
-  <div class="story-meta-row">
-    <span class="badge badge-genre">{html.escape(s['genre'] or '小说')}</span>
-    <span class="story-count">{len(s['versions'])}/{len(model_by_id)} 个模型已完成</span>
-  </div>
 </header>
 
 <section class="prompt-section">
-  <h2 class="section-title">提示词</h2>
   <div class="prompt-body markdown">
 {s['prompt_html']}
   </div>
 </section>
 
 <section class="versions-section">
-  <h2 class="section-title">各模型作品</h2>
   <div class="version-grid">
 {chr(10).join(version_cards) if version_cards else '<p class="empty">还没有模型生成这部小说。</p>'}
   </div>
@@ -469,13 +446,12 @@ def main() -> int:
                     f"{s['title']} · {v['model_name']}", "../../", "page-reading"
                 )
                 + f"""
-<a class="back" href="index.html">← 返回《{html.escape(s['title'])}》</a>
+<a class="back" href="index.html">←</a>
 <article class="novel">
   <header class="novel-header">
     <p class="novel-model">{html.escape(v['model_name'])}</p>
     <h1 class="novel-title">{html.escape(v['novel_title'])}</h1>
     <div class="novel-meta">
-      <span class="badge badge-genre">{html.escape(s['genre'] or '小说')}</span>
       <span>{v['chars']} 字 · {v['chapters']} 章</span>
       <span class="dim">生成于 {html.escape(v['mtime'])}</span>
     </div>
