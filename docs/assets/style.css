@@ -82,32 +82,27 @@ code {
   text-overflow: ellipsis;
 }
 
-/* ── GitHub 按钮（页头右侧，shields.io 徽章带实时 Star 数） ── */
+/* ── GitHub 按钮（页头右侧，大号 Octocat 图标） ── */
 .gh-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.6rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 6px;
+  justify-content: center;
+  margin-left: auto;        /* 推到页头最右 */
+  padding: 0.3rem 0.4rem;
+  color: var(--text);       /* currentColor 让 SVG 跟随 */
   text-decoration: none;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, transform 0.15s ease;
   flex: 0 0 auto;
 }
 .gh-button:hover {
   text-decoration: none;
-  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-1px);
 }
 .gh-button .gh-icon {
-  color: #f1c40f;
-  font-size: 1rem;
-  line-height: 1;
-}
-.gh-button .gh-badge {
-  display: inline-block;
-  height: 20px;
-  border-radius: 3px;
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 
 .container {
