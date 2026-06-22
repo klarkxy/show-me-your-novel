@@ -79,8 +79,3 @@ models:
     thinking: true
     provider: opencode-go
 
-  - id: qwen3.7-max
-    name: Qwen3.7 Max
-    model: qwen3.7-max
-    thinking: true
-    provider: opencode-go
