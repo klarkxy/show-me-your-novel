@@ -288,7 +288,7 @@ def main() -> int:
     # HTML 模板
     # -----------------------------------------------------------------------
     SITE_TITLE = "Show Me Your Novel"
-    SITE_SUB = "读的是小说，写的是代码"
+    SITE_SUB = ""
     # 仓库地址：页头 GitHub 按钮、shields.io 徽章、软文里都从这里派生，避免四处散落
     REPO_URL = "https://github.com/klarkxy/show-me-your-novel"
     REPO_OWNER = "klarkxy"
@@ -306,7 +306,7 @@ def main() -> int:
         )
         return (
             f'<a class="gh-button" href="{REPO_URL}" target="_blank" rel="noopener" '
-            f'title="看不上眼就来骂，反正你写不出更好的。">'
+            f'title="让我康康你的文 → {REPO_URL}">'
             f'<span class="gh-icon" aria-hidden="true">★</span>'
             f'<span class="gh-text">嫌丑？来打脸</span>'
             f'<img class="gh-badge" src="{star_img}" alt="GitHub stars" loading="lazy">'
@@ -326,8 +326,7 @@ def main() -> int:
 <body{body_attr}>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="{depth}index.html">{SITE_TITLE}</a>
-    <span class="tagline">{html.escape(SITE_SUB)}</span>
+    <a class="brand" href="{depth}index.html">{SITE_TITLE}</a>{f'    <span class="tagline">{html.escape(SITE_SUB)}</span>' if SITE_SUB else ''}
     {github_button_html(depth)}
   </div>
 </header>
@@ -337,7 +336,7 @@ def main() -> int:
     PAGE_FOOT = f"""
 </main>
 <footer class="site-footer">
-  <p><a href="{REPO_URL}" target="_blank" rel="noopener">klarkxy/show-me-your-novel</a> · 觉得写得烂就 PR</p>
+  <p><a href="{REPO_URL}" target="_blank" rel="noopener">让我康康你的文</a> · 觉得写得烂就 PR</p>
 </footer>
 </body>
 </html>
