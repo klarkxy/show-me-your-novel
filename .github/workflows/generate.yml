@@ -1,19 +1,37 @@
-name: Deploy Pages
+name: Test, build and deploy Pages
 
-# 本地生成 + 推送 docs/，CI 只负责部署，不在云端调用模型 / 暴露 API key。
-# 触发条件：docs/ 或 .github/workflows/generate.yml 变动推到 main，或手动触发。
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - "docs/**"
+      - "benchmark/**"
+      - "results/**"
+      - "novels/**"
+      - "runner/**"
+      - "site/**"
+      - "scripts/**"
+      - "tests/**"
+      - "config.yaml"
+      - "pytest.ini"
+      - "requirements*.txt"
+      - ".github/workflows/generate.yml"
+  pull_request:
+    paths:
+      - "benchmark/**"
+      - "results/**"
+      - "novels/**"
+      - "runner/**"
+      - "site/**"
+      - "scripts/**"
+      - "tests/**"
+      - "config.yaml"
+      - "pytest.ini"
+      - "requirements*.txt"
       - ".github/workflows/generate.yml"
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: "pages-${{ github.ref }}"
@@ -21,34 +39,52 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          enablement: true
+          python-version: "3.12"
+          cache: pip
 
-      - name: Verify docs/ has content
-        run: |
-          if [ ! -f docs/index.html ]; then
-            echo "::error::docs/index.html 不存在。请先在本地运行生成脚本并提交 docs/。"
-            exit 1
-          fi
+      - name: Install locked test and build dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Run the complete pytest suite
+        run: python -m pytest -q
+
+      - name: Build Pages artifact offline from tracked data
+        env:
+          API_URL: ""
+          API_KEY: ""
+        run: python -B scripts/generate_site.py --docs-dir _site
+
+      - name: Verify complete artifact
+        run: test -f _site/index.html && test -f _site/assets/style.css && test -f _site/assets/leaderboard.js
 
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/
+          path: _site/
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

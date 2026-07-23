@@ -1,1021 +1,2601 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-runner/generate.py — 直接调用云端 LLM API 分章生成小说
+"""V2.1 autonomous long-form benchmark generator.
 
-流程：
-  1. 读取 prompt.md
-  2. 调用 API 生成结构化大纲（outline.json）
-  3. 循环 1..10，每次生成一章，并把前文完整正文拼进上下文
-  4. 合并章节为 novels/<story>/<model>.md，追加【未完待续】
-  5. 最终校验（10 章、≥20000 字、结尾标记、无代码围栏）
-
-用法：
-  python3 runner/generate.py
-  python3 runner/generate.py --story sci-fi-uplink
-  python3 runner/generate.py --story sci-fi-uplink --model deepseek-v4-flash
-  python3 runner/generate.py --story sci-fi-uplink --model deepseek-v4-flash --reset
+One model receives one broad direction and keeps a single replayable chat
+transcript while it creates a book pitch, a two-million-character macro
+outline, a detailed opening outline, and roughly fifty thousand characters of
+prose.  Legacy ten-chapter generation remains in ``generate_legacy.py``.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import math
 import os
 import re
+import shutil
 import sys
+import threading
 import time
-import urllib.error
-import urllib.request
+from dataclasses import asdict, is_dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
-import yaml
-
-
-# Windows 终端默认编码可能为 GBK，强制 stdout/stderr 使用 UTF-8，
-# 避免日志中的中文和符号触发 'gbk codec can't encode' 异常。
-if sys.platform == "win32":
-    import io
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace", line_buffering=True)
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace", line_buffering=True)
-else:
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-
-
-# ---------------------------------------------------------------------------
-# 默认常量
-# ---------------------------------------------------------------------------
-DEFAULT_TEMPERATURE = 0.7
-DEFAULT_MAX_TOKENS = 8192
-# 只防过短，不过分限制上限：prompt 里建议 2000–3000，
-# 质检时只要 ≥1500 即可，不超过 max_tokens 自然上限即可。
-MIN_CHAPTER_CHARS = 1500
-MAX_CHAPTER_CHARS = 99999
-MIN_TOTAL_CHARS = 20000
-MAX_RETRIES = 3
-
-
-# ---------------------------------------------------------------------------
-# 日志
-# ---------------------------------------------------------------------------
-def log(msg: str) -> None:
-    print(f"[gen] {msg}", flush=True)
+try:  # Script execution and package-style tests are both supported.
+    from .llm_api import (
+        PROVIDER_DEFAULTS_TRACKING_KEY,
+        ChatClient,
+        ChatResult,
+        LLMAPIError,
+        get_model_config,
+        load_config,
+        load_env_file,
+        split_inline_reasoning_text,
+        with_provider_request_defaults,
+    )
+except ImportError:  # pragma: no cover - exercised by direct CLI usage
+    from llm_api import (  # type: ignore
+        PROVIDER_DEFAULTS_TRACKING_KEY,
+        ChatClient,
+        ChatResult,
+        LLMAPIError,
+        get_model_config,
+        load_config,
+        load_env_file,
+        split_inline_reasoning_text,
+        with_provider_request_defaults,
+    )
 
 
-def ok(msg: str) -> None:
-    print(f"[gen] [OK] {msg}", flush=True)
+PROTOCOL_VERSION = "novel-benchmark.v2.1"
+DEFAULT_BENCHMARK = "reform-era"
+PROMPT_FILES = (
+    "system.md",
+    "book.md",
+    "macro_outline.md",
+    "opening_outline.md",
+    "chapter.md",
+    "expand_chapter.md",
+    "repair_json.md",
+    "repair_chapter.md",
+)
+# A stage may lose attempts to transient 5xx/429 responses before it receives
+# any usable text. Five total calls leave room for a real format repair while
+# still bounding cost and preventing an endless retry loop.
+MAX_STAGE_ATTEMPTS = 5
+MAX_RETRY_DELAY_SECONDS = 30.0
+CONTEXT_SAFETY_BASIS_POINTS = 8_500
+CONTEXT_USAGE_MARGIN_TOKENS = 256
+MIN_FINAL_CHARS = 48_000
+MIN_OPENING_TARGET_CHARS = MIN_FINAL_CHARS
+CHAPTER_EXPANSION_TRIGGER_CHARS = 3_000
+MAX_CHAPTER_EXPANSION_CALLS = 1
+
+PROTOCOL_POLICY = {
+    "context_guard": {
+        "strategy": "provider-usage-anchor-v1",
+        "fallback": "cjk-conservative-v1",
+        "safety_basis_points": CONTEXT_SAFETY_BASIS_POINTS,
+        "usage_margin_tokens": CONTEXT_USAGE_MARGIN_TOKENS,
+        "output_reserve": "none-server-defaults",
+    },
+    "generation": {
+        "max_stage_attempts_per_execution": MAX_STAGE_ATTEMPTS,
+        "repair_transcript": "isolated-latest-complete-candidate-v1",
+        "canonical_session": "accepted-exchanges-only-v1",
+        "api_optional_parameters": "omitted-server-defaults",
+    },
+    "length": {
+        "opening_target_min_chars": MIN_OPENING_TARGET_CHARS,
+        "final_min_chars": MIN_FINAL_CHARS,
+        "hard_upper_bound": "none",
+        "book_text_fields": "nonempty-no-char-range",
+        "chapter_prompt_chars_approx": [3_000, 4_000],
+        "chapter_validation": "format-only-no-char-range",
+        "short_chapter_expansion": {
+            "trigger_below_chars": CHAPTER_EXPANSION_TRIGGER_CHARS,
+            "max_calls": MAX_CHAPTER_EXPANSION_CALLS,
+            "failure_policy": "keep-valid-source-no-retry",
+            "selection": "longer-valid-draft",
+            "canonical_session": "final-draft-only",
+        },
+    },
+}
+
+EXPECTED_GENERATOR_IDS = (
+    "deepseek-v4-flash",
+    "deepseek-v4-pro",
+    "mimo-v2.5",
+    "mimo-v2.5-pro",
+    "minimax-m3",
+    "glm-5.2",
+    "gpt-5.6-luna",
+    "claude-haiku-4-5",
+    "claude-sonnet-5",
+    "gemini-3.1-pro",
+    "gemini-3.5-flash",
+    "kimi-k3",
+    "grok-4.5",
+    "claude-opus-4-8",
+    "agnes-2.0-flash",
+)
+EXPECTED_JUDGES = {
+    "sol": "gpt-5.6-sol",
+    "fable": "claude-fable-5",
+    "kimi": "kimi-k3",
+}
+PRIVATE_REASONING_MARKER = re.compile(
+    r"(?:\[/?思考过程\]|</?(?:think|thinking|analysis)>|reasoning_content)",
+    re.IGNORECASE,
+)
 
 
-def warn(msg: str) -> None:
-    print(f"[gen] [WARN] {msg}", flush=True)
+def api_error_is_retryable(error: LLMAPIError) -> bool:
+    status = error.status_code
+    return status is None or status in {408, 409, 425, 429} or status >= 500
 
 
-def err(msg: str) -> None:
-    print(f"[gen] [ERR] {msg}", file=sys.stderr, flush=True)
+def retry_delay_seconds(error: LLMAPIError, attempt: int) -> float:
+    advised = getattr(error, "retry_after_seconds", None)
+    if isinstance(advised, (int, float)) and math.isfinite(float(advised)):
+        return min(MAX_RETRY_DELAY_SECONDS, max(0.0, float(advised)))
+    return min(8.0, float(2 ** max(0, attempt - 1)))
 
 
-# ---------------------------------------------------------------------------
-# 路径与配置
-# ---------------------------------------------------------------------------
-def find_repo_root() -> Path:
-    """脚本位于 runner/ 下，向上退一级即仓库根目录。"""
+class IncompleteCompletionError(LLMAPIError):
+    """A non-empty response that the upstream marked as unfinished."""
+
+    def __init__(self, finish_reason: str | None, content: str) -> None:
+        label = finish_reason or "missing"
+        super().__init__(f"finish_reason={label}，拒绝接受可能截断的输出")
+        self.content = content
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def log(message: str) -> None:
+    print(f"[v2.1] {message}", flush=True)
+
+
+def warn(message: str) -> None:
+    print(f"[v2.1] [WARN] {message}", flush=True)
+
+
+def fail(message: str) -> None:
+    print(f"[v2.1] [ERR] {message}", file=sys.stderr, flush=True)
+
+
+def repo_root() -> Path:
     return Path(__file__).resolve().parent.parent
 
 
-def load_env_file(env_file: Path) -> dict[str, str]:
-    """简易 .env 解析，支持 KEY=VALUE 与 KEY: VALUE。"""
-    env: dict[str, str] = {}
-    if not env_file.exists():
-        return env
-    for line in env_file.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
+def canonical_json(value: Any) -> str:
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def sha256_text(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def normalize_newlines(value: str) -> str:
+    """Canonicalize UTF-8 text across editors and operating systems."""
+
+    return value.lstrip("\ufeff").replace("\r\n", "\n").replace("\r", "\n")
+
+
+def canonical_text(value: str) -> str:
+    return normalize_newlines(value).strip()
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def sha256_normalized_text_file(path: Path) -> str:
+    text = path.read_bytes().decode("utf-8-sig")
+    return sha256_text(normalize_newlines(text))
+
+
+def calculate_code_hash() -> str:
+    """Hash the V2 runner implementation recorded in public manifests."""
+    files = (Path(__file__).resolve(), Path(__file__).resolve().with_name("llm_api.py"))
+    evidence = {
+        path.name: sha256_normalized_text_file(path)
+        for path in files
+        if path.exists()
+    }
+    return sha256_text(canonical_json(evidence))
+
+
+def atomic_write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_text(text, encoding="utf-8", newline="\n")
+    os.replace(temporary, path)
+
+
+def atomic_write_json(path: Path, value: Any) -> None:
+    atomic_write_text(path, json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+
+
+def read_json(path: Path) -> dict[str, Any]:
+    value = json.loads(path.read_text(encoding="utf-8-sig"))
+    if not isinstance(value, dict):
+        raise ValueError(f"{path} 不是 JSON object")
+    return value
+
+
+def _read_usage_journal(work_dir: Path) -> list[dict[str, Any]]:
+    journal = work_dir / "usage.jsonl"
+    if not journal.exists():
+        return []
+    try:
+        text = journal.read_bytes().decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise RuntimeError("usage.jsonl UTF-8 不完整") from exc
+    records: list[dict[str, Any]] = []
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        if not line.strip():
             continue
-        m = re.match(r"^\s*([A-Za-z0-9_]+)\s*[:=]\s*(\S+)\s*$", line)
-        if m:
-            env[m.group(1)] = m.group(2)
-    return env
-
-
-def load_config(config_path: Path) -> dict[str, Any]:
-    if not config_path.exists():
-        raise FileNotFoundError(f"未找到配置文件：{config_path}")
-    with config_path.open("r", encoding="utf-8") as f:
-        cfg = yaml.safe_load(f) or {}
-    return cfg
-
-
-def get_model_config(cfg: dict[str, Any], model_id: str) -> dict[str, Any]:
-    for m in cfg.get("models", []):
-        if m.get("id") == model_id:
-            return m
-    raise ValueError(f"config.yaml 中未找到模型 id：{model_id}")
-
-
-def get_provider_config(cfg: dict[str, Any], provider_id: str) -> dict[str, Any]:
-    providers = cfg.get("providers") or {}
-    if provider_id not in providers:
-        raise ValueError(f"config.yaml 中未找到 provider：{provider_id}")
-    return providers[provider_id]
-
-
-# ---------------------------------------------------------------------------
-# 文本统计与校验
-# ---------------------------------------------------------------------------
-def count_chinese_chars(text: str) -> int:
-    """与 scripts/generate-site.ps1 保持一致：统计中文、全角、字母数字。"""
-    return len(re.findall(r"[一-鿿　-〿A-Za-z0-9]", text or ""))
-
-
-def count_chapters(text: str) -> int:
-    """与站点脚本保持一致：统计独立的 ## 第N章 行。"""
-    return len(re.findall(r"^##\s+第\d+章", text or "", re.MULTILINE))
-
-
-def has_code_fence(text: str) -> bool:
-    return "```" in text
-
-
-CHINESE_DIGITS = {
-    '零': 0, '一': 1, '二': 2, '三': 3, '四': 4,
-    '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10,
-}
-
-
-def chinese_to_int(s: str) -> int | None:
-    """简单中文数字转整数，支持一到十。"""
-    s = s.strip()
-    if not s:
-        return None
-    if s.isdigit():
-        return int(s)
-    total = 0
-    for ch in s:
-        if ch in CHINESE_DIGITS:
-            total += CHINESE_DIGITS[ch]
-    return total if total > 0 else None
-
-
-def clean_chapter(text: str, expected_number: int, expected_title: str = "") -> str:
-    """
-    清洗模型输出：
-    - 去掉首尾空白
-    - 去掉可能被包裹的 markdown code fence
-    - 去掉常见的 AI 前缀
-    - 识别多种章节标题格式并统一为 ## 第N章 标题
-    - 若仍无标题，自动补全
-    """
-    text = text.strip()
-
-    # 去掉 ```markdown ... ``` 或 ``` ... ```
-    text = re.sub(r"^```[a-zA-Z]*\n?", "", text)
-    text = re.sub(r"\n?```\s*$", "", text)
-    text = text.strip()
-
-    # 去掉常见 AI 前缀
-    prefixes = [
-        rf"^(好的[，。])?\s*(以下是|这是)?\s*第\s*{expected_number}\s*章[：:.]?\s*",
-        r"^(以下是|这是)?\s*本章正文[：:.]?\s*",
-        r"^(好的[，。])?\s*让我?来?继续?写[：:.]?\s*",
-    ]
-    for p in prefixes:
-        text = re.sub(p, "", text, flags=re.IGNORECASE).strip()
-
-    # 去掉末尾常见的字数统计/元评论行
-    text = re.sub(r"\n*\s*（字数[统计]*[：:].*?）\s*$", "", text).strip()
-    text = re.sub(r"\n*\s*\(字数[统计]*[：:].*?\)\s*$", "", text, flags=re.IGNORECASE).strip()
-    text = re.sub(r"\n*\s*字数[统计]*[：:]\s*约?\s*\d+[\d,]*\s*字?\s*$", "", text).strip()
-
-    # 统一章节标题格式
-    lines = text.splitlines()
-    title_pattern = re.compile(
-        rf"^##\s*第\s*(\d+|[一二三四五六七八九十]+)\s*章\s*(.*)$"
-    )
-    title_line_idx = None
-    found_number = None
-    found_title = ""
-    for i, line in enumerate(lines):
-        m = title_pattern.match(line.strip())
-        if m:
-            title_line_idx = i
-            found_number = chinese_to_int(m.group(1))
-            found_title = m.group(2).strip()
-            break
-
-    if title_line_idx is not None:
-        # 去掉标题前的废话
-        lines = lines[title_line_idx:]
-        # 把标题统一为 ## 第N章 标题
-        title_to_use = found_title or expected_title
-        lines[0] = f"## 第{expected_number}章 {title_to_use}"
-        text = "\n".join(lines).strip()
-    else:
-        # 没有找到标题，自动补全
-        title_to_use = expected_title
-        text = f"## 第{expected_number}章 {title_to_use}\n\n{text}"
-
-    return text.strip()
-
-
-def validate_chapter(text: str, number: int) -> tuple[bool, str]:
-    """单章质检。返回 (是否通过, 失败原因)。"""
-    chars = count_chinese_chars(text)
-    if chars < MIN_CHAPTER_CHARS:
-        return False, f"字数不足：{chars} < {MIN_CHAPTER_CHARS}"
-    if chars > MAX_CHAPTER_CHARS:
-        return False, f"字数超标：{chars} > {MAX_CHAPTER_CHARS}"
-    if not re.search(rf"^##\s+第\s*{number}\s*章", text, re.MULTILINE):
-        return False, "缺少或格式错误的章节标题"
-    if has_code_fence(text):
-        return False, "包含代码围栏"
-    # 简单元评论检测
-    # 只检测关键词出现在行首附近（前6个字符内）的情况，
-    # 避免将正文中自然出现的"这是""字数"等误判为元评论。
-    meta_keywords = ["好的", "以下是", "这是", "我来写", "字数", "扩写", "精简", "本章正文"]
-    first_lines = "\n".join(text.splitlines()[:3])
-    for kw in meta_keywords:
-        if kw in first_lines and kw not in (re.search(rf"^##\s+第\s*{number}\s+章\s+(.+)$", text, re.MULTILINE) or [""])[0]:
-            # 只检测行首附近有关键词的情况（前6个字符内）
-            if re.search(rf"^[^#\s].{{0,5}}{kw}", first_lines, re.MULTILINE):
-                return False, f"开头疑似含元评论：{kw}"
-    return True, ""
-
-
-def validate_novel(text: str) -> tuple[bool, str]:
-    """全文质检。"""
-    chapters = count_chapters(text)
-    if chapters != 10:
-        return False, f"章节数不为 10：{chapters}"
-    chars = count_chinese_chars(text)
-    if chars < MIN_TOTAL_CHARS:
-        return False, f"总字数不足：{chars} < {MIN_TOTAL_CHARS}"
-    if not text.rstrip().endswith("【未完待续】"):
-        return False, "末尾缺少【未完待续】"
-    if has_code_fence(text):
-        return False, "全文包含代码围栏"
-    return True, ""
-
-
-# ---------------------------------------------------------------------------
-# HTTP API 调用
-# ---------------------------------------------------------------------------
-def normalize_base_url(base_url: str) -> str:
-    """确保 base_url 以 /v1 结尾，用于调用 /chat/completions。"""
-    base = base_url.rstrip("/")
-    if not base.endswith("/v1"):
-        base = f"{base}/v1"
-    return base
-
-
-def chat_completion(
-    base_url: str,
-    api_key: str,
-    model: str,
-    messages: list[dict[str, str]],
-    temperature: float = DEFAULT_TEMPERATURE,
-    max_tokens: int = DEFAULT_MAX_TOKENS,
-    response_format: dict[str, str] | None = None,
-    timeout: int = 180,
-    thinking: bool = False,
-) -> tuple[str, str]:
-    """同步调用 OpenAI-compatible chat completions。
-
-    返回 (content, reasoning_content)，若模型未返回思考内容则 reasoning_content 为空。
-    """
-    url = f"{normalize_base_url(base_url)}/chat/completions"
-    payload: dict[str, Any] = {
-        "model": model,
-        "messages": messages,
-        "temperature": temperature,
-        "max_tokens": max_tokens,
-    }
-    if response_format:
-        payload["response_format"] = response_format
-    if thinking:
-        # 兼容不同的 thinking 格式：True → "enabled"，字符串直接使用
-        thinking_val = thinking if isinstance(thinking, str) else "enabled"
-        payload["thinking"] = {"type": thinking_val}
-
-    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = urllib.request.Request(
-        url,
-        data=data,
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {api_key}",
-            "User-Agent": "show-me-your-novel/1.0 (python-urllib)",
-        },
-        method="POST",
-    )
-
-    last_error: Exception | None = None
-    for attempt in range(1, MAX_RETRIES + 1):
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                result = json.loads(resp.read().decode("utf-8"))
-                choices = result.get("choices") or []
-                if not choices:
-                    raise RuntimeError("API 返回空 choices")
-                msg = choices[0].get("message", {})
-                content = msg.get("content", "")
-                if not content.strip():
-                    raise RuntimeError("API 返回空内容")
-                reasoning = msg.get("reasoning_content", "")
-                return content, reasoning
-        except urllib.error.HTTPError as e:
-            body = e.read().decode("utf-8", errors="ignore")[:500]
-            last_error = RuntimeError(f"HTTP {e.code}: {body}")
-        except Exception as e:
-            last_error = e
-        if attempt < MAX_RETRIES:
-            wait = 2 ** (attempt - 1)
-            warn(f"API 调用失败（{attempt}/{MAX_RETRIES}），{wait}s 后重试：{last_error}")
-            time.sleep(wait)
-
-    raise last_error or RuntimeError("API 调用失败")
+            value = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise RuntimeError(f"usage.jsonl 第 {line_number} 行损坏") from exc
+        if not isinstance(value, dict):
+            raise RuntimeError(f"usage.jsonl 第 {line_number} 行不是对象")
+        records.append(value)
+    return records
 
 
-# ---------------------------------------------------------------------------
-# A口（Anthropic Messages API）
-# ---------------------------------------------------------------------------
-def chat_completion_anthropic(
-    base_url: str,
-    api_key: str,
-    model: str,
-    messages: list[dict[str, str]],
-    temperature: float = DEFAULT_TEMPERATURE,
-    max_tokens: int = DEFAULT_MAX_TOKENS,
-    timeout: int = 180,
-    thinking: bool = False,
-) -> tuple[str, str]:
-    """同步调用 Anthropic-compatible messages API（A口）。
+def read_usage_records(work_dir: Path) -> list[dict[str, Any]]:
+    """Read atomic usage events, safely reconciling a legacy JSONL migration."""
 
-    返回 (content, reasoning_content)，用于 minimax、qwen 等 A口 模型。
-    """
-    base = base_url.rstrip("/")
-    if not base.endswith("/v1"):
-        base = f"{base}/v1"
-    url = f"{base}/messages"
-
-    # Anthropic 格式：system 是顶层字段，messages 不含 system
-    system_msg = ""
-    user_msgs: list[dict[str, str]] = []
-    for m in messages:
-        if m["role"] == "system":
-            system_msg = m["content"]
-        else:
-            user_msgs.append(m)
-
-    payload: dict[str, Any] = {
-        "model": model,
-        "max_tokens": max_tokens,
-        "messages": user_msgs,
-        "temperature": temperature,
-    }
-    if system_msg:
-        payload["system"] = system_msg
-    if thinking:
-        thinking_val = thinking if isinstance(thinking, str) else "enabled"
-        payload["thinking"] = {"type": thinking_val}
-
-    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = urllib.request.Request(
-        url,
-        data=data,
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": api_key,
-            "User-Agent": "show-me-your-novel/1.0 (python-urllib)",
-            "anthropic-version": "2023-06-01",
-        },
-        method="POST",
-    )
-
-    last_error: Exception | None = None
-    for attempt in range(1, MAX_RETRIES + 1):
+    events_dir = work_dir / "usage-events"
+    event_paths = sorted(events_dir.glob("*.json")) if events_dir.is_dir() else []
+    if event_paths:
+        expected_names = [f"{index:06d}.json" for index in range(1, len(event_paths) + 1)]
+        if [path.name for path in event_paths] != expected_names:
+            raise RuntimeError("usage-events 序号不连续")
+        event_records = [read_json(path) for path in event_paths]
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                result = json.loads(resp.read().decode("utf-8"))
-                content_blocks = result.get("content") or []
-                content = ""
-                reasoning = ""
-                for block in content_blocks:
-                    if block.get("type") == "text":
-                        content = block.get("text", "")
-                    elif block.get("type") == "thinking":
-                        reasoning = block.get("thinking", "")
-                if not content.strip():
-                    raise RuntimeError("API 返回空内容")
-                return content, reasoning
-        except urllib.error.HTTPError as e:
-            body = e.read().decode("utf-8", errors="ignore")[:500]
-            last_error = RuntimeError(f"HTTP {e.code}: {body}")
-        except Exception as e:
-            last_error = e
-        if attempt < MAX_RETRIES:
-            wait = 2 ** (attempt - 1)
-            warn(f"API 调用失败（{attempt}/{MAX_RETRIES}），{wait}s 后重试：{last_error}")
-            time.sleep(wait)
-
-    raise last_error or RuntimeError("API 调用失败")
-
-
-# ---------------------------------------------------------------------------
-# API 路由：根据 api_format 选择 O口 或 A口
-# ---------------------------------------------------------------------------
-def api_chat_completion(
-    api_format: str,
-    base_url: str,
-    api_key: str,
-    model: str,
-    messages: list[dict[str, str]],
-    temperature: float = DEFAULT_TEMPERATURE,
-    max_tokens: int = DEFAULT_MAX_TOKENS,
-    response_format: dict[str, str] | None = None,
-    timeout: int = 180,
-    thinking: bool = False,
-) -> tuple[str, str]:
-    if api_format == "anthropic":
-        return chat_completion_anthropic(
-            base_url=base_url,
-            api_key=api_key,
-            model=model,
-            messages=messages,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            timeout=timeout,
-            thinking=thinking,
+            journal_records = _read_usage_journal(work_dir)
+        except RuntimeError:
+            # Atomic event files are the source of truth; a derived journal can
+            # be rebuilt without losing an audited call.
+            return event_records
+        shared = min(len(event_records), len(journal_records))
+        if event_records[:shared] != journal_records[:shared]:
+            raise RuntimeError("usage-events 与 usage.jsonl 内容不一致")
+        # During legacy migration the journal may still be longer; during a
+        # new append the atomic events may be one record ahead of the journal.
+        return (
+            journal_records
+            if len(journal_records) > len(event_records)
+            else event_records
         )
-    return chat_completion(
-        base_url=base_url,
-        api_key=api_key,
-        model=model,
-        messages=messages,
-        temperature=temperature,
-        max_tokens=max_tokens,
-        response_format=response_format,
-        timeout=timeout,
-        thinking=thinking,
+    return _read_usage_journal(work_dir)
+
+
+def count_content_chars(text: str) -> int:
+    """Count visible CJK/alphanumeric content, excluding Markdown headings."""
+    body_lines = [line for line in text.splitlines() if not line.lstrip().startswith("#")]
+    return len(re.findall(r"[\u3400-\u9fffA-Za-z0-9]", "\n".join(body_lines)))
+
+
+def estimate_tokens(messages: list[dict[str, str]]) -> int:
+    """Conservative tokenizer-independent estimate for context guarding."""
+    total = 0
+    for message in messages:
+        text = str(message.get("content", ""))
+        cjk = len(re.findall(r"[\u3400-\u9fff]", text))
+        other = max(0, len(text) - cjk)
+        total += cjk + (other + 3) // 4 + 8
+    return total
+
+
+def estimate_prompt_tokens(
+    messages: list[dict[str, str]],
+    usage_records: list[dict[str, Any]],
+) -> int:
+    """Return only the numeric portion of ``estimate_prompt_tokens_with_audit``."""
+
+    return estimate_prompt_tokens_with_audit(messages, usage_records)[0]
+
+
+def estimate_prompt_tokens_with_audit(
+    messages: list[dict[str, str]],
+    usage_records: list[dict[str, Any]],
+) -> tuple[int, str, int | None]:
+    """Estimate the next prompt and identify its replay-safe evidence source.
+
+    The fallback intentionally overestimates CJK text. After a successful call,
+    provider ``prompt_tokens`` is an exact prefix anchor. Only the assistant
+    content actually saved in the transcript and the pending user prompt are
+    added; hidden reasoning tokens are not replayed and therefore must not be
+    charged again. Hash/count checks reject torn or mismatched checkpoints.
+    """
+
+    fallback = estimate_tokens(messages)
+    if not messages or messages[-1].get("role") != "user":
+        return fallback, "fallback", None
+
+    # Validation failures are deliberately absent from the canonical session,
+    # so the number of successful provider responses no longer equals the
+    # number of saved assistant turns. Find the newest usage event whose exact
+    # prompt is a prefix of this request and whose response is the next saved
+    # assistant turn. This preserves an exact provider anchor when possible and
+    # safely falls back after a repaired exchange was canonicalized.
+    successful = [
+        record for record in usage_records if record.get("status") != "api_error"
+    ]
+    for latest in reversed(successful):
+        usage = latest.get("usage")
+        context_audit = latest.get("context_audit")
+        if not isinstance(usage, dict) or not isinstance(context_audit, dict):
+            continue
+        prompt_tokens = usage.get("prompt_tokens", usage.get("input_tokens"))
+        prompt_count = context_audit.get("prompt_message_count")
+        if (
+            isinstance(prompt_tokens, bool)
+            or not isinstance(prompt_tokens, int)
+            or prompt_tokens <= 0
+            or isinstance(prompt_count, bool)
+            or not isinstance(prompt_count, int)
+            or prompt_count < 1
+            or prompt_count >= len(messages)
+        ):
+            continue
+        prior_prompt = messages[:prompt_count]
+        saved_assistant = messages[prompt_count]
+        if (
+            saved_assistant.get("role") != "assistant"
+            or context_audit.get("prompt_sha256")
+            != sha256_text(canonical_json(prior_prompt))
+            or context_audit.get("assistant_content_sha256")
+            != sha256_text(str(saved_assistant.get("content", "")))
+        ):
+            continue
+        estimate = (
+            prompt_tokens
+            + estimate_tokens(messages[prompt_count:])
+            + CONTEXT_USAGE_MARGIN_TOKENS
+        )
+        event_index = latest.get("event_index")
+        if isinstance(event_index, bool) or not isinstance(event_index, int):
+            event_index = None
+        return estimate, "provider_usage_anchor", event_index
+    return fallback, "fallback", None
+
+
+def protocol_policy_sha256() -> str:
+    return sha256_text(canonical_json(PROTOCOL_POLICY))
+
+
+def generation_request_parameters(
+    model_cfg: dict[str, Any], stage: str
+) -> dict[str, Any]:
+    """Resolve the exact optional parameters ChatClient would send upstream."""
+
+    params: dict[str, Any] = {}
+    stages = model_cfg.get("stages") or {}
+    if not isinstance(stages, dict):
+        raise ValueError("model.stages 必须是对象")
+    layers = (
+        ("provider.request_defaults", model_cfg.get(PROVIDER_DEFAULTS_TRACKING_KEY)),
+        ("model.request", model_cfg.get("request")),
+        (f"model.stages.{stage}", stages.get(stage)),
     )
+    for label, layer in layers:
+        if layer is None:
+            continue
+        if not isinstance(layer, dict):
+            raise ValueError(f"{label} 必须是对象")
+        params.update(layer)
+    return params
 
 
-# ---------------------------------------------------------------------------
-# 大纲生成
-# ---------------------------------------------------------------------------
-def build_outline_messages(prompt_text: str) -> list[dict[str, str]]:
-    system = (
-        "你是一位专业中文小说作家。请根据用户提供的小说设定，输出一份结构化大纲。"
-        "只输出 JSON，不要任何解释、注释或 markdown 代码围栏。"
-    )
-    user = (
-        f"{prompt_text}\n\n"
-        "请为这部小说生成 10 章的详细大纲，按 JSON 格式返回：\n"
-        "{\n"
-        '  "title": "小说标题",\n'
-        '  "total_chapters": 10,\n'
-        '  "chapters": [\n'
-        "    {\n"
-        '      "number": 1,\n'
-        '      "title": "章节标题",\n'
-        '      "summary": "本章核心情节（50–100 字）",\n'
-        '      "target_words": 2500\n'
-        "    },\n"
-        "    ...\n"
-        "  ]\n"
-        "}"
-    )
-    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+def build_run_input(
+    benchmark: str,
+    direction: str,
+    prompts: dict[str, str],
+    model_cfg: dict[str, Any],
+) -> dict[str, Any]:
+    """Build the complete, reproducible identity of a generation run."""
+
+    return {
+        "protocol": PROTOCOL_VERSION,
+        "policy": PROTOCOL_POLICY,
+        "benchmark": benchmark,
+        "direction": canonical_text(direction),
+        "prompts": {name: canonical_text(value) for name, value in prompts.items()},
+        "model": model_cfg,
+        "runner_code_sha256": calculate_code_hash(),
+    }
 
 
-def parse_outline(text: str) -> dict[str, Any]:
-    """解析大纲 JSON，支持从 code fence 中提取。"""
-    text = text.strip()
-    # 优先提取 ```json ... ```
-    m = re.search(r"```(?:json)?\s*\n(.*?)\n?```", text, re.DOTALL)
-    if m:
-        text = m.group(1).strip()
-    data = json.loads(text)
-    if not isinstance(data, dict):
-        raise ValueError("大纲不是 JSON 对象")
-    if data.get("total_chapters") != 10:
-        raise ValueError(f"大纲章节数不是 10：{data.get('total_chapters')}")
-    chapters = data.get("chapters") or []
-    if len(chapters) != 10:
-        raise ValueError(f"大纲 chapters 长度不是 10：{len(chapters)}")
-    for i, ch in enumerate(chapters, start=1):
-        if ch.get("number") != i:
-            raise ValueError(f"第 {i} 章 number 字段不匹配：{ch}")
-        if not ch.get("title"):
-            raise ValueError(f"第 {i} 章缺少 title")
-        if not ch.get("summary"):
-            raise ValueError(f"第 {i} 章缺少 summary")
+def load_prompts(path: Path) -> dict[str, str]:
+    prompts: dict[str, str] = {}
+    for name in PROMPT_FILES:
+        prompt_path = path / name
+        if not prompt_path.exists() and path.name == "v2.1":
+            prompt_path = path.parent / "v2" / name
+        if not prompt_path.exists():
+            raise FileNotFoundError(f"缺少 V2.1 prompt：{prompt_path}")
+        prompts[name] = canonical_text(prompt_path.read_bytes().decode("utf-8-sig"))
+    return prompts
+
+
+def parse_json_object(text: str) -> dict[str, Any]:
+    candidate = text.strip().lstrip("\ufeff")
+    fenced = re.search(r"```(?:json)?\s*(.*?)```", candidate, re.DOTALL | re.IGNORECASE)
+    if fenced:
+        candidate = fenced.group(1).strip()
+    initial_error: json.JSONDecodeError | None = None
+    try:
+        value = json.loads(candidate)
+    except json.JSONDecodeError as exc:
+        initial_error = exc
+        # A few Chat Completions adapters advertise JSON mode but omit the
+        # final ASCII quote of the last string while still returning the final
+        # object brace. Repair only that unambiguous delimiter; no prose bytes
+        # are changed, and the untouched upstream response remains in raw/.
+        if exc.msg.startswith("Unterminated string") and candidate.rstrip().endswith("}"):
+            closing_brace = candidate.rfind("}")
+            repaired = candidate[:closing_brace] + '"' + candidate[closing_brace:]
+            try:
+                value = json.loads(repaired)
+            except json.JSONDecodeError:
+                pass
+            else:
+                if not isinstance(value, dict):
+                    raise ValueError("响应 JSON 不是 object")
+                return value
+        start = candidate.find("{")
+        if start < 0:
+            raise ValueError("响应中没有 JSON object")
+        depth = 0
+        in_string = False
+        escaped = False
+        end = -1
+        for index, char in enumerate(candidate[start:], start=start):
+            if in_string:
+                if escaped:
+                    escaped = False
+                elif char == "\\":
+                    escaped = True
+                elif char == '"':
+                    in_string = False
+                continue
+            if char == '"':
+                in_string = True
+            elif char == "{":
+                depth += 1
+            elif char == "}":
+                depth -= 1
+                if depth == 0:
+                    end = index + 1
+                    break
+        if end < 0:
+            assert initial_error is not None
+            raise ValueError(
+                "响应中的 JSON object 不完整："
+                f"{initial_error.msg}（line {initial_error.lineno}, column {initial_error.colno}）"
+            )
+        value = json.loads(candidate[start:end])
+    if not isinstance(value, dict):
+        raise ValueError("响应 JSON 不是 object")
+    return value
+
+
+def _nonempty(value: Any) -> bool:
+    if isinstance(value, str):
+        return bool(value.strip())
+    if isinstance(value, (list, dict)):
+        return bool(value)
+    return value is not None
+
+
+def _require_exact_fields(
+    value: dict[str, Any], expected: tuple[str, ...], label: str
+) -> None:
+    missing = [field for field in expected if field not in value]
+    extra = sorted(set(value) - set(expected))
+    if missing or extra:
+        details: list[str] = []
+        if missing:
+            details.append("缺少 " + ", ".join(missing))
+        if extra:
+            details.append("多出 " + ", ".join(extra))
+        raise ValueError(f"{label} 字段不符合协议：" + "；".join(details))
+
+
+def _require_text(value: Any, label: str) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{label} 必须是非空字符串")
+    return value.strip()
+
+
+def _require_text_list(value: Any, label: str) -> list[str]:
+    if not isinstance(value, list) or not value:
+        raise ValueError(f"{label} 必须是非空字符串数组")
+    if any(not isinstance(item, str) or not item.strip() for item in value):
+        raise ValueError(f"{label} 必须是非空字符串数组")
+    return value
+
+
+def _reject_private_reasoning_markers(value: Any, label: str) -> None:
+    if isinstance(value, str):
+        if PRIVATE_REASONING_MARKER.search(value):
+            raise ValueError(f"{label} 包含私有 reasoning 标记")
+        return
+    if isinstance(value, dict):
+        for key, nested in value.items():
+            _reject_private_reasoning_markers(nested, f"{label}.{key}")
+    elif isinstance(value, list):
+        for index, nested in enumerate(value):
+            _reject_private_reasoning_markers(nested, f"{label}[{index}]")
+
+
+def validate_book(data: dict[str, Any]) -> dict[str, Any]:
+    _reject_private_reasoning_markers(data, "book")
+    required = ("title", "blurb", "protagonist", "setting", "core_theme", "ending_direction")
+    _require_exact_fields(data, required, "book")
+    for field in required:
+        data[field] = _require_text(data[field], f"book.{field}")
     return data
 
 
-def generate_outline(
-    prompt_text: str,
-    base_url: str,
-    api_key: str,
-    model: str,
-    temperature: float,
-    max_tokens: int,
-    thinking: bool = False,
-    outline_json: bool = True,
-    api_format: str = "openai",
-) -> dict[str, Any]:
-    messages = build_outline_messages(prompt_text)
-
-    # A口 不支持 response_format，由 parse_outline 从自由文本中提取 JSON
-    rf: dict[str, str] | None = None
-    if outline_json and api_format != "anthropic":
-        rf = {"type": "json_object"}
-
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            text, _reasoning = api_chat_completion(
-                base_url=base_url,
-                api_key=api_key,
-                model=model,
-                messages=messages,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                response_format=rf,
-                thinking=thinking,
-                api_format=api_format,
-            )
-            return parse_outline(text)
-        except Exception as e:
-            err(f"生成大纲失败（{attempt}/{MAX_RETRIES}）：{e}")
-            if attempt == MAX_RETRIES:
-                raise
-    raise RuntimeError("生成大纲失败")
-
-
-# ---------------------------------------------------------------------------
-# 章节生成
-# ---------------------------------------------------------------------------
-def build_chapter_messages(
-    prompt_text: str,
-    chapter_info: dict[str, Any],
-    previous_chapters: list[str],
-) -> list[dict[str, str]]:
-    number = chapter_info["number"]
-    title = chapter_info["title"]
-    summary = chapter_info["summary"]
-    target = chapter_info.get("target_words", 2500)
-
-    system = (
-        "你是一位专业中文小说作家。请严格按用户要求只输出一章小说正文，"
-        "不要输出任何写作过程、总结、解释或元评论。"
+def validate_macro_outline(data: dict[str, Any]) -> dict[str, Any]:
+    _reject_private_reasoning_markers(data, "macro_outline")
+    _require_exact_fields(
+        data,
+        ("target_total_chars", "volumes", "character_arcs", "foreshadowing", "ending"),
+        "macro_outline",
     )
+    volumes = data.get("volumes")
+    if not isinstance(volumes, list) or not 10 <= len(volumes) <= 20:
+        raise ValueError("macro_outline.volumes 必须有 10–20 卷")
+    total = 0
+    for expected, volume in enumerate(volumes, start=1):
+        if not isinstance(volume, dict) or volume.get("number") != expected:
+            raise ValueError(f"第 {expected} 卷 number 不连续")
+        _require_exact_fields(
+            volume,
+            ("number", "title", "target_chars", "period", "start_state", "end_state", "main_conflict", "arcs"),
+            f"第 {expected} 卷",
+        )
+        for field in ("title", "period", "start_state", "end_state", "main_conflict"):
+            _require_text(volume[field], f"第 {expected} 卷.{field}")
+        target = volume.get("target_chars")
+        if isinstance(target, bool) or not isinstance(target, int) or target <= 0:
+            raise ValueError(f"第 {expected} 卷 target_chars 无效")
+        arcs = volume.get("arcs")
+        if not isinstance(arcs, list) or not 3 <= len(arcs) <= 6:
+            raise ValueError(f"第 {expected} 卷必须有 3–6 个剧情弧")
+        for arc_index, arc in enumerate(arcs, start=1):
+            if not isinstance(arc, dict):
+                raise ValueError(f"第 {expected} 卷第 {arc_index} 个剧情弧必须是对象")
+            _require_exact_fields(arc, ("title", "summary"), f"第 {expected} 卷第 {arc_index} 个剧情弧")
+            _require_text(arc["title"], f"第 {expected} 卷第 {arc_index} 个剧情弧.title")
+            _require_text(arc["summary"], f"第 {expected} 卷第 {arc_index} 个剧情弧.summary")
+        total += target
+    declared = data.get("target_total_chars")
+    if isinstance(declared, bool) or not isinstance(declared, int):
+        raise ValueError("macro_outline.target_total_chars 必须为整数")
+    if not 1_800_000 <= total <= 2_200_000:
+        raise ValueError(f"各卷目标合计应约 200 万字，当前 {total}")
+    if abs(declared - total) > 10_000:
+        raise ValueError("target_total_chars 与各卷合计不一致")
+    _require_text_list(data["character_arcs"], "macro_outline.character_arcs")
+    _require_text_list(data["foreshadowing"], "macro_outline.foreshadowing")
+    _require_text(data["ending"], "macro_outline.ending")
+    return data
 
-    user_parts = [
-        prompt_text,
-        "",
-        f"请只写第 {number} 章《{title}》的正文。",
-        f"本章摘要：{summary}",
-        f"目标字数：{target} 字（允许范围 {MIN_CHAPTER_CHARS}–{MAX_CHAPTER_CHARS} 字）。",
-        "",
-        "要求：",
-        f'1. 以 Markdown 标题 "## 第{number}章 {title}" 开头',
-        f"2. 字数控制在 {MIN_CHAPTER_CHARS}–{MAX_CHAPTER_CHARS} 字之间",
-        "3. 紧接前文情节，保持人物设定与世界观一致",
-        "4. 叙事紧凑，有细节、有悬念、有主角心理变化",
-        "5. 不要输出任何写作过程、总结、解释、或元评论",
-        "6. 只返回本章正文，不要额外内容",
-    ]
 
-    if previous_chapters:
-        user_parts.extend([
-            "",
-            "===== 前文已生成章节（供你保持连贯）=====",
-            "",
-        ])
-        for idx, ch_text in enumerate(previous_chapters, start=1):
-            user_parts.append(f"--- 第 {idx} 章 ---")
-            user_parts.append(ch_text)
-            user_parts.append("")
-
-    return [{"role": "system", "content": system}, {"role": "user", "content": "\n".join(user_parts)}]
-
-
-def _build_revision_messages(
-    chapter_info: dict[str, Any],
-    current_text: str,
-    reason: str,
-) -> list[dict[str, str]]:
-    """根据质检失败原因，构建针对性修改 prompt；本地已精确统计字数并反馈给模型。"""
-    number = chapter_info["number"]
-    title = chapter_info["title"]
-    system = "你是一位专业中文小说编辑。请只输出修改后的章节正文，不要解释。"
-
-    current_chars = count_chinese_chars(current_text)
-    target_low = MIN_CHAPTER_CHARS
-    target_high = MAX_CHAPTER_CHARS
-    target_mid = chapter_info.get("target_words", 2500)
-
-    base_feedback = (
-        f"【本地字数统计】当前本章共 {current_chars} 个中文字符（含字母数字）。"
-        f"合格范围为 {target_low}–{target_high} 字，建议目标 {target_mid} 字。\n"
+def validate_opening_outline(data: dict[str, Any]) -> dict[str, Any]:
+    _reject_private_reasoning_markers(data, "opening_outline")
+    _require_exact_fields(
+        data,
+        ("target_total_chars", "macro_scope", "chapters"),
+        "opening_outline",
     )
+    chapters = data.get("chapters")
+    if not isinstance(chapters, list) or not 16 <= len(chapters) <= 18:
+        raise ValueError("opening_outline.chapters 必须有 16–18 章")
+    total = 0
+    for expected, chapter in enumerate(chapters, start=1):
+        if not isinstance(chapter, dict) or chapter.get("number") != expected:
+            raise ValueError(f"第 {expected} 章 number 不连续")
+        _require_exact_fields(
+            chapter,
+            (
+                "number", "title", "target_chars", "summary", "beats",
+                "continuity_in", "continuity_out", "foreshadowing",
+            ),
+            f"第 {expected} 章细纲",
+        )
+        _require_text(chapter["title"], f"第 {expected} 章.title")
+        _require_text(chapter["summary"], f"第 {expected} 章.summary")
+        for field in ("beats", "continuity_in", "continuity_out", "foreshadowing"):
+            _require_text_list(chapter[field], f"第 {expected} 章.{field}")
+        target = chapter.get("target_chars")
+        if isinstance(target, bool) or not isinstance(target, int) or target <= 0:
+            raise ValueError(f"第 {expected} 章 target_chars 必须为正整数")
+        total += target
+    declared = data.get("target_total_chars")
+    if isinstance(declared, bool) or not isinstance(declared, int):
+        raise ValueError("opening_outline.target_total_chars 必须为整数")
+    if declared < MIN_OPENING_TARGET_CHARS:
+        raise ValueError(
+            "opening_outline.target_total_chars "
+            f"应不少于 {MIN_OPENING_TARGET_CHARS} 字"
+        )
+    if total < MIN_OPENING_TARGET_CHARS:
+        raise ValueError(
+            f"前段细纲目标合计应不少于 {MIN_OPENING_TARGET_CHARS} 字，当前 {total}"
+        )
+    if abs(declared - total) > 500:
+        raise ValueError("target_total_chars 与各章合计不一致")
+    _require_text(data["macro_scope"], "opening_outline.macro_scope")
+    return data
 
-    if "字数超标" in reason:
-        over = current_chars - target_high
-        user = (
-            f"以下是小说的第 {number} 章《{title}》。\n\n"
-            f"{base_feedback}"
-            f"当前已超出上限 {over} 字。\n\n"
-            f"===== 原文 =====\n{current_text}\n\n"
-            f"要求：在不丢失核心情节、关键细节和人物心理的前提下，"
-            f"精简语言、合并冗余描写、删减次要场景，把字数压缩到 {target_low}–{target_high} 字之间。"
-            f"保持章节标题 \"## 第{number}章 {title}\" 在最前面。只输出修改后的正文。"
-        )
-    elif "字数不足" in reason:
-        short = target_low - current_chars
-        user = (
-            f"以下是小说的第 {number} 章《{title}》。\n\n"
-            f"{base_feedback}"
-            f"当前还缺 {short} 字才达到下限。\n\n"
-            f"===== 原文 =====\n{current_text}\n\n"
-            f"要求：在保持情节连贯的前提下，增加细节描写、环境渲染、人物心理或对话，"
-            f"把字数扩充到 {target_low}–{target_high} 字之间。"
-            f"保持章节标题 \"## 第{number}章 {title}\" 在最前面。只输出修改后的正文。"
-        )
+
+def normalize_chapter(text: str) -> str:
+    return canonical_text(text)
+
+
+def validate_chapter(text: str, chapter: dict[str, Any]) -> str:
+    normalized = normalize_chapter(text)
+    _reject_private_reasoning_markers(normalized, f"第 {chapter['number']} 章")
+    if "```" in normalized:
+        raise ValueError("正文包含代码围栏")
+    number = chapter["number"]
+    title = str(chapter["title"]).strip()
+    lines = normalized.splitlines()
+    if not lines:
+        raise ValueError("章节为空")
+    heading = re.match(r"^##\s*第\s*(\d+)\s*章\s*(.*)$", lines[0].strip())
+    if not heading or int(heading.group(1)) != number:
+        raise ValueError(f"必须以 ## 第{number}章 {title} 开头")
+    if heading.group(2).strip() != title:
+        raise ValueError(f"章节标题必须与细纲一致：{title}")
+    opening = "\n".join(lines[:5])
+    if re.search(r"(?:下面|以下)(?:是|为).{0,8}(?:正文|章节)|创作说明|写作说明|作为.{0,8}(?:模型|AI)", opening):
+        raise ValueError("章节开头包含元评论")
+    if count_content_chars(normalized) == 0:
+        raise ValueError("章节正文为空")
+    return normalized
+
+
+def _chat_result_dict(result: ChatResult) -> dict[str, Any]:
+    if is_dataclass(result):
+        value = asdict(result)
+    elif hasattr(result, "__dict__"):
+        value = dict(result.__dict__)
     else:
-        # 标题丢失/格式错误/元评论等，重新整理格式
-        user = (
-            f"以下是小说的第 {number} 章《{title}》。\n\n"
-            f"{base_feedback}\n\n"
-            f"===== 原文 =====\n{current_text}\n\n"
-            f"要求：整理格式，确保正文以 \"## 第{number}章 {title}\" 开头，"
-            f"删除任何写作过程、解释或元评论，只保留小说正文。"
-            f"字数控制在 {target_low}–{target_high} 字之间。"
-        )
-    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+        value = {}
+    value.pop("raw_response", None)
+    return value
 
 
-def generate_single_chapter(
-    prompt_text: str,
-    chapter_info: dict[str, Any],
-    previous_chapters: list[str],
-    base_url: str,
-    api_key: str,
-    model: str,
-    temperature: float,
-    max_tokens: int,
-    thinking: bool = False,
-    api_format: str = "openai",
-    work_dir: Path | None = None,
-) -> str:
-    """生成一章，含清洗与质检，失败会重试。"""
-    number = chapter_info["number"]
-    messages = build_chapter_messages(prompt_text, chapter_info, previous_chapters)
+_PRIVATE_MANIFEST_FIELDS = {
+    "api_key", "apikey", "authorization", "headers", "proxy_authorization",
+    "token", "reasoning", "reasoning_content", "raw_response",
+}
 
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            raw_text, reasoning = api_chat_completion(
-                base_url=base_url,
-                api_key=api_key,
-                model=model,
-                messages=messages,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                thinking=thinking,
-                api_format=api_format,
+
+def _public_manifest_value(value: Any) -> Any:
+    """Copy config metadata while excluding credentials and private reasoning."""
+    if isinstance(value, dict):
+        return {
+            str(key): _public_manifest_value(nested)
+            for key, nested in value.items()
+            if str(key).strip().lower().replace("-", "_") not in _PRIVATE_MANIFEST_FIELDS
+        }
+    if isinstance(value, list):
+        return [_public_manifest_value(item) for item in value]
+    return value
+
+
+def work_checkpoint_is_resumable(
+    work_dir: Path,
+    run_id: str,
+    *,
+    run_input_sha256: str | None = None,
+    policy_sha256: str | None = None,
+    code_sha256: str | None = None,
+) -> bool:
+    """Deep-check accepted artifacts and transcript/state checkpoint invariants."""
+
+    try:
+        state = read_json(work_dir / "state.json")
+        session = read_json(work_dir / "session.json")
+        if (
+            state.get("schema") != PROTOCOL_VERSION
+            or session.get("schema") != PROTOCOL_VERSION
+            or state.get("run_id") != run_id
+            or session.get("run_id") != run_id
+            or state.get("run_input_sha256") != session.get("run_input_sha256")
+            or state.get("protocol_policy_sha256")
+            != session.get("protocol_policy_sha256")
+            or state.get("code_sha256_at_start")
+            != session.get("code_sha256_at_start")
+            or not re.fullmatch(r"[0-9a-f]{64}", str(state.get("run_input_sha256") or ""))
+            or not re.fullmatch(
+                r"[0-9a-f]{64}", str(state.get("protocol_policy_sha256") or "")
             )
-            if work_dir is not None:
-                raw_dir = work_dir / "raw"
-                raw_dir.mkdir(exist_ok=True)
-                (raw_dir / f"chapter_{number:02d}_attempt_{attempt}.md").write_text(
-                    raw_text, encoding="utf-8"
+            or not re.fullmatch(
+                r"[0-9a-f]{64}", str(state.get("code_sha256_at_start") or "")
+            )
+            or (run_input_sha256 is not None and state.get("run_input_sha256") != run_input_sha256)
+            or (policy_sha256 is not None and state.get("protocol_policy_sha256") != policy_sha256)
+            or (code_sha256 is not None and state.get("code_sha256_at_start") != code_sha256)
+        ):
+            return False
+        stage = state.get("stage")
+        stage_order = {
+            "book": 0,
+            "macro_outline": 1,
+            "opening_outline": 2,
+            "chapters": 3,
+            "publish": 4,
+            "completed": 5,
+        }
+        if stage not in stage_order:
+            return False
+        messages = session.get("messages")
+        if (
+            not isinstance(messages, list)
+            or not messages
+            or (len(messages) - 1) % 2 != 0
+            or messages[0].get("role") != "system"
+            or not isinstance(messages[0].get("content"), str)
+            or not messages[0]["content"].strip()
+            or any(
+                not isinstance(message, dict)
+                or message.get("role") != ("user" if index % 2 else "assistant")
+                or not isinstance(message.get("content"), str)
+                for index, message in enumerate(messages[1:], start=1)
+            )
+        ):
+            return False
+
+        accepted = work_dir / "accepted"
+        book = macro = opening = None
+        book_path = accepted / "book.json"
+        macro_path = accepted / "macro_outline.json"
+        opening_path = accepted / "opening_outline.json"
+        if (
+            (stage_order[stage] < 1 and macro_path.exists())
+            or (stage_order[stage] < 2 and opening_path.exists())
+        ):
+            return False
+        if book_path.exists():
+            book = validate_book(read_json(book_path))
+        elif stage_order[stage] >= 1:
+            return False
+        if macro_path.exists():
+            macro = validate_macro_outline(read_json(macro_path))
+        elif stage_order[stage] >= 2:
+            return False
+        if opening_path.exists():
+            opening = validate_opening_outline(
+                read_json(opening_path)
+            )
+        elif stage_order[stage] >= 3:
+            return False
+
+        completed = state.get("completed_chapters")
+        next_chapter = state.get("next_chapter")
+        completed_count = 0
+        actual_numbers: set[int] = set()
+        if opening is not None:
+            chapter_dir = accepted / "chapters"
+            actual_numbers = {
+                int(path.stem)
+                for path in chapter_dir.glob("*.md")
+                if re.fullmatch(r"\d{2}", path.stem)
+            } if chapter_dir.is_dir() else set()
+            if stage_order[stage] < 3 and actual_numbers:
+                return False
+        if stage_order[stage] >= 3:
+            if (
+                not isinstance(completed, list)
+                or any(isinstance(number, bool) or not isinstance(number, int) for number in completed)
+                or isinstance(next_chapter, bool)
+                or not isinstance(next_chapter, int)
+                or not 1 <= next_chapter <= len(opening["chapters"]) + 1
+                or completed != list(range(1, next_chapter))
+            ):
+                return False
+            completed_count = len(completed)
+            chapter_dir = accepted / "chapters"
+            required_numbers = set(completed)
+            # One extra file is the supported crash window between committing
+            # a validated chapter and advancing state.json.
+            allowed_numbers = set(required_numbers)
+            if next_chapter <= len(opening["chapters"]):
+                allowed_numbers.add(next_chapter)
+            if not required_numbers.issubset(actual_numbers) or not actual_numbers.issubset(
+                allowed_numbers
+            ):
+                return False
+            for number in sorted(actual_numbers):
+                validate_chapter(
+                    (chapter_dir / f"{number:02d}.md").read_text(encoding="utf-8-sig"),
+                    opening["chapters"][number - 1],
                 )
-                if reasoning:
-                    (raw_dir / f"chapter_{number:02d}_attempt_{attempt}_thinking.md").write_text(
-                        reasoning, encoding="utf-8"
+            if stage in {"publish", "completed"} and actual_numbers != set(
+                range(1, len(opening["chapters"]) + 1)
+            ):
+                return False
+
+        accepted_artifacts: list[tuple[str, Any]] = []
+        if book is not None:
+            accepted_artifacts.append(("book", book))
+        if macro is not None:
+            accepted_artifacts.append(("macro_outline", macro))
+        if opening is not None:
+            accepted_artifacts.append(("opening_outline", opening))
+            chapter_dir = accepted / "chapters"
+            for number in sorted(actual_numbers):
+                accepted_artifacts.append(
+                    (
+                        "chapter",
+                        (
+                            opening["chapters"][number - 1],
+                            (chapter_dir / f"{number:02d}.md").read_text(
+                                encoding="utf-8-sig"
+                            ),
+                        ),
                     )
-            text = clean_chapter(raw_text, number, chapter_info.get("title", ""))
-            ok_, reason = validate_chapter(text, number)
-            if ok_:
-                return text, reasoning
-            err(f"第 {number} 章质检未通过（{attempt}/{MAX_RETRIES}）：{reason}")
+                )
 
-            # 第一次失败后，基于已有文本做针对性修改，而不是让模型从头乱写
-            messages = _build_revision_messages(chapter_info, text, reason)
-        except Exception as e:
-            err(f"第 {number} 章生成失败（{attempt}/{MAX_RETRIES}）：{e}")
-            if attempt == MAX_RETRIES:
-                raise
+        state_artifact_count = min(stage_order[stage], 3) + completed_count
+        actual_artifact_count = len(accepted_artifacts)
+        if actual_artifact_count not in {
+            state_artifact_count,
+            state_artifact_count + 1,
+        }:
+            return False
+        committed_exchange_count = (len(messages) - 1) // 2
+        allowed_exchange_counts = {actual_artifact_count}
+        if actual_artifact_count == state_artifact_count + 1:
+            # The last accepted file may have landed just before its canonical
+            # exchange; stage reconciliation will append that single turn.
+            allowed_exchange_counts.add(actual_artifact_count - 1)
+        if committed_exchange_count not in allowed_exchange_counts:
+            return False
 
-    raise RuntimeError(f"第 {number} 章 {MAX_RETRIES} 次尝试后仍未通过质检")
-
-
-# ---------------------------------------------------------------------------
-# 合并
-# ---------------------------------------------------------------------------
-def merge_chapters(outline: dict[str, Any], chapters: list[str], thinkings: list[str] | None = None) -> str:
-    """合并章节为最终小说正文，大纲作为目录夹在标题与正文之间。
-
-    若提供了 thinkings 列表，会在每章标题下方、正文之前插入思考内容
-    （[思考过程]...[/思考过程]）。
-    """
-    lines: list[str] = []
-    title = outline.get("title", "")
-    if title:
-        lines.append(f"# {title}")
-        lines.append("")
-
-    # 大纲目录
-    outline_chapters = outline.get("chapters") or []
-    if outline_chapters:
-        lines.append("## 大纲")
-        lines.append("")
-        for ch in outline_chapters:
-            num = ch.get("number", "")
-            ch_title = ch.get("title", "")
-            summary = ch.get("summary", "")
-            lines.append(f"{num}. **{ch_title}** — {summary}")
-        lines.append("")
-
-    # 每章：先写章节正文，再把思考过程插到章节标题下方、正文之前
-    # 章节标题形如 "## 第N章 标题"，其下直到下一个 "## 第" 之前为正文
-    for i, ch_text in enumerate(chapters, start=1):
-        if i > 1:
-            lines.append("")
-
-        thinking_text = ""
-        if thinkings and i <= len(thinkings):
-            thinking_text = (thinkings[i - 1] or "").strip()
-
-        # 拆分首行标题与正文
-        ch_lines = ch_text.splitlines()
-        title_line = ch_lines[0] if ch_lines else ""
-        body_lines = ch_lines[1:]
-
-        lines.append(title_line)
-
-        if thinking_text:
-            lines.append("")
-            lines.append("[思考过程]")
-            lines.append(thinking_text)
-            lines.append("[/思考过程]")
-
-        if body_lines:
-            lines.append("")
-            lines.extend(body_lines)
-
-    # 确保结尾有【未完待续】
-    full_text = "\n".join(lines).rstrip()
-
-    # 若章节数 > 10，截断到第 10 章（模型有时会多写）
-    ch_pattern = re.compile(r"^##\s+第1?\d章", re.MULTILINE)
-    ch_matches = list(ch_pattern.finditer(full_text))
-    expected = len(outline.get("chapters") or [10])
-    if len(ch_matches) > expected:
-        cut = ch_matches[expected].start()
-        full_text = full_text[:cut].rstrip()
-
-    if not full_text.endswith("【未完待续】"):
-        full_text += "\n\n【未完待续】"
-    return full_text
-
-
-# ---------------------------------------------------------------------------
-# 主流程
-# ---------------------------------------------------------------------------
-def main() -> int:
-    parser = argparse.ArgumentParser(description="直接调用云端 LLM API 分章生成小说")
-    parser.add_argument("--story", help="只生成指定小说 slug（如 sci-fi-uplink）")
-    parser.add_argument("--model", action="append", help="只使用指定模型 id（可多次指定）")
-    parser.add_argument("--config", help="config.yaml 路径")
-    parser.add_argument("--env", dest="env_file", help=".env 路径")
-    parser.add_argument("--novels-dir", help="novels/ 目录路径")
-    parser.add_argument("--work-dir", help="中间产物目录")
-    parser.add_argument("--reset", action="store_true", help="强制清空中间产物并重新生成")
-    args = parser.parse_args()
-
-    root_dir = find_repo_root()
-    config_path = Path(args.config) if args.config else root_dir / "config.yaml"
-    env_file = Path(args.env_file) if args.env_file else root_dir / ".env"
-    novels_dir = Path(args.novels_dir) if args.novels_dir else root_dir / "novels"
-    work_dir = Path(args.work_dir) if args.work_dir else root_dir / "work"
-
-    # 加载配置
-    cfg = load_config(config_path)
-    env = load_env_file(env_file)
-    env.update(os.environ)
-
-    # 确定要处理的小说
-    stories: list[Path] = []
-    if args.story:
-        story_dir = novels_dir / args.story
-        if not (story_dir / "prompt.md").exists():
-            err(f"未找到小说 {args.story}（应有 {story_dir / 'prompt.md'}）")
-            return 1
-        stories.append(story_dir)
-    else:
-        for d in sorted(novels_dir.iterdir()):
-            if d.is_dir() and (d / "prompt.md").exists():
-                stories.append(d)
-    if not stories:
-        err(f"没有找到任何小说（{novels_dir}/*/prompt.md）")
-        return 1
-
-    # 确定要使用的模型
-    model_ids: list[str] = []
-    if args.model:
-        for mid in args.model:
-            get_model_config(cfg, mid)
-        model_ids = args.model
-    else:
-        model_ids = [m["id"] for m in cfg.get("models", []) if m.get("id")]
-    if not model_ids:
-        err("config.yaml 中没有可用模型")
-        return 1
-
-    total = len(stories) * len(model_ids)
-    done_count = skipped_count = failed_count = 0
-    failures: list[str] = []
-
-    for story_dir in stories:
-        story_slug = story_dir.name
-        prompt_file = story_dir / "prompt.md"
-        prompt_text = prompt_file.read_text(encoding="utf-8")
-        log(f"小说：{story_slug}")
-
-        for model_id in model_ids:
-            model_cfg = get_model_config(cfg, model_id)
-            provider_id = model_cfg.get("provider") or "opencode-go"
-            provider_cfg = get_provider_config(cfg, provider_id)
-            base_url = provider_cfg["base_url"]
-            api_key_env = provider_cfg.get("api_key_env", "OPENCODE_API_KEY")
-            api_key = env.get(api_key_env)
-            if not api_key:
-                err(f"  └ {model_cfg['name']} → 缺少环境变量 {api_key_env}")
-                failed_count += 1
-                failures.append(f"{model_cfg['name']} [{story_slug}, 缺少 {api_key_env}]")
+        for index, (artifact_stage, artifact_value) in enumerate(
+            accepted_artifacts[:committed_exchange_count]
+        ):
+            assistant_text = str(messages[2 * index + 2]["content"])
+            if artifact_stage == "book":
+                if validate_book(parse_json_object(assistant_text)) != artifact_value:
+                    return False
+            elif artifact_stage == "macro_outline":
+                if validate_macro_outline(parse_json_object(assistant_text)) != artifact_value:
+                    return False
+            elif artifact_stage == "opening_outline":
+                if validate_opening_outline(parse_json_object(assistant_text)) != artifact_value:
+                    return False
+            else:
+                chapter, chapter_text = artifact_value
+                if (
+                    validate_chapter(assistant_text, chapter)
+                    != normalize_chapter(chapter_text)
+                ):
+                    return False
+        usage_records = read_usage_records(work_dir)
+        expansion_counts: dict[int, int] = {}
+        for record in usage_records:
+            if record.get("stage") != "chapter_expansion":
                 continue
+            number = record.get("chapter")
+            if isinstance(number, bool) or not isinstance(number, int):
+                return False
+            expansion_counts[number] = expansion_counts.get(number, 0) + 1
+        if any(
+            count > MAX_CHAPTER_EXPANSION_CALLS
+            for count in expansion_counts.values()
+        ):
+            return False
+        return True
+    except Exception:
+        return False
 
-            output_file = story_dir / f"{model_id}.md"
-            story_work_dir = work_dir / story_slug / model_id
 
-            if output_file.exists() and not args.reset:
-                # 先简单校验最终文件，通过则跳过
-                existing = output_file.read_text(encoding="utf-8")
-                ok_, reason = validate_novel(existing)
-                if ok_:
-                    warn(f"  └ {model_cfg['name']} → 已存在且校验通过，跳过")
-                    skipped_count += 1
+def resumable_other_run_ids(model_work_root: Path, current_run_id: str) -> list[str]:
+    if not model_work_root.is_dir():
+        return []
+    run_ids: list[str] = []
+    for path in sorted(model_work_root.iterdir(), key=lambda item: item.name):
+        if not path.is_dir() or path.name == current_run_id:
+            continue
+        if work_checkpoint_is_resumable(path, path.name):
+            run_ids.append(path.name)
+    return run_ids
+
+
+def cleanup_completed_publish_debris(result_dir: Path, expected_run_id: str) -> None:
+    """Remove recoverable staging/backup leftovers only after a valid commit exists."""
+
+    if not result_is_complete(result_dir, expected_run_id):
+        return
+    patterns = (
+        f".{result_dir.name}.backup-*",
+        f".{result_dir.name}.publish-*",
+    )
+    for pattern in patterns:
+        for path in result_dir.parent.glob(pattern):
+            if path.is_dir() and path.parent.resolve() == result_dir.parent.resolve():
+                shutil.rmtree(path)
+
+
+_WORK_LOCK_REGISTRY_GUARD = threading.Lock()
+_HELD_WORK_LOCKS: set[str] = set()
+
+
+class WorkDirLock:
+    """Cross-platform non-blocking lock for all runs of one model."""
+
+    def __init__(self, path: Path) -> None:
+        self.path = path
+        self.handle: Any = None
+        self.registry_key: str | None = None
+
+    def __enter__(self) -> "WorkDirLock":
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.registry_key = str(self.path.resolve()).casefold()
+        with _WORK_LOCK_REGISTRY_GUARD:
+            if self.registry_key in _HELD_WORK_LOCKS:
+                raise RuntimeError(
+                    f"当前 run 已被另一个生成进程占用：{self.path.parent}"
+                )
+            _HELD_WORK_LOCKS.add(self.registry_key)
+        try:
+            self.handle = self.path.open("a+b")
+            self.handle.seek(0, os.SEEK_END)
+            if self.handle.tell() == 0:
+                self.handle.write(b"\0")
+                self.handle.flush()
+            self.handle.seek(0)
+            if os.name == "nt":
+                import msvcrt
+
+                msvcrt.locking(self.handle.fileno(), msvcrt.LK_NBLCK, 1)
+            else:  # pragma: no cover - exercised by Linux CI
+                import fcntl
+
+                fcntl.flock(self.handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError as exc:
+            if self.handle is not None:
+                self.handle.close()
+            self.handle = None
+            with _WORK_LOCK_REGISTRY_GUARD:
+                _HELD_WORK_LOCKS.discard(self.registry_key)
+            self.registry_key = None
+            raise RuntimeError(f"当前 run 已被另一个生成进程占用：{self.path.parent}") from exc
+        return self
+
+    def __exit__(self, exc_type: Any, exc: Any, traceback: Any) -> None:
+        if self.handle is None:
+            return
+        try:
+            self.handle.seek(0)
+            if os.name == "nt":
+                import msvcrt
+
+                msvcrt.locking(self.handle.fileno(), msvcrt.LK_UNLCK, 1)
+            else:  # pragma: no cover - exercised by Linux CI
+                import fcntl
+
+                fcntl.flock(self.handle.fileno(), fcntl.LOCK_UN)
+        finally:
+            self.handle.close()
+            self.handle = None
+            with _WORK_LOCK_REGISTRY_GUARD:
+                if self.registry_key is not None:
+                    _HELD_WORK_LOCKS.discard(self.registry_key)
+            self.registry_key = None
+
+
+class GenerationRun:
+    def __init__(
+        self,
+        *,
+        root: Path,
+        benchmark: str,
+        direction: str,
+        prompts: dict[str, str],
+        model_cfg: dict[str, Any],
+        client: ChatClient,
+        new_run: bool,
+        sleep_fn: Callable[[float], None] = time.sleep,
+    ) -> None:
+        self.root = root
+        self.benchmark = benchmark
+        self.direction = canonical_text(direction)
+        self.prompts = {name: canonical_text(value) for name, value in prompts.items()}
+        self.model_cfg = model_cfg
+        self.model_id = str(model_cfg["id"])
+        self.client = client
+        self.sleep_fn = sleep_fn
+        self.result_dir = root / "results" / benchmark / self.model_id
+        self.model_work_root = root / "work" / "v2.1" / benchmark / self.model_id
+        self.run_input = build_run_input(
+            benchmark, self.direction, self.prompts, model_cfg
+        )
+        self.run_input_sha256 = sha256_text(canonical_json(self.run_input))
+        self.policy_sha256 = protocol_policy_sha256()
+        self.code_sha256_at_start = calculate_code_hash()
+        self.run_id = self.run_input_sha256[:12]
+        self.work_dir = self.model_work_root / self.run_id
+        self.accepted_dir = self.work_dir / "accepted"
+        self.state_path = self.work_dir / "state.json"
+        self.session_path = self.work_dir / "session.json"
+        self.usage_path = self.work_dir / "usage.jsonl"
+        self.usage_events_dir = self.work_dir / "usage-events"
+        self.raw_dir = self.work_dir / "raw"
+        self.failures_dir = self.work_dir / "failures"
+        self.new_run = new_run
+        self.state: dict[str, Any] = {}
+        self.session: dict[str, Any] = {}
+
+    def _initialize_work(self) -> None:
+        """Initialize or repair the hashed work directory while model lock is held."""
+
+        # --new-run authorizes a new hash to supersede stale public output.  A
+        # matching, valid checkpoint is precious and must remain resumable if
+        # the first attempt was interrupted.  Only an unusable directory is
+        # cleared when the user explicitly supplied the flag.
+        if (
+            self.new_run
+            and self.work_dir.exists()
+            and not work_checkpoint_is_resumable(
+                self.work_dir,
+                self.run_id,
+                run_input_sha256=self.run_input_sha256,
+                policy_sha256=self.policy_sha256,
+                code_sha256=self.code_sha256_at_start,
+            )
+        ):
+            shutil.rmtree(self.work_dir)
+        self.work_dir.mkdir(parents=True, exist_ok=True)
+        self.accepted_dir.mkdir(exist_ok=True)
+        self.raw_dir.mkdir(exist_ok=True)
+        self.failures_dir.mkdir(exist_ok=True)
+        self.usage_events_dir.mkdir(exist_ok=True)
+        self.state = self._load_or_create_state()
+        self.session = self._load_or_create_session()
+
+    def _load_or_create_state(self) -> dict[str, Any]:
+        if self.state_path.exists():
+            state = read_json(self.state_path)
+            if (
+                state.get("schema") != PROTOCOL_VERSION
+                or state.get("run_id") != self.run_id
+                or state.get("run_input_sha256") != self.run_input_sha256
+                or state.get("protocol_policy_sha256") != self.policy_sha256
+                or state.get("code_sha256_at_start") != self.code_sha256_at_start
+            ):
+                raise RuntimeError("state 与当前 V2.1 run 身份不匹配")
+            return state
+        state = {
+            "schema": PROTOCOL_VERSION,
+            "run_id": self.run_id,
+            "run_input_sha256": self.run_input_sha256,
+            "protocol_policy_sha256": self.policy_sha256,
+            "code_sha256_at_start": self.code_sha256_at_start,
+            "run_origin": "fresh",
+            "benchmark": self.benchmark,
+            "model_id": self.model_id,
+            "stage": "book",
+            "next_chapter": 1,
+            "completed_chapters": [],
+            "attempts": {},
+            "chapter_expansions": {},
+            "last_error": None,
+            "started_at": utc_now(),
+            "updated_at": utc_now(),
+        }
+        atomic_write_json(self.state_path, state)
+        return state
+
+    def _load_or_create_session(self) -> dict[str, Any]:
+        if self.session_path.exists():
+            session = read_json(self.session_path)
+            if (
+                session.get("schema") != PROTOCOL_VERSION
+                or session.get("run_id") != self.run_id
+                or session.get("run_input_sha256") != self.run_input_sha256
+                or session.get("protocol_policy_sha256") != self.policy_sha256
+                or session.get("code_sha256_at_start") != self.code_sha256_at_start
+                or not isinstance(session.get("messages"), list)
+            ):
+                raise RuntimeError("session 与当前 V2.1 run 身份不匹配")
+            return session
+        session = {
+            "schema": PROTOCOL_VERSION,
+            "run_id": self.run_id,
+            "run_input_sha256": self.run_input_sha256,
+            "protocol_policy_sha256": self.policy_sha256,
+            "code_sha256_at_start": self.code_sha256_at_start,
+            "run_origin": "fresh",
+            "benchmark": self.benchmark,
+            "model_id": self.model_id,
+            "messages": [{"role": "system", "content": self.prompts["system.md"]}],
+        }
+        atomic_write_json(self.session_path, session)
+        return session
+
+    def _save_state(self) -> None:
+        self.state["updated_at"] = utc_now()
+        atomic_write_json(self.state_path, self.state)
+
+    def _save_session(self) -> None:
+        atomic_write_json(self.session_path, self.session)
+
+    def _write_usage_journal(self, records: list[dict[str, Any]]) -> None:
+        text = "".join(
+            json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n"
+            for record in records
+        )
+        atomic_write_text(self.usage_path, text)
+
+    def _usage_records(self) -> list[dict[str, Any]]:
+        records = read_usage_records(self.work_dir)
+        if records:
+            for index, record in enumerate(records, start=1):
+                event_path = self.usage_events_dir / f"{index:06d}.json"
+                if event_path.exists():
+                    if read_json(event_path) != record:
+                        raise RuntimeError(f"usage event {index} 与 journal 不一致")
                     continue
-                warn(f"  └ {model_cfg['name']} → 已存在但校验未通过（{reason}），重新生成")
+                atomic_write_json(
+                    event_path, record
+                )
+        self._write_usage_journal(records)
+        return records
 
-            if args.reset and story_work_dir.exists():
-                import shutil
-                shutil.rmtree(story_work_dir)
-            story_work_dir.mkdir(parents=True, exist_ok=True)
+    def _matching_usage_record(
+        self,
+        *,
+        stage: str,
+        chapter: int | None,
+        attempt: int,
+        messages: list[dict[str, str]],
+        records: list[dict[str, Any]] | None = None,
+    ) -> dict[str, Any] | None:
+        """Find one already-journaled response for this exact pending request."""
 
-            meta_path = story_work_dir / "meta.json"
-            meta: dict[str, Any] = {
-                "story": story_slug,
-                "model": model_id,
-                "status": "in_progress",
-                "outline_generated": False,
-                "last_completed_chapter": 0,
-                "attempts": {},
-                "started_at": datetime.now(timezone.utc).isoformat(),
-                "updated_at": datetime.now(timezone.utc).isoformat(),
-            }
-            if meta_path.exists():
-                try:
-                    meta.update(json.loads(meta_path.read_text(encoding="utf-8")))
-                except Exception:
-                    pass
+        prompt_sha256 = sha256_text(canonical_json(messages))
+        matches = [
+            record
+            for record in (self._usage_records() if records is None else records)
+            if record.get("stage") == stage
+            and record.get("chapter") == chapter
+            and record.get("attempt") == attempt
+            and isinstance(record.get("context_audit"), dict)
+            and record["context_audit"].get("prompt_message_count") == len(messages)
+            and record["context_audit"].get("prompt_sha256") == prompt_sha256
+        ]
+        if len(matches) > 1:
+            raise RuntimeError(
+                f"{stage} 已存在多条相同请求的 usage 记录，拒绝重复或猜测恢复"
+            )
+        return matches[0] if matches else None
 
-            temperature = model_cfg.get("temperature", DEFAULT_TEMPERATURE)
-            max_tokens = model_cfg.get("max_tokens", DEFAULT_MAX_TOKENS)
-            thinking_enabled = model_cfg.get("thinking", False)
-            outline_json = model_cfg.get("outline_json", True)
-            api_format = model_cfg.get("api_format", "openai")
+    def _append_usage_record(self, record: dict[str, Any]) -> None:
+        records = self._usage_records()
+        index = len(records) + 1
+        enriched = {
+            **record,
+            "event_index": index,
+            "schema": PROTOCOL_VERSION,
+            "run_id": self.run_id,
+            "run_input_sha256": self.run_input_sha256,
+            "protocol_policy_sha256": self.policy_sha256,
+        }
+        atomic_write_json(self.usage_events_dir / f"{index:06d}.json", enriched)
+        records.append(enriched)
+        self._write_usage_journal(records)
 
+    def _append_usage(
+        self,
+        stage: str,
+        result: ChatResult,
+        attempt: int,
+        chapter: int | None,
+        context_audit: dict[str, Any],
+    ) -> None:
+        context_audit = {
+            **context_audit,
+            "assistant_content_sha256": sha256_text(result.content),
+        }
+        record = {
+            "ts": utc_now(),
+            "stage": stage,
+            "chapter": chapter,
+            "attempt": attempt,
+            "context_audit": context_audit,
+            **_chat_result_dict(result),
+        }
+        self._append_usage_record(record)
+
+    def _append_failed_usage(
+        self,
+        stage: str,
+        error: LLMAPIError,
+        attempt: int,
+        chapter: int | None,
+        context_audit: dict[str, Any],
+    ) -> None:
+        raw = error.raw_response or {}
+        choices = raw.get("choices") if isinstance(raw.get("choices"), list) else []
+        first = choices[0] if choices and isinstance(choices[0], dict) else {}
+        usage = raw.get("usage") if isinstance(raw.get("usage"), dict) else {}
+        record = {
+            "ts": utc_now(),
+            "stage": stage,
+            "chapter": chapter,
+            "attempt": attempt,
+            "status": "api_error",
+            "error": str(error),
+            "status_code": error.status_code,
+            "retry_after_seconds": error.retry_after_seconds,
+            "context_audit": context_audit,
+            "usage": usage,
+            "requested_model": self.model_cfg.get("model"),
+            "response_model": raw.get("model"),
+            "response_id": raw.get("id"),
+            "finish_reason": first.get("finish_reason"),
+        }
+        self._append_usage_record(record)
+
+    def _call(
+        self,
+        user_prompt: str,
+        *,
+        stage: str,
+        attempt: int,
+        chapter: int | None = None,
+        history: list[dict[str, str]] | None = None,
+        persist: bool = True,
+    ) -> str:
+        base_messages = self.session["messages"] if history is None else history
+        messages = [*base_messages, {"role": "user", "content": user_prompt}]
+        context_window = int(self.model_cfg.get("context_window", 131_072))
+        api_optional_parameters = generation_request_parameters(self.model_cfg, stage)
+        if api_optional_parameters:
+            raise RuntimeError(
+                "生成请求必须使用服务端默认参数，禁止显式 API 控制字段："
+                + ", ".join(sorted(api_optional_parameters))
+            )
+        replay = self._matching_usage_record(
+            stage=stage,
+            chapter=chapter,
+            attempt=attempt,
+            messages=messages,
+        )
+        if replay is not None:
+            if replay.get("status") == "api_error":
+                status_code = replay.get("status_code")
+                retry_after = replay.get("retry_after_seconds")
+                raise LLMAPIError(
+                    str(replay.get("error") or "已落盘的 API 请求失败"),
+                    status_code=(
+                        int(status_code)
+                        if isinstance(status_code, int) and not isinstance(status_code, bool)
+                        else None
+                    ),
+                    retry_after_seconds=(
+                        float(retry_after)
+                        if isinstance(retry_after, (int, float))
+                        and not isinstance(retry_after, bool)
+                        else None
+                    ),
+                )
+            replay_content = replay.get("content")
+            if not isinstance(replay_content, str):
+                raise RuntimeError(f"{stage} 的已落盘响应缺少正文，无法安全恢复")
+            if persist:
+                self._ensure_committed_exchange(user_prompt, replay_content)
+            finish_reason = str(replay.get("finish_reason") or "").strip().lower()
+            if finish_reason != "stop":
+                raise IncompleteCompletionError(
+                    replay.get("finish_reason"), replay_content
+                )
+            log(
+                f"{self.model_id} {stage}"
+                + (f" 第 {chapter} 章" if chapter is not None else "")
+                + " 从原子 usage 记录恢复，未重复请求 API"
+            )
+            return replay_content
+        prompt_estimate, estimate_source, anchor_event_index = (
+            estimate_prompt_tokens_with_audit(messages, self._usage_records())
+        )
+        estimate = prompt_estimate
+        safe_limit = context_window * CONTEXT_SAFETY_BASIS_POINTS // 10_000
+        context_audit = {
+            "prompt_message_count": len(messages),
+            "prompt_sha256": sha256_text(canonical_json(messages)),
+            "estimate_source": estimate_source,
+            "anchor_event_index": anchor_event_index,
+            "context_window": context_window,
+            "safety_basis_points": CONTEXT_SAFETY_BASIS_POINTS,
+            "safe_limit_tokens": safe_limit,
+            "prompt_estimate_tokens": prompt_estimate,
+            "usage_margin_tokens": CONTEXT_USAGE_MARGIN_TOKENS,
+            "api_optional_parameters": [],
+            "configured_max_tokens": None,
+            "max_tokens_sent": False,
+            "output_reserve_tokens": 0,
+            "reserved_total_tokens": estimate,
+            "headroom_tokens": safe_limit - estimate,
+        }
+        if estimate > safe_limit:
+            raise RuntimeError(
+                f"上下文预算超限：估算 {estimate} > {safe_limit}（85% 安全线）"
+            )
+        try:
+            result = self.client.complete(self.model_cfg, messages, stage=stage)
+        except LLMAPIError as exc:
+            raw_index = len(list(self.raw_dir.glob("*.json"))) + 1
+            if exc.raw_response is not None:
+                atomic_write_json(
+                    self.raw_dir / f"{raw_index:04d}_{stage}_error.json",
+                    exc.raw_response,
+                )
+            self._append_failed_usage(stage, exc, attempt, chapter, context_audit)
+            raise
+        raw_index = len(list(self.raw_dir.glob("*.json"))) + 1
+        raw_payload = getattr(result, "raw_response", None)
+        if raw_payload is not None:
+            atomic_write_json(self.raw_dir / f"{raw_index:04d}_{stage}.json", raw_payload)
+        self._append_usage(stage, result, attempt, chapter, context_audit)
+        if persist:
+            self._commit_exchange(user_prompt, result.content)
+        finish_reason = (
+            str(getattr(result, "finish_reason", "") or "").strip().lower()
+        )
+        if finish_reason != "stop":
+            raise IncompleteCompletionError(
+                getattr(result, "finish_reason", None), result.content
+            )
+        return result.content
+
+    def _commit_exchange(self, user_prompt: str, assistant_content: str) -> None:
+        """Append one accepted exchange to the canonical replay transcript."""
+
+        self.session["messages"].append({"role": "user", "content": user_prompt})
+        self.session["messages"].append(
+            {"role": "assistant", "content": assistant_content}
+        )
+        self._save_session()
+
+    def _ensure_committed_exchange(
+        self, user_prompt: str, assistant_content: str
+    ) -> None:
+        """Reconcile an accepted artifact committed just before session/state."""
+
+        messages = self.session["messages"]
+        if (
+            len(messages) >= 2
+            and messages[-2].get("role") == "user"
+            and messages[-2].get("content") == user_prompt
+            and messages[-1].get("role") == "assistant"
+        ):
+            return
+        self._commit_exchange(user_prompt, assistant_content)
+
+    def _attempt_count(self, key: str) -> int:
+        return int((self.state.get("attempts") or {}).get(key, 0))
+
+    def _mark_attempt(self, key: str, error: str | None) -> int:
+        attempts = self.state.setdefault("attempts", {})
+        attempts[key] = int(attempts.get(key, 0)) + 1
+        self.state["last_error"] = error
+        self._save_state()
+        return attempts[key]
+
+    def _mark_api_attempt(self, key: str) -> int:
+        """Count a failed API call without changing the pending repair prompt."""
+
+        attempts = self.state.setdefault("attempts", {})
+        attempts[key] = int(attempts.get(key, 0)) + 1
+        self._save_state()
+        return attempts[key]
+
+    def _record_validation_failure(
+        self,
+        *,
+        stage: str,
+        attempt: int,
+        error: Exception,
+        response: str,
+        chapter: int | None = None,
+    ) -> None:
+        """Persist every rejected response in ignored local audit data."""
+        label = self._failure_label(stage, chapter)
+        path = self.failures_dir / f"{label}_attempt_{attempt:02d}.json"
+        atomic_write_json(path, {
+            "schema": PROTOCOL_VERSION,
+            "ts": utc_now(),
+            "stage": stage,
+            "chapter": chapter,
+            "attempt": attempt,
+            "error_type": type(error).__name__,
+            "error": str(error),
+            "response_sha256": sha256_text(response),
+            "response": response,
+        })
+
+    def _failure_records(
+        self, *, stage: str, chapter: int | None = None
+    ) -> list[dict[str, Any]]:
+        """Load private rejected responses that can seed an isolated repair."""
+
+        label = self._failure_label(stage, chapter)
+        records: list[dict[str, Any]] = []
+        for path in sorted(self.failures_dir.glob(f"{label}_attempt_*.json")):
             try:
-                log(f"  └ {model_cfg['name']} → 生成中…（provider={provider_id}, model={model_cfg['model']}）")
+                record = read_json(path)
+            except (OSError, ValueError, json.JSONDecodeError):
+                continue
+            response = record.get("response")
+            if (
+                record.get("schema") == PROTOCOL_VERSION
+                and record.get("stage") == stage
+                and isinstance(response, str)
+                and response.strip()
+            ):
+                records.append(record)
+        return records
 
-                # 1) 大纲
-                outline_path = story_work_dir / "outline.json"
-                if meta.get("outline_generated") and outline_path.exists():
-                    outline = json.loads(outline_path.read_text(encoding="utf-8"))
-                    log(f"      复用已有大纲")
+    @staticmethod
+    def _failure_label(stage: str, chapter: int | None) -> str:
+        if chapter is None:
+            return stage
+        if stage == "chapter":
+            return f"chapter_{chapter:02d}"
+        return f"{stage}_{chapter:02d}"
+
+    def _latest_json_repair_candidate(
+        self, stage: str
+    ) -> dict[str, Any] | None:
+        records = self._failure_records(stage=stage)
+        return records[-1] if records else None
+
+    def _latest_chapter_repair_candidate(
+        self, chapter: int
+    ) -> dict[str, Any] | None:
+        candidates = [
+            record
+            for record in self._failure_records(stage="chapter", chapter=chapter)
+            if record.get("error_type") != "IncompleteCompletionError"
+        ]
+        return candidates[-1] if candidates else None
+
+    def _expand_short_chapter(
+        self,
+        *,
+        chapter: dict[str, Any],
+        original_prompt: str,
+        source_response: str,
+        source_clean: str,
+        base_history: list[dict[str, str]],
+    ) -> tuple[str, dict[str, Any]]:
+        """Make one best-effort expansion call and return the longer valid draft."""
+
+        number = int(chapter["number"])
+        source_chars = count_content_chars(source_clean)
+        audit: dict[str, Any] = {
+            "requested": False,
+            "threshold_chars": CHAPTER_EXPANSION_TRIGGER_CHARS,
+            "initial_chars": source_chars,
+            "result_chars": None,
+            "adopted": False,
+            "outcome": "not_needed",
+        }
+        if source_chars >= CHAPTER_EXPANSION_TRIGGER_CHARS:
+            return source_clean, audit
+
+        audit["requested"] = True
+        expansion_prompt = self.prompts["expand_chapter.md"].format(
+            chapter_number=number,
+            chapter_title=chapter["title"],
+            current_chars=source_chars,
+        )
+        expansion_history = [
+            *base_history,
+            {"role": "user", "content": original_prompt},
+            {"role": "assistant", "content": source_response},
+        ]
+        expansion_messages = [
+            *expansion_history,
+            {"role": "user", "content": expansion_prompt},
+        ]
+        usage_records = self._usage_records()
+        prior_expansion_records = [
+            record
+            for record in usage_records
+            if record.get("stage") == "chapter_expansion"
+            and record.get("chapter") == number
+        ]
+        if len(prior_expansion_records) > MAX_CHAPTER_EXPANSION_CALLS:
+            raise RuntimeError(
+                f"第 {number} 章已有 {len(prior_expansion_records)} 条扩写 usage，"
+                "超过每章一次的协议上限"
+            )
+        matching_expansion_record = self._matching_usage_record(
+            stage="chapter_expansion",
+            chapter=number,
+            attempt=1,
+            messages=expansion_messages,
+            records=usage_records,
+        )
+        if prior_expansion_records and matching_expansion_record is None:
+            raise RuntimeError(
+                f"第 {number} 章已有无法与当前首稿匹配的扩写 usage；"
+                "为避免第二次扩写，停止恢复"
+            )
+        try:
+            expanded_response = self._call(
+                expansion_prompt,
+                stage="chapter_expansion",
+                attempt=1,
+                chapter=number,
+                history=expansion_history,
+                persist=False,
+            )
+        except IncompleteCompletionError as exc:
+            self._record_validation_failure(
+                stage="chapter_expansion",
+                chapter=number,
+                attempt=1,
+                error=exc,
+                response=exc.content,
+            )
+            audit["outcome"] = "kept_source_incomplete"
+            warn(
+                f"{self.model_id} 第 {number} 章扩写未完成，保留原稿：{exc}"
+            )
+            return source_clean, audit
+        except LLMAPIError as exc:
+            self._record_validation_failure(
+                stage="chapter_expansion",
+                chapter=number,
+                attempt=1,
+                error=exc,
+                response="",
+            )
+            audit["outcome"] = "kept_source_api_error"
+            warn(
+                f"{self.model_id} 第 {number} 章扩写 API 响应不可用，保留原稿：{exc}"
+            )
+            return source_clean, audit
+
+        try:
+            expanded_clean = validate_chapter(expanded_response, chapter)
+        except Exception as exc:
+            self._record_validation_failure(
+                stage="chapter_expansion",
+                chapter=number,
+                attempt=1,
+                error=exc,
+                response=expanded_response,
+            )
+            audit["result_chars"] = count_content_chars(expanded_response)
+            audit["outcome"] = "kept_source_invalid"
+            warn(
+                f"{self.model_id} 第 {number} 章扩写未通过结构校验，保留原稿：{exc}"
+            )
+            return source_clean, audit
+
+        expanded_chars = count_content_chars(expanded_clean)
+        audit["result_chars"] = expanded_chars
+        if expanded_chars > source_chars:
+            audit["adopted"] = True
+            audit["outcome"] = "adopted"
+            return expanded_clean, audit
+        audit["outcome"] = "kept_source_not_longer"
+        return source_clean, audit
+
+    def _reconcile_chapter_expansion_audit(
+        self, number: int, final_text: str
+    ) -> dict[str, Any]:
+        """Rebuild expansion metadata if an artifact landed before state did."""
+
+        records = self._usage_records()
+        expansion_records = [
+            record
+            for record in records
+            if record.get("stage") == "chapter_expansion"
+            and record.get("chapter") == number
+        ]
+        if not expansion_records:
+            chars = count_content_chars(final_text)
+            return {
+                "requested": False,
+                "threshold_chars": CHAPTER_EXPANSION_TRIGGER_CHARS,
+                "initial_chars": chars,
+                "result_chars": None,
+                "adopted": False,
+                "outcome": "not_needed",
+            }
+        source_records = [
+            record
+            for record in records
+            if record.get("stage") == "chapter"
+            and record.get("chapter") == number
+            and isinstance(record.get("content"), str)
+        ]
+        source_chars = (
+            count_content_chars(str(source_records[-1]["content"]))
+            if source_records
+            else count_content_chars(final_text)
+        )
+        result_content = expansion_records[-1].get("content")
+        result_chars = (
+            count_content_chars(str(result_content))
+            if isinstance(result_content, str)
+            else None
+        )
+        adopted = (
+            isinstance(result_content, str)
+            and sha256_text(canonical_text(result_content))
+            == sha256_text(canonical_text(final_text))
+        )
+        return {
+            "requested": True,
+            "threshold_chars": CHAPTER_EXPANSION_TRIGGER_CHARS,
+            "initial_chars": source_chars,
+            "result_chars": result_chars,
+            "adopted": adopted,
+            "outcome": "adopted" if adopted else "reconciled_keep_source",
+        }
+
+    def run_json_stage(
+        self,
+        *,
+        stage: str,
+        prompt_name: str,
+        artifact_name: str,
+        validator: Callable[[dict[str, Any]], dict[str, Any]],
+        next_stage: str,
+    ) -> dict[str, Any]:
+        artifact = self.accepted_dir / artifact_name
+        original_prompt = self.prompts[prompt_name].format(direction=self.direction)
+        # Reconcile the narrow crash window in which the validated artifact was
+        # atomically committed but state.json had not yet advanced.
+        if self.state.get("stage") == stage and artifact.exists():
+            value = validator(read_json(artifact))
+            self._ensure_committed_exchange(original_prompt, canonical_json(value))
+            self.state["stage"] = next_stage
+            self.state["last_error"] = None
+            self._save_state()
+            return value
+        if self.state.get("stage") != stage:
+            if not artifact.exists():
+                raise RuntimeError(f"状态已越过 {stage}，但缺少 {artifact}")
+            return validator(read_json(artifact))
+        key = stage
+        base_history = list(self.session["messages"])
+        repair_candidate = self._latest_json_repair_candidate(stage)
+        attempts_this_execution = 0
+        while attempts_this_execution < MAX_STAGE_ATTEMPTS:
+            if repair_candidate is not None:
+                prompt = self.prompts["repair_json.md"].format(
+                    stage=stage,
+                    error=str(repair_candidate.get("error") or "响应未通过校验"),
+                )
+                history = [
+                    *base_history,
+                    {"role": "user", "content": original_prompt},
+                    {
+                        "role": "assistant",
+                        "content": str(repair_candidate["response"]),
+                    },
+                ]
+            else:
+                prompt = original_prompt
+                history = base_history
+            attempt = self._attempt_count(key) + 1
+            attempts_this_execution += 1
+            try:
+                text = self._call(
+                    prompt,
+                    stage=stage,
+                    attempt=attempt,
+                    history=history,
+                    persist=False,
+                )
+            except IncompleteCompletionError as exc:
+                self._record_validation_failure(
+                    stage=stage,
+                    attempt=attempt,
+                    error=exc,
+                    response=exc.content,
+                )
+                self._mark_attempt(key, str(exc))
+                repair_candidate = self._latest_json_repair_candidate(stage)
+                warn(f"{self.model_id} {stage} 第 {attempt} 次未完成：{exc}")
+                continue
+            except LLMAPIError as exc:
+                self._record_validation_failure(
+                    stage=stage,
+                    attempt=attempt,
+                    error=exc,
+                    response="",
+                )
+                self._mark_api_attempt(key)
+                if not api_error_is_retryable(exc):
+                    raise
+                delay = retry_delay_seconds(exc, attempts_this_execution)
+                if attempts_this_execution < MAX_STAGE_ATTEMPTS:
+                    warn(
+                        f"{self.model_id} {stage} 第 {attempt} 次 API 响应不可用：{exc}；"
+                        f"{delay:g} 秒后重试"
+                    )
+                    self.sleep_fn(delay)
                 else:
-                    outline = generate_outline(
-                        prompt_text=prompt_text,
-                        base_url=base_url,
-                        api_key=api_key,
-                        model=model_cfg["model"],
-                        temperature=temperature,
-                        max_tokens=max_tokens,
-                        thinking=thinking_enabled,
-                        outline_json=outline_json,
-                        api_format=api_format,
+                    warn(
+                        f"{self.model_id} {stage} 第 {attempt} 次 API 响应不可用：{exc}；"
+                        "本次运行重试额度已用尽"
                     )
-                    outline_path.write_text(json.dumps(outline, ensure_ascii=False, indent=2), encoding="utf-8")
-                    meta["outline_generated"] = True
-                    meta["updated_at"] = datetime.now(timezone.utc).isoformat()
-                    meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-                    ok(f"      大纲生成完成：{outline['title']}")
+                continue
+            try:
+                value = validator(parse_json_object(text))
+            except Exception as exc:
+                self._record_validation_failure(
+                    stage=stage,
+                    attempt=attempt,
+                    error=exc,
+                    response=text,
+                )
+                self._mark_attempt(key, str(exc))
+                repair_candidate = self._latest_json_repair_candidate(stage)
+                warn(f"{self.model_id} {stage} 第 {attempt} 次未通过：{exc}")
+                continue
+            atomic_write_json(artifact, value)
+            self._commit_exchange(original_prompt, text)
+            self._mark_attempt(key, None)
+            self.state["stage"] = next_stage
+            self.state["last_error"] = None
+            self._save_state()
+            log(f"{self.model_id} {stage} 完成")
+            return value
+        raise RuntimeError(f"{stage} 本次运行连续 {MAX_STAGE_ATTEMPTS} 次未通过")
 
-                # 2) 逐章生成
-                chapters: list[str] = []
-                thinkings: list[str] = []
-                last_done = meta.get("last_completed_chapter", 0)
-                for ch in outline["chapters"]:
-                    number = ch["number"]
-                    chapter_file = story_work_dir / f"chapter_{number:02d}.md"
-                    thinking_file = story_work_dir / f"chapter_{number:02d}_thinking.md"
-
-                    if number <= last_done and chapter_file.exists():
-                        ch_text = chapter_file.read_text(encoding="utf-8")
-                        chapters.append(ch_text)
-                        if thinking_file.exists():
-                            thinkings.append(thinking_file.read_text(encoding="utf-8"))
-                        else:
-                            thinkings.append("")
-                        log(f"      第 {number} 章已存在，复用")
-                        continue
-
-                    ch_text, reasoning = generate_single_chapter(
-                        prompt_text=prompt_text,
-                        chapter_info=ch,
-                        previous_chapters=chapters[:],
-                        base_url=base_url,
-                        api_key=api_key,
-                        model=model_cfg["model"],
-                        temperature=temperature,
-                        max_tokens=max_tokens,
-                        thinking=thinking_enabled,
-                        api_format=api_format,
-                        work_dir=story_work_dir,
+    def run_chapters(
+        self,
+        opening: dict[str, Any],
+        *,
+        stop_after_chapter: int | None = None,
+    ) -> tuple[list[str], bool]:
+        chapter_dir = self.accepted_dir / "chapters"
+        chapter_dir.mkdir(parents=True, exist_ok=True)
+        accepted: list[str] = []
+        for chapter in opening["chapters"]:
+            number = int(chapter["number"])
+            path = chapter_dir / f"{number:02d}.md"
+            target_chars = int(chapter["target_chars"])
+            if number < int(self.state.get("next_chapter", 1)):
+                if not path.exists():
+                    raise RuntimeError(f"状态显示第 {number} 章已完成，但文件缺失")
+                accepted.append(
+                    validate_chapter(path.read_text(encoding="utf-8"), chapter)
+                )
+                if stop_after_chapter == number:
+                    return accepted, True
+                continue
+            key = f"chapter_{number:02d}"
+            original_prompt = self.prompts["chapter.md"].format(
+                chapter_number=number,
+                chapter_title=chapter["title"],
+                chapter_summary=chapter["summary"],
+                chapter_beats=json.dumps(chapter["beats"], ensure_ascii=False),
+                continuity_in=json.dumps(chapter["continuity_in"], ensure_ascii=False),
+                continuity_out=json.dumps(chapter["continuity_out"], ensure_ascii=False),
+                foreshadowing=json.dumps(chapter["foreshadowing"], ensure_ascii=False),
+                target_chars=target_chars,
+            )
+            # Reconcile an accepted chapter file committed just before a crash
+            # that prevented the corresponding state update.
+            if path.exists():
+                clean = validate_chapter(path.read_text(encoding="utf-8"), chapter)
+                self._ensure_committed_exchange(original_prompt, clean)
+                accepted.append(clean)
+                expansion_audits = self.state.setdefault("chapter_expansions", {})
+                expansion_key = f"{number:02d}"
+                if expansion_key not in expansion_audits:
+                    expansion_audits[expansion_key] = (
+                        self._reconcile_chapter_expansion_audit(number, clean)
                     )
-                    chapter_file.write_text(ch_text, encoding="utf-8")
-                    if reasoning:
-                        thinking_file.write_text(reasoning, encoding="utf-8")
-                    chapters.append(ch_text)
-                    thinkings.append(reasoning)
-
-                    meta["last_completed_chapter"] = number
-                    meta["updated_at"] = datetime.now(timezone.utc).isoformat()
-                    attempts = meta.get("attempts", {})
-                    attempts[f"chapter_{number:02d}"] = attempts.get(f"chapter_{number:02d}", 0) + 1
-                    meta["attempts"] = attempts
-                    meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-                    ok(f"      第 {number} 章生成完成（{count_chinese_chars(ch_text)} 字）")
-
-                # 3) 合并
-                full_text = merge_chapters(outline, chapters, thinkings)
-
-                # 备份旧产物
-                if output_file.exists():
-                    backup_path = story_work_dir / f"backup_{model_id}.md"
-                    backup_path.write_text(output_file.read_text(encoding="utf-8"), encoding="utf-8")
-
-                output_file.write_text(full_text, encoding="utf-8")
-
-                # 4) 最终校验
-                ok_, reason = validate_novel(full_text)
-                if not ok_:
-                    err(f"      最终校验未通过：{reason}")
-                    failed_count += 1
-                    failures.append(f"{model_cfg['name']} [{story_slug}, {reason}]")
+                completed = self.state.setdefault("completed_chapters", [])
+                if number not in completed:
+                    completed.append(number)
+                self.state["next_chapter"] = number + 1
+                self.state["stage"] = "chapters"
+                self.state["last_error"] = None
+                self.state.pop("last_response_chars", None)
+                self._save_state()
+                if stop_after_chapter == number:
+                    return accepted, True
+                continue
+            base_history = list(self.session["messages"])
+            repair_candidate = self._latest_chapter_repair_candidate(number)
+            attempts_this_execution = 0
+            while attempts_this_execution < MAX_STAGE_ATTEMPTS:
+                if repair_candidate is not None:
+                    candidate_text = str(repair_candidate["response"])
+                    prior_error = str(
+                        repair_candidate.get("error") or "章节未通过校验"
+                    )
+                    prompt = self.prompts["repair_chapter.md"].format(
+                        chapter_number=number,
+                        error=prior_error,
+                    )
+                    history = [
+                        *base_history,
+                        {"role": "user", "content": original_prompt},
+                        {"role": "assistant", "content": candidate_text},
+                    ]
+                else:
+                    prompt = original_prompt
+                    history = base_history
+                attempt = self._attempt_count(key) + 1
+                attempts_this_execution += 1
+                try:
+                    text = self._call(
+                        prompt,
+                        stage="chapter",
+                        attempt=attempt,
+                        chapter=number,
+                        history=history,
+                        persist=False,
+                    )
+                except IncompleteCompletionError as exc:
+                    self._record_validation_failure(
+                        stage="chapter",
+                        chapter=number,
+                        attempt=attempt,
+                        error=exc,
+                        response=exc.content,
+                    )
+                    self.state["last_response_chars"] = count_content_chars(exc.content)
+                    self._mark_attempt(key, str(exc))
+                    warn(
+                        f"{self.model_id} 第 {number} 章第 {attempt} 次未完成：{exc}"
+                    )
                     continue
+                except LLMAPIError as exc:
+                    self._record_validation_failure(
+                        stage="chapter",
+                        chapter=number,
+                        attempt=attempt,
+                        error=exc,
+                        response="",
+                    )
+                    self._mark_api_attempt(key)
+                    if not api_error_is_retryable(exc):
+                        raise
+                    delay = retry_delay_seconds(exc, attempts_this_execution)
+                    if attempts_this_execution < MAX_STAGE_ATTEMPTS:
+                        warn(
+                            f"{self.model_id} 第 {number} 章第 {attempt} 次 API 响应不可用：{exc}；"
+                            f"{delay:g} 秒后重试"
+                        )
+                        self.sleep_fn(delay)
+                    else:
+                        warn(
+                            f"{self.model_id} 第 {number} 章第 {attempt} 次 API 响应不可用：{exc}；"
+                            "本次运行重试额度已用尽"
+                        )
+                    continue
+                try:
+                    clean = validate_chapter(text, chapter)
+                except Exception as exc:
+                    self._record_validation_failure(
+                        stage="chapter",
+                        chapter=number,
+                        attempt=attempt,
+                        error=exc,
+                        response=text,
+                    )
+                    self.state["last_response_chars"] = count_content_chars(text)
+                    self._mark_attempt(key, str(exc))
+                    repair_candidate = self._latest_chapter_repair_candidate(number)
+                    warn(f"{self.model_id} 第 {number} 章第 {attempt} 次未通过：{exc}")
+                    continue
+                final_clean, expansion_audit = self._expand_short_chapter(
+                    chapter=chapter,
+                    original_prompt=original_prompt,
+                    source_response=text,
+                    source_clean=clean,
+                    base_history=base_history,
+                )
+                atomic_write_text(path, final_clean + "\n")
+                self._commit_exchange(original_prompt, final_clean)
+                self.state.setdefault("chapter_expansions", {})[
+                    f"{number:02d}"
+                ] = expansion_audit
+                self._mark_attempt(key, None)
+                accepted.append(final_clean)
+                completed = self.state.setdefault("completed_chapters", [])
+                if number not in completed:
+                    completed.append(number)
+                self.state["next_chapter"] = number + 1
+                self.state["stage"] = "chapters"
+                self.state["last_error"] = None
+                self.state.pop("last_response_chars", None)
+                self._save_state()
+                expansion_note = (
+                    f"，扩写={expansion_audit['outcome']}"
+                    if expansion_audit["requested"]
+                    else ""
+                )
+                log(
+                    f"{self.model_id} 第 {number} 章完成"
+                    f"（{count_content_chars(final_clean)} 字{expansion_note}）"
+                )
+                if stop_after_chapter == number:
+                    return accepted, True
+                break
+            else:
+                raise RuntimeError(
+                    f"第 {number} 章本次运行连续 {MAX_STAGE_ATTEMPTS} 次未通过"
+                )
+        self.state["stage"] = "publish"
+        self._save_state()
+        return accepted, False
 
-                meta["status"] = "completed"
-                meta["updated_at"] = datetime.now(timezone.utc).isoformat()
-                meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    def publish(
+        self,
+        book: dict[str, Any],
+        macro: dict[str, Any],
+        opening: dict[str, Any],
+        chapters: list[str],
+    ) -> None:
+        novel = f"# {book['title']}\n\n" + "\n\n".join(chapters).rstrip() + "\n"
+        chars = sum(count_content_chars(chapter) for chapter in chapters)
+        if chars < MIN_FINAL_CHARS:
+            raise RuntimeError(f"最终正文 {chars} 字，少于最低完成线 {MIN_FINAL_CHARS}")
+        if len(chapters) != len(opening["chapters"]):
+            raise RuntimeError("正文章数与前段细纲不一致")
+        staging_dir = self.result_dir.with_name(
+            f".{self.result_dir.name}.publish-{self.run_id}"
+        )
+        backup_dir = self.result_dir.with_name(
+            f".{self.result_dir.name}.backup-{self.run_id}"
+        )
+        if backup_dir.exists():
+            if not self.result_dir.exists():
+                os.replace(backup_dir, self.result_dir)
+            else:
+                shutil.rmtree(backup_dir)
+        if staging_dir.exists():
+            shutil.rmtree(staging_dir)
+        staging_dir.mkdir(parents=True)
+        usage_records = self._usage_records()
+        prompt_tokens = completion_tokens = total_tokens = 0
+        response_models: set[str] = set()
+        for record in usage_records:
+            usage = record.get("usage") or {}
+            prompt_tokens += int(usage.get("prompt_tokens") or 0)
+            completion_tokens += int(usage.get("completion_tokens") or 0)
+            total_tokens += int(usage.get("total_tokens") or 0)
+            if record.get("response_model"):
+                response_models.add(str(record["response_model"]))
+        # Atomic usage-events are committed immediately after every API call;
+        # usage.jsonl is a rebuilt audit view. This survives a process death
+        # between an accepted artifact commit and the state update.
+        usage_attempts: dict[str, int] = {}
+        for record in usage_records:
+            chapter_number = record.get("chapter")
+            stage = str(record.get("stage") or "")
+            if chapter_number is None:
+                key = stage
+            elif stage == "chapter":
+                key = f"chapter_{int(chapter_number):02d}"
+            else:
+                key = f"{stage}_{int(chapter_number):02d}"
+            if key:
+                usage_attempts[key] = usage_attempts.get(key, 0) + 1
+        attempts = {
+            str(key): max(int(value), usage_attempts.get(str(key), 0))
+            for key, value in (self.state.get("attempts") or {}).items()
+        }
+        for key, count in usage_attempts.items():
+            attempts[key] = max(attempts.get(key, 0), count)
+        retry_count = sum(max(0, count - 1) for count in attempts.values())
+        context_audits = [
+            record["context_audit"]
+            for record in usage_records
+            if isinstance(record.get("context_audit"), dict)
+        ]
+        context_sources = {
+            source: sum(1 for audit in context_audits if audit.get("estimate_source") == source)
+            for source in ("fallback", "provider_usage_anchor")
+        }
+        context_summary = {
+            "calls": len(context_audits),
+            "estimate_sources": context_sources,
+            "max_prompt_estimate_tokens": max(
+                (int(audit.get("prompt_estimate_tokens") or 0) for audit in context_audits),
+                default=0,
+            ),
+            "max_reserved_total_tokens": max(
+                (int(audit.get("reserved_total_tokens") or 0) for audit in context_audits),
+                default=0,
+            ),
+            "min_headroom_tokens": min(
+                (int(audit.get("headroom_tokens") or 0) for audit in context_audits),
+                default=0,
+            ),
+        }
 
-                chars = count_chinese_chars(full_text)
-                ok(f"  └ {model_cfg['name']} → 完成（{chars} 字，10 章）")
-                done_count += 1
+        # Public files are written only after the complete manuscript validates.
+        atomic_write_json(staging_dir / "book.json", book)
+        atomic_write_json(staging_dir / "macro_outline.json", macro)
+        atomic_write_json(staging_dir / "opening_outline.json", opening)
+        public_chapters = staging_dir / "chapters"
+        public_chapters.mkdir(parents=True, exist_ok=True)
+        for chapter, text in zip(opening["chapters"], chapters):
+            atomic_write_text(public_chapters / f"{int(chapter['number']):02d}.md", text + "\n")
+        atomic_write_text(staging_dir / "novel.md", novel)
 
-            except Exception as e:
-                err(f"  └ {model_cfg['name']} → 失败：{e}")
-                failed_count += 1
-                failures.append(f"{model_cfg['name']} [{story_slug}]")
-                # 保留中间产物供排查
-                meta["status"] = "failed"
-                meta["error"] = str(e)
-                meta["updated_at"] = datetime.now(timezone.utc).isoformat()
-                meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+        artifact_paths = [
+            "book.json",
+            "macro_outline.json",
+            "opening_outline.json",
+            "novel.md",
+            *[
+                f"chapters/{int(chapter['number']):02d}.md"
+                for chapter in opening["chapters"]
+            ],
+        ]
+        artifact_sha256 = {
+            name: sha256_normalized_text_file(staging_dir / Path(name))
+            for name in artifact_paths
+        }
+        completed_at = utc_now()
+        chapter_manifest: list[dict[str, Any]] = []
+        expansion_audits = self.state.get("chapter_expansions") or {}
+        for chapter, text in zip(opening["chapters"], chapters):
+            number = int(chapter["number"])
+            expansion = expansion_audits.get(f"{number:02d}")
+            if not isinstance(expansion, dict):
+                expansion = self._reconcile_chapter_expansion_audit(number, text)
+            chapter_attempt_key = f"chapter_{number:02d}"
+            expansion_attempt_key = f"chapter_expansion_{number:02d}"
+            chapter_manifest.append({
+                "number": chapter["number"],
+                "title": chapter["title"],
+                "chars": count_content_chars(text),
+                "attempt_count": attempts.get(chapter_attempt_key, 0),
+                "retry_count": max(0, attempts.get(chapter_attempt_key, 0) - 1),
+                "initial_chars": int(expansion.get("initial_chars") or 0),
+                "expansion_requested": bool(expansion.get("requested")),
+                "expansion_attempt_count": attempts.get(expansion_attempt_key, 0),
+                "expansion_result_chars": expansion.get("result_chars"),
+                "expansion_adopted": bool(expansion.get("adopted")),
+                "expansion_outcome": str(expansion.get("outcome") or "unknown"),
+            })
+        manifest = {
+            "schema": PROTOCOL_VERSION,
+            "benchmark": self.benchmark,
+            "run_id": self.run_id,
+            "run_input_sha256": self.run_input_sha256,
+            "protocol_policy": PROTOCOL_POLICY,
+            "protocol_policy_sha256": self.policy_sha256,
+            "run_origin": "fresh",
+            "model_id": self.model_id,
+            "requested_model": self.model_cfg.get("model"),
+            "response_models": sorted(response_models),
+            "direction_sha256": sha256_text(self.direction),
+            "prompts_sha256": sha256_text(canonical_json(self.prompts)),
+            "model_config_sha256": sha256_text(canonical_json(self.model_cfg)),
+            "code_sha256": self.code_sha256_at_start,
+            "artifact_sha256": artifact_sha256,
+            "parameters": _public_manifest_value({
+                "request": self.model_cfg.get("request") or {},
+                "stages": self.model_cfg.get("stages") or {},
+                "provider_request_defaults": self.model_cfg.get(
+                    PROVIDER_DEFAULTS_TRACKING_KEY
+                )
+                or {},
+                "context_window": self.model_cfg.get("context_window"),
+            }),
+            "attempts": attempts,
+            "retry_count": retry_count,
+            "chapters": chapter_manifest,
+            "body_chars": chars,
+            "usage": {
+                "prompt_tokens": prompt_tokens,
+                "completion_tokens": completion_tokens,
+                "total_tokens": total_tokens,
+                "calls": len(usage_records),
+            },
+            "context_audit": context_summary,
+            "started_at": self.state.get("started_at"),
+            "completed_at": completed_at,
+            "status": "completed",
+        }
+        # The manifest is the commit marker and is intentionally written last.
+        atomic_write_json(staging_dir / "manifest.json", manifest)
+        if not result_is_complete(staging_dir, self.run_id):
+            raise RuntimeError("发布 staging 深校验失败，未替换公开结果")
 
-    # 汇总
-    log("────────────────────────────────────────")
-    log(f"完成：{done_count}  跳过：{skipped_count}  失败：{failed_count}  总计：{total}")
-    if failed_count > 0:
-        err("失败列表：" + "、".join(failures))
-        err("请查看 work/<slug>/<model>/ 目录下的 meta.json 与中间产物。")
+        had_previous = self.result_dir.exists()
+        if had_previous:
+            os.replace(self.result_dir, backup_dir)
+        try:
+            os.replace(staging_dir, self.result_dir)
+        except Exception:
+            if had_previous and backup_dir.exists() and not self.result_dir.exists():
+                os.replace(backup_dir, self.result_dir)
+            raise
+        if backup_dir.exists():
+            shutil.rmtree(backup_dir)
+        self.state["stage"] = "completed"
+        self.state["completed_at"] = manifest["completed_at"]
+        self._save_state()
+        log(f"{self.model_id} 发布完成：{chars} 字，{len(chapters)} 章")
+
+    def execute(self, stop_after: str | None = None) -> bool:
+        """Run or resume generation; return True only when publication completed."""
+        with WorkDirLock(self.model_work_root / ".run.lock"):
+            self._initialize_work()
+            return self._execute_unlocked(stop_after)
+
+    def _execute_unlocked(self, stop_after: str | None = None) -> bool:
+        stop_kind, stop_chapter = parse_stop_after(stop_after)
+        book = self.run_json_stage(
+            stage="book", prompt_name="book.md", artifact_name="book.json",
+            validator=validate_book, next_stage="macro_outline",
+        )
+        if stop_kind == "book":
+            log(f"{self.model_id} 已按 --stop-after book 停在已提交检查点")
+            return False
+        macro = self.run_json_stage(
+            stage="macro_outline", prompt_name="macro_outline.md", artifact_name="macro_outline.json",
+            validator=validate_macro_outline, next_stage="opening_outline",
+        )
+        if stop_kind == "macro-outline":
+            log(f"{self.model_id} 已按 --stop-after macro-outline 停在已提交检查点")
+            return False
+        opening = self.run_json_stage(
+            stage="opening_outline", prompt_name="opening_outline.md", artifact_name="opening_outline.json",
+            validator=validate_opening_outline, next_stage="chapters",
+        )
+        if stop_kind == "opening-outline":
+            log(f"{self.model_id} 已按 --stop-after opening-outline 停在已提交检查点")
+            return False
+        if stop_chapter is not None and stop_chapter > len(opening["chapters"]):
+            raise ValueError(
+                f"--stop-after chapter:{stop_chapter} 超过细纲章数 {len(opening['chapters'])}"
+            )
+        chapters, stopped = self.run_chapters(
+            opening,
+            stop_after_chapter=stop_chapter,
+        )
+        if stopped:
+            log(f"{self.model_id} 已按 --stop-after chapter:{stop_chapter} 停在已提交检查点")
+            return False
+        self.publish(book, macro, opening, chapters)
+        return True
+
+
+def parse_stop_after(value: str | None) -> tuple[str | None, int | None]:
+    if value is None:
+        return None, None
+    normalized = value.strip().lower()
+    if normalized in {"book", "macro-outline", "opening-outline"}:
+        return normalized, None
+    match = re.fullmatch(r"chapter:([1-9][0-9]*)", normalized)
+    if match:
+        number = int(match.group(1))
+        if number > 18:
+            raise ValueError("--stop-after chapter:N 的 N 必须在 1–18")
+        return "chapter", number
+    raise ValueError(
+        "--stop-after 仅支持 book、macro-outline、opening-outline 或 chapter:N"
+    )
+
+
+def result_is_complete(result_dir: Path, expected_run_id: str) -> bool:
+    required = (
+        "book.json", "macro_outline.json", "opening_outline.json",
+        "novel.md", "manifest.json",
+    )
+    if any(not (result_dir / name).exists() for name in required):
+        return False
+    try:
+        manifest = read_json(result_dir / "manifest.json")
+        if (
+            manifest.get("schema") != PROTOCOL_VERSION
+            or manifest.get("run_id") != expected_run_id
+            or not str(manifest.get("run_input_sha256") or "").startswith(expected_run_id)
+            or manifest.get("protocol_policy") != PROTOCOL_POLICY
+            or manifest.get("protocol_policy_sha256") != protocol_policy_sha256()
+            or manifest.get("run_origin") != "fresh"
+            or manifest.get("status") != "completed"
+        ):
+            return False
+        code_hash = manifest.get("code_sha256")
+        if (
+            not isinstance(code_hash, str)
+            or not re.fullmatch(r"[0-9a-f]{64}", code_hash)
+            or code_hash != calculate_code_hash()
+        ):
+            return False
+        run_input_sha256 = manifest.get("run_input_sha256")
+        if (
+            not isinstance(run_input_sha256, str)
+            or not re.fullmatch(r"[0-9a-f]{64}", run_input_sha256)
+            or run_input_sha256[:12] != expected_run_id
+        ):
+            return False
+        context_audit = manifest.get("context_audit")
+        if (
+            not isinstance(context_audit, dict)
+            or context_audit.get("calls") != (manifest.get("usage") or {}).get("calls")
+            or not isinstance(context_audit.get("estimate_sources"), dict)
+        ):
+            return False
+
+        book = validate_book(read_json(result_dir / "book.json"))
+        validate_macro_outline(read_json(result_dir / "macro_outline.json"))
+        opening = validate_opening_outline(read_json(result_dir / "opening_outline.json"))
+        expected_chapter_names = {
+            f"{int(chapter['number']):02d}.md" for chapter in opening["chapters"]
+        }
+        chapter_dir = result_dir / "chapters"
+        if not chapter_dir.is_dir():
+            return False
+        actual_chapter_names = {path.name for path in chapter_dir.glob("*.md")}
+        if actual_chapter_names != expected_chapter_names:
+            return False
+
+        chapter_texts: list[str] = []
+        chapter_chars: list[int] = []
+        for chapter in opening["chapters"]:
+            path = chapter_dir / f"{int(chapter['number']):02d}.md"
+            clean = validate_chapter(path.read_text(encoding="utf-8"), chapter)
+            chapter_texts.append(clean)
+            chapter_chars.append(count_content_chars(clean))
+        body_chars = sum(chapter_chars)
+        if body_chars < MIN_FINAL_CHARS:
+            return False
+        if manifest.get("body_chars") != body_chars:
+            return False
+
+        chapter_manifest = manifest.get("chapters")
+        if not isinstance(chapter_manifest, list) or len(chapter_manifest) != len(chapter_chars):
+            return False
+        for expected, actual_chars in zip(chapter_manifest, chapter_chars):
+            if not isinstance(expected, dict) or expected.get("chars") != actual_chars:
+                return False
+            initial_chars = expected.get("initial_chars")
+            expansion_requested = expected.get("expansion_requested")
+            expansion_attempt_count = expected.get("expansion_attempt_count")
+            expansion_result_chars = expected.get("expansion_result_chars")
+            expansion_adopted = expected.get("expansion_adopted")
+            expansion_outcome = expected.get("expansion_outcome")
+            if (
+                isinstance(initial_chars, bool)
+                or not isinstance(initial_chars, int)
+                or initial_chars <= 0
+                or not isinstance(expansion_requested, bool)
+                or expansion_attempt_count not in (0, 1)
+                or not isinstance(expansion_adopted, bool)
+                or not isinstance(expansion_outcome, str)
+            ):
+                return False
+            if expansion_requested:
+                if (
+                    initial_chars >= CHAPTER_EXPANSION_TRIGGER_CHARS
+                    or expansion_attempt_count != 1
+                    or actual_chars < initial_chars
+                ):
+                    return False
+                if expansion_result_chars is not None and (
+                    isinstance(expansion_result_chars, bool)
+                    or not isinstance(expansion_result_chars, int)
+                    or expansion_result_chars < 0
+                ):
+                    return False
+                if expansion_adopted and (
+                    expansion_result_chars != actual_chars
+                    or actual_chars <= initial_chars
+                    or expansion_outcome != "adopted"
+                ):
+                    return False
+                if not expansion_adopted and actual_chars != initial_chars:
+                    return False
+            elif (
+                initial_chars != actual_chars
+                or expansion_attempt_count != 0
+                or expansion_result_chars is not None
+                or expansion_adopted
+                or expansion_outcome != "not_needed"
+            ):
+                return False
+
+        expected_novel = f"# {book['title']}\n\n" + "\n\n".join(chapter_texts).rstrip() + "\n"
+        actual_novel = normalize_newlines(
+            (result_dir / "novel.md").read_bytes().decode("utf-8-sig")
+        )
+        if actual_novel != expected_novel:
+            return False
+
+        artifact_hashes = manifest.get("artifact_sha256")
+        if not isinstance(artifact_hashes, dict):
+            return False
+        artifact_names = {
+            "book.json", "macro_outline.json", "opening_outline.json", "novel.md",
+            *{f"chapters/{name}" for name in expected_chapter_names},
+        }
+        if set(artifact_hashes) != artifact_names:
+            return False
+        for name in artifact_names:
+            digest = artifact_hashes.get(name)
+            if (
+                not isinstance(digest, str)
+                or sha256_normalized_text_file(result_dir / Path(name)) != digest
+            ):
+                return False
+
+        attempts = manifest.get("attempts")
+        if not isinstance(attempts, dict):
+            return False
+        for chapter_entry in chapter_manifest:
+            number = int(chapter_entry["number"])
+            if attempts.get(f"chapter_expansion_{number:02d}", 0) != chapter_entry.get(
+                "expansion_attempt_count"
+            ):
+                return False
+        expected_retries = sum(max(0, int(count) - 1) for count in attempts.values())
+        if manifest.get("retry_count") != expected_retries:
+            return False
+        return True
+    except Exception:
+        return False
+
+
+def calculate_run_id(benchmark: str, direction: str, prompts: dict[str, str], model_cfg: dict[str, Any]) -> str:
+    return sha256_text(
+        canonical_json(build_run_input(benchmark, direction, prompts, model_cfg))
+    )[:12]
+
+
+def validate_fixed_registries(
+    cfg: dict[str, Any],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Require the exact V2.1 field: 15 generators and three fixed judges."""
+    models = cfg.get("models")
+    judges = cfg.get("judges")
+    if not isinstance(models, list) or not all(isinstance(item, dict) for item in models):
+        raise ValueError("config.yaml 的 models 必须是对象数组")
+    if not isinstance(judges, list) or not all(isinstance(item, dict) for item in judges):
+        raise ValueError("config.yaml 的 judges 必须是对象数组")
+    model_ids = tuple(str(item.get("id") or "") for item in models)
+    if model_ids != EXPECTED_GENERATOR_IDS:
+        raise ValueError(
+            "V2 生成模型必须严格按固定 15 模型配置，当前：" + ", ".join(model_ids)
+        )
+    for item in models:
+        if item.get("model") != item.get("id"):
+            raise ValueError(f"生成模型 {item.get('id')} 的 wire model 不允许静默替换")
+    judge_ids = tuple(str(item.get("id") or "") for item in judges)
+    if judge_ids != tuple(EXPECTED_JUDGES):
+        raise ValueError("V2 评委必须严格为 sol、fable、kimi")
+    for item in judges:
+        expected_model = EXPECTED_JUDGES[str(item["id"])]
+        if item.get("model") != expected_model:
+            raise ValueError(
+                f"评委 {item['id']} 必须使用 {expected_model}，不得静默替换"
+            )
+    return list(models), list(judges)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="自主长篇评测 V2.1 生成器")
+    selection = parser.add_mutually_exclusive_group(required=True)
+    selection.add_argument("--model", action="append", help="生成指定模型，可重复")
+    selection.add_argument("--all", action="store_true", help="显式生成全部 15 个模型")
+    parser.add_argument("--benchmark", default=DEFAULT_BENCHMARK)
+    parser.add_argument("--config", type=Path)
+    parser.add_argument("--env", dest="env_file", type=Path)
+    parser.add_argument("--dry-run", action="store_true", help="只做配置与模型 preflight")
+    parser.add_argument(
+        "--new-run",
+        action="store_true",
+        help="授权新 run-id 接替旧成品；匹配当前 run-id 的有效断点仍会保留",
+    )
+    parser.add_argument(
+        "--stop-after",
+        metavar="CHECKPOINT",
+        help="在 book、macro-outline、opening-outline 或 chapter:N 检查点停止且不发布",
+    )
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+    root = repo_root()
+    config_path = args.config or root / "config.yaml"
+    env_path = args.env_file or root / ".env"
+    direction_path = root / "benchmark" / args.benchmark / "direction.md"
+    prompt_dir = root / "runner" / "prompts" / "v2.1"
+    if not direction_path.exists():
+        fail(f"缺少题材方向：{direction_path}")
+        return 1
+    cfg = load_config(config_path)
+    prompts = load_prompts(prompt_dir)
+    direction = canonical_text(direction_path.read_bytes().decode("utf-8-sig"))
+    try:
+        parse_stop_after(args.stop_after)
+        raw_model_cfgs, all_judge_cfgs = validate_fixed_registries(cfg)
+        all_model_cfgs = [
+            with_provider_request_defaults(cfg, model_cfg)
+            for model_cfg in raw_model_cfgs
+        ]
+        for model_cfg in all_model_cfgs:
+            for stage in (
+                "book",
+                "macro_outline",
+                "opening_outline",
+                "chapter",
+                "chapter_expansion",
+            ):
+                params = generation_request_parameters(model_cfg, stage)
+                if params:
+                    raise ValueError(
+                        f"生成模型 {model_cfg['id']} 的 {stage} 必须使用服务端默认参数；"
+                        "禁止显式字段：" + ", ".join(sorted(params))
+                    )
+    except Exception as exc:
+        fail(str(exc))
+        return 1
+    configured = [str(item["id"]) for item in all_model_cfgs]
+    model_ids = configured if args.all else list(args.model or [])
+    try:
+        configured_by_id = {str(item["id"]): item for item in all_model_cfgs}
+        unknown = [model_id for model_id in model_ids if model_id not in configured_by_id]
+        if unknown:
+            raise ValueError("未知模型 id（不允许模糊匹配或别名）：" + ", ".join(unknown))
+        model_cfgs = [configured_by_id[model_id] for model_id in model_ids]
+    except Exception as exc:
+        fail(str(exc))
+        return 1
+
+    stale: list[str] = []
+    pending: list[dict[str, Any]] = []
+    for model_cfg in model_cfgs:
+        run_id = calculate_run_id(args.benchmark, direction, prompts, model_cfg)
+        result_dir = root / "results" / args.benchmark / str(model_cfg["id"])
+        current_work_dir = (
+            root
+            / "work"
+            / "v2.1"
+            / args.benchmark
+            / str(model_cfg["id"])
+            / run_id
+        )
+        if result_is_complete(result_dir, run_id) and not args.new_run:
+            try:
+                with WorkDirLock(current_work_dir.parent / ".run.lock"):
+                    cleanup_completed_publish_debris(result_dir, run_id)
+            except RuntimeError:
+                log(
+                    f"{model_cfg['id']} 已完成；另一个进程正在处理该模型，"
+                    "本次跳过残留目录清理"
+                )
+            log(f"{model_cfg['id']} 已完成且哈希匹配，离线跳过")
+            continue
+        manifest_path = result_dir / "manifest.json"
+        if manifest_path.exists() and not args.new_run:
+            try:
+                manifest_run_id = read_json(manifest_path).get("run_id")
+            except Exception:
+                manifest_run_id = None
+            if manifest_run_id != run_id:
+                work_dir = (
+                    current_work_dir
+                )
+                if not work_checkpoint_is_resumable(work_dir, run_id):
+                    stale.append(str(model_cfg["id"]))
+                    continue
+        if not args.new_run:
+            if current_work_dir.exists() and not work_checkpoint_is_resumable(
+                current_work_dir, run_id
+            ):
+                stale.append(str(model_cfg["id"]))
+                continue
+            other_runs = resumable_other_run_ids(
+                current_work_dir.parent, run_id
+            )
+            if not current_work_dir.exists() and other_runs:
+                stale.append(str(model_cfg["id"]))
+                continue
+        pending.append(model_cfg)
+    if stale:
+        fail(
+            "以下模型存在不同 run-id 的旧成品/断点或损坏断点，"
+            "请使用 --new-run：" + ", ".join(stale)
+        )
+        return 1
+    if not pending and not args.dry_run:
+        log("没有需要生成的模型")
+        return 0
+
+    env = load_env_file(env_path)
+    env.update(os.environ)
+    try:
+        client = ChatClient.from_config(cfg, env, provider_id="new-api")
+        available = client.list_models()
+    except Exception as exc:
+        fail(f"New API preflight 失败：{exc}")
+        return 1
+    wire_models = {str(model_cfg["model"]) for model_cfg in all_model_cfgs}
+    judge_models = {str(judge["model"]) for judge in all_judge_cfgs}
+    missing = sorted((wire_models | judge_models) - set(available))
+    if missing:
+        fail("/v1/models 缺少配置模型：" + ", ".join(missing))
+        return 1
+    log(f"preflight 通过：全部 {len(all_model_cfgs)} 个生成模型、{len(all_judge_cfgs)} 个评委均精确存在")
+    for model_cfg in model_cfgs:
+        context_window = int(model_cfg.get("context_window", 131_072))
+        safe_context = int(context_window * 0.85)
+        log(
+            f"{model_cfg['id']}: wire={model_cfg['model']}, context={context_window}, "
+            f"85%安全线={safe_context}, api_optional_params=none（服务端默认），"
+            f"基础调用=19–21；若每章均不足3000字，最多追加16–18次扩写"
+            f"（总计35–39，格式修复另计），"
+            f"run={calculate_run_id(args.benchmark, direction, prompts, model_cfg)}"
+        )
+    if args.dry_run:
+        log(
+            f"dry-run 完成；选择 {len(model_cfgs)} 个模型，其中待生成 {len(pending)} 个；"
+            "未发 chat/completions 请求"
+        )
+        return 0
+
+    failures: list[str] = []
+    for model_cfg in pending:
+        try:
+            run = GenerationRun(
+                root=root,
+                benchmark=args.benchmark,
+                direction=direction,
+                prompts=prompts,
+                model_cfg=model_cfg,
+                client=client,
+                new_run=args.new_run,
+            )
+            run.execute(args.stop_after)
+        except Exception as exc:
+            failures.append(str(model_cfg["id"]))
+            fail(f"{model_cfg['id']} 失败：{exc}")
+    if failures:
+        fail("失败模型：" + ", ".join(failures))
         return 1
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())

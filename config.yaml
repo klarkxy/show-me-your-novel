@@ -1,81 +1,141 @@
-# ============================================================================
-# show-me-your-novel — 模型配置
-# ============================================================================
-# 每个条目对应一次 LLM 调用，用同一份 prompt.md 生成一部小说。
-# 增删模型只需修改本文件，无需改动脚本。
+# show-me-your-novel V2.1
 #
-# 字段说明：
-#   providers:
-#     <provider_id>:
-#       base_url   : OpenAI-compatible API 基础 URL（末尾可带 /v1）
-#       api_key_env: 存放 API key 的环境变量名
-#   models:
-#     id       : 文件名 / 目录 / URL slug，必须唯一
-#     name     : 展示在页面上的模型名
-#     model    : 模型 id，直接传给 /v1/chat/completions
-#     provider : 对应 providers 下的 provider_id（缺省为 opencode-go）
-#     temperature / max_tokens : 可选，覆盖默认值
-# ============================================================================
+# The endpoint and credential live in API_URL and API_KEY.  This file contains
+# environment-variable names only; no credential value belongs in the repo.
+
+version: 2
 
 providers:
-  opencode-go:
-    base_url: "https://opencode.ai/zen/go/v1"
-    api_key_env: "OPENCODE_API_KEY"
+  new-api:
+    base_url_env: API_URL
+    api_key_env: API_KEY
+    timeout: 600
+    request_defaults: {}
+
+# All generation models use the same Chat Completions protocol. Generation
+# controls intentionally stay empty so the upstream model uses its normal
+# defaults for reasoning, temperature, output length, and response format.
+x-generation-defaults: &generation-defaults
+  provider: new-api
+  # Use a conservative common budget even when the upstream model supports
+  # more. The runner refuses a request above 85% of this configured window.
+  context_window: 131072
+  request: {}
+  stages: {}
 
 models:
-  - id: deepseek-v4-flash
+  - <<: *generation-defaults
+    id: deepseek-v4-flash
     name: DeepSeek V4 Flash
     model: deepseek-v4-flash
-    thinking: true
-    provider: opencode-go
+    aliases: [deepseek-flash]
 
-  - id: deepseek-v4-pro
+  - <<: *generation-defaults
+    id: deepseek-v4-pro
     name: DeepSeek V4 Pro
     model: deepseek-v4-pro
-    thinking: true
-    provider: opencode-go
+    aliases: [deepseek-pro]
 
-  - id: glm-5.2
-    name: GLM 5.2
-    model: glm-5.2
-    thinking: true
-    provider: opencode-go
-
-  - id: kimi-k2.7-code
-    name: Kimi K2.7 Code
-    model: kimi-k2.7-code
-    temperature: 1.0
-    thinking: true
-    provider: opencode-go
-
-  - id: mimo-v2.5
+  - <<: *generation-defaults
+    id: mimo-v2.5
     name: MiMo V2.5
     model: mimo-v2.5
-    thinking: true
-    provider: opencode-go
+    aliases: [mimo]
 
-  - id: mimo-v2.5-pro
+  - <<: *generation-defaults
+    id: mimo-v2.5-pro
     name: MiMo V2.5 Pro
     model: mimo-v2.5-pro
-    thinking: true
-    provider: opencode-go
+    aliases: [mimo-pro]
 
-  - id: minimax-m3
+  - <<: *generation-defaults
+    id: minimax-m3
     name: MiniMax M3
     model: minimax-m3
-    thinking: adaptive
-    api_format: anthropic
-    provider: opencode-go
+    aliases: [minimax]
 
-  - id: qwen3.7-max
-    name: Qwen3.7 Max
-    model: qwen3.7-max
-    api_format: anthropic
-    provider: opencode-go
+  - <<: *generation-defaults
+    id: glm-5.2
+    name: GLM 5.2
+    model: glm-5.2
+    aliases: [glm]
 
-  - id: qwen3.7-plus
-    name: Qwen3.7 Plus
-    model: qwen3.7-plus
-    thinking: true
-    provider: opencode-go
+  - <<: *generation-defaults
+    id: gpt-5.6-luna
+    name: GPT-5.6 Luna
+    model: gpt-5.6-luna
+    aliases: [luna]
 
+  - <<: *generation-defaults
+    id: claude-haiku-4-5
+    name: Claude Haiku 4.5
+    model: claude-haiku-4-5
+    aliases: [haiku]
+
+  - <<: *generation-defaults
+    id: claude-sonnet-5
+    name: Claude Sonnet 5
+    model: claude-sonnet-5
+    aliases: [sonnet]
+
+  - <<: *generation-defaults
+    id: gemini-3.1-pro
+    name: Gemini 3.1 Pro
+    model: gemini-3.1-pro
+    aliases: [gemini-pro]
+
+  - <<: *generation-defaults
+    id: gemini-3.5-flash
+    name: Gemini 3.5 Flash
+    model: gemini-3.5-flash
+    aliases: [gemini-flash]
+
+  - <<: *generation-defaults
+    id: kimi-k3
+    name: Kimi K3
+    model: kimi-k3
+    aliases: [kimi]
+
+  - <<: *generation-defaults
+    id: grok-4.5
+    name: Grok 4.5
+    model: grok-4.5
+    aliases: [grok]
+
+  - <<: *generation-defaults
+    id: claude-opus-4-8
+    name: Claude Opus 4.8
+    model: claude-opus-4-8
+    aliases: [opus]
+
+  - <<: *generation-defaults
+    id: agnes-2.0-flash
+    name: Agnes 2.0 Flash
+    model: agnes-2.0-flash
+    aliases: [agnes]
+
+x-judge-defaults: &judge-defaults
+  provider: new-api
+  request:
+    max_tokens: 4096
+  stages:
+    judge:
+      temperature: 0.2
+      response_format:
+        type: json_object
+
+judges:
+  - <<: *judge-defaults
+    id: sol
+    name: Sol
+    model: gpt-5.6-sol
+
+  - <<: *judge-defaults
+    id: fable
+    name: Fable
+    model: claude-fable-5
+
+  - <<: *judge-defaults
+    id: kimi
+    name: Kimi
+    model: kimi-k3

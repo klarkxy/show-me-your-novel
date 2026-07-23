@@ -1,17 +1,21 @@
 <#
 .SYNOPSIS
-  Deterministically builds the V2 leaderboard and Legacy pages.
+  PowerShell wrapper for the Sol/Fable/Kimi V2 scorer.
 .EXAMPLE
-  .\scripts\generate-site.ps1 -DocsDir .site/preview
+  .\runner\score.ps1 -Model deepseek-v4-flash -Judge sol -DryRun
+.EXAMPLE
+  .\runner\score.ps1 -All
 #>
 
-[CmdletBinding()]
+[CmdletBinding(DefaultParameterSetName = "Model")]
 param(
-  [string]$ConfigPath = "",
-  [string]$NovelsDir = "",
-  [string]$ResultsDir = "",
-  [string]$AssetsDir = "",
-  [string]$DocsDir = ""
+  [Parameter(ParameterSetName = "Model", Mandatory = $true)]
+  [string[]]$Model,
+  [Parameter(ParameterSetName = "All", Mandatory = $true)]
+  [switch]$All,
+  [ValidateSet("sol", "fable", "kimi")]
+  [string[]]$Judge,
+  [switch]$DryRun
 )
 
 $ErrorActionPreference = "Stop"
@@ -19,7 +23,7 @@ $ErrorActionPreference = "Stop"
 
 $ScriptPath = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Path }
 $RootDir = Split-Path -Parent $ScriptPath
-$PythonScript = Join-Path $RootDir "scripts\generate_site.py"
+$PythonScript = Join-Path $RootDir "runner\score.py"
 
 $PythonCommand = $null
 $PythonPrefix = @()
@@ -40,11 +44,13 @@ if (-not $PythonCommand) {
 }
 
 $CliArgs = @($PythonScript)
-if ($ConfigPath) { $CliArgs += @("--config", $ConfigPath) }
-if ($NovelsDir) { $CliArgs += @("--novels-dir", $NovelsDir) }
-if ($ResultsDir) { $CliArgs += @("--results-dir", $ResultsDir) }
-if ($AssetsDir) { $CliArgs += @("--assets-dir", $AssetsDir) }
-if ($DocsDir) { $CliArgs += @("--docs-dir", $DocsDir) }
+if ($All) {
+  $CliArgs += "--all"
+} else {
+  foreach ($CandidateModel in $Model) { $CliArgs += @("--model", $CandidateModel) }
+}
+foreach ($SelectedJudge in $Judge) { $CliArgs += @("--judge", $SelectedJudge) }
+if ($DryRun) { $CliArgs += "--dry-run" }
 
 Push-Location $RootDir
 try {
