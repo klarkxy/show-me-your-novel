@@ -25,7 +25,7 @@
 - 最终纯正文只设置 48,000 个可计字符的最低完成线，**章节和整书都不设置字数上限**。
 - JSON 或章节结构不合格时，候选稿留在私有审计目录；只有最终接受的完整稿进入权威消息链。
 - 不摘要、不截断、不把 reasoning 回填给模型，也不人工修改作品。
-- 生成 API 只发送 `model` 与 `messages`。`temperature`、`reasoning`、`max_tokens`、`top_p`、`response_format` 等均不显式设置，使用服务端默认值。
+- 生成请求的可选参数保持为空，不主动设置 `temperature`、思考、`top_p` 或 `response_format`。默认 O 口只发送 `model` 与 `messages`；原生 A 口除此之外只发送协议必填的高 `max_tokens`：MiniMax M3 为 `204800`，三种 Claude 生成模型为 `65536`。这些值是协议层输出容量，不是章节字数限制；章节和整书仍无字数上限。
 - 中断后从最后一个接受阶段继续；已原子落盘的相同请求响应可以零调用恢复。
 
 当前首部完整基线是 MiMo V2.5，`run_id=6767704f6322`：17 章、61,495 个可计字符，结果位于 `results/reform-era/mimo-v2.5/`，已经通过深校验和离线建站。
@@ -58,7 +58,7 @@ API_URL=https://your-api.example.com/v1
 API_KEY=sk-...
 ```
 
-活动流程统一调用 OpenAI-compatible 的 `/v1/chat/completions`。运行前会通过 `/v1/models` 精确校验 15 个生成模型和 3 个评委的 wire model ID，不做模糊匹配或静默替换。
+活动流程默认调用 OpenAI-compatible O 口 `/v1/chat/completions`；MiniMax M3，以及 Claude Haiku 4.5、Claude Sonnet 5、Claude Opus 4.8 三种生成模型和 Claude Fable 评委，改走原生 A 口 `/v1/messages`。两种协议运行前仍统一通过 `/v1/models` 精确校验 15 个生成模型和 3 个评委的 wire model ID，不做模糊匹配或静默替换。
 
 ## 生成
 

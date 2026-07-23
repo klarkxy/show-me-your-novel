@@ -13,6 +13,8 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from runner.llm_api import (  # noqa: E402
+    ANTHROPIC_MESSAGES,
+    OPENAI_CHAT_COMPLETIONS,
     ChatClient,
     LLMAPIError,
     ModelPreflightError,
@@ -48,6 +50,92 @@ class QueueOpener:
         if not self.responses:
             raise AssertionError("unexpected request")
         return FakeResponse(self.responses.pop(0))
+
+
+def openai_response(
+    content: str,
+    *,
+    finish_reason: str | None = "stop",
+    response_id: str = "chatcmpl-test",
+    model: str = "openai-wire-model",
+) -> dict:
+    return {
+        "id": response_id,
+        "model": model,
+        "choices": [
+            {
+                "finish_reason": finish_reason,
+                "message": {"role": "assistant", "content": content},
+            }
+        ],
+        "usage": {
+            "prompt_tokens": 11,
+            "completion_tokens": 7,
+            "total_tokens": 18,
+        },
+    }
+
+
+def anthropic_response(
+    *,
+    stop_reason: str | None = "end_turn",
+    content: list[dict] | None = None,
+    response_id: str = "msg-test",
+    model: str = "anthropic-wire-model",
+) -> dict:
+    return {
+        "id": response_id,
+        "type": "message",
+        "role": "assistant",
+        "model": model,
+        "content": (
+            [{"type": "text", "text": "正文"}]
+            if content is None
+            else content
+        ),
+        "stop_reason": stop_reason,
+        "stop_sequence": None,
+        "usage": {
+            "input_tokens": 11,
+            "cache_creation_input_tokens": 3,
+            "cache_read_input_tokens": 2,
+            "output_tokens": 7,
+        },
+    }
+
+
+def provider_config() -> dict:
+    return {
+        "providers": {
+            "new-api": {
+                "base_url_env": "TEST_API_URL",
+                "api_key_env": "TEST_API_KEY",
+                "timeout": 42,
+                "request_defaults": {},
+            }
+        }
+    }
+
+
+def model_config(
+    model: str,
+    *,
+    protocol: str | None = None,
+    protocol_required: dict | None = None,
+    request: dict | None = None,
+) -> dict:
+    result = {
+        "id": model,
+        "model": model,
+        "provider": "new-api",
+        "request": dict(request or {}),
+        "stages": {},
+    }
+    if protocol is not None:
+        result["protocol"] = protocol
+    if protocol_required is not None:
+        result["protocol_required"] = dict(protocol_required)
+    return result
 
 
 class LLMAPITests(unittest.TestCase):
@@ -121,6 +209,9 @@ class LLMAPITests(unittest.TestCase):
         self.assertEqual(result.response_model, "server-routed-model")
         self.assertEqual(result.response_id, "chatcmpl-test")
         self.assertEqual(result.finish_reason, "stop")
+        self.assertEqual(result.native_finish_reason, "stop")
+        self.assertEqual(result.protocol, OPENAI_CHAT_COMPLETIONS)
+        self.assertEqual(result.endpoint_path, "/v1/chat/completions")
         self.assertEqual(result.usage["prompt_tokens_details"]["cached_tokens"], 3)
 
     def test_content_and_reasoning_blocks_are_normalized(self) -> None:
@@ -148,6 +239,253 @@ class LLMAPITests(unittest.TestCase):
         self.assertNotIn("私有推理", result.content)
         self.assertEqual(result.reasoning_content, "推理\n内嵌私有推理")
         self.assertEqual(result.usage, {})
+
+    def test_anthropic_payload_and_response_are_normalized(self) -> None:
+        response = anthropic_response(
+            content=[
+                {"type": "thinking", "thinking": "私有思考", "signature": "sig"},
+                {"type": "text", "text": "第一段"},
+                {"type": "redacted_thinking", "data": "sealed-private-data"},
+                {"type": "text", "text": "第二段"},
+            ],
+            model="server-anthropic-model",
+        )
+        opener = QueueOpener(response)
+        client = ChatClient.from_config(
+            provider_config(),
+            {
+                "TEST_API_URL": "https://example.test/gateway",
+                "TEST_API_KEY": "fake-anthropic-key",
+            },
+            urlopen=opener,
+        )
+        messages = [
+            {"role": "system", "content": "系统提示"},
+            {"role": "user", "content": "第一问"},
+            {"role": "assistant", "content": "先前回答"},
+            {"role": "user", "content": "继续写"},
+        ]
+        original_messages = json.loads(json.dumps(messages, ensure_ascii=False))
+
+        result = client.complete(
+            model_config(
+                "requested-anthropic-model",
+                protocol=ANTHROPIC_MESSAGES,
+                protocol_required={"max_tokens": 65_536},
+            ),
+            messages,
+            stage="chapter",
+        )
+
+        request, timeout = opener.requests[0]
+        self.assertEqual(request.full_url, "https://example.test/gateway/v1/messages")
+        self.assertEqual(timeout, 42)
+        self.assertEqual(request.get_header("X-api-key"), "fake-anthropic-key")
+        self.assertEqual(request.get_header("Anthropic-version"), "2023-06-01")
+        self.assertIsNone(request.get_header("Authorization"))
+        payload = json.loads(request.data.decode("utf-8"))
+        self.assertEqual(
+            payload,
+            {
+                "model": "requested-anthropic-model",
+                "max_tokens": 65_536,
+                "system": "系统提示",
+                "messages": [
+                    {"role": "user", "content": "第一问"},
+                    {"role": "assistant", "content": "先前回答"},
+                    {"role": "user", "content": "继续写"},
+                ],
+            },
+        )
+        self.assertNotIn("stream", payload)
+        self.assertNotIn("temperature", payload)
+        self.assertNotIn("thinking", payload)
+        self.assertEqual(messages, original_messages)
+
+        self.assertEqual(result.content, "第一段第二段")
+        self.assertEqual(result.reasoning_content, "私有思考")
+        self.assertNotIn("sealed-private-data", result.content)
+        self.assertEqual(result.requested_model, "requested-anthropic-model")
+        self.assertEqual(result.response_model, "server-anthropic-model")
+        self.assertEqual(result.response_id, "msg-test")
+        self.assertEqual(result.finish_reason, "stop")
+        self.assertEqual(result.native_finish_reason, "end_turn")
+        self.assertEqual(result.protocol, ANTHROPIC_MESSAGES)
+        self.assertEqual(result.endpoint_path, "/v1/messages")
+        self.assertEqual(result.usage["prompt_tokens"], 16)
+        self.assertEqual(result.usage["completion_tokens"], 7)
+        self.assertEqual(result.usage["total_tokens"], 23)
+        self.assertEqual(result.usage["input_tokens"], 11)
+        self.assertEqual(result.usage["cache_creation_input_tokens"], 3)
+        self.assertEqual(result.usage["cache_read_input_tokens"], 2)
+        self.assertEqual(result.usage["output_tokens"], 7)
+        self.assertEqual(result.raw_response, response)
+
+    def test_anthropic_stop_reasons_are_normalized_without_accepting_unknowns(
+        self,
+    ) -> None:
+        cases = (
+            ("end_turn", "stop"),
+            ("stop_sequence", "stop"),
+            ("max_tokens", "length"),
+            ("tool_use", "tool_use"),
+            ("pause_turn", "pause_turn"),
+            ("refusal", "refusal"),
+            (None, None),
+        )
+        for native_reason, expected_finish_reason in cases:
+            with self.subTest(native_reason=native_reason):
+                opener = QueueOpener(
+                    anthropic_response(stop_reason=native_reason)
+                )
+                client = ChatClient.from_config(
+                    provider_config(),
+                    {
+                        "TEST_API_URL": "https://example.test",
+                        "TEST_API_KEY": "fake",
+                    },
+                    urlopen=opener,
+                )
+                result = client.complete(
+                    model_config(
+                        "a-model",
+                        protocol=ANTHROPIC_MESSAGES,
+                        protocol_required={"max_tokens": 32_768},
+                    ),
+                    [{"role": "user", "content": "x"}],
+                    stage="chapter",
+                )
+                self.assertEqual(result.finish_reason, expected_finish_reason)
+                self.assertEqual(result.native_finish_reason, native_reason)
+                self.assertEqual(result.protocol, ANTHROPIC_MESSAGES)
+                self.assertEqual(result.endpoint_path, "/v1/messages")
+
+    def test_anthropic_protocol_required_is_strict_and_not_overridable(
+        self,
+    ) -> None:
+        client = ChatClient.from_config(
+            provider_config(),
+            {
+                "TEST_API_URL": "https://example.test",
+                "TEST_API_KEY": "fake",
+            },
+            urlopen=QueueOpener(),
+        )
+        base = model_config("a-model", protocol=ANTHROPIC_MESSAGES)
+        invalid_required = (
+            None,
+            {},
+            {"max_tokens": True},
+            {"max_tokens": 0},
+            {"max_tokens": -1},
+            {"max_tokens": "65536"},
+            {"max_tokens": 65_536, "temperature": 0.2},
+        )
+        for required in invalid_required:
+            with self.subTest(protocol_required=required):
+                configured = dict(base)
+                if required is not None:
+                    configured["protocol_required"] = required
+                with self.assertRaisesRegex(ValueError, "protocol_required|max_tokens"):
+                    client.complete(
+                        configured,
+                        [{"role": "user", "content": "x"}],
+                        stage="chapter",
+                    )
+
+        for forbidden_request in (
+            {"max_tokens": 8_192},
+            {"stream": True},
+        ):
+            with self.subTest(forbidden_request=forbidden_request):
+                configured = model_config(
+                    "a-model",
+                    protocol=ANTHROPIC_MESSAGES,
+                    protocol_required={"max_tokens": 65_536},
+                    request=forbidden_request,
+                )
+                with self.assertRaisesRegex(ValueError, "max_tokens|stream|非流式"):
+                    client.complete(
+                        configured,
+                        [{"role": "user", "content": "x"}],
+                        stage="chapter",
+                    )
+
+    def test_protocol_routing_is_per_request_and_not_sticky(self) -> None:
+        opener = QueueOpener(
+            openai_response("O-1", response_id="o-1"),
+            anthropic_response(
+                content=[{"type": "text", "text": "A"}],
+                response_id="a-1",
+            ),
+            openai_response("O-2", response_id="o-2"),
+        )
+        client = ChatClient.from_config(
+            provider_config(),
+            {
+                "TEST_API_URL": "https://example.test",
+                "TEST_API_KEY": "fake",
+            },
+            urlopen=opener,
+        )
+        messages = [
+            {"role": "system", "content": "system"},
+            {"role": "user", "content": "x"},
+        ]
+
+        first = client.complete(
+            model_config("o-default"),
+            messages,
+            stage="chapter",
+        )
+        second = client.complete(
+            model_config(
+                "a-explicit",
+                protocol=ANTHROPIC_MESSAGES,
+                protocol_required={"max_tokens": 65_536},
+            ),
+            messages,
+            stage="chapter",
+        )
+        third = client.complete(
+            model_config("o-explicit", protocol=OPENAI_CHAT_COMPLETIONS),
+            messages,
+            stage="chapter",
+        )
+
+        self.assertEqual(
+            [request.full_url for request, _timeout in opener.requests],
+            [
+                "https://example.test/v1/chat/completions",
+                "https://example.test/v1/messages",
+                "https://example.test/v1/chat/completions",
+            ],
+        )
+        self.assertEqual(
+            [first.protocol, second.protocol, third.protocol],
+            [
+                OPENAI_CHAT_COMPLETIONS,
+                ANTHROPIC_MESSAGES,
+                OPENAI_CHAT_COMPLETIONS,
+            ],
+        )
+        self.assertEqual(
+            [first.endpoint_path, second.endpoint_path, third.endpoint_path],
+            [
+                "/v1/chat/completions",
+                "/v1/messages",
+                "/v1/chat/completions",
+            ],
+        )
+        first_payload, second_payload, third_payload = (
+            json.loads(request.data.decode("utf-8"))
+            for request, _timeout in opener.requests
+        )
+        self.assertEqual(set(first_payload), {"model", "messages"})
+        self.assertEqual(
+            set(second_payload), {"model", "messages", "system", "max_tokens"}
+        )
+        self.assertEqual(set(third_payload), {"model", "messages"})
 
     def test_empty_content_error_exposes_only_safe_completion_metadata(self) -> None:
         opener = QueueOpener(

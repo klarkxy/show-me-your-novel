@@ -1278,7 +1278,7 @@ def test_cli_preflight_checks_every_generator_and_judge(
     assert "基础调用=19–21" in output
     assert "最多追加16–18次扩写" in output
     assert "总计35–39" in output
-    assert "未发 chat/completions 请求" in output
+    assert "未发 completion 请求" in output
 
 
 def test_cli_skips_valid_completed_result_before_reading_key(
@@ -1466,3 +1466,136 @@ def test_run_id_changes_with_provider_request_defaults() -> None:
     assert calculate_run_id("reform-era", "方向", PROMPTS, MODEL) != calculate_run_id(
         "reform-era", "方向", PROMPTS, tracked
     )
+
+
+def test_openai_legacy_identity_is_guarded_by_exact_migration_sources(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    assert (
+        generate_module._openai_compatibility_source_hash()
+        == generate_module.OPENAI_COMPATIBILITY_SOURCE_SHA256
+    )
+    legacy_run_id = calculate_run_id("reform-era", "方向", PROMPTS, MODEL)
+    current_hash = generate_module._current_source_code_hash()
+    assert generate_module.calculate_code_hash(MODEL) == (
+        generate_module.LEGACY_OPENAI_CODE_SHA256
+    )
+    assert generate_module.calculate_code_hash(
+        {**MODEL, "protocol": "anthropic-messages"}
+    ) == current_hash
+
+    monkeypatch.setattr(
+        generate_module,
+        "_openai_compatibility_source_hash",
+        lambda: "changed-source",
+    )
+    assert generate_module.calculate_code_hash(MODEL) == current_hash
+    assert calculate_run_id("reform-era", "方向", PROMPTS, MODEL) != legacy_run_id
+
+
+def test_anthropic_required_max_tokens_are_audited_as_protocol_metadata(
+    tmp_path: Path,
+) -> None:
+    class AnthropicClient:
+        def complete(self, model_cfg, messages, *, stage):
+            return ChatResult(
+                content="正文",
+                usage={
+                    "input_tokens": 10,
+                    "output_tokens": 2,
+                    "prompt_tokens": 10,
+                    "completion_tokens": 2,
+                    "total_tokens": 12,
+                },
+                requested_model=str(model_cfg["model"]),
+                response_model="MiniMax-M3",
+                finish_reason="stop",
+                native_finish_reason="end_turn",
+                protocol="anthropic-messages",
+                endpoint_path="/v1/messages",
+                raw_response={
+                    "id": "msg-audit",
+                    "model": "MiniMax-M3",
+                    "content": [{"type": "text", "text": "正文"}],
+                    "stop_reason": "end_turn",
+                    "usage": {"input_tokens": 10, "output_tokens": 2},
+                },
+            )
+
+    model = {
+        **MODEL,
+        "protocol": "anthropic-messages",
+        "protocol_required": {"max_tokens": 204_800},
+    }
+    run = GenerationRun(
+        root=tmp_path,
+        benchmark="reform-era",
+        direction="改革开放初期的中国现实主义长篇。",
+        prompts=PROMPTS,
+        model_cfg=model,
+        client=AnthropicClient(),
+        new_run=False,
+        sleep_fn=lambda _delay: None,
+    )
+    run._initialize_work()
+    assert run._call("继续写", stage="chapter", attempt=1, persist=False) == "正文"
+    record = run._usage_records()[0]
+    audit = record["context_audit"]
+    assert audit["wire_protocol"] == "anthropic-messages"
+    assert audit["endpoint_path"] == "/v1/messages"
+    assert audit["protocol_required_parameters"] == ["max_tokens"]
+    assert audit["configured_max_tokens"] == 204_800
+    assert audit["max_tokens_sent"] is True
+    assert audit["api_optional_parameters"] == []
+    assert record["protocol"] == "anthropic-messages"
+    assert record["endpoint_path"] == "/v1/messages"
+    assert record["native_finish_reason"] == "end_turn"
+
+
+def test_anthropic_empty_response_failure_usage_is_normalized(
+    tmp_path: Path,
+) -> None:
+    model = {
+        **MODEL,
+        "protocol": "anthropic-messages",
+        "protocol_required": {"max_tokens": 65_536},
+    }
+    run = GenerationRun(
+        root=tmp_path,
+        benchmark="reform-era",
+        direction="改革开放初期的中国现实主义长篇。",
+        prompts=PROMPTS,
+        model_cfg=model,
+        client=FakeClient(),
+        new_run=False,
+        sleep_fn=lambda _delay: None,
+    )
+    run._initialize_work()
+    error = LLMAPIError(
+        "LLM API 返回空内容",
+        raw_response={
+            "id": "msg-empty",
+            "model": "claude-test",
+            "content": [],
+            "stop_reason": "max_tokens",
+            "usage": {
+                "input_tokens": 11,
+                "cache_creation_input_tokens": 3,
+                "cache_read_input_tokens": 2,
+                "output_tokens": 7,
+            },
+        },
+    )
+    run._append_failed_usage(
+        "chapter",
+        error,
+        attempt=1,
+        chapter=1,
+        context_audit={"wire_protocol": "anthropic-messages"},
+    )
+    record = run._usage_records()[0]
+    assert record["finish_reason"] == "length"
+    assert record["native_finish_reason"] == "max_tokens"
+    assert record["usage"]["prompt_tokens"] == 16
+    assert record["usage"]["completion_tokens"] == 7
+    assert record["usage"]["total_tokens"] == 23

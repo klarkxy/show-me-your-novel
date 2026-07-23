@@ -27,6 +27,7 @@ from typing import Any, Callable
 
 try:  # Script execution and package-style tests are both supported.
     from .llm_api import (
+        OPENAI_CHAT_COMPLETIONS,
         PROVIDER_DEFAULTS_TRACKING_KEY,
         ChatClient,
         ChatResult,
@@ -34,11 +35,15 @@ try:  # Script execution and package-style tests are both supported.
         get_model_config,
         load_config,
         load_env_file,
+        model_protocol,
+        protocol_endpoint_path,
+        protocol_required_parameters,
         split_inline_reasoning_text,
         with_provider_request_defaults,
     )
 except ImportError:  # pragma: no cover - exercised by direct CLI usage
     from llm_api import (  # type: ignore
+        OPENAI_CHAT_COMPLETIONS,
         PROVIDER_DEFAULTS_TRACKING_KEY,
         ChatClient,
         ChatResult,
@@ -46,12 +51,19 @@ except ImportError:  # pragma: no cover - exercised by direct CLI usage
         get_model_config,
         load_config,
         load_env_file,
+        model_protocol,
+        protocol_endpoint_path,
+        protocol_required_parameters,
         split_inline_reasoning_text,
         with_provider_request_defaults,
     )
 
 
 PROTOCOL_VERSION = "novel-benchmark.v2.1"
+LEGACY_OPENAI_CODE_SHA256 = (
+    "a71e090e70c9bf5eb6361ff2e552a0d143a5bee8aead8f79febe20615f3ea33d"
+)
+OPENAI_COMPATIBILITY_SOURCE_SHA256 = "a2675e074af2592467d6be3c46a1bcaa8810f60fcb7145f301eec64399bb866c"
 DEFAULT_BENCHMARK = "reform-era"
 PROMPT_FILES = (
     "system.md",
@@ -206,8 +218,9 @@ def sha256_normalized_text_file(path: Path) -> str:
     return sha256_text(normalize_newlines(text))
 
 
-def calculate_code_hash() -> str:
-    """Hash the V2 runner implementation recorded in public manifests."""
+def _current_source_code_hash() -> str:
+    """Hash the current V2 runner sources for newly introduced protocols."""
+
     files = (Path(__file__).resolve(), Path(__file__).resolve().with_name("llm_api.py"))
     evidence = {
         path.name: sha256_normalized_text_file(path)
@@ -215,6 +228,46 @@ def calculate_code_hash() -> str:
         if path.exists()
     }
     return sha256_text(canonical_json(evidence))
+
+
+def _openai_compatibility_source_hash() -> str:
+    """Fingerprint the exact migration sources while ignoring this guard value."""
+
+    files = (Path(__file__).resolve(), Path(__file__).resolve().with_name("llm_api.py"))
+    evidence: dict[str, str] = {}
+    for path in files:
+        if not path.exists():
+            continue
+        text = normalize_newlines(path.read_bytes().decode("utf-8-sig"))
+        if path == Path(__file__).resolve():
+            text = re.sub(
+                r'OPENAI_COMPATIBILITY_SOURCE_SHA256 = "[^"]+"',
+                'OPENAI_COMPATIBILITY_SOURCE_SHA256 = "<guard>"',
+                text,
+                count=1,
+            )
+        evidence[path.name] = sha256_text(text)
+    return sha256_text(canonical_json(evidence))
+
+
+def calculate_code_hash(model_cfg: dict[str, Any] | None = None) -> str:
+    """Return a protocol-scoped implementation identity.
+
+    Existing O-port books were produced by the unchanged Chat Completions path.
+    Keeping that semantic identity prevents an Anthropic-only adapter addition
+    from invalidating eight already completed books.  Anthropic runs hash the
+    current sources and therefore remain strict about future adapter changes.
+    """
+
+    current_hash = _current_source_code_hash()
+    protocol = model_protocol(model_cfg or {})
+    if (
+        protocol == OPENAI_CHAT_COMPLETIONS
+        and _openai_compatibility_source_hash()
+        == OPENAI_COMPATIBILITY_SOURCE_SHA256
+    ):
+        return LEGACY_OPENAI_CODE_SHA256
+    return current_hash
 
 
 def atomic_write_text(path: Path, text: str) -> None:
@@ -419,7 +472,7 @@ def build_run_input(
         "direction": canonical_text(direction),
         "prompts": {name: canonical_text(value) for name, value in prompts.items()},
         "model": model_cfg,
-        "runner_code_sha256": calculate_code_hash(),
+        "runner_code_sha256": calculate_code_hash(model_cfg),
     }
 
 
@@ -1039,7 +1092,7 @@ class GenerationRun:
         )
         self.run_input_sha256 = sha256_text(canonical_json(self.run_input))
         self.policy_sha256 = protocol_policy_sha256()
-        self.code_sha256_at_start = calculate_code_hash()
+        self.code_sha256_at_start = calculate_code_hash(model_cfg)
         self.run_id = self.run_input_sha256[:12]
         self.work_dir = self.model_work_root / self.run_id
         self.accepted_dir = self.work_dir / "accepted"
@@ -1246,6 +1299,39 @@ class GenerationRun:
         choices = raw.get("choices") if isinstance(raw.get("choices"), list) else []
         first = choices[0] if choices and isinstance(choices[0], dict) else {}
         usage = raw.get("usage") if isinstance(raw.get("usage"), dict) else {}
+        native_stop_reason = raw.get("stop_reason")
+        if native_stop_reason is not None:
+            usage = dict(usage)
+
+            def token_count(name: str) -> int:
+                value = usage.get(name)
+                if isinstance(value, bool) or not isinstance(value, int):
+                    return 0
+                return max(0, value)
+
+            prompt_tokens = sum(
+                token_count(name)
+                for name in (
+                    "input_tokens",
+                    "cache_creation_input_tokens",
+                    "cache_read_input_tokens",
+                )
+            )
+            completion_tokens = token_count("output_tokens")
+            usage.update(
+                {
+                    "prompt_tokens": prompt_tokens,
+                    "completion_tokens": completion_tokens,
+                    "total_tokens": prompt_tokens + completion_tokens,
+                }
+            )
+        finish_reason = first.get("finish_reason")
+        if finish_reason is None and native_stop_reason is not None:
+            finish_reason = {
+                "end_turn": "stop",
+                "stop_sequence": "stop",
+                "max_tokens": "length",
+            }.get(str(native_stop_reason), str(native_stop_reason))
         record = {
             "ts": utc_now(),
             "stage": stage,
@@ -1260,7 +1346,8 @@ class GenerationRun:
             "requested_model": self.model_cfg.get("model"),
             "response_model": raw.get("model"),
             "response_id": raw.get("id"),
-            "finish_reason": first.get("finish_reason"),
+            "finish_reason": finish_reason,
+            "native_finish_reason": native_stop_reason,
         }
         self._append_usage_record(record)
 
@@ -1278,6 +1365,8 @@ class GenerationRun:
         messages = [*base_messages, {"role": "user", "content": user_prompt}]
         context_window = int(self.model_cfg.get("context_window", 131_072))
         api_optional_parameters = generation_request_parameters(self.model_cfg, stage)
+        wire_protocol = model_protocol(self.model_cfg)
+        required_parameters = protocol_required_parameters(self.model_cfg)
         if api_optional_parameters:
             raise RuntimeError(
                 "生成请求必须使用服务端默认参数，禁止显式 API 控制字段："
@@ -1339,8 +1428,11 @@ class GenerationRun:
             "prompt_estimate_tokens": prompt_estimate,
             "usage_margin_tokens": CONTEXT_USAGE_MARGIN_TOKENS,
             "api_optional_parameters": [],
-            "configured_max_tokens": None,
-            "max_tokens_sent": False,
+            "wire_protocol": wire_protocol,
+            "endpoint_path": protocol_endpoint_path(wire_protocol),
+            "protocol_required_parameters": sorted(required_parameters),
+            "configured_max_tokens": required_parameters.get("max_tokens"),
+            "max_tokens_sent": "max_tokens" in required_parameters,
             "output_reserve_tokens": 0,
             "reserved_total_tokens": estimate,
             "headroom_tokens": safe_limit - estimate,
@@ -2117,6 +2209,8 @@ class GenerationRun:
                     PROVIDER_DEFAULTS_TRACKING_KEY
                 )
                 or {},
+                "protocol": model_protocol(self.model_cfg),
+                "protocol_required": protocol_required_parameters(self.model_cfg),
                 "context_window": self.model_cfg.get("context_window"),
             }),
             "attempts": attempts,
@@ -2236,10 +2330,19 @@ def result_is_complete(result_dir: Path, expected_run_id: str) -> bool:
         ):
             return False
         code_hash = manifest.get("code_sha256")
+        manifest_parameters = manifest.get("parameters")
+        manifest_protocol = (
+            manifest_parameters.get("protocol", OPENAI_CHAT_COMPLETIONS)
+            if isinstance(manifest_parameters, dict)
+            else OPENAI_CHAT_COMPLETIONS
+        )
+        expected_code_hash = calculate_code_hash(
+            {"protocol": manifest_protocol}
+        )
         if (
             not isinstance(code_hash, str)
             or not re.fullmatch(r"[0-9a-f]{64}", code_hash)
-            or code_hash != calculate_code_hash()
+            or code_hash != expected_code_hash
         ):
             return False
         run_input_sha256 = manifest.get("run_input_sha256")
@@ -2561,9 +2664,19 @@ def main(argv: list[str] | None = None) -> int:
     for model_cfg in model_cfgs:
         context_window = int(model_cfg.get("context_window", 131_072))
         safe_context = int(context_window * 0.85)
+        wire_protocol = model_protocol(model_cfg)
+        required_parameters = protocol_required_parameters(model_cfg)
+        required_label = (
+            ", ".join(
+                f"{key}={value}" for key, value in sorted(required_parameters.items())
+            )
+            or "none"
+        )
         log(
-            f"{model_cfg['id']}: wire={model_cfg['model']}, context={context_window}, "
+            f"{model_cfg['id']}: wire={model_cfg['model']}, protocol={wire_protocol}, "
+            f"path={protocol_endpoint_path(wire_protocol)}, context={context_window}, "
             f"85%安全线={safe_context}, api_optional_params=none（服务端默认），"
+            f"protocol_required={required_label}，"
             f"基础调用=19–21；若每章均不足3000字，最多追加16–18次扩写"
             f"（总计35–39，格式修复另计），"
             f"run={calculate_run_id(args.benchmark, direction, prompts, model_cfg)}"
@@ -2571,7 +2684,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.dry_run:
         log(
             f"dry-run 完成；选择 {len(model_cfgs)} 个模型，其中待生成 {len(pending)} 个；"
-            "未发 chat/completions 请求"
+            "未发 completion 请求"
         )
         return 0
 

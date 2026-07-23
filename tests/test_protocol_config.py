@@ -4,6 +4,8 @@ from pathlib import Path
 
 import yaml
 
+from runner.llm_api import ANTHROPIC_MESSAGES, OPENAI_CHAT_COMPLETIONS
+
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_GENERATORS = (
@@ -28,6 +30,34 @@ EXPECTED_JUDGES = {
     "fable": "claude-fable-5",
     "kimi": "kimi-k3",
 }
+ANTHROPIC_GENERATORS = {
+    "minimax-m3",
+    "claude-haiku-4-5",
+    "claude-sonnet-5",
+    "claude-opus-4-8",
+}
+ANTHROPIC_JUDGES = {"fable"}
+
+
+def assert_anthropic_protocol_required(
+    entry: dict,
+    *,
+    require_more_than_8192: bool,
+) -> None:
+    assert entry.get("protocol") == ANTHROPIC_MESSAGES
+    required = entry.get("protocol_required")
+    assert isinstance(required, dict)
+    assert set(required) == {"max_tokens"}
+    max_tokens = required["max_tokens"]
+    assert type(max_tokens) is int
+    assert max_tokens > (8_192 if require_more_than_8192 else 0)
+    request = entry.get("request") or {}
+    assert "max_tokens" not in request
+    stages = entry.get("stages") or {}
+    assert all(
+        "max_tokens" not in (stage_request or {})
+        for stage_request in stages.values()
+    )
 
 
 def test_v2_protocol_inventory_and_direction_are_locked() -> None:
@@ -44,10 +74,36 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     assert "gpt-5.6-terra" not in {model["id"] for model in models}
     assert all(model.get("request") == {} for model in models)
     assert all(model.get("stages") == {} for model in models)
+    for model in models:
+        if model["id"] in ANTHROPIC_GENERATORS:
+            assert_anthropic_protocol_required(
+                model, require_more_than_8192=True
+            )
+        else:
+            assert model.get("protocol", OPENAI_CHAT_COMPLETIONS) == (
+                OPENAI_CHAT_COMPLETIONS
+            )
+            assert "protocol_required" not in model
 
     judges = config["judges"]
     assert {judge["id"]: judge["model"] for judge in judges} == EXPECTED_JUDGES
     assert all(judge["provider"] == "new-api" for judge in judges)
+    for judge in judges:
+        if judge["id"] in ANTHROPIC_JUDGES:
+            assert_anthropic_protocol_required(
+                judge, require_more_than_8192=False
+            )
+            stage_parameters = {
+                key
+                for stage_request in (judge.get("stages") or {}).values()
+                for key in (stage_request or {})
+            }
+            assert "response_format" not in stage_parameters
+        else:
+            assert judge.get("protocol", OPENAI_CHAT_COMPLETIONS) == (
+                OPENAI_CHAT_COMPLETIONS
+            )
+            assert "protocol_required" not in judge
 
     direction = (ROOT / "benchmark" / "reform-era" / "direction.md").read_text(
         encoding="utf-8"

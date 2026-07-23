@@ -1,8 +1,10 @@
-"""Small OpenAI-compatible client used by the benchmark runners.
+"""Small dual-protocol client used by the benchmark runners.
 
-The configured New API instance exposes a single protocol surface:
-``/v1/chat/completions``.  This module deliberately stays provider-agnostic and
-only sends request parameters that the caller explicitly supplies.
+The configured New API instance exposes both OpenAI Chat Completions and
+Anthropic Messages.  Models select their exact wire protocol in ``config.yaml``;
+the client never guesses from a model name.  Optional generation controls are
+sent only when the caller explicitly supplies them.  Anthropic's required
+``max_tokens`` field is tracked separately from those optional controls.
 
 Credentials are accepted by the client (or loaded from ``API_URL`` and
 ``API_KEY`` at runtime) but are never included in return values or exceptions.
@@ -29,8 +31,26 @@ import yaml
 API_URL_ENV = "API_URL"
 API_KEY_ENV = "API_KEY"
 DEFAULT_TIMEOUT = 180
+OPENAI_CHAT_COMPLETIONS = "openai-chat-completions"
+ANTHROPIC_MESSAGES = "anthropic-messages"
+ANTHROPIC_VERSION = "2023-06-01"
 
 _PROTECTED_BODY_FIELDS = frozenset({"model", "messages"})
+_ANTHROPIC_PROTECTED_BODY_FIELDS = frozenset({"model", "messages", "system"})
+_ANTHROPIC_REQUEST_FIELDS = frozenset(
+    {
+        "max_tokens",
+        "metadata",
+        "service_tier",
+        "stop_sequences",
+        "temperature",
+        "thinking",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p",
+    }
+)
 _SENSITIVE_FIELD_NAMES = frozenset(
     {
         "api_key",
@@ -90,7 +110,7 @@ def parse_retry_after(value: str | None) -> float | None:
 
 @dataclass(frozen=True)
 class ChatResult:
-    """Normalized non-streaming Chat Completions result."""
+    """Normalized non-streaming result from either supported wire protocol."""
 
     content: str
     reasoning_content: str = ""
@@ -99,6 +119,9 @@ class ChatResult:
     response_model: str | None = None
     response_id: str | None = None
     finish_reason: str | None = None
+    native_finish_reason: str | None = None
+    protocol: str = OPENAI_CHAT_COMPLETIONS
+    endpoint_path: str = "/v1/chat/completions"
     latency_ms: int | None = None
     raw_response: dict[str, Any] = field(default_factory=dict, repr=False)
 
@@ -129,6 +152,25 @@ def normalize_api_url(api_url: str) -> str:
     if base.endswith("/v1"):
         return base
     return f"{base}/v1"
+
+
+def model_protocol(model_cfg: Mapping[str, Any]) -> str:
+    """Return the explicitly configured protocol, defaulting to the legacy O port."""
+
+    protocol = str(model_cfg.get("protocol") or OPENAI_CHAT_COMPLETIONS).strip()
+    if protocol not in {OPENAI_CHAT_COMPLETIONS, ANTHROPIC_MESSAGES}:
+        raise ValueError(f"不支持的模型协议：{protocol}")
+    return protocol
+
+
+def protocol_endpoint_path(protocol: str) -> str:
+    """Return the public path associated with a validated wire protocol."""
+
+    if protocol == OPENAI_CHAT_COMPLETIONS:
+        return "/v1/chat/completions"
+    if protocol == ANTHROPIC_MESSAGES:
+        return "/v1/messages"
+    raise ValueError(f"不支持的模型协议：{protocol}")
 
 
 def load_env_file(env_file: Path) -> dict[str, str]:
@@ -222,6 +264,44 @@ def _find_sensitive_field(value: object) -> str | None:
     return None
 
 
+def protocol_required_parameters(model_cfg: Mapping[str, Any]) -> dict[str, Any]:
+    """Validate and return fields required by the selected wire protocol."""
+
+    protocol = model_protocol(model_cfg)
+    raw = model_cfg.get("protocol_required")
+    if raw is None:
+        required: dict[str, Any] = {}
+    elif isinstance(raw, Mapping):
+        required = dict(raw)
+    else:
+        raise ValueError("model.protocol_required 必须是对象")
+
+    sensitive = _find_sensitive_field(required)
+    if sensitive:
+        raise ValueError(f"protocol_required 含敏感字段：{sensitive}")
+    if protocol == OPENAI_CHAT_COMPLETIONS:
+        if required:
+            raise ValueError("OpenAI Chat Completions 不接受 protocol_required")
+        return {}
+
+    unexpected = sorted(set(required) - {"max_tokens"})
+    if unexpected:
+        raise ValueError(
+            "Anthropic Messages 的 protocol_required 含未知字段："
+            + ", ".join(unexpected)
+        )
+    max_tokens = required.get("max_tokens")
+    if (
+        isinstance(max_tokens, bool)
+        or not isinstance(max_tokens, int)
+        or max_tokens <= 0
+    ):
+        raise ValueError(
+            "Anthropic Messages 必须配置正整数 protocol_required.max_tokens"
+        )
+    return {"max_tokens": max_tokens}
+
+
 def with_provider_request_defaults(
     config: Mapping[str, Any], model_cfg: Mapping[str, Any]
 ) -> dict[str, Any]:
@@ -233,6 +313,8 @@ def with_provider_request_defaults(
     """
 
     result = dict(model_cfg)
+    model_protocol(result)
+    protocol_required_parameters(result)
     provider_id = str(result.get("provider") or "new-api")
     providers = config.get("providers")
     if not isinstance(providers, Mapping):
@@ -420,21 +502,26 @@ class OpenAIChatClient:
         path: str,
         *,
         payload: Mapping[str, Any] | None = None,
+        request_headers: Mapping[str, str] | None = None,
         timeout: int | None = None,
     ) -> dict[str, Any]:
         url = f"{self.api_url}/{path.lstrip('/')}"
         data = None
         if payload is not None:
             data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "User-Agent": "show-me-your-novel/2.0 (python-urllib)",
+        }
+        if request_headers is None:
+            headers["Authorization"] = f"Bearer {self._api_key}"
+        else:
+            headers.update({str(key): str(value) for key, value in request_headers.items()})
         request = urllib.request.Request(
             url,
             data=data,
-            headers={
-                "Accept": "application/json",
-                "Authorization": f"Bearer {self._api_key}",
-                "Content-Type": "application/json",
-                "User-Agent": "show-me-your-novel/2.0 (python-urllib)",
-            },
+            headers=headers,
             method=method,
         )
         try:
@@ -557,6 +644,171 @@ class OpenAIChatClient:
                 if first.get("finish_reason") is not None
                 else None
             ),
+            native_finish_reason=(
+                str(first["finish_reason"])
+                if first.get("finish_reason") is not None
+                else None
+            ),
+            protocol=OPENAI_CHAT_COMPLETIONS,
+            endpoint_path=protocol_endpoint_path(OPENAI_CHAT_COMPLETIONS),
+            latency_ms=latency_ms,
+            raw_response=response,
+        )
+
+    def anthropic_message(
+        self,
+        *,
+        model: str,
+        messages: Sequence[Mapping[str, Any]],
+        request_params: Mapping[str, Any],
+        timeout: int | None = None,
+    ) -> ChatResult:
+        """Call ``/v1/messages`` using an explicit Anthropic Messages payload."""
+
+        if not model.strip():
+            raise ValueError("model 不能为空")
+        if not messages:
+            raise ValueError("messages 不能为空")
+
+        params = dict(request_params)
+        protected = sorted(_ANTHROPIC_PROTECTED_BODY_FIELDS.intersection(params))
+        if protected:
+            raise ValueError(f"request_params 不得覆盖：{', '.join(protected)}")
+        sensitive = _find_sensitive_field(params)
+        if sensitive:
+            raise ValueError(f"request_params 含敏感字段：{sensitive}")
+        if "stream" in params:
+            raise ValueError("当前客户端仅支持非流式响应，不接受 stream 参数")
+        unsupported = sorted(set(params) - _ANTHROPIC_REQUEST_FIELDS)
+        if unsupported:
+            raise ValueError(
+                "Anthropic Messages 不支持请求字段：" + ", ".join(unsupported)
+            )
+        max_tokens = params.get("max_tokens")
+        if (
+            isinstance(max_tokens, bool)
+            or not isinstance(max_tokens, int)
+            or max_tokens <= 0
+        ):
+            raise ValueError("Anthropic Messages 的 max_tokens 必须是正整数")
+
+        system_parts: list[str] = []
+        wire_messages: list[dict[str, Any]] = []
+        conversation_started = False
+        for raw_message in messages:
+            if not isinstance(raw_message, Mapping):
+                raise ValueError("messages 中的元素必须是对象")
+            role = str(raw_message.get("role") or "").strip()
+            content = raw_message.get("content")
+            if role == "system":
+                if conversation_started:
+                    raise ValueError("Anthropic system message 必须位于对话开头")
+                system_text = _coerce_content_text(content).strip()
+                if system_text:
+                    system_parts.append(system_text)
+                continue
+            if role not in {"user", "assistant"}:
+                raise ValueError(f"Anthropic Messages 不支持 role={role or 'missing'}")
+            conversation_started = True
+            wire_messages.append({"role": role, "content": content})
+        if not wire_messages:
+            raise ValueError("Anthropic Messages 缺少 user/assistant 消息")
+
+        payload: dict[str, Any] = {
+            "model": model,
+            "messages": wire_messages,
+        }
+        if system_parts:
+            payload["system"] = "\n\n".join(system_parts)
+        payload.update(params)
+
+        started = perf_counter()
+        response = self._request_json(
+            "POST",
+            "messages",
+            payload=payload,
+            request_headers={
+                "x-api-key": self._api_key,
+                "anthropic-version": ANTHROPIC_VERSION,
+            },
+            timeout=timeout,
+        )
+        latency_ms = round((perf_counter() - started) * 1000)
+
+        raw_content = response.get("content")
+        if not isinstance(raw_content, list):
+            raise LLMAPIError("LLM API Messages 响应缺少 content 数组")
+        content = _coerce_content_text(raw_content)
+        content, inline_reasoning = split_inline_reasoning_text(content)
+        embedded_reasoning = _extract_reasoning_blocks(raw_content)
+        reasoning = "\n".join(
+            part.strip()
+            for part in (embedded_reasoning, inline_reasoning)
+            if part and part.strip()
+        )
+        native_stop_reason = (
+            str(response["stop_reason"])
+            if response.get("stop_reason") is not None
+            else None
+        )
+        finish_reason = {
+            "end_turn": "stop",
+            "stop_sequence": "stop",
+            "max_tokens": "length",
+        }.get(native_stop_reason, native_stop_reason)
+        if not content.strip():
+            suffix = (
+                f"（finish_reason={finish_reason or 'unknown'}，"
+                f"reasoning={'present' if reasoning else 'absent'}）"
+            )
+            raise LLMAPIError(
+                "LLM API 返回空内容" + suffix,
+                raw_response=response,
+            )
+
+        native_usage = response.get("usage")
+        usage: dict[str, Any] = (
+            dict(native_usage) if isinstance(native_usage, Mapping) else {}
+        )
+
+        def token_count(name: str) -> int:
+            value = usage.get(name)
+            if isinstance(value, bool) or not isinstance(value, int):
+                return 0
+            return max(0, value)
+
+        prompt_tokens = sum(
+            token_count(name)
+            for name in (
+                "input_tokens",
+                "cache_creation_input_tokens",
+                "cache_read_input_tokens",
+            )
+        )
+        completion_tokens = token_count("output_tokens")
+        usage.update(
+            {
+                "prompt_tokens": prompt_tokens,
+                "completion_tokens": completion_tokens,
+                "total_tokens": prompt_tokens + completion_tokens,
+            }
+        )
+
+        return ChatResult(
+            content=content,
+            reasoning_content=reasoning,
+            usage=usage,
+            requested_model=model,
+            response_model=(
+                str(response["model"]) if response.get("model") is not None else None
+            ),
+            response_id=(
+                str(response["id"]) if response.get("id") is not None else None
+            ),
+            finish_reason=finish_reason,
+            native_finish_reason=native_stop_reason,
+            protocol=ANTHROPIC_MESSAGES,
+            endpoint_path=protocol_endpoint_path(ANTHROPIC_MESSAGES),
             latency_ms=latency_ms,
             raw_response=response,
         )
@@ -675,16 +927,19 @@ class ChatClient(OpenAIChatClient):
         request_overrides: Mapping[str, Any] | None = None,
         timeout: int | None = None,
     ) -> ChatResult:
-        """Merge explicit config layers and perform one chat completion.
+        """Merge explicit config layers and perform one model completion.
 
         Precedence is exactly ``provider.request_defaults < model.request <
         model.stages[stage] < request_overrides``.  The stage name itself is
-        local metadata and is never sent upstream.
+        local metadata and is never sent upstream.  Protocol-required fields
+        are separate and cannot be overridden by these optional layers.
         """
 
         wire_model = model_cfg.get("model")
         if not isinstance(wire_model, str) or not wire_model.strip():
             raise ValueError("模型配置缺少 model")
+        protocol = model_protocol(model_cfg)
+        required = protocol_required_parameters(model_cfg)
 
         params = dict(self.request_defaults)
         params.update(
@@ -699,9 +954,21 @@ class ChatClient(OpenAIChatClient):
         params.update(
             self._request_mapping(request_overrides, label="request_overrides")
         )
-        return self.chat_completion(
+        conflicts = sorted(set(required).intersection(params))
+        if conflicts:
+            raise ValueError(
+                "协议必填参数不得被可选请求层覆盖：" + ", ".join(conflicts)
+            )
+        if protocol == OPENAI_CHAT_COMPLETIONS:
+            return self.chat_completion(
+                model=wire_model,
+                messages=messages,
+                request_params=params,
+                timeout=timeout,
+            )
+        return self.anthropic_message(
             model=wire_model,
             messages=messages,
-            request_params=params,
+            request_params={**required, **params},
             timeout=timeout,
         )
