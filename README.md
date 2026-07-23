@@ -1,172 +1,208 @@
 # show-me-your-novel
 
-**在线站点**：[https://klarkxy.github.io/show-me-your-novel/](https://klarkxy.github.io/show-me-your-novel/)
+一个中文长篇小说模型评测项目。当前唯一活动协议是 **自主长篇评测 V2.1**：15 个模型围绕同一方向独立完成规划与约 5 万字正文，再由三位固定评委盲评。
 
-这个项目用来横向对比不同中文大模型的长篇小说写作能力。每部小说对应 `novels/` 下的一个目录，里面只有一份 `prompt.md`；`runner/generate.py` 会让 `config.yaml` 里配置的所有模型各生成一版 10 章小说；最后 `scripts/generate_site.py` 渲染成静态站点，推送到 GitHub Pages。
+在线站点：[https://klarkxy.github.io/show-me-your-novel/](https://klarkxy.github.io/show-me-your-novel/)
 
-## 项目特点
+## 评测协议
 
-- **直连 LLM API**：通过 `runner/generate.py` 直接调用 OpenAI-compatible API，不依赖任何 CLI 工具。
-- **分章生成 + 本地质检**：先出 10 章大纲，再逐章生成；每章自动校验字数、标题格式、元评论与代码围栏，失败会修正。
-- **幂等重跑**：已有的小说版本如果通过校验会自动跳过，删了再跑才会重新生成。
-- **本地生成，CI 只部署**：API key 只在本地使用，推送到仓库的只有小说原文和静态站点。
+统一创作方向：
 
-## 目录结构
+> 改革开放初期的中国现实主义长篇。
 
-```
-show-me-your-novel/
-├── config.yaml              # 模型列表
-├── .env                     # API key（已被 gitignore）
-├── novels/
-│   └── <story>/
-│       ├── prompt.md        # 统一提示词
-│       └── <model>.md       # 各模型生成的小说正文
-├── runner/
-│   ├── generate.py          # 核心：分章生成小说
-│   ├── generate.ps1         # PowerShell 薄包装
-│   └── generate.sh          # bash 薄包装
-├── scripts/
-│   ├── generate_site.py     # 核心：渲染 GitHub Pages
-│   ├── generate-site.ps1    # PowerShell 薄包装
-│   └── generate-site.sh     # bash 薄包装
-├── docs/                    # Pages 静态站点根目录
-└── .github/workflows/       # 仅部署的 CI
+每个模型维持一条可重放的权威消息链：
+
+```text
+书名与简介 → 约 200 万字全书大纲 → 前约 5 万字细纲 → 16–18 章正文
 ```
 
-## 快速开始
+关键约束：
 
-### 1. 安装依赖
+- 书名、简介、人物和结局方向由模型自行决定。
+- 全书大纲规划 10–20 卷、总规模 180–220 万字；本轮只生成开篇部分。
+- 章节提示词只建议正文字数约 3,000–4,000 字，不把它做成 API 限制。
+- 结构合格的首稿少于 3,000 个可计字符时，只追加一次隔离扩写请求；最终采用两稿中较长的结构有效稿。
+- 最终纯正文只设置 48,000 个可计字符的最低完成线，**章节和整书都不设置字数上限**。
+- JSON 或章节结构不合格时，候选稿留在私有审计目录；只有最终接受的完整稿进入权威消息链。
+- 不摘要、不截断、不把 reasoning 回填给模型，也不人工修改作品。
+- 生成 API 只发送 `model` 与 `messages`。`temperature`、`reasoning`、`max_tokens`、`top_p`、`response_format` 等均不显式设置，使用服务端默认值。
+- 中断后从最后一个接受阶段继续；已原子落盘的相同请求响应可以零调用恢复。
+
+当前首部完整基线是 MiMo V2.5，`run_id=6767704f6322`：17 章、61,495 个可计字符，结果位于 `results/reform-era/mimo-v2.5/`，已经通过深校验和离线建站。
+
+首轮生成模型：
+
+```text
+deepseek-v4-flash   deepseek-v4-pro      mimo-v2.5
+mimo-v2.5-pro       minimax-m3           glm-5.2
+gpt-5.6-luna        claude-haiku-4-5     claude-sonnet-5
+gemini-3.1-pro      gemini-3.5-flash     kimi-k3
+grok-4.5            claude-opus-4-8      agnes-2.0-flash
+```
+
+`gpt-5.6-terra` 不在本轮范围内。
+
+## 安装与配置
+
+需要 Python 3.11+：
 
 ```bash
-pip install pyyaml
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
 ```
 
-### 2. 配置 API key
+在仓库根目录创建不会被 Git 跟踪的 `.env`：
 
-在仓库根目录创建 `.env`：
+```dotenv
+API_URL=https://your-api.example.com/v1
+API_KEY=sk-...
+```
+
+活动流程统一调用 OpenAI-compatible 的 `/v1/chat/completions`。运行前会通过 `/v1/models` 精确校验 15 个生成模型和 3 个评委的 wire model ID，不做模糊匹配或静默替换。
+
+## 生成
+
+命令必须显式指定模型或 `--all`；无参数不会误触全量调用。
 
 ```bash
-OPENCODE_API_KEY=sk-...
+# 单模型生成或断点续跑
+python runner/generate.py --model deepseek-v4-flash
+
+# 多模型
+python runner/generate.py --model deepseek-v4-flash --model kimi-k3
+
+# 全量就绪检查：不发 completion 请求
+python runner/generate.py --all --dry-run
+
+# 显式运行全部 15 个模型
+python runner/generate.py --all
+
+# 低成本烟测，提交第一章后暂停
+python runner/generate.py --model deepseek-v4-flash --stop-after chapter:1
+
+# prompt、配置或协议变化后授权新实验
+python runner/generate.py --model deepseek-v4-flash --new-run
 ```
 
-`.env` 已被 `.gitignore` 排除，不会提交。
+`--stop-after` 还接受 `book`、`macro-outline`、`opening-outline`。已经完成且哈希匹配的作品会在读取 API key 前离线跳过。
 
-### 3. 生成一部小说
+PowerShell 包装器：
+
+```powershell
+.\runner\generate.ps1 -Models deepseek-v4-flash -DryRun
+.\runner\generate.ps1 -Models deepseek-v4-flash -StopAfter chapter:1
+.\runner\generate.ps1 -All
+```
+
+Legacy 十章生成器仅用于维护旧静态数据，不属于 V2.1：
 
 ```bash
-python3 runner/generate.py --story sci-fi-uplink
+python runner/generate_legacy.py --help
 ```
 
-要跑全部模型、全部小说：
+## 三评委评分
+
+| 评委 | 模型 |
+|---|---|
+| Sol | `gpt-5.6-sol` |
+| Fable | `claude-fable-5` |
+| Kimi | `kimi-k3` |
+
+三位评委收到相同、匿名且未截断的方向、规划和正文，只返回：
+
+```json
+{
+  "score": 87,
+  "ai_flavor": 22,
+  "comment": "不超过 200 个中文字符的简评"
+}
+```
+
+`score` 越高越好，`ai_flavor` 越低越好。只有三份评分全部有效时，作品才进入榜单。
 
 ```bash
-python3 runner/generate.py
+python runner/score.py --model mimo-v2.5 --dry-run
+python runner/score.py --model mimo-v2.5
+python runner/score.py --model mimo-v2.5 --judge sol
+python runner/score.py --all --dry-run
+python runner/score.py --all
 ```
 
-### 4. 生成站点
+PowerShell：
+
+```powershell
+.\runner\score.ps1 -Model mimo-v2.5 -DryRun
+.\runner\score.ps1 -All
+```
+
+评分缓存由完整作品哈希、评分 prompt、评委模型和请求参数共同决定。
+
+## 产物
+
+公开、可提交的 V2.1 结果：
+
+```text
+benchmark/reform-era/direction.md
+results/reform-era/<model>/
+  book.json
+  macro_outline.json
+  opening_outline.json
+  chapters/*.md
+  novel.md
+  manifest.json
+  scores/{sol,fable,kimi,aggregate}.json
+```
+
+私有审计与断点位于被忽略的 `work/`：
+
+```text
+work/v2.1/reform-era/<model>/<run-id>/
+  session.json
+  state.json
+  usage.jsonl
+  usage-events/
+  accepted/
+  raw/
+  failures/
+```
+
+`.env`、认证头、raw response 和 reasoning 不进入公开产物。
+
+## 站点
+
+站点由已提交的 `results/`、Legacy `novels/` 和 `site/assets/` 确定性构建。默认输出到被忽略的 `.site/preview/`：
 
 ```bash
-python3 scripts/generate_site.py
+python scripts/generate_site.py
+python scripts/generate_site.py --docs-dir _site
+bash scripts/generate-site.sh --docs-dir .site/preview
 ```
 
-然后打开 `docs/index.html` 预览。
+PowerShell：
 
-### 5. 部署
-
-```bash
-git add novels docs
-git commit -m "novel: 生成新版本"
-git push
+```powershell
+.\scripts\generate-site.ps1 -DocsDir .site/preview
 ```
 
-GitHub Actions 会自动部署 `docs/` 到 Pages。
+GitHub Actions 在无 API key 环境运行测试、重建 `_site/` 并部署 Pages；CI 不执行生成或评分。旧小说来源保留在 `novels/`，原有 `/novels/...` 路由继续生成。
 
-## 生成命令参考
-
-| 命令 | 作用 |
-|------|------|
-| `python3 runner/generate.py` | 生成所有缺失的小说版本 |
-| `python3 runner/generate.py --story <slug>` | 只处理某一部小说 |
-| `python3 runner/generate.py --story <slug> --model <id>` | 只使用指定模型（可多次指定） |
-| `python3 runner/generate.py --story <slug> --reset` | 清空中间产物并重新生成 |
-| `bash runner/generate.sh <slug>` | bash 薄包装 |
-| `.\runner\generate.ps1 -Story <slug>` | PowerShell 薄包装 |
-
-## 配置模型
-
-编辑 [config.yaml](config.yaml) 增减模型：
-
-```yaml
-models:
-  - id: qwen3.7-max        # 文件名与 URL slug
-    name: Qwen3.7 Max      # 页面展示名
-    model: qwen3.7-max     # API 参数
-    provider: opencode-go  # 对应 providers 配置（缺省 opencode-go）
-```
-
-provider 配置在 `config.yaml` 顶部的 `providers:` 段：
-
-```yaml
-providers:
-  opencode-go:
-    base_url: "https://opencode.ai/zen/go/v1"
-    api_key_env: "OPENCODE_API_KEY"
-```
-
-## 生成流程
-
-```
-prompt.md → 大纲（outline.json）→ 10 章正文 → 质检 → 合并为 <model>.md
-```
-
-1. 读取 `prompt.md`，生成 10 章结构化大纲；
-2. 逐章生成，把前文完整正文拼进上下文，保证连贯；
-3. 单章质检：字数 ≥1500、标题格式正确、无元评论、无代码围栏；
-4. 质检失败自动基于当前文本修正，最多重试 3 次；
-5. 合并 10 章为 `novels/<story>/<model>.md`，追加 `【未完待续】`；
-6. 全文校验：10 章、≥20000 字、结尾标记正确。
-
-中间产物写在 `work/<story>/<model>/`，已加入 `.gitignore`。
-
-## 添加新小说
-
-1. 新建目录：
-
-   ```bash
-   mkdir novels/my-story
-   ```
-
-2. 写提示词 `novels/my-story/prompt.md`。建议包含：
-
-   - 第一行 `# 小说标题`（作为页面标题）
-   - `## 题材`
-   - `## 世界观设定`
-   - `## 主角`
-   - `## 开篇要求`（注明 10 章、每章 2000–3000 字、第三人称限知视角等）
-
-3. 生成并部署：
-
-   ```bash
-   python3 runner/generate.py --story my-story
-   python3 scripts/generate_site.py
-   git add novels docs
-   git commit -m "novel: 新增《小说标题》"
-   git push
-   ```
-
-## CI 部署
-
-仓库推送到 GitHub 后：
-
-1. 进入 **Settings → Pages**，把 Source 设为 **GitHub Actions**。
-2. 不需要配置任何 secret；CI 只部署已提交的 `docs/`。
-3. 每次 `docs/` 或 `.github/workflows/generate.yml` 推送到 `main`，都会触发 [generate.yml](.github/workflows/generate.yml)。
-
-## 常见文件说明
+## 目录
 
 | 路径 | 说明 |
-|------|------|
-| `novels/<story>/prompt.md` | 统一提示词，手工编写 |
-| `novels/<story>/<model>.md` | 模型生成的小说正文 |
-| `work/<story>/<model>/` | 大纲、分章、原始输出等中间产物 |
-| `docs/` | Pages 静态站点根目录 |
+|---|---|
+| `config.yaml` | provider、15 个生成模型、3 个评委和上下文配置 |
+| `benchmark/reform-era/` | V2.1 固定方向 |
+| `runner/prompts/v2.1/` | 活动生成 prompt |
+| `runner/prompts/v2/` | 共享的总纲修复 prompt 与评分 rubric |
+| `runner/generate.py` | V2.1 可恢复生成状态机 |
+| `runner/score.py` | 三评委评分与聚合 |
+| `results/reform-era/` | 正式公开结果 |
+| `work/` | 本地私有审计和恢复状态 |
+| `novels/` | Legacy 站点来源 |
+| `site/assets/` | 站点 CSS/JS 源码 |
+
+## 全量运行提醒
+
+`--all` 会生成约 15 × 5 万字正文；完整评分还会产生 45 次携带全文的请求。开始付费全量前必须先执行测试、生成 dry-run、评分 dry-run 和离线建站，并核对实际计费。
+
+当前完成度和下一步见 [TODO.md](TODO.md)。测试通过只表示流程就绪，不等于全量生成或评分已经完成。
