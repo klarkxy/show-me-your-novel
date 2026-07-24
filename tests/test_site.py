@@ -15,9 +15,12 @@ from runner.generate import PROTOCOL_POLICY, count_content_chars as count_protoc
 from runner.score import (
     AGGREGATE_SCHEMA_VERSION,
     DIMENSION_SPECS,
+    JUDGE_IDS,
     SCHEMA_VERSION,
     ScoreError,
+    aggregate_dimension_scores,
     load_submission,
+    overall_score_from_medians,
 )
 
 from scripts.generate_site import (
@@ -85,7 +88,7 @@ class SiteGenerationTests(unittest.TestCase):
         model_id: str,
         *,
         status: str = "completed",
-        judges: tuple[str, ...] = ("sol", "grok", "kimi"),
+        judges: tuple[str, ...] = ("sol", "grok"),
         aggregate: bool | None = True,
         omit: str | None = None,
         score: float = 90.4,
@@ -244,6 +247,27 @@ class SiteGenerationTests(unittest.TestCase):
                 model, judge_id, score=score, input_hash=score_input_hash
             )
         if aggregate is not None:
+            aggregate_complete = aggregate and set(judges) == set(JUDGE_IDS)
+            aggregate_judges = {
+                judge_id: {
+                    "dimensions": json.loads(
+                        (model / "scores" / f"{judge_id}.json").read_text(
+                            encoding="utf-8"
+                        )
+                    )["dimensions"]
+                }
+                for judge_id in judges
+            }
+            aggregate_dimensions = (
+                aggregate_dimension_scores(
+                    {
+                        judge_id: aggregate_judges[judge_id]["dimensions"]
+                        for judge_id in JUDGE_IDS
+                    }
+                )
+                if aggregate_complete
+                else {}
+            )
             self._write_json(
                 model / "scores" / "aggregate.json",
                 {
@@ -251,10 +275,17 @@ class SiteGenerationTests(unittest.TestCase):
                     "benchmark": "reform-era",
                     "candidate": model_id,
                     "input_hash": score_input_hash,
-                    "expected_judges": ["sol", "grok", "kimi"],
-                    "completed_judges": ["sol", "grok", "kimi"],
-                    "status": "complete" if aggregate else "incomplete",
-                    "eligible_for_ranking": aggregate,
+                    "expected_judges": list(JUDGE_IDS),
+                    "completed_judges": list(judges),
+                    "status": "complete" if aggregate_complete else "incomplete",
+                    "eligible_for_ranking": aggregate_complete,
+                    "judges": aggregate_judges,
+                    "dimensions": aggregate_dimensions,
+                    "overall_score": (
+                        overall_score_from_medians(aggregate_dimensions)
+                        if aggregate_complete
+                        else None
+                    ),
                 },
             )
         return model
@@ -340,14 +371,16 @@ class SiteGenerationTests(unittest.TestCase):
         results = root / "results" / "reform-era"
         # A and B deliberately tie. Config order, not display name, must win.
         self._write_result(results, "model-a", score=82.0, aggregate=True)
-        self._write_result(results, "model-b", score=82.0, aggregate=None)
-        # Explicitly ineligible aggregate blocks ranking, but not the detail page.
-        self._write_result(results, "model-c", aggregate=False)
+        self._write_result(results, "model-b", score=82.0, aggregate=True)
+        # An explicitly incomplete aggregate must block ranking.
+        self._write_result(results, "model-c", score=70.0, aggregate=False)
         # Missing one judge blocks ranking, but not the detail page.
-        self._write_result(results, "model-d", judges=("sol", "grok"), aggregate=None)
+        self._write_result(results, "model-d", judges=("sol",), aggregate=None)
         # Status and tracked-artifact failures both block detail publication.
         self._write_result(results, "model-e", status="in_progress")
         self._write_result(results, "model-f", omit="opening_outline.json")
+        # Complete source votes without their aggregate record stay unranked.
+        self._write_result(results, "model-h", score=77.0, aggregate=None)
         return config, novels, results
 
     @staticmethod
@@ -376,6 +409,27 @@ class SiteGenerationTests(unittest.TestCase):
         self.assertIn("正文", unclosed)
         self.assertNotIn("PRIVATE", unclosed)
 
+    def test_two_judge_shared_median_is_half_up_midpoint(self) -> None:
+        def dimensions(score: float, ai_flavor: float) -> dict[str, dict]:
+            return {
+                spec.key: {
+                    "score": ai_flavor if spec.key == "ai_flavor" else score,
+                    "comment": "测试",
+                }
+                for spec in DIMENSION_SPECS
+            }
+
+        aggregate = aggregate_dimension_scores(
+            {
+                "sol": dimensions(82.0, 10.2),
+                "grok": dimensions(82.1, 10.3),
+            }
+        )
+        self.assertEqual(aggregate["theme_fulfillment"]["median"], 82.1)
+        self.assertEqual(aggregate["theme_fulfillment"]["min"], 82.0)
+        self.assertEqual(aggregate["theme_fulfillment"]["max"], 82.1)
+        self.assertEqual(aggregate["ai_flavor"]["median"], 10.3)
+
     def test_build_lists_all_models_and_strictly_gates_rank_and_details(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -395,6 +449,8 @@ class SiteGenerationTests(unittest.TestCase):
             home = (output / "index.html").read_text(encoding="utf-8")
             self.assertEqual(home.count("data-model-id="), 15)
             self.assertIn("归档模型</dt><dd>15", home)
+            self.assertIn("固定评委</dt><dd>02", home)
+            self.assertIn("两票的中位数（两票时等价于算术均值）", home)
             self.assertIn("Content-Security-Policy", home)
             self.assertNotIn("Zulu <script>", home)
             self.assertIn("Zulu &lt;script&gt;", home)
@@ -414,17 +470,19 @@ class SiteGenerationTests(unittest.TestCase):
             row_e = self._row(home, "model-e")
             row_f = self._row(home, "model-f")
             row_g = self._row(home, "model-g")
+            row_h = self._row(home, "model-h")
             self.assertIn('data-rankable="true"', row_a)
             self.assertIn('data-rankable="true"', row_b)
+            self.assertIn('data-rankable="false"', row_c)
             self.assertIn('data-rank>01</td>', row_a)
             self.assertIn('data-rank>02</td>', row_b)
             self.assertLess(home.index(row_a), home.index(row_b))
-            for row in (row_c, row_d, row_e, row_f, row_g):
+            for row in (row_c, row_d, row_e, row_f, row_g, row_h):
                 self.assertIn('data-rankable="false"', row)
                 self.assertIn('data-rank></td>', row)
 
             # A completed manuscript gets a detail page even if scoring is pending.
-            for model_id in ("model-a", "model-b", "model-c", "model-d"):
+            for model_id in ("model-a", "model-b", "model-c", "model-d", "model-h"):
                 self.assertIn(f"results/reform-era/{model_id}.html", home)
                 self.assertTrue(
                     (output / "results" / "reform-era" / f"{model_id}.html").is_file()
@@ -445,15 +503,18 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("第99章", detail)
             self.assertNotIn("<script>alert", detail)
             self.assertIn("Grok 4.5", detail)
+            self.assertNotIn("Kimi", detail)
+            self.assertIn("两评委维度中位数", detail)
+            self.assertIn("两评委逐维记录", detail)
             self.assertNotIn("Fable", detail)
-            self.assertEqual(detail.count('data-radar-chart="'), 4)
-            self.assertEqual(detail.count('class="radar-chart"'), 4)
-            self.assertEqual(detail.count("radar-axis-label-full"), 32)
-            self.assertEqual(detail.count("radar-axis-label-short"), 32)
-            self.assertEqual(detail.count('class="dimension-comment"'), 24)
-            self.assertEqual(detail.count('class="radar-axis"'), 32)
-            self.assertEqual(detail.count("<title id="), 4)
-            self.assertEqual(detail.count("<desc id="), 4)
+            self.assertEqual(detail.count('data-radar-chart="'), 3)
+            self.assertEqual(detail.count('class="radar-chart"'), 3)
+            self.assertEqual(detail.count("radar-axis-label-full"), 24)
+            self.assertEqual(detail.count("radar-axis-label-short"), 24)
+            self.assertEqual(detail.count('class="dimension-comment"'), 16)
+            self.assertEqual(detail.count('class="radar-axis"'), 24)
+            self.assertEqual(detail.count("<title id="), 3)
+            self.assertEqual(detail.count("<desc id="), 3)
             self.assertIn("AI味（越低越好）", detail)
             self.assertIn("雷达按控制度89.8绘制", detail)
             self.assertNotIn("NaN", detail)
@@ -566,6 +627,8 @@ class SiteGenerationTests(unittest.TestCase):
             model_by_id = {item["id"]: item for item in config["models"]}
             protocol_before = build_protocol_expectations(config_path, model_by_id)
             scores_before = build_score_expectations(config_path, config)
+            self.assertEqual(set(scores_before), set(JUDGE_IDS))
+            self.assertNotIn("kimi", scores_before)
 
             text_paths = [
                 root / "benchmark" / "reform-era" / "direction.md",

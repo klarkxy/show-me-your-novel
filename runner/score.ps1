@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  PowerShell wrapper for the Sol/Grok/Kimi V3 multidimensional scorer.
+  PowerShell wrapper for the Sol/Grok V3 multidimensional scorer.
 .EXAMPLE
   .\runner\score.ps1 -Model deepseek-v4-flash -Judge sol -DryRun
 .EXAMPLE
@@ -13,7 +13,7 @@ param(
   [string[]]$Model,
   [Parameter(ParameterSetName = "All", Mandatory = $true)]
   [switch]$All,
-  [ValidateSet("sol", "grok", "kimi")]
+  [ValidateSet("sol", "grok")]
   [string[]]$Judge,
   [switch]$DryRun
 )
@@ -40,7 +40,7 @@ foreach ($Candidate in @("python", "py", "python3")) {
   } catch { }
 }
 if (-not $PythonCommand) {
-  throw "未找到可用的 Python 3（已检查 python、py -3、python3）"
+  throw "Python 3 was not found (checked python, py -3, and python3)."
 }
 
 $CliArgs = @($PythonScript)

@@ -5,15 +5,14 @@
   "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
   "expected_judges": [
     "sol",
-    "grok",
-    "kimi"
+    "grok"
   ],
   "completed_judges": [
     "sol",
     "grok"
   ],
-  "status": "incomplete",
-  "eligible_for_ranking": false,
+  "status": "complete",
+  "eligible_for_ranking": true,
   "judges": {
     "sol": {
       "dimensions": {
@@ -88,6 +87,71 @@
       }
     }
   },
-  "dimensions": {},
-  "overall_score": null
+  "dimensions": {
+    "theme_fulfillment": {
+      "label": "题材与主题兑现",
+      "weight": 0.1,
+      "higher_is_better": true,
+      "median": 81.8,
+      "min": 80.5,
+      "max": 83.0
+    },
+    "historical_grounding": {
+      "label": "时代与现实质感",
+      "weight": 0.15,
+      "higher_is_better": true,
+      "median": 83.3,
+      "min": 80.0,
+      "max": 86.5
+    },
+    "characters": {
+      "label": "人物与关系",
+      "weight": 0.15,
+      "higher_is_better": true,
+      "median": 78.8,
+      "min": 76.0,
+      "max": 81.5
+    },
+    "plot_causality": {
+      "label": "情节驱动与因果",
+      "weight": 0.15,
+      "higher_is_better": true,
+      "median": 78.0,
+      "min": 72.0,
+      "max": 84.0
+    },
+    "longform_structure": {
+      "label": "长篇结构与连续性",
+      "weight": 0.15,
+      "higher_is_better": true,
+      "median": 81.5,
+      "min": 75.0,
+      "max": 88.0
+    },
+    "scene_execution": {
+      "label": "场景与叙事效能",
+      "weight": 0.1,
+      "higher_is_better": true,
+      "median": 80.3,
+      "min": 78.0,
+      "max": 82.5
+    },
+    "style_control": {
+      "label": "文风管理",
+      "weight": 0.1,
+      "higher_is_better": true,
+      "median": 76.0,
+      "min": 74.0,
+      "max": 78.0
+    },
+    "ai_flavor": {
+      "label": "AI味",
+      "weight": 0.1,
+      "higher_is_better": false,
+      "median": 36.0,
+      "min": 32.0,
+      "max": 40.0
+    }
+  },
+  "overall_score": 78.5
 }

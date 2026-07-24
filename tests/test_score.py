@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import copy
 import json
 import hashlib
 import sys
@@ -74,26 +73,23 @@ def _score_response(
     )
 
 
-def test_configured_wire_models_covers_generators_and_fixed_judges() -> None:
+def test_scoring_preflight_requires_only_active_judge_models() -> None:
     cfg = {
         "models": [
             _judge_cfg("generator-a"),
             _judge_cfg("sol-wire"),
             _judge_cfg("grok-4.5"),
-            _judge_cfg("kimi-wire"),
+            _judge_cfg("kimi-k3"),
         ]
     }
     judges = {
         "sol": {"model_cfg": _judge_cfg("sol-wire")},
         "grok": {"model_cfg": _judge_cfg("grok-4.5")},
-        "kimi": {"model_cfg": _judge_cfg("kimi-wire")},
     }
 
     assert score.configured_wire_models(cfg, judges) == (
-        "generator-a",
         "sol-wire",
         "grok-4.5",
-        "kimi-wire",
     )
 
 
@@ -172,6 +168,8 @@ def test_site_score_fingerprints_match_scoring_writer() -> None:
     site_expectations = build_score_expectations(config_path, cfg)
     rubric = score.load_system_prompt(root)
 
+    assert score.ACTIVE_JUDGE_IDS == ("sol", "grok")
+    assert set(resolved) == set(score.ACTIVE_JUDGE_IDS)
     for judge_id in score.JUDGE_IDS:
         model_cfg = resolved[judge_id]["model_cfg"]
         request_overrides = resolved[judge_id]["request_overrides"]
@@ -213,35 +211,19 @@ def test_judge_fingerprint_changes_with_provider_request_defaults() -> None:
     )
 
 
-def test_kimi_output_budget_change_only_invalidates_kimi_fingerprint() -> None:
-    config_path = ROOT / "config.yaml"
-    base_cfg = score.load_config(config_path)
-    changed_cfg = copy.deepcopy(base_cfg)
-    kimi = next(
-        judge for judge in changed_cfg["judges"] if judge["id"] == "kimi"
-    )
-    kimi["request"] = {"max_tokens": 16_384}
+def test_inactive_kimi_config_is_not_required_or_resolved() -> None:
+    cfg = score.load_config(ROOT / "config.yaml")
+    cfg["judges"] = [
+        judge for judge in cfg["judges"] if judge.get("id") != "kimi"
+    ]
 
-    base = score.resolve_judge_configs(base_cfg)
-    changed = score.resolve_judge_configs(changed_cfg)
-    fingerprints = {
-        judge_id: score.judge_config_sha256(
-            base[judge_id]["model_cfg"],
-            base[judge_id]["request_overrides"],
-        )
-        for judge_id in score.JUDGE_IDS
-    }
-    changed_fingerprints = {
-        judge_id: score.judge_config_sha256(
-            changed[judge_id]["model_cfg"],
-            changed[judge_id]["request_overrides"],
-        )
-        for judge_id in score.JUDGE_IDS
-    }
+    resolved = score.resolve_judge_configs(cfg)
 
-    assert changed_fingerprints["sol"] == fingerprints["sol"]
-    assert changed_fingerprints["grok"] == fingerprints["grok"]
-    assert changed_fingerprints["kimi"] != fingerprints["kimi"]
+    assert set(resolved) == {"sol", "grok"}
+    with pytest.raises(SystemExit):
+        score._build_parser().parse_args(
+            ["--model", "candidate-a", "--judge", "kimi"]
+        )
 
 
 def test_full_submission_is_anonymous_and_unabridged(tmp_path: Path) -> None:
@@ -737,7 +719,9 @@ def _write_score(
     )
 
 
-def test_aggregate_requires_all_three_fresh_judges(tmp_path: Path) -> None:
+def test_aggregate_requires_both_active_judges_and_ignores_old_kimi(
+    tmp_path: Path,
+) -> None:
     submission = _submission(tmp_path)
     keys = {judge_id: f"key-{judge_id}" for judge_id in score.JUDGE_IDS}
     identities = {
@@ -750,21 +734,39 @@ def test_aggregate_requires_all_three_fresh_judges(tmp_path: Path) -> None:
         )
         for judge_id in score.JUDGE_IDS
     }
+    kimi_path = submission.candidate_dir / "scores" / "kimi.json"
+    kimi_path.parent.mkdir(parents=True, exist_ok=True)
+    kimi_path.write_text(
+        json.dumps(
+            {
+                "schema": "novel-eval.v2",
+                "score": 100,
+                "ai_flavor": 0,
+                "comment": "旧 Kimi 历史票不得参与。",
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
     _write_score(submission, "sol", keys["sol"], 90, 10, identities["sol"])
-    _write_score(submission, "grok", keys["grok"], 80, 20, identities["grok"])
 
     incomplete = score.aggregate_scores(submission, keys, identities)
     assert incomplete["status"] == "incomplete"
     assert incomplete["eligible_for_ranking"] is False
     assert incomplete["dimensions"] == {}
     assert incomplete["overall_score"] is None
-    assert set(incomplete["judges"]) == {"sol", "grok"}
+    assert incomplete["expected_judges"] == ["sol", "grok"]
+    assert incomplete["completed_judges"] == ["sol"]
+    assert set(incomplete["judges"]) == {"sol"}
 
-    _write_score(submission, "kimi", keys["kimi"], 85, 15, identities["kimi"])
+    _write_score(submission, "grok", keys["grok"], 80, 20, identities["grok"])
     complete = score.aggregate_scores(submission, keys, identities)
     assert complete["status"] == "complete"
     assert complete["eligible_for_ranking"] is True
     assert complete["overall_score"] == 85.0
+    assert complete["expected_judges"] == ["sol", "grok"]
+    assert complete["completed_judges"] == ["sol", "grok"]
+    assert set(complete["judges"]) == {"sol", "grok"}
     assert complete["dimensions"]["characters"] == {
         "label": "人物与关系",
         "weight": 0.15,
@@ -776,8 +778,8 @@ def test_aggregate_requires_all_three_fresh_judges(tmp_path: Path) -> None:
     assert complete["dimensions"]["ai_flavor"]["median"] == 15.0
     assert complete["judges"]["sol"]["dimensions"]["characters"]["score"] == 90.0
 
-    # A stale result must invalidate the complete aggregate.
-    keys["kimi"] = "new-key-kimi"
+    # A stale active result must invalidate the complete aggregate.
+    keys["grok"] = "new-key-grok"
     stale = score.aggregate_scores(submission, keys, identities)
     assert stale["status"] == "incomplete"
     assert stale["dimensions"] == {}
@@ -786,18 +788,27 @@ def test_aggregate_requires_all_three_fresh_judges(tmp_path: Path) -> None:
 
 def test_dimension_helpers_use_median_direction_and_half_up_rounding() -> None:
     judge_dimensions = {
-        "sol": _dimensions(90, 10),
-        "grok": _dimensions(40, 90),
-        "kimi": _dimensions(80, 20),
+        "sol": _dimensions(90.1, 10.1),
+        "grok": _dimensions(40.2, 90.2),
     }
     aggregate = score.aggregate_dimension_scores(judge_dimensions)
 
-    assert aggregate["plot_causality"]["median"] == 80.0
-    assert aggregate["plot_causality"]["min"] == 40.0
-    assert aggregate["plot_causality"]["max"] == 90.0
-    assert aggregate["ai_flavor"]["median"] == 20.0
-    assert score.dimension_radar_value("ai_flavor", 20) == 80.0
+    # With two votes, statistics.median is their arithmetic midpoint.
+    assert aggregate["plot_causality"]["median"] == 65.2
+    assert aggregate["plot_causality"]["min"] == 40.2
+    assert aggregate["plot_causality"]["max"] == 90.1
+    assert aggregate["ai_flavor"]["median"] == 50.2
+    assert score.dimension_radar_value("ai_flavor", 50.2) == 49.8
     assert score.dimension_radar_value("characters", 82.25) == 82.3
+
+    boundary = score.aggregate_dimension_scores(
+        {
+            "sol": _dimensions(30.1, 30.1),
+            "grok": _dimensions(64.6, 64.6),
+        }
+    )
+    assert boundary["theme_fulfillment"]["median"] == 47.4
+    assert boundary["ai_flavor"]["median"] == 47.4
 
     medians = {
         "theme_fulfillment": 80,
@@ -815,6 +826,7 @@ def test_dimension_helpers_use_median_direction_and_half_up_rounding() -> None:
 def test_score_cli_all_cached_skips_env_key_and_preflight(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
 ) -> None:
     (tmp_path / "config.yaml").write_bytes((ROOT / "config.yaml").read_bytes())
     for version in ("v2", "v2.1"):
@@ -861,6 +873,18 @@ def test_score_cli_all_cached_skips_env_key_and_preflight(
 
     monkeypatch.setattr(score, "load_env_file", forbidden_env_read)
     monkeypatch.setattr(score, "ChatClient", ForbiddenClient)
+    assert (
+        score.run(
+            ["--model", "deepseek-v4-flash", "--dry-run"],
+            root=tmp_path,
+        )
+        == 0
+    )
+    dry_run = capsys.readouterr()
+    assert "/ sol: cached" in dry_run.out
+    assert "/ grok: cached" in dry_run.out
+    assert "/ kimi" not in dry_run.out
+
     expected_prompts = score.load_generation_prompts(
         tmp_path / "runner" / "prompts" / "v2.1"
     )

@@ -39,6 +39,7 @@ from runner.score import (  # noqa: E402
     AGGREGATE_SCHEMA_VERSION,
     DIMENSION_KEYS,
     DIMENSION_SPECS,
+    JUDGE_IDS,
     SCHEMA_VERSION as SCORE_SCHEMA,
     ScoreError,
     aggregate_dimension_scores,
@@ -57,7 +58,6 @@ THINKING_BLOCK = re.compile(
 )
 UNCLOSED_THINKING_BLOCK = re.compile(r"\[思考过程\]\s*\n?.*\Z", re.DOTALL)
 OUTLINE_BLOCK = re.compile(r"(?ms)^##\s*大纲\s*$.*?(?=^##\s*第\d+章|\Z)")
-JUDGE_IDS = ("sol", "grok", "kimi")
 GENERATION_PROTOCOL = PROTOCOL_VERSION
 REQUIRED_RESULT_ARTIFACTS = (
     "book.json",
@@ -523,10 +523,14 @@ def load_reform_results(
                 expected=(score_by_judge or {}).get(judge_id),
             )
 
-        all_judges_valid = all(judges[judge_id]["valid"] for judge_id in JUDGE_IDS)
+        all_judges_valid = all(
+            judges[judge_id]["valid"] for judge_id in JUDGE_IDS
+        )
         score_input_hash = None
         if all_judges_valid:
-            input_hashes = {judges[judge_id]["input_hash"] for judge_id in JUDGE_IDS}
+            input_hashes = {
+                judges[judge_id]["input_hash"] for judge_id in JUDGE_IDS
+            }
             all_judges_valid = len(input_hashes) == 1
             if all_judges_valid:
                 score_input_hash = next(iter(input_hashes))
@@ -545,45 +549,47 @@ def load_reform_results(
             and score_input_hash == current_input_hash
         )
 
-        aggregate_path = model_dir / "scores" / "aggregate.json"
-        aggregate = _read_json(aggregate_path)
-        aggregate_allows_ranking = all_judges_valid
-        if aggregate_path.is_file():
-            if aggregate.get("schema") != AGGREGATE_SCHEMA_VERSION:
-                aggregate_allows_ranking = False
-            else:
-                aggregate_status = str(aggregate.get("status", "")).strip().lower()
-                explicit_eligible = aggregate.get("eligible_for_ranking")
-                if explicit_eligible is False or aggregate_status == "incomplete":
-                    aggregate_allows_ranking = False
-                elif explicit_eligible is True:
-                    completed = aggregate.get("completed_judges")
-                    aggregate_allows_ranking = (
-                        all_judges_valid
-                        and aggregate_status in {"complete", "completed"}
-                        and isinstance(completed, list)
-                        and completed == list(JUDGE_IDS)
-                        and aggregate.get("input_hash") == score_input_hash
-                    )
-                else:
-                    aggregate_allows_ranking = all_judges_valid
-
-        rankable = detail_available and all_judges_valid and aggregate_allows_ranking
-        aggregate_dimensions: dict[str, dict[str, Any]] = {}
-        overall_score = None
-        if rankable:
-            aggregate_dimensions = aggregate_dimension_scores(
+        source_scores_valid = detail_available and all_judges_valid
+        derived_dimensions: dict[str, dict[str, Any]] = {}
+        derived_overall = None
+        if source_scores_valid:
+            derived_dimensions = aggregate_dimension_scores(
                 {
                     judge_id: judges[judge_id]["dimensions"]
                     for judge_id in JUDGE_IDS
                 }
             )
-            overall_score = overall_score_from_medians(
+            derived_overall = overall_score_from_medians(
                 {
-                    key: aggregate_dimensions[key]["median"]
+                    key: derived_dimensions[key]["median"]
                     for key in DIMENSION_KEYS
                 }
             )
+
+        aggregate_path = model_dir / "scores" / "aggregate.json"
+        aggregate = _read_json(aggregate_path)
+        expected_aggregate_judges = {
+            judge_id: {"dimensions": judges[judge_id]["dimensions"]}
+            for judge_id in JUDGE_IDS
+        }
+        aggregate_allows_ranking = (
+            source_scores_valid
+            and aggregate_path.is_file()
+            and aggregate.get("schema") == AGGREGATE_SCHEMA_VERSION
+            and aggregate.get("benchmark") == results_dir.name
+            and aggregate.get("candidate") == model_id
+            and aggregate.get("input_hash") == score_input_hash
+            and aggregate.get("expected_judges") == list(JUDGE_IDS)
+            and aggregate.get("completed_judges") == list(JUDGE_IDS)
+            and aggregate.get("status") == "complete"
+            and aggregate.get("eligible_for_ranking") is True
+            and aggregate.get("judges") == expected_aggregate_judges
+            and aggregate.get("dimensions") == derived_dimensions
+            and aggregate.get("overall_score") == derived_overall
+        )
+        rankable = bool(aggregate_allows_ranking)
+        aggregate_dimensions = derived_dimensions if rankable else {}
+        overall_score = derived_overall if rankable else None
 
         config_model = model_by_id.get(model_id, {})
         title = _first(book, "title") or first_h1(novel) or "待生成"
@@ -818,7 +824,7 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
     </div>
     <dl class="archive-facts">
       <div><dt>归档模型</dt><dd>{model_count:02d}</dd></div>
-      <div><dt>固定评委</dt><dd>03</dd></div>
+      <div><dt>固定评委</dt><dd>{len(JUDGE_IDS):02d}</dd></div>
       <div><dt>旧题材</dt><dd>{legacy_count:02d}</dd></div>
     </dl>
   </div>
@@ -827,7 +833,7 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
 <section class="ranking-panel" aria-labelledby="ranking-title">
   <header class="section-heading">
     <div><p class="eyebrow">DIMENSION LEDGER</p><h2 id="ranking-title">分维度排名登记表</h2></div>
-    <p id="ranking-note">各维度取三位评委的中位数；综合按固定权重加总这些中位数，其中AI味使用100减原值。AI味越低越好，其余指标越高越好。</p>
+    <p id="ranking-note">各维度取 Sol 与 Grok 两票的中位数（两票时等价于算术均值）；综合按固定权重加总，其中AI味使用100减原值。AI味越低越好，其余指标越高越好。</p>
   </header>
   <div class="metric-switch" role="group" aria-label="排名指标">
     <button type="button" data-sort="overall" data-direction="desc" aria-pressed="true">综合</button>
@@ -1069,20 +1075,19 @@ def render_result_detail(result: dict[str, Any]) -> str:
   <section class="aggregate-section" aria-labelledby="aggregate-title">
     <div class="section-heading">
       <div><p class="eyebrow">MEDIAN PROFILE</p><h2 id="aggregate-title">综合维度中位数</h2></div>
-      <p>每个维度取三位评委的中位数；综合按固定权重加总这些中位数，其中AI味使用100减原值。AI味仍以原始低分展示，雷达几何按“越低越好”反向绘制。</p>
+      <p>每个维度取 Sol 与 Grok 两票的中位数（两票时等价于算术均值）；综合按固定权重加总，其中AI味使用100减原值。AI味仍以原始低分展示，雷达几何按“越低越好”反向绘制。</p>
     </div>
-    {_radar_chart(f'{chart_prefix}-median', '三评委维度中位数', aggregate_scores)}
+    {_radar_chart(f'{chart_prefix}-median', '两评委维度中位数', aggregate_scores)}
   </section>
 
   <section class="judge-section" aria-labelledby="judge-title">
     <div class="section-heading">
-      <div><p class="eyebrow">THREE-READER PANEL</p><h2 id="judge-title">三评委逐维记录</h2></div>
-      <p>三位评委独立评分；下方保留每个维度的原始评价。</p>
+      <div><p class="eyebrow">TWO-READER PANEL</p><h2 id="judge-title">两评委逐维记录</h2></div>
+      <p>Sol 与 Grok 独立评分；下方保留每个维度的原始评价。</p>
     </div>
     <div class="judge-evaluations">
       {_judge_evaluation('Sol', judges['sol'], f'{chart_prefix}-sol')}
       {_judge_evaluation('Grok 4.5', judges['grok'], f'{chart_prefix}-grok')}
-      {_judge_evaluation('Kimi', judges['kimi'], f'{chart_prefix}-kimi')}
     </div>
   </section>
 

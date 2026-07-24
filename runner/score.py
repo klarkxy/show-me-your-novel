@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Run the v3 three-judge, eight-dimension novel benchmark.
+"""Run the v3 two-judge, eight-dimension novel benchmark.
 
 The tracked benchmark artifacts are the only scoring inputs.  Every judge sees
 the same anonymous, unabridged submission and scores every rubric dimension.
@@ -22,7 +22,6 @@ import uuid
 from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
-from statistics import median
 from typing import Any, Iterable, Mapping
 
 
@@ -70,12 +69,13 @@ except ImportError:  # pragma: no cover - direct script execution
 SCHEMA_VERSION = "novel-eval.v3"
 AGGREGATE_SCHEMA_VERSION = "novel-eval-aggregate.v3"
 DEFAULT_BENCHMARK = "reform-era"
-JUDGE_IDS = ("sol", "grok", "kimi")
+ACTIVE_JUDGE_IDS = ("sol", "grok")
+# Compatibility alias for callers that imported the original public constant.
+JUDGE_IDS = ACTIVE_JUDGE_IDS
 MAX_RECOVERY_EVENTS = 256
 EXPECTED_JUDGE_MODELS = {
     "sol": "gpt-5.6-sol",
     "grok": "grok-4.5",
-    "kimi": "kimi-k3",
 }
 DEFAULT_PROVIDER = "new-api"
 REQUIRED_ARTIFACTS = (
@@ -317,6 +317,13 @@ def _normalise_dimension_score(value: Any, field: str) -> float:
     ):
         raise ScoreError(f"{field} 必须是 0–100 之间的有限数值")
     rounded = decimal_value.quantize(_ONE_DECIMAL, rounding=ROUND_HALF_UP)
+    return 0.0 if rounded == 0 else float(rounded)
+
+
+def _round_decimal_score(value: Decimal) -> float:
+    """Round an already validated score without converting through binary float."""
+
+    rounded = value.quantize(_ONE_DECIMAL, rounding=ROUND_HALF_UP)
     return 0.0 if rounded == 0 else float(rounded)
 
 
@@ -986,10 +993,10 @@ def dimension_radar_value(dimension_key: str, value: int | float) -> float:
 def aggregate_dimension_scores(
     judge_dimensions: Mapping[str, Mapping[str, Any]],
 ) -> dict[str, dict[str, Any]]:
-    """Aggregate three complete judge dimension mappings with robust medians."""
+    """Aggregate both active judge mappings with per-dimension medians."""
 
     if set(judge_dimensions) != set(JUDGE_IDS):
-        raise ScoreError("维度聚合需要且只能使用全部三个固定评委")
+        raise ScoreError("维度聚合需要且只能使用 Sol、Grok 两位活动评委")
     result: dict[str, dict[str, Any]] = {}
     for spec in DIMENSION_SPECS:
         values: list[float] = []
@@ -1006,13 +1013,16 @@ def aggregate_dimension_scores(
                 spec.key, dict(entry)
             )
             values.append(normalised_entry["score"])
+        if len(values) != 2:  # Defensive: JUDGE_IDS is intentionally a pair.
+            raise ScoreError("两评委聚合必须恰好包含两票")
+        midpoint = (
+            Decimal(str(values[0])) + Decimal(str(values[1]))
+        ) / Decimal("2")
         result[spec.key] = {
             "label": spec.label,
             "weight": spec.weight,
             "higher_is_better": spec.higher_is_better,
-            "median": _normalise_dimension_score(
-                median(values), f"{spec.key}.median"
-            ),
+            "median": _round_decimal_score(midpoint),
             "min": _normalise_dimension_score(min(values), f"{spec.key}.min"),
             "max": _normalise_dimension_score(max(values), f"{spec.key}.max"),
         }
@@ -1102,18 +1112,11 @@ def discover_candidates(root: Path, benchmark: str) -> list[str]:
 
 
 def configured_wire_models(
-    cfg: Mapping[str, Any], judge_configs: Mapping[str, Mapping[str, Any]]
+    _cfg: Mapping[str, Any], judge_configs: Mapping[str, Mapping[str, Any]]
 ) -> tuple[str, ...]:
-    """Return every exact generator and judge wire id in configured order."""
+    """Return only active judge wire ids required by scoring preflight."""
 
     wire_ids: list[str] = []
-    generators = cfg.get("models")
-    if not isinstance(generators, list):
-        raise ScoreError("config.yaml 的 models 必须是数组")
-    for entry in generators:
-        if not isinstance(entry, Mapping) or not isinstance(entry.get("model"), str):
-            raise ScoreError("config.yaml 存在无效生成模型配置")
-        wire_ids.append(str(entry["model"]))
     for judge_id in JUDGE_IDS:
         model_cfg = judge_configs[judge_id].get("model_cfg")
         if not isinstance(model_cfg, Mapping) or not isinstance(model_cfg.get("model"), str):
@@ -1123,7 +1126,7 @@ def configured_wire_models(
 
 
 def _build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Sol/Grok/Kimi 三评委小说评分")
+    parser = argparse.ArgumentParser(description="Sol/Grok 两评委小说评分")
     selection = parser.add_mutually_exclusive_group(required=True)
     selection.add_argument("--model", action="append", help="候选目录名；可重复传入")
     selection.add_argument("--all", action="store_true", help="评分全部 V2 候选")
@@ -1131,7 +1134,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "--judge",
         action="append",
         choices=JUDGE_IDS,
-        help="只执行指定评委；可重复传入，默认三个全部执行",
+        help="只执行指定评委；可重复传入，默认两位全部执行",
     )
     parser.add_argument("--dry-run", action="store_true", help="只显示缓存命中和待调用任务")
     return parser
@@ -1247,8 +1250,8 @@ def run(argv: Iterable[str] | None = None, *, root: Path | None = None) -> int:
     env: dict[str, str] = {}
     if needs_api:
         env = load_env_file(repo_root / ".env")
-        # Scoring uses the same exact-id preflight as generation.  This catches
-        # a gateway-side rename before any costly judge completion is sent.
+        # Scoring probes only the active judge wire ids. Generated candidates
+        # are validated locally and inactive historical judges are irrelevant.
         try:
             preflight_client = ChatClient.from_config(
                 cfg,
@@ -1365,7 +1368,7 @@ def run(argv: Iterable[str] | None = None, *, root: Path | None = None) -> int:
                         print(f"[score] {candidate} / {judge_id}: {status}")
                     except Exception as exc:
                         # Judges are independent: one malformed/error response
-                        # must not prevent the other two from being retained.
+                        # must not prevent the other active vote being retained.
                         had_error = True
                         print(
                             f"[score] {candidate} / {judge_id}: ERROR: {exc}",
