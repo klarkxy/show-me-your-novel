@@ -12,7 +12,13 @@ from pathlib import Path
 import yaml
 
 from runner.generate import PROTOCOL_POLICY, count_content_chars as count_protocol_chars
-from runner.score import ScoreError, load_submission
+from runner.score import (
+    AGGREGATE_SCHEMA_VERSION,
+    DIMENSION_SPECS,
+    SCHEMA_VERSION,
+    ScoreError,
+    load_submission,
+)
 
 from scripts.generate_site import (
     build_protocol_expectations,
@@ -44,8 +50,8 @@ class SiteGenerationTests(unittest.TestCase):
         model_dir: Path,
         judge_id: str,
         *,
-        score: int = 90,
-        ai_flavor: int = 10,
+        score: float = 90.4,
+        ai_flavor: float = 10.2,
         input_hash: str = "work-hash",
     ) -> None:
         root = model_dir.parents[2]
@@ -55,15 +61,21 @@ class SiteGenerationTests(unittest.TestCase):
         self._write_json(
             model_dir / "scores" / f"{judge_id}.json",
             {
-                "schema": "novel-eval.v2",
+                "schema": SCHEMA_VERSION,
+                "benchmark": "reform-era",
                 "candidate": model_dir.name,
                 "judge": judge_id,
                 "input_hash": input_hash,
                 "cache_key": f"cache-{model_dir.name}-{judge_id}",
                 **expected,
-                "score": score,
-                "ai_flavor": ai_flavor,
-                "comment": f"{judge_id} 的简评",
+                "response_model": f"{judge_id}-response",
+                "dimensions": {
+                    spec.key: {
+                        "score": float(ai_flavor if spec.key == "ai_flavor" else score),
+                        "comment": f"{judge_id} 对{spec.label}的简评 <b data-test=1>",
+                    }
+                    for spec in DIMENSION_SPECS
+                },
             },
         )
 
@@ -76,7 +88,7 @@ class SiteGenerationTests(unittest.TestCase):
         judges: tuple[str, ...] = ("sol", "grok", "kimi"),
         aggregate: bool | None = True,
         omit: str | None = None,
-        score: int = 90,
+        score: float = 90.4,
     ) -> Path:
         model = results / model_id
         book = {
@@ -235,9 +247,11 @@ class SiteGenerationTests(unittest.TestCase):
             self._write_json(
                 model / "scores" / "aggregate.json",
                 {
-                    "schema": "novel-eval-aggregate.v2",
+                    "schema": AGGREGATE_SCHEMA_VERSION,
+                    "benchmark": "reform-era",
                     "candidate": model_id,
                     "input_hash": score_input_hash,
+                    "expected_judges": ["sol", "grok", "kimi"],
                     "completed_judges": ["sol", "grok", "kimi"],
                     "status": "complete" if aggregate else "incomplete",
                     "eligible_for_ranking": aggregate,
@@ -303,7 +317,7 @@ class SiteGenerationTests(unittest.TestCase):
         ):
             (prompt_dir / name).write_text(f"fixture {name}\n", encoding="utf-8")
         (prompt_dir / "judge_system.md").write_text(
-            "fixture judge rubric\n", encoding="utf-8"
+            "fixture judge rubric\n{{DIMENSION_SPECS}}\n", encoding="utf-8"
         )
 
         novels = root / "novels"
@@ -325,8 +339,8 @@ class SiteGenerationTests(unittest.TestCase):
 
         results = root / "results" / "reform-era"
         # A and B deliberately tie. Config order, not display name, must win.
-        self._write_result(results, "model-a", score=90, aggregate=True)
-        self._write_result(results, "model-b", score=90, aggregate=None)
+        self._write_result(results, "model-a", score=82.0, aggregate=True)
+        self._write_result(results, "model-b", score=82.0, aggregate=None)
         # Explicitly ineligible aggregate blocks ranking, but not the detail page.
         self._write_result(results, "model-c", aggregate=False)
         # Missing one judge blocks ranking, but not the detail page.
@@ -384,8 +398,12 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("Content-Security-Policy", home)
             self.assertNotIn("Zulu <script>", home)
             self.assertIn("Zulu &lt;script&gt;", home)
-            self.assertIn("Grok 4.5", home)
-            self.assertIn("data-grok=", home)
+            self.assertNotIn("data-grok=", home)
+            self.assertNotIn('data-sort="grok"', home)
+            self.assertIn("data-theme-fulfillment=", home)
+            self.assertIn("文风管理", home)
+            self.assertIn("AI味（越低越好）", home)
+            self.assertIn(">82.0</td>", home)
             self.assertNotIn("Fable", home)
             self.assertNotIn("data-fable=", home)
 
@@ -428,6 +446,19 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("<script>alert", detail)
             self.assertIn("Grok 4.5", detail)
             self.assertNotIn("Fable", detail)
+            self.assertEqual(detail.count('data-radar-chart="'), 4)
+            self.assertEqual(detail.count('class="radar-chart"'), 4)
+            self.assertEqual(detail.count("radar-axis-label-full"), 32)
+            self.assertEqual(detail.count("radar-axis-label-short"), 32)
+            self.assertEqual(detail.count('class="dimension-comment"'), 24)
+            self.assertEqual(detail.count('class="radar-axis"'), 32)
+            self.assertEqual(detail.count("<title id="), 4)
+            self.assertEqual(detail.count("<desc id="), 4)
+            self.assertIn("AI味（越低越好）", detail)
+            self.assertIn("雷达按控制度89.8绘制", detail)
+            self.assertNotIn("NaN", detail)
+            self.assertIn("&lt;b data-test=1&gt;", detail)
+            self.assertNotIn("<b data-test=1>", detail)
 
     def test_legacy_keeps_retired_model_routes_and_never_publishes_reasoning(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -456,6 +487,32 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("第99章", legacy)
             self.assertNotIn("不属于正文", legacy)
             self.assertIn("1 章", legacy)
+
+    def test_public_score_with_private_extra_field_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config, novels, results = self._fixture(root)
+            score_path = results / "model-a" / "scores" / "sol.json"
+            score = json.loads(score_path.read_text(encoding="utf-8"))
+            score["reasoning_content"] = "PRIVATE_JUDGE_REASONING"
+            self._write_json(score_path, score)
+
+            output = root / "public"
+            build_site(
+                config_path=config,
+                novels_dir=novels,
+                results_dir=results,
+                assets_dir=REPO_ROOT / "site" / "assets",
+                output_dir=output,
+            )
+
+            home = (output / "index.html").read_text(encoding="utf-8")
+            row = self._row(home, "model-a")
+            self.assertIn('data-rankable="false"', row)
+            detail = (output / "results" / "reform-era" / "model-a.html").read_text(
+                encoding="utf-8"
+            )
+            self.assertNotIn("PRIVATE_JUDGE_REASONING", detail)
 
     def test_manifest_content_hash_blocks_tampered_result(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -657,18 +714,22 @@ class SiteGenerationTests(unittest.TestCase):
 const fs = require("fs");
 const vm = require("vm");
 const rankCell = () => ({{ textContent: "" }});
-const makeRow = (id, order, rankable, average) => {{
+const makeRow = (id, order, rankable, overall, themeFulfillment, aiFlavor) => {{
   const cell = rankCell();
-  return {{ id, hidden: false, dataset: {{ configOrder: String(order), rankable: String(rankable), average: String(average), sol: String(average), grok: String(average), kimi: String(average), aiFlavor: "10" }}, querySelector: () => cell, cell }};
+  return {{ id, hidden: false, dataset: {{ configOrder: String(order), rankable: String(rankable), overall: String(overall), themeFulfillment: String(themeFulfillment), aiFlavor: String(aiFlavor) }}, querySelector: () => cell, cell }};
 }};
-const rowA = makeRow("a", 0, true, 80);
-const rowB = makeRow("b", 1, true, 80);
-const pending = makeRow("pending", 2, false, 99);
+const rowA = makeRow("a", 0, true, 80.2, 70.5, 5.5);
+const rowB = makeRow("b", 1, true, 80.2, 90.5, 20.5);
+const pending = makeRow("pending", 2, false, 99.9, 99.9, 0.1);
 const initialRows = [pending, rowB, rowA];
 const domOrder = [...initialRows];
 const body = {{ querySelectorAll: () => initialRows, appendChild: (row) => {{ const i = domOrder.indexOf(row); if (i >= 0) domOrder.splice(i, 1); domOrder.push(row); }} }};
-const makeControl = (sort) => ({{ dataset: {{ sort }}, attrs: {{}}, setAttribute(k, v) {{ this.attrs[k] = v; }}, addEventListener(_, cb) {{ this.cb = cb; }} }});
-const buttons = [makeControl("average"), makeControl("sol")];
+const makeControl = (sort, direction) => ({{ dataset: {{ sort, direction }}, attrs: {{}}, setAttribute(k, v) {{ this.attrs[k] = v; }}, addEventListener(_, cb) {{ this.cb = cb; }} }});
+const buttons = [
+  makeControl("overall", "desc"),
+  makeControl("theme-fulfillment", "desc"),
+  makeControl("ai-flavor", "asc"),
+];
 const slider = {{ value: "2", max: "2", disabled: false, addEventListener(_, cb) {{ this.cb = cb; }} }};
 const output = {{ textContent: "" }};
 global.document = {{
@@ -678,7 +739,21 @@ global.document = {{
 vm.runInThisContext(fs.readFileSync({json.dumps(str(script_path))}, "utf8"));
 slider.value = "1";
 slider.cb();
+const initialState = {{
+  order: domOrder.map((row) => row.id),
+  ranks: domOrder.map((row) => row.cell.textContent),
+  hidden: Object.fromEntries(domOrder.map((row) => [row.id, row.hidden])),
+}};
+buttons[1].cb();
+const dimensionState = {{
+  order: domOrder.map((row) => row.id),
+  ranks: domOrder.map((row) => row.cell.textContent),
+  hidden: Object.fromEntries(domOrder.map((row) => [row.id, row.hidden])),
+}};
+buttons[2].cb();
 console.log(JSON.stringify({{
+  initialState,
+  dimensionState,
   order: domOrder.map((row) => row.id),
   ranks: domOrder.map((row) => row.cell.textContent),
   hidden: Object.fromEntries(domOrder.map((row) => [row.id, row.hidden])),
@@ -695,6 +770,18 @@ console.log(JSON.stringify({{
                 check=True,
             )
         state = json.loads(completed.stdout)
+        self.assertEqual(state["initialState"]["order"], ["a", "b", "pending"])
+        self.assertEqual(state["initialState"]["ranks"], ["01", "02", ""])
+        self.assertEqual(
+            state["initialState"]["hidden"],
+            {"a": False, "b": True, "pending": False},
+        )
+        self.assertEqual(state["dimensionState"]["order"], ["b", "a", "pending"])
+        self.assertEqual(state["dimensionState"]["ranks"], ["01", "02", ""])
+        self.assertEqual(
+            state["dimensionState"]["hidden"],
+            {"a": True, "b": False, "pending": False},
+        )
         self.assertEqual(state["order"], ["a", "b", "pending"])
         self.assertEqual(state["ranks"], ["01", "02", ""])
         self.assertEqual(state["hidden"], {"a": False, "b": True, "pending": False})

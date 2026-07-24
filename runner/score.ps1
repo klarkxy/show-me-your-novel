@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  PowerShell wrapper for the Sol/Grok/Kimi V2 scorer.
+  PowerShell wrapper for the Sol/Grok/Kimi V3 multidimensional scorer.
 .EXAMPLE
   .\runner\score.ps1 -Model deepseek-v4-flash -Judge sol -DryRun
 .EXAMPLE

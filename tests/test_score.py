@@ -55,6 +55,25 @@ def _judge_cfg(model: str) -> dict:
     return {"id": model, "model": model, "provider": "new-api"}
 
 
+def _dimensions(value: int | float = 80, ai_flavor: int | float = 20) -> dict:
+    return {
+        spec.key: {
+            "score": ai_flavor if spec.key == "ai_flavor" else value,
+            "comment": f"{spec.label} 点评",
+        }
+        for spec in score.DIMENSION_SPECS
+    }
+
+
+def _score_response(
+    value: int | float = 80, ai_flavor: int | float = 20
+) -> str:
+    return json.dumps(
+        {"dimensions": _dimensions(value, ai_flavor)},
+        ensure_ascii=False,
+    )
+
+
 def test_configured_wire_models_covers_generators_and_fixed_judges() -> None:
     cfg = {
         "models": [
@@ -248,37 +267,102 @@ def test_in_progress_manifest_is_rejected(tmp_path: Path) -> None:
         score.load_submission(tmp_path, "reform-era", "candidate-a")
 
 
-@pytest.mark.parametrize(
-    ("raw", "expected"),
-    [
-        (
-            '{"score":82,"ai_flavor":17,"comment":"优点明确，问题具体。"}',
-            {"score": 82, "ai_flavor": 17, "comment": "优点明确，问题具体。"},
-        ),
-        (
-            '```json\n{"score":0,"ai_flavor":100,"comment":"  首尾边界。  "}\n```',
-            {"score": 0, "ai_flavor": 100, "comment": "首尾边界。"},
-        ),
-    ],
-)
-def test_parse_score_response(raw: str, expected: dict) -> None:
-    assert score.parse_score_response(raw) == expected
+def test_system_prompt_renders_canonical_dimension_contract() -> None:
+    prompt = score.load_system_prompt(ROOT)
+
+    assert "{{DIMENSION_SPECS}}" not in prompt
+    assert [spec.key for spec in score.DIMENSION_SPECS] == list(
+        score.DIMENSION_KEYS
+    )
+    assert sum(spec.weight for spec in score.DIMENSION_SPECS) == pytest.approx(1)
+    for spec in score.DIMENSION_SPECS:
+        assert f"`{spec.key}`" in prompt
 
 
-@pytest.mark.parametrize(
-    "raw",
-    [
-        '{"score":101,"ai_flavor":10,"comment":"越界"}',
-        '{"score":80.5,"ai_flavor":10,"comment":"浮点"}',
-        '{"score":true,"ai_flavor":10,"comment":"布尔"}',
-        '{"score":80,"ai_flavor":10,"comment":"好","extra":1}',
-        '{"score":80,"ai_flavor":10,"comment":""}',
-        '{"score":80,"ai_flavor":10,"comment":"' + ('评' * 201) + '"}',
-    ],
-)
-def test_parse_score_response_rejects_invalid_schema(raw: str) -> None:
-    with pytest.raises(score.ScoreError):
-        score.parse_score_response(raw)
+def test_parse_score_response_normalises_decimals_and_comments() -> None:
+    payload = {"dimensions": _dimensions(82.25, 17)}
+    payload["dimensions"]["characters"]["comment"] = "  人物可信，\n  关系仍可加深。 "
+    parsed = score.parse_score_response(
+        "```json\n" + json.dumps(payload, ensure_ascii=False) + "\n```"
+    )
+
+    assert tuple(parsed["dimensions"]) == score.DIMENSION_KEYS
+    assert parsed["dimensions"]["theme_fulfillment"]["score"] == 82.3
+    assert type(parsed["dimensions"]["theme_fulfillment"]["score"]) is float
+    assert parsed["dimensions"]["ai_flavor"]["score"] == 17.0
+    assert (
+        parsed["dimensions"]["characters"]["comment"]
+        == "人物可信， 关系仍可加深。"
+    )
+
+
+def test_parse_score_response_repairs_only_missing_trailing_container_braces() -> None:
+    payload = {"dimensions": _dimensions(82.0, 17.0)}
+    complete = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+
+    assert score.parse_score_response(complete[:-1]) == score.parse_score_response(
+        complete
+    )
+    assert score.parse_score_response(complete[:-2]) == score.parse_score_response(
+        complete
+    )
+
+    truncated_string = complete[: complete.rfind('"')]
+    with pytest.raises(score.ScoreError, match="JSON 解析失败"):
+        score.parse_score_response(truncated_string)
+
+    comment_start = complete.index('"comment":"') + len('"comment":"')
+    earlier_syntax_error = (
+        complete[: comment_start + 1] + '"' + complete[comment_start + 1 :]
+    )
+    with pytest.raises(score.ScoreError, match="JSON 解析失败"):
+        score.parse_score_response(earlier_syntax_error)
+
+
+def test_parse_score_response_rejects_invalid_schema() -> None:
+    invalid_payloads: list[dict] = []
+
+    invalid_payloads.append(
+        {"score": 80, "ai_flavor": 20, "comment": "旧版结构"}
+    )
+
+    missing = {"dimensions": _dimensions()}
+    missing["dimensions"].pop("characters")
+    invalid_payloads.append(missing)
+
+    extra_dimension = {"dimensions": _dimensions()}
+    extra_dimension["dimensions"]["extra"] = {"score": 80, "comment": "额外"}
+    invalid_payloads.append(extra_dimension)
+
+    boolean_score = {"dimensions": _dimensions()}
+    boolean_score["dimensions"]["characters"]["score"] = True
+    invalid_payloads.append(boolean_score)
+
+    nonfinite = {"dimensions": _dimensions()}
+    nonfinite["dimensions"]["characters"]["score"] = float("nan")
+    invalid_payloads.append(nonfinite)
+
+    out_of_range = {"dimensions": _dimensions()}
+    out_of_range["dimensions"]["characters"]["score"] = 100.1
+    invalid_payloads.append(out_of_range)
+
+    extra_entry_field = {"dimensions": _dimensions()}
+    extra_entry_field["dimensions"]["characters"]["extra"] = 1
+    invalid_payloads.append(extra_entry_field)
+
+    empty_comment = {"dimensions": _dimensions()}
+    empty_comment["dimensions"]["characters"]["comment"] = " \n "
+    invalid_payloads.append(empty_comment)
+
+    long_comment = {"dimensions": _dimensions()}
+    long_comment["dimensions"]["characters"]["comment"] = "评" * 241
+    invalid_payloads.append(long_comment)
+
+    for payload in invalid_payloads:
+        with pytest.raises(score.ScoreError):
+            score.parse_score_response(
+                json.dumps(payload, ensure_ascii=False, allow_nan=True)
+            )
 
 
 def test_cache_key_tracks_content_rubric_model_and_parameters(tmp_path: Path) -> None:
@@ -315,7 +399,7 @@ class FakeClient:
         assert stage == "judge"
         assert "全文最后一句" in messages[1]["content"]
         return SimpleNamespace(
-            content='{"score":84,"ai_flavor":21,"comment":"人物可信，但中段节奏略平。"}',
+            content=_score_response(84, 21),
             reasoning_content="private reasoning",
             usage={"prompt_tokens": 1000, "completion_tokens": 100},
             requested_model=model_cfg["model"],
@@ -325,6 +409,23 @@ class FakeClient:
             latency_ms=123,
             raw_response={"id": "response-1"},
         )
+
+
+def _audit_event_paths(
+    root: Path,
+    *,
+    judge_id: str = "sol",
+) -> list[Path]:
+    return sorted(
+        (
+            root
+            / "work"
+            / "scoring"
+            / "reform-era"
+            / "candidate-a"
+            / judge_id
+        ).glob("*.json")
+    )
 
 
 def test_evaluate_judge_writes_public_and_private_then_hits_cache(tmp_path: Path) -> None:
@@ -342,20 +443,24 @@ def test_evaluate_judge_writes_public_and_private_then_hits_cache(tmp_path: Path
         client=client,
     )
     assert status == "scored"
-    assert public["score"] == 84
+    assert public["dimensions"]["characters"]["score"] == 84.0
+    assert "score" not in public
+    assert "ai_flavor" not in public
+    assert "comment" not in public
     assert client.calls == 1
 
     public_path = submission.candidate_dir / "scores" / "sol.json"
-    diagnostic_path = tmp_path / "work" / "scoring" / "reform-era" / "candidate-a" / "sol.json"
+    diagnostic_paths = _audit_event_paths(tmp_path)
+    assert len(diagnostic_paths) == 1
     public_disk = json.loads(public_path.read_text(encoding="utf-8"))
-    private_disk = json.loads(diagnostic_path.read_text(encoding="utf-8"))
+    private_disk = json.loads(diagnostic_paths[0].read_text(encoding="utf-8"))
     assert "usage" not in public_disk
     assert "raw_response" not in public_disk
     assert public_disk["judge_config_sha256"] == score.judge_config_sha256(
         model_cfg, None
     )
     assert private_disk["usage"]["prompt_tokens"] == 1000
-    assert private_disk["reasoning_content"] == "private reasoning"
+    assert private_disk["reasoning"] == "private reasoning"
 
     status, cached = score.evaluate_judge(
         root=tmp_path,
@@ -369,6 +474,7 @@ def test_evaluate_judge_writes_public_and_private_then_hits_cache(tmp_path: Path
     assert status == "cached"
     assert cached == public_disk
     assert client.calls == 1
+    assert _audit_event_paths(tmp_path) == diagnostic_paths
 
 
 def test_evaluate_judge_rejects_nonempty_truncated_json(tmp_path: Path) -> None:
@@ -397,25 +503,222 @@ def test_evaluate_judge_rejects_nonempty_truncated_json(tmp_path: Path) -> None:
             client=client,
         )
     assert not (submission.candidate_dir / "scores" / "sol.json").exists()
-    diagnostic = json.loads(
-        (
-            tmp_path
-            / "work"
-            / "scoring"
-            / "reform-era"
-            / "candidate-a"
-            / "sol.json"
-        ).read_text(encoding="utf-8")
-    )
+    diagnostic_paths = _audit_event_paths(tmp_path)
+    assert len(diagnostic_paths) == 1
+    diagnostic = json.loads(diagnostic_paths[0].read_text(encoding="utf-8"))
     assert diagnostic["finish_reason"] == "length"
+
+
+def test_llm_api_error_with_raw_response_is_audited_without_public_score(
+    tmp_path: Path,
+) -> None:
+    submission = _submission(tmp_path)
+    api_error = score.LLMAPIError(
+        "LLM API 返回空内容（finish_reason=length，reasoning=present）",
+        raw_response={
+            "id": "response-error",
+            "model": "sol-response-model",
+            "choices": [
+                {
+                    "finish_reason": "length",
+                    "message": {
+                        "content": "",
+                        "reasoning_content": "PRIVATE TRACE",
+                    },
+                }
+            ],
+            "usage": {"completion_tokens": 4096},
+        },
+    )
+
+    class ErrorClient:
+        calls = 0
+
+        def complete(self, *args, **kwargs):
+            self.calls += 1
+            raise api_error
+
+    client = ErrorClient()
+    with pytest.raises(score.LLMAPIError) as raised:
+        score.evaluate_judge(
+            root=tmp_path,
+            submission=submission,
+            judge_id="sol",
+            model_cfg=_judge_cfg("sol-model"),
+            request_overrides=None,
+            system_prompt="rubric",
+            client=client,
+        )
+
+    assert raised.value is api_error
+    assert not (submission.candidate_dir / "scores" / "sol.json").exists()
+    paths = _audit_event_paths(tmp_path)
+    assert len(paths) == 1
+    event = json.loads(paths[0].read_text(encoding="utf-8"))
+    assert event["finish_reason"] == "length"
+    assert event["usage"] == {"completion_tokens": 4096}
+    assert event["reasoning"] == "PRIVATE TRACE"
+    assert event["raw_response"]["id"] == "response-error"
+    assert event["content"] == ""
+    assert event["parse_error"] == str(api_error)
+    assert "PRIVATE TRACE" not in event["parse_error"]
+
+
+def test_repeated_api_failures_append_unique_audit_events(tmp_path: Path) -> None:
+    submission = _submission(tmp_path)
+
+    class ErrorClient:
+        calls = 0
+
+        def complete(self, *args, **kwargs):
+            self.calls += 1
+            raise score.LLMAPIError(
+                "safe failure",
+                raw_response={
+                    "model": "sol-model",
+                    "choices": [
+                        {
+                            "finish_reason": "length",
+                            "message": {"content": ""},
+                        }
+                    ],
+                },
+            )
+
+    client = ErrorClient()
+    for _ in range(2):
+        with pytest.raises(score.LLMAPIError, match="safe failure"):
+            score.evaluate_judge(
+                root=tmp_path,
+                submission=submission,
+                judge_id="sol",
+                model_cfg=_judge_cfg("sol-model"),
+                request_overrides=None,
+                system_prompt="rubric",
+                client=client,
+            )
+
+    paths = _audit_event_paths(tmp_path)
+    assert client.calls == 2
+    assert len(paths) == 2
+    assert paths[0].name != paths[1].name
+    assert all(
+        json.loads(path.read_text(encoding="utf-8"))["parse_error"]
+        == "safe failure"
+        for path in paths
+    )
+
+
+def test_missing_public_score_recovers_from_success_event_without_api_call(
+    tmp_path: Path,
+) -> None:
+    submission = _submission(tmp_path)
+    client = FakeClient()
+    kwargs = {
+        "root": tmp_path,
+        "submission": submission,
+        "judge_id": "sol",
+        "model_cfg": _judge_cfg("sol-model"),
+        "request_overrides": None,
+        "system_prompt": "rubric",
+        "client": client,
+    }
+    status, expected = score.evaluate_judge(**kwargs)
+    assert status == "scored"
+    event_paths = _audit_event_paths(tmp_path)
+
+    public_path = submission.candidate_dir / "scores" / "sol.json"
+    public_path.unlink()
+    status, recovered = score.evaluate_judge(**kwargs)
+
+    assert status == "recovered"
+    assert recovered == expected
+    assert client.calls == 1
+    assert _audit_event_paths(tmp_path) == event_paths
+    public = json.loads(public_path.read_text(encoding="utf-8"))
+    assert public == expected
+    assert not {
+        "usage",
+        "reasoning",
+        "reasoning_content",
+        "raw_response",
+        "content",
+        "parse_error",
+    }.intersection(public)
+
+
+@pytest.mark.parametrize(
+    "invalid_kind",
+    ("wrong-cache", "length", "invalid-content", "old-schema"),
+)
+def test_invalid_private_events_never_recover(
+    tmp_path: Path,
+    invalid_kind: str,
+) -> None:
+    submission = _submission(tmp_path)
+    model_cfg = _judge_cfg("sol-model")
+    identity = score.public_score_identity(
+        submission, "sol", model_cfg, "rubric", None
+    )
+    cache_key = score.score_cache_key(
+        submission, "rubric", "sol", model_cfg, None
+    )
+    event = {
+        **identity,
+        "cache_key": cache_key,
+        "recorded_at": "2026-01-01T00:00:00+00:00",
+        "response_model": "sol-model",
+        "finish_reason": "stop",
+        "usage": {},
+        "reasoning": "",
+        "raw_response": {},
+        "content": _score_response(81, 19),
+        "parse_error": None,
+    }
+    if invalid_kind == "wrong-cache":
+        event["cache_key"] = "different-cache-key"
+    elif invalid_kind == "length":
+        event["finish_reason"] = "length"
+    elif invalid_kind == "invalid-content":
+        event["content"] = '{"dimensions": {}}'
+    elif invalid_kind == "old-schema":
+        event["schema"] = "novel-eval.v2"
+
+    event_dir = (
+        tmp_path
+        / "work"
+        / "scoring"
+        / "reform-era"
+        / "candidate-a"
+        / "sol"
+    )
+    event_dir.mkdir(parents=True)
+    (event_dir / "20260101T000000.000000Z-invalid.json").write_text(
+        json.dumps(event, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    client = FakeClient()
+    status, _public = score.evaluate_judge(
+        root=tmp_path,
+        submission=submission,
+        judge_id="sol",
+        model_cfg=model_cfg,
+        request_overrides=None,
+        system_prompt="rubric",
+        client=client,
+    )
+    assert status == "scored"
+    assert client.calls == 1
+    assert len(_audit_event_paths(tmp_path)) == 2
 
 
 def _write_score(
     submission: score.Submission,
     judge_id: str,
     cache_key: str,
-    value: int,
-    ai_flavor: int,
+    value: int | float,
+    ai_flavor: int | float,
     identity: dict,
 ) -> None:
     path = submission.candidate_dir / "scores" / f"{judge_id}.json"
@@ -424,10 +727,9 @@ def _write_score(
         json.dumps(
             {
                 **identity,
+                "response_model": identity["requested_model"],
                 "cache_key": cache_key,
-                "score": value,
-                "ai_flavor": ai_flavor,
-                "comment": f"{judge_id} 点评",
+                "dimensions": _dimensions(float(value), float(ai_flavor)),
             },
             ensure_ascii=False,
         ),
@@ -454,21 +756,60 @@ def test_aggregate_requires_all_three_fresh_judges(tmp_path: Path) -> None:
     incomplete = score.aggregate_scores(submission, keys, identities)
     assert incomplete["status"] == "incomplete"
     assert incomplete["eligible_for_ranking"] is False
-    assert incomplete["score"] is None
-    assert incomplete["ai_flavor"] is None
+    assert incomplete["dimensions"] == {}
+    assert incomplete["overall_score"] is None
+    assert set(incomplete["judges"]) == {"sol", "grok"}
 
     _write_score(submission, "kimi", keys["kimi"], 85, 15, identities["kimi"])
     complete = score.aggregate_scores(submission, keys, identities)
     assert complete["status"] == "complete"
     assert complete["eligible_for_ranking"] is True
-    assert complete["score"] == 85.0
-    assert complete["ai_flavor"] == 15.0
+    assert complete["overall_score"] == 85.0
+    assert complete["dimensions"]["characters"] == {
+        "label": "人物与关系",
+        "weight": 0.15,
+        "higher_is_better": True,
+        "median": 85.0,
+        "min": 80.0,
+        "max": 90.0,
+    }
+    assert complete["dimensions"]["ai_flavor"]["median"] == 15.0
+    assert complete["judges"]["sol"]["dimensions"]["characters"]["score"] == 90.0
 
     # A stale result must invalidate the complete aggregate.
     keys["kimi"] = "new-key-kimi"
     stale = score.aggregate_scores(submission, keys, identities)
     assert stale["status"] == "incomplete"
-    assert stale["score"] is None
+    assert stale["dimensions"] == {}
+    assert stale["overall_score"] is None
+
+
+def test_dimension_helpers_use_median_direction_and_half_up_rounding() -> None:
+    judge_dimensions = {
+        "sol": _dimensions(90, 10),
+        "grok": _dimensions(40, 90),
+        "kimi": _dimensions(80, 20),
+    }
+    aggregate = score.aggregate_dimension_scores(judge_dimensions)
+
+    assert aggregate["plot_causality"]["median"] == 80.0
+    assert aggregate["plot_causality"]["min"] == 40.0
+    assert aggregate["plot_causality"]["max"] == 90.0
+    assert aggregate["ai_flavor"]["median"] == 20.0
+    assert score.dimension_radar_value("ai_flavor", 20) == 80.0
+    assert score.dimension_radar_value("characters", 82.25) == 82.3
+
+    medians = {
+        "theme_fulfillment": 80,
+        "historical_grounding": 70,
+        "characters": 60,
+        "plot_causality": 50,
+        "longform_structure": 40,
+        "scene_execution": 30,
+        "style_control": 20,
+        "ai_flavor": 10,
+    }
+    assert score.overall_score_from_medians(medians) == 55.0
 
 
 def test_score_cli_all_cached_skips_env_key_and_preflight(

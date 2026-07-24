@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Run the v2 three-judge novel benchmark.
+"""Run the v3 three-judge, eight-dimension novel benchmark.
 
 The tracked benchmark artifacts are the only scoring inputs.  Every judge sees
-the same anonymous, unabridged submission and returns exactly three values:
-``score``, ``ai_flavor`` and ``comment``.  Public score files are written below
-``results/`` while raw responses and usage details stay in ignored ``work/``.
+the same anonymous, unabridged submission and scores every rubric dimension.
+Public score files are written below ``results/`` while raw responses, private
+reasoning and usage details stay in ignored ``work/``.
 """
 
 from __future__ import annotations
@@ -18,8 +18,11 @@ import math
 import os
 import re
 import sys
+import uuid
 from datetime import datetime, timezone
+from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
+from statistics import median
 from typing import Any, Iterable, Mapping
 
 
@@ -40,6 +43,7 @@ except ImportError:
 # agreed contract and fails clearly in _require_llm_api().
 ChatClient = getattr(_llm_api, "ChatClient", None)
 ChatResult = getattr(_llm_api, "ChatResult", Any)
+LLMAPIError = getattr(_llm_api, "LLMAPIError", RuntimeError)
 get_model_config = getattr(_llm_api, "get_model_config", None)
 load_config = getattr(_llm_api, "load_config", None)
 load_env_file = getattr(_llm_api, "load_env_file", None)
@@ -63,10 +67,11 @@ except ImportError:  # pragma: no cover - direct script execution
     )
 
 
-SCHEMA_VERSION = "novel-eval.v2"
-AGGREGATE_SCHEMA_VERSION = "novel-eval-aggregate.v2"
+SCHEMA_VERSION = "novel-eval.v3"
+AGGREGATE_SCHEMA_VERSION = "novel-eval-aggregate.v3"
 DEFAULT_BENCHMARK = "reform-era"
 JUDGE_IDS = ("sol", "grok", "kimi")
+MAX_RECOVERY_EVENTS = 256
 EXPECTED_JUDGE_MODELS = {
     "sol": "gpt-5.6-sol",
     "grok": "grok-4.5",
@@ -94,6 +99,34 @@ IDENTITY_KEYS = {
     "requested_model",
     "response_model",
 }
+
+
+@dataclasses.dataclass(frozen=True)
+class DimensionSpec:
+    """One canonical scoring dimension shared by parsing and presentation."""
+
+    key: str
+    label: str
+    weight: float
+    higher_is_better: bool
+
+
+# Keep ordering, labels, weights and directionality in this single source.
+# AI flavour is intentionally a low-is-good dimension; it is inverted only
+# when a common outward-is-better radar value or the overall score is needed.
+DIMENSION_SPECS = (
+    DimensionSpec("theme_fulfillment", "题材与主题兑现", 0.10, True),
+    DimensionSpec("historical_grounding", "时代与现实质感", 0.15, True),
+    DimensionSpec("characters", "人物与关系", 0.15, True),
+    DimensionSpec("plot_causality", "情节驱动与因果", 0.15, True),
+    DimensionSpec("longform_structure", "长篇结构与连续性", 0.15, True),
+    DimensionSpec("scene_execution", "场景与叙事效能", 0.10, True),
+    DimensionSpec("style_control", "文风管理", 0.10, True),
+    DimensionSpec("ai_flavor", "AI味", 0.10, False),
+)
+DIMENSION_KEYS = tuple(spec.key for spec in DIMENSION_SPECS)
+_DIMENSION_BY_KEY = {spec.key: spec for spec in DIMENSION_SPECS}
+_ONE_DECIMAL = Decimal("0.1")
 
 
 class ScoreError(RuntimeError):
@@ -233,7 +266,36 @@ def load_submission(
 
 
 def load_system_prompt(root: Path) -> str:
-    return _read_text(root / "runner" / "prompts" / "v2" / "judge_system.md")
+    template = _read_text(root / "runner" / "prompts" / "v2" / "judge_system.md")
+    marker = "{{DIMENSION_SPECS}}"
+    if template.count(marker) != 1:
+        raise ScoreError(f"评分提示词必须且只能包含一个 {marker} 占位符")
+    rubric_lines = [
+        (
+            f"- `{spec.key}`：{spec.label}；权重 {spec.weight:.0%}；"
+            f"{'越高越好' if spec.higher_is_better else '越低越好'}"
+        )
+        for spec in DIMENSION_SPECS
+    ]
+    skeleton = {
+        "dimensions": {
+            spec.key: {"score": 0.0, "comment": "一句具体点评"}
+            for spec in DIMENSION_SPECS
+        }
+    }
+    rendered_specs = "\n".join(
+        (
+            *rubric_lines,
+            "",
+            "必须完整采用以下 JSON 结构：",
+            json.dumps(
+                skeleton,
+                ensure_ascii=False,
+                separators=(",", ":"),
+            ),
+        )
+    )
+    return template.replace(marker, rendered_specs)
 
 
 def build_messages(system_prompt: str, submission: Submission) -> list[dict[str, str]]:
@@ -241,6 +303,84 @@ def build_messages(system_prompt: str, submission: Submission) -> list[dict[str,
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": submission.user_content},
     ]
+
+
+def _normalise_dimension_score(value: Any, field: str) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ScoreError(f"{field} 必须是数值")
+    try:
+        decimal_value = Decimal(str(value))
+    except (InvalidOperation, ValueError) as exc:  # pragma: no cover - defensive
+        raise ScoreError(f"{field} 不是有效数值") from exc
+    if not decimal_value.is_finite() or not Decimal("0") <= decimal_value <= Decimal(
+        "100"
+    ):
+        raise ScoreError(f"{field} 必须是 0–100 之间的有限数值")
+    rounded = decimal_value.quantize(_ONE_DECIMAL, rounding=ROUND_HALF_UP)
+    return 0.0 if rounded == 0 else float(rounded)
+
+
+def _normalise_dimension_entry(key: str, value: Any) -> dict[str, Any]:
+    if not isinstance(value, dict) or set(value) != {"score", "comment"}:
+        raise ScoreError(f"dimensions.{key} 必须且只能包含 score、comment")
+    comment = value["comment"]
+    if not isinstance(comment, str):
+        raise ScoreError(f"dimensions.{key}.comment 必须是字符串")
+    comment = re.sub(r"\s+", " ", comment).strip()
+    if not comment:
+        raise ScoreError(f"dimensions.{key}.comment 不能为空")
+    if len(comment) > 240:
+        raise ScoreError(f"dimensions.{key}.comment 超过 240 字符")
+    return {
+        "score": _normalise_dimension_score(
+            value["score"], f"dimensions.{key}.score"
+        ),
+        "comment": comment,
+    }
+
+
+def _repair_trailing_json_closers(
+    text: str,
+    error: json.JSONDecodeError,
+) -> str | None:
+    """Close only a fully written JSON value that lost final container braces.
+
+    Some reasoning-model gateways occasionally return ``finish_reason=stop``
+    after emitting every requested field but omit one or two final ``}``
+    characters.  Repair only an EOF error with balanced strings and at most
+    three still-open containers.  Missing text, quotes, commas, mismatched
+    delimiters, or any earlier syntax error remain hard failures.
+    """
+
+    stripped = text.rstrip()
+    if not stripped or error.pos < len(stripped):
+        return None
+
+    stack: list[str] = []
+    in_string = False
+    escaped = False
+    pairs = {"{": "}", "[": "]"}
+    closing = {"}", "]"}
+    for char in stripped:
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char in pairs:
+            stack.append(char)
+        elif char in closing:
+            if not stack or pairs[stack.pop()] != char:
+                return None
+
+    if in_string or escaped or not 1 <= len(stack) <= 3:
+        return None
+    return stripped + "".join(pairs[opener] for opener in reversed(stack))
 
 
 def parse_score_response(content: str) -> dict[str, Any]:
@@ -254,36 +394,34 @@ def parse_score_response(content: str) -> dict[str, Any]:
         start = text.find("{")
         if start < 0:
             raise ScoreError("评委响应中没有 JSON 对象")
+        candidate = text[start:]
         try:
-            parsed, _end = json.JSONDecoder().raw_decode(text[start:])
+            parsed, _end = json.JSONDecoder().raw_decode(candidate)
         except json.JSONDecodeError as exc:
-            raise ScoreError(f"评委响应 JSON 解析失败：{exc}") from exc
+            repaired = _repair_trailing_json_closers(candidate, exc)
+            if repaired is None:
+                raise ScoreError(f"评委响应 JSON 解析失败：{exc}") from exc
+            try:
+                parsed = json.loads(repaired)
+            except json.JSONDecodeError as repaired_exc:  # pragma: no cover - defensive
+                raise ScoreError(
+                    f"评委响应 JSON 解析失败：{repaired_exc}"
+                ) from repaired_exc
 
     if not isinstance(parsed, dict):
         raise ScoreError("评委响应必须是 JSON 对象")
-    required = {"score", "ai_flavor", "comment"}
-    if set(parsed) != required:
-        raise ScoreError("评委响应必须且只能包含 score、ai_flavor、comment")
-
-    for field in ("score", "ai_flavor"):
-        value = parsed[field]
-        if isinstance(value, bool) or not isinstance(value, int):
-            raise ScoreError(f"{field} 必须是整数")
-        if not 0 <= value <= 100:
-            raise ScoreError(f"{field} 必须在 0–100 之间")
-
-    comment = parsed["comment"]
-    if not isinstance(comment, str):
-        raise ScoreError("comment 必须是字符串")
-    comment = re.sub(r"\s+", " ", comment).strip()
-    if not comment:
-        raise ScoreError("comment 不能为空")
-    if len(comment) > 200:
-        raise ScoreError("comment 超过 200 字符")
+    if set(parsed) != {"dimensions"}:
+        raise ScoreError("评委响应顶层必须且只能包含 dimensions")
+    dimensions = parsed["dimensions"]
+    if not isinstance(dimensions, dict) or set(dimensions) != set(DIMENSION_KEYS):
+        raise ScoreError(
+            "dimensions 必须完整且只能包含：" + "、".join(DIMENSION_KEYS)
+        )
     return {
-        "score": parsed["score"],
-        "ai_flavor": parsed["ai_flavor"],
-        "comment": comment,
+        "dimensions": {
+            key: _normalise_dimension_entry(key, dimensions[key])
+            for key in DIMENSION_KEYS
+        }
     }
 
 
@@ -362,7 +500,9 @@ def _json_safe(value: Any) -> Any:
 
 def _atomic_write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temp_path = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    temp_path = path.with_name(
+        f".{path.name}.{os.getpid()}.{uuid.uuid4().hex}.tmp"
+    )
     temp_path.write_text(
         json.dumps(value, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -391,19 +531,33 @@ def _valid_public_score(
         return False
     if any(value.get(key) != expected for key, expected in expected_identity.items()):
         return False
+    allowed_fields = set(expected_identity) | {
+        "response_model",
+        "cache_key",
+        "dimensions",
+    }
+    if set(value) != allowed_fields:
+        return False
+    if not isinstance(value.get("response_model"), str) or not value["response_model"]:
+        return False
     try:
-        parse_score_response(
+        parsed = parse_score_response(
             json.dumps(
-                {
-                    "score": value.get("score"),
-                    "ai_flavor": value.get("ai_flavor"),
-                    "comment": value.get("comment"),
-                },
+                {"dimensions": value.get("dimensions")},
                 ensure_ascii=False,
             )
         )
     except ScoreError:
         return False
+    dimensions = value.get("dimensions")
+    if not isinstance(dimensions, dict):
+        return False
+    for key in DIMENSION_KEYS:
+        entry = dimensions.get(key)
+        if not isinstance(entry, dict) or type(entry.get("score")) is not float:
+            return False
+        if entry != parsed["dimensions"][key]:
+            return False
     return True
 
 
@@ -495,38 +649,213 @@ def _public_score_record(
         **identity,
         "response_model": response_model,
         "cache_key": cache_key,
-        "score": parsed["score"],
-        "ai_flavor": parsed["ai_flavor"],
-        "comment": parsed["comment"],
+        "dimensions": parsed["dimensions"],
     }
 
 
 def _diagnostic_record(
     submission: Submission,
     judge_id: str,
-    result: Any,
     cache_key: str,
+    expected_identity: Mapping[str, Any],
+    *,
+    result: Any | None = None,
+    api_error: BaseException | None = None,
     parse_error: str | None = None,
 ) -> dict[str, Any]:
+    raw_response = (
+        getattr(api_error, "raw_response", None)
+        if api_error is not None
+        else getattr(result, "raw_response", None)
+    )
+    raw_metadata = _raw_completion_metadata(raw_response)
+    requested_model = (
+        getattr(result, "requested_model", None)
+        if result is not None
+        else None
+    ) or expected_identity["requested_model"]
+    response_model = (
+        getattr(result, "response_model", None)
+        if result is not None
+        else None
+    ) or raw_metadata["response_model"]
+    finish_reason = (
+        getattr(result, "finish_reason", None)
+        if result is not None
+        else None
+    ) or raw_metadata["finish_reason"]
+    usage = (
+        getattr(result, "usage", None)
+        if result is not None
+        else None
+    )
+    if usage is None:
+        usage = raw_metadata["usage"]
+    reasoning = (
+        getattr(result, "reasoning_content", None)
+        if result is not None
+        else None
+    )
+    if reasoning is None:
+        reasoning = raw_metadata["reasoning"]
+    content = getattr(result, "content", None) if result is not None else None
+    if content is None:
+        content = raw_metadata["content"]
     return {
-        "schema": SCHEMA_VERSION,
-        "benchmark": submission.benchmark,
-        "candidate": submission.candidate,
-        "judge": judge_id,
+        **dict(expected_identity),
         "cache_key": cache_key,
-        "input_hash": submission.input_hash,
         "recorded_at": datetime.now(timezone.utc).isoformat(),
-        "requested_model": getattr(result, "requested_model", None),
-        "response_model": getattr(result, "response_model", None),
-        "finish_reason": getattr(result, "finish_reason", None),
-        "response_id": getattr(result, "response_id", None),
-        "latency_ms": getattr(result, "latency_ms", None),
-        "usage": _json_safe(getattr(result, "usage", None)),
-        "reasoning_content": getattr(result, "reasoning_content", "") or "",
-        "raw_response": _json_safe(getattr(result, "raw_response", None)),
-        "content": getattr(result, "content", "") or "",
+        "response_model": response_model,
+        "finish_reason": finish_reason,
+        "usage": _json_safe(usage),
+        "reasoning": reasoning or "",
+        "raw_response": _json_safe(raw_response),
+        "content": content or "",
         "parse_error": parse_error,
     }
+
+
+def _audit_text(value: Any) -> str:
+    if isinstance(value, str):
+        return value
+    if isinstance(value, Mapping):
+        for key in ("text", "content", "thinking", "reasoning"):
+            if key in value:
+                text = _audit_text(value[key])
+                if text:
+                    return text
+        return ""
+    if isinstance(value, (list, tuple)):
+        return "".join(_audit_text(item) for item in value)
+    return ""
+
+
+def _raw_completion_metadata(raw_response: Any) -> dict[str, Any]:
+    """Extract private audit metadata without putting it in an error message."""
+
+    empty = {
+        "response_model": None,
+        "finish_reason": None,
+        "usage": None,
+        "reasoning": "",
+        "content": "",
+    }
+    if not isinstance(raw_response, Mapping):
+        return empty
+
+    response_model = raw_response.get("model")
+    finish_reason = raw_response.get("stop_reason")
+    usage = raw_response.get("usage")
+    reasoning = ""
+    content = ""
+
+    choices = raw_response.get("choices")
+    if isinstance(choices, list) and choices and isinstance(choices[0], Mapping):
+        choice = choices[0]
+        finish_reason = choice.get("finish_reason") or finish_reason
+        message = choice.get("message")
+        if isinstance(message, Mapping):
+            content = _audit_text(message.get("content"))
+            reasoning = _audit_text(
+                message.get("reasoning_content", message.get("reasoning"))
+            )
+    elif isinstance(raw_response.get("content"), list):
+        public_parts: list[str] = []
+        reasoning_parts: list[str] = []
+        for block in raw_response["content"]:
+            if not isinstance(block, Mapping):
+                continue
+            block_type = str(block.get("type", "")).strip().lower()
+            text = _audit_text(block)
+            if block_type in {"thinking", "reasoning", "redacted_thinking"}:
+                reasoning_parts.append(text)
+            else:
+                public_parts.append(text)
+        content = "".join(public_parts)
+        reasoning = "".join(reasoning_parts)
+
+    return {
+        "response_model": (
+            str(response_model) if response_model is not None else None
+        ),
+        "finish_reason": (
+            str(finish_reason) if finish_reason is not None else None
+        ),
+        "usage": usage if isinstance(usage, Mapping) else None,
+        "reasoning": reasoning,
+        "content": content,
+    }
+
+
+def _diagnostic_event_dir(
+    root: Path,
+    submission: Submission,
+    judge_id: str,
+) -> Path:
+    return (
+        root
+        / "work"
+        / "scoring"
+        / submission.benchmark
+        / submission.candidate
+        / judge_id
+    )
+
+
+def _new_diagnostic_path(event_dir: Path) -> Path:
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
+    return event_dir / f"{stamp}-{uuid.uuid4().hex}.json"
+
+
+def _write_diagnostic_event(path: Path, record: Mapping[str, Any]) -> None:
+    if path.exists():  # UUID paths should never collide or overwrite history.
+        raise ScoreError(f"评分审计事件已存在：{path}")
+    _atomic_write_json(path, record)
+
+
+def _recover_public_score(
+    event_dir: Path,
+    cache_key: str,
+    expected_identity: Mapping[str, Any],
+) -> dict[str, Any] | None:
+    """Recover from the newest valid current-identity private response."""
+
+    if not event_dir.is_dir():
+        return None
+    try:
+        paths = sorted(event_dir.glob("*.json"), reverse=True)[
+            :MAX_RECOVERY_EVENTS
+        ]
+    except OSError:
+        return None
+    for path in paths:
+        event = _load_json_if_present(path)
+        if event is None or event.get("cache_key") != cache_key:
+            continue
+        if any(
+            event.get(key) != expected
+            for key, expected in expected_identity.items()
+        ):
+            continue
+        if str(event.get("finish_reason", "")).strip().lower() != "stop":
+            continue
+        content = event.get("content")
+        response_model = event.get("response_model")
+        if not isinstance(content, str) or not isinstance(response_model, str):
+            continue
+        if not response_model.strip():
+            continue
+        try:
+            parsed = parse_score_response(content)
+        except ScoreError:
+            continue
+        return {
+            **dict(expected_identity),
+            "response_model": response_model,
+            "cache_key": cache_key,
+            "dimensions": parsed["dimensions"],
+        }
+    return None
 
 
 def evaluate_judge(
@@ -539,7 +868,7 @@ def evaluate_judge(
     system_prompt: str,
     client: Any,
 ) -> tuple[str, dict[str, Any]]:
-    """Return (``cached`` | ``scored``, public score record)."""
+    """Return (``cached`` | ``recovered`` | ``scored``, public score record)."""
     cache_key = score_cache_key(
         submission,
         system_prompt,
@@ -555,32 +884,65 @@ def evaluate_judge(
     if _valid_public_score(cached, cache_key, expected_identity):
         return "cached", cached  # type: ignore[return-value]
 
+    event_dir = _diagnostic_event_dir(root, submission, judge_id)
+    recovered = _recover_public_score(event_dir, cache_key, expected_identity)
+    if recovered is not None:
+        _atomic_write_json(public_path, recovered)
+        return "recovered", recovered
+
     messages = build_messages(system_prompt, submission)
-    result = client.complete(
-        dict(model_cfg),
-        messages,
-        stage="judge",
-        request_overrides=dict(request_overrides) if request_overrides else None,
-    )
-    diagnostic_path = (
-        root / "work" / "scoring" / submission.benchmark / submission.candidate / f"{judge_id}.json"
-    )
+    diagnostic_path = _new_diagnostic_path(event_dir)
+    try:
+        result = client.complete(
+            dict(model_cfg),
+            messages,
+            stage="judge",
+            request_overrides=dict(request_overrides) if request_overrides else None,
+        )
+    except LLMAPIError as exc:
+        _write_diagnostic_event(
+            diagnostic_path,
+            _diagnostic_record(
+                submission,
+                judge_id,
+                cache_key,
+                expected_identity,
+                api_error=exc,
+                parse_error=str(exc),
+            ),
+        )
+        raise
+
     finish_reason = str(getattr(result, "finish_reason", "") or "").strip().lower()
     if finish_reason != "stop":
         exc = ScoreError(
             f"评委 {judge_id} finish_reason={finish_reason or 'missing'}，拒绝截断评分"
         )
-        _atomic_write_json(
+        _write_diagnostic_event(
             diagnostic_path,
-            _diagnostic_record(submission, judge_id, result, cache_key, str(exc)),
+            _diagnostic_record(
+                submission,
+                judge_id,
+                cache_key,
+                expected_identity,
+                result=result,
+                parse_error=str(exc),
+            ),
         )
         raise exc
     try:
         parsed = parse_score_response(getattr(result, "content", ""))
     except ScoreError as exc:
-        _atomic_write_json(
+        _write_diagnostic_event(
             diagnostic_path,
-            _diagnostic_record(submission, judge_id, result, cache_key, str(exc)),
+            _diagnostic_record(
+                submission,
+                judge_id,
+                cache_key,
+                expected_identity,
+                result=result,
+                parse_error=str(exc),
+            ),
         )
         raise
 
@@ -594,9 +956,86 @@ def evaluate_judge(
         system_prompt,
         request_overrides,
     )
-    _atomic_write_json(diagnostic_path, _diagnostic_record(submission, judge_id, result, cache_key))
+    _write_diagnostic_event(
+        diagnostic_path,
+        _diagnostic_record(
+            submission,
+            judge_id,
+            cache_key,
+            expected_identity,
+            result=result,
+        ),
+    )
     _atomic_write_json(public_path, public)
     return "scored", public
+
+
+def dimension_radar_value(dimension_key: str, value: int | float) -> float:
+    """Return an outward-is-better value for one radar axis."""
+
+    try:
+        spec = _DIMENSION_BY_KEY[dimension_key]
+    except KeyError as exc:
+        raise ScoreError(f"未知评分维度：{dimension_key}") from exc
+    normalised = _normalise_dimension_score(value, dimension_key)
+    if spec.higher_is_better:
+        return normalised
+    return _normalise_dimension_score(100 - normalised, dimension_key)
+
+
+def aggregate_dimension_scores(
+    judge_dimensions: Mapping[str, Mapping[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    """Aggregate three complete judge dimension mappings with robust medians."""
+
+    if set(judge_dimensions) != set(JUDGE_IDS):
+        raise ScoreError("维度聚合需要且只能使用全部三个固定评委")
+    result: dict[str, dict[str, Any]] = {}
+    for spec in DIMENSION_SPECS:
+        values: list[float] = []
+        for judge_id in JUDGE_IDS:
+            dimensions = judge_dimensions[judge_id]
+            if not isinstance(dimensions, Mapping) or set(dimensions) != set(
+                DIMENSION_KEYS
+            ):
+                raise ScoreError(f"评委 {judge_id} 的维度不完整")
+            entry = dimensions[spec.key]
+            if not isinstance(entry, Mapping):
+                raise ScoreError(f"评委 {judge_id} 的 {spec.key} 结构无效")
+            normalised_entry = _normalise_dimension_entry(
+                spec.key, dict(entry)
+            )
+            values.append(normalised_entry["score"])
+        result[spec.key] = {
+            "label": spec.label,
+            "weight": spec.weight,
+            "higher_is_better": spec.higher_is_better,
+            "median": _normalise_dimension_score(
+                median(values), f"{spec.key}.median"
+            ),
+            "min": _normalise_dimension_score(min(values), f"{spec.key}.min"),
+            "max": _normalise_dimension_score(max(values), f"{spec.key}.max"),
+        }
+    return result
+
+
+def overall_score_from_medians(
+    medians: Mapping[str, Any],
+) -> float:
+    """Weight canonical medians, inverting only low-is-good dimensions."""
+
+    if set(medians) != set(DIMENSION_KEYS):
+        raise ScoreError("综合分需要全部八个维度的中位数")
+    total = Decimal("0")
+    for spec in DIMENSION_SPECS:
+        raw = medians[spec.key]
+        if isinstance(raw, Mapping):
+            if "median" not in raw:
+                raise ScoreError(f"{spec.key} 缺少 median")
+            raw = raw["median"]
+        radar_value = dimension_radar_value(spec.key, raw)
+        total += Decimal(str(radar_value)) * Decimal(str(spec.weight))
+    return float(total.quantize(_ONE_DECIMAL, rounding=ROUND_HALF_UP))
 
 
 def aggregate_scores(
@@ -618,9 +1057,7 @@ def aggregate_scores(
     complete = len(valid) == len(JUDGE_IDS)
     judges = {
         judge_id: {
-            "score": valid[judge_id]["score"],
-            "ai_flavor": valid[judge_id]["ai_flavor"],
-            "comment": valid[judge_id]["comment"],
+            "dimensions": valid[judge_id]["dimensions"],
         }
         for judge_id in JUDGE_IDS
         if judge_id in valid
@@ -635,17 +1072,18 @@ def aggregate_scores(
         "status": "complete" if complete else "incomplete",
         "eligible_for_ranking": complete,
         "judges": judges,
-        "score": None,
-        "ai_flavor": None,
+        "dimensions": {},
+        "overall_score": None,
     }
     if complete:
-        aggregate["score"] = round(
-            sum(valid[judge_id]["score"] for judge_id in JUDGE_IDS) / len(JUDGE_IDS),
-            2,
+        aggregate["dimensions"] = aggregate_dimension_scores(
+            {
+                judge_id: valid[judge_id]["dimensions"]
+                for judge_id in JUDGE_IDS
+            }
         )
-        aggregate["ai_flavor"] = round(
-            sum(valid[judge_id]["ai_flavor"] for judge_id in JUDGE_IDS) / len(JUDGE_IDS),
-            2,
+        aggregate["overall_score"] = overall_score_from_medians(
+            aggregate["dimensions"]
         )
     return aggregate
 

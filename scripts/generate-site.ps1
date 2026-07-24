@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Deterministically builds the V2 leaderboard and Legacy pages.
+  Deterministically builds the V3 dimension leaderboard and Legacy pages.
 .EXAMPLE
   .\scripts\generate-site.ps1 -DocsDir .site/preview
 #>

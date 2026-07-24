@@ -12,6 +12,7 @@ import argparse
 import hashlib
 import html
 import json
+import math
 import os
 import re
 import shutil
@@ -34,7 +35,19 @@ from runner.generate import (  # noqa: E402
     result_is_complete,
 )
 from runner.llm_api import with_provider_request_defaults  # noqa: E402
-from runner.score import ScoreError, load_submission  # noqa: E402
+from runner.score import (  # noqa: E402
+    AGGREGATE_SCHEMA_VERSION,
+    DIMENSION_KEYS,
+    DIMENSION_SPECS,
+    SCHEMA_VERSION as SCORE_SCHEMA,
+    ScoreError,
+    aggregate_dimension_scores,
+    dimension_radar_value,
+    load_submission,
+    load_system_prompt,
+    overall_score_from_medians,
+    parse_score_response,
+)
 
 SITE_TITLE = "让我康康你的文"
 REPO_URL = "https://github.com/klarkxy/show-me-your-novel"
@@ -45,7 +58,6 @@ THINKING_BLOCK = re.compile(
 UNCLOSED_THINKING_BLOCK = re.compile(r"\[思考过程\]\s*\n?.*\Z", re.DOTALL)
 OUTLINE_BLOCK = re.compile(r"(?ms)^##\s*大纲\s*$.*?(?=^##\s*第\d+章|\Z)")
 JUDGE_IDS = ("sol", "grok", "kimi")
-SCORE_SCHEMA = "novel-eval.v2"
 GENERATION_PROTOCOL = PROTOCOL_VERSION
 REQUIRED_RESULT_ARTIFACTS = (
     "book.json",
@@ -140,8 +152,7 @@ def build_score_expectations(
     config_path: Path,
     config: dict[str, Any],
 ) -> dict[str, dict[str, str]]:
-    prompt_path = config_path.parent / "runner" / "prompts" / "v2" / "judge_system.md"
-    prompt = _canonical_text(prompt_path.read_bytes().decode("utf-8-sig"))
+    prompt = load_system_prompt(config_path.parent)
     rubric_hash = _sha256_text(prompt)
     judges = config.get("judges") if isinstance(config.get("judges"), list) else []
     expectations: dict[str, dict[str, str]] = {}
@@ -373,20 +384,30 @@ def _first(mapping: dict[str, Any], *keys: str) -> Any:
     return None
 
 
+def _blank_dimensions() -> dict[str, dict[str, Any]]:
+    return {
+        spec.key: {"score": None, "comment": ""}
+        for spec in DIMENSION_SPECS
+    }
+
+
 def _blank_judge() -> dict[str, Any]:
-    return {"score": None, "ai_flavor": None, "comment": "", "valid": False}
+    return {"dimensions": _blank_dimensions(), "valid": False}
 
 
 def _normalise_judge(
     raw: dict[str, Any],
     *,
+    benchmark: str,
     judge_id: str,
     candidate: str,
     expected: dict[str, str] | None,
 ) -> dict[str, Any]:
-    """Validate the tracked V2 public-score schema without accepting coercions."""
+    """Validate one tracked V3 score record using the runner's parser."""
 
     if raw.get("schema") != SCORE_SCHEMA:
+        return _blank_judge()
+    if raw.get("benchmark") != benchmark:
         return _blank_judge()
     if raw.get("judge") != judge_id or raw.get("candidate") != candidate:
         return _blank_judge()
@@ -396,42 +417,53 @@ def _normalise_judge(
         return _blank_judge()
     if not isinstance(raw.get("cache_key"), str) or not raw["cache_key"].strip():
         return _blank_judge()
-
-    score = raw.get("score")
-    ai_flavor = raw.get("ai_flavor")
-    if type(score) is not int or type(ai_flavor) is not int:  # bool is not a score
+    if (
+        not isinstance(raw.get("response_model"), str)
+        or not raw["response_model"].strip()
+    ):
         return _blank_judge()
-    if not 0 <= score <= 100 or not 0 <= ai_flavor <= 100:
-        return _blank_judge()
-
-    comment = raw.get("comment")
-    if not isinstance(comment, str):
-        return _blank_judge()
-    comment = re.sub(r"\s+", " ", comment).strip()
-    if not comment or len(comment) > 200:
-        return _blank_judge()
-    return {
-        "score": float(score),
-        "ai_flavor": float(ai_flavor),
-        "comment": comment,
-        "valid": True,
-        "input_hash": raw["input_hash"],
+    allowed_fields = {
+        "schema",
+        "benchmark",
+        "candidate",
+        "judge",
+        "requested_model",
+        "input_hash",
+        "rubric_hash",
+        "judge_config_sha256",
+        "response_model",
+        "cache_key",
+        "dimensions",
     }
+    if set(raw) != allowed_fields:
+        return _blank_judge()
 
-
-def _mean(values: list[float | None]) -> float | None:
-    present = [value for value in values if value is not None]
-    return sum(present) / len(present) if present else None
+    try:
+        parsed = parse_score_response(
+            _canonical_json({"dimensions": raw.get("dimensions")})
+        )
+    except ScoreError:
+        return _blank_judge()
+    dimensions = raw.get("dimensions")
+    if not isinstance(dimensions, dict):
+        return _blank_judge()
+    for key in DIMENSION_KEYS:
+        entry = dimensions.get(key)
+        if not isinstance(entry, dict) or type(entry.get("score")) is not float:
+            return _blank_judge()
+        if entry != parsed["dimensions"][key]:
+            return _blank_judge()
+    return {"dimensions": dimensions, "valid": True, "input_hash": raw["input_hash"]}
 
 
 def _format_score(value: float | None) -> str:
-    if value is None:
+    if value is None or not math.isfinite(value):
         return "—"
-    return f"{value:.1f}".rstrip("0").rstrip(".")
+    return f"{value:.1f}"
 
 
 def _data_number(value: float | None) -> str:
-    return "" if value is None else f"{value:.8g}"
+    return "" if value is None or not math.isfinite(value) else f"{value:.1f}"
 
 
 def load_reform_results(
@@ -441,7 +473,7 @@ def load_reform_results(
     protocol_by_model: dict[str, dict[str, str]] | None = None,
     score_by_judge: dict[str, dict[str, str]] | None = None,
 ) -> list[dict[str, Any]]:
-    """Return one row per configured V2 model, including pending models."""
+    """Return one row per configured model, including pending models."""
 
     ordered_ids = model_order or list(model_by_id)
     results: list[dict[str, Any]] = []
@@ -485,6 +517,7 @@ def load_reform_results(
             raw = _read_json(model_dir / "scores" / f"{judge_id}.json")
             judges[judge_id] = _normalise_judge(
                 raw,
+                benchmark=results_dir.name,
                 judge_id=judge_id,
                 candidate=model_id,
                 expected=(score_by_judge or {}).get(judge_id),
@@ -516,35 +549,41 @@ def load_reform_results(
         aggregate = _read_json(aggregate_path)
         aggregate_allows_ranking = all_judges_valid
         if aggregate_path.is_file():
-            aggregate_status = str(aggregate.get("status", "")).strip().lower()
-            explicit_eligible = aggregate.get("eligible_for_ranking")
-            if explicit_eligible is False or aggregate_status == "incomplete":
+            if aggregate.get("schema") != AGGREGATE_SCHEMA_VERSION:
                 aggregate_allows_ranking = False
-            elif explicit_eligible is True:
-                completed = aggregate.get("completed_judges")
-                aggregate_allows_ranking = (
-                    all_judges_valid
-                    and aggregate_status in {"complete", "completed"}
-                    and isinstance(completed, list)
-                    and completed == list(JUDGE_IDS)
-                    and aggregate.get("input_hash") == score_input_hash
-                )
             else:
-                # Older/missing aggregate metadata is accepted only when the
-                # three independent tracked score files strictly agree.
-                aggregate_allows_ranking = all_judges_valid
+                aggregate_status = str(aggregate.get("status", "")).strip().lower()
+                explicit_eligible = aggregate.get("eligible_for_ranking")
+                if explicit_eligible is False or aggregate_status == "incomplete":
+                    aggregate_allows_ranking = False
+                elif explicit_eligible is True:
+                    completed = aggregate.get("completed_judges")
+                    aggregate_allows_ranking = (
+                        all_judges_valid
+                        and aggregate_status in {"complete", "completed"}
+                        and isinstance(completed, list)
+                        and completed == list(JUDGE_IDS)
+                        and aggregate.get("input_hash") == score_input_hash
+                    )
+                else:
+                    aggregate_allows_ranking = all_judges_valid
 
         rankable = detail_available and all_judges_valid and aggregate_allows_ranking
-        average_score = (
-            _mean([judges[judge_id]["score"] for judge_id in JUDGE_IDS])
-            if rankable
-            else None
-        )
-        average_ai = (
-            _mean([judges[judge_id]["ai_flavor"] for judge_id in JUDGE_IDS])
-            if rankable
-            else None
-        )
+        aggregate_dimensions: dict[str, dict[str, Any]] = {}
+        overall_score = None
+        if rankable:
+            aggregate_dimensions = aggregate_dimension_scores(
+                {
+                    judge_id: judges[judge_id]["dimensions"]
+                    for judge_id in JUDGE_IDS
+                }
+            )
+            overall_score = overall_score_from_medians(
+                {
+                    key: aggregate_dimensions[key]["median"]
+                    for key in DIMENSION_KEYS
+                }
+            )
 
         config_model = model_by_id.get(model_id, {})
         title = _first(book, "title") or first_h1(novel) or "待生成"
@@ -565,8 +604,8 @@ def load_reform_results(
                 "body_chars": count_chinese_chars(novel),
                 "chapters": count_chapters(novel),
                 "judges": judges,
-                "average_score": average_score,
-                "average_ai": average_ai,
+                "aggregate_dimensions": aggregate_dimensions,
+                "overall_score": overall_score,
                 "detail_available": detail_available,
                 "rankable": rankable,
             }
@@ -575,7 +614,7 @@ def load_reform_results(
     results.sort(
         key=lambda item: (
             not item["rankable"],
-            -(item["average_score"] or 0),
+            -(item["overall_score"] or 0),
             item["config_order"],
         )
     )
@@ -690,7 +729,6 @@ PAGE_FOOT = f"""
 
 
 def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
-    judges = result["judges"]
     if result["detail_available"]:
         entry = f"""<a class="entry-link" href="results/reform-era/{result['model_id']}.html">
       <span class="entry-model">{esc(result['model_name'])}</span>
@@ -702,24 +740,37 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
       <span class="entry-title">{esc(result['title'])}</span>
     </span>"""
     rank_text = f"{rank:02d}" if rank is not None else ""
+    dimensions = result["aggregate_dimensions"]
+    data_dimensions = "\n".join(
+        (
+            f'    data-{spec.key.replace("_", "-")}="'
+            f'{_data_number((dimensions.get(spec.key) or {}).get("median"))}"'
+        )
+        for spec in DIMENSION_SPECS
+    )
+    score_cells = "\n".join(
+        (
+            f'  <td data-label="{esc(_dimension_label(spec))}">'
+            f'{_format_score((dimensions.get(spec.key) or {}).get("median"))}</td>'
+        )
+        for spec in DIMENSION_SPECS
+    )
     return f"""<tr data-model-id="{esc(result['model_id'])}" data-model="{esc(result['model_name'])}"
     data-config-order="{result['config_order']}"
     data-rankable="{'true' if result['rankable'] else 'false'}"
-    data-average="{_data_number(result['average_score'])}"
-    data-sol="{_data_number(judges['sol']['score'])}"
-    data-grok="{_data_number(judges['grok']['score'])}"
-    data-kimi="{_data_number(judges['kimi']['score'])}"
-    data-ai-flavor="{_data_number(result['average_ai'])}">
+    data-overall="{_data_number(result['overall_score'])}"
+{data_dimensions}>
   <td class="rank-cell" data-rank>{rank_text}</td>
   <th scope="row">
     {entry}
   </th>
-  <td data-label="综合">{_format_score(result['average_score'])}</td>
-  <td data-label="Sol">{_format_score(judges['sol']['score'])}</td>
-  <td data-label="Grok 4.5">{_format_score(judges['grok']['score'])}</td>
-  <td data-label="Kimi">{_format_score(judges['kimi']['score'])}</td>
-  <td data-label="AI味">{_format_score(result['average_ai'])}</td>
+  <td data-label="综合">{_format_score(result['overall_score'])}</td>
+{score_cells}
 </tr>"""
+
+
+def _dimension_label(spec: Any) -> str:
+    return f"{spec.label}（越低越好）" if not spec.higher_is_better else spec.label
 
 
 def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
@@ -735,13 +786,16 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
     rows = "\n".join(rendered_rows)
     model_count = len(results)
     if rows:
+        dimension_headers = "".join(
+            f'<th scope="col">{esc(_dimension_label(spec))}</th>'
+            for spec in DIMENSION_SPECS
+        )
         board = f"""
 <div class="table-shell">
   <table class="leaderboard" aria-describedby="ranking-note">
     <thead><tr>
       <th scope="col">档位</th><th scope="col">模型 / 书名</th>
-      <th scope="col">综合</th><th scope="col">Sol</th>
-      <th scope="col">Grok 4.5</th><th scope="col">Kimi</th><th scope="col">AI味</th>
+      <th scope="col">综合</th>{dimension_headers}
     </tr></thead>
     <tbody id="leaderboard-body">{rows}</tbody>
   </table>
@@ -772,15 +826,17 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
 
 <section class="ranking-panel" aria-labelledby="ranking-title">
   <header class="section-heading">
-    <div><p class="eyebrow">EVALUATION LEDGER</p><h2 id="ranking-title">模型排名登记表</h2></div>
-    <p id="ranking-note">点击指标重排；AI味按数值从低到高，其余按分数从高到低。</p>
+    <div><p class="eyebrow">DIMENSION LEDGER</p><h2 id="ranking-title">分维度排名登记表</h2></div>
+    <p id="ranking-note">各维度取三位评委的中位数；综合按固定权重加总这些中位数，其中AI味使用100减原值。AI味越低越好，其余指标越高越好。</p>
   </header>
   <div class="metric-switch" role="group" aria-label="排名指标">
-    <button type="button" data-sort="average" aria-pressed="true">综合平均</button>
-    <button type="button" data-sort="sol" aria-pressed="false">Sol</button>
-    <button type="button" data-sort="grok" aria-pressed="false">Grok 4.5</button>
-    <button type="button" data-sort="kimi" aria-pressed="false">Kimi</button>
-    <button type="button" data-sort="ai-flavor" aria-pressed="false">AI味最低</button>
+    <button type="button" data-sort="overall" data-direction="desc" aria-pressed="true">综合</button>
+    {''.join(
+        f'<button type="button" data-sort="{spec.key.replace("_", "-")}" '
+        f'data-direction="{"desc" if spec.higher_is_better else "asc"}" '
+        f'aria-pressed="false">{esc(_dimension_label(spec))}</button>'
+        for spec in DIMENSION_SPECS
+    )}
   </div>
   <div class="rank-ruler" data-rank-ruler>
     <div class="ruler-copy">
@@ -802,12 +858,170 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
 """ + PAGE_FOOT
 
 
-def _judge_card(label: str, judge: dict[str, Any]) -> str:
-    comment = judge.get("comment") or "尚未提交评语。"
-    return f"""<article class="judge-card">
-  <header><span>{esc(label)}</span><strong>{_format_score(judge.get('score'))}</strong></header>
-  <p class="ai-flavor">AI味 <b>{_format_score(judge.get('ai_flavor'))}</b></p>
+def _radar_point(cx: float, cy: float, radius: float, angle: float) -> str:
+    return f"{cx + radius * math.cos(angle):.1f},{cy + radius * math.sin(angle):.1f}"
+
+
+def _radar_label_lines(spec: Any) -> tuple[str, ...]:
+    if not spec.higher_is_better:
+        return (spec.label, "（越低越好）")
+    if "与" in spec.label:
+        left, right = spec.label.split("与", 1)
+        return (f"{left}与", right)
+    return (spec.label,)
+
+
+def _radar_short_label(spec: Any) -> str:
+    return {
+        "theme_fulfillment": "主题",
+        "historical_grounding": "时代",
+        "characters": "人物",
+        "plot_causality": "因果",
+        "longform_structure": "结构",
+        "scene_execution": "场景",
+        "style_control": "文风",
+        "ai_flavor": "AI味↓",
+    }[spec.key]
+
+
+def _radar_chart(
+    chart_id: str,
+    title: str,
+    scores: dict[str, float | None],
+) -> str:
+    """Render an accessible dependency-free radar plus a visible score table."""
+
+    safe_id = re.sub(r"[^A-Za-z0-9_-]", "-", chart_id)
+    cx, cy, radius, label_radius = 360.0, 310.0, 185.0, 255.0
+    angles = [
+        -math.pi / 2 + index * (2 * math.pi / len(DIMENSION_SPECS))
+        for index in range(len(DIMENSION_SPECS))
+    ]
+    grid = "\n".join(
+        (
+            f'<polygon points="{" ".join(_radar_point(cx, cy, radius * level / 5, angle) for angle in angles)}" '
+            f'class="radar-grid-line" />'
+        )
+        for level in range(1, 6)
+    )
+    axes = "\n".join(
+        f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{_radar_point(cx, cy, radius, angle).split(",")[0]}" '
+        f'y2="{_radar_point(cx, cy, radius, angle).split(",")[1]}" class="radar-axis" />'
+        for angle in angles
+    )
+
+    plotted: list[float] = []
+    raw_values: list[float | None] = []
+    for spec in DIMENSION_SPECS:
+        raw = scores.get(spec.key)
+        if raw is None or not math.isfinite(raw):
+            raw_values.append(None)
+            plotted.append(0.0)
+            continue
+        raw_values.append(raw)
+        plotted.append(dimension_radar_value(spec.key, raw))
+    shape_points = " ".join(
+        _radar_point(cx, cy, radius * value / 100, angle)
+        for value, angle in zip(plotted, angles)
+    )
+    point_marks = "\n".join(
+        (
+            f'<circle cx="{_radar_point(cx, cy, radius * value / 100, angle).split(",")[0]}" '
+            f'cy="{_radar_point(cx, cy, radius * value / 100, angle).split(",")[1]}" '
+            f'r="4.5" class="radar-point" />'
+        )
+        for value, angle in zip(plotted, angles)
+    )
+    labels: list[str] = []
+    for spec, angle in zip(DIMENSION_SPECS, angles):
+        x, y = _radar_point(cx, cy, label_radius, angle).split(",")
+        cosine = math.cos(angle)
+        anchor = "start" if cosine > 0.25 else "end" if cosine < -0.25 else "middle"
+        lines = _radar_label_lines(spec)
+        line_height = 20
+        first_y = float(y) - (len(lines) - 1) * line_height / 2
+        tspans = "".join(
+            f'<tspan x="{x}" y="{first_y + index * line_height:.1f}">{esc(line)}</tspan>'
+            for index, line in enumerate(lines)
+        )
+        labels.append(
+            f'<text text-anchor="{anchor}" '
+            f'class="radar-axis-label radar-axis-label-full">{tspans}</text>'
+            f'<text x="{x}" y="{y}" text-anchor="{anchor}" '
+            f'class="radar-axis-label radar-axis-label-short">'
+            f'{esc(_radar_short_label(spec))}</text>'
+        )
+
+    descriptions: list[str] = []
+    rows: list[str] = []
+    for spec, raw, plotted_value in zip(DIMENSION_SPECS, raw_values, plotted):
+        raw_text = _format_score(raw)
+        if raw is None:
+            descriptions.append(f"{_dimension_label(spec)}暂无评分")
+        elif spec.higher_is_better:
+            descriptions.append(f"{spec.label}{raw_text}分")
+        else:
+            descriptions.append(
+                f"{spec.label}{raw_text}分，雷达按控制度{plotted_value:.1f}绘制"
+            )
+        rows.append(
+            f"<tr><th scope=\"row\">{esc(_dimension_label(spec))}</th>"
+            f"<td>{raw_text}</td></tr>"
+        )
+    desc = "；".join(descriptions) + "。雷达越靠外代表该项表现越好。"
+    return f"""<figure class="radar-figure" data-radar-chart="{esc(safe_id)}">
+  <svg class="radar-chart" viewBox="0 0 720 620" role="img"
+       aria-labelledby="{esc(safe_id)}-title {esc(safe_id)}-desc">
+    <title id="{esc(safe_id)}-title">{esc(title)}</title>
+    <desc id="{esc(safe_id)}-desc">{esc(desc)}</desc>
+    <defs>
+      <pattern id="{esc(safe_id)}-hatch" width="10" height="10"
+               patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+        <line x1="0" y1="0" x2="0" y2="10" class="radar-hatch" />
+      </pattern>
+    </defs>
+    <g aria-hidden="true">
+      {grid}
+      {axes}
+      <polygon points="{shape_points}" class="radar-shape"
+               fill="url(#{esc(safe_id)}-hatch)" />
+      {point_marks}
+      {''.join(labels)}
+    </g>
+  </svg>
+  <table class="radar-score-table">
+    <caption class="visually-hidden">{esc(title)}的逐维分数</caption>
+    <thead><tr><th scope="col">维度</th><th scope="col">分数</th></tr></thead>
+    <tbody>{''.join(rows)}</tbody>
+  </table>
+  <figcaption>{esc(title)}</figcaption>
+</figure>"""
+
+
+def _judge_evaluation(
+    label: str,
+    judge: dict[str, Any],
+    chart_id: str,
+) -> str:
+    dimensions = judge["dimensions"]
+    scores = {
+        spec.key: (dimensions.get(spec.key) or {}).get("score")
+        for spec in DIMENSION_SPECS
+    }
+    comments = []
+    for spec in DIMENSION_SPECS:
+        entry = dimensions.get(spec.key) or {}
+        comment = entry.get("comment") or "尚未提交该维度评价。"
+        comments.append(f"""<li class="dimension-comment">
+  <header><h4>{esc(_dimension_label(spec))}</h4><strong>{_format_score(entry.get('score'))}</strong></header>
   <p>{esc(comment)}</p>
+</li>""")
+    return f"""<article class="judge-evaluation">
+  <header class="judge-heading"><p class="eyebrow">INDEPENDENT READER</p><h3>{esc(label)}</h3></header>
+  <div class="judge-evaluation-grid">
+    {_radar_chart(chart_id, f'{label}逐维评分', scores)}
+    <ol class="dimension-comments" aria-label="{esc(label)}逐维评价">{''.join(comments)}</ol>
+  </div>
 </article>"""
 
 
@@ -827,6 +1041,13 @@ def render_result_detail(result: dict[str, Any]) -> str:
     body_chars = result["body_chars"]
     status = result["manifest"].get("status", "complete" if result["novel"] else "pending")
     novel_html = result["novel_html"] or '<p class="empty-copy">正文尚未归档。</p>'
+    aggregate_dimensions = result["aggregate_dimensions"]
+    aggregate_scores = {
+        spec.key: (aggregate_dimensions.get(spec.key) or {}).get("median")
+        for spec in DIMENSION_SPECS
+    }
+    ai_median = aggregate_scores["ai_flavor"]
+    chart_prefix = f"radar-{result['model_id']}"
     return page_head(
         f"{result['title']} · {result['model_name']}", "../../", "page-result"
     ) + f"""
@@ -838,19 +1059,30 @@ def render_result_detail(result: dict[str, Any]) -> str:
     <h1>《{esc(result['title'])}》</h1>
     <p class="result-blurb">{esc(result['blurb'])}</p>
     <dl class="result-stats">
-      <div><dt>综合平均</dt><dd>{_format_score(result['average_score'])}</dd></div>
-      <div><dt>AI味</dt><dd>{_format_score(result['average_ai'])}</dd></div>
+      <div><dt>综合评分</dt><dd>{_format_score(result['overall_score'])}</dd></div>
+      <div><dt>AI味中位数</dt><dd>{_format_score(ai_median)}</dd></div>
       <div><dt>正文字符</dt><dd>{body_chars:,}</dd></div>
       <div><dt>状态</dt><dd>{esc(status)}</dd></div>
     </dl>
   </header>
 
+  <section class="aggregate-section" aria-labelledby="aggregate-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">MEDIAN PROFILE</p><h2 id="aggregate-title">综合维度中位数</h2></div>
+      <p>每个维度取三位评委的中位数；综合按固定权重加总这些中位数，其中AI味使用100减原值。AI味仍以原始低分展示，雷达几何按“越低越好”反向绘制。</p>
+    </div>
+    {_radar_chart(f'{chart_prefix}-median', '三评委维度中位数', aggregate_scores)}
+  </section>
+
   <section class="judge-section" aria-labelledby="judge-title">
-    <div class="section-heading"><div><p class="eyebrow">THREE-READER PANEL</p><h2 id="judge-title">三评委记录</h2></div></div>
-    <div class="judge-grid">
-      {_judge_card('Sol', judges['sol'])}
-      {_judge_card('Grok 4.5', judges['grok'])}
-      {_judge_card('Kimi', judges['kimi'])}
+    <div class="section-heading">
+      <div><p class="eyebrow">THREE-READER PANEL</p><h2 id="judge-title">三评委逐维记录</h2></div>
+      <p>三位评委独立评分；下方保留每个维度的原始评价。</p>
+    </div>
+    <div class="judge-evaluations">
+      {_judge_evaluation('Sol', judges['sol'], f'{chart_prefix}-sol')}
+      {_judge_evaluation('Grok 4.5', judges['grok'], f'{chart_prefix}-grok')}
+      {_judge_evaluation('Kimi', judges['kimi'], f'{chart_prefix}-kimi')}
     </div>
   </section>
 

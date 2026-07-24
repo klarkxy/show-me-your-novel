@@ -9,14 +9,7 @@
   if (!body || !slider || !output) return;
 
   const rows = Array.from(body.querySelectorAll("tr"));
-  const metricDirection = {
-    average: "desc",
-    sol: "desc",
-    grok: "desc",
-    kimi: "desc",
-    "ai-flavor": "asc",
-  };
-  let activeMetric = "average";
+  let activeMetric = "overall";
 
   const isRankable = (row) => row.dataset.rankable === "true";
   const configOrder = (row) => {
@@ -49,7 +42,8 @@
 
   const sortRows = (metric) => {
     activeMetric = metric;
-    const direction = metricDirection[metric] || "desc";
+    const control = buttons.find((button) => button.dataset.sort === metric);
+    const direction = control?.dataset.direction === "asc" ? "asc" : "desc";
     rows.sort((left, right) => {
       const leftRankable = isRankable(left);
       const rightRankable = isRankable(right);
@@ -82,7 +76,7 @@
   };
 
   buttons.forEach((button) => {
-    button.addEventListener("click", () => sortRows(button.dataset.sort || "average"));
+    button.addEventListener("click", () => sortRows(button.dataset.sort || "overall"));
   });
   slider.addEventListener("input", applyLimit);
 
