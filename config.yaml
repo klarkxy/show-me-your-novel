@@ -148,6 +148,22 @@ judges:
     id: grok
     name: Grok 4.5
     model: grok-4.5
+    # This Grok route injects tool_choice even when the client sends no tools.
+    # Supply one disabled placeholder so the upstream request remains valid;
+    # the judge cannot call it and its JSON output is still validated locally.
+    stages:
+      judge:
+        temperature: 0.2
+        tools:
+          - type: function
+            function:
+              name: unused_judge_tool
+              description: Never call this tool.
+              parameters:
+                type: object
+                properties: {}
+                additionalProperties: false
+        tool_choice: none
 
   - <<: *judge-defaults
     id: kimi

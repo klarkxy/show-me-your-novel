@@ -70,7 +70,7 @@ def test_configured_wire_models_covers_generators_and_fixed_judges() -> None:
     )
 
 
-def test_grok_judge_uses_openai_defaults_on_wire() -> None:
+def test_grok_judge_supplies_disabled_tool_required_by_gateway_on_wire() -> None:
     captured: dict[str, object] = {}
 
     class FakeResponse:
@@ -119,7 +119,21 @@ def test_grok_judge_uses_openai_defaults_on_wire() -> None:
         "messages": [{"role": "user", "content": "judge"}],
         "max_tokens": 4096,
         "temperature": 0.2,
-        "response_format": {"type": "json_object"},
+        "tools": [
+            {
+                "type": "function",
+                "function": {
+                    "name": "unused_judge_tool",
+                    "description": "Never call this tool.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": False,
+                    },
+                },
+            }
+        ],
+        "tool_choice": "none",
     }
 
 

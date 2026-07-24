@@ -92,10 +92,24 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     grok = judges_by_id["grok"]
     assert grok["name"] == "Grok 4.5"
     assert grok["request"] == {"max_tokens": 4096}
-    assert grok["stages"]["judge"] == {
-        "temperature": 0.2,
-        "response_format": {"type": "json_object"},
-    }
+    grok_stage = grok["stages"]["judge"]
+    assert grok_stage["temperature"] == 0.2
+    assert grok_stage["tool_choice"] == "none"
+    assert grok_stage["tools"] == [
+        {
+            "type": "function",
+            "function": {
+                "name": "unused_judge_tool",
+                "description": "Never call this tool.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": False,
+                },
+            },
+        }
+    ]
+    assert "response_format" not in grok_stage
     assert grok.get("protocol", OPENAI_CHAT_COMPLETIONS) == (
         OPENAI_CHAT_COMPLETIONS
     )
