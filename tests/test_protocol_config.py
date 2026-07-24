@@ -16,10 +16,14 @@ EXPECTED_GENERATORS = (
     "minimax-m3",
     "glm-5.2",
     "gpt-5.6-luna",
+    "gpt-5.6-sol",
+    "gpt-5.6-terra",
     "claude-haiku-4-5",
     "claude-sonnet-5",
     "gemini-3.1-pro",
     "gemini-3.5-flash",
+    "gemini-3.6-flash",
+    "kimi-k2.7-code",
     "kimi-k3",
     "grok-4.5",
     "claude-opus-4-8",
@@ -70,7 +74,6 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     assert tuple(model["id"] for model in models) == EXPECTED_GENERATORS
     assert tuple(model["model"] for model in models) == EXPECTED_GENERATORS
     assert all(model["provider"] == "new-api" for model in models)
-    assert "gpt-5.6-terra" not in {model["id"] for model in models}
     assert all(model.get("request") == {} for model in models)
     assert all(model.get("stages") == {} for model in models)
     for model in models:

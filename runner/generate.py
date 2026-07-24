@@ -68,7 +68,7 @@ LEGACY_OPENAI_CODE_SHA256 = (
 LEGACY_ANTHROPIC_CODE_SHA256 = (
     "61b40dba13fa56609dbb1666c525c8adc8a909381dbd8763fac68b3bb73d7ea2"
 )
-GENERATION_COMPATIBILITY_SOURCE_SHA256 = "af7534e4c01eb990d5603b784b322dc6cf2d4a0a2085bc29588a71dacd26f3fa"
+GENERATION_COMPATIBILITY_SOURCE_SHA256 = "3b57e18731ff3185d98691f6e97caa119ab921b88d703248c460cf1d9dc5bd86"
 DEFAULT_BENCHMARK = "reform-era"
 PROMPT_FILES = (
     "system.md",
@@ -131,10 +131,14 @@ EXPECTED_GENERATOR_IDS = (
     "minimax-m3",
     "glm-5.2",
     "gpt-5.6-luna",
+    "gpt-5.6-sol",
+    "gpt-5.6-terra",
     "claude-haiku-4-5",
     "claude-sonnet-5",
     "gemini-3.1-pro",
     "gemini-3.5-flash",
+    "gemini-3.6-flash",
+    "kimi-k2.7-code",
     "kimi-k3",
     "grok-4.5",
     "claude-opus-4-8",
@@ -236,7 +240,7 @@ def _current_source_code_hash() -> str:
 
 
 def _generation_compatibility_source_hash() -> str:
-    """Fingerprint the exact judge-registry migration sources.
+    """Fingerprint the exact registry-only migration sources.
 
     The guard value itself is normalized so it can record this fingerprint
     without changing it.
@@ -262,7 +266,7 @@ def _generation_compatibility_source_hash() -> str:
 def calculate_code_hash(model_cfg: dict[str, Any] | None = None) -> str:
     """Return a protocol-scoped implementation identity.
 
-    Replacing a scoring judge does not change either generation transport.
+    Registry-only model additions do not change either generation transport.
     Preserve the identities used by existing O-port and A-port books only for
     this exact source fingerprint; any later runner change fails closed to the
     current source hash.
@@ -2499,7 +2503,7 @@ def calculate_run_id(benchmark: str, direction: str, prompts: dict[str, str], mo
 def validate_fixed_registries(
     cfg: dict[str, Any],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Require the exact V2.1 field: 15 generators and three fixed judges."""
+    """Require the exact V2.1 generator registry and three fixed judges."""
     models = cfg.get("models")
     judges = cfg.get("judges")
     if not isinstance(models, list) or not all(isinstance(item, dict) for item in models):
@@ -2509,7 +2513,8 @@ def validate_fixed_registries(
     model_ids = tuple(str(item.get("id") or "") for item in models)
     if model_ids != EXPECTED_GENERATOR_IDS:
         raise ValueError(
-            "V2 生成模型必须严格按固定 15 模型配置，当前：" + ", ".join(model_ids)
+            f"V2 生成模型必须严格按固定 {len(EXPECTED_GENERATOR_IDS)} 模型配置，当前："
+            + ", ".join(model_ids)
         )
     for item in models:
         if item.get("model") != item.get("id"):
@@ -2530,7 +2535,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="自主长篇评测 V2.1 生成器")
     selection = parser.add_mutually_exclusive_group(required=True)
     selection.add_argument("--model", action="append", help="生成指定模型，可重复")
-    selection.add_argument("--all", action="store_true", help="显式生成全部 15 个模型")
+    selection.add_argument(
+        "--all",
+        action="store_true",
+        help=f"显式生成全部 {len(EXPECTED_GENERATOR_IDS)} 个模型",
+    )
     parser.add_argument("--benchmark", default=DEFAULT_BENCHMARK)
     parser.add_argument("--config", type=Path)
     parser.add_argument("--env", dest="env_file", type=Path)

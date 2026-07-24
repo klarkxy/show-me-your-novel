@@ -72,6 +72,18 @@ models:
     aliases: [luna]
 
   - <<: *generation-defaults
+    id: gpt-5.6-sol
+    name: GPT-5.6 Sol
+    model: gpt-5.6-sol
+    aliases: [gpt-sol]
+
+  - <<: *generation-defaults
+    id: gpt-5.6-terra
+    name: GPT-5.6 Terra
+    model: gpt-5.6-terra
+    aliases: [terra]
+
+  - <<: *generation-defaults
     id: claude-haiku-4-5
     name: Claude Haiku 4.5
     model: claude-haiku-4-5
@@ -100,6 +112,18 @@ models:
     name: Gemini 3.5 Flash
     model: gemini-3.5-flash
     aliases: [gemini-flash]
+
+  - <<: *generation-defaults
+    id: gemini-3.6-flash
+    name: Gemini 3.6 Flash
+    model: gemini-3.6-flash
+    aliases: [gemini-3.6]
+
+  - <<: *generation-defaults
+    id: kimi-k2.7-code
+    name: Kimi K2.7 Code
+    model: kimi-k2.7-code
+    aliases: [kimi-2.7]
 
   - <<: *generation-defaults
     id: kimi-k3

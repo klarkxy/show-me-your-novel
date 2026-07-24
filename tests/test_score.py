@@ -55,7 +55,14 @@ def _judge_cfg(model: str) -> dict:
 
 
 def test_configured_wire_models_covers_generators_and_fixed_judges() -> None:
-    cfg = {"models": [_judge_cfg("generator-a"), _judge_cfg("grok-4.5")]}
+    cfg = {
+        "models": [
+            _judge_cfg("generator-a"),
+            _judge_cfg("sol-wire"),
+            _judge_cfg("grok-4.5"),
+            _judge_cfg("kimi-wire"),
+        ]
+    }
     judges = {
         "sol": {"model_cfg": _judge_cfg("sol-wire")},
         "grok": {"model_cfg": _judge_cfg("grok-4.5")},
@@ -64,8 +71,8 @@ def test_configured_wire_models_covers_generators_and_fixed_judges() -> None:
 
     assert score.configured_wire_models(cfg, judges) == (
         "generator-a",
-        "grok-4.5",
         "sol-wire",
+        "grok-4.5",
         "kimi-wire",
     )
 

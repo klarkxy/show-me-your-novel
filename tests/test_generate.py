@@ -1232,7 +1232,7 @@ def test_fixed_registry_rejects_substitution() -> None:
     validated_models, validated_judges = validate_fixed_registries(
         {"models": models, "judges": judges}
     )
-    assert len(validated_models) == 15
+    assert len(validated_models) == 19
     assert len(validated_judges) == 3
     substituted = [dict(item) for item in models]
     substituted[0]["model"] = "silent-fallback"
@@ -1272,7 +1272,7 @@ def test_cli_preflight_checks_every_generator_and_judge(
     monkeypatch.setattr(generate_module, "ChatClient", CompleteClient)
     assert generate_module.main(["--model", "deepseek-v4-flash", "--dry-run"]) == 0
     output = capsys.readouterr().out
-    assert "全部 15 个生成模型、3 个评委" in output
+    assert "全部 19 个生成模型、3 个评委" in output
     assert "85%安全线" in output
     assert "api_optional_params=none（服务端默认）" in output
     assert "基础调用=19–21" in output
@@ -1468,7 +1468,7 @@ def test_run_id_changes_with_provider_request_defaults() -> None:
     )
 
 
-def test_generation_identities_are_guarded_by_exact_judge_migration_sources(
+def test_generation_identities_are_guarded_by_exact_registry_only_sources(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     assert (

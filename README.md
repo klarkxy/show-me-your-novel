@@ -1,6 +1,6 @@
 # show-me-your-novel
 
-一个中文长篇小说模型评测项目。当前唯一活动协议是 **自主长篇评测 V2.1**：15 个模型围绕同一方向独立完成规划与约 5 万字正文，再由三位固定评委盲评。
+一个中文长篇小说模型评测项目。当前唯一活动协议是 **自主长篇评测 V2.1**：19 个模型围绕同一方向独立完成规划与约 5 万字正文，再由三位固定评委盲评。
 
 在线站点：[https://klarkxy.github.io/show-me-your-novel/](https://klarkxy.github.io/show-me-your-novel/)
 
@@ -35,12 +35,12 @@
 ```text
 deepseek-v4-flash   deepseek-v4-pro      mimo-v2.5
 mimo-v2.5-pro       minimax-m3           glm-5.2
-gpt-5.6-luna        claude-haiku-4-5     claude-sonnet-5
-gemini-3.1-pro      gemini-3.5-flash     kimi-k3
-grok-4.5            claude-opus-4-8      agnes-2.0-flash
+gpt-5.6-luna        gpt-5.6-sol          gpt-5.6-terra
+claude-haiku-4-5    claude-sonnet-5      gemini-3.1-pro
+gemini-3.5-flash    gemini-3.6-flash     kimi-k2.7-code
+kimi-k3             grok-4.5             claude-opus-4-8
+agnes-2.0-flash
 ```
-
-`gpt-5.6-terra` 不在本轮范围内。
 
 ## 安装与配置
 
@@ -58,7 +58,7 @@ API_URL=https://your-api.example.com/v1
 API_KEY=sk-...
 ```
 
-活动流程默认调用 OpenAI-compatible O 口 `/v1/chat/completions`；MiniMax M3，以及 Claude Haiku 4.5、Claude Sonnet 5、Claude Opus 4.8 三种生成模型，改走原生 A 口 `/v1/messages`。两种协议运行前仍统一通过 `/v1/models` 精确校验 15 个生成模型和 3 个评委的 wire model ID，不做模糊匹配或静默替换。
+活动流程默认调用 OpenAI-compatible O 口 `/v1/chat/completions`；MiniMax M3，以及 Claude Haiku 4.5、Claude Sonnet 5、Claude Opus 4.8 三种生成模型，改走原生 A 口 `/v1/messages`。两种协议运行前仍统一通过 `/v1/models` 精确校验 19 个生成模型和 3 个评委的 wire model ID，不做模糊匹配或静默替换。
 
 ## 生成
 
@@ -74,7 +74,7 @@ python runner/generate.py --model deepseek-v4-flash --model kimi-k3
 # 全量就绪检查：不发 completion 请求
 python runner/generate.py --all --dry-run
 
-# 显式运行全部 15 个模型
+# 显式运行全部 19 个模型
 python runner/generate.py --all
 
 # 低成本烟测，提交第一章后暂停
@@ -190,7 +190,7 @@ GitHub Actions 在无 API key 环境运行测试、重建 `_site/` 并部署 Pag
 
 | 路径 | 说明 |
 |---|---|
-| `config.yaml` | provider、15 个生成模型、3 个评委和上下文配置 |
+| `config.yaml` | provider、19 个生成模型、3 个评委和上下文配置 |
 | `benchmark/reform-era/` | V2.1 固定方向 |
 | `runner/prompts/v2.1/` | 活动生成 prompt |
 | `runner/prompts/v2/` | 共享的总纲修复 prompt 与评分 rubric |
@@ -203,6 +203,6 @@ GitHub Actions 在无 API key 环境运行测试、重建 `_site/` 并部署 Pag
 
 ## 全量运行提醒
 
-`--all` 会生成约 15 × 5 万字正文；完整评分还会产生 45 次携带全文的请求。开始付费全量前必须先执行测试、生成 dry-run、评分 dry-run 和离线建站，并核对实际计费。
+`--all` 会生成约 19 × 5 万字正文；完整评分还会产生 57 次携带全文的请求。开始付费全量前必须先执行测试、生成 dry-run、评分 dry-run 和离线建站，并核对实际计费。
 
 当前完成度和下一步见 [TODO.md](TODO.md)。测试通过只表示流程就绪，不等于全量生成或评分已经完成。
