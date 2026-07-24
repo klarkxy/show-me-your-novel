@@ -32,9 +32,9 @@
 ## 发布
 
 - [x] 仅提交通过校验的公开产物；Kimi 评委预算配置及对应测试一并纳入发布提交。
-- [ ] 推送后确认 GitHub Actions 在无 API key 环境成功重建 Pages。
-- [ ] 检查公开 HTTPS 首页、至少一个 V2.1 详情页和 Legacy 旧链接。
-- [ ] 确认公开页面及 Git 历史不包含 `.env`、认证头、raw response、reasoning 或 `work/` 内容。
+- [x] GitHub Actions 在无 API key 环境成功完成测试、离线建站与 Pages 部署（run `30096122285`，2026-07-24）。
+- [x] 公开 HTTPS 首页、4 个新增 V2.1 详情页和 Legacy 旧链接均已实页验证（2026-07-24）。
+- [x] 公开页面及 Git 历史不包含 `.env`、认证头、raw response、reasoning 或 `work/` 内容（2026-07-24）。
 
 ## 操作原则
 
