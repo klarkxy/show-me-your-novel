@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.5-flash",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "b1fb23356e182761f0800c895de6edae40f83969b38dc56dc365f1039694f70f",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "2d8dcaf3721116f0b7177b757982275026b3768d77ce22631df071d99edada72",
+  "score": 81,
+  "ai_flavor": 39,
+  "comment": "立意紧扣改革阵痛与个人抉择，时代质感与技术细节扎实，十二卷规划逻辑严密、伏笔与历史节点契合。开篇冲突因果紧凑、道德撕扯有力。然心理反复强调、悬念套路化、段落节奏偏匀且解释过多，长篇易显机械。"
+}

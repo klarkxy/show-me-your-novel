@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "6f5cf9aaee96758bd7c89daaece395a137d940fb4375d56279b3a7506219444a",
+  "score": 68,
+  "ai_flavor": 42,
+  "comment": "开篇时代质感扎实，工厂劳作、工资精算与市井缝隙细节生动，主角从离乡到主动越界的因果与家庭牵绊推进清晰。然内心独白反复堆砌、节奏拖沓，人物略扁平，宏大规划成败模板化，语言偶过度修饰，文学控制力仍普通。"
+}

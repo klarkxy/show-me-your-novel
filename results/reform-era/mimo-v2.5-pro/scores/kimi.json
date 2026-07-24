@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "63a26f1915973516ab52f1731b19954e5843f2af8f84ed081ff336fd1874848b",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "c2d440dcfda5744251b54e81d7dec7b8242c50056288d7cb85bcc013d2d66bb5",
+  "response_model": "k3",
+  "cache_key": "f3b71fe84e944f69ce05892bc75c708a3e7bbf71df41791ce3270a9a5679032f",
+  "score": 68,
+  "ai_flavor": 62,
+  "comment": "优点：时代质感扎实，工分、挑粪、批斗记忆等细节可信，父亲与母亲的恐惧有历史根基，开篇大纲逐章兑现，承包签约的因果链完整。问题：后期章节心理独白严重泛滥，同一誓言、同一算账反复重演，第3、9章妹妹学费场景近乎复制；\"攥紧拳头\"\"心像被攥住\"等句式密集复现，每章结尾均以决绝宣言收束，模板化痕迹明显，叙事推进常被抽象总结替代场景。"
+}

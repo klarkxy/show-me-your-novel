@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k3",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "c2d440dcfda5744251b54e81d7dec7b8242c50056288d7cb85bcc013d2d66bb5",
+  "response_model": "kimi-k3",
+  "cache_key": "cd3da22c1a9d2bd85a27c71ab45ec7b102a8e1d6b81683637240b8775de69cd9",
+  "score": 55,
+  "ai_flavor": 70,
+  "comment": "大纲是强项：十二卷结构、镜像人物与伏笔链设计扎实，开篇时代细节（红灯牌收音机、链霉素、回力鞋、三十六块五）具体可信，父亲擦车床、送纱布等几场戏有分量。但正文自第九章起严重失控：'他需要钱''就这一回''烟囱影子如刀'等段落逐章复制，十字路口梦连写两遍；定金两次交付、交货场景两章各写一遍且金额矛盾、账目日期对不上；除父亲外人物趋于符号，解释性独白反复取代场景。需大幅删并重修连续性。"
+}

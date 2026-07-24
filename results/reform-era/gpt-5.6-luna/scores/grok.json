@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-luna",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "ad1629061c05e60a7764b58687c937126894e3eed68b9058a16491be96947861",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "b8d1365cedd80dddaf8fa1bd6963c456c7b63a20d0fc4873f418eb60a702229e",
+  "score": 76,
+  "ai_flavor": 30,
+  "comment": "立意扎实，计划裂缝与个人越界写得具体，账目、轴承、药费与人情有时代质感；大纲伏笔严密，开篇高度兑现，因果清楚。不足是查账、电话、算钱段落略同构，次要人物偏功能，部分心理说明多于呈现。完成度高，值得读。"
+}

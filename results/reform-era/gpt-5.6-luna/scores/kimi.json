@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-luna",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "ad1629061c05e60a7764b58687c937126894e3eed68b9058a16491be96947861",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "c2d440dcfda5744251b54e81d7dec7b8242c50056288d7cb85bcc013d2d66bb5",
+  "response_model": "kimi-k3",
+  "cache_key": "276ffe47347fefa7bae14d2a7b5b2691565197f749cd301140bf08141dd0c4ab",
+  "score": 71,
+  "ai_flavor": 42,
+  "comment": "时代质感扎实：调拨单、煤票、卡尺验货、四十七元工资等细节可信，'个人签字顶替缺席公章'的核心困境靠具体行动一步步逼出，因果链紧密，十七章完整兑现开篇细纲。主要问题是叙述习惯重复：几乎每章结尾用抽象总结点题，'他可以……可他没有''没有A，没有B，也没有C'等句式反复出现，段落节奏过于均匀，配角多为功能化设置，伏笔布局工整到机械，情感厚度尚不足。"
+}

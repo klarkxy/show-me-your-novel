@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.1-pro",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "c2d440dcfda5744251b54e81d7dec7b8242c50056288d7cb85bcc013d2d66bb5",
+  "response_model": "k3",
+  "cache_key": "669a25fc00a56d32f3fc569e006945d26f6dcb211409940172352f0c8c844fef",
+  "score": 58,
+  "ai_flavor": 66,
+  "comment": "优点：十六章完整兑现开篇细纲，南下进货—摆摊—查抄的因果链清晰，票证、绿皮车、电子表等时代细节具体，节奏紧凑可读。问题：张有德、大哥大姐等反派高度脸谱化，冲突靠吼骂推进；比喻与豪言套语（字字铿锵、掷地有声）密集，心理反复被直白解说，每章结尾宣言式收束；1978年人物谈论深圳特区系时间硬伤，文中还残留“砸锅卖official”的生成残迹。"
+}

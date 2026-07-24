@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.1-pro",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "662ac339c4cc06925c18942b29f9914f76535d9f26955f7e663bc1315c2cbfbf",
+  "score": 71,
+  "ai_flavor": 46,
+  "comment": "时代质感扎实，倒爷起步的生存张力与政策夹缝抓人，宏观规划连贯有野心。但配角脸谱化，叙述多排比渲染与抽象总结，情绪与环境重复，转折偏机械，文学控制力普通。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-pro",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "073a207f74769a0f6a9de1ae6bc3f3368934b265cc4ebcb7e3294b5b9bed678e",
+  "score": 48,
+  "ai_flavor": 69,
+  "comment": "工地劳作、贫困细节和李强的义气较有可读性，开篇阶段目标也基本落地。但苦难桥段反复加码，心理总结过密，人物与对白趋于功能化；第三至五章时序重复，十年刑期却两年出狱等规划矛盾明显，1979年的特区、身份证、报刊与城市景观亦多失真。"
+}

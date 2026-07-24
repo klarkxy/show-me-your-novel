@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-flash",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "32f4cc676ba216c53f52441e5e3888b822a527767e92ce8b951b88a250a207ac",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "8881cab93ab29f0c42de8e3553552521dd4aef0ce1bc02755e36f710f927dbe5",
+  "score": 49,
+  "ai_flavor": 76,
+  "comment": "开篇场景完整，贫困、工棚劳动与首次越界有可读性，物件细节也能支撑氛围。但1978年特区、用工与城市景观多处失真，赵国强入狱等连续性断裂；人物功能化，反复用心跳、手汗、比喻和总结解释心理，节奏高度同构，二百万字规划亦显流水账。"
+}

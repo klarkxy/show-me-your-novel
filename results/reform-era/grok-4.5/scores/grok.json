@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "grok-4.5",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "be72307a51ceaec6e5a1de7fd55b4de6ef07126c705b72ebc2a42577714621cf",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "3e8d40ea9dbbf4d9b6c8bf11c45c535168a10765391e8ba922281b67a29973b4",
+  "score": 72,
+  "ai_flavor": 47,
+  "comment": "时代肌理与双轨压力扎实，废料到图纸的因果递进自然，开篇兑现细纲，宏观架构完整。书讯主角栏严重崩坏。正文通感排比与“像…又像”过密，心理常被总结代替，节奏均匀，人物略扁平，模板感持续。"
+}

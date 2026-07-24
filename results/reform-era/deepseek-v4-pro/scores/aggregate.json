@@ -1,0 +1,37 @@
+{
+  "schema": "novel-eval-aggregate.v2",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-pro",
+  "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
+  "expected_judges": [
+    "sol",
+    "grok",
+    "kimi"
+  ],
+  "completed_judges": [
+    "sol",
+    "grok",
+    "kimi"
+  ],
+  "status": "complete",
+  "eligible_for_ranking": true,
+  "judges": {
+    "sol": {
+      "score": 48,
+      "ai_flavor": 69,
+      "comment": "工地劳作、贫困细节和李强的义气较有可读性，开篇阶段目标也基本落地。但苦难桥段反复加码，心理总结过密，人物与对白趋于功能化；第三至五章时序重复，十年刑期却两年出狱等规划矛盾明显，1979年的特区、身份证、报刊与城市景观亦多失真。"
+    },
+    "grok": {
+      "score": 76,
+      "ai_flavor": 28,
+      "comment": "时代质感扎实，农村贫困与特区初创细节真实可信，人物动机清晰，开篇完成心理越界。长篇规划完整连贯。但部分场景重复堆砌饥饿与手茧，情感转折略套路，人物仍偏类型化，因果张力与个体独特性有待加强。"
+    },
+    "kimi": {
+      "score": 74,
+      "ai_flavor": 38,
+      "comment": "时代质感扎实，红薯糊糊、工棚、克扣工钱等细节具体可感，李强、孙头、老刘等配角各有声口， dialogue 有生活气。但第三章与第五章重复写了一整遍村口送别与登车，属明显连续性失误；主角内心独白反复咏叹\"命贱\"\"不能倒下\"，抒情过量拖慢节奏；部分比喻与排比句式同构，情感推进略显程式化。整体完成度高但仍欠打磨。"
+    }
+  },
+  "score": 66.0,
+  "ai_flavor": 45.0
+}

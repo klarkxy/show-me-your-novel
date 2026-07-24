@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k3",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "18287e06ebe0f4a3412d97caf851137af0938a02e93aedd24dfa27da1cacc720",
+  "score": 45,
+  "ai_flavor": 91,
+  "comment": "时代物件充足，手艺、家计与体制压力构成的核心冲突清楚，开篇也完成了越界节点。但正文大段同义乃至原句复写，心理解释压倒场景，人物善恶脸谱化；药价、报酬、日期与“守寡母亲”等连续性矛盾明显，史实措辞和技术细节亦欠核验，二百万字规划过度依赖整齐设雷与二选一。"
+}

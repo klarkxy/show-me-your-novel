@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-flash",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "32f4cc676ba216c53f52441e5e3888b822a527767e92ce8b951b88a250a207ac",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "2c57cabbb37ab78243ede0ca6aac3f3af89ca3f15de9cf1a34db7f03c3e24172",
+  "score": 72,
+  "ai_flavor": 39,
+  "comment": "时代质感与工地生存细节扎实，主角欲望与良知滑坡因果清晰，林晓霞锚点有效。然心理独白反复解释、节奏均匀机械，配角扁平，开篇越界过急，削弱长篇从容与人物深度。"
+}

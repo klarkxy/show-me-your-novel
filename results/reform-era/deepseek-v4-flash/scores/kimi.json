@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-flash",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "32f4cc676ba216c53f52441e5e3888b822a527767e92ce8b951b88a250a207ac",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "c2d440dcfda5744251b54e81d7dec7b8242c50056288d7cb85bcc013d2d66bb5",
+  "response_model": "kimi-k3",
+  "cache_key": "344c447719e70ae0778a5512aa21f0e93b015222cee077d73856ce2acd15a284",
+  "score": 71,
+  "ai_flavor": 48,
+  "comment": "优点：时代质感扎实（利福平、425水泥、汇款单大写、工棚细节），陈江河从受辱、克扣到偷料、被挟持直至伤人作伪证的堕落链条层层递进、因果可信，第16章有真正的重量。问题：注水明显，心跳如鼓、手心出汗、喉咙发紧等体感套语反复出现，比喻密度过高且段落节奏均一，章末惯用升华句收束；开篇自创的盗窃伤人主线与宏观大纲卷一脱节，半文盲主人公的内心修辞过于文雅，需删减重复并统一大纲。"
+}

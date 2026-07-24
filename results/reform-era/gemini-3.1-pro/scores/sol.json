@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.1-pro",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "82d25f5d75498bd538700f2c3cab5292907af000dee90cddcc3cdfa51c968bba",
+  "score": 42,
+  "ai_flavor": 89,
+  "comment": "商业起势清楚，电子表、票证、车厢等物象提供了一定年代入口，前十六章也兑现了破产转入黑市的阶段节点。但政策时序失真，货量与成本多处矛盾；主角近乎全知，反派脸谱化。正文反复套用“冷笑—决绝—宣言—总结”，冲突靠辱骂和查抄加码；长篇规划更像企业升级清单，缺少生活肌理与复杂因果。"
+}

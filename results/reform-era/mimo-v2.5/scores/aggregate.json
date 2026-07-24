@@ -1,0 +1,31 @@
+{
+  "schema": "novel-eval-aggregate.v2",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5",
+  "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
+  "expected_judges": [
+    "sol",
+    "grok",
+    "kimi"
+  ],
+  "completed_judges": [
+    "sol",
+    "grok"
+  ],
+  "status": "incomplete",
+  "eligible_for_ranking": false,
+  "judges": {
+    "sol": {
+      "score": 45,
+      "ai_flavor": 78,
+      "comment": "开篇场景完整，贫困压力、工厂等级与初次交易有可感细节。但两百万字规划高度均质，人物被主题牵引；身份证、深圳、城管等年代错置明显，薪资账目、板凳数量及时间线互相矛盾。正文反复用比喻、心理总结和同构段落解释同一动机，亟须删减并加强真实制度考据与人物复杂性。"
+    },
+    "grok": {
+      "score": 68,
+      "ai_flavor": 42,
+      "comment": "开篇时代质感扎实，工厂劳作、工资精算与市井缝隙细节生动，主角从离乡到主动越界的因果与家庭牵绊推进清晰。然内心独白反复堆砌、节奏拖沓，人物略扁平，宏大规划成败模板化，语言偶过度修饰，文学控制力仍普通。"
+    }
+  },
+  "score": null,
+  "ai_flavor": null
+}

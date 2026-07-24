@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "c819fc3e24933b598c09e49ed3cbfa61248c006c41bf99a1f4f6482813191e2e",
+  "score": 45,
+  "ai_flavor": 78,
+  "comment": "开篇场景完整，贫困压力、工厂等级与初次交易有可感细节。但两百万字规划高度均质，人物被主题牵引；身份证、深圳、城管等年代错置明显，薪资账目、板凳数量及时间线互相矛盾。正文反复用比喻、心理总结和同构段落解释同一动机，亟须删减并加强真实制度考据与人物复杂性。"
+}

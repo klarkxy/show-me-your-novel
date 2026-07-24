@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.5-flash",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "b1fb23356e182761f0800c895de6edae40f83969b38dc56dc365f1039694f70f",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "68921e9f3d09a831c515e33025887707e65df7819c3e30d8267bfc8c6e87a306",
+  "score": 48,
+  "ai_flavor": 86,
+  "comment": "题材抓住国企转轨与技术人员越界，时代物件密集，开篇目标明确、可读性尚可。但人物善恶功能化，危机靠医院催款、反派搜捕反复加码；同义心理解释和比喻大量复现，节奏机械。周末时序、年代制度及电子技术细节多处失真，十二卷规划也偏政策节点流水账。"
+}

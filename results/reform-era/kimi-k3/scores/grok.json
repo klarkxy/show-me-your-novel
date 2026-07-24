@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k3",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "eabecabcc7d67a31614764939d0cb19a5e035e5eb0fa9e2d23fc33c45e371ca7",
+  "score": 68,
+  "ai_flavor": 58,
+  "comment": "立意与二百万字规划成熟，时代细节（粮票、链霉素、政治学习）有质感，主角守与闯的张力清楚，伏笔埋设准。但正文同构独白过密，“就这一回/钱烫手/十字路口梦”反复堆砌，解释性心理多，节奏均匀，配角扁平，情节偏机械，文学密度被稀释。"
+}

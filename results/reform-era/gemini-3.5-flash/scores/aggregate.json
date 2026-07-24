@@ -1,0 +1,31 @@
+{
+  "schema": "novel-eval-aggregate.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.5-flash",
+  "input_hash": "b1fb23356e182761f0800c895de6edae40f83969b38dc56dc365f1039694f70f",
+  "expected_judges": [
+    "sol",
+    "grok",
+    "kimi"
+  ],
+  "completed_judges": [
+    "sol",
+    "grok"
+  ],
+  "status": "incomplete",
+  "eligible_for_ranking": false,
+  "judges": {
+    "sol": {
+      "score": 48,
+      "ai_flavor": 86,
+      "comment": "题材抓住国企转轨与技术人员越界，时代物件密集，开篇目标明确、可读性尚可。但人物善恶功能化，危机靠医院催款、反派搜捕反复加码；同义心理解释和比喻大量复现，节奏机械。周末时序、年代制度及电子技术细节多处失真，十二卷规划也偏政策节点流水账。"
+    },
+    "grok": {
+      "score": 81,
+      "ai_flavor": 39,
+      "comment": "立意紧扣改革阵痛与个人抉择，时代质感与技术细节扎实，十二卷规划逻辑严密、伏笔与历史节点契合。开篇冲突因果紧凑、道德撕扯有力。然心理反复强调、悬念套路化、段落节奏偏匀且解释过多，长篇易显机械。"
+    }
+  },
+  "score": null,
+  "ai_flavor": null
+}

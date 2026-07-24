@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "grok-4.5",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "be72307a51ceaec6e5a1de7fd55b4de6ef07126c705b72ebc2a42577714621cf",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "c2d440dcfda5744251b54e81d7dec7b8242c50056288d7cb85bcc013d2d66bb5",
+  "response_model": "kimi-k3",
+  "cache_key": "0cace13b374d77f86e6ffb6eedbb51370cd977cf200b81c79b8824b02eb0b856",
+  "score": 65,
+  "ai_flavor": 70,
+  "comment": "优点：药费—废料—图纸的越界链条步步有据，票证、编制、停薪留职、清仓利库等时代细节落地可信，父亲'别出格'构成有效道德锚点，细纲兑现完整。问题：文风程式化严重，比喻堆砌、句式雷同，十七章结尾几乎都是躺下听声加抽象总结'越界不可逆'；'指节发白''墙薄了'等套语密集反复，心理靠重述而非动作呈现；书籍信息区块大段乱码，正文混入外文残词，校对明显失控。"
+}

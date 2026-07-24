@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-pro",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "e88ac71879f1470e4bc5c42c83cca7b4ede3a8239fcb8aa0b8e99d8d4bd29dd2",
+  "score": 76,
+  "ai_flavor": 28,
+  "comment": "时代质感扎实，农村贫困与特区初创细节真实可信，人物动机清晰，开篇完成心理越界。长篇规划完整连贯。但部分场景重复堆砌饥饿与手茧，情感转折略套路，人物仍偏类型化，因果张力与个体独特性有待加强。"
+}

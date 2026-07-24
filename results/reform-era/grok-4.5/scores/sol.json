@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "grok-4.5",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "be72307a51ceaec6e5a1de7fd55b4de6ef07126c705b72ebc2a42577714621cf",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "10b46c26d544cfd7a6fa2b1640f6d0d5ab35968da64dae72dd2be1c8af21fa15",
+  "score": 45,
+  "ai_flavor": 88,
+  "comment": "题旨明确，废料、药费、编制三者形成有效道德困局，开篇也兑现了首次越界。但两百万字规划高度同构，人物多为立场工具；正文反复搬用“风、烫手、细线、指节发白”等句群，解释过满、节奏僵齐。1979年“特区”、工商银行等时代细节失准，且书籍信息存在严重异常重复，需彻底校订与压缩。"
+}

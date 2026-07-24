@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "minimax-m3",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "9d8425c49e0dde818904f65a94f6eac877738d6874913cb9fc33f3299fd3cb00",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "c9bf7cee6d347d62b8d6b49820ec0925c3ece6ef4e432c0dc271d8d9bd54413a",
+  "score": 48,
+  "ai_flavor": 82,
+  "comment": "大纲宏大完整、人物弧线清晰、时代细节较准，主题契合方向。但正文对话高度同构机械、反复空转“嗯”“为了孩子”，第14-15章严重复制失控，人物扁平、心理空泛、节奏均匀不自然，文学性与可读性不足。"
+}

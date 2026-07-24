@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "63a26f1915973516ab52f1731b19954e5843f2af8f84ed081ff336fd1874848b",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "565252a944e65fa1b897da798da74abef122a2504860e260e98971b627a4e4a0",
+  "score": 43,
+  "ai_flavor": 88,
+  "comment": "贫困日常的物质细节较充足，父子冲突与承包越界也形成阶段收束。但时间线严重错置：1978年春已谈三中全会及后续政策；学费危机重复且数额矛盾。两百万字规划单薄，正文反复堆叠咳嗽、漏屋、攥拳与悬崖比喻，人物被主题功能化，解释和总结远多于真实行动。"
+}

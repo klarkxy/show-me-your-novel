@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "minimax-m3",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "9d8425c49e0dde818904f65a94f6eac877738d6874913cb9fc33f3299fd3cb00",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "1cb88643fecf9ef5cea292f11720c92297b488312d1992c0f79b63d69ef5b506",
+  "score": 28,
+  "ai_flavor": 98,
+  "comment": "题材与人物上升—背叛主线清楚，二十卷规划具备回收意识，工厂器物细节偶有质感。但正文被“嗯”、复述问答和同构场景淹没，人物皆以同一节奏说话；账目、时间线、制度史多处矛盾，1979年春晚等时代硬伤突出，大纲兑现机械且关键冲突反复空转。"
+}
