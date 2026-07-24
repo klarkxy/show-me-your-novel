@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-terra",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "78df186aec5eb2e61404705f568a65f232b11e9ebfcea1d265aca8d62a356cf4",
+  "score": 64,
+  "ai_flavor": 62,
+  "comment": "题材立意稳健，供销社、票证与县城人情写得具体，开篇冲突清楚，正文也基本兑现细纲。问题是人物多承担主题功能，场景反复以解释、回想和同构对话推进，节奏过于齐整；末章筹款明细实际不足八百元，且与母亲存款线及宏纲存在冲突，削弱关键越界的可信度。"
+}

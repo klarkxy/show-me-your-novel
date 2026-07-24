@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.6-flash",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "14c9d20b35a0e15c6ec700baca9aa5bf44be3f3408ea286c7b50e935680a63dd",
+  "score": 44,
+  "ai_flavor": 94,
+  "comment": "题材抓住国企衰退与市场萌动，主线清楚，开篇危机闭环完整，技术劳动也有可视性。但人物多为立场标签，靠重病、恶人举报和巧辩机械推进；史实、金额、机构与机械工艺错漏频繁，十二卷规划近似政策事件清单。正文“极其、死死、瞬间”泛滥，反复解释同一冲突，紧张感失真。"
+}

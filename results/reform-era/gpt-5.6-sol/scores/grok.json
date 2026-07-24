@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-sol",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "c2699dde5a0fa0a559193db242e0988bc66650c8cba1581996e3d7f4c069dfe2",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "e4fd7ded2f0d577c268b0879b0f80bfcdf621776541188fb6d979288e2637a32",
+  "score": 84,
+  "ai_flavor": 24,
+  "comment": "时代物证与制度缝隙扎实，周自成把生计折成账目、首次改凭证的因果层层加压且落点克制；沈秋萍、乔万山、马敬堂立场分明，伏笔自然。不足是部分对话过早点题，道德与技术对照偶显设计感，手续堆叠偶滞节奏。"
+}

@@ -120,6 +120,8 @@ python runner/generate_legacy.py --help
 
 `score` 越高越好，`ai_flavor` 越低越好。只有三份评分全部有效时，作品才进入榜单。
 
+`gpt-5.6-sol` 候选仍沿用固定三评委口径，因此其中 Sol 一票属于同模型自评；该结果保留用于横向一致性，但解读时应同时关注 Grok 与 Kimi 两张独立票。
+
 ```bash
 python runner/score.py --model mimo-v2.5 --dry-run
 python runner/score.py --model mimo-v2.5

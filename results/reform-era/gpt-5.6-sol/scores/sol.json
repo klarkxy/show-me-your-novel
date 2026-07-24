@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-sol",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "c2699dde5a0fa0a559193db242e0988bc66650c8cba1581996e3d7f4c069dfe2",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "df63c0488c12dbfd880ee7d141bd3508c38134952ad20528d011ba2f8c6e55c9",
+  "score": 85,
+  "ai_flavor": 24,
+  "comment": "时代物质细节、财会与物资制度写得扎实，第一次越界由欠薪、试制、借料层层逼出，人物选择可信，大纲证据链完整。主要问题是“谁签字、手续与生计”式辩论反复同构，章节收束常替读者点题；配角较多承担立场功能，二百万字体量下易显机械重复。"
+}

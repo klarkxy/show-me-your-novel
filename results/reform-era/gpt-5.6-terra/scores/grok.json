@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-terra",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "f1a556b1a0398ae2aed153a9dd772ff9455b6a8faf72958291452b621aa5962a",
+  "score": 83,
+  "ai_flavor": 34,
+  "comment": "时代质感扎实，票证、供销社、南货差价与旧案阴影交织自然，周继业的谨慎与越界动机可信，开篇兑现大纲、因果清晰。不足在于部分心理与主题句偏解释，人物关系偶显功能化，节奏均匀略损锋芒。已具长篇现实主义骨架。"
+}

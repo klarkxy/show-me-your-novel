@@ -1,0 +1,31 @@
+{
+  "schema": "novel-eval-aggregate.v2",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k2.7-code",
+  "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
+  "expected_judges": [
+    "sol",
+    "grok",
+    "kimi"
+  ],
+  "completed_judges": [
+    "sol",
+    "grok"
+  ],
+  "status": "incomplete",
+  "eligible_for_ranking": false,
+  "judges": {
+    "sol": {
+      "score": 52,
+      "ai_flavor": 82,
+      "comment": "家庭困境、技术变现与道德滑坡的主线清楚，票证、宿舍、车间等物质细节有可读性。但人物多为功能位，冲突反复依赖藏钱、警告和自我解释；柴油机“火花塞、分电器”等硬伤严重，刘大奎借钱因果与大纲相反，段落节奏高度同构，二百万字规划显得注水，开放结尾也回避了核心选择的兑现。"
+    },
+    "grok": {
+      "score": 67,
+      "ai_flavor": 46,
+      "comment": "时代质感与家庭绝境驱动扎实，大纲伏笔与开篇兑现完整，欲望膨胀因果清晰。但心理反复解释、场景同构推进、机械转折与总结句过多，人物道德挣扎扁平，文学控制力普通，长篇易陷模板节奏。"
+    }
+  },
+  "score": null,
+  "ai_flavor": null
+}

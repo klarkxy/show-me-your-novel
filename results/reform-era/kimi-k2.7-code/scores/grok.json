@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k2.7-code",
+  "judge": "grok",
+  "requested_model": "grok-4.5",
+  "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
+  "response_model": "grok-4.5-build-free",
+  "cache_key": "89bbda1c861e6172513219e065e29cf57324c60e891e1d0962b02673dcd4317d",
+  "score": 67,
+  "ai_flavor": 46,
+  "comment": "时代质感与家庭绝境驱动扎实，大纲伏笔与开篇兑现完整，欲望膨胀因果清晰。但心理反复解释、场景同构推进、机械转折与总结句过多，人物道德挣扎扁平，文学控制力普通，长篇易陷模板节奏。"
+}

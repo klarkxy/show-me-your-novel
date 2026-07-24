@@ -1,0 +1,31 @@
+{
+  "schema": "novel-eval-aggregate.v2",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-terra",
+  "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
+  "expected_judges": [
+    "sol",
+    "grok",
+    "kimi"
+  ],
+  "completed_judges": [
+    "sol",
+    "grok"
+  ],
+  "status": "incomplete",
+  "eligible_for_ranking": false,
+  "judges": {
+    "sol": {
+      "score": 64,
+      "ai_flavor": 62,
+      "comment": "题材立意稳健，供销社、票证与县城人情写得具体，开篇冲突清楚，正文也基本兑现细纲。问题是人物多承担主题功能，场景反复以解释、回想和同构对话推进，节奏过于齐整；末章筹款明细实际不足八百元，且与母亲存款线及宏纲存在冲突，削弱关键越界的可信度。"
+    },
+    "grok": {
+      "score": 83,
+      "ai_flavor": 34,
+      "comment": "时代质感扎实，票证、供销社、南货差价与旧案阴影交织自然，周继业的谨慎与越界动机可信，开篇兑现大纲、因果清晰。不足在于部分心理与主题句偏解释，人物关系偶显功能化，节奏均匀略损锋芒。已具长篇现实主义骨架。"
+    }
+  },
+  "score": null,
+  "ai_flavor": null
+}

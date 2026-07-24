@@ -1,0 +1,31 @@
+{
+  "schema": "novel-eval-aggregate.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.6-flash",
+  "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
+  "expected_judges": [
+    "sol",
+    "grok",
+    "kimi"
+  ],
+  "completed_judges": [
+    "sol",
+    "grok"
+  ],
+  "status": "incomplete",
+  "eligible_for_ranking": false,
+  "judges": {
+    "sol": {
+      "score": 44,
+      "ai_flavor": 94,
+      "comment": "题材抓住国企衰退与市场萌动，主线清楚，开篇危机闭环完整，技术劳动也有可视性。但人物多为立场标签，靠重病、恶人举报和巧辩机械推进；史实、金额、机构与机械工艺错漏频繁，十二卷规划近似政策事件清单。正文“极其、死死、瞬间”泛滥，反复解释同一冲突，紧张感失真。"
+    },
+    "grok": {
+      "score": 72,
+      "ai_flavor": 48,
+      "comment": "题材紧扣改革双轨与个人抉择，时代细节与技术质感扎实，宏观十二卷规划完整连贯，开篇细纲兑现紧凑、因果清晰。然文笔冗赘解释过多，心理与危机反复套路化，人物动机偏扁平，段落节奏均匀机械，模板痕迹持续干扰文学深度。"
+    }
+  },
+  "score": null,
+  "ai_flavor": null
+}
