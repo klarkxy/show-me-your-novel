@@ -6,10 +6,10 @@
   "requested_model": "kimi-k3",
   "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
   "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
-  "judge_config_sha256": "c2d440dcfda5744251b54e81d7dec7b8242c50056288d7cb85bcc013d2d66bb5",
-  "response_model": "k3",
-  "cache_key": "22b189a647cbfa820c8c112e60e336ed2b31a5c5383490ad4e3302863c7e0121",
-  "score": 74,
-  "ai_flavor": 38,
-  "comment": "时代质感扎实，红薯糊糊、工棚、克扣工钱等细节具体可感，李强、孙头、老刘等配角各有声口， dialogue 有生活气。但第三章与第五章重复写了一整遍村口送别与登车，属明显连续性失误；主角内心独白反复咏叹\"命贱\"\"不能倒下\"，抒情过量拖慢节奏；部分比喻与排比句式同构，情感推进略显程式化。整体完成度高但仍欠打磨。"
+  "judge_config_sha256": "e0acb4b18015fe54f3c587419176fee763577b2c3df89ab0440d6ca4bbc4ab45",
+  "response_model": "kimi-k3",
+  "cache_key": "0d6d11f92eebccb09e6809d1556bcfd88df5593ecfd848d118b2827d7f0f8c2c",
+  "score": 73,
+  "ai_flavor": 45,
+  "comment": "细节扎实，工地劳作、汇款、夜校、诊所等场景有真实的时代质感与身体经验，父母送别戏克制动人，李强的仗义多以行动呈现。但第三章与第五章重复书写同一场送别，台词雷同，属明显结构失误；几乎每章以'他想起'排比加内心立誓收尾，模式单一，'命贱'等感悟反复点题，情感常被直接解说；凤阳至广州的车票与路线连续性亦有疏漏。建议删并重复段落，把心理总结还原为动作与场景。"
 }

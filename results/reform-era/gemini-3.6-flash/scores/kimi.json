@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.6-flash",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "e0acb4b18015fe54f3c587419176fee763577b2c3df89ab0440d6ca4bbc4ab45",
+  "response_model": "kimi-k3",
+  "cache_key": "62c679887d00097ae2bee50af36f67a51a467c459c846d67fcc53e51db080394",
+  "score": 68,
+  "ai_flavor": 50,
+  "comment": "时代质感与机械技术细节扎实可信，工资条、威罗生药价、偏心切削等具体描写撑起题材，饭盒瞒检与搜查脱罪的因果铺垫有效，大纲对双轨制、物价闯关等历史节点把握到位。但情绪表达高度依赖'极其、彻底、死死'类强化词，多章以'跨过红线、坠入深渊'式总结收束，重复说教；赵三喜等配角脸谱化；且残留'sweat'、阿拉伯文等文字硬伤，明显缺乏修订。"
+}

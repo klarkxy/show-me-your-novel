@@ -10,10 +10,11 @@
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "kimi"
   ],
-  "status": "incomplete",
-  "eligible_for_ranking": false,
+  "status": "complete",
+  "eligible_for_ranking": true,
   "judges": {
     "sol": {
       "score": 44,
@@ -24,8 +25,13 @@
       "score": 72,
       "ai_flavor": 48,
       "comment": "题材紧扣改革双轨与个人抉择，时代细节与技术质感扎实，宏观十二卷规划完整连贯，开篇细纲兑现紧凑、因果清晰。然文笔冗赘解释过多，心理与危机反复套路化，人物动机偏扁平，段落节奏均匀机械，模板痕迹持续干扰文学深度。"
+    },
+    "kimi": {
+      "score": 68,
+      "ai_flavor": 50,
+      "comment": "时代质感与机械技术细节扎实可信，工资条、威罗生药价、偏心切削等具体描写撑起题材，饭盒瞒检与搜查脱罪的因果铺垫有效，大纲对双轨制、物价闯关等历史节点把握到位。但情绪表达高度依赖'极其、彻底、死死'类强化词，多章以'跨过红线、坠入深渊'式总结收束，重复说教；赵三喜等配角脸谱化；且残留'sweat'、阿拉伯文等文字硬伤，明显缺乏修订。"
     }
   },
-  "score": null,
-  "ai_flavor": null
+  "score": 61.33,
+  "ai_flavor": 64.0
 }

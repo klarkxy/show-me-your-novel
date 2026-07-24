@@ -10,10 +10,11 @@
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "kimi"
   ],
-  "status": "incomplete",
-  "eligible_for_ranking": false,
+  "status": "complete",
+  "eligible_for_ranking": true,
   "judges": {
     "sol": {
       "score": 28,
@@ -24,8 +25,13 @@
       "score": 48,
       "ai_flavor": 82,
       "comment": "大纲宏大完整、人物弧线清晰、时代细节较准，主题契合方向。但正文对话高度同构机械、反复空转“嗯”“为了孩子”，第14-15章严重复制失控，人物扁平、心理空泛、节奏均匀不自然，文学性与可读性不足。"
+    },
+    "kimi": {
+      "score": 62,
+      "ai_flavor": 60,
+      "comment": "规划扎实：二十卷因果链完整，八三严打与账外资金、挂靠体制等时代机制咬合紧密，伏笔有追踪；车间工艺、票证、价差等细节有质感。但正文通篇单句成段、'嗯'式对答循环，第十五章'一百八十'重复成机械填充；比武评分与倒卖分账数字自相矛盾，九、十七两章调岗场景近乎重复，人物口吻雷同，主角的算计与野心在正文中尚未立起。"
     }
   },
-  "score": null,
-  "ai_flavor": null
+  "score": 46.0,
+  "ai_flavor": 80.0
 }

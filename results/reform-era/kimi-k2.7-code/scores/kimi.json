@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k2.7-code",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "e0acb4b18015fe54f3c587419176fee763577b2c3df89ab0440d6ca4bbc4ab45",
+  "response_model": "kimi-k3",
+  "cache_key": "ca10a7990e4fe89e1885fd2410c34a5b1266499b933679a23fdd3c08f07ce6d3",
+  "score": 69,
+  "ai_flavor": 52,
+  "comment": "时代质感扎实：工资、票证、押金、喷油嘴等细节具体可信，堕落过程有层次，主线与大纲吻合度高。但每章结尾几乎固定为'夜不能寐+道德总结'，同一比喻（烧红的炭、干裂土地的种子、扯疼的神经）反复使用，人物心理被旁白反复解释而非演出；玉琴怀疑—撒谎—流泪的桥段重复五六次，刘大奎等配角功能化；另有'patrol队'的残留错字。整体可读但模板节奏明显。"
+}

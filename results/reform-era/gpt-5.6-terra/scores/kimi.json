@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-terra",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "e0acb4b18015fe54f3c587419176fee763577b2c3df89ab0440d6ca4bbc4ab45",
+  "response_model": "kimi-k3",
+  "cache_key": "a7110bcaccbadaff0eea8d052ee493459a0b9adb78c65b172f5e86e43635d1ef",
+  "score": 74,
+  "ai_flavor": 35,
+  "comment": "时代质感扎实：票证、工资、仓储账目与人情往来均有实物支撑，对话含蓄有潜台词，主角从守规到越界的心理推进可信，三本账的戏剧结构清晰，大纲兑现度高。最大硬伤是第16章凑钱加总：240+150+50+126.3+113.7=680，却写\"正好八百\"，与主角精于记账的设定直接冲突，第13章私房钱数目前后亦不一致。另内心阐释偏多，章末惯用点题句，节奏偏匀，沈梅戏份略显功能化。"
+}

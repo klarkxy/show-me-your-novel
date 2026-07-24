@@ -1,0 +1,15 @@
+{
+  "schema": "novel-eval.v2",
+  "benchmark": "reform-era",
+  "candidate": "minimax-m3",
+  "judge": "kimi",
+  "requested_model": "kimi-k3",
+  "input_hash": "9d8425c49e0dde818904f65a94f6eac877738d6874913cb9fc33f3299fd3cb00",
+  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "judge_config_sha256": "e0acb4b18015fe54f3c587419176fee763577b2c3df89ab0440d6ca4bbc4ab45",
+  "response_model": "kimi-k3",
+  "cache_key": "cc40791a3166a622e2363c6ee50c69c395aab1b0878b3d8426b02c19c42a8817",
+  "score": 62,
+  "ai_flavor": 60,
+  "comment": "规划扎实：二十卷因果链完整，八三严打与账外资金、挂靠体制等时代机制咬合紧密，伏笔有追踪；车间工艺、票证、价差等细节有质感。但正文通篇单句成段、'嗯'式对答循环，第十五章'一百八十'重复成机械填充；比武评分与倒卖分账数字自相矛盾，九、十七两章调岗场景近乎重复，人物口吻雷同，主角的算计与野心在正文中尚未立起。"
+}

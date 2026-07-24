@@ -10,10 +10,11 @@
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "kimi"
   ],
-  "status": "incomplete",
-  "eligible_for_ranking": false,
+  "status": "complete",
+  "eligible_for_ranking": true,
   "judges": {
     "sol": {
       "score": 52,
@@ -24,8 +25,13 @@
       "score": 67,
       "ai_flavor": 46,
       "comment": "时代质感与家庭绝境驱动扎实，大纲伏笔与开篇兑现完整，欲望膨胀因果清晰。但心理反复解释、场景同构推进、机械转折与总结句过多，人物道德挣扎扁平，文学控制力普通，长篇易陷模板节奏。"
+    },
+    "kimi": {
+      "score": 69,
+      "ai_flavor": 52,
+      "comment": "时代质感扎实：工资、票证、押金、喷油嘴等细节具体可信，堕落过程有层次，主线与大纲吻合度高。但每章结尾几乎固定为'夜不能寐+道德总结'，同一比喻（烧红的炭、干裂土地的种子、扯疼的神经）反复使用，人物心理被旁白反复解释而非演出；玉琴怀疑—撒谎—流泪的桥段重复五六次，刘大奎等配角功能化；另有'patrol队'的残留错字。整体可读但模板节奏明显。"
     }
   },
-  "score": null,
-  "ai_flavor": null
+  "score": 62.67,
+  "ai_flavor": 60.0
 }
