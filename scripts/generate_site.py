@@ -709,11 +709,11 @@ def page_head(
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="{root_prefix}index.html" aria-label="{SITE_TITLE}首页">
-      <span class="brand-mark" aria-hidden="true">R84</span>
+      <span class="brand-mark" aria-hidden="true">文</span>
       <span>{SITE_TITLE}</span>
     </a>
     <nav class="site-nav" aria-label="主导航">
-      <a href="{root_prefix}index.html">改革开放榜单</a>
+      <a href="{root_prefix}index.html">榜单</a>
       <a href="{root_prefix}novels/index.html">Legacy</a>
       <a href="{REPO_URL}" rel="noopener" target="_blank">GitHub</a>
     </nav>
@@ -726,12 +726,43 @@ def page_head(
 PAGE_FOOT = f"""
 </main>
 <footer class="site-footer">
-  <span>本地生成 · 离线汇编 · 结果可追溯</span>
-  <a href="{REPO_URL}" rel="noopener">源文件</a>
+  <a href="{REPO_URL}" rel="noopener">源码</a>
 </footer>
 </body>
 </html>
 """
+
+DIMENSION_SHORT_LABELS = {
+    "theme_fulfillment": "主题",
+    "historical_grounding": "时代",
+    "characters": "人物",
+    "plot_causality": "因果",
+    "longform_structure": "结构",
+    "scene_execution": "场景",
+    "style_control": "文风",
+    "ai_flavor": "AI味↓",
+}
+
+SCORING_NOTE = (
+    "各维度取 Sol 与 Grok 两票的中位数（两票时等价于算术均值）；"
+    "综合按固定权重加总，其中AI味使用100减原值。"
+    "AI味越低越好，其余指标越高越好。"
+)
+
+
+def _dimension_label(spec: Any) -> str:
+    return f"{spec.label}（越低越好）" if not spec.higher_is_better else spec.label
+
+
+def _dimension_short(spec: Any) -> str:
+    return DIMENSION_SHORT_LABELS[spec.key]
+
+
+def _metric_key(spec: Any | None = None, *, overall: bool = False) -> str:
+    if overall:
+        return "overall"
+    assert spec is not None
+    return spec.key.replace("_", "-")
 
 
 def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
@@ -756,7 +787,8 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
     )
     score_cells = "\n".join(
         (
-            f'  <td data-label="{esc(_dimension_label(spec))}">'
+            f'  <td class="metric-col" data-metric="{_metric_key(spec)}" '
+            f'data-label="{esc(_dimension_label(spec))}" hidden>'
             f'{_format_score((dimensions.get(spec.key) or {}).get("median"))}</td>'
         )
         for spec in DIMENSION_SPECS
@@ -770,13 +802,9 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
   <th scope="row">
     {entry}
   </th>
-  <td data-label="综合">{_format_score(result['overall_score'])}</td>
+  <td class="metric-col" data-metric="overall" data-label="综合">{_format_score(result['overall_score'])}</td>
 {score_cells}
 </tr>"""
-
-
-def _dimension_label(spec: Any) -> str:
-    return f"{spec.label}（越低越好）" if not spec.higher_is_better else spec.label
 
 
 def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
@@ -793,74 +821,71 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
     model_count = len(results)
     if rows:
         dimension_headers = "".join(
-            f'<th scope="col">{esc(_dimension_label(spec))}</th>'
+            (
+                f'<th class="metric-col" scope="col" data-metric="{_metric_key(spec)}" '
+                f'title="{esc(_dimension_label(spec))}" hidden>'
+                f'{esc(_dimension_short(spec))}</th>'
+            )
             for spec in DIMENSION_SPECS
         )
         board = f"""
 <div class="table-shell">
   <table class="leaderboard" aria-describedby="ranking-note">
     <thead><tr>
-      <th scope="col">档位</th><th scope="col">模型 / 书名</th>
-      <th scope="col">综合</th>{dimension_headers}
+      <th scope="col">#</th>
+      <th scope="col">作品</th>
+      <th class="metric-col" scope="col" data-metric="overall">综合</th>
+      {dimension_headers}
     </tr></thead>
     <tbody id="leaderboard-body">{rows}</tbody>
   </table>
 </div>"""
     else:
         board = """<div class="empty-state" role="status">
-  <strong>榜单卷宗尚未归档。</strong>
-  <span>把追踪结果放入 <code>results/reform-era/&lt;model&gt;/</code> 后重新构建站点。</span>
+  <strong>榜单还没有作品。</strong>
+  <span>把结果放入 <code>results/reform-era/&lt;model&gt;/</code> 后重新构建站点。</span>
 </div>"""
+
+    metric_buttons = [
+        '<button type="button" data-sort="overall" data-direction="desc" '
+        'aria-pressed="true" title="综合">综合</button>'
+    ]
+    for spec in DIMENSION_SPECS:
+        metric_buttons.append(
+            f'<button type="button" data-sort="{_metric_key(spec)}" '
+            f'data-direction="{"desc" if spec.higher_is_better else "asc"}" '
+            f'aria-pressed="false" title="{esc(_dimension_label(spec))}">'
+            f"{esc(_dimension_short(spec))}</button>"
+        )
 
     return page_head(
         "改革开放长篇模型榜", "", "page-leaderboard", leaderboard_script=True
     ) + f"""
-<section class="archive-hero" aria-labelledby="page-title">
-  <div class="file-tab">PROJECT R-84 · LONGFORM REGISTER</div>
-  <div class="hero-grid">
-    <div>
-      <p class="eyebrow">改革开放 · 二百万字全纲 · 五万字开篇</p>
-      <h1 id="page-title">同一道时代命题，<br>看谁真正写得下去。</h1>
-    </div>
-    <dl class="archive-facts">
-      <div><dt>归档模型</dt><dd>{model_count:02d}</dd></div>
-      <div><dt>固定评委</dt><dd>{len(JUDGE_IDS):02d}</dd></div>
-      <div><dt>旧题材</dt><dd>{legacy_count:02d}</dd></div>
-    </dl>
-  </div>
-</section>
+<header class="page-intro" aria-labelledby="page-title">
+  <h1 id="page-title">改革开放长篇模型榜</h1>
+  <p class="page-sub">同一方向 · 约 5 万字开篇 · Sol / Grok 盲评</p>
+  <p class="page-meta">已评分 {ranked_count} / 全部 {model_count} · 评委 {len(JUDGE_IDS)} · Legacy {legacy_count}</p>
+</header>
 
 <section class="ranking-panel" aria-labelledby="ranking-title">
-  <header class="section-heading">
-    <div><p class="eyebrow">DIMENSION LEDGER</p><h2 id="ranking-title">分维度排名登记表</h2></div>
-    <p id="ranking-note">各维度取 Sol 与 Grok 两票的中位数（两票时等价于算术均值）；综合按固定权重加总，其中AI味使用100减原值。AI味越低越好，其余指标越高越好。</p>
-  </header>
-  <div class="metric-switch" role="group" aria-label="排名指标">
-    <button type="button" data-sort="overall" data-direction="desc" aria-pressed="true">综合</button>
-    {''.join(
-        f'<button type="button" data-sort="{spec.key.replace("_", "-")}" '
-        f'data-direction="{"desc" if spec.higher_is_better else "asc"}" '
-        f'aria-pressed="false">{esc(_dimension_label(spec))}</button>'
-        for spec in DIMENSION_SPECS
-    )}
-  </div>
-  <div class="rank-ruler" data-rank-ruler>
-    <div class="ruler-copy">
-      <label for="rank-limit">排名刻度尺</label>
-      <output for="rank-limit" id="rank-limit-output">{'显示全部 ' + str(ranked_count) + ' 个已排名作品；未完成始终显示' if ranked_count else '暂无可排名作品；未完成始终显示'}</output>
+  <div class="ranking-toolbar">
+    <h2 id="ranking-title" class="visually-hidden">排名</h2>
+    <div class="metric-switch" role="group" aria-label="排名指标">
+      {''.join(metric_buttons)}
     </div>
-    <input id="rank-limit" type="range" min="1" max="{max(ranked_count, 1)}"
-      value="{max(ranked_count, 1)}" {'disabled' if not ranked_count else ''}>
-    <div class="ruler-ticks" aria-hidden="true"></div>
+    <div class="rank-ruler" data-rank-ruler>
+      <label class="rank-limit-label" for="rank-limit">显示</label>
+      <input id="rank-limit" type="range" min="1" max="{max(ranked_count, 1)}"
+        value="{max(ranked_count, 1)}" {'disabled' if not ranked_count else ''}>
+      <output for="rank-limit" id="rank-limit-output">{'前 ' + str(ranked_count) if ranked_count else '—'}</output>
+    </div>
   </div>
   {board}
+  <details class="info-drawer" id="ranking-note-drawer">
+    <summary>评分怎么算</summary>
+    <p id="ranking-note">{SCORING_NOTE}</p>
+  </details>
 </section>
-
-<aside class="legacy-callout">
-  <span class="file-code">ARCHIVE / L-03</span>
-  <div><strong>旧版三题材仍在。</strong><p>原始十章实验保持原路由，不混入本期榜单。</p></div>
-  <a class="text-button" href="novels/index.html">进入 Legacy →</a>
-</aside>
 """ + PAGE_FOOT
 
 
@@ -1019,25 +1044,27 @@ def _judge_evaluation(
         entry = dimensions.get(spec.key) or {}
         comment = entry.get("comment") or "尚未提交该维度评价。"
         comments.append(f"""<li class="dimension-comment">
-  <header><h4>{esc(_dimension_label(spec))}</h4><strong>{_format_score(entry.get('score'))}</strong></header>
+  <header><h4 title="{esc(_dimension_label(spec))}">{esc(_dimension_short(spec))}</h4><strong>{_format_score(entry.get('score'))}</strong></header>
   <p>{esc(comment)}</p>
 </li>""")
-    return f"""<article class="judge-evaluation">
-  <header class="judge-heading"><p class="eyebrow">INDEPENDENT READER</p><h3>{esc(label)}</h3></header>
-  <div class="judge-evaluation-grid">
-    {_radar_chart(chart_id, f'{label}逐维评分', scores)}
-    <ol class="dimension-comments" aria-label="{esc(label)}逐维评价">{''.join(comments)}</ol>
+    return f"""<details class="judge-drawer">
+  <summary>{esc(label)}</summary>
+  <div class="judge-evaluation">
+    <div class="judge-evaluation-grid">
+      {_radar_chart(chart_id, f'{label}逐维评分', scores)}
+      <ol class="dimension-comments" aria-label="{esc(label)}逐维评价">{''.join(comments)}</ol>
+    </div>
   </div>
-</article>"""
+</details>"""
 
 
-def _json_drawer(title: str, code: str, value: dict[str, Any]) -> str:
+def _json_drawer(title: str, value: dict[str, Any]) -> str:
     if value:
         payload = esc(json.dumps(value, ensure_ascii=False, indent=2))
     else:
         payload = "尚未生成。"
     return f"""<details class="outline-drawer">
-  <summary><span>{esc(code)}</span>{esc(title)}</summary>
+  <summary>{esc(title)}</summary>
   <pre><code>{payload}</code></pre>
 </details>"""
 
@@ -1045,7 +1072,6 @@ def _json_drawer(title: str, code: str, value: dict[str, Any]) -> str:
 def render_result_detail(result: dict[str, Any]) -> str:
     judges = result["judges"]
     body_chars = result["body_chars"]
-    status = result["manifest"].get("status", "complete" if result["novel"] else "pending")
     novel_html = result["novel_html"] or '<p class="empty-copy">正文尚未归档。</p>'
     aggregate_dimensions = result["aggregate_dimensions"]
     aggregate_scores = {
@@ -1057,48 +1083,39 @@ def render_result_detail(result: dict[str, Any]) -> str:
     return page_head(
         f"{result['title']} · {result['model_name']}", "../../", "page-result"
     ) + f"""
-<a class="back-link" href="../../index.html">← 返回改革开放榜单</a>
+<a class="back-link" href="../../index.html">← 榜单</a>
 <article class="result-file">
   <header class="result-header">
-    <div class="file-tab">MODEL FILE · {esc(result['model_id'])}</div>
-    <p class="eyebrow">{esc(result['model_name'])}</p>
     <h1>《{esc(result['title'])}》</h1>
+    <p class="result-meta">{esc(result['model_name'])} · {result['chapters']} 章 · {body_chars:,} 字</p>
     <p class="result-blurb">{esc(result['blurb'])}</p>
     <dl class="result-stats">
-      <div><dt>综合评分</dt><dd>{_format_score(result['overall_score'])}</dd></div>
-      <div><dt>AI味中位数</dt><dd>{_format_score(ai_median)}</dd></div>
-      <div><dt>正文字符</dt><dd>{body_chars:,}</dd></div>
-      <div><dt>状态</dt><dd>{esc(status)}</dd></div>
+      <div><dt>综合</dt><dd>{_format_score(result['overall_score'])}</dd></div>
+      <div><dt>AI味</dt><dd>{_format_score(ai_median)}</dd></div>
     </dl>
   </header>
 
   <section class="aggregate-section" aria-labelledby="aggregate-title">
-    <div class="section-heading">
-      <div><p class="eyebrow">MEDIAN PROFILE</p><h2 id="aggregate-title">综合维度中位数</h2></div>
-      <p>每个维度取 Sol 与 Grok 两票的中位数（两票时等价于算术均值）；综合按固定权重加总，其中AI味使用100减原值。AI味仍以原始低分展示，雷达几何按“越低越好”反向绘制。</p>
-    </div>
+    <h2 id="aggregate-title">评分</h2>
     {_radar_chart(f'{chart_prefix}-median', '两评委维度中位数', aggregate_scores)}
-  </section>
-
-  <section class="judge-section" aria-labelledby="judge-title">
-    <div class="section-heading">
-      <div><p class="eyebrow">TWO-READER PANEL</p><h2 id="judge-title">两评委逐维记录</h2></div>
-      <p>Sol 与 Grok 独立评分；下方保留每个维度的原始评价。</p>
-    </div>
-    <div class="judge-evaluations">
+    <details class="info-drawer">
+      <summary>评分怎么算</summary>
+      <p>{SCORING_NOTE} AI味仍以原始低分展示，雷达几何按「越低越好」反向绘制。</p>
+    </details>
+    <div class="judge-evaluations" aria-label="两评委逐维记录">
       {_judge_evaluation('Sol', judges['sol'], f'{chart_prefix}-sol')}
       {_judge_evaluation('Grok 4.5', judges['grok'], f'{chart_prefix}-grok')}
     </div>
   </section>
 
   <section class="outline-section" aria-labelledby="outline-title">
-    <div class="section-heading"><div><p class="eyebrow">PLANNING FILES</p><h2 id="outline-title">规划卷宗</h2></div></div>
-    {_json_drawer('二百万字全纲', 'A-200', result['macro_outline'])}
-    {_json_drawer('前五万字细纲', 'B-050', result['opening_outline'])}
+    <h2 id="outline-title" class="visually-hidden">大纲</h2>
+    {_json_drawer('全纲', result['macro_outline'])}
+    {_json_drawer('细纲', result['opening_outline'])}
   </section>
 
   <section class="reading-section" aria-labelledby="novel-title">
-    <header class="section-heading"><div><p class="eyebrow">OPENING MANUSCRIPT</p><h2 id="novel-title">前五万字正文</h2></div><p>{result['chapters']} 章 · {body_chars:,} 字符</p></header>
+    <h2 id="novel-title">正文</h2>
     <div class="novel-body markdown">{novel_html}</div>
   </section>
 </article>
@@ -1109,19 +1126,16 @@ def render_legacy_index(stories: list[dict[str, Any]]) -> str:
     cards = []
     for story in stories:
         cards.append(f"""<a class="legacy-card" href="{story['slug']}/index.html">
-  <span class="file-code">{esc(story['genre'])}</span>
   <h2>{esc(story['title'])}</h2>
+  <p class="card-meta">{esc(story['genre'])} · {len(story['versions'])} 个版本</p>
   <p>{esc(story['intro'])}</p>
-  <small>{len(story['versions'])} 个模型版本</small>
 </a>""")
     cards_html = "\n".join(cards) or '<p class="empty-copy">没有可展示的旧题材。</p>'
-    return page_head("Legacy 十章实验", "../", "page-legacy") + f"""
-<a class="back-link" href="../index.html">← 返回改革开放榜单</a>
-<section class="legacy-hero">
-  <p class="eyebrow">ARCHIVE / LEGACY RUNS</p>
-  <h1>旧版十章实验</h1>
-  <p>这些页面保留原始提示词、模型正文与 URL，不参与当前改革开放长篇排名。</p>
-</section>
+    return page_head("Legacy", "../", "page-legacy") + f"""
+<a class="back-link" href="../index.html">← 榜单</a>
+<header class="page-intro">
+  <h1>Legacy</h1>
+</header>
 <div class="legacy-grid">{cards_html}</div>
 """ + PAGE_FOOT
 
@@ -1134,27 +1148,28 @@ def render_legacy_story(
         suffix = " · 未满十章" if version["partial"] else ""
         cards.append(f"""<a class="version-card" href="{version['model_id']}.html">
   <strong>{esc(version['model_name'])}</strong>
-  <span>{version['chars']:,} 正文字符 · {version['chapters']} 章{suffix}</span>
+  <span>{version['chars']:,} 字 · {version['chapters']} 章{suffix}</span>
 </a>""")
     return page_head(story["title"], "../../", "page-legacy-story") + f"""
-<a class="back-link" href="../index.html">← Legacy 目录</a>
-<header class="legacy-story-header"><p class="eyebrow">TEN-CHAPTER RUN</p><h1>{esc(story['title'])}</h1></header>
-<details class="prompt-drawer"><summary>查看统一提示词</summary><div class="markdown">{story['prompt_html']}</div></details>
+<a class="back-link" href="../index.html">← Legacy</a>
+<header class="page-intro">
+  <h1>{esc(story['title'])}</h1>
+</header>
+<details class="prompt-drawer"><summary>统一提示词</summary><div class="markdown">{story['prompt_html']}</div></details>
 <section class="version-grid">{''.join(cards)}</section>
 """ + PAGE_FOOT
 
 
 def render_legacy_novel(story: dict[str, Any], version: dict[str, Any]) -> str:
-    partial = '<p class="partial-notice">该版本未完成十章，按原样归档。</p>' if version["partial"] else ""
+    partial = '<p class="partial-notice">未完成十章，按原样归档。</p>' if version["partial"] else ""
     return page_head(
         f"{version['title']} · {version['model_name']}", "../../", "page-reading"
     ) + f"""
 <a class="back-link" href="index.html">← {esc(story['title'])}</a>
 <article class="legacy-novel">
   <header class="novel-header">
-    <p class="eyebrow">{esc(version['model_name'])} · LEGACY</p>
     <h1>{esc(version['title'])}</h1>
-    <p>{version['chars']:,} 正文字符 · {version['chapters']} 章</p>{partial}
+    <p class="result-meta">{esc(version['model_name'])} · {version['chars']:,} 字 · {version['chapters']} 章</p>{partial}
   </header>
   <div class="novel-body markdown">{version['content_html']}</div>
 </article>

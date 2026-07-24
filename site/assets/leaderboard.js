@@ -5,6 +5,7 @@
   const buttons = Array.from(document.querySelectorAll("[data-sort]"));
   const slider = document.querySelector("#rank-limit");
   const output = document.querySelector("#rank-limit-output");
+  const table = document.querySelector(".leaderboard");
 
   if (!body || !slider || !output) return;
 
@@ -24,6 +25,18 @@
     return Number.isFinite(value) ? value : null;
   };
 
+  const setMetricColumns = (metric) => {
+    if (!table || typeof table.querySelectorAll !== "function") return;
+    table.querySelectorAll(".metric-col").forEach((cell) => {
+      const key = cell.getAttribute("data-metric");
+      if (!key) return;
+      // Always show overall; also show the active sort dimension when it differs.
+      const show = key === "overall" || key === metric;
+      if (show) cell.removeAttribute("hidden");
+      else cell.setAttribute("hidden", "");
+    });
+  };
+
   const applyLimit = () => {
     const limit = Number(slider.value);
     rows.forEach((row) => {
@@ -35,9 +48,12 @@
       row.hidden = rank > limit;
     });
     const rankedCount = rows.filter(isRankable).length;
-    output.textContent = rankedCount
-      ? `显示前 ${Math.min(limit, rankedCount)} 名；未完成始终显示`
-      : "暂无可排名作品；未完成始终显示";
+    if (!rankedCount) {
+      output.textContent = "—";
+      return;
+    }
+    const shown = Math.min(limit, rankedCount);
+    output.textContent = shown >= rankedCount ? `全部 ${rankedCount}` : `前 ${shown}`;
   };
 
   const sortRows = (metric) => {
@@ -72,6 +88,7 @@
     buttons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.sort === activeMetric));
     });
+    setMetricColumns(activeMetric);
     applyLimit();
   };
 
