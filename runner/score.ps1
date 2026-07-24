@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  PowerShell wrapper for the Sol/Fable/Kimi V2 scorer.
+  PowerShell wrapper for the Sol/Grok/Kimi V2 scorer.
 .EXAMPLE
   .\runner\score.ps1 -Model deepseek-v4-flash -Judge sol -DryRun
 .EXAMPLE
@@ -13,7 +13,7 @@ param(
   [string[]]$Model,
   [Parameter(ParameterSetName = "All", Mandatory = $true)]
   [switch]$All,
-  [ValidateSet("sol", "fable", "kimi")]
+  [ValidateSet("sol", "grok", "kimi")]
   [string[]]$Judge,
   [switch]$DryRun
 )

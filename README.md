@@ -58,7 +58,7 @@ API_URL=https://your-api.example.com/v1
 API_KEY=sk-...
 ```
 
-活动流程默认调用 OpenAI-compatible O 口 `/v1/chat/completions`；MiniMax M3，以及 Claude Haiku 4.5、Claude Sonnet 5、Claude Opus 4.8 三种生成模型和 Claude Fable 评委，改走原生 A 口 `/v1/messages`。两种协议运行前仍统一通过 `/v1/models` 精确校验 15 个生成模型和 3 个评委的 wire model ID，不做模糊匹配或静默替换。
+活动流程默认调用 OpenAI-compatible O 口 `/v1/chat/completions`；MiniMax M3，以及 Claude Haiku 4.5、Claude Sonnet 5、Claude Opus 4.8 三种生成模型，改走原生 A 口 `/v1/messages`。两种协议运行前仍统一通过 `/v1/models` 精确校验 15 个生成模型和 3 个评委的 wire model ID，不做模糊匹配或静默替换。
 
 ## 生成
 
@@ -105,7 +105,7 @@ python runner/generate_legacy.py --help
 | 评委 | 模型 |
 |---|---|
 | Sol | `gpt-5.6-sol` |
-| Fable | `claude-fable-5` |
+| Grok 4.5 | `grok-4.5` |
 | Kimi | `kimi-k3` |
 
 三位评委收到相同、匿名且未截断的方向、规划和正文，只返回：
@@ -150,7 +150,7 @@ results/reform-era/<model>/
   chapters/*.md
   novel.md
   manifest.json
-  scores/{sol,fable,kimi,aggregate}.json
+  scores/{sol,grok,kimi,aggregate}.json
 ```
 
 私有审计与断点位于被忽略的 `work/`：

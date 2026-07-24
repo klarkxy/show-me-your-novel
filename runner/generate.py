@@ -27,6 +27,7 @@ from typing import Any, Callable
 
 try:  # Script execution and package-style tests are both supported.
     from .llm_api import (
+        ANTHROPIC_MESSAGES,
         OPENAI_CHAT_COMPLETIONS,
         PROVIDER_DEFAULTS_TRACKING_KEY,
         ChatClient,
@@ -43,6 +44,7 @@ try:  # Script execution and package-style tests are both supported.
     )
 except ImportError:  # pragma: no cover - exercised by direct CLI usage
     from llm_api import (  # type: ignore
+        ANTHROPIC_MESSAGES,
         OPENAI_CHAT_COMPLETIONS,
         PROVIDER_DEFAULTS_TRACKING_KEY,
         ChatClient,
@@ -63,7 +65,10 @@ PROTOCOL_VERSION = "novel-benchmark.v2.1"
 LEGACY_OPENAI_CODE_SHA256 = (
     "a71e090e70c9bf5eb6361ff2e552a0d143a5bee8aead8f79febe20615f3ea33d"
 )
-OPENAI_COMPATIBILITY_SOURCE_SHA256 = "a2675e074af2592467d6be3c46a1bcaa8810f60fcb7145f301eec64399bb866c"
+LEGACY_ANTHROPIC_CODE_SHA256 = (
+    "61b40dba13fa56609dbb1666c525c8adc8a909381dbd8763fac68b3bb73d7ea2"
+)
+GENERATION_COMPATIBILITY_SOURCE_SHA256 = "af7534e4c01eb990d5603b784b322dc6cf2d4a0a2085bc29588a71dacd26f3fa"
 DEFAULT_BENCHMARK = "reform-era"
 PROMPT_FILES = (
     "system.md",
@@ -137,7 +142,7 @@ EXPECTED_GENERATOR_IDS = (
 )
 EXPECTED_JUDGES = {
     "sol": "gpt-5.6-sol",
-    "fable": "claude-fable-5",
+    "grok": "grok-4.5",
     "kimi": "kimi-k3",
 }
 PRIVATE_REASONING_MARKER = re.compile(
@@ -230,8 +235,12 @@ def _current_source_code_hash() -> str:
     return sha256_text(canonical_json(evidence))
 
 
-def _openai_compatibility_source_hash() -> str:
-    """Fingerprint the exact migration sources while ignoring this guard value."""
+def _generation_compatibility_source_hash() -> str:
+    """Fingerprint the exact judge-registry migration sources.
+
+    The guard value itself is normalized so it can record this fingerprint
+    without changing it.
+    """
 
     files = (Path(__file__).resolve(), Path(__file__).resolve().with_name("llm_api.py"))
     evidence: dict[str, str] = {}
@@ -241,8 +250,8 @@ def _openai_compatibility_source_hash() -> str:
         text = normalize_newlines(path.read_bytes().decode("utf-8-sig"))
         if path == Path(__file__).resolve():
             text = re.sub(
-                r'OPENAI_COMPATIBILITY_SOURCE_SHA256 = "[^"]+"',
-                'OPENAI_COMPATIBILITY_SOURCE_SHA256 = "<guard>"',
+                r'GENERATION_COMPATIBILITY_SOURCE_SHA256 = "[^"]+"',
+                'GENERATION_COMPATIBILITY_SOURCE_SHA256 = "<guard>"',
                 text,
                 count=1,
             )
@@ -253,20 +262,22 @@ def _openai_compatibility_source_hash() -> str:
 def calculate_code_hash(model_cfg: dict[str, Any] | None = None) -> str:
     """Return a protocol-scoped implementation identity.
 
-    Existing O-port books were produced by the unchanged Chat Completions path.
-    Keeping that semantic identity prevents an Anthropic-only adapter addition
-    from invalidating eight already completed books.  Anthropic runs hash the
-    current sources and therefore remain strict about future adapter changes.
+    Replacing a scoring judge does not change either generation transport.
+    Preserve the identities used by existing O-port and A-port books only for
+    this exact source fingerprint; any later runner change fails closed to the
+    current source hash.
     """
 
     current_hash = _current_source_code_hash()
     protocol = model_protocol(model_cfg or {})
     if (
-        protocol == OPENAI_CHAT_COMPLETIONS
-        and _openai_compatibility_source_hash()
-        == OPENAI_COMPATIBILITY_SOURCE_SHA256
+        _generation_compatibility_source_hash()
+        == GENERATION_COMPATIBILITY_SOURCE_SHA256
     ):
-        return LEGACY_OPENAI_CODE_SHA256
+        if protocol == OPENAI_CHAT_COMPLETIONS:
+            return LEGACY_OPENAI_CODE_SHA256
+        if protocol == ANTHROPIC_MESSAGES:
+            return LEGACY_ANTHROPIC_CODE_SHA256
     return current_hash
 
 
@@ -2505,7 +2516,7 @@ def validate_fixed_registries(
             raise ValueError(f"生成模型 {item.get('id')} 的 wire model 不允许静默替换")
     judge_ids = tuple(str(item.get("id") or "") for item in judges)
     if judge_ids != tuple(EXPECTED_JUDGES):
-        raise ValueError("V2 评委必须严格为 sol、fable、kimi")
+        raise ValueError("V2 评委必须严格为 sol、grok、kimi")
     for item in judges:
         expected_model = EXPECTED_JUDGES[str(item["id"])]
         if item.get("model") != expected_model:

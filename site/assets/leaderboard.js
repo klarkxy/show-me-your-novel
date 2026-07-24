@@ -12,7 +12,7 @@
   const metricDirection = {
     average: "desc",
     sol: "desc",
-    fable: "desc",
+    grok: "desc",
     kimi: "desc",
     "ai-flavor": "asc",
   };

@@ -27,7 +27,7 @@ EXPECTED_GENERATORS = (
 )
 EXPECTED_JUDGES = {
     "sol": "gpt-5.6-sol",
-    "fable": "claude-fable-5",
+    "grok": "grok-4.5",
     "kimi": "kimi-k3",
 }
 ANTHROPIC_GENERATORS = {
@@ -36,7 +36,6 @@ ANTHROPIC_GENERATORS = {
     "claude-sonnet-5",
     "claude-opus-4-8",
 }
-ANTHROPIC_JUDGES = {"fable"}
 
 
 def assert_anthropic_protocol_required(
@@ -90,25 +89,25 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     assert all(judge["provider"] == "new-api" for judge in judges)
     judges_by_id = {judge["id"]: judge for judge in judges}
     assert judges_by_id["sol"]["stages"]["judge"]["temperature"] == 0.2
+    grok = judges_by_id["grok"]
+    assert grok["name"] == "Grok 4.5"
+    assert grok["request"] == {"max_tokens": 4096}
+    assert grok["stages"]["judge"] == {
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"},
+    }
+    assert grok.get("protocol", OPENAI_CHAT_COMPLETIONS) == (
+        OPENAI_CHAT_COMPLETIONS
+    )
+    assert "protocol_required" not in grok
     kimi_stage = judges_by_id["kimi"]["stages"]["judge"]
     assert "temperature" not in kimi_stage
     assert kimi_stage["response_format"] == {"type": "json_object"}
     for judge in judges:
-        if judge["id"] in ANTHROPIC_JUDGES:
-            assert_anthropic_protocol_required(
-                judge, require_more_than_8192=False
-            )
-            stage_parameters = {
-                key
-                for stage_request in (judge.get("stages") or {}).values()
-                for key in (stage_request or {})
-            }
-            assert "response_format" not in stage_parameters
-        else:
-            assert judge.get("protocol", OPENAI_CHAT_COMPLETIONS) == (
-                OPENAI_CHAT_COMPLETIONS
-            )
-            assert "protocol_required" not in judge
+        assert judge.get("protocol", OPENAI_CHAT_COMPLETIONS) == (
+            OPENAI_CHAT_COMPLETIONS
+        )
+        assert "protocol_required" not in judge
 
     direction = (ROOT / "benchmark" / "reform-era" / "direction.md").read_text(
         encoding="utf-8"

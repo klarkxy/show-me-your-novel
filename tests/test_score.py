@@ -55,19 +55,72 @@ def _judge_cfg(model: str) -> dict:
 
 
 def test_configured_wire_models_covers_generators_and_fixed_judges() -> None:
-    cfg = {"models": [_judge_cfg("generator-a"), _judge_cfg("shared-model")]}
+    cfg = {"models": [_judge_cfg("generator-a"), _judge_cfg("grok-4.5")]}
     judges = {
         "sol": {"model_cfg": _judge_cfg("sol-wire")},
-        "fable": {"model_cfg": _judge_cfg("fable-wire")},
-        "kimi": {"model_cfg": _judge_cfg("shared-model")},
+        "grok": {"model_cfg": _judge_cfg("grok-4.5")},
+        "kimi": {"model_cfg": _judge_cfg("kimi-wire")},
     }
 
     assert score.configured_wire_models(cfg, judges) == (
         "generator-a",
-        "shared-model",
+        "grok-4.5",
         "sol-wire",
-        "fable-wire",
+        "kimi-wire",
     )
+
+
+def test_grok_judge_uses_openai_defaults_on_wire() -> None:
+    captured: dict[str, object] = {}
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc_value, traceback):
+            return False
+
+        @staticmethod
+        def read() -> bytes:
+            return json.dumps(
+                {
+                    "choices": [
+                        {
+                            "message": {"content": '{"score": 80}'},
+                            "finish_reason": "stop",
+                        }
+                    ]
+                }
+            ).encode("utf-8")
+
+    def opener(request, *, timeout):
+        captured["url"] = request.full_url
+        captured["payload"] = json.loads(request.data.decode("utf-8"))
+        captured["timeout"] = timeout
+        return FakeResponse()
+
+    cfg = score.load_config(ROOT / "config.yaml")
+    grok = score.resolve_judge_configs(cfg)["grok"]
+    client = score.ChatClient.from_config(
+        cfg,
+        {"API_URL": "https://gateway.test/v1", "API_KEY": "fake"},
+        urlopen=opener,
+    )
+    client.complete(
+        grok["model_cfg"],
+        [{"role": "user", "content": "judge"}],
+        stage="judge",
+        request_overrides=grok["request_overrides"],
+    )
+
+    assert captured["url"] == "https://gateway.test/v1/chat/completions"
+    assert captured["payload"] == {
+        "model": "grok-4.5",
+        "messages": [{"role": "user", "content": "judge"}],
+        "max_tokens": 4096,
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"},
+    }
 
 
 def test_site_score_fingerprints_match_scoring_writer() -> None:
@@ -343,7 +396,7 @@ def test_aggregate_requires_all_three_fresh_judges(tmp_path: Path) -> None:
         for judge_id in score.JUDGE_IDS
     }
     _write_score(submission, "sol", keys["sol"], 90, 10, identities["sol"])
-    _write_score(submission, "fable", keys["fable"], 80, 20, identities["fable"])
+    _write_score(submission, "grok", keys["grok"], 80, 20, identities["grok"])
 
     incomplete = score.aggregate_scores(submission, keys, identities)
     assert incomplete["status"] == "incomplete"

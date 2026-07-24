@@ -66,10 +66,10 @@ except ImportError:  # pragma: no cover - direct script execution
 SCHEMA_VERSION = "novel-eval.v2"
 AGGREGATE_SCHEMA_VERSION = "novel-eval-aggregate.v2"
 DEFAULT_BENCHMARK = "reform-era"
-JUDGE_IDS = ("sol", "fable", "kimi")
+JUDGE_IDS = ("sol", "grok", "kimi")
 EXPECTED_JUDGE_MODELS = {
     "sol": "gpt-5.6-sol",
-    "fable": "claude-fable-5",
+    "grok": "grok-4.5",
     "kimi": "kimi-k3",
 }
 DEFAULT_PROVIDER = "new-api"
@@ -685,7 +685,7 @@ def configured_wire_models(
 
 
 def _build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Sol/Fable/Kimi 三评委小说评分")
+    parser = argparse.ArgumentParser(description="Sol/Grok/Kimi 三评委小说评分")
     selection = parser.add_mutually_exclusive_group(required=True)
     selection.add_argument("--model", action="append", help="候选目录名；可重复传入")
     selection.add_argument("--all", action="store_true", help="评分全部 V2 候选")

@@ -1468,29 +1468,38 @@ def test_run_id_changes_with_provider_request_defaults() -> None:
     )
 
 
-def test_openai_legacy_identity_is_guarded_by_exact_migration_sources(
+def test_generation_identities_are_guarded_by_exact_judge_migration_sources(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     assert (
-        generate_module._openai_compatibility_source_hash()
-        == generate_module.OPENAI_COMPATIBILITY_SOURCE_SHA256
+        generate_module._generation_compatibility_source_hash()
+        == generate_module.GENERATION_COMPATIBILITY_SOURCE_SHA256
     )
     legacy_run_id = calculate_run_id("reform-era", "方向", PROMPTS, MODEL)
+    anthropic_model = {**MODEL, "protocol": "anthropic-messages"}
+    legacy_anthropic_run_id = calculate_run_id(
+        "reform-era", "方向", PROMPTS, anthropic_model
+    )
     current_hash = generate_module._current_source_code_hash()
     assert generate_module.calculate_code_hash(MODEL) == (
         generate_module.LEGACY_OPENAI_CODE_SHA256
     )
-    assert generate_module.calculate_code_hash(
-        {**MODEL, "protocol": "anthropic-messages"}
-    ) == current_hash
+    assert generate_module.calculate_code_hash(anthropic_model) == (
+        generate_module.LEGACY_ANTHROPIC_CODE_SHA256
+    )
 
     monkeypatch.setattr(
         generate_module,
-        "_openai_compatibility_source_hash",
+        "_generation_compatibility_source_hash",
         lambda: "changed-source",
     )
     assert generate_module.calculate_code_hash(MODEL) == current_hash
+    assert generate_module.calculate_code_hash(anthropic_model) == current_hash
     assert calculate_run_id("reform-era", "方向", PROMPTS, MODEL) != legacy_run_id
+    assert (
+        calculate_run_id("reform-era", "方向", PROMPTS, anthropic_model)
+        != legacy_anthropic_run_id
+    )
 
 
 def test_anthropic_required_max_tokens_are_audited_as_protocol_metadata(

@@ -44,7 +44,7 @@ THINKING_BLOCK = re.compile(
 )
 UNCLOSED_THINKING_BLOCK = re.compile(r"\[思考过程\]\s*\n?.*\Z", re.DOTALL)
 OUTLINE_BLOCK = re.compile(r"(?ms)^##\s*大纲\s*$.*?(?=^##\s*第\d+章|\Z)")
-JUDGE_IDS = ("sol", "fable", "kimi")
+JUDGE_IDS = ("sol", "grok", "kimi")
 SCORE_SCHEMA = "novel-eval.v2"
 GENERATION_PROTOCOL = PROTOCOL_VERSION
 REQUIRED_RESULT_ARTIFACTS = (
@@ -707,7 +707,7 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
     data-rankable="{'true' if result['rankable'] else 'false'}"
     data-average="{_data_number(result['average_score'])}"
     data-sol="{_data_number(judges['sol']['score'])}"
-    data-fable="{_data_number(judges['fable']['score'])}"
+    data-grok="{_data_number(judges['grok']['score'])}"
     data-kimi="{_data_number(judges['kimi']['score'])}"
     data-ai-flavor="{_data_number(result['average_ai'])}">
   <td class="rank-cell" data-rank>{rank_text}</td>
@@ -716,7 +716,7 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
   </th>
   <td data-label="综合">{_format_score(result['average_score'])}</td>
   <td data-label="Sol">{_format_score(judges['sol']['score'])}</td>
-  <td data-label="Fable">{_format_score(judges['fable']['score'])}</td>
+  <td data-label="Grok 4.5">{_format_score(judges['grok']['score'])}</td>
   <td data-label="Kimi">{_format_score(judges['kimi']['score'])}</td>
   <td data-label="AI味">{_format_score(result['average_ai'])}</td>
 </tr>"""
@@ -741,7 +741,7 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
     <thead><tr>
       <th scope="col">档位</th><th scope="col">模型 / 书名</th>
       <th scope="col">综合</th><th scope="col">Sol</th>
-      <th scope="col">Fable</th><th scope="col">Kimi</th><th scope="col">AI味</th>
+      <th scope="col">Grok 4.5</th><th scope="col">Kimi</th><th scope="col">AI味</th>
     </tr></thead>
     <tbody id="leaderboard-body">{rows}</tbody>
   </table>
@@ -778,7 +778,7 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
   <div class="metric-switch" role="group" aria-label="排名指标">
     <button type="button" data-sort="average" aria-pressed="true">综合平均</button>
     <button type="button" data-sort="sol" aria-pressed="false">Sol</button>
-    <button type="button" data-sort="fable" aria-pressed="false">Fable</button>
+    <button type="button" data-sort="grok" aria-pressed="false">Grok 4.5</button>
     <button type="button" data-sort="kimi" aria-pressed="false">Kimi</button>
     <button type="button" data-sort="ai-flavor" aria-pressed="false">AI味最低</button>
   </div>
@@ -849,7 +849,7 @@ def render_result_detail(result: dict[str, Any]) -> str:
     <div class="section-heading"><div><p class="eyebrow">THREE-READER PANEL</p><h2 id="judge-title">三评委记录</h2></div></div>
     <div class="judge-grid">
       {_judge_card('Sol', judges['sol'])}
-      {_judge_card('Fable', judges['fable'])}
+      {_judge_card('Grok 4.5', judges['grok'])}
       {_judge_card('Kimi', judges['kimi'])}
     </div>
   </section>

@@ -73,7 +73,7 @@ class SiteGenerationTests(unittest.TestCase):
         model_id: str,
         *,
         status: str = "completed",
-        judges: tuple[str, ...] = ("sol", "fable", "kimi"),
+        judges: tuple[str, ...] = ("sol", "grok", "kimi"),
         aggregate: bool | None = True,
         omit: str | None = None,
         score: int = 90,
@@ -238,7 +238,7 @@ class SiteGenerationTests(unittest.TestCase):
                     "schema": "novel-eval-aggregate.v2",
                     "candidate": model_id,
                     "input_hash": score_input_hash,
-                    "completed_judges": ["sol", "fable", "kimi"],
+                    "completed_judges": ["sol", "grok", "kimi"],
                     "status": "complete" if aggregate else "incomplete",
                     "eligible_for_ranking": aggregate,
                 },
@@ -282,7 +282,7 @@ class SiteGenerationTests(unittest.TestCase):
                 f"    name: {judge_id.title()}\n"
                 f"    model: {judge_id}-wire\n"
                 f"    provider: new-api\n"
-                for judge_id in ("sol", "fable", "kimi")
+                for judge_id in ("sol", "grok", "kimi")
             ),
             encoding="utf-8",
         )
@@ -330,7 +330,7 @@ class SiteGenerationTests(unittest.TestCase):
         # Explicitly ineligible aggregate blocks ranking, but not the detail page.
         self._write_result(results, "model-c", aggregate=False)
         # Missing one judge blocks ranking, but not the detail page.
-        self._write_result(results, "model-d", judges=("sol", "fable"), aggregate=None)
+        self._write_result(results, "model-d", judges=("sol", "grok"), aggregate=None)
         # Status and tracked-artifact failures both block detail publication.
         self._write_result(results, "model-e", status="in_progress")
         self._write_result(results, "model-f", omit="opening_outline.json")
@@ -384,6 +384,10 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("Content-Security-Policy", home)
             self.assertNotIn("Zulu <script>", home)
             self.assertIn("Zulu &lt;script&gt;", home)
+            self.assertIn("Grok 4.5", home)
+            self.assertIn("data-grok=", home)
+            self.assertNotIn("Fable", home)
+            self.assertNotIn("data-fable=", home)
 
             row_a = self._row(home, "model-a")
             row_b = self._row(home, "model-b")
@@ -422,6 +426,8 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("PRIVATE_REASONING", detail)
             self.assertNotIn("第99章", detail)
             self.assertNotIn("<script>alert", detail)
+            self.assertIn("Grok 4.5", detail)
+            self.assertNotIn("Fable", detail)
 
     def test_legacy_keeps_retired_model_routes_and_never_publishes_reasoning(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -653,7 +659,7 @@ const vm = require("vm");
 const rankCell = () => ({{ textContent: "" }});
 const makeRow = (id, order, rankable, average) => {{
   const cell = rankCell();
-  return {{ id, hidden: false, dataset: {{ configOrder: String(order), rankable: String(rankable), average: String(average), sol: String(average), fable: String(average), kimi: String(average), aiFlavor: "10" }}, querySelector: () => cell, cell }};
+  return {{ id, hidden: false, dataset: {{ configOrder: String(order), rankable: String(rankable), average: String(average), sol: String(average), grok: String(average), kimi: String(average), aiFlavor: "10" }}, querySelector: () => cell, cell }};
 }};
 const rowA = makeRow("a", 0, true, 80);
 const rowB = makeRow("b", 1, true, 80);
