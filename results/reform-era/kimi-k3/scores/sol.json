@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "kimi-k3",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "18287e06ebe0f4a3412d97caf851137af0938a02e93aedd24dfa27da1cacc720",
-  "score": 45,
-  "ai_flavor": 91,
-  "comment": "时代物件充足，手艺、家计与体制压力构成的核心冲突清楚，开篇也完成了越界节点。但正文大段同义乃至原句复写，心理解释压倒场景，人物善恶脸谱化；药价、报酬、日期与“守寡母亲”等连续性矛盾明显，史实措辞和技术细节亦欠核验，二百万字规划过度依赖整齐设雷与二选一。"
+  "cache_key": "d402d6f915fd98e4d0bff1430e0b3c6f031d7b8f9c5ebce5cdf478d2052022f0",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 62.0,
+      "comment": "“铁饭碗与下海”“干净的钱与家庭责任”已落实到主人公选择中，但反复靠口号式自审强化，尚未形成更复杂的利益与伦理纠葛。"
+    },
+    "historical_grounding": {
+      "score": 48.0,
+      "comment": "票证、工资、宿舍和供应短缺提供了时代表层，但“城管”“第二职业”等语汇及链霉素、烙铁和无线电维修细节多有失真，制度运行也偏概念化。"
+    },
+    "characters": {
+      "score": 43.0,
+      "comment": "顾向东的家庭压力与越界动机明确，但父亲、母亲、师父共享同一道德话语，赵麻子和马金宝近于功能化反派，关系缺少含混与变化。"
+    },
+    "plot_causality": {
+      "score": 34.0,
+      "comment": "母病、欠债与私活构成基本推动力，但交易金额、交货次数和日期前后矛盾，精确配件恰在废料箱等巧合又削弱了事件链可信度。"
+    },
+    "longform_structure": {
+      "score": 42.0,
+      "comment": "十二卷规划具备阶段目标和伏笔意识，但正文仅完成开篇且已出现重复交货、重复修完与周次错乱，宏纲承诺尚不足以支撑二百万字连续性。"
+    },
+    "scene_execution": {
+      "score": 44.0,
+      "comment": "修收音机、家庭饭桌和车间抢修有可视动作与物质细节，但大量内心解释、同义复述和直白对话取代潜台词，后半段整块场景近乎复写。"
+    },
+    "style_control": {
+      "score": 35.0,
+      "comment": "语言通顺且语域基本统一，但“像食人花”“五味瓶”“因为他需要钱”等套语高频循环，句段节奏同构，叙述缺乏压缩、变化与克制。"
+    },
+    "ai_flavor": {
+      "score": 86.0,
+      "comment": "多章反复复制梦境、清晨骑车、藏钱、烟囱影子及“就这一回”等整套段落，机械排比与总结性解释持续覆盖场景，程式痕迹极重。"
+    }
+  }
 }

@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "mimo-v2.5",
   "judge": "grok",
   "requested_model": "grok-4.5",
   "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
   "response_model": "grok-4.5-build-free",
-  "cache_key": "6f5cf9aaee96758bd7c89daaece395a137d940fb4375d56279b3a7506219444a",
-  "score": 68,
-  "ai_flavor": 42,
-  "comment": "开篇时代质感扎实，工厂劳作、工资精算与市井缝隙细节生动，主角从离乡到主动越界的因果与家庭牵绊推进清晰。然内心独白反复堆砌、节奏拖沓，人物略扁平，宏大规划成败模板化，语言偶过度修饰，文学控制力仍普通。"
+  "cache_key": "6621c3cca28e37b2c421135dc402fb378757100ebe5324980f0e1a15dfb38b79",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 78.5,
+      "comment": "开篇将离乡、工厂等级与个体萌芽落实为具体事件与家庭责任拉扯，初步兑现财富与人性冲突的种子，但核心道德抉择与价值撕裂仍停留在预告层。"
+    },
+    "historical_grounding": {
+      "score": 83.5,
+      "comment": "工资十八块五、票证、临时工与正式工壁垒、红袖章驱赶、废料利用与电子表灰色渠道等细节可信且推动因果，偶有术语与节奏略显后置感。"
+    },
+    "characters": {
+      "score": 76.0,
+      "comment": "陈志远欲望清晰、行动由愧疚与急功近利驱动并有可见变化，李强形成对照张力，但次要人物多功能性扁平，关系深度有限。"
+    },
+    "plot_causality": {
+      "score": 81.5,
+      "comment": "从受骗落脚、工伤赔偿、送货冒险到减员逼迫决策，链条由人物选择与制度压力推动，少机械巧合，因果清楚有效。"
+    },
+    "longform_structure": {
+      "score": 80.0,
+      "comment": "开篇细纲与正文高度连续，布鞋、家庭信、风险试探等伏笔与宏观十五卷规划衔接，节奏支撑长篇起步但阶段兑现仍偏设置。"
+    },
+    "scene_execution": {
+      "score": 77.5,
+      "comment": "火车站、夜班搬运、险途送货、公园试水等场景动作与感官落实到位，信息投放有效，部分内心盘算与主题总结略挤占场景效能。"
+    },
+    "style_control": {
+      "score": 71.0,
+      "comment": "第三人称限知稳定，语域偏写实，节奏随劳动与夜话有变化，但长句解释与情绪放大反复出现，主动控制尚欠精炼。"
+    },
+    "ai_flavor": {
+      "score": 43.5,
+      "comment": "反复摩挲钱币布鞋、精确算账与主题性内心总结同构出现，机械转折与过度解释可察觉，虽有具体场景仍带程式痕迹。"
+    }
+  }
 }

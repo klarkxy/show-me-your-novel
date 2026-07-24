@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "grok-4.5",
   "judge": "grok",
   "requested_model": "grok-4.5",
   "input_hash": "be72307a51ceaec6e5a1de7fd55b4de6ef07126c705b72ebc2a42577714621cf",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
   "response_model": "grok-4.5-build-free",
-  "cache_key": "3e8d40ea9dbbf4d9b6c8bf11c45c535168a10765391e8ba922281b67a29973b4",
-  "score": 72,
-  "ai_flavor": 47,
-  "comment": "时代肌理与双轨压力扎实，废料到图纸的因果递进自然，开篇兑现细纲，宏观架构完整。书讯主角栏严重崩坏。正文通感排比与“像…又像”过密，心理常被总结代替，节奏均匀，人物略扁平，模板感持续。"
+  "cache_key": "46d1ae96344ed20ee50c8c50a3b614f3554a3cc75b8cc8b6b3d1ac3e691a2fd9",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 79.5,
+      "comment": "开篇将铁饭碗松动、灰色缝隙与良心代价通过卖废料、说谎、泄图信息具体兑现，主题进入人物行动而非口号，全书终局站队仅远景暗示。"
+    },
+    "historical_grounding": {
+      "score": 84.0,
+      "comment": "票证变现、自费药与报销缺口、待报废料议价、停薪留职、门岗登记、双轨差价等细节可信且直接驱动因果，时代物质与制度质感扎实。"
+    },
+    "characters": {
+      "score": 76.5,
+      "comment": "陈渡生欲望与道德拉锯清楚，父、王大力、周晓东、李婉清、老姜差异与张力初现，关系因谎与怀疑起变化，但内心仍偏类型，深度待后续展开。"
+    },
+    "plot_causality": {
+      "score": 81.0,
+      "comment": "病急缺钱、厂闲废料、外来采购与南下渠道环环相扣，冲突由人物选择与制度缝隙推动，事件链清楚，少机械巧合。"
+    },
+    "longform_structure": {
+      "score": 86.0,
+      "comment": "与宏观十二卷规划及开篇细纲高度连续，图纸、旧账、渠道、清查、李婉清等伏笔埋设到位，止于第一次不可逆越界，节奏支撑长篇。"
+    },
+    "scene_execution": {
+      "score": 77.5,
+      "comment": "河堤劝说、招待所探价、雨夜装车、夜抄索引等关键内容落实为有效动作对话与信息投放，视角稳定，偶有重复渲染削弱效能。"
+    },
+    "style_control": {
+      "score": 74.0,
+      "comment": "语域与叙述距离总体稳定，能随日常与紧张场景微调，但锈印咳喘墙薄线等意象与句式节奏反复，部分段落控制略显刻意。"
+    },
+    "ai_flavor": {
+      "score": 41.0,
+      "comment": "母题复沓、内心冲突复述、相似转折与强调句式反复可察觉，存在模板化渲染痕迹，尚未全程机械但已干扰阅读新鲜感。"
+    }
+  }
 }

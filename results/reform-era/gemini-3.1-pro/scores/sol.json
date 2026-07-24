@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gemini-3.1-pro",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "82d25f5d75498bd538700f2c3cab5292907af000dee90cddcc3cdfa51c968bba",
-  "score": 42,
-  "ai_flavor": 89,
-  "comment": "商业起势清楚，电子表、票证、车厢等物象提供了一定年代入口，前十六章也兑现了破产转入黑市的阶段节点。但政策时序失真，货量与成本多处矛盾；主角近乎全知，反派脸谱化。正文反复套用“冷笑—决绝—宣言—总结”，冲突靠辱骂和查抄加码；长篇规划更像企业升级清单，缺少生活肌理与复杂因果。"
+  "cache_key": "0d3eb5e3d6bcec6dcd06fb2f77e123ed537f94a8f2f60d6b30b08afc665b655c",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 54.0,
+      "comment": "政策松绑、逐利冲动与尊严困境已进入主要事件，但主题常被人物直接喊出，道德重构尚缺复杂选择与真实代价的渐进积累。"
+    },
+    "historical_grounding": {
+      "score": 27.0,
+      "comment": "票证、工厂和火车等物质细节较多，但1978年特区、停薪留职、严打语汇及执法制度多有错置，商品数量价格与时代经济尺度亦明显失真。"
+    },
+    "characters": {
+      "score": 40.0,
+      "comment": "林卫国欲望明确却近乎全知全能，二黑反复胆怯贪婪，张有德等反派脸谱化，亲情、同盟和体制内人物都缺少相互矛盾的利益与变化。"
+    },
+    "plot_causality": {
+      "score": 31.0,
+      "comment": "创业—暴利—查抄—转黑市的主线清楚，但执照轻易获批、执法专为反派服务，且十块表骤增为四十余块、一千元购百表三十计算器等硬伤破坏因果。"
+    },
+    "longform_structure": {
+      "score": 43.0,
+      "comment": "十卷升级路线与开篇承接明确，也设置远期伏笔，但六年内由五十元跃至数亿且冲突不断机械加码，正文已暴露货量、时间、身份和债务连续性错误。"
+    },
+    "scene_execution": {
+      "score": 48.0,
+      "comment": "验表、防水推销、工商局蹲守等场景具可视动作，但大量旁白预判意义、重复渲染寒冷恐惧与野心，对话多承担政策宣讲，削弱现场真实感。"
+    },
+    "style_control": {
+      "score": 34.0,
+      "comment": "叙述长期依赖“死死、狠狠、猛地、极其”等强度词和同构排比，语域夸张失真，兼有乱码、重复与“砸锅卖 official”等文本瑕疵。"
+    },
+    "ai_flavor": {
+      "score": 86.0,
+      "comment": "模板化环境起笔、反派狞笑、风险总结、章末悬念和“没有退路”反复高密度出现，几乎每场都以过度解释与同构升格收束，程式感持续主导正文。"
+    }
+  }
 }

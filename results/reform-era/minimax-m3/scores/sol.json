@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "minimax-m3",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "9d8425c49e0dde818904f65a94f6eac877738d6874913cb9fc33f3299fd3cb00",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "1cb88643fecf9ef5cea292f11720c92297b488312d1992c0f79b63d69ef5b506",
-  "score": 28,
-  "ai_flavor": 98,
-  "comment": "题材与人物上升—背叛主线清楚，二十卷规划具备回收意识，工厂器物细节偶有质感。但正文被“嗯”、复述问答和同构场景淹没，人物皆以同一节奏说话；账目、时间线、制度史多处矛盾，1979年春晚等时代硬伤突出，大纲兑现机械且关键冲突反复空转。"
+  "cache_key": "4effa5ae4237d7778c9599f1c23e3a8b2a77e4dd50d3bfbae48072a40e59ab9c",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 42.0,
+      "comment": "大纲虽反复标举“成功与背叛”，正文却主要停留在受压、挣钱与“为了孩子”的口号循环，且最终走向偏离书籍承诺的三难抉择。"
+    },
+    "historical_grounding": {
+      "score": 28.0,
+      "comment": "工资、票证和工厂器物提供了表面年代感，但1979年除夕看“春节晚会”、改革话语过早普及、返聘制度混乱及多处技术经济细节失真，严重削弱可信度。"
+    },
+    "characters": {
+      "score": 35.0,
+      "comment": "人物具备明确功能与关系框架，却普遍用同一套短句、复述和劝告说话，陈卫国之外的人多为推动受压、诱惑或规劝的工具，欲望差异与关系变化不足。"
+    },
+    "plot_causality": {
+      "score": 31.0,
+      "comment": "工位打压、倒卖和港商相识形成基本事件链，但评分计算、返聘归因、罚款分账等逻辑频繁自相矛盾，人物常为既定节点做不合常理的选择。"
+    },
+    "longform_structure": {
+      "score": 38.0,
+      "comment": "二十卷规划有阶段节点和伏笔意识，但时间范围从承诺的1978—1985扩至1991，结局改写核心三选一承诺，开篇细纲与正文亦存在倒卖次数、人物身份等连续性冲突。"
+    },
+    "scene_execution": {
+      "score": 27.0,
+      "comment": "少数车间器械与家庭账目场景有可见细节，但大量场景被逐句复述、算账和“嗯”式对话拖垮，动作信息反复原地踏步，关键冲突缺少有效推进。"
+    },
+    "style_control": {
+      "score": 18.0,
+      "comment": "叙述长期采用同构短句、机械问答和逐字复唱，语域与节奏几乎不随人物场景变化，后段出现大段无意义重复，已明显影响可读性和叙事准确性。"
+    },
+    "ai_flavor": {
+      "score": 94.0,
+      "comment": "模板化场景开合、数字逐项复算、同义句机械回声、人物轮番重复“为了孩子”“您说—嗯”等模式贯穿全文，并在第14—17章发展为近乎失控的循环。"
+    }
+  }
 }

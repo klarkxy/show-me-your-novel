@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "mimo-v2.5-pro",
   "judge": "grok",
   "requested_model": "grok-4.5",
   "input_hash": "63a26f1915973516ab52f1731b19954e5843f2af8f84ed081ff336fd1874848b",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
   "response_model": "grok-4.5-build-free",
-  "cache_key": "b86e4683ca257999b25884ad25f2f1b0b802751ee346f658dbc6b87f2a16814c",
-  "score": 68,
-  "ai_flavor": 48,
-  "comment": "时代质感与农村细节扎实，贫困日常、工分低效与改革信号交织自然，父子冲突有力，开篇严格兑现大纲。但心理独白重复空泛，节奏拖沓，人物动机单一扁平，部分描写机械堆砌，文学控制力平庸。"
+  "cache_key": "d0e64b18fff961a18ddf358c8619b90118915d79116f16f38447e68582e8c883",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 77.5,
+      "comment": "开篇将个人欲望与传统约束通过妹妹辍学、政策信息与签约冲突具象进入事件，兑现变革中小人物抉择起点，但道德困境仅萌芽未深挖。"
+    },
+    "historical_grounding": {
+      "score": 83.5,
+      "comment": "工分制、集体挑粪低效、广播政策宣讲、饥荒记忆与漏雨屋顶等物质细节可信，制度松动与匮乏直接参与不满与行动因果。"
+    },
+    "characters": {
+      "score": 71.0,
+      "comment": "建国欲望清晰、行动有逻辑，父子代际恐惧与不甘张力鲜明，但人物欲望单一、变化初现扁平，母亲妹妹多功能化。"
+    },
+    "plot_causality": {
+      "score": 79.5,
+      "comment": "冲突由贫困、工分不公与信息冲击推动，从日常到签约事件链清楚有效，少机械巧合，部分转折偏重内心而非行动。"
+    },
+    "longform_structure": {
+      "score": 82.0,
+      "comment": "宏观规划与开篇细纲正文高度连续，以承包签约与家庭破裂形成不可逆越界，伏笔与阶段兑现支撑长篇起点。"
+    },
+    "scene_execution": {
+      "score": 76.5,
+      "comment": "挑水挑粪、兄妹泪、签字按手印与父亲怒火等关键场景动作对话落实有效，但冗长独白与重复描写降低效能。"
+    },
+    "style_control": {
+      "score": 73.0,
+      "comment": "现实主义感官与语域基本稳定准确，随场景有变化，但句法重复、节奏同构与过度渲染削弱主动控制。"
+    },
+    "ai_flavor": {
+      "score": 45.5,
+      "comment": "反复攥拳心如刀绞望向远方、模板化排比与抽象情感总结、同构章节结尾与机械转折可察觉，干扰叙事流畅。"
+    }
+  }
 }

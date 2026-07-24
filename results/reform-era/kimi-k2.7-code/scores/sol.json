@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "kimi-k2.7-code",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "c9475f2c7deef6f4ee9ed06ebad91683537da618246bb70fc99982f5359f8e4a",
-  "score": 52,
-  "ai_flavor": 82,
-  "comment": "家庭困境、技术变现与道德滑坡的主线清楚，票证、宿舍、车间等物质细节有可读性。但人物多为功能位，冲突反复依赖藏钱、警告和自我解释；柴油机“火花塞、分电器”等硬伤严重，刘大奎借钱因果与大纲相反，段落节奏高度同构，二百万字规划显得注水，开放结尾也回避了核心选择的兑现。"
+  "cache_key": "7ae0b5fdbdaca237dca5efea2e0033353f663e6279104acdb418ec108c273061",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 63.0,
+      "comment": "养家压力、制度缝隙与道德滑坡已进入具体行动，但“赚钱是否损害尊严”的主题被旁白反复直说，缺少更复杂的价值反证。"
+    },
+    "historical_grounding": {
+      "score": 41.0,
+      "comment": "票证、工资、住房和基层单位细节提供了年代外观，但柴油机被写出火花塞、分电器和点火线圈等根本技术错误，政策时序与医疗流程也多有可疑。"
+    },
+    "characters": {
+      "score": 45.0,
+      "comment": "陈济民的欲望和自我辩护较清楚，但玉琴、刘大奎、周德昌、钱顺子长期分别充当劝阻者、嫉妒者、导师和诱惑者，关系缺乏多面变化。"
+    },
+    "plot_causality": {
+      "score": 42.0,
+      "comment": "父病缺钱到偷拿废件的主因果成立，但仓库长期任意出入、巨量曲轴轻易外运及冒用厂长名义过关等关键节点依赖便利安排，升级显得机械。"
+    },
+    "longform_structure": {
+      "score": 43.0,
+      "comment": "十二卷路线和伏笔表面完整，却以重复举报、账本、出走和再越界循环推进，开篇细纲与正文在交易金额、借钱次序等处不稳，开放结局还刻意隐去核心选择。"
+    },
+    "scene_execution": {
+      "score": 48.0,
+      "comment": "工资窗口、医院、废料仓库和城墙根交易具备可视动作，但大量场景以相似对话和长篇心理总结收尾，信息重复，真正改变局势的行动常被解释性旁白削弱。"
+    },
+    "style_control": {
+      "score": 38.0,
+      "comment": "语言基本通顺，却高频复用“像一块石头”“他知道”“再也回不了头”、狗叫与天亮等句式意象，章节节奏和叙述距离高度同构，缺乏主动调度。"
+    },
+    "ai_flavor": {
+      "score": 86.0,
+      "comment": "几乎每章都按困境、诱惑、犹豫、越界、抽象总结的模板运行，并持续用排比回忆、二元对照、重复警句和章末悬念强调同一含义，程式痕迹极重。"
+    }
+  }
 }

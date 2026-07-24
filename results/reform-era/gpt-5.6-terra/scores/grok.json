@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gpt-5.6-terra",
   "judge": "grok",
   "requested_model": "grok-4.5",
   "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
   "response_model": "grok-4.5-build-free",
-  "cache_key": "f1a556b1a0398ae2aed153a9dd772ff9455b6a8faf72958291452b621aa5962a",
-  "score": 83,
-  "ai_flavor": 34,
-  "comment": "时代质感扎实，票证、供销社、南货差价与旧案阴影交织自然，周继业的谨慎与越界动机可信，开篇兑现大纲、因果清晰。不足在于部分心理与主题句偏解释，人物关系偶显功能化，节奏均匀略损锋芒。已具长篇现实主义骨架。"
+  "cache_key": "7dacfd3dac90c74a293c7ff5c9882eaf71cdafd471e0a9296d405bbf82fa018d",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 80.5,
+      "comment": "开篇将体面与污名、制度缝隙中的第一次越界落实到招工落空、虚高报损与八百元签字，主题进入事件而非口号；全书核心的自由与新压迫辩证仍在铺垫。"
+    },
+    "historical_grounding": {
+      "score": 86.5,
+      "comment": "三十八元工资、粮票煤账、临时工续审、供销社报损与账外货、下河集散布头议价等细节可信且参与因果，时代边界与物质生活扎实。"
+    },
+    "characters": {
+      "score": 81.5,
+      "comment": "周继业精细记账、把尊严等同胜负与隐瞒的倾向已见；张桂兰恐惧具体，罗群自保清晰，沈梅构成对照。次要人物仍偏功能，关系张力有待加深。"
+    },
+    "plot_causality": {
+      "score": 84.0,
+      "comment": "从妹妹名额被顶到发现报损缝隙、旧账残页、筹资与无公章签字，冲突由人物欲望与制度环境推动，事件链清楚，少机械巧合。"
+    },
+    "longform_structure": {
+      "score": 88.0,
+      "comment": "宏观十二卷、开篇细纲与正文高度连续，旧案、韩克勤控制、三本账、新房与隐瞒等伏笔按计划埋设，开篇止于不可逆入局，支撑长篇。"
+    },
+    "scene_execution": {
+      "score": 82.5,
+      "comment": "西库验布、饭店后门、银行存单、刘三嫂压价、确认单签字等关键节点落实为有效场景，信息多由动作与对话带出，偶有内心说明偏满。"
+    },
+    "style_control": {
+      "score": 78.0,
+      "comment": "语域贴近八十年代初县城叙述，整体稳定克制；部分章末反思节奏同构，解释性收束略多，主动变化仍不够锐利。"
+    },
+    "ai_flavor": {
+      "score": 32.0,
+      "comment": "章末“他想起A、B、C”式点题与主题总结反复出现，部分内心独白过度清晰整齐；场景本身较自然，模板感可察觉但不淹没全文。"
+    }
+  }
 }

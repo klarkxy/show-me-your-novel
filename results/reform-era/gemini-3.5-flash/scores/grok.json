@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gemini-3.5-flash",
   "judge": "grok",
   "requested_model": "grok-4.5",
   "input_hash": "b1fb23356e182761f0800c895de6edae40f83969b38dc56dc365f1039694f70f",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
   "response_model": "grok-4.5-build-free",
-  "cache_key": "2d8dcaf3721116f0b7177b757982275026b3768d77ce22631df071d99edada72",
-  "score": 81,
-  "ai_flavor": 39,
-  "comment": "立意紧扣改革阵痛与个人抉择，时代质感与技术细节扎实，十二卷规划逻辑严密、伏笔与历史节点契合。开篇冲突因果紧凑、道德撕扯有力。然心理反复强调、悬念套路化、段落节奏偏匀且解释过多，长篇易显机械。"
+  "cache_key": "79b27dbfc03cda499c7a3c87a36557628d28e2a3b3b7f07888b2cdc6d4192a7c",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 80.5,
+      "comment": "开篇将体制纪律与家庭生存的撕扯落实为偷件、私修与道德焦虑，主题进入具体事件而非口号，但道义与市场法则的深层重塑仍停留在萌芽。"
+    },
+    "historical_grounding": {
+      "score": 86.0,
+      "comment": "三成工资、进口药自费、账外日产备件、保卫科黑本、乡镇企业日机与星期天工程师等细节可信，且直接参与因果，物质与制度质感扎实。"
+    },
+    "characters": {
+      "score": 74.0,
+      "comment": "陆怀山欲望与清高焦虑清晰，师徒庇护与夫妻裂痕有张力，但次要人物偏功能化，内心独白重复削弱差异性与层次变化。"
+    },
+    "plot_causality": {
+      "score": 78.0,
+      "comment": "冲突由医药费缺口与厂纪红线推动，偷件—死机—地线—藏钱—搜身链清楚有效，医院遇师与地线锈蚀等节点略带巧合。"
+    },
+    "longform_structure": {
+      "score": 82.0,
+      "comment": "十二卷宏观与开篇细纲连续，二极管、黑本、塑料粒子等伏笔落地，阶段兑现支撑长篇起步，节奏偏密但开篇完成度高。"
+    },
+    "scene_execution": {
+      "score": 73.5,
+      "comment": "差五角挂号、库房躲藏、通电死机与搜身等场景有张力，技术说明与心理总结过多，部分关键动作被解释淹没。"
+    },
+    "style_control": {
+      "score": 70.0,
+      "comment": "语域大体稳且有时代感，但排比式内心拷问、同构章末升华与过度修饰反复出现，节奏与叙述距离主动变化不足。"
+    },
+    "ai_flavor": {
+      "score": 38.5,
+      "comment": "红线/尊严/铁饭碗反复强调、心跳冷汗模板描写与章末抽象总结较明显，虽有具体场景仍可察觉机械痕迹。"
+    }
+  }
 }

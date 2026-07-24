@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gemini-3.5-flash",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "b1fb23356e182761f0800c895de6edae40f83969b38dc56dc365f1039694f70f",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "68921e9f3d09a831c515e33025887707e65df7819c3e30d8267bfc8c6e87a306",
-  "score": 48,
-  "ai_flavor": 86,
-  "comment": "题材抓住国企转轨与技术人员越界，时代物件密集，开篇目标明确、可读性尚可。但人物善恶功能化，危机靠医院催款、反派搜捕反复加码；同义心理解释和比喻大量复现，节奏机械。周末时序、年代制度及电子技术细节多处失真，十二卷规划也偏政策节点流水账。"
+  "cache_key": "2db345fcf57a0c9a0e50251a231463977d31a17f68d136ea8a85cdf44ea4bf6d",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 62.0,
+      "comment": "个人生计、国企纪律与市场诱惑已进入核心事件，但主要依靠“旧体制压迫—市场救命”的二元对照，集体温情与制度转型的复杂性尚未充分展开。"
+    },
+    "historical_grounding": {
+      "score": 43.0,
+      "comment": "粮票、筒子楼、工资与乡镇企业等物质符号较密集，但1982年医院话语、一次性注射器、经济执法尺度及多处电子技术细节失真，年代感常被现代观念替代。"
+    },
+    "characters": {
+      "score": 49.0,
+      "comment": "陆怀山的生计欲望和道德焦虑明确，师徒关系也有张力，但妻子、保卫科长、乡镇厂长多承担逼迫或诱惑功能，言行高度类型化且缺少矛盾侧面。"
+    },
+    "plot_causality": {
+      "score": 41.0,
+      "comment": "女儿重病推动越界的主因果清楚，但进口药限时、仓库取件、追捕藏钱、恩师顶罪等危机连续叠加且过度便利，技术故障与修复逻辑亦有明显硬伤。"
+    },
+    "longform_structure": {
+      "score": 38.0,
+      "comment": "十二卷阶段目标完整，却与书籍所称1982—1988年边界冲突，结局承诺也未在卷纲中一致兑现；正文周六、凌晨与次日上午的时间标记倒置，连续性已显著失控。"
+    },
+    "scene_execution": {
+      "score": 51.0,
+      "comment": "修机、搜身、师徒谈话等场景具备动作和可视细节，但大量背景解释、心理复述与章末总结反复覆盖同一信息，削弱现场张力并使十六章显得拖沓。"
+    },
+    "style_control": {
+      "score": 45.0,
+      "comment": "语体总体统一且阅读顺畅，但“像钢针”“这一瞬间”“死一般寂静”等高强度修辞密集复用，叙述距离和情绪始终顶格，缺乏克制与场景间的节奏变化。"
+    },
+    "ai_flavor": {
+      "score": 72.0,
+      "comment": "同构危机升级、模板化比喻排比、反复解释人物选择、道具式伏笔逐项回收及章末主题点题持续出现，多数段落呈现明显机械编排感。"
+    }
+  }
 }

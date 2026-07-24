@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gpt-5.6-terra",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "78df186aec5eb2e61404705f568a65f232b11e9ebfcea1d265aca8d62a356cf4",
-  "score": 64,
-  "ai_flavor": 62,
-  "comment": "题材立意稳健，供销社、票证与县城人情写得具体，开篇冲突清楚，正文也基本兑现细纲。问题是人物多承担主题功能，场景反复以解释、回想和同构对话推进，节奏过于齐整；末章筹款明细实际不足八百元，且与母亲存款线及宏纲存在冲突，削弱关键越界的可信度。"
+  "cache_key": "a7e721e4840140edd35d6ae1f4163801d36766c19bc98db8c904b1013d958b7d",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 83.0,
+      "comment": "财富、污名、制度缝隙与尊严选择已落实到受潮布、妹妹招工和家庭借款等具体事件中，主题并非停留在宣言。"
+    },
+    "historical_grounding": {
+      "score": 80.0,
+      "comment": "票证、临时工、供销社账务、集市价格与家庭消费细节密集可信，但部分手续、价格及灰色库存运作略显为主题服务的简化。"
+    },
+    "characters": {
+      "score": 76.0,
+      "comment": "周继业的精明、羞耻与冒险欲形成有效内在冲突，母亲、沈梅、罗群也有关系张力，但配角常集中承担规劝、诱惑或警示功能。"
+    },
+    "plot_causality": {
+      "score": 72.0,
+      "comment": "家庭受挫推动查货、探价、筹资和签字的链条清楚，但旧案线索出现偏密，且末章所列资金实际仅合计680元却写成800元，构成关键因果硬伤。"
+    },
+    "longform_structure": {
+      "score": 75.0,
+      "comment": "宏观卷际升级、伏笔回收与开篇细纲衔接严密，但两百万字规划体量过大，正文又几乎逐拍执行细纲，后续存在重复升级和结构僵化风险。"
+    },
+    "scene_execution": {
+      "score": 78.0,
+      "comment": "仓库验货、下河集议价、银行争执等场景以动作和物质细节承载信息较有效，但若干对话过度替主题发言，章末也频繁转入总结。"
+    },
+    "style_control": {
+      "score": 74.0,
+      "comment": "叙述语域稳定、清楚且具北方县城冷硬质感，但“想起……又想起……”“不是……而是……”及象征性收束反复出现，节奏趋于同构。"
+    },
+    "ai_flavor": {
+      "score": 40.0,
+      "comment": "正文持续呈现工整的三段递进、物件象征、对照总结和章末悬念，且与细纲逐项贴合，模板痕迹反复可察但尚未压倒场景质感。"
+    }
+  }
 }

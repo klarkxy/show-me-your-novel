@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gemini-3.1-pro",
   "judge": "grok",
   "requested_model": "grok-4.5",
   "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
   "response_model": "grok-4.5-build-free",
-  "cache_key": "662ac339c4cc06925c18942b29f9914f76535d9f26955f7e663bc1315c2cbfbf",
-  "score": 71,
-  "ai_flavor": 46,
-  "comment": "时代质感扎实，倒爷起步的生存张力与政策夹缝抓人，宏观规划连贯有野心。但配角脸谱化，叙述多排比渲染与抽象总结，情绪与环境重复，转折偏机械，文学控制力普通。"
+  "cache_key": "b65752361bf502094be93711f5c2435e6cf055e9738bc4f7fc67f539502b3d96",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 71.5,
+      "comment": "改革欲望与道德底线的冲突通过停薪、倒卖与罚没进入事件，但主题多停留在独白口号与时代口号呼应，尚未深度重塑人物内在抉择。"
+    },
+    "historical_grounding": {
+      "score": 76.5,
+      "comment": "票证、铁饭碗、打投办、绿皮车与黑市电子表等细节可信且推动因果，特区与政策松动时间略有提前，物质日常参与尚可。"
+    },
+    "characters": {
+      "score": 64.0,
+      "comment": "林卫国欲望与冒险逻辑清晰，二黑胆小计较有差异，但张有德等反派扁平，亲情张力多靠辱骂断绝，变化与关系层次不足。"
+    },
+    "plot_causality": {
+      "score": 73.5,
+      "comment": "从边缘化到执照再到联合执法的链条由人物野心与体制惯性推动，因果清楚，偶有举报与密谋略显机械巧合。"
+    },
+    "longform_structure": {
+      "score": 81.0,
+      "comment": "开篇细纲与正文高度连续，伏笔（旧账、表芯、地下网）直指后卷，节奏完成第一卷前半并支撑宏观十卷规划。"
+    },
+    "scene_execution": {
+      "score": 67.5,
+      "comment": "盘查、借钱、火车查货、工商蹲守等关键内容落实为场景，但部分对话与动作被冗长心理与总结稀释效能。"
+    },
+    "style_control": {
+      "score": 61.0,
+      "comment": "语域偏文学化且稳定，但句法常堆砌形容词与重复强调，叙述距离在高潮处失控，节奏同构少主动变化。"
+    },
+    "ai_flavor": {
+      "score": 62.5,
+      "comment": "模板化排比、过度解释动机、抽象总结代替场景、机械转折与套路悬念反复出现，多数段落可察觉程式痕迹。"
+    }
+  }
 }

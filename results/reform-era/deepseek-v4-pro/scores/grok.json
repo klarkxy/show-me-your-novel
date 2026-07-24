@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "deepseek-v4-pro",
   "judge": "grok",
   "requested_model": "grok-4.5",
   "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
   "response_model": "grok-4.5-build-free",
-  "cache_key": "e88ac71879f1470e4bc5c42c83cca7b4ede3a8239fcb8aa0b8e99d8d4bd29dd2",
-  "score": 76,
-  "ai_flavor": 28,
-  "comment": "时代质感扎实，农村贫困与特区初创细节真实可信，人物动机清晰，开篇完成心理越界。长篇规划完整连贯。但部分场景重复堆砌饥饿与手茧，情感转折略套路，人物仍偏类型化，因果张力与个体独特性有待加强。"
+  "cache_key": "ecf782dea3c6f4ccbdfd26a8c09bd1f88fe5d47cae75c30b52f6de945b6b8509",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 71.5,
+      "comment": "开篇将贫困、南下与立志落地为具体事件与心理越界，致富欲望与时代夹缝萌芽清晰，但异化救赎核心仍停留在远景铺垫。"
+    },
+    "historical_grounding": {
+      "score": 80.5,
+      "comment": "包产到户、工地日结克扣、夜校、特区招工与粮票式匮乏细节可信，并直接参与南下、受伤、立志的因果。"
+    },
+    "characters": {
+      "score": 75.0,
+      "comment": "建国欲望与行动逻辑具体，林芳、李强、父母有差异与张力，关系变化自然，但次要人物动机与层次仍偏单薄。"
+    },
+    "plot_causality": {
+      "score": 77.5,
+      "comment": "贫困—借钱—被骗—试工—受伤—克扣—高烧—立志链条清楚，由人物与环境推动，少机械巧合。"
+    },
+    "longform_structure": {
+      "score": 73.0,
+      "comment": "与宏观及开篇细纲高度连续，伏笔与第一次不可逆越界兑现，节奏扎实，但仅开篇，长篇阶段支撑待后文验证。"
+    },
+    "scene_execution": {
+      "score": 81.0,
+      "comment": "离别、被抢、试工、发薪、高烧、楼顶等关键场景视角稳定，对话动作描写有效，信息多经场景落地。"
+    },
+    "style_control": {
+      "score": 78.5,
+      "comment": "语域贴合底层口语与时代，句法节奏随场景调节，叙述距离总体稳定，少空转华丽。"
+    },
+    "ai_flavor": {
+      "score": 19.0,
+      "comment": "偶有内心总结与重复强调，但整体以具体感官与场景驱动，模板排比与机械转折痕迹不重。"
+    }
+  }
 }

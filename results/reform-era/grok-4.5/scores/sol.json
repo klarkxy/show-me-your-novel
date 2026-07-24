@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "grok-4.5",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "be72307a51ceaec6e5a1de7fd55b4de6ef07126c705b72ebc2a42577714621cf",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "10b46c26d544cfd7a6fa2b1640f6d0d5ab35968da64dae72dd2be1c8af21fa15",
-  "score": 45,
-  "ai_flavor": 88,
-  "comment": "题旨明确，废料、药费、编制三者形成有效道德困局，开篇也兑现了首次越界。但两百万字规划高度同构，人物多为立场工具；正文反复搬用“风、烫手、细线、指节发白”等句群，解释过满、节奏僵齐。1979年“特区”、工商银行等时代细节失准，且书籍信息存在严重异常重复，需彻底校订与压缩。"
+  "cache_key": "d263e3c16829ffdbe62bc1a089eff0789363117fa22be17b37505c4eae1cb1bd",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 68.0,
+      "comment": "药费、编制、厂产归属与灰色获利确实把“自由如何支付良心代价”落入行动，但反复以父亲训诫和叙述总结直说主题，复杂性不足。"
+    },
+    "historical_grounding": {
+      "score": 46.0,
+      "comment": "票证、工资、单位医疗、车间与物资账目颇有物质感，但1979年工商银行存折、特区称谓及“抓大放小”等明显年代错置，制度运作也常为情节让路。"
+    },
+    "characters": {
+      "score": 54.0,
+      "comment": "陈渡生的贫困、孝心与越界过程清楚，但父亲、王大力、周晓东、李婉清多被固定为道德、守成、冒险和善意的功能角色，语言与反应高度同质。"
+    },
+    "plot_causality": {
+      "score": 52.0,
+      "comment": "父病缺药推动卖票、探价、私卖废料再泄露图纸，主链明确，但采购员精准找人、老姜轻易交钥匙、保卫科草率放过等关键环节过于便利。"
+    },
+    "longform_structure": {
+      "score": 56.0,
+      "comment": "十二卷伏笔与阶段目标表面齐全，开篇也基本按细纲兑现，但两百万字体量建立在反复扩张、追讨、调查与再选择的同构循环上，终局选择仍刻意空置。"
+    },
+    "scene_execution": {
+      "score": 55.0,
+      "comment": "车间、病床、招待所和雨夜装车均有可感动作与物件，但同一心理拉扯被逐层复述，章节结尾常用抽象总结重讲场景已经表达的内容。"
+    },
+    "style_control": {
+      "score": 41.0,
+      "comment": "工业与生活意象有一定统一性，但“像……又像……”“一下一下”“薄、烫、缝、墙”等词组密集复用，句法和收束方式长期同拍，且夹有异常外文词。"
+    },
+    "ai_flavor": {
+      "score": 82.0,
+      "comment": "几乎每章都以同构感官细节、三项排比、道德词复唱和“再也回不到干净夜里”的总结收尾，重复强调远多于人物新发现，程式痕迹贯穿全文。"
+    }
+  }
 }

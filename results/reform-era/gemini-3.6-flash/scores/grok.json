@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gemini-3.6-flash",
   "judge": "grok",
   "requested_model": "grok-4.5",
   "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
   "response_model": "grok-4.5-build-free",
-  "cache_key": "b3053926d22015b201d9a9482c8842a7107207ac6eb45e7a5b88e10d36bf638d",
-  "score": 72,
-  "ai_flavor": 48,
-  "comment": "题材紧扣改革双轨与个人抉择，时代细节与技术质感扎实，宏观十二卷规划完整连贯，开篇细纲兑现紧凑、因果清晰。然文笔冗赘解释过多，心理与危机反复套路化，人物动机偏扁平，段落节奏均匀机械，模板痕迹持续干扰文学深度。"
+  "cache_key": "358ea2855d6023193d8f996e731ece1ff9842d18ca4ebbcbef82248f9dc5542c",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 76.5,
+      "comment": "开篇将救父欲望、体制红线与第一桶金具体化为夜修、偷刀、私车与搜查脱罪，主题进入行动与代价，但财富异化与道德博弈仍停留在起步口号层。"
+    },
+    "historical_grounding": {
+      "score": 81.0,
+      "comment": "42.5元工资条、矽肺自费威罗生、C620与合金刀管制、家属院与黑市红薯等细节可信并驱动因果，双轨与投机倒把氛围初建，部分制度运作略简化。"
+    },
+    "characters": {
+      "score": 72.5,
+      "comment": "陆远舟欲望与急功近利逻辑清晰，父女、陈金发、张克俭有差异与张力，但赵三喜等次要人物扁平，关系变化与长期弧线仅露端倪。"
+    },
+    "plot_causality": {
+      "score": 71.0,
+      "comment": "病危与停工推动越界，事件链大体清楚，但饭盒过关、废样标签与销账单脱罪依赖提前准备与巧合，机械转折削弱必然性。"
+    },
+    "longform_structure": {
+      "score": 79.5,
+      "comment": "开篇与细纲、宏观高度连续，图纸、齿轮、抬会与账本伏笔到位，节奏紧凑兑现第一卷起点，长篇阶段规划支撑充分。"
+    },
+    "scene_execution": {
+      "score": 68.0,
+      "comment": "关键场景有动作对话与信息投放，但技术切削与内心独白冗长，部分冲突用解释替代戏剧张力，效能不均。"
+    },
+    "style_control": {
+      "score": 62.5,
+      "comment": "语域大体贴合时代，但死死、冰冷、剧烈等堆砌与同构心跳冷汗节奏反复，叙述距离时有失控，主动变化不足。"
+    },
+    "ai_flavor": {
+      "score": 52.0,
+      "comment": "模板化紧张描写、过度技术与主题解释、同构冷汗心跳段落与套路悬念反复出现，机械痕迹可察觉且干扰阅读。"
+    }
+  }
 }

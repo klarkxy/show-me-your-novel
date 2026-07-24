@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "deepseek-v4-flash",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "32f4cc676ba216c53f52441e5e3888b822a527767e92ce8b951b88a250a207ac",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "8881cab93ab29f0c42de8e3553552521dd4aef0ce1bc02755e36f710f927dbe5",
-  "score": 49,
-  "ai_flavor": 76,
-  "comment": "开篇场景完整，贫困、工棚劳动与首次越界有可读性，物件细节也能支撑氛围。但1978年特区、用工与城市景观多处失真，赵国强入狱等连续性断裂；人物功能化，反复用心跳、手汗、比喻和总结解释心理，节奏高度同构，二百万字规划亦显流水账。"
+  "cache_key": "636ec5f70ebd03eeb4f8e2441c4abbc1bddbc66fa11e4c58b0401d11291ea20e",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 61.0,
+      "comment": "贫困、欲望与良知冲突已落实到寄药费、克扣工资和盗料选择中，但道德议题被反复直说，乡土伦理与现代制度的复杂博弈仍偏口号化。"
+    },
+    "historical_grounding": {
+      "score": 24.0,
+      "comment": "1978年即出现成熟“特区”、劳务市场、高层广告城市及自由包工链条明显超前，后续注册公司、刑事程序、假释与贷款等制度安排也多处失真。"
+    },
+    "characters": {
+      "score": 48.0,
+      "comment": "陈江河的孝心、隐忍与越界动机清楚，但林晓霞近似道德灯塔，王德财单向邪恶，赵国强从抗争者突变为索赃者缺乏充分心理过渡。"
+    },
+    "plot_causality": {
+      "score": 45.0,
+      "comment": "父病、欠薪到盗料的压力链基本成立，但骗子割包、阿福引路、工头默许并留账、赵国强撞见等节点密集服务预设，人物被情节强推。"
+    },
+    "longform_structure": {
+      "score": 29.0,
+      "comment": "开篇新增的盗窃伤人重罪在卷一及后续宏纲中几乎消失，赵国强后期“刑满释放”无前因，正文初见晓霞与交易金额等亦有自相矛盾。"
+    },
+    "scene_execution": {
+      "score": 55.0,
+      "comment": "工棚、发薪、夜盗与伤人等场景具备动作和感官落点，但同类惊惧、出汗、心跳、呕吐及内心阐释反复堆叠，显著稀释戏剧效能。"
+    },
+    "style_control": {
+      "score": 43.0,
+      "comment": "语言通顺且物象较多，但“像……”比喻、身体反应、道德总结和章末象征高度同构，叙述距离长期不变，缺少克制与语域层次。"
+    },
+    "ai_flavor": {
+      "score": 78.0,
+      "comment": "大量段落依赖同构比喻、重复心理解释、“有些东西已经不同”等抽象收束及机械悬念，几乎每场都以相似节奏强化主题，程式感很重。"
+    }
+  }
 }

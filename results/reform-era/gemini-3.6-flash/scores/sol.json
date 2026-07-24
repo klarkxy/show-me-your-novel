@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gemini-3.6-flash",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "14c9d20b35a0e15c6ec700baca9aa5bf44be3f3408ea286c7b50e935680a63dd",
-  "score": 44,
-  "ai_flavor": 94,
-  "comment": "题材抓住国企衰退与市场萌动，主线清楚，开篇危机闭环完整，技术劳动也有可视性。但人物多为立场标签，靠重病、恶人举报和巧辩机械推进；史实、金额、机构与机械工艺错漏频繁，十二卷规划近似政策事件清单。正文“极其、死死、瞬间”泛滥，反复解释同一冲突，紧张感失真。"
+  "cache_key": "523119d636e438becbb91028c796b4cec0d482679dae8ea8d62393050160b19f",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 62.0,
+      "comment": "救父越界把计划与市场、欲望与底线落实为行动冲突，但反复用“铁饭碗失效—黑市救命”的口号式对照替代更复杂的伦理辨析。"
+    },
+    "historical_grounding": {
+      "score": 31.0,
+      "comment": "家属院、票证与厂区物象有时代外观，但1978年的“卫健局”“电脑账单”等称谓明显穿帮，C620加工齿轮及微米精度等工业细节也严重失真。"
+    },
+    "characters": {
+      "score": 45.0,
+      "comment": "陆远舟的救父欲望与技术自负较清楚，但父亲、妹妹、陈金发和赵三喜多为道德标尺、诱惑者或恶人等功能角色，关系变化被预设而非生长。"
+    },
+    "plot_causality": {
+      "score": 43.0,
+      "comment": "救父缺钱到接私活的主因果明确，但天价报酬、连续撞破又脱险、预制单据洗清嫌疑等安排过度服务悬念，技术操作的不可能性进一步削弱可信度。"
+    },
+    "longform_structure": {
+      "score": 36.0,
+      "comment": "十二卷规划虽密集，却与仅完成开篇的正文落差巨大，父亲死亡卷次及1988戛然而止与1989彻底清算两种结局互相冲突，长期连续性尚未成立。"
+    },
+    "scene_execution": {
+      "score": 48.0,
+      "comment": "车间、医院和谷仓均有可视动作与物质环境，但场景普遍靠高声质问、倒计时和险些被抓反复升压，技术讲解与心理总结大量挤占人物互动。"
+    },
+    "style_control": {
+      "score": 29.0,
+      "comment": "“极其、死死、瞬间、如同”等强化词和同构比喻密集泛滥，叙述持续高亢而缺乏层次，并出现重复词、异文字符、英文夹入及多处病句错字。"
+    },
+    "ai_flavor": {
+      "score": 91.0,
+      "comment": "全文持续出现模板化危机递进、同义反复、结尾升格、专业名词压人和“冷酷决绝”式人物定性，段落节奏与悬念结构高度同构且过度解释。"
+    }
+  }
 }

@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "mimo-v2.5",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "c819fc3e24933b598c09e49ed3cbfa61248c006c41bf99a1f4f6482813191e2e",
-  "score": 45,
-  "ai_flavor": 78,
-  "comment": "开篇场景完整，贫困压力、工厂等级与初次交易有可感细节。但两百万字规划高度均质，人物被主题牵引；身份证、深圳、城管等年代错置明显，薪资账目、板凳数量及时间线互相矛盾。正文反复用比喻、心理总结和同构段落解释同一动机，亟须删减并加强真实制度考据与人物复杂性。"
+  "cache_key": "5d7517815802d5525b8a0453527e3949f29ea8ad2a5aa50a64953c74e0b9bfa0",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 61.0,
+      "comment": "贫困、身份壁垒与逐利冲动已进入主人公行动，但财富与良心的核心冲突尚停留在预告，开篇主要反复强化“挣钱脱困”。"
+    },
+    "historical_grounding": {
+      "score": 27.0,
+      "comment": "票证、工资和工厂生活有局部质感，但1978年身份证、暂住证、城管称谓及“下海”等明显错位，上市、外资收购等宏观规划也与年代制度脱节。"
+    },
+    "characters": {
+      "score": 48.0,
+      "comment": "陈志远的家庭责任与冒险欲较清楚，李强也有失败经历，但父母、工友和管理者多为功能性角色，关系变化常靠劝说、羞辱和总结推进。"
+    },
+    "plot_causality": {
+      "score": 42.0,
+      "comment": "贫困、工厂歧视和裁员能推动创业选择，但无照生手被准许驾驶出口货车并获奖过于强行，工资收支、板凳数量等事实矛盾进一步削弱因果可信度。"
+    },
+    "longform_structure": {
+      "score": 36.0,
+      "comment": "大纲分卷完整却高度线性重复，年代跨度超出书籍设定，开篇时间与腊月来信冲突，正文还出现资金、货物和板凳去向等连续性错误。"
+    },
+    "scene_execution": {
+      "score": 55.0,
+      "comment": "告别、车间受辱、险途和摆摊等场景具有动作与感官细节，但几乎每场之后都追加大段心理阐释，信息重复使场景失去应有的留白和推进效率。"
+    },
+    "style_control": {
+      "score": 43.0,
+      "comment": "语言总体通顺且能维持现实主义语域，但比喻、三项排比、抽象升华和“微弱却坚定”的同类措辞过密，各场景节奏与叙述距离趋于同构。"
+    },
+    "ai_flavor": {
+      "score": 78.0,
+      "comment": "多数段落呈现模板化感官铺陈、反复盘算、风险与希望对举及段末主题总结，同义情绪层层复述，机械转折和象征性收束持续压过人物自然反应。"
+    }
+  }
 }

@@ -1,15 +1,46 @@
 {
-  "schema": "novel-eval.v2",
+  "schema": "novel-eval.v3",
   "benchmark": "reform-era",
   "candidate": "gpt-5.6-sol",
   "judge": "sol",
   "requested_model": "gpt-5.6-sol",
   "input_hash": "c2699dde5a0fa0a559193db242e0988bc66650c8cba1581996e3d7f4c069dfe2",
-  "rubric_hash": "6f68a703ef4c5f58b7cf427f4daea6187b834c732c062dd27ca984783708fd16",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
   "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
   "response_model": "gpt-5.6-sol",
-  "cache_key": "df63c0488c12dbfd880ee7d141bd3508c38134952ad20528d011ba2f8c6e55c9",
-  "score": 85,
-  "ai_flavor": 24,
-  "comment": "时代物质细节、财会与物资制度写得扎实，第一次越界由欠薪、试制、借料层层逼出，人物选择可信，大纲证据链完整。主要问题是“谁签字、手续与生计”式辩论反复同构，章节收束常替读者点题；配角较多承担立场功能，二百万字体量下易显机械重复。"
+  "cache_key": "2f7b1303a44b10d761feeb41087c1bc16259ed04d3f5b1df9525f7851dbadc91",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 87.2,
+      "comment": "“多数人生计与一张假票”的伦理冲突被落实到借料、签字、藏据等连续行动中，改革与清白不止停留在题旨宣告。"
+    },
+    "historical_grounding": {
+      "score": 89.4,
+      "comment": "票证、计划调拨、单位往来、集体资产、交通通信与城乡购买力均具体介入事件因果，物质和制度边界可信且扎实。"
+    },
+    "characters": {
+      "score": 82.6,
+      "comment": "周自成的贫困欲望、技术化自辩与渐进越界层次清楚，配角立场有辨识度，但部分人物仍较明显地承担制度或道德论点功能。"
+    },
+    "plot_causality": {
+      "score": 84.1,
+      "comment": "从欠薪、库存失效到需求调查、试制缺料和伪造运费的链条严密，不过“受阻—追问—口头默许”的反复略显机械，农户登门也稍便利。"
+    },
+    "longform_structure": {
+      "score": 80.3,
+      "comment": "宏纲、伏笔与开篇落点高度连续，证据链和人物弧线规划明确，但十四卷两百万字反复延期旧债的构型有明显膨胀与阶段同质化风险。"
+    },
+    "scene_execution": {
+      "score": 84.7,
+      "comment": "仓库盘点、集市问价、空转事故和签凭证均以动作、对话及器物落地，关键场景有效，但多场对话过长且常在结尾再次解释已呈现的意义。"
+    },
+    "style_control": {
+      "score": 81.5,
+      "comment": "叙述语域稳定，冷硬物象、账务词汇与人物视角结合成熟，但同构反问、对照句和段末主题收束使用偏密，削弱了局部节奏变化。"
+    },
+    "ai_flavor": {
+      "score": 37.8,
+      "comment": "全文反复采用制度障碍逐项列举、双方对称诘问、场景后抽象总结和伏笔显性回扣，结构工程感持续可察，但具体生活质地仍能抵消部分模板感。"
+    }
+  }
 }
