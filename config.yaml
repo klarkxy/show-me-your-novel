@@ -160,3 +160,9 @@ judges:
     id: kimi
     name: Kimi
     model: kimi-k3
+    # Kimi K3 rejects explicit non-1 temperatures. Omit the field so the
+    # upstream model keeps its required default while retaining JSON mode.
+    stages:
+      judge:
+        response_format:
+          type: json_object
