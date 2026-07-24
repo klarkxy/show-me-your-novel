@@ -239,7 +239,7 @@ PowerShell：
 .\scripts\generate-site.ps1 -DocsDir .site/preview
 ```
 
-GitHub Actions 在无 API key 环境运行测试、重建 `_site/` 并部署 Pages；CI 不执行生成或评分。旧小说来源保留在 `novels/`，原有 `/novels/...` 路由继续生成。当前线上 Pages 仍是上一版 V2 评分页面；V3 必须在 14 本 × 2 评委的 28 份新评分、离线建站和页面验证全部完成后再发布。
+GitHub Actions 在无 API key 环境运行测试、重建 `_site/` 并部署 Pages；CI 不执行生成或评分。旧小说来源保留在 `novels/`，原有 `/novels/...` 路由继续生成。当前线上 Pages 已发布两评委评分 V3：14 本作品、28 份八维评分、三组雷达和 16 条逐维点评均已通过离线构建及线上页面验证。
 
 ## 目录
 
