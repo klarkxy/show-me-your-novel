@@ -195,6 +195,11 @@ judges:
     model: kimi-k3
     # Kimi K3 rejects explicit non-1 temperatures. Omit the field so the
     # upstream model keeps its required default while retaining JSON mode.
+    # Successful audits have consumed almost all of the shared 4096-token
+    # budget on private reasoning, so give only this judge enough headroom to
+    # finish its short public JSON response.
+    request:
+      max_tokens: 8192
     stages:
       judge:
         response_format:

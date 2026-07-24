@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import json
 import hashlib
 import sys
@@ -191,6 +192,37 @@ def test_judge_fingerprint_changes_with_provider_request_defaults() -> None:
     assert site_expected["judge_config_sha256"] == score.judge_config_sha256(
         changed["model_cfg"], changed["request_overrides"]
     )
+
+
+def test_kimi_output_budget_change_only_invalidates_kimi_fingerprint() -> None:
+    config_path = ROOT / "config.yaml"
+    base_cfg = score.load_config(config_path)
+    changed_cfg = copy.deepcopy(base_cfg)
+    kimi = next(
+        judge for judge in changed_cfg["judges"] if judge["id"] == "kimi"
+    )
+    kimi["request"] = {"max_tokens": 16_384}
+
+    base = score.resolve_judge_configs(base_cfg)
+    changed = score.resolve_judge_configs(changed_cfg)
+    fingerprints = {
+        judge_id: score.judge_config_sha256(
+            base[judge_id]["model_cfg"],
+            base[judge_id]["request_overrides"],
+        )
+        for judge_id in score.JUDGE_IDS
+    }
+    changed_fingerprints = {
+        judge_id: score.judge_config_sha256(
+            changed[judge_id]["model_cfg"],
+            changed[judge_id]["request_overrides"],
+        )
+        for judge_id in score.JUDGE_IDS
+    }
+
+    assert changed_fingerprints["sol"] == fingerprints["sol"]
+    assert changed_fingerprints["grok"] == fingerprints["grok"]
+    assert changed_fingerprints["kimi"] != fingerprints["kimi"]
 
 
 def test_full_submission_is_anonymous_and_unabridged(tmp_path: Path) -> None:

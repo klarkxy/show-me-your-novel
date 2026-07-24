@@ -91,6 +91,7 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     assert {judge["id"]: judge["model"] for judge in judges} == EXPECTED_JUDGES
     assert all(judge["provider"] == "new-api" for judge in judges)
     judges_by_id = {judge["id"]: judge for judge in judges}
+    assert judges_by_id["sol"]["request"] == {"max_tokens": 4096}
     assert judges_by_id["sol"]["stages"]["judge"]["temperature"] == 0.2
     grok = judges_by_id["grok"]
     assert grok["name"] == "Grok 4.5"
@@ -118,6 +119,7 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     )
     assert "protocol_required" not in grok
     kimi_stage = judges_by_id["kimi"]["stages"]["judge"]
+    assert judges_by_id["kimi"]["request"] == {"max_tokens": 8192}
     assert "temperature" not in kimi_stage
     assert kimi_stage["response_format"] == {"type": "json_object"}
     for judge in judges:
