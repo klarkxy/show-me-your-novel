@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k2.7-code",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "695667a45aef2be3237a44b4d5eb121af77f6c6b3dad3473eaef07d2e7f3c898",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 86.0,
+      "comment": "主题兑现扎实，通过陈济民的多次选择与代价，清晰呈现了普通人如何在制度裂缝与道德自我间挣扎，但部分内心独白稍显直白。"
+    },
+    "historical_grounding": {
+      "score": 88.0,
+      "comment": "时代细节丰富可信，如粮票、工资、医院押金、废品处理流程等，物质与制度环境深度参与人物决策与情节因果。"
+    },
+    "characters": {
+      "score": 85.0,
+      "comment": "陈济民、玉琴、刘大奎、钱顺子等人物动机清晰、关系张力强，主角的灰色蜕变轨迹合理，但部分配角如周德昌略显功能化。"
+    },
+    "plot_causality": {
+      "score": 87.0,
+      "comment": "事件链由经济压力、人际冲突与制度风险共同推动，因果清晰，转折点如父亲咳血、玉琴发现私房钱等设计有效，避免了机械巧合。"
+    },
+    "longform_structure": {
+      "score": 89.0,
+      "comment": "宏观大纲、开篇细纲与正文高度连续，节奏控制得当，伏笔如笔记本、账本、举报等铺设有序，支撑长篇展开。"
+    },
+    "scene_execution": {
+      "score": 84.0,
+      "comment": "场景如工资日、医院交费、城墙根交易等叙事效能高，动作与对话精准，但部分场景信息投放稍显密集，可更自然。"
+    },
+    "style_control": {
+      "score": 82.0,
+      "comment": "文风稳定，叙述距离贴近人物，语言朴素准确，能随场景调整节奏，但偶尔有过度解释倾向。"
+    },
+    "ai_flavor": {
+      "score": 28.0,
+      "comment": "偶有模板化表达（如‘像一把钝刀，慢慢割开他心里最后一点犹豫’），但整体自然，未持续干扰叙事。"
+    }
+  }
+}

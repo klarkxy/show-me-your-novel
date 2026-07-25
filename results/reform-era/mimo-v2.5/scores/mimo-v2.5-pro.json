@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "a93df04a48eb46ac644f9b4d193dcedd558f92fc7ccf7f556dce05f5515c042a",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 75.0,
+      "comment": "主题通过个人命运与时代变迁的交织有较好呈现，但核心冲突仍停留在规划阶段，尚未在正文中充分展开。"
+    },
+    "historical_grounding": {
+      "score": 78.0,
+      "comment": "对1978年改革开放初期的物质细节、制度环境和城市生活有扎实的描绘，时代质感可信。"
+    },
+    "characters": {
+      "score": 80.0,
+      "comment": "陈志远的内心挣扎、欲望和行动逻辑清晰，与李强、王老板等配角的关系和互动具有张力，人物塑造具体。"
+    },
+    "plot_causality": {
+      "score": 76.0,
+      "comment": "情节主要由人物内心驱动和外部压力推动，事件链基本清晰，但部分转折（如偶遇老人）略显巧合。"
+    },
+    "longform_structure": {
+      "score": 82.0,
+      "comment": "开篇大纲与正文高度连续，伏笔（如布鞋、奖金）有埋设和回收，节奏控制得当，为长篇奠定了良好基础。"
+    },
+    "scene_execution": {
+      "score": 79.0,
+      "comment": "关键场景（如初次摆摊、工厂冲突）叙事有效，细节生动，但部分过渡略显平铺直叙。"
+    },
+    "style_control": {
+      "score": 77.0,
+      "comment": "文风总体稳定，叙述距离贴合人物，能随场景调整，但部分段落略显冗长。"
+    },
+    "ai_flavor": {
+      "score": 15.0,
+      "comment": "偶有模板化倾向（如对主题的概括性解释），但未持续干扰叙事，整体自然。"
+    }
+  }
+}

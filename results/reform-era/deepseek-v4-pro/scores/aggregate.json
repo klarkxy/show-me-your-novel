@@ -5,11 +5,17 @@
   "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "偶有内心总结与重复强调，但整体以具体感官与场景驱动，模板排比与机械转折痕迹不重。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 75.0,
+          "comment": "开篇扎实铺垫贫穷与出走，但“异化与救赎”主题尚未充分展开，仅为伏笔。"
+        },
+        "historical_grounding": {
+          "score": 86.0,
+          "comment": "包产到户、火车、工地、夜校等细节丰富可信，时代质感强烈。"
+        },
+        "characters": {
+          "score": 82.0,
+          "comment": "陈建国务实坚韧，李强生动仗义，但林芳略显功能化，人物弧光尚未完全展现。"
+        },
+        "plot_causality": {
+          "score": 83.0,
+          "comment": "贫困与父病驱动南下，被骗、做工、受伤等事件因果紧密，无机械巧合。"
+        },
+        "longform_structure": {
+          "score": 85.0,
+          "comment": "宏观大纲卷间呼应清晰，开篇细纲与正文高度一致，节奏稳健，伏笔得当。"
+        },
+        "scene_execution": {
+          "score": 84.0,
+          "comment": "场景描写细腻，对话动作扎实，信息投放自然，但部分日常段落稍显琐碎。"
+        },
+        "style_control": {
+          "score": 83.0,
+          "comment": "语言朴实准确，方言适度，叙述距离稳定，时代语感强，无突兀的文艺腔。"
+        },
+        "ai_flavor": {
+          "score": 8.0,
+          "comment": "文本充满具体细节与个性化比喻，几乎没有模板化排比或抽象说教的AI痕迹。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 78.0,
+          "comment": "开篇集中展现贫困与外出奋斗的决心，核心主题（异化与救赎）尚未展开，但个人欲望与时代压力的张力已初步建立。"
+        },
+        "historical_grounding": {
+          "score": 85.0,
+          "comment": "1979年农村分地、深圳特区招工、双轨制背景、物质匮乏细节（粮票、医疗费）等时代元素扎实可信，有效参与情节因果。"
+        },
+        "characters": {
+          "score": 80.0,
+          "comment": "陈建国动机明确、行动逻辑连贯，林芳、李强等配角有差异性，但部分配角（如孙勇）略显功能化，关系变化尚未深入。"
+        },
+        "plot_causality": {
+          "score": 82.0,
+          "comment": "事件链由贫困压力、父亲疾病、南下机遇等推动，因果清晰；部分转折（如行李被骗）稍显刻意，但整体驱动有效。"
+        },
+        "longform_structure": {
+          "score": 75.0,
+          "comment": "开篇细纲与正文高度对应，完成度较好；但作为长篇序幕，主要冲突尚未展开，伏笔（如走私线索）埋设较浅，结构稍显平铺。"
+        },
+        "scene_execution": {
+          "score": 79.0,
+          "comment": "场景描写具体，细节生动（如搬砖、发工钱），对话和动作推动情节；但部分场景信息投放过于密集，节奏稍显拖沓。"
+        },
+        "style_control": {
+          "score": 81.0,
+          "comment": "语言朴实、叙述稳定，符合现实主义风格；但部分段落描写略显冗长，节奏变化不够主动。"
+        },
+        "ai_flavor": {
+          "score": 15.0,
+          "comment": "偶有模板化表达（如内心独白总结、部分排比），但整体叙述自然，未持续出现机械转折或套路悬念。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 88.5,
+          "comment": "开篇扎实兑现了时代转轨期的底层生存困境，通过父亲重病、异乡遭劫与工地盘剥等具体事件，将主角对财富的极度渴望与心理异化过程写得极具说服力，主题落地生根。"
+        },
+        "historical_grounding": {
+          "score": 92.0,
+          "comment": "时代细节精准且高度参与叙事。从包产到户的五亩地账本、公社医院的医药费，到绿皮火车的拥挤、蛇口初建时的荒凉与勃勃生机，物质与经济环境真实可信，构成了推动人物命运的坚实底色。"
+        },
+        "characters": {
+          "score": 89.0,
+          "comment": "人物欲望具体且行动逻辑严密。主角从质朴到坚韧的转变自然；配角如李强不仅是工具人，其自身的江湖气与隐痛为日后的利益分歧埋下极佳伏笔；包工头等边缘人物也具备符合生存逻辑的立体感。"
+        },
+        "plot_causality": {
+          "score": 90.5,
+          "comment": "情节链条咬合紧密，因果关系清晰。从父亲咳血逼迫主角南下，到遭遇诈骗沦落工地，再到因伤病和盘剥催生出学习电子技术的内驱力，冲突完全由人物处境与环境张力自然推动，毫无机械巧合。"
+        },
+        "longform_structure": {
+          "score": 88.0,
+          "comment": "宏观大纲规划宏大且具备悲剧纵深，开篇细纲与正文高度吻合。叙事节奏沉稳，伏笔（如李强的仗义与孙勇的电子启蒙）精准投放，为后续长篇的商业崛起与道德堕落搭建了极佳的结构支撑。"
+        },
+        "scene_execution": {
+          "score": 89.5,
+          "comment": "场景构建极具画面感与痛感。无论是烈日下搬砖的生理极限描写，还是发薪日与包工头暗流涌动的对峙，动作、对话与环境描写高度融合，将关键信息完美转化为高密度的有效叙事场景。"
+        },
+        "style_control": {
+          "score": 91.0,
+          "comment": "叙事语调沉稳克制，极具现实主义粗粝感。措辞准确，句法利落，没有多余的抒情与华丽辞藻；在描写底层劳作与人情冷暖时，叙述距离把控得当，文风高度贴合时代背景与人物身份。"
+        },
+        "ai_flavor": {
+          "score": 8.5,
+          "comment": "几乎没有模板化痕迹。文本充满了粗糙的生活质感与幽微的人性细节，对话生动自然，情感表达克制且留白，完全摆脱了过度解释与机械总结的套路，展现出极高的人工创作纯度。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 62.8,
+      "median": 75.0,
       "min": 54.0,
-      "max": 71.5
+      "max": 88.5
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 57.8,
+      "median": 85.0,
       "min": 35.0,
-      "max": 80.5
+      "max": 92.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 65.5,
+      "median": 80.0,
       "min": 56.0,
-      "max": 75.0
+      "max": 89.0
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 60.8,
+      "median": 82.0,
       "min": 44.0,
-      "max": 77.5
+      "max": 90.5
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 55.5,
+      "median": 75.0,
       "min": 38.0,
-      "max": 73.0
+      "max": 88.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 69.0,
+      "median": 81.0,
       "min": 57.0,
-      "max": 81.0
+      "max": 89.5
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 63.8,
+      "median": 81.0,
       "min": 49.0,
-      "max": 78.5
+      "max": 91.0
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 43.5,
-      "min": 19.0,
+      "median": 15.0,
+      "min": 8.0,
       "max": 68.0
     }
   },
-  "overall_score": 61.2
+  "overall_score": 80.5
 }

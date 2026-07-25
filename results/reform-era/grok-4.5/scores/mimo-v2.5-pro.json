@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "grok-4.5",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "be72307a51ceaec6e5a1de7fd55b4de6ef07126c705b72ebc2a42577714621cf",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "00207535df63af25a5e40df4f5f09c2a8f03245de3be400d8a37a7b3952cce22",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 85.0,
+      "comment": "题材兑现扎实，改革开放初期个人在模糊规则下的道德挣扎贯穿始终，核心主题通过具体事件落地。"
+    },
+    "historical_grounding": {
+      "score": 90.0,
+      "comment": "物质细节、制度环境与时代氛围高度可信，票证、双轨、废料处理等细节深度参与情节因果。"
+    },
+    "characters": {
+      "score": 82.0,
+      "comment": "陈渡生的欲望、挣扎与行动逻辑清晰，父亲、周晓东、王大力等配角有具体立场与张力，但部分关系变化稍显模式化。"
+    },
+    "plot_causality": {
+      "score": 88.0,
+      "comment": "冲突由家庭经济压力、制度缝隙与人物选择共同推动，事件链清晰有效，避免了机械巧合。"
+    },
+    "longform_structure": {
+      "score": 86.0,
+      "comment": "宏观规划、开篇细纲与正文高度连续，节奏、伏笔与阶段兑现支撑长篇结构。"
+    },
+    "scene_execution": {
+      "score": 84.0,
+      "comment": "场景聚焦于关键动作、对话与信息投放，视角稳定，但个别段落存在信息重复。"
+    },
+    "style_control": {
+      "score": 83.0,
+      "comment": "叙述语言稳定、准确，能随场景变化，但部分段落存在过度解释与节奏重复。"
+    },
+    "ai_flavor": {
+      "score": 15.0,
+      "comment": "偶有模板化排比与抽象总结，但整体未干扰阅读，叙事驱动明显。"
+    }
+  }
+}

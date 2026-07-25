@@ -5,11 +5,17 @@
   "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "模板化紧张描写、过度技术与主题解释、同构冷汗心跳段落与套路悬念反复出现，机械痕迹可察觉且干扰阅读。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 82.0,
+          "comment": "通过救父困境与私活越界切实展现了体制与市场冲突，主题通过人物行动而非口号落实，但道德挣扎的复杂性尚可更深。"
+        },
+        "historical_grounding": {
+          "score": 80.0,
+          "comment": "工资、粮票、进口自费药、国企停工等细节具体可信，车间与医疗场景的物质书写让时代困境参与因果，但部分描写略堆砌。"
+        },
+        "characters": {
+          "score": 78.0,
+          "comment": "主角欲望与转变清晰，配角逐个出场并各有功能，但赵三喜等反派稍显脸谱化，人物关系张力初期已建立但深度不足。"
+        },
+        "plot_causality": {
+          "score": 80.0,
+          "comment": "父亲病重→借钱被拒→接私活→偷技术工具→搜查化解，事件链由人物困境推动，逻辑紧凑，虽巧设技术借口但整体因果成立。"
+        },
+        "longform_structure": {
+          "score": 78.0,
+          "comment": "开篇16章紧扣大纲第一卷起止状态，伏笔如图纸、地下印刷标记已埋下，节奏紧密但后续空间预留得当，长篇连续性初显。"
+        },
+        "scene_execution": {
+          "score": 82.0,
+          "comment": "车间修机、饭盒暗格、搜查对峙等场景动作与对话有效，视角稳定，紧张感层层递进，但个别描述略冗长。"
+        },
+        "style_control": {
+          "score": 76.0,
+          "comment": "文笔扎实且语域统一，但比喻和修饰稍显繁复，部分心理解释过于直露，现实主义基调中偶见文艺腔。"
+        },
+        "ai_flavor": {
+          "score": 24.0,
+          "comment": "细节具体、情节推理由角色驱动，未出现模板化排比，但个别场景收尾和比喻有轻微套路感，整体AI味较低。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 85.0,
+          "comment": "创作方向“改革开放初期现实主义”与“个人欲望与道德底线博弈”的核心主题，在开篇通过救父、私活、体制困境等情节有效落地，避免口号化。"
+        },
+        "historical_grounding": {
+          "score": 88.0,
+          "comment": "对1978年底国企停工、工资微薄、自费进口药、保卫科制度、个体户萌芽等时代细节刻画可信，物质与制度环境深度参与人物抉择与情节因果。"
+        },
+        "characters": {
+          "score": 82.0,
+          "comment": "陆远舟的欲望、技术能力与道德挣扎有具体展现，但关系网络（如与陈金发、赵三喜）的张力主要靠外部事件驱动，内心复杂性可进一步挖掘。"
+        },
+        "plot_causality": {
+          "score": 86.0,
+          "comment": "事件链（病危→借钱无门→私活诱惑→技术偷盗→脱险）由人物困境与环境压力推动，因果清晰，避免了机械巧合。"
+        },
+        "longform_structure": {
+          "score": 84.0,
+          "comment": "开篇16章完整覆盖第一卷大纲，节奏紧凑，伏笔（如技术图纸、账本、奖章）为长篇铺垫合理，但开篇结束于“第一步”的完成，后续张力延续有待观察。"
+        },
+        "scene_execution": {
+          "score": 83.0,
+          "comment": "关键场景（医院缴费、谷仓修机、午休加工）描写具体，动作、对话与信息投放有效，但部分场景（如第2章食堂争论）稍显功能化。"
+        },
+        "style_control": {
+          "score": 80.0,
+          "comment": "语言总体准确、沉稳，技术细节与情感描写有区分度，但部分段落存在重复句式（如“像一头狂怒的野兽”类比多用），节奏略显平直。"
+        },
+        "ai_flavor": {
+          "score": 12.0,
+          "comment": "偶有模板化排比（如“一边是……另一边……”）和过度解释内心挣扎，但整体叙事具象，未被套路严重干扰。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 92.0,
+          "comment": "文本精准兑现了改革开放前夜“计划”与“市场”交锋的宏大命题，将体制的僵化与个体的生存绝境具象化为一针28.5元的进口药与800元的黑市诱惑，主题落地极具现实穿透力。"
+        },
+        "historical_grounding": {
+          "score": 95.0,
+          "comment": "时代质感与工业硬核细节表现堪称惊艳。从C620车床的微米级切削、40Cr铬钢的物理特性，到42.5元工资与高昂自费药的物价对比，物质细节不仅真实可信，更直接构成了推动人物越界的核心因果。"
+        },
+        "characters": {
+          "score": 88.0,
+          "comment": "主人公陆远舟从恪守规矩到冷酷越界的心理蜕变极具说服力，老八级工父亲的尊严与陈金发的投机贪婪形成了极佳的镜像张力。反派赵三喜略显脸谱化，但整体人物关系扎实且充满戏剧张力。"
+        },
+        "plot_causality": {
+          "score": 94.0,
+          "comment": "情节链条咬合极其严密，呈现出极佳的“倒计时”惊悚感。从筹钱无门到接下黑活，再到利用午休极限加工齿轮并化解保卫科搜查，危机全部由人物动机与严苛的环境规则内生驱动，毫无机械巧合。"
+        },
+        "longform_structure": {
+          "score": 90.0,
+          "comment": "宏观大纲视野宏阔且极具时代纵深，开篇细纲与正文的执行连续性极高。首卷不仅完美解决了“第一桶金”的生存危机，更通过图纸、油污黑痕等伏笔，为后续的下海与技术突围埋下了坚实的结构支撑。"
+        },
+        "scene_execution": {
+          "score": 91.0,
+          "comment": "场景调度极具张力，尤其是午休三十分钟极限车削齿轮的段落，动作描写与时间压迫感结合得天衣无缝。利用硬核工业技术名词作为反击保卫科搜查的武器，信息投放精准且极具戏剧效能。"
+        },
+        "style_control": {
+          "score": 89.0,
+          "comment": "叙事语言冷峻、克制且充满工业重金属的粗粝感。对机油味、铁锈、寒风等感官细节的捕捉非常准确，语域高度契合国企工厂的特殊语境，节奏随危机起伏收放自如。"
+        },
+        "ai_flavor": {
+          "score": 15.0,
+          "comment": "文本极少出现模板化的排比或空洞的抒情，硬核的工业细节和扎实的时代白描有效压制了程式化痕迹。仅在部分章节结尾处有轻微的总结性内心独白，但整体叙事质感高度接近成熟的人类类型小说作者。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 69.3,
+      "median": 82.0,
       "min": 62.0,
-      "max": 76.5
+      "max": 92.0
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 56.0,
+      "median": 81.0,
       "min": 31.0,
-      "max": 81.0
+      "max": 95.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 58.8,
+      "median": 78.0,
       "min": 45.0,
-      "max": 72.5
+      "max": 88.0
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 57.0,
+      "median": 80.0,
       "min": 43.0,
-      "max": 71.0
+      "max": 94.0
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 57.8,
+      "median": 79.5,
       "min": 36.0,
-      "max": 79.5
+      "max": 90.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 58.0,
+      "median": 82.0,
       "min": 48.0,
-      "max": 68.0
+      "max": 91.0
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 45.8,
+      "median": 76.0,
       "min": 29.0,
-      "max": 62.5
+      "max": 89.0
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 71.5,
-      "min": 52.0,
+      "median": 24.0,
+      "min": 12.0,
       "max": 91.0
     }
   },
-  "overall_score": 54.6
+  "overall_score": 79.4
 }

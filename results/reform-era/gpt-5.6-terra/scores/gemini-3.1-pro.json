@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-terra",
+  "judge": "gemini-3.1-pro",
+  "requested_model": "gemini-3.1-pro",
+  "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "913adcf01cf258e32f6bc94bbe201109afe7fea078c7230f69cc907585e636f1",
+  "response_model": "gemini-3.1-pro-low",
+  "cache_key": "6172b33393da15ea23ecc323e68bd8b47dd2daadbf0349e88196f3fee905aab3",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 92.5,
+      "comment": "改革初期的时代阵痛与个人欲望交织得极为自然，主题不仅停留在宏大叙事，而是精准落地于“三本账”的灰度与普通人面对体制缝隙时的道德挣扎，兑现度极高。"
+    },
+    "historical_grounding": {
+      "score": 94.0,
+      "comment": "物质细节与制度背景极具说服力，的确良布料的定损、供销社的层级倾轧、粮票与临时工身份等时代符号不仅是背景，更直接构成了推动人物命运的因果链条。"
+    },
+    "characters": {
+      "score": 91.5,
+      "comment": "人物欲望具体且充满张力，周继业的隐忍与越界、韩克勤绵里藏针的权力威慑、罗群的精明算计均刻画得入木三分，关系在利益与亲情的拉扯中呈现出复杂的灰度。"
+    },
+    "plot_causality": {
+      "score": 90.5,
+      "comment": "叙事动力充足，从妹妹顶岗落空到筹集八百元本金，事件链条咬合紧密，冲突完全由人物生存困境与环境逼迫内生驱动，毫无机械降神与生硬巧合。"
+    },
+    "longform_structure": {
+      "score": 92.0,
+      "comment": "宏观大纲规划严密，人物弧光完整，正文与细纲高度吻合。开篇通过父亲旧案残页与供销社暗账双线并进，伏笔埋设自然，具备极强的长篇支撑力与连续性。"
+    },
+    "scene_execution": {
+      "score": 91.0,
+      "comment": "场景构建极具效能，信息投放克制。无论是韩克勤办公室里的敲打，还是下河集与刘三嫂的交锋，均通过精准的动作与潜台词完成，叙事效率与画面感极佳。"
+    },
+    "style_control": {
+      "score": 93.0,
+      "comment": "叙事语调冷峻克制，句法简练扎实，极好地贴合了北方县城肃杀的冬日氛围。对话极具年代感与身份特征，作者对文字节奏与语域的控制力达到了高度成熟的水平。"
+    },
+    "ai_flavor": {
+      "score": 5.0,
+      "comment": "文本几乎没有模板化痕迹，潜台词丰富，没有过度解释或抽象总结，人物对话充满现实博弈的粗粝感，完全摆脱了程式化的行文套路。"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-sol",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "c2699dde5a0fa0a559193db242e0988bc66650c8cba1581996e3d7f4c069dfe2",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "8b0ffd93b08d59fbafaccb2d632119fc76f71a05d5ac503907f485224442e725",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 82.0,
+      "comment": "开篇将'改革机会必须借助灰色地带'这一核心主题落实到借料改票的具体行为中，周自成从数字困境滑向账务越界的轨迹清晰，主题进入人物行动而非停留在口号。"
+    },
+    "historical_grounding": {
+      "score": 88.0,
+      "comment": "票证、计划调拨、集体企业、双轨价格、供销社渠道、绿皮班车等时代细节密集且可信，制度约束真实参与情节因果，未用现代经验替人物预知。"
+    },
+    "characters": {
+      "score": 85.0,
+      "comment": "周自成渴望证明自己却惯于把道德拆成技术问题，沈秋萍坚持票据边界、乔万山技术原则与实用合作的矛盾、顾长顺代表工人现实压力，人物欲望、行动逻辑与关系张力有差异且在推进。"
+    },
+    "plot_causality": {
+      "score": 86.0,
+      "comment": "事件链由政策空白、原料短缺、生活压力和人情交换逐步推动，每次选择都有因果而非机械巧合；越界行为由多重现实约束倒逼，冲突清晰有效。"
+    },
+    "longform_structure": {
+      "score": 88.0,
+      "comment": "宏观大纲、开篇细纲与正文高度连续，十四卷伏笔（剪报本、安全申请、拒签认定书等）在开篇即有对应埋设，节奏由欠薪到试制到首次改票层层递进，阶段兑现完整。"
+    },
+    "scene_execution": {
+      "score": 87.0,
+      "comment": "工资表对峙、仓库盘点、河东问价、空转事故、购买意向和最后入账等场景均以动作、对话和细节推进关键内容，信息投放克制，没有用旁白总结替代场景。"
+    },
+    "style_control": {
+      "score": 84.0,
+      "comment": "叙述距离稳定在周自成的有限视角附近，句式简练务实，随场景微调语气（算账冷静、冲突紧促、独处时松散），措辞和语域基本准确，偶有个别比喻稍显刻意。"
+    },
+    "ai_flavor": {
+      "score": 12.0,
+      "comment": "整体未出现模板化排比、过度解释或机械转折，叙事节奏自然、信息靠场景传递；极少数段落末尾的总结性感慨略带套路感，但不构成系统干扰。"
+    }
+  }
+}

@@ -5,11 +5,17 @@
   "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "反复摩挲钱币布鞋、精确算账与主题性内心总结同构出现，机械转折与过度解释可察觉，虽有具体场景仍带程式痕迹。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 75.0,
+          "comment": "开篇扎实铺垫了底层挣扎与改变欲望，但核心主题“财富与人性冲突”尚未进入，仍在积累阶段。"
+        },
+        "historical_grounding": {
+          "score": 87.5,
+          "comment": "1978年初的工厂体制、物价、户籍差异、物资匮乏与政策松动等细节真实可信，时代质感浓厚。"
+        },
+        "characters": {
+          "score": 80.0,
+          "comment": "陈志远的欲望、算计与不安清晰，但内心世界的复杂性和自主矛盾还未充分展现，配角多属类型化。"
+        },
+        "plot_causality": {
+          "score": 82.5,
+          "comment": "由环境、经济压力和人物性格驱动的因果链条清晰，情节发展合理，但稍显规整缺乏意外之力。"
+        },
+        "longform_structure": {
+          "score": 85.0,
+          "comment": "长篇规划严谨，开篇17章完美对应细纲，节奏张弛有度，伏笔设计保证长远连续性。"
+        },
+        "scene_execution": {
+          "score": 82.0,
+          "comment": "场景具体可感，细节充实，但心理独白有时拖慢节奏，核心场景的戏剧性还可更集中。"
+        },
+        "style_control": {
+          "score": 78.5,
+          "comment": "文风稳健干净，但略显单调，缺少个性化和场景间的语感切换，整体偏于平稳纪实。"
+        },
+        "ai_flavor": {
+          "score": 8.0,
+          "comment": "叙述具体，场景推进以动作为主，极少空洞排比或机械解释，仅个别处心理总结稍显程式化。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 75.0,
+          "comment": "主题通过个人命运与时代变迁的交织有较好呈现，但核心冲突仍停留在规划阶段，尚未在正文中充分展开。"
+        },
+        "historical_grounding": {
+          "score": 78.0,
+          "comment": "对1978年改革开放初期的物质细节、制度环境和城市生活有扎实的描绘，时代质感可信。"
+        },
+        "characters": {
+          "score": 80.0,
+          "comment": "陈志远的内心挣扎、欲望和行动逻辑清晰，与李强、王老板等配角的关系和互动具有张力，人物塑造具体。"
+        },
+        "plot_causality": {
+          "score": 76.0,
+          "comment": "情节主要由人物内心驱动和外部压力推动，事件链基本清晰，但部分转折（如偶遇老人）略显巧合。"
+        },
+        "longform_structure": {
+          "score": 82.0,
+          "comment": "开篇大纲与正文高度连续，伏笔（如布鞋、奖金）有埋设和回收，节奏控制得当，为长篇奠定了良好基础。"
+        },
+        "scene_execution": {
+          "score": 79.0,
+          "comment": "关键场景（如初次摆摊、工厂冲突）叙事有效，细节生动，但部分过渡略显平铺直叙。"
+        },
+        "style_control": {
+          "score": 77.0,
+          "comment": "文风总体稳定，叙述距离贴合人物，能随场景调整，但部分段落略显冗长。"
+        },
+        "ai_flavor": {
+          "score": 15.0,
+          "comment": "偶有模板化倾向（如对主题的概括性解释），但未持续干扰叙事，整体自然。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 88.5,
+          "comment": "开篇精准切入改革开放初期的城乡撕裂与生存困境，通过汇款、赔偿等具体事件将“财富渴望与道德底线”的主题自然植入人物动机，时代洪流与个人挣扎交织得十分扎实。"
+        },
+        "historical_grounding": {
+          "score": 92.0,
+          "comment": "时代质感极佳。绿皮火车、临时工与正式工的身份壁垒、精确到分角的物价计算、以及越秀山下打游击的个体户，物质细节不仅真实可信，更直接构成了推动主角命运转折的因果链条。"
+        },
+        "characters": {
+          "score": 89.5,
+          "comment": "主角陈志远的欲望演变极具说服力，从最初的隐忍求存到被贫穷逼迫出的冒险越界，心理轨迹细腻。配角如李强的圆滑与怯懦、王老板的精明与冷酷，都与主角形成了极好的对照与张力。"
+        },
+        "plot_causality": {
+          "score": 90.5,
+          "comment": "情节咬合紧密，因果逻辑严丝合缝。从被罚款带来的经济危机，到家书施加的亲情重压，再到卡车冒险尝到甜头，外部环境的压迫与人物内在的觉醒共同推高冲突，最终促成顺理成章的越界抉择。"
+        },
+        "longform_structure": {
+          "score": 91.0,
+          "comment": "宏观大纲规划完整，开篇细纲与正文高度一致。前十七章节奏沉稳且步步为营，伏笔（如卡车冒险对未来商业豪赌的预演）埋设精巧，为两百万字的长篇奠定了极其坚实且充满张力的结构基础。"
+        },
+        "scene_execution": {
+          "score": 88.0,
+          "comment": "场景构建效能极高，感官描写（如车间的机油味、夜间锯木头的声音）极具画面感。动作与对话不仅符合人物身份，且高效地完成了信息投放与情绪渲染，将抽象的时代变迁落实为具体的生存场景。"
+        },
+        "style_control": {
+          "score": 86.5,
+          "comment": "叙事语调沉稳克制，带有现实主义特有的粗粝感。遣词造句准确贴合底层工人的生活语境，心理描写的节奏控制得当，能够根据场景的紧张度主动调整句法与叙述距离。"
+        },
+        "ai_flavor": {
+          "score": 28.0,
+          "comment": "整体行文流畅自然，但在部分章节结尾处仍偶有常见的总结性抒情与过度解释（如反复强调“旧的轨道崩塌”、“命运的种子”等同构句式），略带模板痕迹，但被扎实的细节很好地稀释，不干扰阅读。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 69.8,
+      "median": 75.0,
       "min": 61.0,
-      "max": 78.5
+      "max": 88.5
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 55.3,
+      "median": 83.5,
       "min": 27.0,
-      "max": 83.5
+      "max": 92.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 62.0,
+      "median": 80.0,
       "min": 48.0,
-      "max": 76.0
+      "max": 89.5
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 61.8,
+      "median": 81.5,
       "min": 42.0,
-      "max": 81.5
+      "max": 90.5
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 58.0,
+      "median": 82.0,
       "min": 36.0,
-      "max": 80.0
+      "max": 91.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 66.3,
+      "median": 79.0,
       "min": 55.0,
-      "max": 77.5
+      "max": 88.0
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 57.0,
+      "median": 77.0,
       "min": 43.0,
-      "max": 71.0
+      "max": 86.5
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 60.8,
-      "min": 43.5,
+      "median": 28.0,
+      "min": 8.0,
       "max": 78.0
     }
   },
-  "overall_score": 58.8
+  "overall_score": 79.4
 }

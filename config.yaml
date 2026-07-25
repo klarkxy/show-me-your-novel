@@ -190,6 +190,23 @@ judges:
         tool_choice: none
 
   - <<: *judge-defaults
+    id: ds-v4-pro
+    name: DeepSeek V4 Pro
+    model: deepseek-v4-pro
+
+  - <<: *judge-defaults
+    id: mimo-v2.5-pro
+    name: MiMo V2.5 Pro
+    model: mimo-v2.5-pro
+
+  - <<: *judge-defaults
+    id: gemini-3.1-pro
+    name: Gemini 3.1 Pro
+    model: gemini-3.1-pro
+
+  # Historical V2 judge only. Not part of ACTIVE_JUDGE_IDS; kept so preflight
+  # and archives still know the wire model, without ranking or aggregation.
+  - <<: *judge-defaults
     id: kimi
     name: Kimi
     model: kimi-k3

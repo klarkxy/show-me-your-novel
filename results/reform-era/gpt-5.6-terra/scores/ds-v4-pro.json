@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-terra",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "394fdfbbb2e2fd581b0f0b96ee2c3ff49db4b1344eb74c8e1f75f3c72d999fe1",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 88.5,
+      "comment": "主题通过周继业摆脱污名、谋求财富的挣扎逐步兑现，羞耻、尊严与利益纠葛已切入行动，而非停留口号。"
+    },
+    "historical_grounding": {
+      "score": 91.0,
+      "comment": "时代细节（粮票、工资38元、临时工编制、倒货风险）可信地参与因果，物质条件直接驱动人物困境与选择。"
+    },
+    "characters": {
+      "score": 86.5,
+      "comment": "周继业形象立体，母亲、沈梅、罗群动机清晰，关系张力初显，但沈梅等配角尚需更主动的展开。"
+    },
+    "plot_causality": {
+      "score": 89.0,
+      "comment": "事件链由人物欲望与环境压力自然推动，从发现受潮布到签署确认单，因果紧密，无机械巧合。"
+    },
+    "longform_structure": {
+      "score": 92.0,
+      "comment": "12卷宏观规划与开篇细纲高度连续，伏笔（旧案、新房、控制关系）已在前16章合理落位，节奏稳妥。"
+    },
+    "scene_execution": {
+      "score": 87.0,
+      "comment": "场景通过细节与动作有效落实信息，对话自然，仓库、家庭、集市等环境成为叙事支点，偶有平缓处。"
+    },
+    "style_control": {
+      "score": 84.5,
+      "comment": "语言平实贴切，叙述距离稳定，契合80年代初县城语境，但整体风格辨识度与节奏变化还可加强。"
+    },
+    "ai_flavor": {
+      "score": 7.0,
+      "comment": "全文几乎无模板化排比、过度解释或机械转折，故事流动自然，对话生动，极少AI程式化痕迹。"
+    }
+  }
+}

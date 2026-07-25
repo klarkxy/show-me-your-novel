@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.6-flash",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "608dcc5957115fb80d51c69e74512ccd66273af5f80e639f882506ac671abab2",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 85.0,
+      "comment": "创作方向“改革开放初期现实主义”与“个人欲望与道德底线博弈”的核心主题，在开篇通过救父、私活、体制困境等情节有效落地，避免口号化。"
+    },
+    "historical_grounding": {
+      "score": 88.0,
+      "comment": "对1978年底国企停工、工资微薄、自费进口药、保卫科制度、个体户萌芽等时代细节刻画可信，物质与制度环境深度参与人物抉择与情节因果。"
+    },
+    "characters": {
+      "score": 82.0,
+      "comment": "陆远舟的欲望、技术能力与道德挣扎有具体展现，但关系网络（如与陈金发、赵三喜）的张力主要靠外部事件驱动，内心复杂性可进一步挖掘。"
+    },
+    "plot_causality": {
+      "score": 86.0,
+      "comment": "事件链（病危→借钱无门→私活诱惑→技术偷盗→脱险）由人物困境与环境压力推动，因果清晰，避免了机械巧合。"
+    },
+    "longform_structure": {
+      "score": 84.0,
+      "comment": "开篇16章完整覆盖第一卷大纲，节奏紧凑，伏笔（如技术图纸、账本、奖章）为长篇铺垫合理，但开篇结束于“第一步”的完成，后续张力延续有待观察。"
+    },
+    "scene_execution": {
+      "score": 83.0,
+      "comment": "关键场景（医院缴费、谷仓修机、午休加工）描写具体，动作、对话与信息投放有效，但部分场景（如第2章食堂争论）稍显功能化。"
+    },
+    "style_control": {
+      "score": 80.0,
+      "comment": "语言总体准确、沉稳，技术细节与情感描写有区分度，但部分段落存在重复句式（如“像一头狂怒的野兽”类比多用），节奏略显平直。"
+    },
+    "ai_flavor": {
+      "score": 12.0,
+      "comment": "偶有模板化排比（如“一边是……另一边……”）和过度解释内心挣扎，但整体叙事具象，未被套路严重干扰。"
+    }
+  }
+}

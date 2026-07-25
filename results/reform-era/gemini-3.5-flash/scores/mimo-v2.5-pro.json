@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.5-flash",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "b1fb23356e182761f0800c895de6edae40f83969b38dc56dc365f1039694f70f",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "838b58e419fb34a2020bd48a31b7d951791d68df671f9ff1cc53c660df811c4b",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 85.0,
+      "comment": "小说深入呈现了体制转型初期个人与体制的冲突，开篇围绕医药费困境展开，切实将‘摸着石头’的主题兑现为具体行动与抉择。"
+    },
+    "historical_grounding": {
+      "score": 88.0,
+      "comment": "1982年计划经济末期的生活细节、厂矿制度、物资匮乏及‘星期天工程师’现象均扎实可信，时代质感渗透于情节因果。"
+    },
+    "characters": {
+      "score": 82.0,
+      "comment": "陆怀山欲望清晰、行动逻辑自洽，与张建国、陈大水等人的关系张力鲜明；妻子张桂琴的形象稍显功能化。"
+    },
+    "plot_causality": {
+      "score": 87.0,
+      "comment": "冲突由女儿医药费引发，经借钱、接私活、偷零件、修机器层层递进，事件链清晰且由人物环境共同推动，几乎无机械巧合。"
+    },
+    "longform_structure": {
+      "score": 83.0,
+      "comment": "开篇大纲与正文高度一致，16章节奏平稳推进，伏笔如二极管、保卫科、孤雁等铺设自然，支撑长篇连续性。"
+    },
+    "scene_execution": {
+      "score": 86.0,
+      "comment": "医院挂号、雨夜骑车、车间修机器等关键场景动作对话密集，信息投放有效，紧张感与画面感兼备。"
+    },
+    "style_control": {
+      "score": 84.0,
+      "comment": "叙述语言质朴稳定，句式随场景变化，无过度抒情或抽象总结；部分内心独白稍显直白。"
+    },
+    "ai_flavor": {
+      "score": 25.0,
+      "comment": "整体叙事扎实，但少数段落存在重复句式与过度解释内心感受的痕迹，偶有套路化转折，未形成系统性模板。"
+    }
+  }
+}

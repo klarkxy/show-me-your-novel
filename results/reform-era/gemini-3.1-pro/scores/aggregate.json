@@ -5,11 +5,17 @@
   "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "模板化排比、过度解释动机、抽象总结代替场景、机械转折与套路悬念反复出现，多数段落可察觉程式痕迹。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 72.5,
+          "comment": "主题紧扣时代洪流中个体挣扎，但开篇阶段多聚焦生存压力，道德与财富的深层冲突尚未充分展开。"
+        },
+        "historical_grounding": {
+          "score": 78.0,
+          "comment": "票证、停薪留职、个体执照、投机倒把等时代细节扎实，物质生活描写可信地参与情节驱动。"
+        },
+        "characters": {
+          "score": 75.0,
+          "comment": "林卫国欲望明确、行动逻辑强，配角如二黑、张有德各具特征，但关系变化尚浅，部分人物稍偏类型化。"
+        },
+        "plot_causality": {
+          "score": 74.5,
+          "comment": "事件链由人物主动选择与环境逼迫推动，因果清晰，但部分转折（如突击查抄）稍显巧合与套路化。"
+        },
+        "longform_structure": {
+          "score": 76.5,
+          "comment": "宏观大纲与开篇细纲严密对应，正文严格遵循规划，伏笔（如走私旧账、表弟）埋设有序，连续性强。"
+        },
+        "scene_execution": {
+          "score": 72.0,
+          "comment": "场景具象生动，通过动作与对话推进叙事，但部分心理交代略多，展示与讲述偶有失衡。"
+        },
+        "style_control": {
+          "score": 70.0,
+          "comment": "语言平实稳定，符合时代语境，但比喻与节奏变化有限，叙述距离稍显单一。"
+        },
+        "ai_flavor": {
+          "score": 25.0,
+          "comment": "偶有模板化环境描写与直白心理总结，但整体仍以细节支撑，未陷入高度程式化。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 78.0,
+          "comment": "题材兑现扎实，改革开放初期的个体户挣扎与体制冲突贯穿全文，但主题对“金钱丈量尊严”的深层探讨尚显不足。"
+        },
+        "historical_grounding": {
+          "score": 88.0,
+          "comment": "时代细节（凭票供应、投机倒把罪、保卫科）真实可信，政策、物质与制度质感强烈，深度参与情节。"
+        },
+        "characters": {
+          "score": 82.0,
+          "comment": "林卫国欲望明确、行动逻辑清晰，虾仔、二黑等配角有差异性，但人物内心转变的描写略显直白。"
+        },
+        "plot_causality": {
+          "score": 85.0,
+          "comment": "情节由人物性格与环境压迫推动，事件链清晰（借钱-进货-摆摊-查抄-入狱-反抗），因果有效，避免机械巧合。"
+        },
+        "longform_structure": {
+          "score": 80.0,
+          "comment": "开篇大纲与正文高度一致，完成第一卷前半部分，节奏紧凑，伏笔（如虾仔旧账）已埋，支撑长篇。"
+        },
+        "scene_execution": {
+          "score": 84.0,
+          "comment": "场景（厂门口盘查、绿皮车、黑市交易、联合执法）有效落实了冲突与信息，视角稳定，动作对话有力。"
+        },
+        "style_control": {
+          "score": 79.0,
+          "comment": "文风粗粝冷硬，与题材匹配，叙述距离控制得当，但部分描写稍显铺陈，节奏可更凝练。"
+        },
+        "ai_flavor": {
+          "score": 28.0,
+          "comment": "偶有排比和略显刻意的抒情（如“春潮”象征），但整体叙述自然，无明显模板化痕迹。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 92.0,
+          "comment": "深刻兑现了体制转轨期的阵痛，个体在生存绝境与暴利诱惑下的异化与抗争刻画得入木三分，主题与人物命运紧密咬合，毫无空洞口号。"
+        },
+        "historical_grounding": {
+          "score": 95.0,
+          "comment": "时代质感极佳，粮票、介绍信、打投办及工商局的政策博弈等细节不仅真实可信，更直接构成了推动人物命运转折的核心因果，极具说服力。"
+        },
+        "characters": {
+          "score": 88.5,
+          "comment": "主角林卫国的野心、胆识与底线滑坡轨迹清晰且极具张力，配角如二黑的怯懦贪婪、赵股长的复杂审慎均十分立体，唯反派张有德略显脸谱化。"
+        },
+        "plot_causality": {
+          "score": 94.0,
+          "comment": "情节链条严丝合缝，从体制内受挫到南下倒卖，再到合法化尝试被权力绞杀，因果逻辑极其强悍，冲突完全由人物性格与时代环境内生推动。"
+        },
+        "longform_structure": {
+          "score": 93.5,
+          "comment": "宏观大纲与开篇细纲高度咬合，正文节奏紧凑且张弛有度，伏笔（如扣押清单、二黑性格）精准埋设，展现出极成熟的长篇驾驭与规划能力。"
+        },
+        "scene_execution": {
+          "score": 91.0,
+          "comment": "场景构建极具画面感与感官冲击力，如绿皮车厢的窒息感、工商局大厅的僵持与雨夜的绝望，动作与对话精准高效地完成了核心叙事任务。"
+        },
+        "style_control": {
+          "score": 90.5,
+          "comment": "叙事语言冷峻、扎实且充满力量感，语域准确契合八十年代初的社会氛围，节奏控制老辣，情绪渲染克制而极具爆发力，文风高度统一。"
+        },
+        "ai_flavor": {
+          "score": 25.0,
+          "comment": "整体行文流畅自然，但在部分章节结尾处仍存在轻微的总结性升华套路，以及偶尔出现的形容词堆砌与同构的情绪渲染痕迹，但不干扰沉浸感。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 62.8,
+      "median": 72.5,
       "min": 54.0,
-      "max": 71.5
+      "max": 92.0
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 51.8,
+      "median": 78.0,
       "min": 27.0,
-      "max": 76.5
+      "max": 95.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 52.0,
+      "median": 75.0,
       "min": 40.0,
-      "max": 64.0
+      "max": 88.5
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 52.3,
+      "median": 74.5,
       "min": 31.0,
-      "max": 73.5
+      "max": 94.0
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 62.0,
+      "median": 80.0,
       "min": 43.0,
-      "max": 81.0
+      "max": 93.5
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 57.8,
+      "median": 72.0,
       "min": 48.0,
-      "max": 67.5
+      "max": 91.0
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 47.5,
+      "median": 70.0,
       "min": 34.0,
-      "max": 61.0
+      "max": 90.5
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 74.3,
-      "min": 62.5,
+      "median": 28.0,
+      "min": 25.0,
       "max": 86.0
     }
   },
-  "overall_score": 52.1
+  "overall_score": 74.8
 }

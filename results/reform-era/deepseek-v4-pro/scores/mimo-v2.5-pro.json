@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-pro",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "7cb412ad380b130129861d29b3e5c4e5ec0cf52ffbc663c554dc1185cc85b8e3",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 78.0,
+      "comment": "开篇集中展现贫困与外出奋斗的决心，核心主题（异化与救赎）尚未展开，但个人欲望与时代压力的张力已初步建立。"
+    },
+    "historical_grounding": {
+      "score": 85.0,
+      "comment": "1979年农村分地、深圳特区招工、双轨制背景、物质匮乏细节（粮票、医疗费）等时代元素扎实可信，有效参与情节因果。"
+    },
+    "characters": {
+      "score": 80.0,
+      "comment": "陈建国动机明确、行动逻辑连贯，林芳、李强等配角有差异性，但部分配角（如孙勇）略显功能化，关系变化尚未深入。"
+    },
+    "plot_causality": {
+      "score": 82.0,
+      "comment": "事件链由贫困压力、父亲疾病、南下机遇等推动，因果清晰；部分转折（如行李被骗）稍显刻意，但整体驱动有效。"
+    },
+    "longform_structure": {
+      "score": 75.0,
+      "comment": "开篇细纲与正文高度对应，完成度较好；但作为长篇序幕，主要冲突尚未展开，伏笔（如走私线索）埋设较浅，结构稍显平铺。"
+    },
+    "scene_execution": {
+      "score": 79.0,
+      "comment": "场景描写具体，细节生动（如搬砖、发工钱），对话和动作推动情节；但部分场景信息投放过于密集，节奏稍显拖沓。"
+    },
+    "style_control": {
+      "score": 81.0,
+      "comment": "语言朴实、叙述稳定，符合现实主义风格；但部分段落描写略显冗长，节奏变化不够主动。"
+    },
+    "ai_flavor": {
+      "score": 15.0,
+      "comment": "偶有模板化表达（如内心独白总结、部分排比），但整体叙述自然，未持续出现机械转折或套路悬念。"
+    }
+  }
+}

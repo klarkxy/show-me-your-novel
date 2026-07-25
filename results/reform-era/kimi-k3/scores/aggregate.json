@@ -5,11 +5,17 @@
   "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "就这一回、五味瓶、十字路口梦、烫手与影子刀等模板反复出现，债务清单与道德独白机械回旋，多数后段节奏可察觉程式化。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 75.0,
+          "comment": "开篇已初步呈现'干净与代价'主题，但主要抉择尚未展开，整体兑现处于铺垫阶段。"
+        },
+        "historical_grounding": {
+          "score": 81.0,
+          "comment": "粮票、工资、药品紧缺等细节真实，但部分描写稍显堆砌，制度层面揭示尚浅。"
+        },
+        "characters": {
+          "score": 78.5,
+          "comment": "主角动机清晰，家庭关系描写生动，但赵麻子等配角工具性较强，内心刻画不足。"
+        },
+        "plot_causality": {
+          "score": 76.0,
+          "comment": "情节由经济压力自然驱动，但巧合略显刻意，评审会与举报线推进缓慢。"
+        },
+        "longform_structure": {
+          "score": 82.5,
+          "comment": "开篇与大纲紧密衔接，伏笔埋设得当，但16章仅写到评议会前夜，节奏稍缓。"
+        },
+        "scene_execution": {
+          "score": 77.5,
+          "comment": "修机器、家庭场景等有画面感，但部分细节描写琐碎，信息投放尚可更集中。"
+        },
+        "style_control": {
+          "score": 76.0,
+          "comment": "语言平实流畅，但存在重复比喻和内心排比，段落间语域变化不多。"
+        },
+        "ai_flavor": {
+          "score": 30.5,
+          "comment": "偶有'五味瓶'等重复比喻和单调排比段，但整体场景具体，未严重程式化。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 83.0,
+          "comment": "开篇通过修收音机、转正名额、母亲药费等具体事件，将'守旧体面与闯荡风险'的抉择主题落实为人物行动，未停留在口号层面。"
+        },
+        "historical_grounding": {
+          "score": 82.0,
+          "comment": "粮票布票、集体宿舍、政治学习会等制度细节可信，电视机修理、电子表等物质细节参与因果，但部分信息略显刻意交代。"
+        },
+        "characters": {
+          "score": 81.0,
+          "comment": "顾向东的欲望（让家人过好）与能力（手艺）清晰，父亲、赵麻子等配角有具体差异与张力，但部分对话略显模板化。"
+        },
+        "plot_causality": {
+          "score": 79.0,
+          "comment": "修收音机→赵麻子引线→母亲药费→接大活等事件链基本由人物需求与环境压力推动，但仓库修货与工厂转正的巧合性稍强。"
+        },
+        "longform_structure": {
+          "score": 84.0,
+          "comment": "开篇十六章完成学徒工越界首次转变，节奏紧凑，伏笔（铁皮盒、笔记本、车床模型）与宏观大纲的卷1设定连续，支撑长篇展开。"
+        },
+        "scene_execution": {
+          "score": 80.0,
+          "comment": "修收音机、政治学习会、父子饭局等场景有效，通过动作与对话传递信息，但部分叙述存在过度解释人物心理的倾向。"
+        },
+        "style_control": {
+          "score": 78.0,
+          "comment": "语言总体稳重，能随场景调整（如工厂机械感、家庭温情），但存在重复性心理独白和排比式总结，削弱了叙事节奏。"
+        },
+        "ai_flavor": {
+          "score": 45.0,
+          "comment": "存在模板化内心挣扎（'正道/邪路'反复对比）、机械式重复（'就这一回'多次出现）、过度解释主题的倾向，但整体未完全程式化。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 92.5,
+          "comment": "文本精准兑现了改革开放初期的时代主题，将“铁饭碗”与“个体户”的路线之争巧妙内化为主人公在尽孝、生存与道德底线间的痛苦撕裂，主题探讨深刻且极具现实张力。"
+        },
+        "historical_grounding": {
+          "score": 94.0,
+          "comment": "时代质感极佳，粮本、红灯牌收音机、链霉素黑市价及车间政治学习会等细节不仅高度还原了七十年代末的物质与制度环境，更直接构成了推动人物命运转折的坚实因果链条。"
+        },
+        "characters": {
+          "score": 91.5,
+          "comment": "人物塑造立体饱满，顾向东的务实与挣扎、父亲作为老劳模的坚守与悲凉、赵麻子的精明市侩形成了极具张力的对照组，父子间围绕“干净”与“生存”的暗流涌动尤为动人。"
+        },
+        "plot_causality": {
+          "score": 90.5,
+          "comment": "情节推进严丝合缝，因果逻辑极其坚实。从义务修音机到为母筹措药费，再到被迫动用公家设备被抓把柄，主人公的每一次越界都由强烈的现实困境驱动，毫无机械巧合。"
+        },
+        "longform_structure": {
+          "score": 93.0,
+          "comment": "宏观大纲视野宏阔，开篇细纲与正文高度咬合。伏笔埋设极为精妙（如父亲的车床模型、记账本、走私货），节奏张弛有度，为两百万字的长篇史诗搭建了极其稳固的结构支撑。"
+        },
+        "scene_execution": {
+          "score": 91.0,
+          "comment": "场景构建极具画面感与叙事效能，无论是车间抢修的紧张、黑市仓库的幽暗，还是饭桌上父子对峙的压抑，动作与对话交锋精准，信息投放自然融入了极具张力的戏剧场景中。"
+        },
+        "style_control": {
+          "score": 90.0,
+          "comment": "叙事语言沉稳克制，语域准确契合时代背景。人物对话充满七十年代末的市井与工厂气息，句法简练有力，叙述距离把控得当，完美烘托了现实主义长篇的厚重底色。"
+        },
+        "ai_flavor": {
+          "score": 12.5,
+          "comment": "文本几乎没有常见的模板化排比或过度解释，细节描写具体且充满生活质感（如两块八毛钱的零钞）。仅在部分章节结尾处有轻微的同构抒情句式，整体呈现出极高的自然创作痕迹。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 68.3,
+      "median": 75.0,
       "min": 62.0,
-      "max": 74.5
+      "max": 92.5
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 63.5,
+      "median": 81.0,
       "min": 48.0,
-      "max": 79.0
+      "max": 94.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 57.3,
+      "median": 78.5,
       "min": 43.0,
-      "max": 71.5
+      "max": 91.5
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 53.5,
+      "median": 76.0,
       "min": 34.0,
-      "max": 73.0
+      "max": 90.5
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 61.8,
+      "median": 82.5,
       "min": 42.0,
-      "max": 81.5
+      "max": 93.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 54.0,
+      "median": 77.5,
       "min": 44.0,
-      "max": 64.0
+      "max": 91.0
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 46.8,
+      "median": 76.0,
       "min": 35.0,
-      "max": 58.5
+      "max": 90.0
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 74.0,
-      "min": 62.0,
+      "median": 45.0,
+      "min": 12.5,
       "max": 86.0
     }
   },
-  "overall_score": 54.9
+  "overall_score": 76.1
 }

@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "63a26f1915973516ab52f1731b19954e5843f2af8f84ed081ff336fd1874848b",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "f0626c88764568f6190a21824db94505c50cadc7007aa249918440a32ece7302",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 87.5,
+      "comment": "贫困与变革压力下，人物选择与家庭冲突切实承载了“个人在时代中寻找道路”的主题，不流于口号。"
+    },
+    "historical_grounding": {
+      "score": 91.0,
+      "comment": "工分制、政策宣讲、物质匮乏等细节扎实，构成了人物行动的逼真时代背景，且直接参与因果。"
+    },
+    "characters": {
+      "score": 89.5,
+      "comment": "陈建国不甘贫困的欲望具体，父亲的历史创伤形成鲜明代际冲突，次要人物各有功能，关系变化有力。"
+    },
+    "plot_causality": {
+      "score": 86.0,
+      "comment": "从工分不公、妹妹辍学到承包决定，环环相扣，情感驱动力强，但部分信息机缘稍显设计感。"
+    },
+    "longform_structure": {
+      "score": 92.0,
+      "comment": "细纲与正文严丝合缝，层层递进至首次越界，伏笔设置巧妙，长篇框架稳固，节奏控制恰当。"
+    },
+    "scene_execution": {
+      "score": 84.5,
+      "comment": "场景描写细腻，感官细节丰富，信息融入自然，但部分心理活动稍直白，可更含蓄。"
+    },
+    "style_control": {
+      "score": 88.0,
+      "comment": "用词精准，句式随情绪起伏变化，整体保持克制的现实主义质感，偶有重复但未损控制力。"
+    },
+    "ai_flavor": {
+      "score": 7.5,
+      "comment": "细节源于具体观察，情感由衷，无模板化排比或机械转折，语言有呼吸感，几乎无AI痕迹。"
+    }
+  }
+}

@@ -5,11 +5,17 @@
   "input_hash": "c2699dde5a0fa0a559193db242e0988bc66650c8cba1581996e3d7f4c069dfe2",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "物质细节压住了空泛排比，仍反复出现“先结果后清理”的整齐自辩、章末意象对仗与压力升级同构，模板痕迹可察觉但不淹没全文。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 89.2,
+          "comment": "从账务越界切入改革道德困局，将主题落实在具体行动和人物抉择中，并非空谈。"
+        },
+        "historical_grounding": {
+          "score": 92.5,
+          "comment": "票证、计划调拨、工资拖欠等物质细节真实可信，直接构成事件因果，时代质感强烈。"
+        },
+        "characters": {
+          "score": 87.8,
+          "comment": "主要人物欲望、行动逻辑清晰，关系张力扎实（如周沈原则分歧），部分配角有待丰富。"
+        },
+        "plot_causality": {
+          "score": 88.4,
+          "comment": "冲突由环境和人物主动选择推动，事件链环环相扣，借料与改账的递进逻辑尤其严密。"
+        },
+        "longform_structure": {
+          "score": 90.6,
+          "comment": "开篇与大纲高度连贯，伏笔（剪报本、便条）自然埋设，节奏控制稳健，长篇框架坚实。"
+        },
+        "scene_execution": {
+          "score": 89.1,
+          "comment": "场景具体可感，对话、动作与心理有效结合，如仓库盘点、试车事故等段落表现力突出。"
+        },
+        "style_control": {
+          "score": 88.7,
+          "comment": "语言朴实沉稳，句式节奏随场景变化，叙述距离稳定，无刻意煽情或失控。"
+        },
+        "ai_flavor": {
+          "score": 4.8,
+          "comment": "几乎无模板化痕迹，细节个性鲜明，叙述自然，偶有平实描述但属正常写作范畴。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 82.0,
+          "comment": "开篇将'改革机会必须借助灰色地带'这一核心主题落实到借料改票的具体行为中，周自成从数字困境滑向账务越界的轨迹清晰，主题进入人物行动而非停留在口号。"
+        },
+        "historical_grounding": {
+          "score": 88.0,
+          "comment": "票证、计划调拨、集体企业、双轨价格、供销社渠道、绿皮班车等时代细节密集且可信，制度约束真实参与情节因果，未用现代经验替人物预知。"
+        },
+        "characters": {
+          "score": 85.0,
+          "comment": "周自成渴望证明自己却惯于把道德拆成技术问题，沈秋萍坚持票据边界、乔万山技术原则与实用合作的矛盾、顾长顺代表工人现实压力，人物欲望、行动逻辑与关系张力有差异且在推进。"
+        },
+        "plot_causality": {
+          "score": 86.0,
+          "comment": "事件链由政策空白、原料短缺、生活压力和人情交换逐步推动，每次选择都有因果而非机械巧合；越界行为由多重现实约束倒逼，冲突清晰有效。"
+        },
+        "longform_structure": {
+          "score": 88.0,
+          "comment": "宏观大纲、开篇细纲与正文高度连续，十四卷伏笔（剪报本、安全申请、拒签认定书等）在开篇即有对应埋设，节奏由欠薪到试制到首次改票层层递进，阶段兑现完整。"
+        },
+        "scene_execution": {
+          "score": 87.0,
+          "comment": "工资表对峙、仓库盘点、河东问价、空转事故、购买意向和最后入账等场景均以动作、对话和细节推进关键内容，信息投放克制，没有用旁白总结替代场景。"
+        },
+        "style_control": {
+          "score": 84.0,
+          "comment": "叙述距离稳定在周自成的有限视角附近，句式简练务实，随场景微调语气（算账冷静、冲突紧促、独处时松散），措辞和语域基本准确，偶有个别比喻稍显刻意。"
+        },
+        "ai_flavor": {
+          "score": 12.0,
+          "comment": "整体未出现模板化排比、过度解释或机械转折，叙事节奏自然、信息靠场景传递；极少数段落末尾的总结性感慨略带套路感，但不构成系统干扰。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 92.0,
+          "comment": "文本极好地兑现了改革初期的现实主义承诺，没有停留在宏大口号，而是将时代阵痛精准落实于一笔笔无法平账的报销单与逼人的生计中，深刻揭示了生存与底线交锋的灰色地带。"
+        },
+        "historical_grounding": {
+          "score": 95.0,
+          "comment": "时代质感极佳，统购统销的余波、介绍信的威力、财务科目的腾挪以及极度匮乏的物质细节不仅真实可信，更直接构成了推动情节发展的核心阻力。"
+        },
+        "characters": {
+          "score": 90.0,
+          "comment": "人物塑造立体且充满张力，周自成的务实与越界、马敬堂的圆滑甩锅、沈秋萍的底线坚守、乔万山的技术原则，皆在具体的利益冲突与责任推诿中展现得淋漓尽致，拒绝了扁平化。"
+        },
+        "plot_causality": {
+          "score": 93.0,
+          "comment": "事件链条严密咬合，因果逻辑无懈可击。从拖欠工资到改制样机，再到为借钢材被迫做假账，每一个情节转折都由严苛的生存环境与人物的具体欲望自然推导，毫无机械巧合。"
+        },
+        "longform_structure": {
+          "score": 94.0,
+          "comment": "宏观大纲规划宏大且极具纵深，开篇细纲与正文高度吻合。首卷将“第一笔假账”与“私人剪报本”的伏笔自然埋下，完美支撑了后续长达十年的产权纠纷与道德清算，长篇架构极稳。"
+        },
+        "scene_execution": {
+          "score": 91.0,
+          "comment": "场景构建高效，叙事聚焦于具体的动作与对话。无论是财务室的逼债、仓库的盘点，还是运输站的推拉，都将复杂的政策与人情博弈转化为极具画面感与戏剧张力的有效场景。"
+        },
+        "style_control": {
+          "score": 90.0,
+          "comment": "叙事语言克制、冷峻、精准，极具工业与乡土混合的粗粝美感。语域高度贴合八十年代初的语境，句法利落，叙述距离控制得当，没有多余的抒情，全靠扎实的细节传递情绪。"
+        },
+        "ai_flavor": {
+          "score": 5.0,
+          "comment": "几乎没有模板痕迹。文本充满了极度具体的时代专有名词、财务逻辑与充满潜台词的职场对话，拒绝了过度解释与抽象总结，展现出极强的真实生活阅历与主动创作特质。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 83.9,
+      "median": 87.2,
       "min": 80.5,
-      "max": 87.2
+      "max": 92.0
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 88.5,
+      "median": 89.4,
       "min": 87.5,
-      "max": 89.4
+      "max": 95.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 80.8,
+      "median": 85.0,
       "min": 79.0,
-      "max": 82.6
+      "max": 90.0
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 83.8,
+      "median": 86.0,
       "min": 83.5,
-      "max": 84.1
+      "max": 93.0
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 84.2,
+      "median": 88.0,
       "min": 80.3,
-      "max": 88.0
+      "max": 94.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 82.9,
+      "median": 87.0,
       "min": 81.0,
-      "max": 84.7
+      "max": 91.0
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 79.8,
+      "median": 84.0,
       "min": 78.0,
-      "max": 81.5
+      "max": 90.0
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 34.7,
-      "min": 31.5,
+      "median": 12.0,
+      "min": 4.8,
       "max": 37.8
     }
   },
-  "overall_score": 81.8
+  "overall_score": 86.9
 }

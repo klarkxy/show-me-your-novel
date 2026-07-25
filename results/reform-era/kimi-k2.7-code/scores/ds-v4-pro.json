@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k2.7-code",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "4fb3659d257a7a265311547519eace854cd5c96003262179d18e3291a7346128",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 88.0,
+      "comment": "主题通过陈济民为父治病越界的过程具体展开，体现了金钱与道德的拉锯，非口号式呈现。"
+    },
+    "historical_grounding": {
+      "score": 91.5,
+      "comment": "工资、票证、住房、黑市、厂内纪律等细节丰富且驱动情节，现实质感强。"
+    },
+    "characters": {
+      "score": 86.0,
+      "comment": "陈济民欲望与恐惧的演变真实，配角各有立场，关系张力明显但部分稍显功能化。"
+    },
+    "plot_causality": {
+      "score": 84.5,
+      "comment": "事件由家庭压力、人物嫉妒和制度规章推动，因果链清晰，偶有顺利脱险但符合背景。"
+    },
+    "longform_structure": {
+      "score": 87.0,
+      "comment": "宏观大纲与开篇连续，伏笔（刘大奎、周德昌等）已埋设，开篇完成了主人公第一次不可逆越界。"
+    },
+    "scene_execution": {
+      "score": 86.0,
+      "comment": "场景具体有效，通过工资日、抢修、交易等场面以动作和对话推进，信息投放自然。"
+    },
+    "style_control": {
+      "score": 84.0,
+      "comment": "语言平实稳健，时代语汇准确，叙述距离稳定，偶有稍显冗长的心理描写。"
+    },
+    "ai_flavor": {
+      "score": 4.0,
+      "comment": "几乎无模板化排比、抽象总结或机械转折，场景与对话自然生动。"
+    }
+  }
+}

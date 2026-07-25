@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.1-pro",
+  "judge": "gemini-3.1-pro",
+  "requested_model": "gemini-3.1-pro",
+  "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "913adcf01cf258e32f6bc94bbe201109afe7fea078c7230f69cc907585e636f1",
+  "response_model": "gemini-3.1-pro-low",
+  "cache_key": "33f731d208a1253773840be165cad822cd2d000dd3b736c8d0dd599963f31da5",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 92.0,
+      "comment": "深刻兑现了体制转轨期的阵痛，个体在生存绝境与暴利诱惑下的异化与抗争刻画得入木三分，主题与人物命运紧密咬合，毫无空洞口号。"
+    },
+    "historical_grounding": {
+      "score": 95.0,
+      "comment": "时代质感极佳，粮票、介绍信、打投办及工商局的政策博弈等细节不仅真实可信，更直接构成了推动人物命运转折的核心因果，极具说服力。"
+    },
+    "characters": {
+      "score": 88.5,
+      "comment": "主角林卫国的野心、胆识与底线滑坡轨迹清晰且极具张力，配角如二黑的怯懦贪婪、赵股长的复杂审慎均十分立体，唯反派张有德略显脸谱化。"
+    },
+    "plot_causality": {
+      "score": 94.0,
+      "comment": "情节链条严丝合缝，从体制内受挫到南下倒卖，再到合法化尝试被权力绞杀，因果逻辑极其强悍，冲突完全由人物性格与时代环境内生推动。"
+    },
+    "longform_structure": {
+      "score": 93.5,
+      "comment": "宏观大纲与开篇细纲高度咬合，正文节奏紧凑且张弛有度，伏笔（如扣押清单、二黑性格）精准埋设，展现出极成熟的长篇驾驭与规划能力。"
+    },
+    "scene_execution": {
+      "score": 91.0,
+      "comment": "场景构建极具画面感与感官冲击力，如绿皮车厢的窒息感、工商局大厅的僵持与雨夜的绝望，动作与对话精准高效地完成了核心叙事任务。"
+    },
+    "style_control": {
+      "score": 90.5,
+      "comment": "叙事语言冷峻、扎实且充满力量感，语域准确契合八十年代初的社会氛围，节奏控制老辣，情绪渲染克制而极具爆发力，文风高度统一。"
+    },
+    "ai_flavor": {
+      "score": 25.0,
+      "comment": "整体行文流畅自然，但在部分章节结尾处仍存在轻微的总结性升华套路，以及偶尔出现的形容词堆砌与同构的情绪渲染痕迹，但不干扰沉浸感。"
+    }
+  }
+}

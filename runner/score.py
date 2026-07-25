@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Run the v3 two-judge, eight-dimension novel benchmark.
+"""Run the v3 multi-judge, eight-dimension novel benchmark.
 
 The tracked benchmark artifacts are the only scoring inputs.  Every judge sees
 the same anonymous, unabridged submission and scores every rubric dimension.
@@ -69,13 +69,29 @@ except ImportError:  # pragma: no cover - direct script execution
 SCHEMA_VERSION = "novel-eval.v3"
 AGGREGATE_SCHEMA_VERSION = "novel-eval-aggregate.v3"
 DEFAULT_BENCHMARK = "reform-era"
-ACTIVE_JUDGE_IDS = ("sol", "grok")
+ACTIVE_JUDGE_IDS = (
+    "sol",
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro",
+)
 # Compatibility alias for callers that imported the original public constant.
 JUDGE_IDS = ACTIVE_JUDGE_IDS
 MAX_RECOVERY_EVENTS = 256
 EXPECTED_JUDGE_MODELS = {
     "sol": "gpt-5.6-sol",
     "grok": "grok-4.5",
+    "ds-v4-pro": "deepseek-v4-pro",
+    "mimo-v2.5-pro": "mimo-v2.5-pro",
+    "gemini-3.1-pro": "gemini-3.1-pro",
+}
+JUDGE_LABELS = {
+    "sol": "Sol",
+    "grok": "Grok 4.5",
+    "ds-v4-pro": "DeepSeek V4 Pro",
+    "mimo-v2.5-pro": "MiMo V2.5 Pro",
+    "gemini-3.1-pro": "Gemini 3.1 Pro",
 }
 DEFAULT_PROVIDER = "new-api"
 REQUIRED_ARTIFACTS = (
@@ -990,13 +1006,28 @@ def dimension_radar_value(dimension_key: str, value: int | float) -> float:
     return _normalise_dimension_score(100 - normalised, dimension_key)
 
 
+def _median_score(values: list[float]) -> float:
+    """Median of one-decimal scores; even counts average the two central votes."""
+
+    if not values:
+        raise ScoreError("中位数聚合至少需要一票")
+    ordered = sorted(Decimal(str(value)) for value in values)
+    mid = len(ordered) // 2
+    if len(ordered) % 2 == 1:
+        return _round_decimal_score(ordered[mid])
+    return _round_decimal_score((ordered[mid - 1] + ordered[mid]) / Decimal("2"))
+
+
 def aggregate_dimension_scores(
     judge_dimensions: Mapping[str, Mapping[str, Any]],
 ) -> dict[str, dict[str, Any]]:
-    """Aggregate both active judge mappings with per-dimension medians."""
+    """Aggregate all active judge mappings with per-dimension medians."""
 
     if set(judge_dimensions) != set(JUDGE_IDS):
-        raise ScoreError("维度聚合需要且只能使用 Sol、Grok 两位活动评委")
+        raise ScoreError(
+            "维度聚合需要且只能使用全部活动评委："
+            + "、".join(JUDGE_IDS)
+        )
     result: dict[str, dict[str, Any]] = {}
     for spec in DIMENSION_SPECS:
         values: list[float] = []
@@ -1013,16 +1044,15 @@ def aggregate_dimension_scores(
                 spec.key, dict(entry)
             )
             values.append(normalised_entry["score"])
-        if len(values) != 2:  # Defensive: JUDGE_IDS is intentionally a pair.
-            raise ScoreError("两评委聚合必须恰好包含两票")
-        midpoint = (
-            Decimal(str(values[0])) + Decimal(str(values[1]))
-        ) / Decimal("2")
+        if len(values) != len(JUDGE_IDS):
+            raise ScoreError(
+                f"活动评委聚合必须恰好包含 {len(JUDGE_IDS)} 票"
+            )
         result[spec.key] = {
             "label": spec.label,
             "weight": spec.weight,
             "higher_is_better": spec.higher_is_better,
-            "median": _round_decimal_score(midpoint),
+            "median": _median_score(values),
             "min": _normalise_dimension_score(min(values), f"{spec.key}.min"),
             "max": _normalise_dimension_score(max(values), f"{spec.key}.max"),
         }

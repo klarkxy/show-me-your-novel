@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-pro",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "9cf1b92e2ad98e567fed0e934cfc9c67f8fdbcafc094e705d3a2fa886d481fd4",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 75.0,
+      "comment": "开篇扎实铺垫贫穷与出走，但“异化与救赎”主题尚未充分展开，仅为伏笔。"
+    },
+    "historical_grounding": {
+      "score": 86.0,
+      "comment": "包产到户、火车、工地、夜校等细节丰富可信，时代质感强烈。"
+    },
+    "characters": {
+      "score": 82.0,
+      "comment": "陈建国务实坚韧，李强生动仗义，但林芳略显功能化，人物弧光尚未完全展现。"
+    },
+    "plot_causality": {
+      "score": 83.0,
+      "comment": "贫困与父病驱动南下，被骗、做工、受伤等事件因果紧密，无机械巧合。"
+    },
+    "longform_structure": {
+      "score": 85.0,
+      "comment": "宏观大纲卷间呼应清晰，开篇细纲与正文高度一致，节奏稳健，伏笔得当。"
+    },
+    "scene_execution": {
+      "score": 84.0,
+      "comment": "场景描写细腻，对话动作扎实，信息投放自然，但部分日常段落稍显琐碎。"
+    },
+    "style_control": {
+      "score": 83.0,
+      "comment": "语言朴实准确，方言适度，叙述距离稳定，时代语感强，无突兀的文艺腔。"
+    },
+    "ai_flavor": {
+      "score": 8.0,
+      "comment": "文本充满具体细节与个性化比喻，几乎没有模板化排比或抽象说教的AI痕迹。"
+    }
+  }
+}

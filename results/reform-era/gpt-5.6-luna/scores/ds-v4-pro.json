@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-luna",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "ad1629061c05e60a7764b58687c937126894e3eed68b9058a16491be96947861",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "357ad160fc687a87414825fd02f1dec10657a9bee0ae76447c59d1fe06591877",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 86.2,
+      "comment": "通过具体工厂困境切入，将改革压力落到个人选择与家庭责任，主题扎实无口号。"
+    },
+    "historical_grounding": {
+      "score": 87.8,
+      "comment": "设备停摆、物资调拨、票据生活的物质细节具体密集，制度缝隙与日常困顿共同构成可靠的时代基底。"
+    },
+    "characters": {
+      "score": 88.5,
+      "comment": "沈砚的谨慎与越界、许素琴的清醒与失望，配角各有立场，关系动态有层次和真实性。"
+    },
+    "plot_causality": {
+      "score": 84.7,
+      "comment": "配件短缺引发的递进式解决路径清晰，大部分由人物与制度推演，唯个别关键节点的巧合稍削弱因果力度。"
+    },
+    "longform_structure": {
+      "score": 91.2,
+      "comment": "整体规划严密，多线伏笔（编号、借条、承包）与人物弧光共同支撑长篇连续性，开篇即显长篇野心。"
+    },
+    "scene_execution": {
+      "score": 87.3,
+      "comment": "关键场景（仓库查货、家庭算账、会议交锋）视听细节扎实，对话有效承载冲突与信息，极少空泛叙述。"
+    },
+    "style_control": {
+      "score": 88.6,
+      "comment": "以朴素的现实主义语言为主，描写精确，节奏沉稳，能随场景悄然调整细节密度，风格统一且克制。"
+    },
+    "ai_flavor": {
+      "score": 12.5,
+      "comment": "极少模板化修辞或抽象概括，叙事情节由具体行动推进，避免夸张悬念和解释性总结，AI痕迹微弱。"
+    }
+  }
+}

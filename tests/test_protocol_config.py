@@ -32,6 +32,9 @@ EXPECTED_GENERATORS = (
 EXPECTED_JUDGES = {
     "sol": "gpt-5.6-sol",
     "grok": "grok-4.5",
+    "ds-v4-pro": "deepseek-v4-pro",
+    "mimo-v2.5-pro": "mimo-v2.5-pro",
+    "gemini-3.1-pro": "gemini-3.1-pro",
     "kimi": "kimi-k3",
 }
 ANTHROPIC_GENERATORS = {

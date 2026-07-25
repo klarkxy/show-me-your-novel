@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-luna",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "ad1629061c05e60a7764b58687c937126894e3eed68b9058a16491be96947861",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "0b8e5d8ed1510ff49f5b712dcef2b9a67d1bdfe28d436b75eb7c6df90576d0b8",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 83.0,
+      "comment": "主题通过沈砚在制度缝隙中的选择逐步兑现，个人责任、时代代价与道德困境在情节中切实展开，而非停留在口号层面。"
+    },
+    "historical_grounding": {
+      "score": 91.0,
+      "comment": "1978年国营工厂的计划调拨、仓库管理、物资协调会、价格双轨、粮票煤票等细节高度可信，制度与日常生活深度参与因果。"
+    },
+    "characters": {
+      "score": 85.0,
+      "comment": "沈砚的谨慎与被迫冒险、许素琴的务实焦虑、梁敬民的体制逻辑、赵福生的工人立场均有具体差异和张力，关系变化真实。"
+    },
+    "plot_causality": {
+      "score": 87.0,
+      "comment": "停机、调拨差错、南下采购、借款、检查站扣货等事件由人物选择和制度困境驱动，因果链清晰有效，避免了机械巧合。"
+    },
+    "longform_structure": {
+      "score": 88.0,
+      "comment": "宏观大纲与开篇细纲高度连续，伏笔（编号七三一九、借条、缺页账簿）均在正文中铺设，节奏紧凑且支撑长篇。"
+    },
+    "scene_execution": {
+      "score": 86.0,
+      "comment": "仓库清点、市物资协调会、南方验货、检查站过桥等场景动作与对话具体，信息投放自然，视角始终贴紧沈砚。"
+    },
+    "style_control": {
+      "score": 84.0,
+      "comment": "叙述语言克制准确，句法随场景变化（仓库争执的紧张、车厢交易的暗流），语域稳定，未出现失控的抒情或总结。"
+    },
+    "ai_flavor": {
+      "score": 18.0,
+      "comment": "偶有重复句式和略显整齐的段落排列，但整体节奏自然，未出现模板化排比、过度解释或套路悬念，无明显AI痕迹。"
+    }
+  }
+}

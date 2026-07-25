@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "63a26f1915973516ab52f1731b19954e5843f2af8f84ed081ff336fd1874848b",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "a87d41d8f19b676530d570ccfd43df76d8aabddeba0e7b5e4edefa10297e1136",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 85.0,
+      "comment": "题材与主题兑现度高，个人在社会变革中的自我实现与道德困境通过承包辣椒的具体事件和家庭冲突得到扎实呈现，未停留在口号层面。"
+    },
+    "historical_grounding": {
+      "score": 88.0,
+      "comment": "时代与现实质感出色，工分制度、集体劳动、政策文件、广播宣讲、贫困细节等均真实可信，深度参与人物动机与情节因果。"
+    },
+    "characters": {
+      "score": 87.0,
+      "comment": "陈建国及其家庭关系刻画具体，欲望、行动逻辑清晰，代际冲突与内在挣扎有层次，人物差异性明显。"
+    },
+    "plot_causality": {
+      "score": 86.0,
+      "comment": "情节由贫困压力、政策变动、家庭危机等多因素推动，事件链清晰有效，避免机械巧合，因果关系扎实。"
+    },
+    "longform_structure": {
+      "score": 84.0,
+      "comment": "宏观大纲、开篇细纲与正文连续性强，节奏稳定，伏笔（父亲怀表、政策文件）埋设合理，阶段兑现支撑长篇展开。"
+    },
+    "scene_execution": {
+      "score": 85.0,
+      "comment": "场景聚焦有效，通过挑粪、学费冲突、队长暗示等关键场景落实信息与冲突，动作、对话与描写服务于叙事效能。"
+    },
+    "style_control": {
+      "score": 83.0,
+      "comment": "文风总体稳定准确，叙述距离保持一致，随场景有适度变化，但部分内心独白稍显冗长，节奏偶有拖沓。"
+    },
+    "ai_flavor": {
+      "score": 12.0,
+      "comment": "几乎无模板化排比或过度解释，偶有抽象总结但未干扰叙事，机械转折与套路悬念痕迹轻微。"
+    }
+  }
+}

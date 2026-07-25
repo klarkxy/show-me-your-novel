@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.5-flash",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "b1fb23356e182761f0800c895de6edae40f83969b38dc56dc365f1039694f70f",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "3af0eec7219d48be3df9c0e6142dd36ed10168004e3e3808a23b3b62b24768e9",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 82.0,
+      "comment": "以女儿病危为引擎，将体制束缚与生存需求的对立具象化，主题承诺在人物命运中得以可信展开。"
+    },
+    "historical_grounding": {
+      "score": 80.0,
+      "comment": "对1982年的工资、票证、进口物资匮乏等物质细节的刻画精准扎实，制度压迫真实可信。"
+    },
+    "characters": {
+      "score": 82.0,
+      "comment": "陆怀山的道德挣扎具体可感，张建国的坚守与刘建军的鹰犬形象构成有力对峙，但如陈大水态度突变稍显工具化。"
+    },
+    "plot_causality": {
+      "score": 83.0,
+      "comment": "由女儿急症与工资拖欠引发的系列事件逻辑紧密，主角每次行动均源于具体压力，因果链清晰有效。"
+    },
+    "longform_structure": {
+      "score": 85.0,
+      "comment": "十六章起始部密实铺展，宏观伏笔（库房物资、陈金发）与即时冲突的递进设计合理，长篇骨架稳固。"
+    },
+    "scene_execution": {
+      "score": 84.0,
+      "comment": "关键场景（雨夜赴厂、库房偷件、机器调试）的动作与心理描写兼具张力，信息落实为有效剧情推进。"
+    },
+    "style_control": {
+      "score": 79.0,
+      "comment": "语句朴素准确，冷峻的叙述语气贴合现实题材，但部分比喻和排比稍显重复，削弱了差异性。"
+    },
+    "ai_flavor": {
+      "score": 18.0,
+      "comment": "整体未陷入表格化排比与抽象总结，场景由细节驱动，但部分躯体反应描写略有套路痕迹。"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-terra",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "28307eaa91ad3e66e036a0a8eb813365e71bb53945e1ce27b5c961c8b415f5ab",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 72.0,
+      "comment": "改革开放背景与个人奋斗主题通过布料交易、旧案阴影等情节具体展开，但核心主题'财富与自由'的哲学探讨尚未在开篇中充分兑现，更多停留在生存驱动层面。"
+    },
+    "historical_grounding": {
+      "score": 88.0,
+      "comment": "粮票、布票、供销社体制、临时工身份、南货北运等细节高度可信，制度缝隙与日常物质生活深度参与因果链，时代质感扎实。"
+    },
+    "characters": {
+      "score": 85.0,
+      "comment": "周继业的隐忍与算计、张桂兰的恐惧与固守、罗群的精明与圆滑均有差异性，关系张力在账目、旧案、借钱等场景中有效展开。"
+    },
+    "plot_causality": {
+      "score": 80.0,
+      "comment": "布料报损、旧账发现、凑钱入伙等事件链由人物欲望和制度压迫推动，因果清楚，但部分转折（如韩克勤主动出现）略显刻意。"
+    },
+    "longform_structure": {
+      "score": 78.0,
+      "comment": "开篇大纲与宏观卷次对应清晰，伏笔（旧账、存单、鞋垫纸条）铺设到位，但开篇16章节奏稍慢，密集对话略显重复。"
+    },
+    "scene_execution": {
+      "score": 75.0,
+      "comment": "仓库盘点、下河集交易、饭店后门试探等场景信息投放有效，动作与对话推动情节，但部分对话场景（如多次借钱）功能单一。"
+    },
+    "style_control": {
+      "score": 82.0,
+      "comment": "语言朴素准确，叙述距离随人物心理自然变化，句式节奏稳定，但个别段落解释性稍强，未完全避免总结倾向。"
+    },
+    "ai_flavor": {
+      "score": 25.0,
+      "comment": "整体叙述自然，少有模板化排比或机械转折，但部分对话和心理描写存在轻微的重复强调和套路化悬念设置。"
+    }
+  }
+}

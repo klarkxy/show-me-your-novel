@@ -85,11 +85,17 @@ def test_scoring_preflight_requires_only_active_judge_models() -> None:
     judges = {
         "sol": {"model_cfg": _judge_cfg("sol-wire")},
         "grok": {"model_cfg": _judge_cfg("grok-4.5")},
+        "ds-v4-pro": {"model_cfg": _judge_cfg("deepseek-v4-pro")},
+        "mimo-v2.5-pro": {"model_cfg": _judge_cfg("mimo-v2.5-pro")},
+        "gemini-3.1-pro": {"model_cfg": _judge_cfg("gemini-3.1-pro")},
     }
 
     assert score.configured_wire_models(cfg, judges) == (
         "sol-wire",
         "grok-4.5",
+        "deepseek-v4-pro",
+        "mimo-v2.5-pro",
+        "gemini-3.1-pro",
     )
 
 
@@ -168,7 +174,13 @@ def test_site_score_fingerprints_match_scoring_writer() -> None:
     site_expectations = build_score_expectations(config_path, cfg)
     rubric = score.load_system_prompt(root)
 
-    assert score.ACTIVE_JUDGE_IDS == ("sol", "grok")
+    assert score.ACTIVE_JUDGE_IDS == (
+        "sol",
+        "grok",
+        "ds-v4-pro",
+        "mimo-v2.5-pro",
+        "gemini-3.1-pro",
+    )
     assert set(resolved) == set(score.ACTIVE_JUDGE_IDS)
     for judge_id in score.JUDGE_IDS:
         model_cfg = resolved[judge_id]["model_cfg"]
@@ -219,7 +231,7 @@ def test_inactive_kimi_config_is_not_required_or_resolved() -> None:
 
     resolved = score.resolve_judge_configs(cfg)
 
-    assert set(resolved) == {"sol", "grok"}
+    assert set(resolved) == set(score.ACTIVE_JUDGE_IDS)
     with pytest.raises(SystemExit):
         score._build_parser().parse_args(
             ["--model", "candidate-a", "--judge", "kimi"]
@@ -755,27 +767,36 @@ def test_aggregate_requires_both_active_judges_and_ignores_old_kimi(
     assert incomplete["eligible_for_ranking"] is False
     assert incomplete["dimensions"] == {}
     assert incomplete["overall_score"] is None
-    assert incomplete["expected_judges"] == ["sol", "grok"]
+    assert incomplete["expected_judges"] == list(score.JUDGE_IDS)
     assert incomplete["completed_judges"] == ["sol"]
     assert set(incomplete["judges"]) == {"sol"}
 
-    _write_score(submission, "grok", keys["grok"], 80, 20, identities["grok"])
+    for judge_id in score.JUDGE_IDS[1:]:
+        _write_score(
+            submission,
+            judge_id,
+            keys[judge_id],
+            80,
+            20,
+            identities[judge_id],
+        )
     complete = score.aggregate_scores(submission, keys, identities)
     assert complete["status"] == "complete"
     assert complete["eligible_for_ranking"] is True
-    assert complete["overall_score"] == 85.0
-    assert complete["expected_judges"] == ["sol", "grok"]
-    assert complete["completed_judges"] == ["sol", "grok"]
-    assert set(complete["judges"]) == {"sol", "grok"}
+    # sol=90 and four×80 → median 80; ai_flavor sol=10 four×20 → median 20
+    assert complete["overall_score"] == 80.0
+    assert complete["expected_judges"] == list(score.JUDGE_IDS)
+    assert complete["completed_judges"] == list(score.JUDGE_IDS)
+    assert set(complete["judges"]) == set(score.JUDGE_IDS)
     assert complete["dimensions"]["characters"] == {
         "label": "人物与关系",
         "weight": 0.15,
         "higher_is_better": True,
-        "median": 85.0,
+        "median": 80.0,
         "min": 80.0,
         "max": 90.0,
     }
-    assert complete["dimensions"]["ai_flavor"]["median"] == 15.0
+    assert complete["dimensions"]["ai_flavor"]["median"] == 20.0
     assert complete["judges"]["sol"]["dimensions"]["characters"]["score"] == 90.0
 
     # A stale active result must invalidate the complete aggregate.
@@ -790,25 +811,31 @@ def test_dimension_helpers_use_median_direction_and_half_up_rounding() -> None:
     judge_dimensions = {
         "sol": _dimensions(90.1, 10.1),
         "grok": _dimensions(40.2, 90.2),
+        "ds-v4-pro": _dimensions(70.0, 30.0),
+        "mimo-v2.5-pro": _dimensions(60.0, 40.0),
+        "gemini-3.1-pro": _dimensions(50.0, 50.0),
     }
     aggregate = score.aggregate_dimension_scores(judge_dimensions)
 
-    # With two votes, statistics.median is their arithmetic midpoint.
-    assert aggregate["plot_causality"]["median"] == 65.2
+    # Odd vote count: median is the middle value after sorting.
+    assert aggregate["plot_causality"]["median"] == 60.0
     assert aggregate["plot_causality"]["min"] == 40.2
     assert aggregate["plot_causality"]["max"] == 90.1
-    assert aggregate["ai_flavor"]["median"] == 50.2
-    assert score.dimension_radar_value("ai_flavor", 50.2) == 49.8
+    assert aggregate["ai_flavor"]["median"] == 40.0
+    assert score.dimension_radar_value("ai_flavor", 40.0) == 60.0
     assert score.dimension_radar_value("characters", 82.25) == 82.3
 
     boundary = score.aggregate_dimension_scores(
         {
             "sol": _dimensions(30.1, 30.1),
             "grok": _dimensions(64.6, 64.6),
+            "ds-v4-pro": _dimensions(47.3, 47.3),
+            "mimo-v2.5-pro": _dimensions(10.0, 10.0),
+            "gemini-3.1-pro": _dimensions(90.0, 90.0),
         }
     )
-    assert boundary["theme_fulfillment"]["median"] == 47.4
-    assert boundary["ai_flavor"]["median"] == 47.4
+    assert boundary["theme_fulfillment"]["median"] == 47.3
+    assert boundary["ai_flavor"]["median"] == 47.3
 
     medians = {
         "theme_fulfillment": 80,

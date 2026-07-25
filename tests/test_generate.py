@@ -1233,7 +1233,7 @@ def test_fixed_registry_rejects_substitution() -> None:
         {"models": models, "judges": judges}
     )
     assert len(validated_models) == 19
-    assert len(validated_judges) == 3
+    assert len(validated_judges) == len(EXPECTED_JUDGES)
     substituted = [dict(item) for item in models]
     substituted[0]["model"] = "silent-fallback"
     with pytest.raises(ValueError, match="静默替换"):
@@ -1272,7 +1272,7 @@ def test_cli_preflight_checks_every_generator_and_judge(
     monkeypatch.setattr(generate_module, "ChatClient", CompleteClient)
     assert generate_module.main(["--model", "deepseek-v4-flash", "--dry-run"]) == 0
     output = capsys.readouterr().out
-    assert "全部 19 个生成模型、3 个评委" in output
+    assert f"全部 19 个生成模型、{len(EXPECTED_JUDGES)} 个评委" in output
     assert "85%安全线" in output
     assert "api_optional_params=none（服务端默认）" in output
     assert "基础调用=19–21" in output

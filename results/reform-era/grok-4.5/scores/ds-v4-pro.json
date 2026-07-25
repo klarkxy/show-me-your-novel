@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "grok-4.5",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "be72307a51ceaec6e5a1de7fd55b4de6ef07126c705b72ebc2a42577714621cf",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "cdbd900d6b0d0ec6398ce78f3146e5efdadb7e35e7c8ae57ca439dd6e1a975ad",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 88.5,
+      "comment": "通过废料私卖、图纸泄露等具体事件，真实展现个人在模糊规则中支付良心代价，主题不悬空。"
+    },
+    "historical_grounding": {
+      "score": 90.0,
+      "comment": "票证、议价、编制、厂区日常等细节扎实，制度与物质限制直接参与因果，时代质感可信。"
+    },
+    "characters": {
+      "score": 85.5,
+      "comment": "陈渡生欲望具体、挣扎可信；父亲、周晓东、王大力各有立场，关系张力随越界逐步升级。"
+    },
+    "plot_causality": {
+      "score": 88.0,
+      "comment": "父亲病重→经济压力→清点废料→接触采购→逐步交易，因果链由人物困境自然推动，无机械巧合。"
+    },
+    "longform_structure": {
+      "score": 91.0,
+      "comment": "十二卷宏观规划明确，十七章开篇与大纲严密对应，伏笔（图纸、旧账、南下）埋设与推进节奏稳。"
+    },
+    "scene_execution": {
+      "score": 87.5,
+      "comment": "车间、河堤、招待所、雨夜装车等场景具象；动作、对话、环境描写协同传递压力与抉择。"
+    },
+    "style_control": {
+      "score": 86.0,
+      "comment": "语言平实冷静，句法简洁，叙述距离控制稳定，偶尔重复但整体风格统一，符合现实主义要求。"
+    },
+    "ai_flavor": {
+      "score": 12.0,
+      "comment": "极少模板化排比或抽象说教，叙事靠具体细节和场景推进，文字有生活实感而非机械生成。"
+    }
+  }
+}

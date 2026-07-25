@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "minimax-m3",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "9d8425c49e0dde818904f65a94f6eac877738d6874913cb9fc33f3299fd3cb00",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "46a6f423ce07a317c25d42a45cfe71bb892754067339d9aa41f0b799d6bfb2bf",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 85.0,
+      "comment": "创作方向明确进入改革开放初期普通工人的现实困境，主题通过陈卫国在体制内外的挣扎逐步兑现，但核心道德困境尚未在开篇中充分展开。"
+    },
+    "historical_grounding": {
+      "score": 88.0,
+      "comment": "国营工厂体制、工资水平、票证制度、万元户宣传、港商考察等时代细节扎实可信，参与人物命运因果。"
+    },
+    "characters": {
+      "score": 82.0,
+      "comment": "陈卫国的欲望与行动逻辑清晰，林秀兰、方小凤、刘国栋等人有具体差异性，但部分人物关系变化略显套路化。"
+    },
+    "plot_causality": {
+      "score": 84.0,
+      "comment": "冲突由人物性格与环境压力推动，事件链（比武不公→调岗→修收音机结识港商）因果清楚，但倒卖被抓的巧合稍显刻意。"
+    },
+    "longform_structure": {
+      "score": 87.0,
+      "comment": "开篇细纲与宏观大纲连续性好，伏笔（名片、冲压机隐患、离合器问题）埋设自然，节奏支撑长篇展开。"
+    },
+    "scene_execution": {
+      "score": 86.0,
+      "comment": "场景落实有效（比武现场、夜班车床、修收音机），视角稳定，对话推动情节，信息投放自然。"
+    },
+    "style_control": {
+      "score": 80.0,
+      "comment": "叙述语言朴实准确，能随场景调整节奏，但部分对话和内心描写出现重复强调，节奏偶有拖沓。"
+    },
+    "ai_flavor": {
+      "score": 28.0,
+      "comment": "整体无明显模板痕迹，但部分段落存在对话重复（如'为了孩子'反复出现）、解释性总结代替场景的倾向。"
+    }
+  }
+}

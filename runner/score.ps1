@@ -13,7 +13,7 @@ param(
   [string[]]$Model,
   [Parameter(ParameterSetName = "All", Mandatory = $true)]
   [switch]$All,
-  [ValidateSet("sol", "grok")]
+  [ValidateSet("sol", "grok", "ds-v4-pro", "mimo-v2.5-pro", "gemini-3.1-pro")]
   [string[]]$Judge,
   [switch]$DryRun
 )

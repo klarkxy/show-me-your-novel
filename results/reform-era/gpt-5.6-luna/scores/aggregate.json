@@ -5,11 +5,17 @@
   "input_hash": "ad1629061c05e60a7764b58687c937126894e3eed68b9058a16491be96947861",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "压力升级与顿悟收束模式反复，主题对白与账目罗列可察觉程式；制度细节与具体场景密度部分冲淡模板感，仍属反复可感。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 86.2,
+          "comment": "通过具体工厂困境切入，将改革压力落到个人选择与家庭责任，主题扎实无口号。"
+        },
+        "historical_grounding": {
+          "score": 87.8,
+          "comment": "设备停摆、物资调拨、票据生活的物质细节具体密集，制度缝隙与日常困顿共同构成可靠的时代基底。"
+        },
+        "characters": {
+          "score": 88.5,
+          "comment": "沈砚的谨慎与越界、许素琴的清醒与失望，配角各有立场，关系动态有层次和真实性。"
+        },
+        "plot_causality": {
+          "score": 84.7,
+          "comment": "配件短缺引发的递进式解决路径清晰，大部分由人物与制度推演，唯个别关键节点的巧合稍削弱因果力度。"
+        },
+        "longform_structure": {
+          "score": 91.2,
+          "comment": "整体规划严密，多线伏笔（编号、借条、承包）与人物弧光共同支撑长篇连续性，开篇即显长篇野心。"
+        },
+        "scene_execution": {
+          "score": 87.3,
+          "comment": "关键场景（仓库查货、家庭算账、会议交锋）视听细节扎实，对话有效承载冲突与信息，极少空泛叙述。"
+        },
+        "style_control": {
+          "score": 88.6,
+          "comment": "以朴素的现实主义语言为主，描写精确，节奏沉稳，能随场景悄然调整细节密度，风格统一且克制。"
+        },
+        "ai_flavor": {
+          "score": 12.5,
+          "comment": "极少模板化修辞或抽象概括，叙事情节由具体行动推进，避免夸张悬念和解释性总结，AI痕迹微弱。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 83.0,
+          "comment": "主题通过沈砚在制度缝隙中的选择逐步兑现，个人责任、时代代价与道德困境在情节中切实展开，而非停留在口号层面。"
+        },
+        "historical_grounding": {
+          "score": 91.0,
+          "comment": "1978年国营工厂的计划调拨、仓库管理、物资协调会、价格双轨、粮票煤票等细节高度可信，制度与日常生活深度参与因果。"
+        },
+        "characters": {
+          "score": 85.0,
+          "comment": "沈砚的谨慎与被迫冒险、许素琴的务实焦虑、梁敬民的体制逻辑、赵福生的工人立场均有具体差异和张力，关系变化真实。"
+        },
+        "plot_causality": {
+          "score": 87.0,
+          "comment": "停机、调拨差错、南下采购、借款、检查站扣货等事件由人物选择和制度困境驱动，因果链清晰有效，避免了机械巧合。"
+        },
+        "longform_structure": {
+          "score": 88.0,
+          "comment": "宏观大纲与开篇细纲高度连续，伏笔（编号七三一九、借条、缺页账簿）均在正文中铺设，节奏紧凑且支撑长篇。"
+        },
+        "scene_execution": {
+          "score": 86.0,
+          "comment": "仓库清点、市物资协调会、南方验货、检查站过桥等场景动作与对话具体，信息投放自然，视角始终贴紧沈砚。"
+        },
+        "style_control": {
+          "score": 84.0,
+          "comment": "叙述语言克制准确，句法随场景变化（仓库争执的紧张、车厢交易的暗流），语域稳定，未出现失控的抒情或总结。"
+        },
+        "ai_flavor": {
+          "score": 18.0,
+          "comment": "偶有重复句式和略显整齐的段落排列，但整体节奏自然，未出现模板化排比、过度解释或套路悬念，无明显AI痕迹。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 92.5,
+          "comment": "文本精准切入计划经济向市场过渡的制度缝隙，将宏大时代命题完美落地于一台停摆的纺机与一只无法合规采购的轴承，深刻展现了旧规则失效与新秩序未建时的个人道德与生存困境，主题兑现极佳。"
+        },
+        "historical_grounding": {
+          "score": 94.0,
+          "comment": "时代质感极度扎实。从四十七元工资、粮票煤票的拮据，到国营大厂内推诿塞责的官僚作风，再到沿海倒爷与绿皮火车上的地下交易，物质细节与制度环境不仅真实可信，更直接构成了推动人物行动的因果锁链。"
+        },
+        "characters": {
+          "score": 91.5,
+          "comment": "人物塑造立体且充满张力。沈砚从谨慎计划员到被迫越界的转变逻辑严密；许素琴的务实拷问、顾长河以人情包裹利益的试探、厂领导间的政治博弈，均展现出极高的复杂性，人物关系在现实压力下发生着可信的异化。"
+        },
+        "plot_causality": {
+          "score": 93.0,
+          "comment": "叙事动力强劲，因果链条严丝合缝。从轴承损坏到南下采购，每一个情节转折都由严苛的现实环境与人物的必然选择推动。没有机械降神，沈砚的每一次解决问题都在为未来埋下更沉重的债务与责任地雷。"
+        },
+        "longform_structure": {
+          "score": 95.0,
+          "comment": "宏观大纲视野宏阔，开篇细纲与正文高度咬合。首卷不仅完成了核心冲突的建构，更草蛇灰线地埋下了仓库编号、私人借条、残次配件等关键伏笔，节奏沉稳，阶段性悬念设置极佳，展现出顶级的长篇控局能力。"
+        },
+        "scene_execution": {
+          "score": 90.5,
+          "comment": "场景构建高效且充满戏剧张力。无论是物资协调会上的唇枪舌剑，还是南方仓库里的暗流涌动，视角的切换、动作的细节与潜台词丰富的对话交织，将复杂的利益博弈与心理挣扎完美转化为极具画面感的有效场景。"
+        },
+        "style_control": {
+          "score": 91.0,
+          "comment": "叙事语言冷峻、克制、精准，带有强烈的工业与现实主义粗粝感。句法利落，语域贴合时代语境，叙述节奏稳健，能够根据车间的喧闹、家庭的压抑或谈判的紧张主动调整文风，毫无浮夸造作之气。"
+        },
+        "ai_flavor": {
+          "score": 5.0,
+          "comment": "文本几乎没有模板化痕迹。没有过度解释、空洞抒情或机械的段落同构；对话充满潜台词与生活毛边，场景过渡自然，展现出极高的特有叙事直觉与文字掌控力。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 79.0,
+      "median": 83.0,
       "min": 78.0,
-      "max": 80.0
+      "max": 92.5
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 72.5,
+      "median": 87.8,
       "min": 59.0,
-      "max": 86.0
+      "max": 94.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 72.3,
+      "median": 85.0,
       "min": 67.0,
-      "max": 77.5
+      "max": 91.5
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 72.5,
+      "median": 84.7,
       "min": 64.0,
-      "max": 81.0
+      "max": 93.0
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 70.8,
+      "median": 88.0,
       "min": 57.0,
-      "max": 84.5
+      "max": 95.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 70.5,
+      "median": 86.0,
       "min": 65.0,
-      "max": 76.0
+      "max": 90.5
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 66.0,
+      "median": 84.0,
       "min": 61.0,
-      "max": 71.0
+      "max": 91.0
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 49.5,
-      "min": 41.0,
+      "median": 18.0,
+      "min": 5.0,
       "max": 58.0
     }
   },
-  "overall_score": 69.8
+  "overall_score": 85.3
 }

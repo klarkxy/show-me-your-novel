@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k3",
+  "judge": "mimo-v2.5-pro",
+  "requested_model": "mimo-v2.5-pro",
+  "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "b74ef7e3d1097e3b3b2ae1e952233fd0a26a01b393d3ab0b1c30ccea7a560b26",
+  "response_model": "xiaomi/mimo-v2.5-pro",
+  "cache_key": "bca2b2fdf01987a4f1cd4cef278bca688b938b117877e3d95b48402ee0521250",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 83.0,
+      "comment": "开篇通过修收音机、转正名额、母亲药费等具体事件，将'守旧体面与闯荡风险'的抉择主题落实为人物行动，未停留在口号层面。"
+    },
+    "historical_grounding": {
+      "score": 82.0,
+      "comment": "粮票布票、集体宿舍、政治学习会等制度细节可信，电视机修理、电子表等物质细节参与因果，但部分信息略显刻意交代。"
+    },
+    "characters": {
+      "score": 81.0,
+      "comment": "顾向东的欲望（让家人过好）与能力（手艺）清晰，父亲、赵麻子等配角有具体差异与张力，但部分对话略显模板化。"
+    },
+    "plot_causality": {
+      "score": 79.0,
+      "comment": "修收音机→赵麻子引线→母亲药费→接大活等事件链基本由人物需求与环境压力推动，但仓库修货与工厂转正的巧合性稍强。"
+    },
+    "longform_structure": {
+      "score": 84.0,
+      "comment": "开篇十六章完成学徒工越界首次转变，节奏紧凑，伏笔（铁皮盒、笔记本、车床模型）与宏观大纲的卷1设定连续，支撑长篇展开。"
+    },
+    "scene_execution": {
+      "score": 80.0,
+      "comment": "修收音机、政治学习会、父子饭局等场景有效，通过动作与对话传递信息，但部分叙述存在过度解释人物心理的倾向。"
+    },
+    "style_control": {
+      "score": 78.0,
+      "comment": "语言总体稳重，能随场景调整（如工厂机械感、家庭温情），但存在重复性心理独白和排比式总结，削弱了叙事节奏。"
+    },
+    "ai_flavor": {
+      "score": 45.0,
+      "comment": "存在模板化内心挣扎（'正道/邪路'反复对比）、机械式重复（'就这一回'多次出现）、过度解释主题的倾向，但整体未完全程式化。"
+    }
+  }
+}

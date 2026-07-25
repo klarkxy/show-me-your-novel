@@ -88,7 +88,7 @@ class SiteGenerationTests(unittest.TestCase):
         model_id: str,
         *,
         status: str = "completed",
-        judges: tuple[str, ...] = ("sol", "grok"),
+        judges: tuple[str, ...] | None = None,
         aggregate: bool | None = True,
         omit: str | None = None,
         score: float = 90.4,
@@ -242,12 +242,13 @@ class SiteGenerationTests(unittest.TestCase):
             ).input_hash
         except (ScoreError, OSError, ValueError):
             score_input_hash = "work-hash"
-        for judge_id in judges:
+        active_judges = judges if judges is not None else tuple(JUDGE_IDS)
+        for judge_id in active_judges:
             self._write_score(
                 model, judge_id, score=score, input_hash=score_input_hash
             )
         if aggregate is not None:
-            aggregate_complete = aggregate and set(judges) == set(JUDGE_IDS)
+            aggregate_complete = aggregate and set(active_judges) == set(JUDGE_IDS)
             aggregate_judges = {
                 judge_id: {
                     "dimensions": json.loads(
@@ -256,7 +257,7 @@ class SiteGenerationTests(unittest.TestCase):
                         )
                     )["dimensions"]
                 }
-                for judge_id in judges
+                for judge_id in active_judges
             }
             aggregate_dimensions = (
                 aggregate_dimension_scores(
@@ -276,7 +277,7 @@ class SiteGenerationTests(unittest.TestCase):
                     "candidate": model_id,
                     "input_hash": score_input_hash,
                     "expected_judges": list(JUDGE_IDS),
-                    "completed_judges": list(judges),
+                    "completed_judges": list(active_judges),
                     "status": "complete" if aggregate_complete else "incomplete",
                     "eligible_for_ranking": aggregate_complete,
                     "judges": aggregate_judges,
@@ -327,7 +328,7 @@ class SiteGenerationTests(unittest.TestCase):
                 f"    name: {judge_id.title()}\n"
                 f"    model: {judge_id}-wire\n"
                 f"    provider: new-api\n"
-                for judge_id in ("sol", "grok", "kimi")
+                for judge_id in (*JUDGE_IDS, "kimi")
             ),
             encoding="utf-8",
         )
@@ -409,7 +410,7 @@ class SiteGenerationTests(unittest.TestCase):
         self.assertIn("正文", unclosed)
         self.assertNotIn("PRIVATE", unclosed)
 
-    def test_two_judge_shared_median_is_half_up_midpoint(self) -> None:
+    def test_active_judge_median_uses_middle_vote(self) -> None:
         def dimensions(score: float, ai_flavor: float) -> dict[str, dict]:
             return {
                 spec.key: {
@@ -419,15 +420,17 @@ class SiteGenerationTests(unittest.TestCase):
                 for spec in DIMENSION_SPECS
             }
 
+        scores = (70.0, 82.0, 82.1, 90.0, 95.0)
+        ai_scores = (5.0, 10.2, 10.3, 20.0, 30.0)
         aggregate = aggregate_dimension_scores(
             {
-                "sol": dimensions(82.0, 10.2),
-                "grok": dimensions(82.1, 10.3),
+                judge_id: dimensions(score, ai)
+                for judge_id, score, ai in zip(JUDGE_IDS, scores, ai_scores)
             }
         )
         self.assertEqual(aggregate["theme_fulfillment"]["median"], 82.1)
-        self.assertEqual(aggregate["theme_fulfillment"]["min"], 82.0)
-        self.assertEqual(aggregate["theme_fulfillment"]["max"], 82.1)
+        self.assertEqual(aggregate["theme_fulfillment"]["min"], 70.0)
+        self.assertEqual(aggregate["theme_fulfillment"]["max"], 95.0)
         self.assertEqual(aggregate["ai_flavor"]["median"], 10.3)
 
     def test_build_lists_all_models_and_strictly_gates_rank_and_details(self) -> None:
@@ -449,8 +452,8 @@ class SiteGenerationTests(unittest.TestCase):
             home = (output / "index.html").read_text(encoding="utf-8")
             self.assertEqual(home.count("data-model-id="), 15)
             self.assertIn("全部 15", home)
-            self.assertIn("评委 2", home)
-            self.assertIn("两票的中位数（两票时等价于算术均值）", home)
+            self.assertIn(f"评委 {len(JUDGE_IDS)}", home)
+            self.assertIn("活动评委票的中位数", home)
             self.assertIn("评分怎么算", home)
             self.assertIn("Content-Security-Policy", home)
             self.assertNotIn("Zulu <script>", home)
@@ -506,21 +509,31 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("第99章", detail)
             self.assertNotIn("<script>alert", detail)
             self.assertIn("Grok 4.5", detail)
+            self.assertIn("DeepSeek V4 Pro", detail)
+            self.assertIn("MiMo V2.5 Pro", detail)
+            self.assertIn("Gemini 3.1 Pro", detail)
             self.assertNotIn("Kimi", detail)
-            self.assertIn("两评委维度中位数", detail)
-            self.assertIn("两评委逐维记录", detail)
+            self.assertIn("活动评委维度中位数", detail)
+            self.assertIn("活动评委逐维记录", detail)
             self.assertIn('class="judge-drawer"', detail)
             self.assertIn("<summary>Sol</summary>", detail)
             self.assertIn("<summary>Grok 4.5</summary>", detail)
             self.assertNotIn("Fable", detail)
-            self.assertEqual(detail.count('data-radar-chart="'), 3)
-            self.assertEqual(detail.count('class="radar-chart"'), 3)
-            self.assertEqual(detail.count("radar-axis-label-full"), 24)
-            self.assertEqual(detail.count("radar-axis-label-short"), 24)
-            self.assertEqual(detail.count('class="dimension-comment"'), 16)
-            self.assertEqual(detail.count('class="radar-axis"'), 24)
-            self.assertEqual(detail.count("<title id="), 3)
-            self.assertEqual(detail.count("<desc id="), 3)
+            radar_count = 1 + len(JUDGE_IDS)
+            self.assertEqual(detail.count('data-radar-chart="'), radar_count)
+            self.assertEqual(detail.count('class="radar-chart"'), radar_count)
+            self.assertEqual(
+                detail.count("radar-axis-label-full"), 8 * radar_count
+            )
+            self.assertEqual(
+                detail.count("radar-axis-label-short"), 8 * radar_count
+            )
+            self.assertEqual(
+                detail.count('class="dimension-comment"'), 8 * len(JUDGE_IDS)
+            )
+            self.assertEqual(detail.count('class="radar-axis"'), 8 * radar_count)
+            self.assertEqual(detail.count("<title id="), radar_count)
+            self.assertEqual(detail.count("<desc id="), radar_count)
             self.assertIn("AI味（越低越好）", detail)
             self.assertIn("雷达按控制度89.8绘制", detail)
             self.assertNotIn("NaN", detail)

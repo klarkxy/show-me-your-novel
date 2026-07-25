@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "b29de033ed1ebae063bd6a296d4e19178e96a82578fff65201bc88191dfacc6a",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 75.0,
+      "comment": "开篇扎实铺垫了底层挣扎与改变欲望，但核心主题“财富与人性冲突”尚未进入，仍在积累阶段。"
+    },
+    "historical_grounding": {
+      "score": 87.5,
+      "comment": "1978年初的工厂体制、物价、户籍差异、物资匮乏与政策松动等细节真实可信，时代质感浓厚。"
+    },
+    "characters": {
+      "score": 80.0,
+      "comment": "陈志远的欲望、算计与不安清晰，但内心世界的复杂性和自主矛盾还未充分展现，配角多属类型化。"
+    },
+    "plot_causality": {
+      "score": 82.5,
+      "comment": "由环境、经济压力和人物性格驱动的因果链条清晰，情节发展合理，但稍显规整缺乏意外之力。"
+    },
+    "longform_structure": {
+      "score": 85.0,
+      "comment": "长篇规划严谨，开篇17章完美对应细纲，节奏张弛有度，伏笔设计保证长远连续性。"
+    },
+    "scene_execution": {
+      "score": 82.0,
+      "comment": "场景具体可感，细节充实，但心理独白有时拖慢节奏，核心场景的戏剧性还可更集中。"
+    },
+    "style_control": {
+      "score": 78.5,
+      "comment": "文风稳健干净，但略显单调，缺少个性化和场景间的语感切换，整体偏于平稳纪实。"
+    },
+    "ai_flavor": {
+      "score": 8.0,
+      "comment": "叙述具体，场景推进以动作为主，极少空洞排比或机械解释，仅个别处心理总结稍显程式化。"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k3",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "3285b0e6fe244eb1e10f88cb7721e375fd4d4cbb58d44bf94acf554623e3b8b3",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 75.0,
+      "comment": "开篇已初步呈现'干净与代价'主题，但主要抉择尚未展开，整体兑现处于铺垫阶段。"
+    },
+    "historical_grounding": {
+      "score": 81.0,
+      "comment": "粮票、工资、药品紧缺等细节真实，但部分描写稍显堆砌，制度层面揭示尚浅。"
+    },
+    "characters": {
+      "score": 78.5,
+      "comment": "主角动机清晰，家庭关系描写生动，但赵麻子等配角工具性较强，内心刻画不足。"
+    },
+    "plot_causality": {
+      "score": 76.0,
+      "comment": "情节由经济压力自然驱动，但巧合略显刻意，评审会与举报线推进缓慢。"
+    },
+    "longform_structure": {
+      "score": 82.5,
+      "comment": "开篇与大纲紧密衔接，伏笔埋设得当，但16章仅写到评议会前夜，节奏稍缓。"
+    },
+    "scene_execution": {
+      "score": 77.5,
+      "comment": "修机器、家庭场景等有画面感，但部分细节描写琐碎，信息投放尚可更集中。"
+    },
+    "style_control": {
+      "score": 76.0,
+      "comment": "语言平实流畅，但存在重复比喻和内心排比，段落间语域变化不多。"
+    },
+    "ai_flavor": {
+      "score": 30.5,
+      "comment": "偶有'五味瓶'等重复比喻和单调排比段，但整体场景具体，未严重程式化。"
+    }
+  }
+}

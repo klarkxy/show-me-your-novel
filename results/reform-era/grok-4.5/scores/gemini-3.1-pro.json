@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "grok-4.5",
+  "judge": "gemini-3.1-pro",
+  "requested_model": "gemini-3.1-pro",
+  "input_hash": "be72307a51ceaec6e5a1de7fd55b4de6ef07126c705b72ebc2a42577714621cf",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "913adcf01cf258e32f6bc94bbe201109afe7fea078c7230f69cc907585e636f1",
+  "response_model": "gemini-3.1-pro-low",
+  "cache_key": "94a96f62d583c36bfc03905a4421b0edca2ffceedf339b5c148ac6cf30c7af9c",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 92.0,
+      "comment": "深刻兑现了时代交替下个人命运的撕裂感，陈渡生在“铁饭碗”与“救命钱”间的挣扎极具张力，父亲的道德底线与时代灰度的碰撞将主题落到了实处。"
+    },
+    "historical_grounding": {
+      "score": 95.0,
+      "comment": "时代细节极为扎实且深度参与叙事。从厂办医院的报销困境到废料区的待报废账目，再到票证黑市与特区倒爷，物质细节与制度缝隙构成了推动人物越界的真实引力。"
+    },
+    "characters": {
+      "score": 93.0,
+      "comment": "人物塑造立体且充满张力。陈渡生的谨慎与被迫越界、父亲作为老会计的道德锚点作用尤为出色，父子间围绕“平账”与“出格”的拉锯构成了极强的情感与心理压迫。"
+    },
+    "plot_causality": {
+      "score": 94.0,
+      "comment": "情节因果链条严密，毫无机械巧合。工厂停工、父亲重病与报销无门层层施压，逼迫主角步步走向灰产，每一次妥协都伴随严密的逻辑推演与沉重的心理代价。"
+    },
+    "longform_structure": {
+      "score": 92.0,
+      "comment": "宏观规划与正文高度咬合，开篇节奏沉稳，伏笔埋设极为精妙（如门岗登记、老姜的联签、父亲的旧账），为后续长篇的全面爆发做足了扎实的铺垫。"
+    },
+    "scene_execution": {
+      "score": 93.0,
+      "comment": "场景构建极具画面感与压迫感。无论是雨夜偏门偷运废料的惊险，还是父子灯下对峙的暗流涌动，动作、对话与环境描写高度融合，信息投放精准有效。"
+    },
+    "style_control": {
+      "score": 94.0,
+      "comment": "叙事语言克制、冷硬且极具工业时代的粗粝感。句法短促有力，比喻精准契合工厂环境（如“像钝锉刮铁皮”），语调完美烘托了压抑、逼仄的时代氛围。"
+    },
+    "ai_flavor": {
+      "score": 8.0,
+      "comment": "文本呈现出高度成熟的传统纯文学质感，毫无常见的模板化排比或空洞抒情。心理描写细腻具体，细节充满粗糙的真实感，极少察觉到程式化痕迹。"
+    }
+  }
+}

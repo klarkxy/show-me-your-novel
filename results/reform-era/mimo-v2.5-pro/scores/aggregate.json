@@ -5,11 +5,17 @@
   "input_hash": "63a26f1915973516ab52f1731b19954e5843f2af8f84ed081ff336fd1874848b",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "反复攥拳心如刀绞望向远方、模板化排比与抽象情感总结、同构章节结尾与机械转折可察觉，干扰叙事流畅。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 87.5,
+          "comment": "贫困与变革压力下，人物选择与家庭冲突切实承载了“个人在时代中寻找道路”的主题，不流于口号。"
+        },
+        "historical_grounding": {
+          "score": 91.0,
+          "comment": "工分制、政策宣讲、物质匮乏等细节扎实，构成了人物行动的逼真时代背景，且直接参与因果。"
+        },
+        "characters": {
+          "score": 89.5,
+          "comment": "陈建国不甘贫困的欲望具体，父亲的历史创伤形成鲜明代际冲突，次要人物各有功能，关系变化有力。"
+        },
+        "plot_causality": {
+          "score": 86.0,
+          "comment": "从工分不公、妹妹辍学到承包决定，环环相扣，情感驱动力强，但部分信息机缘稍显设计感。"
+        },
+        "longform_structure": {
+          "score": 92.0,
+          "comment": "细纲与正文严丝合缝，层层递进至首次越界，伏笔设置巧妙，长篇框架稳固，节奏控制恰当。"
+        },
+        "scene_execution": {
+          "score": 84.5,
+          "comment": "场景描写细腻，感官细节丰富，信息融入自然，但部分心理活动稍直白，可更含蓄。"
+        },
+        "style_control": {
+          "score": 88.0,
+          "comment": "用词精准，句式随情绪起伏变化，整体保持克制的现实主义质感，偶有重复但未损控制力。"
+        },
+        "ai_flavor": {
+          "score": 7.5,
+          "comment": "细节源于具体观察，情感由衷，无模板化排比或机械转折，语言有呼吸感，几乎无AI痕迹。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 85.0,
+          "comment": "题材与主题兑现度高，个人在社会变革中的自我实现与道德困境通过承包辣椒的具体事件和家庭冲突得到扎实呈现，未停留在口号层面。"
+        },
+        "historical_grounding": {
+          "score": 88.0,
+          "comment": "时代与现实质感出色，工分制度、集体劳动、政策文件、广播宣讲、贫困细节等均真实可信，深度参与人物动机与情节因果。"
+        },
+        "characters": {
+          "score": 87.0,
+          "comment": "陈建国及其家庭关系刻画具体，欲望、行动逻辑清晰，代际冲突与内在挣扎有层次，人物差异性明显。"
+        },
+        "plot_causality": {
+          "score": 86.0,
+          "comment": "情节由贫困压力、政策变动、家庭危机等多因素推动，事件链清晰有效，避免机械巧合，因果关系扎实。"
+        },
+        "longform_structure": {
+          "score": 84.0,
+          "comment": "宏观大纲、开篇细纲与正文连续性强，节奏稳定，伏笔（父亲怀表、政策文件）埋设合理，阶段兑现支撑长篇展开。"
+        },
+        "scene_execution": {
+          "score": 85.0,
+          "comment": "场景聚焦有效，通过挑粪、学费冲突、队长暗示等关键场景落实信息与冲突，动作、对话与描写服务于叙事效能。"
+        },
+        "style_control": {
+          "score": 83.0,
+          "comment": "文风总体稳定准确，叙述距离保持一致，随场景有适度变化，但部分内心独白稍显冗长，节奏偶有拖沓。"
+        },
+        "ai_flavor": {
+          "score": 12.0,
+          "comment": "几乎无模板化排比或过度解释，偶有抽象总结但未干扰叙事，机械转折与套路悬念痕迹轻微。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 88.5,
+          "comment": "准确兑现了改革开放初期的时代主题，将宏大的政策转变巧妙转化为农村青年的切身利益诉求与代际观念冲突，贫困逼迫与政策诱惑交织，主题落地扎实，没有停留在空洞的口号宣教上。"
+        },
+        "historical_grounding": {
+          "score": 92.0,
+          "comment": "时代质感极佳，工分制的低效、割资本主义尾巴的政治恐惧、极度匮乏的物质生活（如八角三分的家底、漏雨的屋顶）均刻画得入木三分，这些现实细节不仅可信，更直接构成了推动主角冒险的核心因果。"
+        },
+        "characters": {
+          "score": 89.0,
+          "comment": "人物动机扎实，关系张力十足。主角的抗争逻辑清晰；父亲因历史创伤而产生的恐惧极具说服力，绝非单薄的绊脚石；大队长的精明与圆滑也十分生动。唯妹妹形象略显套路，但整体群像立体。"
+        },
+        "plot_causality": {
+          "score": 90.5,
+          "comment": "情节因果链条严密，从工分制的不公到妹妹辍学危机，再到外界政策信息的刺激，主角的每一步越界都被生存压力和环境变化合理推着走，毫无机械降神，冲突爆发水到渠成。"
+        },
+        "longform_structure": {
+          "score": 91.0,
+          "comment": "宏观大纲规划完整，开篇细纲与正文高度契合。前16章节奏稳健，层层铺垫，将“承包土地”这一核心事件的阻力与动力交织得当，结尾父子决裂形成了极佳的不可逆转折，有力支撑了长篇起步。"
+        },
+        "scene_execution": {
+          "score": 87.5,
+          "comment": "场景构建极具画面感与感官刺激（如挑粪的恶臭、漏雨的冰冷）。动作与对话有效传递了人物心理与信息，大队长家试探一局的交锋写得尤为精彩。部分抒情段落略显满溢，但整体叙事效能很高。"
+        },
+        "style_control": {
+          "score": 85.0,
+          "comment": "语域准确，遣词造句贴合70年代末的乡土语境，沉郁的现实主义基调把控稳定。但在人物内心独白和情绪渲染时，偶尔存在解释过度和修辞略微现代的问题，叙述距离可以更克制一些。"
+        },
+        "ai_flavor": {
+          "score": 35.0,
+          "comment": "存在可察觉的程式化痕迹。主要体现在章节结尾频繁使用高度同构的抽象总结与排比句式（如“他知道，从这一刻起……”）来强行拔高情绪，内心独白常伴随过度解释与设问，削弱了文学留白。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 69.8,
+      "median": 85.0,
       "min": 62.0,
-      "max": 77.5
+      "max": 88.5
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 55.8,
+      "median": 88.0,
       "min": 28.0,
-      "max": 83.5
+      "max": 92.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 60.0,
+      "median": 87.0,
       "min": 49.0,
-      "max": 71.0
+      "max": 89.5
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 65.3,
+      "median": 86.0,
       "min": 51.0,
-      "max": 79.5
+      "max": 90.5
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 62.0,
+      "median": 84.0,
       "min": 42.0,
-      "max": 82.0
+      "max": 92.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 65.3,
+      "median": 84.5,
       "min": 54.0,
-      "max": 76.5
+      "max": 87.5
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 56.0,
+      "median": 83.0,
       "min": 39.0,
-      "max": 73.0
+      "max": 88.0
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 64.8,
-      "min": 45.5,
+      "median": 35.0,
+      "min": 7.5,
       "max": 84.0
     }
   },
-  "overall_score": 59.1
+  "overall_score": 83.5
 }

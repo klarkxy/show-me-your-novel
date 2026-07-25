@@ -5,11 +5,17 @@
   "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "反复出现模板化内心总结、排比式自我辩解、相似数钱/抽烟/冷风节奏与套路悬念，可察觉且干扰沉浸。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 88.0,
+          "comment": "主题通过陈济民为父治病越界的过程具体展开，体现了金钱与道德的拉锯，非口号式呈现。"
+        },
+        "historical_grounding": {
+          "score": 91.5,
+          "comment": "工资、票证、住房、黑市、厂内纪律等细节丰富且驱动情节，现实质感强。"
+        },
+        "characters": {
+          "score": 86.0,
+          "comment": "陈济民欲望与恐惧的演变真实，配角各有立场，关系张力明显但部分稍显功能化。"
+        },
+        "plot_causality": {
+          "score": 84.5,
+          "comment": "事件由家庭压力、人物嫉妒和制度规章推动，因果链清晰，偶有顺利脱险但符合背景。"
+        },
+        "longform_structure": {
+          "score": 87.0,
+          "comment": "宏观大纲与开篇连续，伏笔（刘大奎、周德昌等）已埋设，开篇完成了主人公第一次不可逆越界。"
+        },
+        "scene_execution": {
+          "score": 86.0,
+          "comment": "场景具体有效，通过工资日、抢修、交易等场面以动作和对话推进，信息投放自然。"
+        },
+        "style_control": {
+          "score": 84.0,
+          "comment": "语言平实稳健，时代语汇准确，叙述距离稳定，偶有稍显冗长的心理描写。"
+        },
+        "ai_flavor": {
+          "score": 4.0,
+          "comment": "几乎无模板化排比、抽象总结或机械转折，场景与对话自然生动。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 86.0,
+          "comment": "主题兑现扎实，通过陈济民的多次选择与代价，清晰呈现了普通人如何在制度裂缝与道德自我间挣扎，但部分内心独白稍显直白。"
+        },
+        "historical_grounding": {
+          "score": 88.0,
+          "comment": "时代细节丰富可信，如粮票、工资、医院押金、废品处理流程等，物质与制度环境深度参与人物决策与情节因果。"
+        },
+        "characters": {
+          "score": 85.0,
+          "comment": "陈济民、玉琴、刘大奎、钱顺子等人物动机清晰、关系张力强，主角的灰色蜕变轨迹合理，但部分配角如周德昌略显功能化。"
+        },
+        "plot_causality": {
+          "score": 87.0,
+          "comment": "事件链由经济压力、人际冲突与制度风险共同推动，因果清晰，转折点如父亲咳血、玉琴发现私房钱等设计有效，避免了机械巧合。"
+        },
+        "longform_structure": {
+          "score": 89.0,
+          "comment": "宏观大纲、开篇细纲与正文高度连续，节奏控制得当，伏笔如笔记本、账本、举报等铺设有序，支撑长篇展开。"
+        },
+        "scene_execution": {
+          "score": 84.0,
+          "comment": "场景如工资日、医院交费、城墙根交易等叙事效能高，动作与对话精准，但部分场景信息投放稍显密集，可更自然。"
+        },
+        "style_control": {
+          "score": 82.0,
+          "comment": "文风稳定，叙述距离贴近人物，语言朴素准确，能随场景调整节奏，但偶尔有过度解释倾向。"
+        },
+        "ai_flavor": {
+          "score": 28.0,
+          "comment": "偶有模板化表达（如‘像一把钝刀，慢慢割开他心里最后一点犹豫’），但整体自然，未持续干扰叙事。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 92.0,
+          "comment": "文本精准兑现了宏观设定的核心主题。陈济民从坚守国营工人底线到因家庭绝境被迫越界，其心理防线的步步瓦解与自我合理化刻画得极具说服力，深刻展现了时代夹缝中普通人面对生存与道德的撕裂。"
+        },
+        "historical_grounding": {
+          "score": 94.0,
+          "comment": "时代质感极佳且深度参与叙事因果。三十四块五的死工资与两百元住院押金的精确对比，粮票、工业券的黑市交易，以及国营大厂的权力微观生态，均极其真实可信，构成了压迫人物行动的绝对重力。"
+        },
+        "characters": {
+          "score": 90.0,
+          "comment": "人物塑造立体且充满张力。陈济民的精明、隐忍与堕落轨迹清晰；妻子玉琴的敏锐与道德坚守构成了极佳的内部牵制；刘大奎的嫉妒与钱顺子的诱惑都有扎实的现实逻辑，群像关系紧密咬合。"
+        },
+        "plot_causality": {
+          "score": 91.0,
+          "comment": "情节推进严丝合缝，因果链条极其坚实。从借钱碰壁到初试黑市，再到被卷入更大规模的曲轴倒卖，每一次危机与越界都由极致的生存压力和具体环境推动，毫无机械降神或生硬巧合。"
+        },
+        "longform_structure": {
+          "score": 93.0,
+          "comment": "宏观大纲、开篇细纲与正文高度统一。前十六章稳扎稳打地完成了长篇起步，伏笔（如周德昌的警告、刘大奎的暗中记录、新厂长的整顿）埋设自然，节奏张弛有度，展现出极强的长篇驾驭能力。"
+        },
+        "scene_execution": {
+          "score": 92.0,
+          "comment": "场景构建效能极高。无论是发工资时的精打细算、医院走廊的绝望，还是城墙根下遭遇巡逻队的惊险对峙，动作、对话与心理描写交织紧密，关键信息全部通过高密度的有效场景精准投放。"
+        },
+        "style_control": {
+          "score": 90.0,
+          "comment": "叙事语言克制、准确且极具时代气息。语域完全贴合七十年代末的社会语境，句法沉稳，叙述距离控制得当，能够根据车间劳作、黑市交易与家庭争吵等不同场景主动调整节奏与氛围。"
+        },
+        "ai_flavor": {
+          "score": 15.0,
+          "comment": "文本几乎没有典型的模板化痕迹，细节极其扎实具体。仅在部分章节结尾处（如反复强调“界线”、“回不了头”）偶有轻微的抽象总结与套路化悬念，但整体完全被强大的现实主义叙事所掩盖，不干扰阅读。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 70.8,
+      "median": 86.0,
       "min": 63.0,
-      "max": 78.5
+      "max": 92.0
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 63.8,
+      "median": 88.0,
       "min": 41.0,
-      "max": 86.5
+      "max": 94.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 60.0,
+      "median": 85.0,
       "min": 45.0,
-      "max": 75.0
+      "max": 90.0
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 61.3,
+      "median": 84.5,
       "min": 42.0,
-      "max": 80.5
+      "max": 91.0
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 62.0,
+      "median": 87.0,
       "min": 43.0,
-      "max": 81.0
+      "max": 93.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 62.3,
+      "median": 84.0,
       "min": 48.0,
-      "max": 76.5
+      "max": 92.0
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 55.0,
+      "median": 82.0,
       "min": 38.0,
-      "max": 72.0
+      "max": 90.0
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 65.8,
-      "min": 45.5,
+      "median": 28.0,
+      "min": 4.0,
       "max": 86.0
     }
   },
-  "overall_score": 59.3
+  "overall_score": 84.1
 }

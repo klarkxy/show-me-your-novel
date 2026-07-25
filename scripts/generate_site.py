@@ -40,6 +40,7 @@ from runner.score import (  # noqa: E402
     DIMENSION_KEYS,
     DIMENSION_SPECS,
     JUDGE_IDS,
+    JUDGE_LABELS,
     SCHEMA_VERSION as SCORE_SCHEMA,
     ScoreError,
     aggregate_dimension_scores,
@@ -744,7 +745,8 @@ DIMENSION_SHORT_LABELS = {
 }
 
 SCORING_NOTE = (
-    "各维度取 Sol 与 Grok 两票的中位数（两票时等价于算术均值）；"
+    f"各维度取 {len(JUDGE_IDS)} 位活动评委票的中位数"
+    f"（{'、'.join(JUDGE_LABELS[judge_id] for judge_id in JUDGE_IDS)}）；"
     "综合按固定权重加总，其中AI味使用100减原值。"
     "AI味越低越好，其余指标越高越好。"
 )
@@ -863,7 +865,7 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
     ) + f"""
 <header class="page-intro" aria-labelledby="page-title">
   <h1 id="page-title">改革开放长篇模型榜</h1>
-  <p class="page-sub">同一方向 · 约 5 万字开篇 · Sol / Grok 盲评</p>
+  <p class="page-sub">同一方向 · 约 5 万字开篇 · {len(JUDGE_IDS)} 评委盲评</p>
   <p class="page-meta">已评分 {ranked_count} / 全部 {model_count} · 评委 {len(JUDGE_IDS)} · Legacy {legacy_count}</p>
 </header>
 
@@ -1097,14 +1099,20 @@ def render_result_detail(result: dict[str, Any]) -> str:
 
   <section class="aggregate-section" aria-labelledby="aggregate-title">
     <h2 id="aggregate-title">评分</h2>
-    {_radar_chart(f'{chart_prefix}-median', '两评委维度中位数', aggregate_scores)}
+    {_radar_chart(f'{chart_prefix}-median', '活动评委维度中位数', aggregate_scores)}
     <details class="info-drawer">
       <summary>评分怎么算</summary>
       <p>{SCORING_NOTE} AI味仍以原始低分展示，雷达几何按「越低越好」反向绘制。</p>
     </details>
-    <div class="judge-evaluations" aria-label="两评委逐维记录">
-      {_judge_evaluation('Sol', judges['sol'], f'{chart_prefix}-sol')}
-      {_judge_evaluation('Grok 4.5', judges['grok'], f'{chart_prefix}-grok')}
+    <div class="judge-evaluations" aria-label="活动评委逐维记录">
+      {''.join(
+          _judge_evaluation(
+              JUDGE_LABELS[judge_id],
+              judges[judge_id],
+              f'{chart_prefix}-{judge_id}',
+          )
+          for judge_id in JUDGE_IDS
+      )}
     </div>
   </section>
 

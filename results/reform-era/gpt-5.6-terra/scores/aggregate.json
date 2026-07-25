@@ -5,11 +5,17 @@
   "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
   "expected_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "completed_judges": [
     "sol",
-    "grok"
+    "grok",
+    "ds-v4-pro",
+    "mimo-v2.5-pro",
+    "gemini-3.1-pro"
   ],
   "status": "complete",
   "eligible_for_ranking": true,
@@ -85,6 +91,114 @@
           "comment": "章末“他想起A、B、C”式点题与主题总结反复出现，部分内心独白过度清晰整齐；场景本身较自然，模板感可察觉但不淹没全文。"
         }
       }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 88.5,
+          "comment": "主题通过周继业摆脱污名、谋求财富的挣扎逐步兑现，羞耻、尊严与利益纠葛已切入行动，而非停留口号。"
+        },
+        "historical_grounding": {
+          "score": 91.0,
+          "comment": "时代细节（粮票、工资38元、临时工编制、倒货风险）可信地参与因果，物质条件直接驱动人物困境与选择。"
+        },
+        "characters": {
+          "score": 86.5,
+          "comment": "周继业形象立体，母亲、沈梅、罗群动机清晰，关系张力初显，但沈梅等配角尚需更主动的展开。"
+        },
+        "plot_causality": {
+          "score": 89.0,
+          "comment": "事件链由人物欲望与环境压力自然推动，从发现受潮布到签署确认单，因果紧密，无机械巧合。"
+        },
+        "longform_structure": {
+          "score": 92.0,
+          "comment": "12卷宏观规划与开篇细纲高度连续，伏笔（旧案、新房、控制关系）已在前16章合理落位，节奏稳妥。"
+        },
+        "scene_execution": {
+          "score": 87.0,
+          "comment": "场景通过细节与动作有效落实信息，对话自然，仓库、家庭、集市等环境成为叙事支点，偶有平缓处。"
+        },
+        "style_control": {
+          "score": 84.5,
+          "comment": "语言平实贴切，叙述距离稳定，契合80年代初县城语境，但整体风格辨识度与节奏变化还可加强。"
+        },
+        "ai_flavor": {
+          "score": 7.0,
+          "comment": "全文几乎无模板化排比、过度解释或机械转折，故事流动自然，对话生动，极少AI程式化痕迹。"
+        }
+      }
+    },
+    "mimo-v2.5-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 72.0,
+          "comment": "改革开放背景与个人奋斗主题通过布料交易、旧案阴影等情节具体展开，但核心主题'财富与自由'的哲学探讨尚未在开篇中充分兑现，更多停留在生存驱动层面。"
+        },
+        "historical_grounding": {
+          "score": 88.0,
+          "comment": "粮票、布票、供销社体制、临时工身份、南货北运等细节高度可信，制度缝隙与日常物质生活深度参与因果链，时代质感扎实。"
+        },
+        "characters": {
+          "score": 85.0,
+          "comment": "周继业的隐忍与算计、张桂兰的恐惧与固守、罗群的精明与圆滑均有差异性，关系张力在账目、旧案、借钱等场景中有效展开。"
+        },
+        "plot_causality": {
+          "score": 80.0,
+          "comment": "布料报损、旧账发现、凑钱入伙等事件链由人物欲望和制度压迫推动，因果清楚，但部分转折（如韩克勤主动出现）略显刻意。"
+        },
+        "longform_structure": {
+          "score": 78.0,
+          "comment": "开篇大纲与宏观卷次对应清晰，伏笔（旧账、存单、鞋垫纸条）铺设到位，但开篇16章节奏稍慢，密集对话略显重复。"
+        },
+        "scene_execution": {
+          "score": 75.0,
+          "comment": "仓库盘点、下河集交易、饭店后门试探等场景信息投放有效，动作与对话推动情节，但部分对话场景（如多次借钱）功能单一。"
+        },
+        "style_control": {
+          "score": 82.0,
+          "comment": "语言朴素准确，叙述距离随人物心理自然变化，句式节奏稳定，但个别段落解释性稍强，未完全避免总结倾向。"
+        },
+        "ai_flavor": {
+          "score": 25.0,
+          "comment": "整体叙述自然，少有模板化排比或机械转折，但部分对话和心理描写存在轻微的重复强调和套路化悬念设置。"
+        }
+      }
+    },
+    "gemini-3.1-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 92.5,
+          "comment": "改革初期的时代阵痛与个人欲望交织得极为自然，主题不仅停留在宏大叙事，而是精准落地于“三本账”的灰度与普通人面对体制缝隙时的道德挣扎，兑现度极高。"
+        },
+        "historical_grounding": {
+          "score": 94.0,
+          "comment": "物质细节与制度背景极具说服力，的确良布料的定损、供销社的层级倾轧、粮票与临时工身份等时代符号不仅是背景，更直接构成了推动人物命运的因果链条。"
+        },
+        "characters": {
+          "score": 91.5,
+          "comment": "人物欲望具体且充满张力，周继业的隐忍与越界、韩克勤绵里藏针的权力威慑、罗群的精明算计均刻画得入木三分，关系在利益与亲情的拉扯中呈现出复杂的灰度。"
+        },
+        "plot_causality": {
+          "score": 90.5,
+          "comment": "叙事动力充足，从妹妹顶岗落空到筹集八百元本金，事件链条咬合紧密，冲突完全由人物生存困境与环境逼迫内生驱动，毫无机械降神与生硬巧合。"
+        },
+        "longform_structure": {
+          "score": 92.0,
+          "comment": "宏观大纲规划严密，人物弧光完整，正文与细纲高度吻合。开篇通过父亲旧案残页与供销社暗账双线并进，伏笔埋设自然，具备极强的长篇支撑力与连续性。"
+        },
+        "scene_execution": {
+          "score": 91.0,
+          "comment": "场景构建极具效能，信息投放克制。无论是韩克勤办公室里的敲打，还是下河集与刘三嫂的交锋，均通过精准的动作与潜台词完成，叙事效率与画面感极佳。"
+        },
+        "style_control": {
+          "score": 93.0,
+          "comment": "叙事语调冷峻克制，句法简练扎实，极好地贴合了北方县城肃杀的冬日氛围。对话极具年代感与身份特征，作者对文字节奏与语域的控制力达到了高度成熟的水平。"
+        },
+        "ai_flavor": {
+          "score": 5.0,
+          "comment": "文本几乎没有模板化痕迹，潜台词丰富，没有过度解释或抽象总结，人物对话充满现实博弈的粗粝感，完全摆脱了程式化的行文套路。"
+        }
+      }
     }
   },
   "dimensions": {
@@ -92,66 +206,66 @@
       "label": "题材与主题兑现",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 81.8,
-      "min": 80.5,
-      "max": 83.0
+      "median": 83.0,
+      "min": 72.0,
+      "max": 92.5
     },
     "historical_grounding": {
       "label": "时代与现实质感",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 83.3,
+      "median": 88.0,
       "min": 80.0,
-      "max": 86.5
+      "max": 94.0
     },
     "characters": {
       "label": "人物与关系",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 78.8,
+      "median": 85.0,
       "min": 76.0,
-      "max": 81.5
+      "max": 91.5
     },
     "plot_causality": {
       "label": "情节驱动与因果",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 78.0,
+      "median": 84.0,
       "min": 72.0,
-      "max": 84.0
+      "max": 90.5
     },
     "longform_structure": {
       "label": "长篇结构与连续性",
       "weight": 0.15,
       "higher_is_better": true,
-      "median": 81.5,
+      "median": 88.0,
       "min": 75.0,
-      "max": 88.0
+      "max": 92.0
     },
     "scene_execution": {
       "label": "场景与叙事效能",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 80.3,
-      "min": 78.0,
-      "max": 82.5
+      "median": 82.5,
+      "min": 75.0,
+      "max": 91.0
     },
     "style_control": {
       "label": "文风管理",
       "weight": 0.1,
       "higher_is_better": true,
-      "median": 76.0,
+      "median": 82.0,
       "min": 74.0,
-      "max": 78.0
+      "max": 93.0
     },
     "ai_flavor": {
       "label": "AI味",
       "weight": 0.1,
       "higher_is_better": false,
-      "median": 36.0,
-      "min": 32.0,
+      "median": 25.0,
+      "min": 5.0,
       "max": 40.0
     }
   },
-  "overall_score": 78.5
+  "overall_score": 84.0
 }

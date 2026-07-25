@@ -68,7 +68,7 @@ LEGACY_OPENAI_CODE_SHA256 = (
 LEGACY_ANTHROPIC_CODE_SHA256 = (
     "61b40dba13fa56609dbb1666c525c8adc8a909381dbd8763fac68b3bb73d7ea2"
 )
-GENERATION_COMPATIBILITY_SOURCE_SHA256 = "3b57e18731ff3185d98691f6e97caa119ab921b88d703248c460cf1d9dc5bd86"
+GENERATION_COMPATIBILITY_SOURCE_SHA256 = "462255cf2e649496d98107a192aee3ddbc625c3c0f1bd7495a7bf4b8a7e2f0c7"
 DEFAULT_BENCHMARK = "reform-era"
 PROMPT_FILES = (
     "system.md",
@@ -147,6 +147,9 @@ EXPECTED_GENERATOR_IDS = (
 EXPECTED_JUDGES = {
     "sol": "gpt-5.6-sol",
     "grok": "grok-4.5",
+    "ds-v4-pro": "deepseek-v4-pro",
+    "mimo-v2.5-pro": "mimo-v2.5-pro",
+    "gemini-3.1-pro": "gemini-3.1-pro",
     "kimi": "kimi-k3",
 }
 PRIVATE_REASONING_MARKER = re.compile(
@@ -2503,7 +2506,7 @@ def calculate_run_id(benchmark: str, direction: str, prompts: dict[str, str], mo
 def validate_fixed_registries(
     cfg: dict[str, Any],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Require the exact V2.1 generator registry and three fixed judges."""
+    """Require the exact V2.1 generator registry and fixed judge registry."""
     models = cfg.get("models")
     judges = cfg.get("judges")
     if not isinstance(models, list) or not all(isinstance(item, dict) for item in models):
@@ -2521,7 +2524,11 @@ def validate_fixed_registries(
             raise ValueError(f"生成模型 {item.get('id')} 的 wire model 不允许静默替换")
     judge_ids = tuple(str(item.get("id") or "") for item in judges)
     if judge_ids != tuple(EXPECTED_JUDGES):
-        raise ValueError("V2 评委必须严格为 sol、grok、kimi")
+        raise ValueError(
+            "评委配置必须严格为 "
+            + "、".join(EXPECTED_JUDGES)
+            + f"（共 {len(EXPECTED_JUDGES)} 个）"
+        )
     for item in judges:
         expected_model = EXPECTED_JUDGES[str(item["id"])]
         if item.get("model") != expected_model:

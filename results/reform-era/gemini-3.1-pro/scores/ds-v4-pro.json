@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.1-pro",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "7d4cefc0df5c6bac376aafe26a563b3db8f791a6220898da065e040b5ecf38a7",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 72.5,
+      "comment": "主题紧扣时代洪流中个体挣扎，但开篇阶段多聚焦生存压力，道德与财富的深层冲突尚未充分展开。"
+    },
+    "historical_grounding": {
+      "score": 78.0,
+      "comment": "票证、停薪留职、个体执照、投机倒把等时代细节扎实，物质生活描写可信地参与情节驱动。"
+    },
+    "characters": {
+      "score": 75.0,
+      "comment": "林卫国欲望明确、行动逻辑强，配角如二黑、张有德各具特征，但关系变化尚浅，部分人物稍偏类型化。"
+    },
+    "plot_causality": {
+      "score": 74.5,
+      "comment": "事件链由人物主动选择与环境逼迫推动，因果清晰，但部分转折（如突击查抄）稍显巧合与套路化。"
+    },
+    "longform_structure": {
+      "score": 76.5,
+      "comment": "宏观大纲与开篇细纲严密对应，正文严格遵循规划，伏笔（如走私旧账、表弟）埋设有序，连续性强。"
+    },
+    "scene_execution": {
+      "score": 72.0,
+      "comment": "场景具象生动，通过动作与对话推进叙事，但部分心理交代略多，展示与讲述偶有失衡。"
+    },
+    "style_control": {
+      "score": 70.0,
+      "comment": "语言平实稳定，符合时代语境，但比喻与节奏变化有限，叙述距离稍显单一。"
+    },
+    "ai_flavor": {
+      "score": 25.0,
+      "comment": "偶有模板化环境描写与直白心理总结，但整体仍以细节支撑，未陷入高度程式化。"
+    }
+  }
+}

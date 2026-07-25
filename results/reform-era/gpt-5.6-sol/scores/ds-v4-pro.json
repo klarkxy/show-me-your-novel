@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-sol",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "c2699dde5a0fa0a559193db242e0988bc66650c8cba1581996e3d7f4c069dfe2",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "120d85792f455e11438f02b6035248c4eaa58a3e267a659b9d3254dae82967fc",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "9710575752f3ae47a16902bb8a5ea74914c1ee3056239371d49a6b12e67500aa",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 89.2,
+      "comment": "从账务越界切入改革道德困局，将主题落实在具体行动和人物抉择中，并非空谈。"
+    },
+    "historical_grounding": {
+      "score": 92.5,
+      "comment": "票证、计划调拨、工资拖欠等物质细节真实可信，直接构成事件因果，时代质感强烈。"
+    },
+    "characters": {
+      "score": 87.8,
+      "comment": "主要人物欲望、行动逻辑清晰，关系张力扎实（如周沈原则分歧），部分配角有待丰富。"
+    },
+    "plot_causality": {
+      "score": 88.4,
+      "comment": "冲突由环境和人物主动选择推动，事件链环环相扣，借料与改账的递进逻辑尤其严密。"
+    },
+    "longform_structure": {
+      "score": 90.6,
+      "comment": "开篇与大纲高度连贯，伏笔（剪报本、便条）自然埋设，节奏控制稳健，长篇框架坚实。"
+    },
+    "scene_execution": {
+      "score": 89.1,
+      "comment": "场景具体可感，对话、动作与心理有效结合，如仓库盘点、试车事故等段落表现力突出。"
+    },
+    "style_control": {
+      "score": 88.7,
+      "comment": "语言朴实沉稳，句式节奏随场景变化，叙述距离稳定，无刻意煽情或失控。"
+    },
+    "ai_flavor": {
+      "score": 4.8,
+      "comment": "几乎无模板化痕迹，细节个性鲜明，叙述自然，偶有平实描述但属正常写作范畴。"
+    }
+  }
+}
