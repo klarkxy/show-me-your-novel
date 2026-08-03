@@ -42,6 +42,8 @@ kimi-k3             grok-4.5             claude-opus-4-8
 agnes-2.0-flash
 ```
 
+`deepseek-v4-flash` 的服务端同名版本已于 2026-08-03 刷新；配置中的 `revision` 只用于区分本次评测运行，不会作为 API 请求参数发送。
+
 ## 安装与配置
 
 需要 Python 3.11+：

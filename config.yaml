@@ -30,6 +30,11 @@ models:
     name: DeepSeek V4 Flash
     model: deepseek-v4-flash
     aliases: [deepseek-flash]
+    # The provider keeps the wire id stable across backend refreshes. Bump this
+    # opaque provenance marker whenever that backend changes so V2.1 starts a
+    # genuinely fresh, independently auditable run instead of resuming the old
+    # same-id checkpoint.
+    revision: "2026-08-03"
 
   - <<: *generation-defaults
     id: deepseek-v4-pro
