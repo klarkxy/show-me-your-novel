@@ -3,44 +3,44 @@
   "benchmark": "reform-era",
   "candidate": "kimi-k2.7-code",
   "judge": "grok",
-  "requested_model": "grok-4.5",
+  "requested_model": "grok-4.6",
   "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
   "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
-  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
-  "response_model": "grok-4.5-build-free",
-  "cache_key": "1dc1be5235e1f62c3d4f3ce0e5b250c852f1d937fba5b376586a836e822369cd",
+  "judge_config_sha256": "aafa441287a2f29e87b7b5287903bc2f2502395ba8e06668bae9136463cb3dbf",
+  "response_model": "grok-4.6",
+  "cache_key": "d4713162ac0d68092cb691bd17c62f2483d4922f7162b8eb013cd1dc2e1e666f",
   "dimensions": {
     "theme_fulfillment": {
-      "score": 78.5,
-      "comment": "改革夹缝中普通人的活法与尊严拉扯已进入家庭绝境与越界行动，未空喊口号，但开篇对道德自我的兑现仍偏表层，尚未深入制度裂缝的复杂代价。"
+      "score": 82.5,
+      "comment": "改革缝隙中普通人道德拉扯主题兑现较好，人物欲望与制度裂痕结合紧密，但部分自圆其说略显公式化。"
     },
     "historical_grounding": {
-      "score": 86.5,
-      "comment": "三十四块五工资、票证、住院押金、废料按废铁价、厂规与黑市细节可信，且直接参与因果，时代质感扎实并推动人物选择。"
+      "score": 88.0,
+      "comment": "1978-1984年江南县城细节丰富，粮票、工资、物资局、严打等时代质感真实可感，参与因果链条自然。"
     },
     "characters": {
-      "score": 75.0,
-      "comment": "陈济民欲望与自我合理化清晰，玉琴警觉与刘大奎嫉妒有张力，但次要人物功能化明显，关系变化与差异性尚浅。"
+      "score": 76.5,
+      "comment": "陈济民欲望逻辑与变化有深度，家庭关系张力存在，但周玉琴、刘大奎等角色差异性与内心张力仍显单薄。"
     },
     "plot_causality": {
-      "score": 80.5,
-      "comment": "从窘迫借钱失败到废料私拿、钱顺子交易、曲轴升级的链条清楚，由人物与制度压力驱动，少机械巧合。"
+      "score": 71.0,
+      "comment": "冲突多由人物环境驱动，事件链条基本清晰有效，但部分转折存在机械巧合痕迹。"
     },
     "longform_structure": {
-      "score": 81.0,
-      "comment": "开篇与宏观细纲连续，伏笔（刘眼、钱账、周庇护、私账）到位，节奏与阶段兑现支撑长篇起步，未失控。"
+      "score": 79.0,
+      "comment": "宏观大纲与开篇细纲衔接流畅，伏笔与阶段兑现支撑长篇，但卷间节奏重复感较强。"
     },
     "scene_execution": {
-      "score": 76.5,
-      "comment": "工资日、医院、城墙根等关键场景落实有效，对话动作到位，但部分内心总结替代场景推进，信息投放偶显冗余。"
+      "score": 78.5,
+      "comment": "视角切换与动作对话描写有效落地关键内容，工厂车间、医院走廊、城墙根等场景质感强。"
     },
     "style_control": {
-      "score": 72.0,
-      "comment": "现实主义语域基本稳定，细节准确，但句法节奏同构、过度解释道德拉扯，主动随场景变化不足。"
+      "score": 75.0,
+      "comment": "文风稳定且随场景主动变化，句法语域管理得当，但部分段落存在轻微重复排比。"
     },
     "ai_flavor": {
-      "score": 45.5,
-      "comment": "反复出现模板化内心总结、排比式自我辩解、相似数钱/抽烟/冷风节奏与套路悬念，可察觉且干扰沉浸。"
+      "score": 28.5,
+      "comment": "偶有模板化排比与过度解释，但多数段落场景化叙事与主动节奏控制明显，未高度程式化。"
     }
   }
 }

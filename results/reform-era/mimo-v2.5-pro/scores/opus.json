@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "63a26f1915973516ab52f1731b19954e5843f2af8f84ed081ff336fd1874848b",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "92472a537b8542ead2c9640054257097d6d0e7d4f31c0b0e02b2b5b43e501912",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 68.0,
+      "comment": "扎实呈现改革开放初期个人求变与传统束缚的冲突，但开篇十六章仅走到承包签字，主题仍停留在\"穷则思变\"，道德困境维度尚未真正展开。"
+    },
+    "historical_grounding": {
+      "score": 70.0,
+      "comment": "工分制、返销粮、批斗记忆、大队部合同等细节可信；但辣椒三分钱一斤、一亩本钱三块等数字略显随意，学费金额前后从四块变成\"五块多\"。"
+    },
+    "characters": {
+      "score": 66.0,
+      "comment": "陈德厚的创伤性恐惧最有层次，秀兰、刘志强、赵有福各有面目。主角内心动机反复陈述同一件事（为妹妹为母亲），性格层次偏单薄。"
+    },
+    "plot_causality": {
+      "score": 72.0,
+      "comment": "信息获取—政策认知—考察土地—求助—签约—父子决裂，因果链清晰顺畅。缺点是阻力偏弱，队长与刘志强都过于配合，越界代价来得容易。"
+    },
+    "longform_structure": {
+      "score": 63.0,
+      "comment": "开篇符合大纲节拍，但节奏拖沓，第14章几乎全是对前文的回顾复盘。大纲中卷1埋设的\"父亲怀表\"伏笔被换成工分本，长线伏笔已出现偏移。"
+    },
+    "scene_execution": {
+      "score": 67.0,
+      "comment": "挑粪、数零钱、柴房密谈、按手印几场有实感与动作细节；但多数场景以大段抒情内心独白收尾，戏剧张力被解说稀释。"
+    },
+    "style_control": {
+      "score": 64.0,
+      "comment": "语言朴素贴合乡土，比喻多来自生活经验。问题是抒情腔调过重且高度雷同，\"攥紧拳头/指甲陷进掌心\"等动作与排比式发誓反复出现。"
+    },
+    "ai_flavor": {
+      "score": 55.0,
+      "comment": "明显的模式化痕迹：几乎每章结尾都以\"有什么东西裂开了/他知道再也回不去了\"式宣告收束，情绪层层加码却少有意外，段落结构对称得像模板。"
+    }
+  }
+}

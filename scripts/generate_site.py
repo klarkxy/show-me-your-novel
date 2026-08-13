@@ -17,8 +17,10 @@ import os
 import re
 import shutil
 import sys
+from datetime import datetime, timedelta, timezone
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
-from typing import Any
+from typing import Any, NamedTuple
 
 import yaml
 
@@ -28,6 +30,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runner.generate import (  # noqa: E402
+    ARCHIVE_DIR_NAME,
     PROTOCOL_VERSION,
     build_run_input,
     load_prompts as load_generation_prompts,
@@ -45,10 +48,29 @@ from runner.score import (  # noqa: E402
     ScoreError,
     aggregate_dimension_scores,
     dimension_radar_value,
+    judge_request_overrides,
     load_submission,
+    load_submission_from_dir,
     load_system_prompt,
     overall_score_from_medians,
     parse_score_response,
+)
+from runner.score_v4 import (  # noqa: E402
+    V4_REQUEST_OVERRIDES,
+    _valid_outline_audit,
+    expected_aggregate_provenance,
+    load_outline_audit_submission,
+    load_outline_prompt as load_v4_outline_prompt,
+    load_submission as load_v4_submission,
+    load_submission_from_dir as load_v4_submission_from_dir,
+    outline_audit_cache_key,
+    outline_audit_identity,
+    resolve_judge_configs as resolve_v4_judge_configs,
+)
+from runner.llm_api import load_config as load_llm_config  # noqa: E402
+from runner.compare_v4 import (  # noqa: E402
+    ALL_CANDIDATES as V4_ALL_CANDIDATES,
+    load_system_prompt as load_v4_pairwise_prompt,
 )
 
 SITE_TITLE = "让我康康你的文"
@@ -161,7 +183,9 @@ def build_score_expectations(
         if not isinstance(raw, dict) or raw.get("id") not in JUDGE_IDS:
             continue
         judge_id = str(raw["id"])
-        request_overrides = raw.get("request_overrides")
+        request_overrides = judge_request_overrides(
+            judge_id, raw.get("request_overrides")
+        )
         model_cfg = with_provider_request_defaults(config, {
             key: value for key, value in raw.items() if key != "request_overrides"
         })
@@ -463,8 +487,524 @@ def _format_score(value: float | None) -> str:
     return f"{value:.1f}"
 
 
+def _manuscript_timestamp(manifest: dict[str, Any]) -> str:
+    value = manifest.get("manuscript_completed_at") or manifest.get("completed_at")
+    return str(value).strip() if value else ""
+
+
+def _format_manuscript_date(manifest: dict[str, Any]) -> str:
+    """Display the immutable completion timestamp as a Beijing calendar date."""
+
+    value = _manuscript_timestamp(manifest)
+    if not value:
+        return "日期未知"
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(timezone(timedelta(hours=8))).date().isoformat()
+    except ValueError:
+        return value[:10] if len(value) >= 10 else value
+
+
 def _data_number(value: float | None) -> str:
     return "" if value is None or not math.isfinite(value) else f"{value:.1f}"
+
+
+V4_AGGREGATE_SCHEMA = "novel-eval-aggregate.v4"
+V4_RANKING_SCHEMA = "novel-ranking.v4"
+
+
+class V4DimensionSpec(NamedTuple):
+    key: str
+    label: str
+    weight: float
+    subscores: tuple[str, str, str]
+
+
+# Deliberately separate from V3: naturalness is a positive V4 dimension.
+V4_DIMENSION_SPECS = (
+    V4DimensionSpec("theme_fulfillment", "题材与主题兑现", 0.10, ("direction", "integration", "depth")),
+    V4DimensionSpec("historical_grounding", "时代与现实质感", 0.10, ("plausibility", "specificity", "causal_context")),
+    V4DimensionSpec("characters", "人物与关系", 0.15, ("agency", "differentiation", "relationships")),
+    V4DimensionSpec("plot_causality", "情节驱动与因果", 0.15, ("conflict", "causality", "escalation")),
+    V4DimensionSpec("longform_structure", "长篇结构与连续性", 0.15, ("continuity", "pacing", "payoff")),
+    V4DimensionSpec("scene_execution", "场景与叙事效能", 0.15, ("dramatization", "viewpoint", "action_dialogue")),
+    V4DimensionSpec("style_control", "文风管理", 0.10, ("precision", "rhythm", "register")),
+    V4DimensionSpec("naturalness", "自然度与非模板化", 0.10, ("specificity", "variation", "nonformulaic")),
+)
+V4_DIMENSION_KEYS = tuple(spec.key for spec in V4_DIMENSION_SPECS)
+V4_JUDGE_IDS = ("sol", "grok", "opus", "k3", "ds-v4-pro")
+HISTORICAL_JUDGE_LABELS = {"fable": "Fable"}
+V4_ALL_EDGE_COUNT = 25
+V4_SEVERITIES = frozenset({"none", "minor", "major", "critical"})
+V4_SEVERITY_CAPS = {"major": 50.0, "critical": 25.0}
+
+
+def _v4_number(value: Any) -> float | None:
+    """Return a finite 0--100 score, rejecting coercions and booleans."""
+
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    number = float(value)
+    return number if math.isfinite(number) and 0 <= number <= 100 else None
+
+
+def _finite_number(value: Any) -> float | None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    number = float(value)
+    return number if math.isfinite(number) else None
+
+
+def _format_probability(value: float | None) -> str:
+    return "—" if value is None else f"{value * 100:.1f}%"
+
+
+def _v4_range(raw: Any) -> dict[str, float] | None:
+    if not isinstance(raw, dict):
+        return None
+    median = _v4_number(raw.get("median"))
+    minimum = _v4_number(raw.get("min"))
+    maximum = _v4_number(raw.get("max"))
+    if None in (median, minimum, maximum) or minimum > median or median > maximum:
+        return None
+    return {"median": median, "min": minimum, "max": maximum}
+
+
+def _blank_v4() -> dict[str, Any]:
+    return {
+        "valid": False,
+        "rank": None,
+        "relative_score": None,
+        "win_probability": None,
+        "ci95": None,
+        "ci_overlaps_next": False,
+        "overall_score": None,
+        "dimensions": {},
+        "judges": {},
+        "outline_audit": None,
+        "percentiles": {},
+    }
+
+
+def _normalise_v4_aggregate(
+    raw: dict[str, Any],
+    *,
+    benchmark: str,
+    candidate: str,
+    input_hash: str | None,
+    provenance: dict[str, Any] | None = None,
+    chapters: dict[str, str] | None = None,
+    judge_ids: tuple[str, ...] = V4_JUDGE_IDS,
+) -> dict[str, Any]:
+    """Validate the public V4 aggregate narrowly enough to fail closed.
+
+    V4 is intentionally isolated here while its scorer is developed in parallel.
+    Only the published aggregate shape is consumed; raw evaluator output never is.
+    """
+
+    blank = _blank_v4()
+    if (
+        raw.get("schema") != V4_AGGREGATE_SCHEMA
+        or raw.get("benchmark") != benchmark
+        or raw.get("candidate") != candidate
+        or raw.get("status") != "complete"
+        or raw.get("eligible_for_ranking") is not True
+        or not isinstance(input_hash, str)
+        or raw.get("input_hash") != input_hash
+        or not isinstance(provenance, dict)
+        or raw.get("provenance") != provenance
+    ):
+        return blank
+    overall_score = _v4_number(raw.get("overall_score"))
+    raw_dimensions = raw.get("dimensions")
+    raw_judges = raw.get("judges")
+    if (
+        overall_score is None
+        or raw.get("expected_judges") != list(judge_ids)
+        or raw.get("completed_judges") != list(judge_ids)
+        or not isinstance(raw_dimensions, dict)
+        or not isinstance(raw_judges, dict)
+        or set(raw_judges) != set(judge_ids)
+    ):
+        return blank
+    if set(raw_dimensions) != set(V4_DIMENSION_KEYS):
+        return blank
+
+    judges: dict[str, dict[str, Any]] = {}
+    for judge_id in judge_ids:
+        judge = raw_judges[judge_id]
+        if not isinstance(judge, dict) or set(judge) != {"dimensions"}:
+            return blank
+        judge_dimensions = judge.get("dimensions")
+        if not isinstance(judge_dimensions, dict) or set(judge_dimensions) != set(V4_DIMENSION_KEYS):
+            return blank
+        clean_dimensions: dict[str, dict[str, Any]] = {}
+        for spec in V4_DIMENSION_SPECS:
+            entry = judge_dimensions[spec.key]
+            if not isinstance(entry, dict) or set(entry) != {"subscores", "evidence", "major_defect", "confidence", "score"}:
+                return blank
+            score = _v4_number(entry.get("score"))
+            subscores = entry.get("subscores")
+            confidence = _v4_number(entry.get("confidence"))
+            if (
+                score is None
+                or confidence is None
+                or not 0 <= confidence <= 1
+                or not isinstance(subscores, dict)
+                or set(subscores) != set(spec.subscores)
+            ):
+                return blank
+            clean_subscores: dict[str, int] = {}
+            for subkey, subscore in subscores.items():
+                if (
+                    not isinstance(subkey, str)
+                    or subkey not in spec.subscores
+                    or type(subscore) is not int
+                    or not 0 <= subscore <= 4
+                ):
+                    return blank
+                clean_subscores[subkey] = subscore
+            if set(clean_subscores) != set(spec.subscores):
+                return blank
+            evidence = entry.get("evidence")
+            defect = entry.get("major_defect")
+            if not isinstance(evidence, list) or len(evidence) != 2 or not isinstance(defect, dict):
+                return blank
+            clean_evidence: list[dict[str, str]] = []
+            for item in evidence:
+                if not isinstance(item, dict) or set(item) != {"chapter", "excerpt"}:
+                    return blank
+                chapter, excerpt = item.get("chapter"), item.get("excerpt")
+                if not isinstance(chapter, str) or not isinstance(excerpt, str):
+                    return blank
+                excerpt = re.sub(r"\s+", " ", excerpt).strip()
+                if not excerpt or len(excerpt) > 180 or (chapters is not None and (chapter not in chapters or excerpt not in re.sub(r"\s+", " ", chapters[chapter]).strip())):
+                    return blank
+                clean_evidence.append({"chapter": chapter, "excerpt": excerpt})
+            if not {"severity", "description"}.issubset(defect) or not set(defect).issubset({"severity", "description", "chapter"}):
+                return blank
+            severity, description = defect.get("severity"), defect.get("description")
+            description = re.sub(r"\s+", " ", description).strip() if isinstance(description, str) else ""
+            if severity not in V4_SEVERITIES or not description or len(description) > 240:
+                return blank
+            clean_defect: dict[str, Any] = {"severity": severity, "description": description}
+            if "chapter" in defect:
+                defect_chapter = defect["chapter"]
+                if not isinstance(defect_chapter, str) or (chapters is not None and defect_chapter not in chapters):
+                    return blank
+                clean_defect["chapter"] = defect_chapter
+            derived_score = round(sum(clean_subscores.values()) / 12 * 100, 1)
+            derived_score = min(derived_score, V4_SEVERITY_CAPS.get(severity, derived_score))
+            if score != derived_score:
+                return blank
+            clean_dimensions[spec.key] = {
+                "score": score,
+                "subscores": clean_subscores,
+                "evidence": clean_evidence,
+                "major_defect": clean_defect,
+                "confidence": confidence,
+            }
+        judges[judge_id] = {"dimensions": clean_dimensions}
+
+    dimensions: dict[str, dict[str, Any]] = {}
+    for spec in V4_DIMENSION_SPECS:
+        aggregate_entry = raw_dimensions[spec.key]
+        if not isinstance(aggregate_entry, dict) or set(aggregate_entry) != {"label", "weight", "median", "min", "max", "subscores"}:
+            return blank
+        if aggregate_entry.get("label") != spec.label or _number(aggregate_entry.get("weight")) != spec.weight:
+            return blank
+        scores = sorted(judges[judge_id]["dimensions"][spec.key]["score"] for judge_id in judge_ids)
+        middle = len(scores) // 2
+        expected_median = scores[middle] if len(scores) % 2 else round((scores[middle - 1] + scores[middle]) / 2, 1)
+        expected_range = {"median": expected_median, "min": scores[0], "max": scores[-1]}
+        if _v4_range(aggregate_entry) != expected_range:
+            return blank
+        aggregate_subscores = aggregate_entry.get("subscores")
+        if not isinstance(aggregate_subscores, dict) or set(aggregate_subscores) != set(spec.subscores):
+            return blank
+        clean_subscores: dict[str, dict[str, float]] = {}
+        for subkey in spec.subscores:
+            entry = aggregate_subscores[subkey]
+            values = sorted(judges[judge_id]["dimensions"][spec.key]["subscores"][subkey] for judge_id in judge_ids)
+            middle = len(values) // 2
+            expected_median = float(values[middle]) if len(values) % 2 else (values[middle - 1] + values[middle]) / 2
+            expected = {"median": expected_median, "min": values[0], "max": values[-1]}
+            if not isinstance(entry, dict) or set(entry) != {"median", "min", "max"} or _v4_range(entry) != expected:
+                return blank
+            clean_subscores[subkey] = expected
+        dimensions[spec.key] = {**expected_range, "label": spec.label, "weight": spec.weight, "subscores": clean_subscores}
+
+    derived_overall = round(sum(dimensions[spec.key]["median"] * spec.weight for spec in V4_DIMENSION_SPECS), 1)
+    if overall_score != derived_overall:
+        return blank
+
+    return {
+        **blank,
+        "valid": True,
+        "overall_score": derived_overall,
+        "dimensions": dimensions,
+        "judges": judges,
+        "outline_audit": None,
+    }
+
+
+def _normalise_v4_ranking(raw: dict[str, Any], benchmark: str) -> dict[str, dict[str, Any]]:
+    """Accept the compact V4 ranking forms while requiring every numeric claim."""
+
+    if raw.get("schema") != V4_RANKING_SCHEMA or raw.get("benchmark") != benchmark:
+        return {}
+    entries = _first(raw, "ranking", "candidates", "rankings", "models")
+    if isinstance(entries, dict):
+        entries = [{"candidate": key, **value} for key, value in entries.items() if isinstance(value, dict)]
+    if not isinstance(entries, list):
+        return {}
+    ranked: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        if not isinstance(entry, dict):
+            return {}
+        candidate = _first(entry, "candidate", "model", "model_id", "id")
+        rank = _number(entry.get("rank"))
+        relative = _finite_number(_first(entry, "relative_score", "relative", "rating", "score"))
+        win_probability = _finite_number(_first(entry, "win_probability", "win_rate", "win"))
+        ci = _first(entry, "ci95", "rating_ci95", "confidence_interval", "ci")
+        if isinstance(ci, dict):
+            ci = [_first(ci, "low", "lower", "min"), _first(ci, "high", "upper", "max")]
+        if (
+            not isinstance(candidate, str)
+            or not SAFE_SLUG.fullmatch(candidate)
+            or rank is None
+            or rank < 1
+            or rank != int(rank)
+            or win_probability is None
+            or relative is None
+            or not 0 <= win_probability <= 1
+            or not isinstance(ci, list)
+            or len(ci) != 2
+            or type(entry.get("ci_overlaps_next")) is not bool
+        ):
+            return {}
+        low, high = _finite_number(ci[0]), _finite_number(ci[1])
+        if low is None or high is None or low > high or candidate in ranked:
+            return {}
+        ranked[candidate] = {
+            "rank": int(rank),
+            "relative_score": relative,
+            "win_probability": win_probability,
+            "ci95": (low, high),
+            "ci_overlaps_next": entry["ci_overlaps_next"],
+        }
+    return ranked
+
+
+def _v4_default_ranking_quality(raw: dict[str, Any], results: list[dict[str, Any]]) -> bool:
+    """A pilot, disconnected, or unsaturated V4 ranking is preview-only."""
+
+    graph = raw.get("graph")
+    graph_connected = (
+        raw.get("connected_graph") is True
+        or raw.get("graph_connected") is True
+        or (isinstance(graph, dict) and graph.get("connected") is True)
+    )
+    if (
+        raw.get("status") != "complete"
+        or raw.get("scope") != "all"
+        or raw.get("eligible_for_default") is not True
+        or not graph_connected
+    ):
+        return False
+    for spec in V4_DIMENSION_SPECS:
+        values = sorted(result["v4"]["dimensions"][spec.key]["median"] for result in results)
+        if len(set(values)) < 3:
+            return False
+        # Tukey hinges are sufficient for the default gate: a zero IQR means
+        # this dimension cannot distinguish the candidate cohort.
+        lower = values[: len(values) // 2]
+        upper = values[(len(values) + 1) // 2 :]
+        q1 = lower[len(lower) // 2]
+        q3 = upper[len(upper) // 2]
+        if q3 <= q1:
+            return False
+    return True
+
+
+def _load_v4_outline_audit(
+    path: Path,
+    outline_input_hash: str | None,
+    *,
+    expected_key: str | None = None,
+    expected_identity: dict[str, Any] | None = None,
+) -> dict[str, Any] | None:
+    """Read the optional audit only when it belongs to the current manuscript."""
+
+    raw = _read_json(path)
+    if (
+        not isinstance(outline_input_hash, str)
+        or not isinstance(expected_key, str)
+        or not isinstance(expected_identity, dict)
+        or raw.get("outline_input_hash") != outline_input_hash
+        or not _valid_outline_audit(raw, expected_key, expected_identity)
+    ):
+        return None
+    return raw["audit"]
+
+
+def _v4_ranking_binding_current(
+    raw: dict[str, Any],
+    aggregate_hashes: dict[str, str],
+    pairs_dir: Path,
+    root: Path,
+) -> bool:
+    binding = raw.get("input_binding")
+    if not isinstance(binding, dict) or set(binding) != {
+        "pairwise_rubric_hash", "aggregate_hashes", "pair_record_hashes", "binding_hash"
+    }:
+        return False
+    pair_hashes = binding.get("pair_record_hashes")
+    if (
+        set(aggregate_hashes) != set(V4_ALL_CANDIDATES)
+        or binding.get("aggregate_hashes") != aggregate_hashes
+        or not isinstance(pair_hashes, dict)
+        or len(pair_hashes) != V4_ALL_EDGE_COUNT
+    ):
+        return False
+    try:
+        rubric_hash = _sha256_text(load_v4_pairwise_prompt(root))
+    except Exception:
+        return False
+    if binding.get("pairwise_rubric_hash") != rubric_hash:
+        return False
+    current_pair_hashes: dict[str, str] = {}
+    for pair_id, expected_hash in pair_hashes.items():
+        if not isinstance(pair_id, str) or not re.fullmatch(r"[0-9a-f]{20}", pair_id) or not isinstance(expected_hash, str):
+            return False
+        path = pairs_dir / f"{pair_id}.json"
+        if not path.is_file():
+            return False
+        current_pair_hashes[pair_id] = _sha256_text(_canonical_json(_read_json(path)))
+    payload = {
+        "pairwise_rubric_hash": rubric_hash,
+        "aggregate_hashes": aggregate_hashes,
+        "pair_record_hashes": current_pair_hashes,
+    }
+    return (
+        current_pair_hashes == pair_hashes
+        and binding.get("binding_hash") == _sha256_text(_canonical_json(payload))
+        and len(pair_hashes) == raw.get("completed_edges") == raw.get("expected_edges") == V4_ALL_EDGE_COUNT
+    )
+
+
+def attach_v4_results(results: list[dict[str, Any]], results_dir: Path) -> bool:
+    """Attach valid V4 data and return whether it is safe to be the default."""
+
+    aggregate_hashes: dict[str, str] = {}
+    for result in results:
+        v4_input_hash = None
+        outline_input_hash = None
+        v4_chapters = None
+        v4_provenance = None
+        outline_key = None
+        outline_identity = None
+        submission = None
+        if result["detail_available"]:
+            try:
+                submission = load_v4_submission(
+                    results_dir.parents[1], results_dir.name, result["model_id"]
+                )
+                v4_input_hash = submission.input_hash
+                v4_chapters = submission.chapters
+                v4_provenance = expected_aggregate_provenance(
+                    results_dir.parents[1], submission
+                )
+            except Exception:
+                # Main V4 validity is bound only to direction + verified prose.
+                submission = None
+                v4_input_hash = None
+                v4_chapters = None
+                v4_provenance = None
+            try:
+                if submission is None:
+                    raise ValueError("main V4 submission is unavailable")
+                outline_submission = load_outline_audit_submission(
+                    results_dir.parents[1], submission
+                )
+                outline_input_hash = outline_submission.outline_input_hash
+                cfg = load_llm_config(results_dir.parents[1] / "config.yaml")
+                sol = resolve_v4_judge_configs(cfg)["sol"]
+                outline_prompt = load_v4_outline_prompt(results_dir.parents[1])
+                outline_key = outline_audit_cache_key(
+                    outline_submission, outline_prompt, sol, V4_REQUEST_OVERRIDES
+                )
+                outline_identity = outline_audit_identity(
+                    outline_submission, outline_prompt, sol, V4_REQUEST_OVERRIDES
+                )
+            except Exception:
+                # The advisory outline audit never blocks main-score validity.
+                outline_input_hash = None
+                outline_key = None
+                outline_identity = None
+        aggregate = _read_json(results_dir / result["model_id"] / "scores-v4" / "aggregate.json")
+        result["v4"] = _normalise_v4_aggregate(
+            aggregate,
+            benchmark=results_dir.name,
+            candidate=result["model_id"],
+            input_hash=v4_input_hash,
+            provenance=v4_provenance,
+            chapters=v4_chapters,
+        )
+        if result["v4"]["valid"]:
+            aggregate_hashes[result["model_id"]] = _sha256_text(_canonical_json(aggregate))
+        result["v4"]["outline_audit"] = _load_v4_outline_audit(
+            results_dir / result["model_id"] / "scores-v4" / "outline-audit.json",
+            outline_input_hash,
+            expected_key=outline_key,
+            expected_identity=outline_identity,
+        )
+    ranking_raw = _read_json(results_dir / "_pairwise-v4" / "ranking.json")
+    binding_valid = _v4_ranking_binding_current(
+        ranking_raw,
+        aggregate_hashes,
+        results_dir / "_pairwise-v4" / "pairs",
+        results_dir.parents[1],
+    )
+    ranking = _normalise_v4_ranking(ranking_raw, results_dir.name) if binding_valid else {}
+    _attach_v4_percentiles([result for result in results if result["v4"]["valid"]])
+    published = [result for result in results if result["detail_available"]]
+    if not published or any(not result["v4"]["valid"] for result in published):
+        return False
+    if set(ranking) != {result["model_id"] for result in published}:
+        return False
+    ranks = {ranking[result["model_id"]]["rank"] for result in published}
+    if ranks != set(range(1, len(published) + 1)):
+        return False
+    if not _v4_default_ranking_quality(ranking_raw, published):
+        return False
+    for result in results:
+        entry = ranking.get(result["model_id"])
+        if entry:
+            result["v4"].update(entry)
+    return True
+
+
+def _attach_v4_percentiles(results: list[dict[str, Any]]) -> None:
+    """Use average ordinal rank; the cohort median is therefore conceptually 50."""
+
+    for spec in V4_DIMENSION_SPECS:
+        values = sorted(
+            (result["v4"]["dimensions"][spec.key]["median"], result)
+            for result in results
+        )
+        size = len(values)
+        offset = 0
+        while offset < size:
+            end = offset + 1
+            while end < size and values[end][0] == values[offset][0]:
+                end += 1
+            percentile = 50.0 if size == 1 else 100 * ((offset + end - 1) / 2) / (size - 1)
+            for _, result in values[offset:end]:
+                result["v4"]["percentiles"][spec.key] = percentile
+            offset = end
 
 
 def load_reform_results(
@@ -606,15 +1146,21 @@ def load_reform_results(
                 "macro_outline": macro_outline,
                 "opening_outline": opening_outline,
                 "manifest": manifest,
+                "manuscript_completed_at": _manuscript_timestamp(manifest),
+                "manuscript_date": _format_manuscript_date(manifest),
                 "novel": novel,
                 "novel_html": md_to_html(prose_only(novel)),
                 "body_chars": count_chinese_chars(novel),
                 "chapters": count_chapters(novel),
                 "judges": judges,
+                "judge_ids": JUDGE_IDS,
                 "aggregate_dimensions": aggregate_dimensions,
                 "overall_score": overall_score,
+                "score_input_hash": current_input_hash,
                 "detail_available": detail_available,
                 "rankable": rankable,
+                "archived": False,
+                "archives": [],
             }
         )
 
@@ -626,6 +1172,199 @@ def load_reform_results(
         )
     )
     return results
+
+
+def _archived_judge_expectation(raw: dict[str, Any]) -> dict[str, str] | None:
+    keys = ("rubric_hash", "judge_config_sha256", "requested_model")
+    if any(not isinstance(raw.get(key), str) or not raw[key] for key in keys):
+        return None
+    return {key: str(raw[key]) for key in keys}
+
+
+def _archived_judge_ids(archived_dir: Path) -> tuple[str, ...]:
+    """Recover the immutable judge cohort that belongs to an archived draft."""
+
+    aggregate = _read_json(archived_dir / "scores" / "aggregate.json")
+    raw_ids = aggregate.get("expected_judges")
+    if isinstance(raw_ids, list):
+        judge_ids = tuple(str(value) for value in raw_ids)
+        if (
+            judge_ids
+            and len(judge_ids) == len(set(judge_ids))
+            and all(SAFE_SLUG.fullmatch(value) for value in judge_ids)
+        ):
+            return judge_ids
+    score_dir = archived_dir / "scores"
+    if not score_dir.is_dir():
+        return ()
+    return tuple(
+        path.stem
+        for path in sorted(score_dir.glob("*.json"), key=lambda path: path.name)
+        if path.stem != "aggregate" and SAFE_SLUG.fullmatch(path.stem)
+    )
+
+
+def _historical_median(values: list[float]) -> float:
+    ordered = sorted(Decimal(str(value)) for value in values)
+    middle = len(ordered) // 2
+    value = (
+        ordered[middle]
+        if len(ordered) % 2
+        else (ordered[middle - 1] + ordered[middle]) / Decimal("2")
+    )
+    return float(value.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP))
+
+
+def _aggregate_historical_dimensions(
+    judges: dict[str, dict[str, Any]], judge_ids: tuple[str, ...]
+) -> dict[str, dict[str, Any]]:
+    """Recompute an archived cohort without applying today's judge registry."""
+
+    aggregate: dict[str, dict[str, Any]] = {}
+    for spec in DIMENSION_SPECS:
+        values = [float(judges[judge_id]["dimensions"][spec.key]["score"]) for judge_id in judge_ids]
+        aggregate[spec.key] = {
+            "label": spec.label,
+            "weight": spec.weight,
+            "higher_is_better": spec.higher_is_better,
+            "median": _historical_median(values),
+            "min": min(values),
+            "max": max(values),
+        }
+    return aggregate
+
+
+def load_archived_reform_results(
+    results_dir: Path,
+    model_by_id: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Load browsable historical manuscripts without making them rankable."""
+
+    root = results_dir.parents[1]
+    archived_results: list[dict[str, Any]] = []
+    for model_id, config_model in model_by_id.items():
+        archive_root = results_dir / model_id / ARCHIVE_DIR_NAME
+        if not archive_root.is_dir():
+            continue
+        for archived_dir in sorted(archive_root.iterdir(), key=lambda path: path.name):
+            if not archived_dir.is_dir() or not SAFE_SLUG.fullmatch(archived_dir.name):
+                continue
+            manifest = _read_json(archived_dir / "manifest.json")
+            archive_meta = _read_json(archived_dir / "archive.json")
+            run_id = str(manifest.get("run_id") or "")
+            status = str(manifest.get("status") or "").strip().lower()
+            detail_available = (
+                bool(run_id)
+                and status in {"complete", "completed"}
+                and all((archived_dir / name).is_file() for name in REQUIRED_RESULT_ARTIFACTS)
+                and _manifest_artifacts_match(archived_dir, manifest)
+                and result_is_complete(archived_dir, run_id)
+            )
+            if not detail_available:
+                print(f"[site] 忽略未通过完整性校验的归档稿：{archived_dir}", file=sys.stderr)
+                continue
+
+            book = _read_json(archived_dir / "book.json")
+            macro_outline = _read_json(archived_dir / "macro_outline.json")
+            opening_outline = _read_json(archived_dir / "opening_outline.json")
+            try:
+                novel = (archived_dir / "novel.md").read_text(encoding="utf-8")
+                archived_candidate = str(manifest.get("model_id") or model_id)
+                submission = load_submission_from_dir(
+                    root,
+                    results_dir.name,
+                    archived_candidate,
+                    archived_dir,
+                    expected_run_id=run_id,
+                )
+            except (OSError, ScoreError, ValueError):
+                print(f"[site] 忽略无法读取的归档稿：{archived_dir}", file=sys.stderr)
+                continue
+
+            judge_ids = _archived_judge_ids(archived_dir)
+            judges: dict[str, dict[str, Any]] = {}
+            for judge_id in judge_ids:
+                raw = _read_json(archived_dir / "scores" / f"{judge_id}.json")
+                judges[judge_id] = _normalise_judge(
+                    raw,
+                    benchmark=results_dir.name,
+                    judge_id=judge_id,
+                    candidate=archived_candidate,
+                    expected=_archived_judge_expectation(raw),
+                )
+            all_judges_valid = bool(judge_ids) and all(
+                judges[judge_id]["valid"] for judge_id in judge_ids
+            )
+            if all_judges_valid:
+                score_hashes = {judges[judge_id]["input_hash"] for judge_id in judge_ids}
+                all_judges_valid = score_hashes == {submission.input_hash}
+            aggregate_dimensions = (
+                _aggregate_historical_dimensions(judges, judge_ids)
+                if all_judges_valid
+                else {}
+            )
+            overall_score = (
+                overall_score_from_medians(aggregate_dimensions)
+                if all_judges_valid
+                else None
+            )
+
+            archived_v4 = _blank_v4()
+            try:
+                v4_submission = load_v4_submission_from_dir(
+                    root, results_dir.name, archived_candidate, archived_dir
+                )
+                raw_v4 = _read_json(archived_dir / "scores-v4" / "aggregate.json")
+                archived_v4 = _normalise_v4_aggregate(
+                    raw_v4,
+                    benchmark=results_dir.name,
+                    candidate=archived_candidate,
+                    input_hash=v4_submission.input_hash,
+                    provenance=(raw_v4.get("provenance") if isinstance(raw_v4, dict) else None),
+                    chapters=v4_submission.chapters,
+                    judge_ids=tuple(raw_v4.get("expected_judges", ())),
+                )
+            except Exception:
+                archived_v4 = _blank_v4()
+
+            title = _first(book, "title") or first_h1(novel) or model_id
+            archived_results.append(
+                {
+                    "model_id": model_id,
+                    "model_name": str(
+                        manifest.get("requested_model")
+                        or config_model.get("name", model_id)
+                    ),
+                    "title": title,
+                    "blurb": _first(book, "blurb", "intro", "synopsis") or "暂无简介。",
+                    "book": book,
+                    "macro_outline": macro_outline,
+                    "opening_outline": opening_outline,
+                    "manifest": manifest,
+                    "manuscript_completed_at": _manuscript_timestamp(manifest),
+                    "manuscript_date": _format_manuscript_date(manifest),
+                    "novel": novel,
+                    "novel_html": md_to_html(prose_only(novel)),
+                    "body_chars": count_chinese_chars(novel),
+                    "chapters": count_chapters(novel),
+                    "judges": judges,
+                    "judge_ids": judge_ids,
+                    "aggregate_dimensions": aggregate_dimensions,
+                    "overall_score": overall_score,
+                    "score_input_hash": submission.input_hash,
+                    "detail_available": True,
+                    "rankable": False,
+                    "archived": True,
+                    "archive_id": archived_dir.name,
+                    "archive_meta": archive_meta,
+                    "v4": archived_v4,
+                    "archives": [],
+                }
+            )
+    archived_results.sort(
+        key=lambda item: (item["model_id"], item["manuscript_completed_at"]), reverse=True
+    )
+    return archived_results
 
 
 def load_legacy_stories(
@@ -742,6 +1481,7 @@ DIMENSION_SHORT_LABELS = {
     "scene_execution": "场景",
     "style_control": "文风",
     "ai_flavor": "AI味↓",
+    "naturalness": "自然度",
 }
 
 SCORING_NOTE = (
@@ -752,8 +1492,14 @@ SCORING_NOTE = (
 )
 
 
+def _judge_label(judge_id: str) -> str:
+    return JUDGE_LABELS.get(
+        judge_id, HISTORICAL_JUDGE_LABELS.get(judge_id, judge_id)
+    )
+
+
 def _dimension_label(spec: Any) -> str:
-    return f"{spec.label}（越低越好）" if not spec.higher_is_better else spec.label
+    return f"{spec.label}（越低越好）" if not getattr(spec, "higher_is_better", True) else spec.label
 
 
 def _dimension_short(spec: Any) -> str:
@@ -769,9 +1515,12 @@ def _metric_key(spec: Any | None = None, *, overall: bool = False) -> str:
 
 def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
     if result["detail_available"]:
+        history = len(result.get("archives") or [])
+        history_text = f" · 历史稿 {history}" if history else ""
         entry = f"""<a class="entry-link" href="results/reform-era/{result['model_id']}.html">
       <span class="entry-model">{esc(result['model_name'])}</span>
       <span class="entry-title">《{esc(result['title'])}》</span>
+      <span class="entry-date">成稿 {esc(result['manuscript_date'])}{history_text}</span>
     </a>"""
     else:
         entry = f"""<span class="entry-link unavailable">
@@ -809,7 +1558,95 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
 </tr>"""
 
 
-def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
+def _v4_heat_cell(value: float | None, spec: Any) -> str:
+    if value is None:
+        return '<td class="v4-heat" data-label="—">—</td>'
+    label = f"{_dimension_short(spec)}：{value:.0f}百分位"
+    return (
+        f'<td class="v4-heat" data-label="{esc(label)}" style="--heat: {value:.1f}%">'
+        f'<span>{value:.0f}</span></td>'
+    )
+
+
+def _v4_leaderboard_row(result: dict[str, Any]) -> str:
+    v4 = result["v4"]
+    detail = (
+        f'<a class="entry-link" href="results/reform-era/{esc(result["model_id"])}.html">'
+        f'<span class="entry-model">{esc(result["model_name"])}</span>'
+        f'<span class="entry-title">《{esc(result["title"])}》</span></a>'
+        if result["detail_available"]
+        else f'<span class="entry-link unavailable"><span class="entry-model">{esc(result["model_name"])}</span></span>'
+    )
+    ci = v4.get("ci95")
+    ci_text = f"{ci[0]:.1f}–{ci[1]:.1f}" if ci else "—"
+    overlap = '<span class="ci-overlap">无法可靠区分</span>' if v4.get("ci_overlaps_next") else ""
+    return f"""<tr data-model-id="{esc(result['model_id'])}" data-rankable="{'true' if v4['valid'] else 'false'}">
+  <td class="rank-cell">{v4['rank']:02d}</td><th scope="row">{detail}</th>
+  <td data-label="相对分">{_format_score(v4['relative_score'])}</td>
+  <td data-label="胜率">{_format_probability(v4['win_probability'])}</td>
+  <td data-label="95% CI">{ci_text}{overlap}</td><td data-label="绝对分">{_format_score(v4['overall_score'])}</td>
+  {''.join(_v4_heat_cell(v4['percentiles'].get(spec.key), spec) for spec in V4_DIMENSION_SPECS)}
+</tr>"""
+
+
+def _v4_preview(results: list[dict[str, Any]], *, complete: bool) -> str:
+    valid_results = [result for result in results if result.get("v4", {}).get("valid")]
+    if complete:
+        valid_results.sort(key=lambda result: result["v4"]["rank"])
+    rows = "".join(_v4_leaderboard_row(result) for result in valid_results if complete)
+    if not complete:
+        rows = "".join(
+            f"<tr><th scope=\"row\">{esc(result['model_name'])}</th><td>{_format_score(result['v4']['overall_score'])}</td>"
+            + "".join(
+                _v4_heat_cell(result["v4"]["percentiles"].get(spec.key), spec)
+                for spec in V4_DIMENSION_SPECS
+            )
+            + "</tr>"
+            for result in valid_results
+        )
+    headers = "".join(f"<th scope=\"col\">{esc(_dimension_short(spec))}</th>" for spec in V4_DIMENSION_SPECS)
+    head = (
+        "<th scope=\"col\">#</th><th scope=\"col\">作品</th><th scope=\"col\">相对分</th>"
+        "<th scope=\"col\">胜率</th><th scope=\"col\">95% CI</th><th scope=\"col\">绝对分</th>"
+        if complete
+        else "<th scope=\"col\">作品</th><th scope=\"col\">绝对分</th>"
+    )
+    if not valid_results:
+        rows = f'<tr><td colspan="{14 if complete else 10}">暂无可校验的 V4 聚合。</td></tr>'
+    status = (
+        "V4 已覆盖全部可发布候选，当前为默认排名口径。"
+        if complete
+        else "预览未满足发布条件：必须有全部可发布候选的最新 V4 聚合及完整 pairwise 排名；生产首页仍使用 V3。"
+    )
+    return f"""<section class="v4-panel {'v4-preview-mode' if not complete else ''}" aria-labelledby="v4-title">
+  <header><h2 id="v4-title">V4 对比排名</h2><p>{status}</p></header>
+  <div class="table-shell"><table class="leaderboard v4-leaderboard">
+    <thead><tr>{head}{headers}</tr></thead><tbody>{rows}</tbody>
+  </table></div>
+  <p class="v4-legend">相对分、胜率与 95% CI 来自成对比较；绝对分来自 V4 评分聚合。热图为 8 个维度的队列百分位，50 表示队列中位。</p>
+</section>"""
+
+
+def render_v4_home(results: list[dict[str, Any]], legacy_count: int, *, preview: bool) -> str:
+    return page_head("改革开放长篇模型榜 · V4", "", "page-leaderboard page-v4", leaderboard_script=False) + f"""
+<header class="page-intro" aria-labelledby="page-title">
+  <h1 id="page-title">改革开放长篇模型榜</h1>
+  <p class="page-sub">V4 · 成对比较 + 绝对评分 · {len(V4_JUDGE_IDS)} 位活动评委</p>
+  <p class="page-meta">全部 {len(results)} · Legacy {legacy_count}</p>
+</header>
+{_v4_preview(results, complete=not preview or all(result.get('v4', {}).get('rank') for result in results if result['detail_available']))}
+""" + PAGE_FOOT
+
+
+def render_home(
+    results: list[dict[str, Any]],
+    legacy_count: int,
+    *,
+    v4_default: bool = False,
+    v4_preview: bool = False,
+) -> str:
+    if v4_default:
+        return render_v4_home(results, legacy_count, preview=False)
     ranked_count = sum(1 for result in results if result["rankable"])
     rank = 0
     rendered_rows: list[str] = []
@@ -888,6 +1725,7 @@ def render_home(results: list[dict[str, Any]], legacy_count: int) -> str:
     <p id="ranking-note">{SCORING_NOTE}</p>
   </details>
 </section>
+{_v4_preview(results, complete=False) if v4_preview else ''}
 """ + PAGE_FOOT
 
 
@@ -896,7 +1734,7 @@ def _radar_point(cx: float, cy: float, radius: float, angle: float) -> str:
 
 
 def _radar_label_lines(spec: Any) -> tuple[str, ...]:
-    if not spec.higher_is_better:
+    if not getattr(spec, "higher_is_better", True):
         return (spec.label, "（越低越好）")
     if "与" in spec.label:
         left, right = spec.label.split("与", 1)
@@ -914,6 +1752,7 @@ def _radar_short_label(spec: Any) -> str:
         "scene_execution": "场景",
         "style_control": "文风",
         "ai_flavor": "AI味↓",
+        "naturalness": "自然度",
     }[spec.key]
 
 
@@ -921,14 +1760,18 @@ def _radar_chart(
     chart_id: str,
     title: str,
     scores: dict[str, float | None],
+    *,
+    ranges: dict[str, dict[str, float]] | None = None,
+    already_oriented: bool = False,
+    specs: tuple[Any, ...] = DIMENSION_SPECS,
 ) -> str:
     """Render an accessible dependency-free radar plus a visible score table."""
 
     safe_id = re.sub(r"[^A-Za-z0-9_-]", "-", chart_id)
     cx, cy, radius, label_radius = 360.0, 310.0, 185.0, 255.0
     angles = [
-        -math.pi / 2 + index * (2 * math.pi / len(DIMENSION_SPECS))
-        for index in range(len(DIMENSION_SPECS))
+        -math.pi / 2 + index * (2 * math.pi / len(specs))
+        for index in range(len(specs))
     ]
     grid = "\n".join(
         (
@@ -945,14 +1788,14 @@ def _radar_chart(
 
     plotted: list[float] = []
     raw_values: list[float | None] = []
-    for spec in DIMENSION_SPECS:
+    for spec in specs:
         raw = scores.get(spec.key)
         if raw is None or not math.isfinite(raw):
             raw_values.append(None)
             plotted.append(0.0)
             continue
         raw_values.append(raw)
-        plotted.append(dimension_radar_value(spec.key, raw))
+        plotted.append(raw if already_oriented else dimension_radar_value(spec.key, raw))
     shape_points = " ".join(
         _radar_point(cx, cy, radius * value / 100, angle)
         for value, angle in zip(plotted, angles)
@@ -965,8 +1808,33 @@ def _radar_chart(
         )
         for value, angle in zip(plotted, angles)
     )
+    band = ""
+    if ranges:
+        minimums: list[float] = []
+        maximums: list[float] = []
+        for spec in specs:
+            value_range = ranges.get(spec.key) or {}
+            minimum = _number(value_range.get("min"))
+            maximum = _number(value_range.get("max"))
+            if minimum is None or maximum is None:
+                minimums.append(0.0)
+                maximums.append(0.0)
+            else:
+                low = minimum if already_oriented else dimension_radar_value(spec.key, minimum)
+                high = maximum if already_oriented else dimension_radar_value(spec.key, maximum)
+                minimums.append(min(low, high))
+                maximums.append(max(low, high))
+        outer = " ".join(
+            _radar_point(cx, cy, radius * value / 100, angle)
+            for value, angle in zip(maximums, angles)
+        )
+        inner = " ".join(
+            _radar_point(cx, cy, radius * value / 100, angle)
+            for value, angle in zip(minimums, angles)
+        )
+        band = f'<polygon points="{outer}" class="radar-band" /><polygon points="{inner}" class="radar-band-inner" />'
     labels: list[str] = []
-    for spec, angle in zip(DIMENSION_SPECS, angles):
+    for spec, angle in zip(specs, angles):
         x, y = _radar_point(cx, cy, label_radius, angle).split(",")
         cosine = math.cos(angle)
         anchor = "start" if cosine > 0.25 else "end" if cosine < -0.25 else "middle"
@@ -987,11 +1855,16 @@ def _radar_chart(
 
     descriptions: list[str] = []
     rows: list[str] = []
-    for spec, raw, plotted_value in zip(DIMENSION_SPECS, raw_values, plotted):
+    for spec, raw, plotted_value in zip(specs, raw_values, plotted):
         raw_text = _format_score(raw)
+        value_range = (ranges or {}).get(spec.key) or {}
+        range_text = (
+            f"{_format_score(_number(value_range.get('min')))}–{_format_score(_number(value_range.get('max')))}"
+            if ranges else ""
+        )
         if raw is None:
             descriptions.append(f"{_dimension_label(spec)}暂无评分")
-        elif spec.higher_is_better:
+        elif getattr(spec, "higher_is_better", True):
             descriptions.append(f"{spec.label}{raw_text}分")
         else:
             descriptions.append(
@@ -999,7 +1872,7 @@ def _radar_chart(
             )
         rows.append(
             f"<tr><th scope=\"row\">{esc(_dimension_label(spec))}</th>"
-            f"<td>{raw_text}</td></tr>"
+            f"<td>{raw_text}</td>{f'<td>{range_text}</td>' if ranges else ''}</tr>"
         )
     desc = "；".join(descriptions) + "。雷达越靠外代表该项表现越好。"
     return f"""<figure class="radar-figure" data-radar-chart="{esc(safe_id)}">
@@ -1016,6 +1889,7 @@ def _radar_chart(
     <g aria-hidden="true">
       {grid}
       {axes}
+      {band}
       <polygon points="{shape_points}" class="radar-shape"
                fill="url(#{esc(safe_id)}-hatch)" />
       {point_marks}
@@ -1024,7 +1898,7 @@ def _radar_chart(
   </svg>
   <table class="radar-score-table">
     <caption class="visually-hidden">{esc(title)}的逐维分数</caption>
-    <thead><tr><th scope="col">维度</th><th scope="col">分数</th></tr></thead>
+    <thead><tr><th scope="col">维度</th><th scope="col">分数</th>{'<th scope="col">分歧范围</th>' if ranges else ''}</tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
   <figcaption>{esc(title)}</figcaption>
@@ -1071,8 +1945,95 @@ def _json_drawer(title: str, value: dict[str, Any]) -> str:
 </details>"""
 
 
+def _v4_subscore_table(v4: dict[str, Any]) -> str:
+    rows: list[str] = []
+    for spec in V4_DIMENSION_SPECS:
+        dimension = v4["dimensions"][spec.key]
+        for subkey, values in dimension["subscores"].items():
+            rows.append(
+                f"<tr><th scope=\"row\">{esc(_dimension_short(spec))} · {esc(subkey)}</th>"
+                f"<td>{_format_score(values['median'])}</td>"
+                f"<td>{_format_score(values['min'])}–{_format_score(values['max'])}</td></tr>"
+            )
+    return f"""<div class="table-shell v4-subscore-shell"><table class="v4-subscore-table">
+  <caption>24 个 V4 子项：中位数与评委分歧范围</caption>
+  <thead><tr><th scope="col">子项</th><th scope="col">中位数</th><th scope="col">分歧范围</th></tr></thead>
+  <tbody>{''.join(rows)}</tbody>
+</table></div>"""
+
+
+def _v4_judge_evaluations(v4: dict[str, Any]) -> str:
+    drawers: list[str] = []
+    for judge_id, judge in v4["judges"].items():
+        items: list[str] = []
+        for spec in V4_DIMENSION_SPECS:
+            dimension = judge["dimensions"][spec.key]
+            subscore_text = " · ".join(
+                f"{esc(key)} {_format_score(value)}" for key, value in dimension["subscores"].items()
+            )
+            items.append(f"""<li class="v4-evidence-item">
+  <header><h4>{esc(_dimension_short(spec))}</h4><strong>{_format_score(dimension['score'])}</strong></header>
+  <p><b>子项：</b>{subscore_text}</p>
+  <p><b>证据：</b>{esc(json.dumps(dimension['evidence'], ensure_ascii=False))}</p>
+  <p><b>主要缺陷：</b>{esc(json.dumps(dimension['major_defect'], ensure_ascii=False))}</p>
+  <p><b>置信度：</b>{_format_score(dimension['confidence'])}</p>
+</li>""")
+        label = _judge_label(judge_id)
+        drawers.append(f"""<details class="judge-drawer v4-judge-drawer">
+  <summary>{esc(label)} · V4 证据记录</summary>
+  <ol class="v4-evidence-list" aria-label="{esc(label)} V4 逐维证据">{''.join(items)}</ol>
+</details>""")
+    return '<div class="judge-evaluations" aria-label="V4 评委证据">' + "".join(drawers) + "</div>"
+
+
+def _v4_result_section(result: dict[str, Any]) -> str:
+    v4 = result.get("v4") or _blank_v4()
+    if not v4["valid"]:
+        return """<section id="score-v4" class="aggregate-section v4-result-section">
+  <h2>V4 评分</h2><p class="empty-copy">该作品的 V4 聚合尚未通过完整性与时效校验，因此不会展示或参与排名。</p>
+</section>"""
+    absolute_scores = {spec.key: v4["dimensions"][spec.key]["median"] for spec in V4_DIMENSION_SPECS}
+    absolute_ranges = {spec.key: v4["dimensions"][spec.key] for spec in V4_DIMENSION_SPECS}
+    percentile_scores = {spec.key: v4["percentiles"].get(spec.key) for spec in V4_DIMENSION_SPECS}
+    chart_prefix = f"v4-radar-{result['model_id']}"
+    ranking = ""
+    if v4.get("rank"):
+        ci = v4.get("ci95")
+        overlap = " · 无法可靠区分" if v4.get("ci_overlaps_next") else ""
+        ranking = f"<p class=\"v4-result-meta\">第 {v4['rank']} 名 · 相对分 {_format_score(v4['relative_score'])} · 胜率 {_format_probability(v4['win_probability'])} · 95% CI {ci[0]:.1f}–{ci[1]:.1f}{overlap}</p>"
+    audit = _json_drawer("大纲审计", {"outline_audit": v4["outline_audit"]}) if v4.get("outline_audit") is not None else ""
+    return f"""<section id="score-v4" class="aggregate-section v4-result-section" aria-labelledby="v4-score-title">
+  <h2 id="v4-score-title">V4 评分</h2>{ranking}
+  {_radar_chart(f'{chart_prefix}-absolute', '绝对分与评委分歧范围', absolute_scores, ranges=absolute_ranges, specs=V4_DIMENSION_SPECS)}
+  {_radar_chart(f'{chart_prefix}-percentile', '维度百分位（队列中位概念为 50）', percentile_scores, already_oriented=True, specs=V4_DIMENSION_SPECS)}
+  <p class="v4-legend">绝对分雷达的阴影外沿和内沿分别表示该维度的最高、最低有效评委分；百分位雷达已按方向统一，50 表示队列中位。</p>
+  <h3>24 个子项</h3>{_v4_subscore_table(v4)}
+  <h3>评委证据、主要缺陷与置信度</h3>{_v4_judge_evaluations(v4)}
+  {audit}
+</section>"""
+
+
+def _archive_history_section(result: dict[str, Any]) -> str:
+    archives = result.get("archives") or []
+    if not archives:
+        return ""
+    items = "".join(
+        f"""<li><a href="archive/{esc(result['model_id'])}/{esc(item['archive_id'])}.html">
+  <span>《{esc(item['title'])}》</span>
+  <small>成稿 {esc(item['manuscript_date'])} · {item['chapters']} 章 · {item['body_chars']:,} 字 · 已归档，不参与排名</small>
+</a></li>"""
+        for item in archives
+    )
+    return f"""<section class="archive-history" aria-labelledby="archive-history-title">
+  <h2 id="archive-history-title">历史成稿</h2>
+  <p>新稿发布后，旧稿和属于它的旧评审会整体归档；归档稿仅供查阅，不参与当前排名。</p>
+  <ol>{items}</ol>
+</section>"""
+
+
 def render_result_detail(result: dict[str, Any]) -> str:
     judges = result["judges"]
+    judge_ids = tuple(result.get("judge_ids") or JUDGE_IDS)
     body_chars = result["body_chars"]
     novel_html = result["novel_html"] or '<p class="empty-copy">正文尚未归档。</p>'
     aggregate_dimensions = result["aggregate_dimensions"]
@@ -1082,14 +2043,36 @@ def render_result_detail(result: dict[str, Any]) -> str:
     }
     ai_median = aggregate_scores["ai_flavor"]
     chart_prefix = f"radar-{result['model_id']}"
+    archived = bool(result.get("archived"))
+    if archived:
+        root_prefix = "../../../../"
+        back_link = f'../../{esc(result["model_id"])}.html'
+        back_text = "← 当前稿"
+        archive_notice = """<p class="archive-notice" role="note">这是历史成稿及其原评审快照，已退出当前排名。</p>"""
+        history = ""
+        scoring_note = (
+            f"该历史稿按归档时的 {len(judge_ids)} 位评委票取中位数"
+            f"（{'、'.join(_judge_label(judge_id) for judge_id in judge_ids)}）；"
+            "这些分数仅供查阅，不参与当前排名。"
+        )
+    else:
+        root_prefix = "../../"
+        back_link = "../../index.html"
+        back_text = "← 榜单"
+        archive_notice = ""
+        history = _archive_history_section(result)
+        scoring_note = SCORING_NOTE
     return page_head(
-        f"{result['title']} · {result['model_name']}", "../../", "page-result"
+        f"{result['title']} · {result['model_name']}",
+        root_prefix,
+        "page-result page-archived-result" if archived else "page-result",
     ) + f"""
-<a class="back-link" href="../../index.html">← 榜单</a>
+<a class="back-link" href="{back_link}">{back_text}</a>
 <article class="result-file">
   <header class="result-header">
     <h1>《{esc(result['title'])}》</h1>
-    <p class="result-meta">{esc(result['model_name'])} · {result['chapters']} 章 · {body_chars:,} 字</p>
+    <p class="result-meta">{esc(result['model_name'])} · 成稿 {esc(result['manuscript_date'])} · {result['chapters']} 章 · {body_chars:,} 字</p>
+    {archive_notice}
     <p class="result-blurb">{esc(result['blurb'])}</p>
     <dl class="result-stats">
       <div><dt>综合</dt><dd>{_format_score(result['overall_score'])}</dd></div>
@@ -1097,24 +2080,31 @@ def render_result_detail(result: dict[str, Any]) -> str:
     </dl>
   </header>
 
+  {history}
+
   <section class="aggregate-section" aria-labelledby="aggregate-title">
-    <h2 id="aggregate-title">评分</h2>
+    <nav class="score-switch" aria-label="评分版本"><a href="#score-v4">V4 评分</a><a href="#score-v3">V3 评分</a></nav>
+    <div id="score-v3">
+    <h2 id="aggregate-title">V3 评分</h2>
     {_radar_chart(f'{chart_prefix}-median', '活动评委维度中位数', aggregate_scores)}
     <details class="info-drawer">
       <summary>评分怎么算</summary>
-      <p>{SCORING_NOTE} AI味仍以原始低分展示，雷达几何按「越低越好」反向绘制。</p>
+      <p>{scoring_note} AI味仍以原始低分展示，雷达几何按「越低越好」反向绘制。</p>
     </details>
     <div class="judge-evaluations" aria-label="活动评委逐维记录">
       {''.join(
           _judge_evaluation(
-              JUDGE_LABELS[judge_id],
+              _judge_label(judge_id),
               judges[judge_id],
               f'{chart_prefix}-{judge_id}',
           )
-          for judge_id in JUDGE_IDS
+          for judge_id in judge_ids
       )}
     </div>
+    </div>
   </section>
+
+  {_v4_result_section(result)}
 
   <section class="outline-section" aria-labelledby="outline-title">
     <h2 id="outline-title" class="visually-hidden">大纲</h2>
@@ -1226,10 +2216,30 @@ def build_site(
         protocol_by_model,
         score_by_judge,
     )
+    archived_results = load_archived_reform_results(results_dir, model_by_id)
+    archives_by_model: dict[str, list[dict[str, Any]]] = {}
+    for archived in archived_results:
+        archives_by_model.setdefault(archived["model_id"], []).append(archived)
+    for result in results:
+        result["archives"] = sorted(
+            archives_by_model.get(result["model_id"], []),
+            key=lambda item: item["manuscript_completed_at"],
+            reverse=True,
+        )
+    v4_default = attach_v4_results(results, results_dir)
+    # The preview directory is deliberately opt-in: an incomplete V4 dataset
+    # must not change a normal Pages build merely because files appeared.
+    v4_preview = output_dir.name == "v4-preview" or output_dir.name.startswith(".v4-preview.build-")
     legacy_stories = load_legacy_stories(novels_dir, model_by_id, model_order)
 
     (output_dir / "index.html").write_text(
-        render_home(results, len(legacy_stories)), encoding="utf-8"
+        render_home(
+            results,
+            len(legacy_stories),
+            v4_default=v4_default,
+            v4_preview=v4_preview,
+        ),
+        encoding="utf-8",
     )
     result_output = output_dir / "results" / "reform-era"
     result_output.mkdir(parents=True, exist_ok=True)
@@ -1238,6 +2248,13 @@ def build_site(
             continue
         (result_output / f"{result['model_id']}.html").write_text(
             render_result_detail(result), encoding="utf-8"
+        )
+    archive_output = result_output / ARCHIVE_DIR_NAME
+    for archived in archived_results:
+        version_output = archive_output / archived["model_id"]
+        version_output.mkdir(parents=True, exist_ok=True)
+        (version_output / f"{archived['archive_id']}.html").write_text(
+            render_result_detail(archived), encoding="utf-8"
         )
 
     legacy_output = output_dir / "novels"

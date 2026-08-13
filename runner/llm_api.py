@@ -41,8 +41,10 @@ _ANTHROPIC_REQUEST_FIELDS = frozenset(
     {
         "max_tokens",
         "metadata",
+        "output_config",
         "service_tier",
         "stop_sequences",
+        "stream",
         "temperature",
         "thinking",
         "tool_choice",
@@ -449,8 +451,223 @@ def _extract_reasoning_blocks(value: object) -> str:
     return "".join(pieces)
 
 
+def _coerce_tool_input_to_schema(value: Any, schema: object) -> Any:
+    """Undo gateway stringification of nested Anthropic tool containers.
+
+    Some OpenAI-compatible gateways preserve the outer ``tool_use.input``
+    object but JSON-encode nested object/array fields as strings.  Decode only
+    where the declared input schema says a container is expected; downstream
+    domain validation remains authoritative.
+    """
+
+    if not isinstance(schema, Mapping):
+        return value
+    schema_type = schema.get("type")
+    if schema_type in {"object", "array"} and isinstance(value, str):
+        try:
+            value = json.loads(value)
+        except json.JSONDecodeError:
+            return value
+    if schema_type == "object" and isinstance(value, Mapping):
+        properties = schema.get("properties")
+        if not isinstance(properties, Mapping):
+            return dict(value)
+        return {
+            str(key): _coerce_tool_input_to_schema(child, properties.get(key))
+            for key, child in value.items()
+        }
+    if schema_type == "array" and isinstance(value, list):
+        item_schema = schema.get("items")
+        return [_coerce_tool_input_to_schema(child, item_schema) for child in value]
+    return value
+
+
+def _openai_stream_response(
+    events: Sequence[Mapping[str, Any]], *, saw_done: bool
+) -> dict[str, Any]:
+    """Reconstruct one Chat Completions response from SSE delta events."""
+
+    content_parts: list[str] = []
+    reasoning_parts: list[str] = []
+    response_id: str | None = None
+    response_model: str | None = None
+    finish_reason: str | None = None
+    usage: dict[str, Any] = {}
+    for event in events:
+        if event.get("error"):
+            raise LLMAPIError("LLM API 流式响应包含错误对象")
+        if response_id is None and event.get("id") is not None:
+            response_id = str(event["id"])
+        if response_model is None and event.get("model") is not None:
+            response_model = str(event["model"])
+        event_usage = event.get("usage")
+        if isinstance(event_usage, Mapping):
+            usage.update(event_usage)
+        choices = event.get("choices")
+        if not isinstance(choices, list) or not choices:
+            continue
+        first = choices[0]
+        if not isinstance(first, Mapping):
+            continue
+        delta = first.get("delta")
+        if not isinstance(delta, Mapping):
+            delta = first.get("message")
+        if isinstance(delta, Mapping):
+            raw_content = delta.get("content")
+            content_parts.append(_coerce_content_text(raw_content))
+            for candidate in (
+                delta.get("reasoning_content"),
+                delta.get("reasoning"),
+                _extract_reasoning_blocks(raw_content),
+            ):
+                text = _coerce_reasoning_text(candidate)
+                if text:
+                    reasoning_parts.append(text)
+        if first.get("finish_reason") is not None:
+            finish_reason = str(first["finish_reason"])
+
+    terminal = saw_done or finish_reason is not None
+    reconstructed: dict[str, Any] = {
+        "id": response_id,
+        "model": response_model,
+        "choices": [
+            {
+                "finish_reason": finish_reason,
+                "message": {
+                    "role": "assistant",
+                    "content": "".join(content_parts),
+                    "reasoning_content": "".join(reasoning_parts),
+                },
+            }
+        ],
+        "usage": usage,
+        "_stream": {"terminal": terminal, "events": [dict(item) for item in events]},
+    }
+    if not terminal:
+        raise LLMAPIError(
+            "LLM API 流式响应在终止事件前中断",
+            raw_response=reconstructed,
+        )
+    return reconstructed
+
+
+def _anthropic_stream_response(
+    events: Sequence[Mapping[str, Any]], *, saw_done: bool
+) -> dict[str, Any]:
+    """Reconstruct one Anthropic Messages response from native SSE events."""
+
+    response_id: str | None = None
+    response_model: str | None = None
+    stop_reason: str | None = None
+    usage: dict[str, Any] = {}
+    block_types: dict[int, str] = {}
+    block_text: dict[int, list[str]] = {}
+    block_ids: dict[int, str] = {}
+    block_names: dict[int, str] = {}
+    block_inputs: dict[int, Any] = {}
+    terminal = saw_done
+    for event in events:
+        event_type = str(event.get("type") or "")
+        if event_type == "error" or event.get("error"):
+            raise LLMAPIError("LLM API 流式响应包含错误对象")
+        if event_type == "message_start":
+            message = event.get("message")
+            if isinstance(message, Mapping):
+                if message.get("id") is not None:
+                    response_id = str(message["id"])
+                if message.get("model") is not None:
+                    response_model = str(message["model"])
+                initial_usage = message.get("usage")
+                if isinstance(initial_usage, Mapping):
+                    usage.update(initial_usage)
+        elif event_type == "content_block_start":
+            index = event.get("index")
+            block = event.get("content_block")
+            if isinstance(index, int) and isinstance(block, Mapping):
+                block_type = str(block.get("type") or "text")
+                block_types[index] = block_type
+                if block.get("id") is not None:
+                    block_ids[index] = str(block["id"])
+                if block.get("name") is not None:
+                    block_names[index] = str(block["name"])
+                if block_type == "tool_use":
+                    block_inputs[index] = block.get("input")
+                    block_text.setdefault(index, [])
+                else:
+                    initial = _coerce_reasoning_text(block) if block_type in _PRIVATE_BLOCK_TYPES else _coerce_content_text(block)
+                    block_text.setdefault(index, []).append(initial)
+        elif event_type == "content_block_delta":
+            index = event.get("index")
+            delta = event.get("delta")
+            if isinstance(index, int) and isinstance(delta, Mapping):
+                delta_type = str(delta.get("type") or "")
+                if delta_type == "thinking_delta":
+                    block_types[index] = "thinking"
+                    text = _coerce_reasoning_text(delta.get("thinking"))
+                elif delta_type == "text_delta":
+                    block_types.setdefault(index, "text")
+                    text = _coerce_content_text(delta.get("text"))
+                elif delta_type == "input_json_delta":
+                    block_types.setdefault(index, "tool_use")
+                    partial = delta.get("partial_json")
+                    text = partial if isinstance(partial, str) else ""
+                else:
+                    block_type = block_types.get(index, "text")
+                    text = _coerce_reasoning_text(delta) if block_type in _PRIVATE_BLOCK_TYPES else _coerce_content_text(delta)
+                block_text.setdefault(index, []).append(text)
+        elif event_type == "message_delta":
+            delta = event.get("delta")
+            if isinstance(delta, Mapping) and delta.get("stop_reason") is not None:
+                stop_reason = str(delta["stop_reason"])
+            event_usage = event.get("usage")
+            if isinstance(event_usage, Mapping):
+                usage.update(event_usage)
+        elif event_type == "message_stop":
+            terminal = True
+
+    content: list[dict[str, Any]] = []
+    for index in sorted(block_text):
+        block_type = block_types.get(index, "text")
+        text = "".join(block_text[index])
+        if block_type == "tool_use":
+            raw_input = block_inputs.get(index)
+            if text:
+                try:
+                    raw_input = json.loads(text)
+                except json.JSONDecodeError:
+                    raw_input = text
+            content.append(
+                {
+                    "type": "tool_use",
+                    "id": block_ids.get(index),
+                    "name": block_names.get(index),
+                    "input": raw_input,
+                }
+            )
+        elif block_type in _PRIVATE_BLOCK_TYPES:
+            content.append({"type": block_type, "thinking": text})
+        else:
+            content.append({"type": block_type, "text": text})
+    reconstructed: dict[str, Any] = {
+        "id": response_id,
+        "type": "message",
+        "role": "assistant",
+        "model": response_model,
+        "content": content,
+        "stop_reason": stop_reason,
+        "usage": usage,
+        "_stream": {"terminal": terminal, "events": [dict(item) for item in events]},
+    }
+    if not terminal:
+        raise LLMAPIError(
+            "LLM API 流式响应在终止事件前中断",
+            raw_response=reconstructed,
+        )
+    return reconstructed
+
+
 class OpenAIChatClient:
-    """Synchronous, non-streaming client for a New API endpoint."""
+    """Synchronous client for streaming and non-streaming New API responses."""
 
     def __init__(
         self,
@@ -458,6 +675,7 @@ class OpenAIChatClient:
         api_key: str,
         *,
         timeout: int = DEFAULT_TIMEOUT,
+        stream: bool = False,
         urlopen: Callable[..., Any] | None = None,
     ) -> None:
         if not api_key:
@@ -465,6 +683,7 @@ class OpenAIChatClient:
         self.api_url = normalize_api_url(api_url)
         self._api_key = api_key
         self.timeout = timeout
+        self.stream = bool(stream)
         self._urlopen = urlopen or urllib.request.urlopen
 
     def __repr__(self) -> str:
@@ -493,8 +712,102 @@ class OpenAIChatClient:
             api_url=api_url or "",
             api_key=api_key or "",
             timeout=timeout,
+            stream=False,
             urlopen=urlopen,
         )
+
+    def _request_sse(
+        self,
+        method: str,
+        path: str,
+        *,
+        payload: Mapping[str, Any],
+        request_headers: Mapping[str, str] | None = None,
+        timeout: int | None = None,
+    ) -> tuple[list[dict[str, Any]], bool]:
+        """Read an SSE response without exposing partial private output."""
+
+        url = f"{self.api_url}/{path.lstrip('/')}"
+        headers = {
+            "Accept": "text/event-stream",
+            "Content-Type": "application/json",
+            "User-Agent": "show-me-your-novel/2.0 (python-urllib)",
+        }
+        if request_headers is None:
+            headers["Authorization"] = f"Bearer {self._api_key}"
+        else:
+            headers.update({str(key): str(value) for key, value in request_headers.items()})
+        request = urllib.request.Request(
+            url,
+            data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+            headers=headers,
+            method=method,
+        )
+        events: list[dict[str, Any]] = []
+        data_lines: list[str] = []
+        saw_done = False
+
+        def dispatch() -> None:
+            nonlocal saw_done
+            if not data_lines:
+                return
+            data = "\n".join(data_lines).strip()
+            data_lines.clear()
+            if not data:
+                return
+            if data == "[DONE]":
+                saw_done = True
+                return
+            try:
+                decoded = json.loads(data)
+            except json.JSONDecodeError as exc:
+                raise LLMAPIError(
+                    "LLM API 返回了无效 SSE JSON",
+                    raw_response={"_stream": {"terminal": False, "events": events}},
+                ) from exc
+            if not isinstance(decoded, dict):
+                raise LLMAPIError("LLM API SSE 事件顶层结构不是对象")
+            events.append(decoded)
+
+        try:
+            with self._urlopen(request, timeout=timeout or self.timeout) as response:
+                for raw_line in response:
+                    if isinstance(raw_line, bytes):
+                        line = raw_line.decode("utf-8")
+                    else:
+                        line = str(raw_line)
+                    line = line.rstrip("\r\n")
+                    if not line:
+                        dispatch()
+                    elif line.startswith("data:"):
+                        data_lines.append(line[5:].lstrip())
+                    elif line.startswith(":"):
+                        continue
+                dispatch()
+        except LLMAPIError:
+            raise
+        except urllib.error.HTTPError as exc:
+            raise LLMAPIError(
+                f"LLM API 返回 HTTP {exc.code}",
+                status_code=exc.code,
+                retry_after_seconds=parse_retry_after(
+                    exc.headers.get("Retry-After") if exc.headers is not None else None
+                ),
+            ) from exc
+        except urllib.error.URLError as exc:
+            raise LLMAPIError("无法连接 LLM API") from exc
+        except TimeoutError as exc:
+            raise LLMAPIError("LLM API 请求超时") from exc
+        except UnicodeDecodeError as exc:
+            raise LLMAPIError("LLM API 返回了无效 UTF-8 SSE") from exc
+        except (ConnectionError, OSError, http.client.HTTPException) as exc:
+            raise LLMAPIError(
+                "LLM API 流式连接在终止事件前中断",
+                raw_response={"_stream": {"terminal": False, "events": events}},
+            ) from exc
+        if not events:
+            raise LLMAPIError("LLM API 返回空 SSE 事件流")
+        return events, saw_done
 
     def _request_json(
         self,
@@ -561,6 +874,7 @@ class OpenAIChatClient:
         model: str,
         messages: Sequence[Mapping[str, Any]],
         request_params: Mapping[str, Any] | None = None,
+        stream: bool | None = None,
         timeout: int | None = None,
     ) -> ChatResult:
         """Call ``/v1/chat/completions`` with only explicit request params."""
@@ -577,18 +891,28 @@ class OpenAIChatClient:
         sensitive = _find_sensitive_field(params)
         if sensitive:
             raise ValueError(f"request_params 含敏感字段：{sensitive}")
-        if params.get("stream") is True:
-            raise ValueError("当前客户端仅支持非流式响应")
+        if "stream" in params:
+            raise ValueError("stream 是传输选项，不得放入 request_params")
+
+        use_stream = self.stream if stream is None else bool(stream)
 
         payload: dict[str, Any] = {
             "model": model,
             "messages": [dict(message) for message in messages],
         }
         payload.update(params)
+        if use_stream:
+            payload["stream"] = True
         started = perf_counter()
-        response = self._request_json(
-            "POST", "chat/completions", payload=payload, timeout=timeout
-        )
+        if use_stream:
+            events, saw_done = self._request_sse(
+                "POST", "chat/completions", payload=payload, timeout=timeout
+            )
+            response = _openai_stream_response(events, saw_done=saw_done)
+        else:
+            response = self._request_json(
+                "POST", "chat/completions", payload=payload, timeout=timeout
+            )
         latency_ms = round((perf_counter() - started) * 1000)
 
         choices = response.get("choices")
@@ -661,6 +985,7 @@ class OpenAIChatClient:
         model: str,
         messages: Sequence[Mapping[str, Any]],
         request_params: Mapping[str, Any],
+        stream: bool | None = None,
         timeout: int | None = None,
     ) -> ChatResult:
         """Call ``/v1/messages`` using an explicit Anthropic Messages payload."""
@@ -678,7 +1003,7 @@ class OpenAIChatClient:
         if sensitive:
             raise ValueError(f"request_params 含敏感字段：{sensitive}")
         if "stream" in params:
-            raise ValueError("当前客户端仅支持非流式响应，不接受 stream 参数")
+            raise ValueError("stream 是传输选项，不得放入 request_params")
         unsupported = sorted(set(params) - _ANTHROPIC_REQUEST_FIELDS)
         if unsupported:
             raise ValueError(
@@ -721,24 +1046,67 @@ class OpenAIChatClient:
         if system_parts:
             payload["system"] = "\n\n".join(system_parts)
         payload.update(params)
+        use_stream = self.stream if stream is None else bool(stream)
+        if use_stream:
+            payload["stream"] = True
 
         started = perf_counter()
-        response = self._request_json(
-            "POST",
-            "messages",
-            payload=payload,
-            request_headers={
-                "x-api-key": self._api_key,
-                "anthropic-version": ANTHROPIC_VERSION,
-            },
-            timeout=timeout,
-        )
+        request_headers = {
+            "x-api-key": self._api_key,
+            "anthropic-version": ANTHROPIC_VERSION,
+        }
+        if use_stream:
+            events, saw_done = self._request_sse(
+                "POST",
+                "messages",
+                payload=payload,
+                request_headers=request_headers,
+                timeout=timeout,
+            )
+            response = _anthropic_stream_response(events, saw_done=saw_done)
+        else:
+            response = self._request_json(
+                "POST",
+                "messages",
+                payload=payload,
+                request_headers=request_headers,
+                timeout=timeout,
+            )
         latency_ms = round((perf_counter() - started) * 1000)
 
         raw_content = response.get("content")
         if not isinstance(raw_content, list):
             raise LLMAPIError("LLM API Messages 响应缺少 content 数组")
         content = _coerce_content_text(raw_content)
+        forced_tool_content: str | None = None
+        tool_choice = params.get("tool_choice")
+        if isinstance(tool_choice, Mapping) and tool_choice.get("type") == "tool":
+            tool_name = tool_choice.get("name")
+            matching_tools = [
+                block
+                for block in raw_content
+                if isinstance(block, Mapping)
+                and block.get("type") == "tool_use"
+                and block.get("name") == tool_name
+                and isinstance(block.get("input"), Mapping)
+            ]
+            if len(matching_tools) == 1:
+                input_schema: object = None
+                tools = params.get("tools")
+                if isinstance(tools, list):
+                    for tool in tools:
+                        if isinstance(tool, Mapping) and tool.get("name") == tool_name:
+                            input_schema = tool.get("input_schema")
+                            break
+                normalized_input = _coerce_tool_input_to_schema(
+                    matching_tools[0]["input"], input_schema
+                )
+                forced_tool_content = json.dumps(
+                    normalized_input,
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                )
+                content = forced_tool_content
         content, inline_reasoning = split_inline_reasoning_text(content)
         embedded_reasoning = _extract_reasoning_blocks(raw_content)
         reasoning = "\n".join(
@@ -756,6 +1124,8 @@ class OpenAIChatClient:
             "stop_sequence": "stop",
             "max_tokens": "length",
         }.get(native_stop_reason, native_stop_reason)
+        if forced_tool_content is not None and native_stop_reason == "tool_use":
+            finish_reason = "stop"
         if not content.strip():
             suffix = (
                 f"（finish_reason={finish_reason or 'unknown'}，"
@@ -855,10 +1225,17 @@ class ChatClient(OpenAIChatClient):
         api_key: str,
         *,
         timeout: int = DEFAULT_TIMEOUT,
+        stream: bool = False,
         request_defaults: Mapping[str, Any] | None = None,
         urlopen: Callable[..., Any] | None = None,
     ) -> None:
-        super().__init__(api_url, api_key, timeout=timeout, urlopen=urlopen)
+        super().__init__(
+            api_url,
+            api_key,
+            timeout=timeout,
+            stream=stream,
+            urlopen=urlopen,
+        )
         self.request_defaults = dict(request_defaults or {})
         sensitive = _find_sensitive_field(self.request_defaults)
         if sensitive:
@@ -902,10 +1279,14 @@ class ChatClient(OpenAIChatClient):
             timeout = int(provider.get("timeout", DEFAULT_TIMEOUT))
         except (TypeError, ValueError) as exc:
             raise LLMAPIError(f"provider {provider_id} 的 timeout 无效") from exc
+        stream = provider.get("stream", False)
+        if not isinstance(stream, bool):
+            raise LLMAPIError(f"provider {provider_id} 的 stream 必须是布尔值")
         return cls(
             str(api_url),
             str(api_key),
             timeout=timeout,
+            stream=stream,
             request_defaults=request_defaults,
             urlopen=urlopen,
         )
@@ -925,6 +1306,7 @@ class ChatClient(OpenAIChatClient):
         *,
         stage: str,
         request_overrides: Mapping[str, Any] | None = None,
+        stream: bool | None = None,
         timeout: int | None = None,
     ) -> ChatResult:
         """Merge explicit config layers and perform one model completion.
@@ -964,11 +1346,13 @@ class ChatClient(OpenAIChatClient):
                 model=wire_model,
                 messages=messages,
                 request_params=params,
+                stream=stream,
                 timeout=timeout,
             )
         return self.anthropic_message(
             model=wire_model,
             messages=messages,
             request_params={**required, **params},
+            stream=stream,
             timeout=timeout,
         )

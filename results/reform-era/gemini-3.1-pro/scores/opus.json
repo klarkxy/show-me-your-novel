@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.1-pro",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "659298815061247f34fcf7214feadb099afa3e9b7500a6da61cef0ff27b441c4",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "382ec46026c8ae4f3d7f32b27f53a7d745d9d325c069d01530fda2e367611b0c",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 68.0,
+      "comment": "紧扣改革开放初期个体户命运与体制夹缝主题，物质欲望与尊严的追问有所体现，但多靠人物口号式宣言与旁白直陈，主题层次偏单薄。"
+    },
+    "historical_grounding": {
+      "score": 55.0,
+      "comment": "票证、停薪留职、打投办、绿皮车等器物细节到位；但1979年初即称'深圳特区已允许私人承包车队'属硬伤，粤汉铁路称谓、执照制度细节亦有失准。"
+    },
+    "characters": {
+      "score": 48.0,
+      "comment": "林卫国动机清晰但内心多为口号；二黑=胆小贪财、张有德=纯粹恶吏，皆为单维功能件，唯李建军略有灰度。"
+    },
+    "plot_causality": {
+      "score": 62.0,
+      "comment": "借钱—南下—拿货—试水—执照—扩张—被抄—转地下，因果链完整可信；但被抄一节靠主角明知风险仍强行出摊，稍显为情节服务。"
+    },
+    "longform_structure": {
+      "score": 63.0,
+      "comment": "忠实执行开篇细纲，节奏推进稳定，末章为第二卷铺网收束得当；但章章同构（受辱—隐忍—决心），缺乏节奏变化与副线。"
+    },
+    "scene_execution": {
+      "score": 60.0,
+      "comment": "泡水验表、缝表入衬、查车、抄摊等场面有实感与紧张度；但对话大量说明化，围观群众与执法者反应程式化。"
+    },
+    "style_control": {
+      "score": 52.0,
+      "comment": "语体统一但辞藻套路密集：'眼中燃起火焰''五雷轰顶''如狼似虎'反复出现，比喻同质，且出现'砸锅卖 official'等明显文本损坏。"
+    },
+    "ai_flavor": {
+      "score": 40.0,
+      "comment": "排比式内心咆哮、三段递进总结、象征物（仍在跳动的机芯）用法极为模板化，情绪反复堆叠拉高，机器味较重。"
+    }
+  }
+}

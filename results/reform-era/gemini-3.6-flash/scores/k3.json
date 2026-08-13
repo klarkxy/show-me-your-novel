@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.6-flash",
+  "judge": "k3",
+  "requested_model": "kimi-k3",
+  "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "eb657e34fa91ea6ce8c1ccbe6c5ffa28c3814e6c45af1296573cfd9dcc446d1d",
+  "response_model": "kimi-k3",
+  "cache_key": "aa74c055200247fdea081c56302e64a78f0d09181674ccbf71a03de4487003b6",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 82.5,
+      "comment": "救父危机把“铁饭碗与黑市暴利”的双轨撕裂落进具体抉择与行动，技术图纸伏笔指向全书资本与良知主线，但章末反复直白点题削弱了主题余味。"
+    },
+    "historical_grounding": {
+      "score": 81.0,
+      "comment": "工资条、劳保结算瘫痪、自费进口药、粮票与投机倒把罪名等制度细节扎实且参与因果，大纲中抬会、物价闯关、治理整顿时间线吻合史实；唯1978年医院出现“电脑账单”、Sandvik误标西德及医药费算术前后不符。"
+    },
+    "characters": {
+      "score": 78.5,
+      "comment": "陆远舟的技术自尊与被逼越界的心理链条具体可信，陈金发市侩鲜活、张克俭老辣复杂；赵三喜偏功能性恶人，妹妹退学桥段略套路，核心女性角色顾雪梅在开篇尚未登场。"
+    },
+    "plot_causality": {
+      "score": 80.5,
+      "comment": "指标削减—药费—借贷无门—接私活—偷刀—私车零件—搜查脱罪的事件链环环相扣，越界由技术困境逐级逼出；脱罪凭据准备略显未卜先知，钱款数字偶有断续。"
+    },
+    "longform_structure": {
+      "score": 83.0,
+      "comment": "十二卷弧光、四条贯穿伏笔与开篇十六章兑现高度咬合，抄图纸、双轨账本、抬会、职业病诊断等埋点逐一落位；但每章同构悬念收束的节律在两百万字体量下恐成疲态。"
+    },
+    "scene_execution": {
+      "score": 78.0,
+      "comment": "大门查饭盒、午休车齿轮、窗口催缴等场景把信息落实到动作与对话，张力调度有效；技术说明偶成讲义、赌注数额反复重申降低了叙事效率。"
+    },
+    "style_control": {
+      "score": 65.0,
+      "comment": "语域稳定贴合年代工业题材且能随场景调节，但“极其”类强化词与雷同比喻密集、章末抒情程式化，并夹杂英文sweat、阿拉伯文乱码、“一路一路一路”重复等明显硬伤。"
+    },
+    "ai_flavor": {
+      "score": 45.0,
+      "comment": "几乎每章结尾都是同构悬念句、场景后紧跟意义总结、金额赌注反复咏叹形成稳定模板，外加多语言乱码泄漏；好在主体场景仍具体、对话有生气，未至全篇机械。"
+    }
+  }
+}

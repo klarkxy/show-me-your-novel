@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gemini-3.6-flash",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "841c9eaa37b3519d996ffb07043da2bf276359e932d52f49845adf4c2782600b",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "8135911521b65f9855df748bc686a462fc136a906e5649c1489e4f1238199fe2",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 66.0,
+      "comment": "紧扣“越界”与体制/市场博弈，第一卷完成从守规到破线的转折，主题落地清晰；但道德挣扎的呈现较扁平，多靠外部逼迫推动，欲望层面的复杂性尚未展开。"
+    },
+    "historical_grounding": {
+      "score": 52.0,
+      "comment": "工资条、粮票、劳保目录、三中全会公报等细节用心，但硬伤不少：“市卫健局”“绩效奖金/考勤绩效”“红灯牌彩电”属年代词汇错位；苏尔寿一会儿西德一会儿瑞士。"
+    },
+    "characters": {
+      "score": 54.0,
+      "comment": "陆远舟技术强、心理素质硬，形象立得住；但赵三喜是纯功能化反派，陈金发台词过于全知（把主角处境背得一清二楚），配角多为推进情节而设。"
+    },
+    "plot_causality": {
+      "score": 63.0,
+      "comment": "救父—借钱无门—接私活—偷刀具—偷车—被举报—脱罪，因果链紧密扎实。瑕疵在于数字前后不一（32.9/33.9、缺口18元与后文对不上）、废样齿轮的伏笔铺垫略嫌事后补票。"
+    },
+    "longform_structure": {
+      "score": 60.0,
+      "comment": "十六章节奏均匀，倒计时驱动有效，末章收束与全书起点呼应。但中段偷刀—车削—带出厂三章的紧张模式重复度高，章节间信息回述过多。"
+    },
+    "scene_execution": {
+      "score": 58.0,
+      "comment": "车间车削与大门盘查两场有具体工艺细节和真实压迫感；但危机屡次靠“主角念一串专业名词把对手镇住”解决，模式化，且感叹号密集稀释了张力。"
+    },
+    "style_control": {
+      "score": 45.0,
+      "comment": "语言用力过猛，形容词与惊叹句堆叠；且存在明显文本事故：“sweat瞬间如雨下”混入英文、“一路一路一路一路推进”、“陆远远”“嚎郊”“脏兮象”“血白色的夕阳”等错字病句。"
+    },
+    "ai_flavor": {
+      "score": 48.0,
+      "comment": "套路化程度高：反复的“眼神彻底变了”“再也回不去了”式收尾、每章末尾的宿命宣言、排比感叹的煽情段落，以及机械复述前情的过渡，均是典型模型腔。"
+    }
+  }
+}

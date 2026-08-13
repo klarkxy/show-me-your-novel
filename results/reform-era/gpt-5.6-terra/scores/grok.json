@@ -3,44 +3,44 @@
   "benchmark": "reform-era",
   "candidate": "gpt-5.6-terra",
   "judge": "grok",
-  "requested_model": "grok-4.5",
+  "requested_model": "grok-4.6",
   "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
   "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
-  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
-  "response_model": "grok-4.5-build-free",
-  "cache_key": "7dacfd3dac90c74a293c7ff5c9882eaf71cdafd471e0a9296d405bbf82fa018d",
+  "judge_config_sha256": "aafa441287a2f29e87b7b5287903bc2f2502395ba8e06668bae9136463cb3dbf",
+  "response_model": "grok-4.6",
+  "cache_key": "ce6de07336ca650918484be16a031418d1ff8d4de6c5cd32524e063aedead600",
   "dimensions": {
     "theme_fulfillment": {
-      "score": 80.5,
-      "comment": "开篇将体面与污名、制度缝隙中的第一次越界落实到招工落空、虚高报损与八百元签字，主题进入事件而非口号；全书核心的自由与新压迫辩证仍在铺垫。"
+      "score": 88.5,
+      "comment": "周继业从逃离父亲污名到承担企业责任的弧线，体现了改革初期普通人财富追求与权力复制的双重困境，主题兑现深刻且连贯。"
     },
     "historical_grounding": {
-      "score": 86.5,
-      "comment": "三十八元工资、粮票煤账、临时工续审、供销社报损与账外货、下河集散布头议价等细节可信且参与因果，时代边界与物质生活扎实。"
+      "score": 82.7,
+      "comment": "1983-1992年清河县供销社、个体户、联营企业等改革背景，粮票布票、政策红线、物质细节（如绿皮火车、的确良）均具真实感，制度与经济参与度高。"
     },
     "characters": {
-      "score": 81.5,
-      "comment": "周继业精细记账、把尊严等同胜负与隐瞒的倾向已见；张桂兰恐惧具体，罗群自保清晰，沈梅构成对照。次要人物仍偏功能，关系张力有待加深。"
+      "score": 87.3,
+      "comment": "周继业欲望具体、行动逻辑清晰，沈梅、张桂兰等人物关系张力与变化体现人性，扁平度低，情感与利益纠葛自然。"
     },
     "plot_causality": {
-      "score": 84.0,
-      "comment": "从妹妹名额被顶到发现报损缝隙、旧账残页、筹资与无公章签字，冲突由人物欲望与制度环境推动，事件链清楚，少机械巧合。"
+      "score": 85.9,
+      "comment": "冲突由人物欲望与制度缝隙推动，事件链条连贯有效，伏笔与因果关系支撑长篇推进。"
     },
     "longform_structure": {
-      "score": 88.0,
-      "comment": "宏观十二卷、开篇细纲与正文高度连续，旧案、韩克勤控制、三本账、新房与隐瞒等伏笔按计划埋设，开篇止于不可逆入局，支撑长篇。"
+      "score": 83.6,
+      "comment": "宏观大纲与开篇细纲衔接紧密，12卷结构覆盖人物弧线与阶段兑现，节奏与伏笔支撑长篇连续性。"
     },
     "scene_execution": {
-      "score": 82.5,
-      "comment": "西库验布、饭店后门、银行存单、刘三嫂压价、确认单签字等关键节点落实为有效场景，信息多由动作与对话带出，偶有内心说明偏满。"
+      "score": 79.2,
+      "comment": "视角切换自然，动作对话描写信息投放高效，关键内容通过场景落地。"
     },
     "style_control": {
-      "score": 78.0,
-      "comment": "语域贴近八十年代初县城叙述，整体稳定克制；部分章末反思节奏同构，解释性收束略多，主动变化仍不够锐利。"
+      "score": 76.8,
+      "comment": "措辞句法语域稳定，随场景主动变化，文风管理精准。"
     },
     "ai_flavor": {
-      "score": 32.0,
-      "comment": "章末“他想起A、B、C”式点题与主题总结反复出现，部分内心独白过度清晰整齐；场景本身较自然，模板感可察觉但不淹没全文。"
+      "score": 28.4,
+      "comment": "模板化排比偶有出现，但不干扰叙事，过度解释少，机械转折可察觉但不突出。"
     }
   }
 }

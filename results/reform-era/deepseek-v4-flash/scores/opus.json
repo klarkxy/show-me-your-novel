@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-flash",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "3eace0dd1eb2bcd9fbcb1e7a824fa4eb4db5c5254143d75ac80125673c00bfe4",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "1d7b9c3bc556cb07ec170615cef428ab9c53a64fa29dde5332b3df868fbcc938",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 68.0,
+      "comment": "开篇扎实兑现“体制安全感 vs 计划外机会”的命题：七十块与铁饭碗的对照写得具体。但主题主要停留在“想挣钱又怕”的单一层，尚未出现真正有分量的价值撞击。"
+    },
+    "historical_grounding": {
+      "score": 75.0,
+      "comment": "1984年北方国营厂的物质细节可信：矽肺、粮布票语境、的确良、搪瓷缸、废料堆、临时接线、四十二块五。术语（模数、齿距、补焊余量）多数用得对，年代感来自器物而非说明。"
+    },
+    "characters": {
+      "score": 60.0,
+      "comment": "陈建国的手艺与侥幸心理立得住，李秀梅洗衣验疤一场有血肉。但赵铁山、表舅近乎功能人，林雪燕出场即“南方诱惑”的符号，台词直接兜售主题。"
+    },
+    "plot_causality": {
+      "score": 62.0,
+      "comment": "修冲床—识废料—接私活的因果链干净，动机（父亲药费、五一婚期）压得实。但推进依赖巧合式引荐（表舅、停电遇林），且冲突强度长期低平。"
+    },
+    "longform_structure": {
+      "score": 52.0,
+      "comment": "十七章覆盖内容偏薄，第12、13、15、17章反复重演“数钱—愧疚—再干一批”的同一心理回环，节奏严重滞重；开篇未能为十六卷体量建立足够张力储备。"
+    },
+    "scene_execution": {
+      "score": 63.0,
+      "comment": "夜车床、手电巡逻、水池洗衣几场有实感与静默张力。但大量段落是内心独白复述已知信息，场景常以“他站在窗前想”收尾，收束方式雷同。"
+    },
+    "style_control": {
+      "score": 66.0,
+      "comment": "语言朴素克制，接近八十年代现实主义腔调，比喻多取自铁与冰，统一。缺点是抒情句式反复（“像……又像……”），个别别字如“損坏”“声晌”“规法模边界”。"
+    },
+    "ai_flavor": {
+      "score": 58.0,
+      "comment": "整体不浮夸，但“伏笔标记感”明显：名片、搪瓷缸、疤痕被反复举到读者眼前解释含义；心理描写常自我总结主题（“既清醒又盲目”），带模型式点题惯性。"
+    }
+  }
+}

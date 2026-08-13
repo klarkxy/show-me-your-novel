@@ -40,6 +40,20 @@ class FakeResponse:
         return self._body
 
 
+class FakeStreamResponse:
+    def __init__(self, lines: list[str]) -> None:
+        self._lines = [f"{line}\n".encode("utf-8") for line in lines]
+
+    def __enter__(self) -> "FakeStreamResponse":
+        return self
+
+    def __exit__(self, exc_type, exc, traceback) -> None:
+        return None
+
+    def __iter__(self):
+        return iter(self._lines)
+
+
 class QueueOpener:
     def __init__(self, *responses: dict) -> None:
         self.responses = list(responses)
@@ -50,6 +64,18 @@ class QueueOpener:
         if not self.responses:
             raise AssertionError("unexpected request")
         return FakeResponse(self.responses.pop(0))
+
+
+class QueueStreamOpener:
+    def __init__(self, *responses: list[str]) -> None:
+        self.responses = list(responses)
+        self.requests = []
+
+    def __call__(self, request, *, timeout):
+        self.requests.append((request, timeout))
+        if not self.responses:
+            raise AssertionError("unexpected request")
+        return FakeStreamResponse(self.responses.pop(0))
 
 
 def openai_response(
@@ -321,6 +347,33 @@ class LLMAPITests(unittest.TestCase):
         self.assertEqual(result.usage["output_tokens"], 7)
         self.assertEqual(result.raw_response, response)
 
+    def test_anthropic_native_structured_output_is_forwarded(self) -> None:
+        opener = QueueOpener(anthropic_response(content=[{"type": "text", "text": "{\"ok\":true}"}]))
+        client = OpenAIChatClient(
+            "https://example.test/v1", "fake", urlopen=opener
+        )
+        output_config = {
+            "format": {
+                "type": "json_schema",
+                "schema": {
+                    "type": "object",
+                    "properties": {"ok": {"type": "boolean"}},
+                    "required": ["ok"],
+                    "additionalProperties": False,
+                },
+            }
+        }
+
+        result = client.anthropic_message(
+            model="claude-opus-5",
+            messages=[{"role": "user", "content": "return json"}],
+            request_params={"max_tokens": 1024, "output_config": output_config},
+        )
+
+        payload = json.loads(opener.requests[0][0].data.decode("utf-8"))
+        self.assertEqual(payload["output_config"], output_config)
+        self.assertEqual(result.content, '{"ok":true}')
+
     def test_anthropic_stop_reasons_are_normalized_without_accepting_unknowns(
         self,
     ) -> None:
@@ -518,8 +571,148 @@ class LLMAPITests(unittest.TestCase):
                 **base,
                 request_params={"metadata": {"authorization": "not-allowed"}},
             )
-        with self.assertRaisesRegex(ValueError, "非流式"):
+        with self.assertRaisesRegex(ValueError, "传输选项"):
             client.chat_completion(**base, request_params={"stream": True})
+
+    def test_openai_sse_stream_is_reconstructed_and_requires_terminal_event(self) -> None:
+        opener = QueueStreamOpener(
+            [
+                'data: {"id":"chat-stream","model":"wire","choices":[{"delta":{"reasoning_content":"思考"},"finish_reason":null}]}',
+                "",
+                'data: {"id":"chat-stream","model":"wire","choices":[{"delta":{"content":"正文"},"finish_reason":null}]}',
+                "",
+                'data: {"id":"chat-stream","model":"wire","choices":[{"delta":{"content":"完成"},"finish_reason":"stop"}],"usage":{"prompt_tokens":3,"completion_tokens":2,"total_tokens":5}}',
+                "",
+                "data: [DONE]",
+                "",
+            ],
+            [
+                'data: {"id":"truncated","choices":[{"delta":{"content":"半截"},"finish_reason":null}]}',
+                "",
+            ],
+        )
+        client = OpenAIChatClient(
+            "https://example.test/v1", "fake", stream=True, urlopen=opener
+        )
+        result = client.chat_completion(
+            model="m", messages=[{"role": "user", "content": "x"}]
+        )
+        payload = json.loads(opener.requests[0][0].data.decode("utf-8"))
+        self.assertIs(payload["stream"], True)
+        self.assertEqual(result.content, "正文完成")
+        self.assertEqual(result.reasoning_content, "思考")
+        self.assertEqual(result.finish_reason, "stop")
+        self.assertEqual(result.usage["total_tokens"], 5)
+        self.assertTrue(result.raw_response["_stream"]["terminal"])
+        with self.assertRaisesRegex(LLMAPIError, "终止事件前中断"):
+            client.chat_completion(
+                model="m", messages=[{"role": "user", "content": "x"}]
+            )
+
+    def test_anthropic_native_sse_stream_is_reconstructed(self) -> None:
+        def event(value: dict) -> str:
+            return "data: " + json.dumps(value, ensure_ascii=False)
+
+        opener = QueueStreamOpener(
+            [
+                event({"type": "message_start", "message": {"id": "msg-stream", "model": "claude-wire", "usage": {"input_tokens": 4}}}),
+                "",
+                event({"type": "content_block_start", "index": 0, "content_block": {"type": "thinking", "thinking": "私有"}}),
+                "",
+                event({"type": "content_block_delta", "index": 0, "delta": {"type": "thinking_delta", "thinking": "思考"}}),
+                "",
+                event({"type": "content_block_start", "index": 1, "content_block": {"type": "text", "text": "正"}}),
+                "",
+                event({"type": "content_block_delta", "index": 1, "delta": {"type": "text_delta", "text": "文"}}),
+                "",
+                event({"type": "message_delta", "delta": {"stop_reason": "end_turn"}, "usage": {"output_tokens": 2}}),
+                "",
+                event({"type": "message_stop"}),
+                "",
+            ],
+            [
+                event({"type": "message_start", "message": {"id": "msg-cut", "model": "claude-wire", "usage": {"input_tokens": 1}}}),
+                "",
+                event({"type": "content_block_start", "index": 0, "content_block": {"type": "text", "text": "半截"}}),
+                "",
+                event({"type": "message_delta", "delta": {"stop_reason": "end_turn"}, "usage": {"output_tokens": 1}}),
+                "",
+            ],
+        )
+        client = OpenAIChatClient(
+            "https://example.test/v1", "fake", stream=True, urlopen=opener
+        )
+        result = client.anthropic_message(
+            model="claude",
+            messages=[{"role": "user", "content": "x"}],
+            request_params={"max_tokens": 128},
+        )
+        payload = json.loads(opener.requests[0][0].data.decode("utf-8"))
+        self.assertIs(payload["stream"], True)
+        self.assertEqual(result.content, "正文")
+        self.assertEqual(result.reasoning_content, "私有思考")
+        self.assertEqual(result.finish_reason, "stop")
+        self.assertEqual(result.usage["total_tokens"], 6)
+        self.assertTrue(result.raw_response["_stream"]["terminal"])
+        with self.assertRaisesRegex(LLMAPIError, "终止事件前中断"):
+            client.anthropic_message(
+                model="claude",
+                messages=[{"role": "user", "content": "x"}],
+                request_params={"max_tokens": 128},
+            )
+
+    def test_anthropic_forced_tool_input_becomes_streamed_json_content(self) -> None:
+        def event(value: dict) -> str:
+            return "data: " + json.dumps(value, ensure_ascii=False)
+
+        opener = QueueStreamOpener(
+            [
+                event({"type": "message_start", "message": {"id": "msg-tool", "model": "claude-opus-5", "usage": {"input_tokens": 3}}}),
+                "",
+                event({"type": "content_block_start", "index": 0, "content_block": {"type": "tool_use", "id": "tool-1", "name": "submit_result", "input": {}}}),
+                "",
+                event({"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "{\"dimensions\":\"{\\\"ok\\\":"}}),
+                "",
+                event({"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "true}\"}"}}),
+                "",
+                event({"type": "message_delta", "delta": {"stop_reason": "tool_use"}, "usage": {"output_tokens": 2}}),
+                "",
+                event({"type": "message_stop"}),
+                "",
+            ]
+        )
+        client = OpenAIChatClient(
+            "https://example.test/v1", "fake", stream=True, urlopen=opener
+        )
+        result = client.anthropic_message(
+            model="claude-opus-5",
+            messages=[{"role": "user", "content": "submit"}],
+            request_params={
+                "max_tokens": 128,
+                "tools": [
+                    {
+                        "name": "submit_result",
+                        "input_schema": {
+                            "type": "object",
+                            "properties": {
+                                "dimensions": {
+                                    "type": "object",
+                                    "properties": {"ok": {"type": "boolean"}},
+                                }
+                            },
+                        },
+                    }
+                ],
+                "tool_choice": {"type": "tool", "name": "submit_result"},
+            },
+        )
+        self.assertEqual(json.loads(result.content), {"dimensions": {"ok": True}})
+        self.assertEqual(result.finish_reason, "stop")
+        self.assertEqual(result.native_finish_reason, "tool_use")
+        self.assertEqual(
+            result.raw_response["content"][0]["input"],
+            {"dimensions": '{"ok":true}'},
+        )
 
     def test_model_preflight_uses_exact_wire_ids(self) -> None:
         opener = QueueOpener(

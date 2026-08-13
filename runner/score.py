@@ -72,26 +72,26 @@ DEFAULT_BENCHMARK = "reform-era"
 ACTIVE_JUDGE_IDS = (
     "sol",
     "grok",
+    "opus",
+    "k3",
     "ds-v4-pro",
-    "mimo-v2.5-pro",
-    "gemini-3.1-pro",
 )
 # Compatibility alias for callers that imported the original public constant.
 JUDGE_IDS = ACTIVE_JUDGE_IDS
 MAX_RECOVERY_EVENTS = 256
 EXPECTED_JUDGE_MODELS = {
     "sol": "gpt-5.6-sol",
-    "grok": "grok-4.5",
+    "grok": "grok-4.6",
+    "opus": "claude-opus-5",
+    "k3": "kimi-k3",
     "ds-v4-pro": "deepseek-v4-pro",
-    "mimo-v2.5-pro": "mimo-v2.5-pro",
-    "gemini-3.1-pro": "gemini-3.1-pro",
 }
 JUDGE_LABELS = {
     "sol": "Sol",
-    "grok": "Grok 4.5",
+    "grok": "Grok 4.6",
+    "opus": "Claude Opus 5",
+    "k3": "Kimi K3",
     "ds-v4-pro": "DeepSeek V4 Pro",
-    "mimo-v2.5-pro": "MiMo V2.5 Pro",
-    "gemini-3.1-pro": "Gemini 3.1 Pro",
 }
 DEFAULT_PROVIDER = "new-api"
 REQUIRED_ARTIFACTS = (
@@ -143,6 +143,53 @@ DIMENSION_SPECS = (
 DIMENSION_KEYS = tuple(spec.key for spec in DIMENSION_SPECS)
 _DIMENSION_BY_KEY = {spec.key: spec for spec in DIMENSION_SPECS}
 _ONE_DECIMAL = Decimal("0.1")
+
+
+def _score_json_schema() -> dict[str, Any]:
+    """Anthropic structured-output contract for one V3 judge response."""
+
+    dimension = {
+        "type": "object",
+        "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 100},
+            "comment": {"type": "string", "minLength": 1, "maxLength": 240},
+        },
+        "required": ["score", "comment"],
+        "additionalProperties": False,
+    }
+    return {
+        "type": "object",
+        "properties": {
+            "dimensions": {
+                "type": "object",
+                "properties": {key: dimension for key in DIMENSION_KEYS},
+                "required": list(DIMENSION_KEYS),
+                "additionalProperties": False,
+            }
+        },
+        "required": ["dimensions"],
+        "additionalProperties": False,
+    }
+
+
+def judge_request_overrides(
+    judge_id: str, configured: Mapping[str, Any] | None
+) -> dict[str, Any] | None:
+    """Bind native Anthropic JSON output to Opus without affecting O-port judges."""
+
+    result = dict(configured or {})
+    if judge_id == "opus":
+        tool_name = "submit_v3_novel_score"
+        result["tools"] = [
+            {
+                "name": tool_name,
+                "description": "Submit the complete V3 novel evaluation.",
+                "input_schema": _score_json_schema(),
+                "strict": True,
+            }
+        ]
+        result["tool_choice"] = {"type": "tool", "name": tool_name}
+    return result or None
 
 
 class ScoreError(RuntimeError):
@@ -226,8 +273,32 @@ def load_submission(
     *,
     expected_run_id: str | None = None,
 ) -> Submission:
-    benchmark_dir = root / "benchmark" / benchmark
     candidate_dir = root / "results" / benchmark / candidate
+    return load_submission_from_dir(
+        root,
+        benchmark,
+        candidate,
+        candidate_dir,
+        expected_run_id=expected_run_id,
+    )
+
+
+def load_submission_from_dir(
+    root: Path,
+    benchmark: str,
+    candidate: str,
+    candidate_dir: Path,
+    *,
+    expected_run_id: str | None = None,
+) -> Submission:
+    """Load one immutable manuscript version from an explicit directory.
+
+    Current scoring uses ``load_submission``.  The explicit-directory variant
+    is for read-only inspection of archived versions and never changes candidate
+    discovery or ranking eligibility.
+    """
+
+    benchmark_dir = root / "benchmark" / benchmark
     direction_path = benchmark_dir / "direction.md"
 
     if not candidate_dir.is_dir():
@@ -344,6 +415,18 @@ def _round_decimal_score(value: Decimal) -> float:
 
 
 def _normalise_dimension_entry(key: str, value: Any) -> dict[str, Any]:
+    allowed_echo_keys = {key, f"{key}_placeholder"}
+    if (
+        isinstance(value, dict)
+        and len(set(value) - {"score", "comment"}) == 1
+        and (echo_key := next(iter(set(value) - {"score", "comment"})))
+        in allowed_echo_keys
+        and value.get(echo_key) == 0
+    ):
+        # New API's Anthropic tool bridge can echo one zero-valued schema
+        # placeholder beside the real fields.  Accept only this exact,
+        # semantically inert shape; every other extra field still fails closed.
+        value = {"score": value["score"], "comment": value["comment"]}
     if not isinstance(value, dict) or set(value) != {"score", "comment"}:
         raise ScoreError(f"dimensions.{key} 必须且只能包含 score、comment")
     comment = value["comment"]
@@ -360,6 +443,52 @@ def _normalise_dimension_entry(key: str, value: Any) -> dict[str, Any]:
         ),
         "comment": comment,
     }
+
+
+def _decode_stringified_dimensions(value: str) -> Any:
+    try:
+        return json.loads(value)
+    except json.JSONDecodeError:
+        pass
+
+    # The A-port tool bridge sometimes JSON-stringifies this container without
+    # escaping quotation marks inside Chinese comments.  Recover only the
+    # exact schema-ordered entry shape and require all canonical keys once.
+    text = value.strip()
+    if not (text.startswith("{") and text.endswith("}")):
+        return value
+    body = text[1:-1]
+    key_pattern = "|".join(re.escape(key) for key in DIMENSION_KEYS)
+    header = re.compile(
+        rf'"(?P<key>{key_pattern})":\{{"score":(?P<score>-?\d+(?:\.\d+)?),"comment":"'
+    )
+    boundary = re.compile(rf'"\}}(?=,"(?:{key_pattern})":|$)')
+    recovered: dict[str, Any] = {}
+    position = 0
+    while position < len(body):
+        match = header.match(body, position)
+        if match is None:
+            return value
+        end = boundary.search(body, match.end())
+        if end is None:
+            return value
+        key = match.group("key")
+        if key in recovered:
+            return value
+        raw_score = match.group("score")
+        score_value: int | float = (
+            float(raw_score) if "." in raw_score else int(raw_score)
+        )
+        recovered[key] = {
+            "score": score_value,
+            "comment": body[match.end() : end.start()],
+        }
+        position = end.end()
+        if position < len(body):
+            if body[position] != ",":
+                return value
+            position += 1
+    return recovered if set(recovered) == set(DIMENSION_KEYS) else value
 
 
 def _repair_trailing_json_closers(
@@ -436,6 +565,8 @@ def parse_score_response(content: str) -> dict[str, Any]:
     if set(parsed) != {"dimensions"}:
         raise ScoreError("评委响应顶层必须且只能包含 dimensions")
     dimensions = parsed["dimensions"]
+    if isinstance(dimensions, str):
+        dimensions = _decode_stringified_dimensions(dimensions)
     if not isinstance(dimensions, dict) or set(dimensions) != set(DIMENSION_KEYS):
         raise ScoreError(
             "dimensions 必须完整且只能包含：" + "、".join(DIMENSION_KEYS)
@@ -647,7 +778,9 @@ def resolve_judge_configs(cfg: Mapping[str, Any]) -> dict[str, dict[str, Any]]:
         model_cfg.setdefault("provider", DEFAULT_PROVIDER)
         resolved[judge_id] = {
             "model_cfg": model_cfg,
-            "request_overrides": entry.get("request_overrides"),
+            "request_overrides": judge_request_overrides(
+                judge_id, entry.get("request_overrides")
+            ),
         }
     return resolved
 
@@ -1142,12 +1275,14 @@ def discover_candidates(root: Path, benchmark: str) -> list[str]:
 
 
 def configured_wire_models(
-    _cfg: Mapping[str, Any], judge_configs: Mapping[str, Mapping[str, Any]]
+    _cfg: Mapping[str, Any],
+    judge_configs: Mapping[str, Mapping[str, Any]],
+    judge_ids: Iterable[str] = JUDGE_IDS,
 ) -> tuple[str, ...]:
     """Return only active judge wire ids required by scoring preflight."""
 
     wire_ids: list[str] = []
-    for judge_id in JUDGE_IDS:
+    for judge_id in judge_ids:
         model_cfg = judge_configs[judge_id].get("model_cfg")
         if not isinstance(model_cfg, Mapping) or not isinstance(model_cfg.get("model"), str):
             raise ScoreError(f"评委 {judge_id} 缺少 wire model")
@@ -1156,7 +1291,7 @@ def configured_wire_models(
 
 
 def _build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Sol/Grok 两评委小说评分")
+    parser = argparse.ArgumentParser(description="Sol/Grok/Opus/K3/DeepSeek 五评委小说评分")
     selection = parser.add_mutually_exclusive_group(required=True)
     selection.add_argument("--model", action="append", help="候选目录名；可重复传入")
     selection.add_argument("--all", action="store_true", help="评分全部 V2 候选")
@@ -1164,7 +1299,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "--judge",
         action="append",
         choices=JUDGE_IDS,
-        help="只执行指定评委；可重复传入，默认两位全部执行",
+        help="只执行指定评委；可重复传入，默认五位全部执行",
     )
     parser.add_argument("--dry-run", action="store_true", help="只显示缓存命中和待调用任务")
     return parser
@@ -1201,7 +1336,11 @@ def run(argv: Iterable[str] | None = None, *, root: Path | None = None) -> int:
         if isinstance(item, Mapping) and item.get("id")
     }
 
-    candidates = discover_candidates(repo_root, benchmark) if args.all else list(dict.fromkeys(args.model))
+    if args.all:
+        discovered = set(discover_candidates(repo_root, benchmark))
+        candidates = [candidate for candidate in generator_by_id if candidate in discovered]
+    else:
+        candidates = list(dict.fromkeys(args.model))
     if not candidates:
         raise ScoreError("没有可评分的 V2 候选")
     selected_judges = tuple(dict.fromkeys(args.judge or JUDGE_IDS))
@@ -1288,7 +1427,9 @@ def run(argv: Iterable[str] | None = None, *, root: Path | None = None) -> int:
                 env,
                 provider_id=DEFAULT_PROVIDER,
             )
-            required_models = configured_wire_models(cfg, judge_configs)
+            required_models = configured_wire_models(
+                cfg, judge_configs, selected_judges
+            )
             available_models = set(preflight_client.list_models())
             missing_models = [
                 model for model in required_models if model not in available_models
@@ -1422,9 +1563,9 @@ def run(argv: Iterable[str] | None = None, *, root: Path | None = None) -> int:
     return 1 if had_error else 0
 
 
-def main() -> int:
+def main(argv: Iterable[str] | None = None) -> int:
     try:
-        return run()
+        return run(argv)
     except ScoreError as exc:
         print(f"[score] ERROR: {exc}", file=sys.stderr)
         return 1

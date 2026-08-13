@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "0f43c12f27d7b4e9dfc21c07ed04b3c8ebaa09ce2146bc0348de4407086ba946",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "9585fa91ca87bd7e9e925123d7309f189ee82b1474d6b065a03df694ce16a0ca",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 68.0,
+      "comment": "开篇扎实呈现城乡身份落差与\"挣钱\"欲望的萌发，与\"财富追求与人性坚守\"主题接续得上；但目前仍停在苦难展示层面，价值冲突尚未真正生成张力。"
+    },
+    "historical_grounding": {
+      "score": 48.0,
+      "comment": "票证、临时工待遇差、绿皮车等细节到位，但硬伤明显：1978年初出现居民身份证、暂住证、深圳倒货、一元硬币、\"下海\"等说法均超前，年代边界失守。"
+    },
+    "characters": {
+      "score": 55.0,
+      "comment": "陈志远的隐忍与算计有可信度，李强作为信息源与劝阻者功能清晰。但28岁被称\"年纪不大\"，人物言语同质化，配角多为观念传声筒，缺乏独立欲望。"
+    },
+    "plot_causality": {
+      "score": 62.0,
+      "comment": "受辱—算钱—捡废料—试卖—裁员逼迫的链条因果顺畅，动机推进合理；但事件多为同类刺激的叠加，缺少能改变主角判断的意外与反向压力。"
+    },
+    "longform_structure": {
+      "score": 60.0,
+      "comment": "忠实覆盖大纲节点，卷一\"离乡—工厂—萌芽\"结构完整，伏笔（布鞋、废料、红袖章）有落点；节奏偏平均，缺乏轻重缓急与省略。"
+    },
+    "scene_execution": {
+      "score": 58.0,
+      "comment": "火车站、仓库赔偿、公园试卖几场有实感与身体细节；但多数场景以长段心理总结收尾，动作与对白被议论稀释，戏剧点常被提前解释掉。"
+    },
+    "style_control": {
+      "score": 54.0,
+      "comment": "语体统一、有年代质感，粤语插入合宜；但形容词与排比堆叠严重，\"像……一样\"比喻高频复用，抒情腔调贯穿始终，缺少冷叙述的对照。"
+    },
+    "ai_flavor": {
+      "score": 38.0,
+      "comment": "AI味重：每章结尾必升华，反复使用\"一颗种子/一道鸿沟/一个烙印\"类总结句，情绪词密集自我阐释，读者被反复告知已呈现之事。"
+    }
+  }
+}

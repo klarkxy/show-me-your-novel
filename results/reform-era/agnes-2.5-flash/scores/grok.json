@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "agnes-2.5-flash",
+  "judge": "grok",
+  "requested_model": "grok-4.6",
+  "input_hash": "16b1af34874997fc19d1b277fd6d3c6806123800f22a90af620937f5023a73c3",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "aafa441287a2f29e87b7b5287903bc2f2502395ba8e06668bae9136463cb3dbf",
+  "response_model": "grok-4.6",
+  "cache_key": "65d51365c449b0e176a4e5ff4a5f784ac6b7098432a167f29a90026499e1a592",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 88.0,
+      "comment": "主题聚焦个人奋斗与时代洪流辩证，欲望激活与道德代价在人物弧线中充分兑现，事件与制度变革深度参与"
+    },
+    "historical_grounding": {
+      "score": 92.0,
+      "comment": "1978-1988中国改革背景真实可感，价格双轨制、承包制、个体经济等细节精准融入因果，物质生活与制度变迁参与人物命运"
+    },
+    "characters": {
+      "score": 85.0,
+      "comment": "人物欲望具体、行动逻辑清晰，关系张力强，弧线从理想主义技工到精明商人的转变自然连贯"
+    },
+    "plot_causality": {
+      "score": 80.0,
+      "comment": "冲突由人物环境推动，事件链有效连贯，避免机械巧合，伏笔与因果支撑长篇结构"
+    },
+    "longform_structure": {
+      "score": 78.0,
+      "comment": "宏观规划与开篇细纲连续，节奏伏笔阶段兑现支撑长篇，但正文篇幅控制与阶段过渡需进一步优化"
+    },
+    "scene_execution": {
+      "score": 82.0,
+      "comment": "视角动作对话描写信息投放有效，关键内容落实为生动场景，叙事效能突出"
+    },
+    "style_control": {
+      "score": 79.0,
+      "comment": "文风稳定，措辞句法语域随场景主动变化，语言与叙事风格管理良好"
+    },
+    "ai_flavor": {
+      "score": 28.0,
+      "comment": "AI味偶有模板化排比与机械转折，但不干扰整体，语言流畅规范"
+    }
+  }
+}

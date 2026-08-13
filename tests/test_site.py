@@ -201,6 +201,8 @@ class SiteGenerationTests(unittest.TestCase):
                 model / "manifest.json",
                 {
                     "status": status,
+                    "manuscript_completed_at": "2026-08-13T01:02:03+00:00",
+                    "completed_at": "2026-08-13T01:02:03+00:00",
                     "protocol_policy": PROTOCOL_POLICY,
                     "run_origin": "fresh",
                     "code_sha256": "0" * 64,
@@ -420,8 +422,8 @@ class SiteGenerationTests(unittest.TestCase):
                 for spec in DIMENSION_SPECS
             }
 
-        scores = (70.0, 82.0, 82.1, 90.0, 95.0)
-        ai_scores = (5.0, 10.2, 10.3, 20.0, 30.0)
+        scores = (70.0, 82.1, 95.0, 60.0, 85.0)
+        ai_scores = (5.0, 10.3, 30.0, 8.0, 20.0)
         aggregate = aggregate_dimension_scores(
             {
                 judge_id: dimensions(score, ai)
@@ -429,7 +431,7 @@ class SiteGenerationTests(unittest.TestCase):
             }
         )
         self.assertEqual(aggregate["theme_fulfillment"]["median"], 82.1)
-        self.assertEqual(aggregate["theme_fulfillment"]["min"], 70.0)
+        self.assertEqual(aggregate["theme_fulfillment"]["min"], 60.0)
         self.assertEqual(aggregate["theme_fulfillment"]["max"], 95.0)
         self.assertEqual(aggregate["ai_flavor"]["median"], 10.3)
 
@@ -466,8 +468,10 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("AI味（越低越好）", home)
             self.assertIn(">82.0</td>", home)
             self.assertIn('data-metric="overall"', home)
+            self.assertIn("Claude Opus 5", home)
+            self.assertIn("Kimi K3", home)
+            self.assertIn("DeepSeek V4 Pro", home)
             self.assertNotIn("Fable", home)
-            self.assertNotIn("data-fable=", home)
 
             row_a = self._row(home, "model-a")
             row_b = self._row(home, "model-b")
@@ -508,17 +512,17 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("PRIVATE_REASONING", detail)
             self.assertNotIn("第99章", detail)
             self.assertNotIn("<script>alert", detail)
-            self.assertIn("Grok 4.5", detail)
+            self.assertIn("Grok 4.6", detail)
+            self.assertIn("Claude Opus 5", detail)
+            self.assertIn("Kimi K3", detail)
             self.assertIn("DeepSeek V4 Pro", detail)
-            self.assertIn("MiMo V2.5 Pro", detail)
-            self.assertIn("Gemini 3.1 Pro", detail)
-            self.assertNotIn("Kimi", detail)
+            self.assertNotIn("Fable", detail)
             self.assertIn("活动评委维度中位数", detail)
             self.assertIn("活动评委逐维记录", detail)
             self.assertIn('class="judge-drawer"', detail)
             self.assertIn("<summary>Sol</summary>", detail)
-            self.assertIn("<summary>Grok 4.5</summary>", detail)
-            self.assertNotIn("Fable", detail)
+            self.assertIn("<summary>Grok 4.6</summary>", detail)
+            self.assertIn("<summary>Claude Opus 5</summary>", detail)
             radar_count = 1 + len(JUDGE_IDS)
             self.assertEqual(detail.count('data-radar-chart="'), radar_count)
             self.assertEqual(detail.count('class="radar-chart"'), radar_count)
@@ -539,6 +543,87 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("NaN", detail)
             self.assertIn("&lt;b data-test=1&gt;", detail)
             self.assertNotIn("<b data-test=1>", detail)
+
+    def test_archived_manuscript_keeps_reviews_is_browsable_and_never_ranks(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config, novels, results = self._fixture(root)
+            current = results / "model-a"
+            archived_copy = root / "archived-copy"
+            shutil.copytree(current, archived_copy)
+            archived_manifest_path = archived_copy / "manifest.json"
+            archived_manifest = json.loads(archived_manifest_path.read_text(encoding="utf-8"))
+            archived_manifest["manuscript_completed_at"] = "2026-07-01T16:30:00+00:00"
+            archived_manifest["completed_at"] = "2026-07-01T16:30:00+00:00"
+            self._write_json(archived_manifest_path, archived_manifest)
+            archive_id = "20260701163000-oldrun"
+            archived = current / "archive" / archive_id
+            archived.parent.mkdir()
+            archived_copy.replace(archived)
+            self._write_json(
+                archived / "archive.json",
+                {
+                    "schema": "novel-benchmark-archive.v1",
+                    "archive_id": archive_id,
+                    "ranking_status": "archived",
+                    "eligible_for_ranking": False,
+                },
+            )
+            historical_ids = ("sol", "grok", "fable")
+            opus_score = json.loads(
+                (archived / "scores" / "opus.json").read_text(encoding="utf-8")
+            )
+            opus_score["judge"] = "fable"
+            opus_score["requested_model"] = "claude-fable-5"
+            opus_score["response_model"] = "claude-fable-5"
+            opus_score["cache_key"] = "historical-fable"
+            self._write_json(archived / "scores" / "fable.json", opus_score)
+            archived_aggregate_path = archived / "scores" / "aggregate.json"
+            archived_aggregate = json.loads(
+                archived_aggregate_path.read_text(encoding="utf-8")
+            )
+            archived_aggregate["expected_judges"] = list(historical_ids)
+            archived_aggregate["completed_judges"] = list(historical_ids)
+            self._write_json(archived_aggregate_path, archived_aggregate)
+
+            output = root / "public"
+            build_site(
+                config_path=config,
+                novels_dir=novels,
+                results_dir=results,
+                assets_dir=REPO_ROOT / "site" / "assets",
+                output_dir=output,
+            )
+
+            home = (output / "index.html").read_text(encoding="utf-8")
+            self.assertEqual(home.count('data-model-id="model-a"'), 1)
+            row = self._row(home, "model-a")
+            self.assertIn("成稿 2026-08-13", row)
+            self.assertIn("历史稿 1", row)
+
+            current_page = (
+                output / "results" / "reform-era" / "model-a.html"
+            ).read_text(encoding="utf-8")
+            self.assertIn("历史成稿", current_page)
+            self.assertIn(f"archive/model-a/{archive_id}.html", current_page)
+            self.assertIn("成稿 2026-07-02", current_page)
+
+            archive_page_path = (
+                output
+                / "results"
+                / "reform-era"
+                / "archive"
+                / "model-a"
+                / f"{archive_id}.html"
+            )
+            self.assertTrue(archive_page_path.is_file())
+            archive_page = archive_page_path.read_text(encoding="utf-8")
+            self.assertIn("这是历史成稿及其原评审快照", archive_page)
+            self.assertIn("已退出当前排名", archive_page)
+            self.assertIn("成稿 2026-07-02", archive_page)
+            self.assertIn("Sol", archive_page)
+            self.assertIn("Fable", archive_page)
+            self.assertIn("sol 对题材与主题兑现的简评", archive_page)
 
     def test_legacy_keeps_retired_model_routes_and_never_publishes_reasoning(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

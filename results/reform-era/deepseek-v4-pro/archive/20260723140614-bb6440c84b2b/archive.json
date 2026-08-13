@@ -1,0 +1,10 @@
+{
+  "schema": "novel-benchmark-archive.v1",
+  "archive_id": "20260723140614-bb6440c84b2b",
+  "archived_at": "2026-08-13T05:24:34.878536+00:00",
+  "manuscript_completed_at": "2026-07-23T14:06:14.913728+00:00",
+  "run_id": "bb6440c84b2b",
+  "superseded_by_run_id": "b45166916a13",
+  "ranking_status": "archived",
+  "eligible_for_ranking": false
+}

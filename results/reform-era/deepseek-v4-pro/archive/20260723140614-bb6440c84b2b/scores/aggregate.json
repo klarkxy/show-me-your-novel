@@ -1,0 +1,93 @@
+{
+  "schema": "novel-eval-aggregate.v3",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-pro",
+  "input_hash": "5e9e3904ae1dcca1ffa7de4a7c5ab3cc18f622c4b5086aadc9676de8094c78d8",
+  "expected_judges": [
+    "sol",
+    "grok",
+    "fable"
+  ],
+  "completed_judges": [
+    "sol",
+    "grok"
+  ],
+  "status": "incomplete",
+  "eligible_for_ranking": false,
+  "judges": {
+    "sol": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 54.0,
+          "comment": "贫困、进城与财富欲望已落实到父病、工伤和克扣工资中，但“异化与救赎”尚停留在远期承诺，开篇反复以立志独白代替更复杂的道德萌变。"
+        },
+        "historical_grounding": {
+          "score": 35.0,
+          "comment": "工棚、工资、饮食等物质细节较多，但1979年公开宣读包产到户政策、深圳“特区”称谓、居民身份证、蛇口产业与城市规模等关键时代信息明显错置。"
+        },
+        "characters": {
+          "score": 56.0,
+          "comment": "陈建国的脱贫欲望和李强的仗义较清楚，父母、林芳也有关系功能，但人物多按“苦难—援助—立志”模式行动，差异性与隐秘矛盾不足。"
+        },
+        "plot_causality": {
+          "score": 44.0,
+          "comment": "父病促成南下、受骗导向求职的主线可辨，但连续受骗、受伤、高烧和贵人相助过密，且第三章已出发、第四章又回到凑钱，直接破坏事件因果。"
+        },
+        "longform_structure": {
+          "score": 38.0,
+          "comment": "宏纲阶段划分完整，却存在第三章与第五章重复离乡、被抢物品后又出现挎包等连续性错误，且十五卷两百万字规划重复冲突多、扩写痕迹明显。"
+        },
+        "scene_execution": {
+          "score": 57.0,
+          "comment": "工地试工、讨薪和诊所等场景具动作与物感，但相似的受苦、回忆、攥拳和内心宣誓反复上演，许多段落延宕而未增加新信息。"
+        },
+        "style_control": {
+          "score": 49.0,
+          "comment": "口语化叙述总体易读，劳动细节有一定力度，但比喻、心理解释和“一个字一个字”等句式高频复用，章节节奏与叙述距离缺少主动变化。"
+        },
+        "ai_flavor": {
+          "score": 68.0,
+          "comment": "大量同构的苦难升级、恩情记账、景物收束与立志总结持续重复，人物常替主题作完整解释，转折和悬念呈现明显程式化。"
+        }
+      }
+    },
+    "grok": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 71.5,
+          "comment": "开篇将贫困、南下与立志落地为具体事件与心理越界，致富欲望与时代夹缝萌芽清晰，但异化救赎核心仍停留在远景铺垫。"
+        },
+        "historical_grounding": {
+          "score": 80.5,
+          "comment": "包产到户、工地日结克扣、夜校、特区招工与粮票式匮乏细节可信，并直接参与南下、受伤、立志的因果。"
+        },
+        "characters": {
+          "score": 75.0,
+          "comment": "建国欲望与行动逻辑具体，林芳、李强、父母有差异与张力，关系变化自然，但次要人物动机与层次仍偏单薄。"
+        },
+        "plot_causality": {
+          "score": 77.5,
+          "comment": "贫困—借钱—被骗—试工—受伤—克扣—高烧—立志链条清楚，由人物与环境推动，少机械巧合。"
+        },
+        "longform_structure": {
+          "score": 73.0,
+          "comment": "与宏观及开篇细纲高度连续，伏笔与第一次不可逆越界兑现，节奏扎实，但仅开篇，长篇阶段支撑待后文验证。"
+        },
+        "scene_execution": {
+          "score": 81.0,
+          "comment": "离别、被抢、试工、发薪、高烧、楼顶等关键场景视角稳定，对话动作描写有效，信息多经场景落地。"
+        },
+        "style_control": {
+          "score": 78.5,
+          "comment": "语域贴合底层口语与时代，句法节奏随场景调节，叙述距离总体稳定，少空转华丽。"
+        },
+        "ai_flavor": {
+          "score": 19.0,
+          "comment": "偶有内心总结与重复强调，但整体以具体感官与场景驱动，模板排比与机械转折痕迹不重。"
+        }
+      }
+    }
+  },
+  "dimensions": {},
+  "overall_score": null
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "glm-5.2",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "1d17439dd99c30d9b8de7121202bb0690d4b4d93c3e5bc774f3e6d41a6542972",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "cbfb383cf69b231520669932a354af09ecbe9877ec05928d35a307a60fdc1d42",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 84.0,
+      "comment": "紧扣“道义重新定价”的核心：代卖截留、分账定价、承包三七、结尾谎言层层递进，主题由具体交易承载而非议论。开篇部分主题尚只在铺垫，兑现依赖后段大纲。"
+    },
+    "historical_grounding": {
+      "score": 88.0,
+      "comment": "1511/1515布机、打纬凸轮、送经张力、工业券、肉票、挂靠、停薪留职、收容遣返等细节准确且功能化，不是装饰。公社介绍信无公章一节尤见时代肌理。"
+    },
+    "characters": {
+      "score": 78.0,
+      "comment": "陈有福“算得太细”的性格与行动一致；慧芬“弄了多少”与锁抽屉极精准。但有贵、炳南更多是功能位；老孙鲜活却是过客，主要人物的语言辨识度参差。"
+    },
+    "plot_causality": {
+      "score": 80.0,
+      "comment": "因果链扎实：刘姐闲话→老孙上门→六十元→截留→出走→退伙→承包→谎言，动机可追。个别节点（借势散布假消息、赵德彪通牒）稍显推动式安排。"
+    },
+    "longform_structure": {
+      "score": 72.0,
+      "comment": "十五卷节奏与伏笔（账本、我信得过你、中间人之谶）设计完整。但开篇17章仅走到第一笔六十元，密度与200万字目标失衡，尾段大纲文字有明显残缺乱码。"
+    },
+    "scene_execution": {
+      "score": 76.0,
+      "comment": "修机器、招待所红烧肉、袜筒藏钱、锁抽屉几场有强实感与动作逻辑。但大量段落被枝节淹没，一个递钱动作反复拆解，戏剧张力被稀释。"
+    },
+    "style_control": {
+      "score": 68.0,
+      "comment": "破折号碎句风格辨识度高，却近乎失控：同一句反复回旋、心理解析层层复述，作者代替读者思考，抒情与说明边界模糊，长期阅读易疲劳。"
+    },
+    "ai_flavor": {
+      "score": 74.0,
+      "comment": "无华丽套话，物质细节扎实，不像通用AI腔。但强迫症式复述、“这意味着…”式自我阐释、对每个动作赋义的均质节奏，仍透出机器化的过度加工感。"
+    }
+  }
+}

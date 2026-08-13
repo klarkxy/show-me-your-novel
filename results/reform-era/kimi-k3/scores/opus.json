@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k3",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "918233c96b43c75927055a61a125e891b92eeeba038a420351201afa24959f2f",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 58.0,
+      "comment": "母亲'烫手的钱'、父亲'干净'、'就这一回'的自我合理化确实立住了主题秤砣，方向对路；但主题表达靠反复宣告而非情境推进，后半近乎口号化自陈，削弱了'代价'的实感。"
+    },
+    "historical_grounding": {
+      "score": 68.0,
+      "comment": "粮票布票、供销社柜台、回力鞋、红灯牌电子管、返城知青摆摊等细节可信且有质感；但越往后器物退场，只剩人物内心独白，时代肌理稀薄，个别处如'的确良在当时是稀罕物'出现解说腔。"
+    },
+    "characters": {
+      "score": 52.0,
+      "comment": "顾长顺、王婶、老钱前几章有神；但顾向东后半沦为焦虑循环体，反复背诵三句家训、算同一笔账；赵麻子的诱惑话术单薄，马金宝功能化。"
+    },
+    "plot_causality": {
+      "score": 45.0,
+      "comment": "前十章因果扎实（药费→接活→越线）。但15、16两章各写一次交货且互相矛盾（尾款两百 vs 三十、拖拉机场景重复），钱数在300/374/400间漂移，越线动机（缺电容）解决方式又与'忘带收音机'自相绊脚。"
+    },
+    "longform_structure": {
+      "score": 40.0,
+      "comment": "章节推进节奏在中段崩坏：12—16章大量整段自我复制（'就这一回/还完债就洗手'、烟囱影子—刀—路、值班室插门闩），交货高潮被写了两遍，结构冗余远超篇幅需要。"
+    },
+    "scene_execution": {
+      "score": 50.0,
+      "comment": "第1章修收音机、第2章饭桌两场调度出色，动作细节精准可信；后段场景多为'骑车—算账—躺床—回响三句话'的复用模板，台钳夜潜本该最紧张，却因道具逻辑漏洞泄气。"
+    },
+    "style_control": {
+      "score": 44.0,
+      "comment": "白描朴素、对话有年代味是长处；但短段排比式抒情（'他必须。'）滥用到麻木，比喻反复使用同一组（刀/路/太阳），语言纪律在后半失控。"
+    },
+    "ai_flavor": {
+      "score": 30.0,
+      "comment": "高度可辨的模型痕迹：段落级近乎逐字复述、三句训诫循环回放、结尾强行升华、情节自我冲突而不自知，还残留'做了 rarely 的红烧肉'式英文混入与截断迹象。"
+    }
+  }
+}

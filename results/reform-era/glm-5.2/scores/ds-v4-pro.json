@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "glm-5.2",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "1d17439dd99c30d9b8de7121202bb0690d4b4d93c3e5bc774f3e6d41a6542972",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "82f509cd9346ab97b43a73609ebfe3b778ee63b7a479c8f6e97f0e282f195969",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "9496dacbb08c748c01817924a7e27974bfd85e0482097a6b291da3c80300ad11",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 86.0,
+      "comment": "开篇以修机器、电子表和家庭账本等具体事件进入转型期道义与关系重塑，非口号化呈现，但主要承诺仍待后续展开。"
+    },
+    "historical_grounding": {
+      "score": 89.0,
+      "comment": "粮票、工业券、工资、筒子楼、织机故障和社队企业细节丰富且参与因果，时代质感强。"
+    },
+    "characters": {
+      "score": 85.0,
+      "comment": "陈有福的犹豫、慧芬的沉默记账、有贵的试探等欲望与差异清晰，关系张力具体。"
+    },
+    "plot_causality": {
+      "score": 84.0,
+      "comment": "由穷困、技术、人情与制度缝隙推动的越界链条清楚，事件之间缺少机械巧合。"
+    },
+    "longform_structure": {
+      "score": 87.0,
+      "comment": "宏观大纲与开篇细纲、正文在伏笔和阶段兑现上连续，长篇骨架完整；唯正文仅及开篇。"
+    },
+    "scene_execution": {
+      "score": 90.0,
+      "comment": "以动作、对话、物质细节和感官描写把关键内容落实为有效场景，少见概述替代。"
+    },
+    "style_control": {
+      "score": 86.0,
+      "comment": "语言冷峻克制、语域稳定，能依据场景调节节奏，偶有复沓但未失控。"
+    },
+    "ai_flavor": {
+      "score": 15.0,
+      "comment": "偶有排比与数字强调等程式痕迹，但整体由具体生活和细节驱动，模板化程度低。"
+    }
+  }
+}

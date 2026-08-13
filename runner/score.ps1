@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  PowerShell wrapper for the Sol/Grok V3 multidimensional scorer.
+  PowerShell wrapper for the Sol/Grok/Opus/K3/DeepSeek V3 multidimensional scorer.
 .EXAMPLE
   .\runner\score.ps1 -Model deepseek-v4-flash -Judge sol -DryRun
 .EXAMPLE
@@ -13,7 +13,7 @@ param(
   [string[]]$Model,
   [Parameter(ParameterSetName = "All", Mandatory = $true)]
   [switch]$All,
-  [ValidateSet("sol", "grok", "ds-v4-pro", "mimo-v2.5-pro", "gemini-3.1-pro")]
+  [ValidateSet("sol", "grok", "opus", "k3", "ds-v4-pro")]
   [string[]]$Judge,
   [switch]$DryRun
 )

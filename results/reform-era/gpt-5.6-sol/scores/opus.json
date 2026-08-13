@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-sol",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "c2699dde5a0fa0a559193db242e0988bc66650c8cba1581996e3d7f4c069dfe2",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "2b9c21447c44f64aa6858388a7cd87e2c2efdeccc9a08dbffb4428fff6871996",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 88.0,
+      "comment": "核心命题（以多数人生计为由让少数人承担代价）在开篇即通过借料、招待入运费的抉择具体落地，未靠议论堆砌；仅因篇幅只到第一次越界，纵深尚待展开。"
+    },
+    "historical_grounding": {
+      "score": 92.0,
+      "comment": "票证、介绍信、调拨指标、暂存条、误餐补助、供销社代销手续等细节精准且承担叙事功能；三十七元工资、四号角钢、B型皮带等物质尺度可信，无现代视角越位。"
+    },
+    "characters": {
+      "score": 85.0,
+      "comment": "周自成的技术化道德转换写得有层次；沈秋萍四栏纸、乔万山技术底线、顾长顺、许国梁均有独立逻辑与口吻。马敬堂的\"不签也不阻止\"极精彩，次要农户略功能化。"
+    },
+    "plot_causality": {
+      "score": 88.0,
+      "comment": "从空账到查库、回乡、试制、空转失败、三户送钱、断粮到签字，每一步压力都由前因逼出，越界不是性格突变而是条件累积，拒收定金与最终签名形成有力对照。"
+    },
+    "longform_structure": {
+      "score": 84.0,
+      "comment": "章节节奏均匀，伏笔（剪报本、飞出的铁片、郑双喜、周小兰学费）埋设自然并与大纲十四卷呼应；开篇克制未透支后续冲突，但节奏偏均质，缺少一次大的张力起伏。"
+    },
+    "scene_execution": {
+      "score": 86.0,
+      "comment": "仓库盘点、胜利饭店结账、结算单拆项、夹便条入剪报本等场景动作与物件承重，对话推进博弈而非交代信息；个别核算段落略显账目密集。"
+    },
+    "style_control": {
+      "score": 85.0,
+      "comment": "语体冷硬克制，近似八十年代现实主义叙述，少用比喻而靠物象（烟囱无烟、面缸倒扣、焊弧）达意；偶有意象点题稍显自觉，如结尾一句略作解释。"
+    },
+    "ai_flavor": {
+      "score": 12.0,
+      "comment": "几乎无套路化抒情、排比或空泛概括；术语与流程具体到可核查，人物拒绝被作者站队。极少数收束句（如末段点题）带一点刻意工整。"
+    }
+  }
+}

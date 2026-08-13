@@ -78,24 +78,30 @@ def test_scoring_preflight_requires_only_active_judge_models() -> None:
         "models": [
             _judge_cfg("generator-a"),
             _judge_cfg("sol-wire"),
-            _judge_cfg("grok-4.5"),
+            _judge_cfg("grok-4.6"),
+            _judge_cfg("claude-opus-5"),
             _judge_cfg("kimi-k3"),
+            _judge_cfg("deepseek-v4-pro"),
         ]
     }
     judges = {
         "sol": {"model_cfg": _judge_cfg("sol-wire")},
-        "grok": {"model_cfg": _judge_cfg("grok-4.5")},
+        "grok": {"model_cfg": _judge_cfg("grok-4.6")},
+        "opus": {"model_cfg": _judge_cfg("claude-opus-5")},
+        "k3": {"model_cfg": _judge_cfg("kimi-k3")},
         "ds-v4-pro": {"model_cfg": _judge_cfg("deepseek-v4-pro")},
-        "mimo-v2.5-pro": {"model_cfg": _judge_cfg("mimo-v2.5-pro")},
-        "gemini-3.1-pro": {"model_cfg": _judge_cfg("gemini-3.1-pro")},
     }
 
     assert score.configured_wire_models(cfg, judges) == (
         "sol-wire",
-        "grok-4.5",
+        "grok-4.6",
+        "claude-opus-5",
+        "kimi-k3",
         "deepseek-v4-pro",
-        "mimo-v2.5-pro",
-        "gemini-3.1-pro",
+    )
+    assert score.configured_wire_models(cfg, judges, ("opus", "k3")) == (
+        "claude-opus-5",
+        "kimi-k3",
     )
 
 
@@ -103,24 +109,30 @@ def test_grok_judge_supplies_disabled_tool_required_by_gateway_on_wire() -> None
     captured: dict[str, object] = {}
 
     class FakeResponse:
+        def __init__(self):
+            event = {
+                "choices": [
+                    {
+                        "delta": {"content": '{"score": 80}'},
+                        "finish_reason": "stop",
+                    }
+                ]
+            }
+            self.lines = [
+                f"data: {json.dumps(event)}\n".encode("utf-8"),
+                b"\n",
+                b"data: [DONE]\n",
+                b"\n",
+            ]
+
         def __enter__(self):
             return self
 
         def __exit__(self, exc_type, exc_value, traceback):
             return False
 
-        @staticmethod
-        def read() -> bytes:
-            return json.dumps(
-                {
-                    "choices": [
-                        {
-                            "message": {"content": '{"score": 80}'},
-                            "finish_reason": "stop",
-                        }
-                    ]
-                }
-            ).encode("utf-8")
+        def __iter__(self):
+            return iter(self.lines)
 
     def opener(request, *, timeout):
         captured["url"] = request.full_url
@@ -144,7 +156,7 @@ def test_grok_judge_supplies_disabled_tool_required_by_gateway_on_wire() -> None
 
     assert captured["url"] == "https://gateway.test/v1/chat/completions"
     assert captured["payload"] == {
-        "model": "grok-4.5",
+        "model": "grok-4.6",
         "messages": [{"role": "user", "content": "judge"}],
         "max_tokens": 4096,
         "temperature": 0.2,
@@ -163,6 +175,7 @@ def test_grok_judge_supplies_disabled_tool_required_by_gateway_on_wire() -> None
             }
         ],
         "tool_choice": "none",
+        "stream": True,
     }
 
 
@@ -177,9 +190,9 @@ def test_site_score_fingerprints_match_scoring_writer() -> None:
     assert score.ACTIVE_JUDGE_IDS == (
         "sol",
         "grok",
+        "opus",
+        "k3",
         "ds-v4-pro",
-        "mimo-v2.5-pro",
-        "gemini-3.1-pro",
     )
     assert set(resolved) == set(score.ACTIVE_JUDGE_IDS)
     for judge_id in score.JUDGE_IDS:
@@ -192,6 +205,70 @@ def test_site_score_fingerprints_match_scoring_writer() -> None:
             ),
             "requested_model": model_cfg["model"],
         }
+
+
+def test_opus_v3_uses_native_anthropic_json_schema() -> None:
+    resolved = score.resolve_judge_configs(score.load_config(ROOT / "config.yaml"))
+    overrides = resolved["opus"]["request_overrides"]
+    assert overrides["tool_choice"] == {
+        "type": "tool",
+        "name": "submit_v3_novel_score",
+    }
+    assert overrides["tools"][0]["strict"] is True
+    schema = overrides["tools"][0]["input_schema"]
+    assert schema["required"] == ["dimensions"]
+    assert set(schema["properties"]["dimensions"]["required"]) == set(
+        score.DIMENSION_KEYS
+    )
+    assert resolved["sol"]["request_overrides"] is None
+
+
+def test_v3_parser_accepts_gateway_stringified_dimensions_container() -> None:
+    payload = {
+        "dimensions": {
+            key: {"score": 50, "comment": "有效点评"}
+            for key in score.DIMENSION_KEYS
+        }
+    }
+    wrapped = json.dumps(
+        {"dimensions": json.dumps(payload["dimensions"], ensure_ascii=False)},
+        ensure_ascii=False,
+    )
+    assert score.parse_score_response(wrapped) == score.parse_score_response(
+        json.dumps(payload, ensure_ascii=False)
+    )
+
+
+def test_v3_parser_accepts_only_zero_valued_dimension_schema_echo() -> None:
+    payload = {
+        "dimensions": {
+            key: {"score": 50, "comment": "有效点评"}
+            for key in score.DIMENSION_KEYS
+        }
+    }
+    payload["dimensions"]["characters"]["characters"] = 0
+    parsed = score.parse_score_response(json.dumps(payload, ensure_ascii=False))
+    assert set(parsed["dimensions"]["characters"]) == {"score", "comment"}
+    payload["dimensions"]["characters"]["characters"] = 1
+    with pytest.raises(score.ScoreError, match="只能包含"):
+        score.parse_score_response(json.dumps(payload, ensure_ascii=False))
+
+
+def test_v3_parser_recovers_only_complete_gateway_unescaped_comment_string() -> None:
+    entries = []
+    for index, key in enumerate(score.DIMENSION_KEYS):
+        entries.append(
+            f'"{key}":{{"score":{50 + index},"comment":"包含"中文引号"的点评"}}'
+        )
+    malformed_inner = "{" + ",".join(entries) + "}"
+    outer = json.dumps({"dimensions": malformed_inner}, ensure_ascii=False)
+    parsed = score.parse_score_response(outer)
+    assert parsed["dimensions"]["theme_fulfillment"]["comment"] == '包含"中文引号"的点评'
+    missing = "{" + ",".join(entries[:-1]) + "}"
+    with pytest.raises(score.ScoreError, match="完整"):
+        score.parse_score_response(
+            json.dumps({"dimensions": missing}, ensure_ascii=False)
+        )
 
 
 def test_score_runtime_rejects_fixed_judge_substitution() -> None:
@@ -811,17 +888,17 @@ def test_dimension_helpers_use_median_direction_and_half_up_rounding() -> None:
     judge_dimensions = {
         "sol": _dimensions(90.1, 10.1),
         "grok": _dimensions(40.2, 90.2),
-        "ds-v4-pro": _dimensions(70.0, 30.0),
-        "mimo-v2.5-pro": _dimensions(60.0, 40.0),
-        "gemini-3.1-pro": _dimensions(50.0, 50.0),
+        "opus": _dimensions(70.0, 30.0),
+        "k3": _dimensions(65.0, 35.0),
+        "ds-v4-pro": _dimensions(75.0, 25.0),
     }
     aggregate = score.aggregate_dimension_scores(judge_dimensions)
 
     # Odd vote count: median is the middle value after sorting.
-    assert aggregate["plot_causality"]["median"] == 60.0
+    assert aggregate["plot_causality"]["median"] == 70.0
     assert aggregate["plot_causality"]["min"] == 40.2
     assert aggregate["plot_causality"]["max"] == 90.1
-    assert aggregate["ai_flavor"]["median"] == 40.0
+    assert aggregate["ai_flavor"]["median"] == 30.0
     assert score.dimension_radar_value("ai_flavor", 40.0) == 60.0
     assert score.dimension_radar_value("characters", 82.25) == 82.3
 
@@ -829,9 +906,9 @@ def test_dimension_helpers_use_median_direction_and_half_up_rounding() -> None:
         {
             "sol": _dimensions(30.1, 30.1),
             "grok": _dimensions(64.6, 64.6),
-            "ds-v4-pro": _dimensions(47.3, 47.3),
-            "mimo-v2.5-pro": _dimensions(10.0, 10.0),
-            "gemini-3.1-pro": _dimensions(90.0, 90.0),
+            "opus": _dimensions(47.3, 47.3),
+            "k3": _dimensions(20.0, 20.0),
+            "ds-v4-pro": _dimensions(80.0, 80.0),
         }
     )
     assert boundary["theme_fulfillment"]["median"] == 47.3
@@ -964,7 +1041,12 @@ def test_score_cli_all_cached_skips_env_key_and_preflight(
 
 def test_discover_candidates_only_returns_v2_artifact_directories(tmp_path: Path) -> None:
     _write_v2_candidate(tmp_path, "b")
-    _write_v2_candidate(tmp_path, "a")
+    candidate_a = _write_v2_candidate(tmp_path, "a")
+    archived = candidate_a / "archive" / "20260701-oldrun"
+    archived.mkdir(parents=True)
+    (archived / "manifest.json").write_text(
+        '{"status":"completed"}', encoding="utf-8"
+    )
     (tmp_path / "results" / "reform-era" / "empty").mkdir()
     (tmp_path / "results" / "reform-era" / "index.json").write_text("{}", encoding="utf-8")
 

@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "kimi-k2.7-code",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "6a7302f85a27d0dde91f95bfb2d0515c75775b92976f475bc0fb943cedd583e8",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "455c80b1db294fec618be3c2d07dcb52f5dd3eb639466cb6f82b85ef0f7d53a5",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 74.0,
+      "comment": "紧扣“改革初期普通人越界求生”，工资—押金—废料—曲轴的欲望阶梯清晰，结尾“两个自己”点题有力；但道德思辨多由叙述者直陈，主题被反复说破而非被情境逼出。"
+    },
+    "historical_grounding": {
+      "score": 72.0,
+      "comment": "票证、三十四块五、蜂窝煤、报废单、涤卡中山装等物质细节扎实可信。硬伤明显：1979年小县城技术员随手留“复印件”，且引用1983年式严打广播于1979年语境，时间层错位。"
+    },
+    "characters": {
+      "score": 66.0,
+      "comment": "陈济民的精明与自我合理化写得可信，玉琴、周德昌各有一两笔活气。刘大奎近乎单一嫉妒功能件，台词直白宣示恶意；钱顺子亦是标准掮客模板，缺少反预期侧面。"
+    },
+    "plot_causality": {
+      "score": 70.0,
+      "comment": "父病—借钱无门—废料—第一次交易—曲轴，动因链条环环相扣，巡逻队一场的应对合乎人物能力。但危机化解略顺（李建国轻易被绑上船），风险回收不足。"
+    },
+    "longform_structure": {
+      "score": 68.0,
+      "comment": "章节按大纲节拍推进，伏笔（笔记本、举报、私账）均已埋设，节奏稳。问题是章型高度雷同：外部事件—对话—夜里独白—梦或狗叫收束，十六章几乎同一骨架。"
+    },
+    "scene_execution": {
+      "score": 69.0,
+      "comment": "修柴油机、缴费窗口、城墙根夜运几场有实感与压力，动作与器物具体。但多数场景以内心总结收尾，冲突常在人物把话说透后泄气，留白太少。"
+    },
+    "style_control": {
+      "score": 64.0,
+      "comment": "整体是克制的现实主义白描，语言朴素合宜。可惜重复句式泛滥（“窗外天快亮了”“他闭上眼睛”），比喻扎堆（像走马灯、像钉子、像鞭子），且出现“近两百年”“patrol队”等未清理的错讹。"
+    },
+    "ai_flavor": {
+      "score": 58.0,
+      "comment": "套路感较重：每章末必有点题金句与象征物，情绪解释过度，人物常替作者宣讲主题；“他知道，从今天起……”式收束反复出现，机械节律明显。"
+    }
+  }
+}

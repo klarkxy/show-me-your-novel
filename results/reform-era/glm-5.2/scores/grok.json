@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "glm-5.2",
+  "judge": "grok",
+  "requested_model": "grok-4.6",
+  "input_hash": "1d17439dd99c30d9b8de7121202bb0690d4b4d93c3e5bc774f3e6d41a6542972",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "aafa441287a2f29e87b7b5287903bc2f2502395ba8e06668bae9136463cb3dbf",
+  "response_model": "grok-4.6",
+  "cache_key": "ee5adb2b20f93943a7f00d86bb79b8c5842f3ae2e719da81eafccf41208321fd",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 78.5,
+      "comment": "核心主题兑现人物犹豫与关系重组，但部分因果停留在口号层面，物质改善与道义定价未完全进入事件骨髓。"
+    },
+    "historical_grounding": {
+      "score": 92.3,
+      "comment": "1979-1985苏南县城计划经济细节、粮票布票、厂办社会、乡镇企业灰色地带全部可信且参与因果，质感极强。"
+    },
+    "characters": {
+      "score": 81.7,
+      "comment": "陈有福、慧芬、有贵、张德厚等均有具体欲望、行动逻辑与关系张力，长期变化清晰，但部分人物行动逻辑仍有机械性。"
+    },
+    "plot_causality": {
+      "score": 76.4,
+      "comment": "冲突由人物与环境推动，事件链基本清晰有效，但存在少量机械巧合，悬念与因果衔接尚可。"
+    },
+    "longform_structure": {
+      "score": 79.2,
+      "comment": "宏观大纲、开篇细纲与正文连续性良好，节奏伏笔与阶段兑现支撑长篇，但全书篇幅过长导致部分卷次节奏略显松散。"
+    },
+    "scene_execution": {
+      "score": 83.9,
+      "comment": "视角、动作、对话、描写与信息投放有效落实关键内容，场景效能突出。"
+    },
+    "style_control": {
+      "score": 77.5,
+      "comment": "措辞句法语域节奏叙述距离稳定且随场景主动变化，文风管理能力强。"
+    },
+    "ai_flavor": {
+      "score": 28.4,
+      "comment": "偶有模板化排比与过度解释，但未达高度程式化程度。"
+    }
+  }
+}

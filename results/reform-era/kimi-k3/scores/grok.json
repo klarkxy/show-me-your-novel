@@ -3,44 +3,44 @@
   "benchmark": "reform-era",
   "candidate": "kimi-k3",
   "judge": "grok",
-  "requested_model": "grok-4.5",
+  "requested_model": "grok-4.6",
   "input_hash": "ae907719bdcbab5608c84b4368adce1196dcd48ee415532da6d4bde1e0ce0fd5",
   "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
-  "judge_config_sha256": "69e579b03907e350ff9c3fcd730bee5126d947598aa263e32ba04beb3fac96c4",
-  "response_model": "grok-4.5-build-free",
-  "cache_key": "bee3af3100f471cacbf71cd912a2f9fce8420366de334801e243af8b48e32de7",
+  "judge_config_sha256": "aafa441287a2f29e87b7b5287903bc2f2502395ba8e06668bae9136463cb3dbf",
+  "response_model": "grok-4.6",
+  "cache_key": "a3ef48ae8391bc81bf47c688a7db02179a294da91860f5cc0cf6cc31c50dd88d",
   "dimensions": {
     "theme_fulfillment": {
-      "score": 74.5,
-      "comment": "开篇将守与闯、干净与烫手钱落实为修机、药费、撒谎与动用公家工具等具体抉择，主题进入事件而非口号，但全书代价与自我辨认仅刚起笔。"
+      "score": 78.5,
+      "comment": "开篇通过顾向东义务修收音机到黑市处理品抉择，兑现个人野心与时代机遇的代价探讨，人物欲望与家庭主题初步进入但仅限卷1起点"
     },
     "historical_grounding": {
-      "score": 79.0,
-      "comment": "三十六块五、粮票布票、链霉素断货、政治学习会、转正细则与废料箱等细节可信且推动因果，偶有时代符号堆叠感。"
+      "score": 87.0,
+      "comment": "1979-1980工厂制度、粮票布票、个体登记、学习班等细节真实可感，制度经济职业日常生活参与因果充分"
     },
     "characters": {
-      "score": 71.5,
-      "comment": "顾向东欲望与孤注一掷倾向清楚，父子、师徒、赵麻子镜像张力成立，马金宝等配角偏功能化，人物变化尚在起步。"
+      "score": 81.0,
+      "comment": "顾向东从学徒到个体户的欲望逻辑、孤注一掷变化清晰，林晚秋、赵麻子、父亲等关系张力建立，扁平度低"
     },
     "plot_causality": {
-      "score": 73.0,
-      "comment": "从义务修机到黑市大单再到越界与举报，主链由家计与体制压力驱动，少机械巧合，但夜活与内心拉锯重复削弱推进效率。"
+      "score": 76.0,
+      "comment": "冲突由个人选择与环境推动，事件链从修收音机到举报信风波连贯有效，避免机械巧合，但伏笔与因果仅在卷1展开"
     },
     "longform_structure": {
-      "score": 81.5,
-      "comment": "宏观十二卷与开篇细纲高度咬合，车床、烫手钱、笔记本、举报信等伏笔到位，止于第一次不可逆越界，具备长篇支撑力。"
+      "score": 79.0,
+      "comment": "宏观大纲与开篇细纲连续，卷1节奏伏笔支撑长篇规划，阶段兑现初步到位"
     },
     "scene_execution": {
-      "score": 64.0,
-      "comment": "前几章修机、饭桌、医院等场景有效，后半仓库赶活、数钱、晨骑反复同构，内心独白过多，关键冲突常被总结代替。"
+      "score": 77.0,
+      "comment": "宿舍、车间、仓库、家庭场景动作对话描写有效落实关键内容，视角切换自然"
     },
     "style_control": {
-      "score": 58.5,
-      "comment": "整体可读的写实语域，但句式与章末意象（影子、路、就这一回）高度同构，叙述距离常塌进过度解释，主动变化不足。"
+      "score": 73.5,
+      "comment": "叙事距离与语域稳定，随场景主动变化，文风管理较好但部分段落略显重复强调"
     },
     "ai_flavor": {
-      "score": 62.0,
-      "comment": "就这一回、五味瓶、十字路口梦、烫手与影子刀等模板反复出现，债务清单与道德独白机械回旋，多数后段节奏可察觉程式化。"
+      "score": 25.0,
+      "comment": "偶有模板化排比与重复强调，但不干扰整体流畅，模板痕迹少于机械转折"
     }
   }
 }

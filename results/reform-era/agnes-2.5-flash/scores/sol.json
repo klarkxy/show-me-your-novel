@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "agnes-2.5-flash",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "16b1af34874997fc19d1b277fd6d3c6806123800f22a90af620937f5023a73c3",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "14e5241cab8641b8ca4a08c8fd15bd218acf59d82f4cbe29783eb36b28b340ef",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 68.0,
+      "comment": "个人技术理想、体制压制与灰色致富已进入技改、署名、借贷和技术交易等事件，但道德代价多靠反复自问呈现，主题仍偏概念化。"
+    },
+    "historical_grounding": {
+      "score": 38.0,
+      "comment": "厂区、工资、票证、住房和物资短缺有可感细节，但1978年出现日本NSK P4轴承、成熟的血管介入和电动复印设备等设定，制度与技术年代多处失真。"
+    },
+    "characters": {
+      "score": 52.0,
+      "comment": "林建国的技术欲望与逐步越界较清楚，周岚、老陈、张德全有关系功能，但人物常被安排为主题立场的发言者，具体欲望、差异和自主行动不足。"
+    },
+    "plot_causality": {
+      "score": 42.0,
+      "comment": "父病、技改受阻、资金缺口和黑市交易形成表面事件链，但关键越界依赖反复巧合与强行默许，且技术革新、档案谜案和暗账线索并行过密。"
+    },
+    "longform_structure": {
+      "score": 28.0,
+      "comment": "宏纲与开篇材料试图建立多线伏笔，却出现章节时间、人物称谓、父亲生死和交易顺序互相矛盾，正文还重复同一情节，难以支撑稳定长篇连续性。"
+    },
+    "scene_execution": {
+      "score": 54.0,
+      "comment": "车间试车、医院借钱、署名大会等场面具备动作和物质细节，但大量场景先给出结论再解释寓意，人物对话同构，冲突缺少真正不可替代的现场变化。"
+    },
+    "style_control": {
+      "score": 47.0,
+      "comment": "工业气味、账本、卡尺等意象形成统一调性，叙述较流畅，但比喻和句式高度重复，抽象心理总结频繁代替细微行动，且夹杂英文词语破坏语域稳定。"
+    },
+    "ai_flavor": {
+      "score": 84.0,
+      "comment": "多数段落使用相同的环境起笔、三段式心理追问、意象收束和伏笔清单式强调，反复出现“像”“他想起”“没有答案”等模板节奏，机械感已显著干扰阅读。"
+    }
+  }
+}

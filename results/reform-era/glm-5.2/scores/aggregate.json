@@ -1,0 +1,271 @@
+{
+  "schema": "novel-eval-aggregate.v3",
+  "benchmark": "reform-era",
+  "candidate": "glm-5.2",
+  "input_hash": "1d17439dd99c30d9b8de7121202bb0690d4b4d93c3e5bc774f3e6d41a6542972",
+  "expected_judges": [
+    "sol",
+    "grok",
+    "opus",
+    "k3",
+    "ds-v4-pro"
+  ],
+  "completed_judges": [
+    "sol",
+    "grok",
+    "opus",
+    "k3",
+    "ds-v4-pro"
+  ],
+  "status": "complete",
+  "eligible_for_ranking": true,
+  "judges": {
+    "sol": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 72.0,
+          "comment": "贫困、技术价值与体制外诱惑已通过肉票、维修费、代卖货物和夫妻隐瞒进入人物行动，但道义重估仍主要停留在反复铺垫，尚未形成更复杂的关系冲突。"
+        },
+        "historical_grounding": {
+          "score": 64.0,
+          "comment": "筒子楼、票证、国营厂、乡镇企业和维修需求等物质细节较扎实，但年代、工资、票证及政策边界的处理偶有可疑，且章节月份前后明显错乱。"
+        },
+        "characters": {
+          "score": 68.0,
+          "comment": "陈有福的谨慎、技术能力和逐步越界较具体，慧芬与有贵也有信息不对称和被冷落的张力，但多数配角仍承担功能，人物欲望与差异尚不够立体。"
+        },
+        "plot_causality": {
+          "score": 67.0,
+          "comment": "蛇皮袋、厂内传言、弟弟盘问和春蕾来人能逐步推动越界，行动链基本清楚，但大量心理解释替代了选择过程，部分冲突依赖重复误听与预设式巧合。"
+        },
+        "longform_structure": {
+          "score": 58.0,
+          "comment": "开篇确实铺设了账本、代卖、弟弟出走和维修线索，但正文与开篇提纲在月份、章节顺序和若干细节上不连续，长篇伏笔目前更多是作者说明而非文本兑现。"
+        },
+        "scene_execution": {
+          "score": 62.0,
+          "comment": "家庭、车间、食堂和厂门口场景有动作、声音与物件支撑，关键场面可视可感，但场景常被拆解成过密的动作注释和心理旁白，节奏因此显著迟滞。"
+        },
+        "style_control": {
+          "score": 54.0,
+          "comment": "整体语域和叙述距离大体稳定，能以技术与生活细节形成现实感，但排比、短句、重复意象和“像”式比喻失控，并出现外文残字、错字和病句。"
+        },
+        "ai_flavor": {
+          "score": 84.0,
+          "comment": "多数段落呈现同构的细节罗列、重复确认、机械递进和过度阐释，常把人物已表现出的心理再逐层解释，叙事因此明显程式化并削弱留白。"
+        }
+      }
+    },
+    "grok": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 78.5,
+          "comment": "核心主题兑现人物犹豫与关系重组，但部分因果停留在口号层面，物质改善与道义定价未完全进入事件骨髓。"
+        },
+        "historical_grounding": {
+          "score": 92.3,
+          "comment": "1979-1985苏南县城计划经济细节、粮票布票、厂办社会、乡镇企业灰色地带全部可信且参与因果，质感极强。"
+        },
+        "characters": {
+          "score": 81.7,
+          "comment": "陈有福、慧芬、有贵、张德厚等均有具体欲望、行动逻辑与关系张力，长期变化清晰，但部分人物行动逻辑仍有机械性。"
+        },
+        "plot_causality": {
+          "score": 76.4,
+          "comment": "冲突由人物与环境推动，事件链基本清晰有效，但存在少量机械巧合，悬念与因果衔接尚可。"
+        },
+        "longform_structure": {
+          "score": 79.2,
+          "comment": "宏观大纲、开篇细纲与正文连续性良好，节奏伏笔与阶段兑现支撑长篇，但全书篇幅过长导致部分卷次节奏略显松散。"
+        },
+        "scene_execution": {
+          "score": 83.9,
+          "comment": "视角、动作、对话、描写与信息投放有效落实关键内容，场景效能突出。"
+        },
+        "style_control": {
+          "score": 77.5,
+          "comment": "措辞句法语域节奏叙述距离稳定且随场景主动变化，文风管理能力强。"
+        },
+        "ai_flavor": {
+          "score": 28.4,
+          "comment": "偶有模板化排比与过度解释，但未达高度程式化程度。"
+        }
+      }
+    },
+    "opus": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 84.0,
+          "comment": "紧扣“道义重新定价”的核心：代卖截留、分账定价、承包三七、结尾谎言层层递进，主题由具体交易承载而非议论。开篇部分主题尚只在铺垫，兑现依赖后段大纲。"
+        },
+        "historical_grounding": {
+          "score": 88.0,
+          "comment": "1511/1515布机、打纬凸轮、送经张力、工业券、肉票、挂靠、停薪留职、收容遣返等细节准确且功能化，不是装饰。公社介绍信无公章一节尤见时代肌理。"
+        },
+        "characters": {
+          "score": 78.0,
+          "comment": "陈有福“算得太细”的性格与行动一致；慧芬“弄了多少”与锁抽屉极精准。但有贵、炳南更多是功能位；老孙鲜活却是过客，主要人物的语言辨识度参差。"
+        },
+        "plot_causality": {
+          "score": 80.0,
+          "comment": "因果链扎实：刘姐闲话→老孙上门→六十元→截留→出走→退伙→承包→谎言，动机可追。个别节点（借势散布假消息、赵德彪通牒）稍显推动式安排。"
+        },
+        "longform_structure": {
+          "score": 72.0,
+          "comment": "十五卷节奏与伏笔（账本、我信得过你、中间人之谶）设计完整。但开篇17章仅走到第一笔六十元，密度与200万字目标失衡，尾段大纲文字有明显残缺乱码。"
+        },
+        "scene_execution": {
+          "score": 76.0,
+          "comment": "修机器、招待所红烧肉、袜筒藏钱、锁抽屉几场有强实感与动作逻辑。但大量段落被枝节淹没，一个递钱动作反复拆解，戏剧张力被稀释。"
+        },
+        "style_control": {
+          "score": 68.0,
+          "comment": "破折号碎句风格辨识度高，却近乎失控：同一句反复回旋、心理解析层层复述，作者代替读者思考，抒情与说明边界模糊，长期阅读易疲劳。"
+        },
+        "ai_flavor": {
+          "score": 74.0,
+          "comment": "无华丽套话，物质细节扎实，不像通用AI腔。但强迫症式复述、“这意味着…”式自我阐释、对每个动作赋义的均质节奏，仍透出机器化的过度加工感。"
+        }
+      }
+    },
+    "k3": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 84.0,
+          "comment": "主题落进了具体动作：修机器收的六十元、对妻子说'给你一半'却自留二十的小谎、有贵'带上我'被沉默搁置，'关系重新定价'的命题被化为可见行为而非口号，开篇即按承诺兑现。"
+        },
+        "historical_grounding": {
+          "score": 78.0,
+          "comment": "粮票肉票工业券、筒子楼公用厨房、1511/1515型织机凸轮与送经机构等细节扎实且参与因果；但1979年出现二十元面额纸币并与'大团结'混用、'乡镇企业'称谓提前、蒋正明三千二百元净利与所列货物数量对不上，硬伤可见。"
+        },
+        "characters": {
+          "score": 84.0,
+          "comment": "陈有福精于算计又善自我开脱、慧芬沉默中有判断有手腕、有贵的渴望与受辱、蒋正明的话术与亢奋，各有具体欲望和差异声口；肩上搁一秒又拿走的手、数三遍锁进柜底的钱，关系张力落到实处。"
+        },
+        "plot_causality": {
+          "score": 83.0,
+          "comment": "从肉票窘迫到蛇皮袋诱惑再到老孙骑行五十里上门，事件链由人物动机与环境推动，刘姐娘家串门牵线、慧芬换季取衣发现货物等转合自然，几乎无机械巧合。"
+        },
+        "longform_structure": {
+          "score": 78.0,
+          "comment": "十五卷大纲伏笔系统（账本、涂掉的字、'中间人不明不白的账'）完整，正文逐章兑现开篇细纲；但正文中王汝成1979年已'去年调来'与大纲1980年才到任相矛盾，梗概'两年工资'与正文'六年工资'亦不一致，连续性有裂缝。"
+        },
+        "scene_execution": {
+          "score": 83.0,
+          "comment": "菜场排队、橱窗前五分钟、食堂后门盘问、春蕾修机等场景视角稳定、动作与信息投放有效，修机程序描写可信；惜部分场景收尾被大段心理解说稀释了动作本身的效力。"
+        },
+        "style_control": {
+          "score": 65.0,
+          "comment": "生活化语域有辨识度、节奏感时见功力，但破折号链与'不是……是……'句式成瘾，场景后反复抽象复述，且混入VBoxLayout、tps://、doors、corridor、différait、twelve等异物残段，校对与自控明显失守。"
+        },
+        "ai_flavor": {
+          "score": 45.0,
+          "comment": "'不是A而是B'排比、破折号堆叠、每个意象后必附释义、章节尾落抽象判词等句式惯性贯穿全篇，并夹有乱码式外来词残留，模板痕迹反复可辨；所幸大量具体物质细节与对话部分抵消了机械感。"
+        }
+      }
+    },
+    "ds-v4-pro": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "score": 86.0,
+          "comment": "开篇以修机器、电子表和家庭账本等具体事件进入转型期道义与关系重塑，非口号化呈现，但主要承诺仍待后续展开。"
+        },
+        "historical_grounding": {
+          "score": 89.0,
+          "comment": "粮票、工业券、工资、筒子楼、织机故障和社队企业细节丰富且参与因果，时代质感强。"
+        },
+        "characters": {
+          "score": 85.0,
+          "comment": "陈有福的犹豫、慧芬的沉默记账、有贵的试探等欲望与差异清晰，关系张力具体。"
+        },
+        "plot_causality": {
+          "score": 84.0,
+          "comment": "由穷困、技术、人情与制度缝隙推动的越界链条清楚，事件之间缺少机械巧合。"
+        },
+        "longform_structure": {
+          "score": 87.0,
+          "comment": "宏观大纲与开篇细纲、正文在伏笔和阶段兑现上连续，长篇骨架完整；唯正文仅及开篇。"
+        },
+        "scene_execution": {
+          "score": 90.0,
+          "comment": "以动作、对话、物质细节和感官描写把关键内容落实为有效场景，少见概述替代。"
+        },
+        "style_control": {
+          "score": 86.0,
+          "comment": "语言冷峻克制、语域稳定，能依据场景调节节奏，偶有复沓但未失控。"
+        },
+        "ai_flavor": {
+          "score": 15.0,
+          "comment": "偶有排比与数字强调等程式痕迹，但整体由具体生活和细节驱动，模板化程度低。"
+        }
+      }
+    }
+  },
+  "dimensions": {
+    "theme_fulfillment": {
+      "label": "题材与主题兑现",
+      "weight": 0.1,
+      "higher_is_better": true,
+      "median": 84.0,
+      "min": 72.0,
+      "max": 86.0
+    },
+    "historical_grounding": {
+      "label": "时代与现实质感",
+      "weight": 0.15,
+      "higher_is_better": true,
+      "median": 88.0,
+      "min": 64.0,
+      "max": 92.3
+    },
+    "characters": {
+      "label": "人物与关系",
+      "weight": 0.15,
+      "higher_is_better": true,
+      "median": 81.7,
+      "min": 68.0,
+      "max": 85.0
+    },
+    "plot_causality": {
+      "label": "情节驱动与因果",
+      "weight": 0.15,
+      "higher_is_better": true,
+      "median": 80.0,
+      "min": 67.0,
+      "max": 84.0
+    },
+    "longform_structure": {
+      "label": "长篇结构与连续性",
+      "weight": 0.15,
+      "higher_is_better": true,
+      "median": 78.0,
+      "min": 58.0,
+      "max": 87.0
+    },
+    "scene_execution": {
+      "label": "场景与叙事效能",
+      "weight": 0.1,
+      "higher_is_better": true,
+      "median": 83.0,
+      "min": 62.0,
+      "max": 90.0
+    },
+    "style_control": {
+      "label": "文风管理",
+      "weight": 0.1,
+      "higher_is_better": true,
+      "median": 68.0,
+      "min": 54.0,
+      "max": 86.0
+    },
+    "ai_flavor": {
+      "label": "AI味",
+      "weight": 0.1,
+      "higher_is_better": false,
+      "median": 45.0,
+      "min": 15.0,
+      "max": 84.0
+    }
+  },
+  "overall_score": 78.2
+}

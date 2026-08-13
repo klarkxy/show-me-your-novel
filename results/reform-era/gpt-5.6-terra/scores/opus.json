@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-terra",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "8546330fe57b697d71eee7e7f614b3653a4e5f3c3ad27e26d5f407ae584536cf",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "601c4eba75f7220a05b34fa1933e26240fdefd7e4b4459aa584ebd14fbb6e768",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 82.0,
+      "comment": "紧扣“第一次被允许挣钱”的伦理困境：越界、隐瞒、家庭信任的侵蚀层层推进，主题在具体行动中体现而非口号；只是开篇尚未触及“复制旧压迫”的更深层面。"
+    },
+    "historical_grounding": {
+      "score": 86.0,
+      "comment": "票证、临时工、报损单、的确良、供销社层级、街道办送年货等细节扎实准确，1983年豫西县城质感可信，无明显时代硬伤；个别词汇（如“俺也去”误用）略有瑕疵。"
+    },
+    "characters": {
+      "score": 80.0,
+      "comment": "周继业的精细与压抑、张桂兰的恐惧记忆、罗群的滑与冷、老马的自保都立得住；刘三嫂一场戏尤见功力。次要人物如沈梅在此段落存在感偏弱。"
+    },
+    "plot_causality": {
+      "score": 83.0,
+      "comment": "从漏雨布料到报损虚高、三本账、八百门槛、卖表凑钱，因果链紧密，每一步越界都有具体现实压力驱动，几乎无巧合推动。"
+    },
+    "longform_structure": {
+      "score": 78.0,
+      "comment": "章节节奏均匀、伏笔（旧账页、鞋垫纸条、无章确认单）布置有序；但中段筹钱数章略有重复性回环，推进感稍缓。"
+    },
+    "scene_execution": {
+      "score": 81.0,
+      "comment": "仓库、银行、旧货市场、裁缝铺几场戏均有实感与对抗性，对话承担信息与角力双重功能；煽情克制，结尾落点干净。"
+    },
+    "style_control": {
+      "score": 79.0,
+      "comment": "短句白描、器物落笔，接近八九十年代现实主义腔调，稳定统一；偶有格言式收句（“有些话一旦落到纸上…”）略显作者介入。"
+    },
+    "ai_flavor": {
+      "score": 74.0,
+      "comment": "整体不像模板化生成，细节密度高；但部分段落存在对称排比式内心总结与反复的“他没有说话/他知道”句式，暴露一定机械节奏。"
+    }
+  }
+}

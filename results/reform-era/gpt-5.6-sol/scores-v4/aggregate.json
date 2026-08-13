@@ -1,0 +1,232 @@
+{
+  "schema": "novel-eval-aggregate.v4",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-sol",
+  "input_hash": "ae712ccb7f9d3093f50b6b4cf8513d0f965925cad2def51e262396195cca36aa",
+  "provenance": {
+    "rubric_hash": "2d2bb9f9249dac0f1fe1dd2c62ceb7a20f175a7544ad3eed2809ec315d9fb17f",
+    "judge_cache_keys": {
+      "sol": "534ae7fcfa4a84924ad45984a1924992ef5483821d09867fcbe7b1e1ad8439a5",
+      "kimi": "7e04fa936f8a8125f855b9059979901af2c9cca34b7cb1b8a2421e7334bcc0b7",
+      "grok": "fabc5bb209d13850e8e931630490e66cd4a391852ef734dfaf3114abd4aa33d9"
+    },
+    "judge_identity_hashes": {
+      "sol": "95bff7223e14ce2fa705b16e7f871a12e3f034f10b7a696c8d1dcca4f714d4be",
+      "kimi": "65c6197e0591da5c6829e4d417fc231e848e64b472dd6dd15be4867cbe116930",
+      "grok": "5215336a5cb35847a9eaa0db39a253ac7e58d66c8b46a78c686a7345d8a5679b"
+    },
+    "vote_hashes": {
+      "sol": "0e760407af5c9637345117f018d186e9dd7e1125ca6e17ea71e560b85fc89dfb"
+    },
+    "binding_hash": "9cf16553e560e413d57a26d95030ff2e4aacfd3fd36861418464d75ffa050999"
+  },
+  "expected_judges": [
+    "sol",
+    "kimi",
+    "grok"
+  ],
+  "completed_judges": [
+    "sol"
+  ],
+  "status": "incomplete",
+  "eligible_for_ranking": false,
+  "judges": {
+    "sol": {
+      "dimensions": {
+        "theme_fulfillment": {
+          "subscores": {
+            "direction": 3,
+            "integration": 3,
+            "depth": 3
+          },
+          "evidence": [
+            {
+              "chapter": "02",
+              "excerpt": "账本没有撒谎——编号、数量和入库金额全有凭据；可账本也没有说出实话，因为它没有写这些机器已经等不到原先那些买主。"
+            },
+            {
+              "chapter": "16",
+              "excerpt": "他忽然明白，这件事已经不能再恢复成从未发生。"
+            }
+          ],
+          "major_defect": {
+            "severity": "minor",
+            "description": "改革与企业转型的核心主题已经由积压产品、农村需求和制度边界共同承担，但目前仍主要集中在周自成一人的试制行动上，工人、农户与制度变化之间的更深层冲突尚未充分展开。",
+            "chapter": "16"
+          },
+          "confidence": 0.93,
+          "score": 75.0
+        },
+        "historical_grounding": {
+          "subscores": {
+            "plausibility": 4,
+            "specificity": 4,
+            "causal_context": 4
+          },
+          "evidence": [
+            {
+              "chapter": "04",
+              "excerpt": "文件里反复出现“扩大企业自主权”“因地制宜安排生产”“在国家计划指导下发挥企业积极性”这些话，可再往下看，适用对象不是试点国营企业，就是地区直属厂。"
+            },
+            {
+              "chapter": "06",
+              "excerpt": "一户拿三四十块，谁家也得东挪西借。现金先给一半，剩下一半拿粮抵。麦子、黄豆都可以，按供销点收购价算。"
+            }
+          ],
+          "major_defect": {
+            "severity": "none",
+            "description": "制度、物资、供销、财务和农村生产关系均有具体因果联系，时代条件持续塑造人物选择与交易边界。"
+          },
+          "confidence": 0.98,
+          "score": 100.0
+        },
+        "characters": {
+          "subscores": {
+            "agency": 4,
+            "differentiation": 3,
+            "relationships": 3
+          },
+          "evidence": [
+            {
+              "chapter": "03",
+              "excerpt": "“学不能停。”他说。"
+            },
+            {
+              "chapter": "14",
+              "excerpt": "“你把事情说成只有两条路，一条是假票，一条是几百人没命。可中间那些路，你走完了吗？”"
+            }
+          ],
+          "major_defect": {
+            "severity": "minor",
+            "description": "周自成的欲望、行动和道德风险十分清楚，乔万山、马敬堂、沈秋萍和顾长顺也有可辨识立场；但部分配角仍主要承担制度立场或质询功能，私人欲望与关系变化尚未达到同等复杂度。",
+            "chapter": "14"
+          },
+          "confidence": 0.95,
+          "score": 83.3
+        },
+        "plot_causality": {
+          "subscores": {
+            "conflict": 4,
+            "causality": 4,
+            "escalation": 3
+          },
+          "evidence": [
+            {
+              "chapter": "08",
+              "excerpt": "厂里准备试一种小机器。要是做出来，或许能卖给几户农民合用。"
+            },
+            {
+              "chapter": "12",
+              "excerpt": "玻璃炸响。"
+            }
+          ],
+          "major_defect": {
+            "severity": "minor",
+            "description": "欠薪、积压、市场调查、试制、材料和违规报账形成连续因果链，风险也从财务困境升级到安全事故与责任追究；但中段多次回到“缺手续、等批准、找材料”的相似阻滞，升级幅度偶有停滞。",
+            "chapter": "14"
+          },
+          "confidence": 0.97,
+          "score": 91.7
+        },
+        "longform_structure": {
+          "subscores": {
+            "continuity": 4,
+            "pacing": 3,
+            "payoff": 2
+          },
+          "evidence": [
+            {
+              "chapter": "05",
+              "excerpt": "有钱买小件，无手续买不了整机。"
+            },
+            {
+              "chapter": "16",
+              "excerpt": "合格钢材在火光里一点点接上机架。停转多日的车间仍没有机器声，烟囱也没有烟，可围观的人脸上第一次显出一点等候之外的神情。"
+            }
+          ],
+          "major_defect": {
+            "severity": "major",
+            "description": "人物、材料、政策摘记、三户购买意向和试制线索跨章连续回收，结构主线清楚；但截至本组章节，核心阶段目标仍停在样机继续搭建，尚未完成可靠试制、正式销售或对欠薪困局的阶段性回收，长篇承诺暂未形成明确闭环。",
+            "chapter": "16"
+          },
+          "confidence": 0.96,
+          "score": 50.0
+        },
+        "scene_execution": {
+          "subscores": {
+            "dramatization": 4,
+            "viewpoint": 3,
+            "action_dialogue": 4
+          },
+          "evidence": [
+            {
+              "chapter": "01",
+              "excerpt": "数字能算出五百一十斤玉米面够多少人吃，却算不出哪一家该先断粮。"
+            },
+            {
+              "chapter": "13",
+              "excerpt": "“没做好，也得让我们看做到哪儿了。我们五点多坐车，票钱花了三块六，不能只在门口听一句话。”"
+            }
+          ],
+          "major_defect": {
+            "severity": "minor",
+            "description": "关键制度和经济信息大多通过盘点、问价、验收、试车和签字场景呈现，动作与对话有效推动事件；但周自成的观察和总结性判断在部分场景中占比偏高，限制了多视角的现场张力。",
+            "chapter": "06"
+          },
+          "confidence": 0.96,
+          "score": 91.7
+        },
+        "style_control": {
+          "subscores": {
+            "precision": 4,
+            "rhythm": 4,
+            "register": 4
+          },
+          "evidence": [
+            {
+              "chapter": "02",
+              "excerpt": "这些机器比人还高，方正的机架刷着墨绿色油漆，滚筒罩壳上印着白色厂名。"
+            },
+            {
+              "chapter": "14",
+              "excerpt": "算盘声很快重新响起，一颗颗算珠碰在木框上，清楚，整齐，没有一颗能替另一颗占位置。"
+            }
+          ],
+          "major_defect": {
+            "severity": "minor",
+            "description": "物质描写、财务语汇和人物对白整体准确统一，节奏控制稳定；但章节结尾反复使用烟囱、冰、账本和数字的象征性收束，个别处略显预设化。",
+            "chapter": "16"
+          },
+          "confidence": 0.97,
+          "score": 100.0
+        },
+        "naturalness": {
+          "subscores": {
+            "specificity": 4,
+            "variation": 3,
+            "nonformulaic": 3
+          },
+          "evidence": [
+            {
+              "chapter": "11",
+              "excerpt": "这些条件没有一项贵得足以叫人立刻拒绝，也没有一项干净得能照实放进账里。"
+            },
+            {
+              "chapter": "15",
+              "excerpt": "三户农民已经到厂里交过定钱。样机做不出，不只是我们厂的事。"
+            }
+          ],
+          "major_defect": {
+            "severity": "minor",
+            "description": "语言总体来自具体职业和处境，人物判断有现实摩擦感；但若干章节末尾反复以“账没有说出实话”“数字无法解决日子”等对照句归纳主题，形成可辨识的固定收束模式。",
+            "chapter": "16"
+          },
+          "confidence": 0.95,
+          "score": 83.3
+        }
+      }
+    }
+  },
+  "dimensions": {},
+  "overall_score": null
+}

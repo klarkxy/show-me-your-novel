@@ -249,6 +249,7 @@ def write_cli_workspace(root: Path, config: dict) -> None:
 def test_parse_and_validators() -> None:
     assert parse_json_object("```json\n{\"a\": 1}\n```") == {"a": 1}
     assert parse_json_object('{"a":"末字段漏闭引号}') == {"a": "末字段漏闭引号"}
+    assert parse_json_object('"a": 1, "b": "完整"}') == {"a": 1, "b": "完整"}
     assert validate_book(make_book())["title"] == "潮汐线"
     assert len(validate_macro_outline(make_macro())["volumes"]) == 10
     assert len(validate_opening_outline(make_opening())["chapters"]) == 16
@@ -1232,7 +1233,7 @@ def test_fixed_registry_rejects_substitution() -> None:
     validated_models, validated_judges = validate_fixed_registries(
         {"models": models, "judges": judges}
     )
-    assert len(validated_models) == 19
+    assert len(validated_models) == 25
     assert len(validated_judges) == len(EXPECTED_JUDGES)
     substituted = [dict(item) for item in models]
     substituted[0]["model"] = "silent-fallback"
@@ -1240,7 +1241,7 @@ def test_fixed_registry_rejects_substitution() -> None:
         validate_fixed_registries({"models": substituted, "judges": judges})
 
 
-def test_cli_preflight_checks_every_generator_and_judge(
+def test_cli_preflight_scopes_targeted_runs_and_keeps_full_registry_gate(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
@@ -1253,17 +1254,22 @@ def test_cli_preflight_checks_every_generator_and_judge(
     }
 
     class MissingUnselectedClient:
+        stream = True
+
         @classmethod
         def from_config(cls, *args, **kwargs):
             return cls()
 
         def list_models(self):
-            return all_wire_ids - {"agnes-2.0-flash"}
+            return all_wire_ids - {"agnes-2.5-flash"}
 
     monkeypatch.setattr(generate_module, "repo_root", lambda: tmp_path)
     monkeypatch.setattr(generate_module, "ChatClient", MissingUnselectedClient)
-    assert generate_module.main(["--model", "deepseek-v4-flash", "--dry-run"]) == 1
-    assert "agnes-2.0-flash" in capsys.readouterr().err
+    assert generate_module.main(["--model", "deepseek-v4-flash", "--dry-run"]) == 0
+    targeted_output = capsys.readouterr().out
+    assert "本次选择的 1 个生成模型" in targeted_output
+    assert generate_module.main(["--all", "--dry-run"]) == 1
+    assert "agnes-2.5-flash" in capsys.readouterr().err
 
     class CompleteClient(MissingUnselectedClient):
         def list_models(self):
@@ -1272,7 +1278,8 @@ def test_cli_preflight_checks_every_generator_and_judge(
     monkeypatch.setattr(generate_module, "ChatClient", CompleteClient)
     assert generate_module.main(["--model", "deepseek-v4-flash", "--dry-run"]) == 0
     output = capsys.readouterr().out
-    assert f"全部 19 个生成模型、{len(EXPECTED_JUDGES)} 个评委" in output
+    assert "本次选择的 1 个生成模型" in output
+    assert "transport=stream" in output
     assert "85%安全线" in output
     assert "api_optional_params=none（服务端默认）" in output
     assert "基础调用=19–21" in output
@@ -1309,6 +1316,97 @@ def test_cli_skips_valid_completed_result_before_reading_key(
     monkeypatch.setattr(generate_module, "load_env_file", key_read_is_a_failure)
     assert generate_module.main(["--model", "deepseek-v4-flash"]) == 0
     assert not backup.exists()
+
+
+def test_new_completed_manuscript_archives_previous_manuscript_and_scores(
+    tmp_path: Path,
+) -> None:
+    old_prompts = dict(PROMPTS)
+    old = GenerationRun(
+        root=tmp_path,
+        benchmark="reform-era",
+        direction="改革开放初期的中国现实主义长篇。",
+        prompts=old_prompts,
+        model_cfg=MODEL,
+        client=FakeClient(),
+        new_run=False,
+    )
+    assert old.execute()
+    old_manifest = json.loads((old.result_dir / "manifest.json").read_text(encoding="utf-8"))
+    (old.result_dir / "scores").mkdir()
+    (old.result_dir / "scores" / "sol.json").write_text(
+        '{"old-review":true}\n', encoding="utf-8"
+    )
+
+    changed_prompts = {**PROMPTS, "system.md": PROMPTS["system.md"] + "\n新版协议"}
+    current = GenerationRun(
+        root=tmp_path,
+        benchmark="reform-era",
+        direction="改革开放初期的中国现实主义长篇。",
+        prompts=changed_prompts,
+        model_cfg=MODEL,
+        client=FakeClient(),
+        new_run=True,
+    )
+    assert current.execute()
+    current_manifest = json.loads(
+        (current.result_dir / "manifest.json").read_text(encoding="utf-8")
+    )
+    assert current_manifest["run_id"] == current.run_id
+    assert current_manifest["manuscript_completed_at"] == current_manifest["completed_at"]
+
+    versions = list((current.result_dir / "archive").iterdir())
+    assert len(versions) == 1
+    archived = versions[0]
+    archived_manifest = json.loads((archived / "manifest.json").read_text(encoding="utf-8"))
+    archive_meta = json.loads((archived / "archive.json").read_text(encoding="utf-8"))
+    assert archived_manifest == old_manifest
+    assert archive_meta["run_id"] == old.run_id
+    assert archive_meta["superseded_by_run_id"] == current.run_id
+    assert archive_meta["eligible_for_ranking"] is False
+    assert (archived / "scores" / "sol.json").read_text(encoding="utf-8") == '{"old-review":true}\n'
+    assert result_is_complete(archived, old.run_id)
+    assert result_is_complete(current.result_dir, current.run_id)
+
+
+def test_replacement_model_carries_predecessor_draft_into_its_archive(
+    tmp_path: Path,
+) -> None:
+    predecessor_cfg = {**MODEL, "id": "grok-4.5", "model": "grok-4.5"}
+    predecessor = GenerationRun(
+        root=tmp_path,
+        benchmark="reform-era",
+        direction="改革开放初期的中国现实主义长篇。",
+        prompts=PROMPTS,
+        model_cfg=predecessor_cfg,
+        client=FakeClient(),
+        new_run=False,
+    )
+    assert predecessor.execute()
+    old_manifest = json.loads(
+        (predecessor.result_dir / "manifest.json").read_text(encoding="utf-8")
+    )
+
+    replacement_cfg = {
+        **MODEL,
+        "id": "grok-4.6",
+        "model": "grok-4.6",
+        "supersedes": ["grok-4.5"],
+    }
+    replacement = GenerationRun(
+        root=tmp_path,
+        benchmark="reform-era",
+        direction="改革开放初期的中国现实主义长篇。",
+        prompts=PROMPTS,
+        model_cfg=replacement_cfg,
+        client=FakeClient(),
+        new_run=False,
+    )
+    assert replacement.execute()
+    archived = list((replacement.result_dir / "archive").iterdir())
+    assert len(archived) == 1
+    assert json.loads((archived[0] / "manifest.json").read_text(encoding="utf-8")) == old_manifest
+    assert predecessor.result_dir.is_dir()  # retained as an explicit rollback copy
 
 
 def test_new_run_with_stale_public_result_can_resume_without_restarting(

@@ -1,0 +1,29 @@
+{
+  "schema": "outline-audit.v4",
+  "benchmark": "reform-era",
+  "candidate": "gpt-5.6-sol",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "outline_input_hash": "24e75e4da8c43950d15d59f92d6cdd1436800d5c85f9b49bd89f28b36c52f8ce",
+  "rubric_hash": "e39a8b6fd13501d9b3011554e6ae52966e1856ac5a9f137976cc14dd0e46230b",
+  "request_overrides": {
+    "max_tokens": 16384
+  },
+  "context_guard": {
+    "context_window": 204800,
+    "safety_basis_points": 8500,
+    "safe_limit_tokens": 174080,
+    "output_reserve_tokens": 16384
+  },
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "e8c34fe5b6fd62c4ee27db8df37ccaaf095d282ad40d8ea8fda8b179345c6a5f",
+  "audit": {
+    "outline_quality": "大纲结构清晰，人物、冲突、伏笔和各卷因果衔接完整，能够支撑长篇推进。开篇分章目标具体，现实制度、物质条件与道德选择彼此扣合；但开篇宏观时间标注为延伸至四月，与现有章节实际集中于腊月下旬存在范围表述不一致。",
+    "execution_fidelity": "正文对开篇大纲落实度很高。前十六章依次完成欠薪危机、库存盘点、返乡问价、政策摸索、供销社调查、样机试制、材料困境、三户意向和首次改动凭证等核心节点，人物出场、时代细节、伏笔位置及结尾状态基本均与大纲一致。",
+    "major_deviations": [
+      "未发现正文对开篇大纲主要情节、人物关系或结尾承诺的明显偏离。",
+      "正文实际止于腊月二十八，尚未展开宏观范围表述中的四月内容；这更像开篇大纲自身的时间范围标注不统一，而非正文偏离章节承诺。"
+    ],
+    "deviation_improved": "没有足以改变开篇方向的关键偏离，因此不存在需要判断是否改善的重大改写。正文对运输站条件、旧轴承试车和运输结算的细化增强了账务越界的具体性，也让周自成的选择更具因果压力，但整体仍属于对既定大纲的深化。"
+  }
+}

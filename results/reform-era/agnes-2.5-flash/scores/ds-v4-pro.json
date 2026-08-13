@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "agnes-2.5-flash",
+  "judge": "ds-v4-pro",
+  "requested_model": "deepseek-v4-pro",
+  "input_hash": "16b1af34874997fc19d1b277fd6d3c6806123800f22a90af620937f5023a73c3",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "82f509cd9346ab97b43a73609ebfe3b778ee63b7a479c8f6e97f0e282f195969",
+  "response_model": "deepseek-v4-pro",
+  "cache_key": "31ca41464014ba827e8c992e4031e44dc3c14c8b974ac85286b35268312d5ed4",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 76.0,
+      "comment": "开篇即把技术理想逼入经济与道德困境，父子代际与婚姻关系承载主题，并非口号式改革叙事。"
+    },
+    "historical_grounding": {
+      "score": 60.0,
+      "comment": "机床、工资、票据等细节较实，但“便利店泡面”“自动售货机”等1978年明显错位，削弱制度与物质可信度。"
+    },
+    "characters": {
+      "score": 70.0,
+      "comment": "林建国从理想技工到灰色越界的摇摆具体可感，周岚、老陈有张力，但张德全、刘德海等仍偏功能性。"
+    },
+    "plot_causality": {
+      "score": 71.0,
+      "comment": "父病缺钱→技术受压→私试→接触黑市→卖图纸，因果链清晰，但关键节点多次依赖电话与巧合，略显机械。"
+    },
+    "longform_structure": {
+      "score": 77.0,
+      "comment": "十二卷规划、伏笔闭环与开篇细纲对应度高，但每卷三角色弧模式重复，两百万字体量有注水风险。"
+    },
+    "scene_execution": {
+      "score": 66.0,
+      "comment": "病房、试车、会议等场景有效，但大量内心独白与事后解释代替戏剧化呈现，节奏拖沓。"
+    },
+    "style_control": {
+      "score": 65.0,
+      "comment": "写实语感稳定，但“沉睡的兽”等隐喻高频重复，情绪渲染过度，叙述距离控制不足。"
+    },
+    "ai_flavor": {
+      "score": 57.0,
+      "comment": "章节末总结、伏笔提示及排比式抒情反复出现，“他知道/他意识到”模板句与母题复现构成明显AI味。"
+    }
+  }
+}

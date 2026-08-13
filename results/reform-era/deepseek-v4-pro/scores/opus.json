@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "deepseek-v4-pro",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "9cb52a9f9266eb17118455f49d8fcb68349a0eec1c4dc178c486a690116d2a0a",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "1c7490bf9ddf55461a630919c3053ff256f8d719f2020680fd0679b55418700d",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 78.0,
+      "comment": "扎实呈现旧秩序松动下的生存挤压与越界起点，主题指向清晰；但开篇16章仍停留在“被逼”阶段，贪欲与上进心同井取水的双重性尚未真正显影，主题厚度靠后续兑现。"
+    },
+    "historical_grounding": {
+      "score": 85.0,
+      "comment": "1978-79年细节可信：临时工红戳、粮票、糊纸盒、劳资科刁难、废品站报废单制度、押金规则、光荣榜褪色，物质与制度质感都站得住，几乎无穿越感。"
+    },
+    "characters": {
+      "score": 80.0,
+      "comment": "许援朝隐忍与耻感写得具体，母亲卖血、弟弟省药、陆长顺分寸感都真切。周铁黑略偏功能化，台词多为推动越界的“生存逻辑”；梁桂英出场稍显方便。"
+    },
+    "plot_causality": {
+      "score": 79.0,
+      "comment": "从借钱碰壁到当铺见倒粮票、被诬替罪、废品站踩点、江边定约，因果链紧密自然，替罪一场是关键推力。个别衔接可疑，如第16章提及“上回砸开锁”未见前文交代。"
+    },
+    "longform_structure": {
+      "score": 74.0,
+      "comment": "节奏沉稳且符合开篇定位，终点落在不可逆一步，收束有力；但前四章生活铺陈密度偏高、推进偏慢，第3、12章功能相近，长度分配可再压缩。"
+    },
+    "scene_execution": {
+      "score": 82.0,
+      "comment": "场景多为具体动作与物件承载情绪：捡米、抠“临时”红戳、倒半碗粥、推让咸菜、护士要五十押金。少数段落靠内心独白收尾，略削弱现场感。"
+    },
+    "style_control": {
+      "score": 80.0,
+      "comment": "白描克制，短句与器物名词为主，符合现实主义腔调。但“像刀子的风”“江边抽烟”“心往下沉”等比喻与场景重复出现，后段抒情句偶有过度。"
+    },
+    "ai_flavor": {
+      "score": 76.0,
+      "comment": "整体不像模板生成，方言与生活肌理真实。扣分在于母题化的意象反复标记（奖章反光如眼睛、裂缝、江水）与章末总结式点题句，露出一点刻意编排痕迹。"
+    }
+  }
+}

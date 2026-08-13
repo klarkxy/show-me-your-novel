@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "k3",
+  "requested_model": "kimi-k3",
+  "input_hash": "63a26f1915973516ab52f1731b19954e5843f2af8f84ed081ff336fd1874848b",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "eb657e34fa91ea6ce8c1ccbe6c5ffa28c3814e6c45af1296573cfd9dcc446d1d",
+  "response_model": "kimi-k3",
+  "cache_key": "0546fec52eca6c2bc762bbae1a7b6ca5c0eb670113990a4ca67f0b97c72531ea",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 80.0,
+      "comment": "工分不公、妹妹辍学、承包抉择均把'变革中小人物的出路'落实到具体事件，而非口号；财富与道德的终极冲突仅埋伏笔，符合开篇定位。"
+    },
+    "historical_grounding": {
+      "score": 81.0,
+      "comment": "返销粮、工分簿、粪桶、供销社物价与1979年农业决定原文（含'不许分单干'的边界）参与因果且大体准确；唯大纲标1978年而正文引1978年12月三中全会，存在时间缝隙。"
+    },
+    "characters": {
+      "score": 79.0,
+      "comment": "父亲基于批斗创伤的恐惧、母亲的隐忍、秀兰的求学倔强、刘志强的帮忙但划清界限都有具体行为支撑；母亲与父亲仍带一定原型化色彩。"
+    },
+    "plot_causality": {
+      "score": 80.0,
+      "comment": "从工分屈辱到学费危机、政策信息、队长默许、签约暴露、父子决裂，事件链清晰且由人物动机推动；仅两次学费催缴压力点有所重复。"
+    },
+    "longform_structure": {
+      "score": 74.0,
+      "comment": "宏观十卷、开篇十六章与正文逐拍对应，伏笔（工分本、父亲创伤、合同）埋设有追踪；但宏观主线偏线性套路，正文仅覆盖卷一，老怀表伏笔与赤贫家境设定相抵。"
+    },
+    "scene_execution": {
+      "score": 78.0,
+      "comment": "挑水、挑粪、听广播、母亲掀被、签字按手印、父子对峙都落成有效场景，感官细节扎实；第8、14章大段内心独白重复表态，叙事效率受损。"
+    },
+    "style_control": {
+      "score": 74.0,
+      "comment": "语域稳定、比喻多能贴合物件与身体感；但'悬崖/深渊'式誓言与抒情收束在各章反复出现，情感峰值的句法节奏趋同，变化不足。"
+    },
+    "ai_flavor": {
+      "score": 40.0,
+      "comment": "'他不知道…但他知道…'的对照句、'攥紧拳头指甲陷进掌心'等动作与'像…一样'明喻在多章高频复现，章末总结式抒情和三点并列结构程式感明显，但场景密度使其未至整体机械。"
+    }
+  }
+}

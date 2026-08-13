@@ -68,7 +68,7 @@ LEGACY_OPENAI_CODE_SHA256 = (
 LEGACY_ANTHROPIC_CODE_SHA256 = (
     "61b40dba13fa56609dbb1666c525c8adc8a909381dbd8763fac68b3bb73d7ea2"
 )
-GENERATION_COMPATIBILITY_SOURCE_SHA256 = "462255cf2e649496d98107a192aee3ddbc625c3c0f1bd7495a7bf4b8a7e2f0c7"
+GENERATION_COMPATIBILITY_SOURCE_SHA256 = "5dc7851053487099ef9ba2429d055a313cd9e1add3fe2fa3f9e789e7cb153bd9"
 DEFAULT_BENCHMARK = "reform-era"
 PROMPT_FILES = (
     "system.md",
@@ -91,6 +91,8 @@ MIN_FINAL_CHARS = 48_000
 MIN_OPENING_TARGET_CHARS = MIN_FINAL_CHARS
 CHAPTER_EXPANSION_TRIGGER_CHARS = 3_000
 MAX_CHAPTER_EXPANSION_CALLS = 1
+ARCHIVE_DIR_NAME = "archive"
+ARCHIVE_METADATA_SCHEMA = "novel-benchmark-archive.v1"
 
 PROTOCOL_POLICY = {
     "context_guard": {
@@ -134,23 +136,28 @@ EXPECTED_GENERATOR_IDS = (
     "gpt-5.6-sol",
     "gpt-5.6-terra",
     "claude-haiku-4-5",
+    "claude-fable-5",
+    "claude-sonnet-4-6",
     "claude-sonnet-5",
+    "gemini-2.5-pro",
     "gemini-3.1-pro",
     "gemini-3.5-flash",
     "gemini-3.6-flash",
     "kimi-k2.7-code",
     "kimi-k3",
-    "grok-4.5",
+    "grok-4.6",
+    "claude-opus-4-6",
+    "claude-opus-4-7",
     "claude-opus-4-8",
-    "agnes-2.0-flash",
+    "claude-opus-5",
+    "agnes-2.5-flash",
 )
 EXPECTED_JUDGES = {
     "sol": "gpt-5.6-sol",
-    "grok": "grok-4.5",
+    "grok": "grok-4.6",
+    "opus": "claude-opus-5",
+    "k3": "kimi-k3",
     "ds-v4-pro": "deepseek-v4-pro",
-    "mimo-v2.5-pro": "mimo-v2.5-pro",
-    "gemini-3.1-pro": "gemini-3.1-pro",
-    "kimi": "kimi-k3",
 }
 PRIVATE_REASONING_MARKER = re.compile(
     r"(?:\[/?思考过程\]|</?(?:think|thinking|analysis)>|reasoning_content)",
@@ -516,6 +523,19 @@ def parse_json_object(text: str) -> dict[str, Any]:
         value = json.loads(candidate)
     except json.JSONDecodeError as exc:
         initial_error = exc
+        # Some Anthropic-compatible gateways can drop only the outer opening
+        # brace while preserving every field and the final object brace. Repair
+        # that exact, unambiguous envelope loss; raw/ retains the wire response.
+        if re.match(r'^"[^"\\]+"\s*:', candidate) and candidate.rstrip().endswith("}"):
+            repaired = "{" + candidate
+            try:
+                value = json.loads(repaired)
+            except json.JSONDecodeError:
+                pass
+            else:
+                if not isinstance(value, dict):
+                    raise ValueError("响应 JSON 不是 object")
+                return value
         # A few Chat Completions adapters advertise JSON mode but omit the
         # final ASCII quote of the last string while still returning the final
         # object brace. Repair only that unambiguous delimiter; no prose bytes
@@ -1014,6 +1034,123 @@ def cleanup_completed_publish_debris(result_dir: Path, expected_run_id: str) -> 
                 shutil.rmtree(path)
 
 
+def _archive_version_id(manifest: dict[str, Any]) -> str:
+    """Return a stable, URL-safe identity for one superseded manuscript."""
+
+    completed_at = str(
+        manifest.get("manuscript_completed_at")
+        or manifest.get("completed_at")
+        or "unknown-date"
+    )
+    date_part = re.sub(r"[^0-9]", "", completed_at)[:14] or "unknown-date"
+    run_id = re.sub(r"[^A-Za-z0-9_-]", "", str(manifest.get("run_id") or ""))
+    if not run_id:
+        run_id = sha256_text(canonical_json(manifest))[:12]
+    return f"{date_part}-{run_id[:16]}"
+
+
+def archive_previous_result(
+    previous_dir: Path,
+    staging_dir: Path,
+    *,
+    superseded_by_run_id: str,
+    archived_at: str,
+) -> str:
+    """Copy a valid current result into the new tree's read-only archive.
+
+    The previous public directory remains untouched until the new staging tree
+    has passed its deep validation.  This keeps publication rollback-safe while
+    preserving the manuscript and every score generation that belongs to it.
+    """
+
+    manifest = read_json(previous_dir / "manifest.json")
+    previous_run_id = str(manifest.get("run_id") or "")
+    if not previous_run_id or not result_is_complete(previous_dir, previous_run_id):
+        raise RuntimeError("旧公开稿未通过完整性校验，拒绝覆盖或归档")
+
+    archive_root = staging_dir / ARCHIVE_DIR_NAME
+    existing_archive = previous_dir / ARCHIVE_DIR_NAME
+    if existing_archive.exists():
+        if not existing_archive.is_dir():
+            raise RuntimeError("旧稿 archive 不是目录，拒绝覆盖")
+        shutil.copytree(existing_archive, archive_root, dirs_exist_ok=True)
+
+    archive_id = _archive_version_id(manifest)
+    archived_result = archive_root / archive_id
+    if archived_result.exists():
+        raise RuntimeError(f"旧稿归档版本已存在，拒绝覆盖：{archive_id}")
+    archived_result.mkdir(parents=True)
+    for source in previous_dir.iterdir():
+        if source.name == ARCHIVE_DIR_NAME:
+            continue
+        if source.is_symlink():
+            raise RuntimeError(f"旧稿含符号链接，拒绝归档：{source}")
+        target = archived_result / source.name
+        if source.is_dir():
+            shutil.copytree(source, target)
+        elif source.is_file():
+            shutil.copy2(source, target)
+        else:
+            raise RuntimeError(f"旧稿含不支持的文件类型，拒绝归档：{source}")
+
+    atomic_write_json(
+        archived_result / "archive.json",
+        {
+            "schema": ARCHIVE_METADATA_SCHEMA,
+            "archive_id": archive_id,
+            "archived_at": archived_at,
+            "manuscript_completed_at": manifest.get("manuscript_completed_at")
+            or manifest.get("completed_at"),
+            "run_id": previous_run_id,
+            "superseded_by_run_id": superseded_by_run_id,
+            "ranking_status": "archived",
+            "eligible_for_ranking": False,
+        },
+    )
+    return archive_id
+
+
+def archive_superseded_results(
+    results_root: Path,
+    model_cfg: dict[str, Any],
+    staging_dir: Path,
+    *,
+    superseded_by_run_id: str,
+    archived_at: str,
+) -> list[str]:
+    """Carry predecessor model drafts into a replacement model's archive.
+
+    The predecessor directory is deliberately retained as a rollback copy. It
+    is no longer discoverable once its model ID leaves the fixed registry.
+    """
+
+    raw = model_cfg.get("supersedes") or []
+    if not isinstance(raw, list) or not all(isinstance(value, str) for value in raw):
+        raise RuntimeError("model.supersedes 必须是模型 ID 数组")
+    archived: list[str] = []
+    for predecessor_id in raw:
+        if predecessor_id == model_cfg.get("id") or not re.fullmatch(
+            r"[A-Za-z0-9][A-Za-z0-9._-]*", predecessor_id
+        ):
+            raise RuntimeError(f"无效的 supersedes 模型 ID：{predecessor_id}")
+        predecessor_dir = results_root / predecessor_id
+        if not predecessor_dir.is_dir():
+            continue
+        manifest = read_json(predecessor_dir / "manifest.json")
+        archive_id = _archive_version_id(manifest)
+        if (staging_dir / ARCHIVE_DIR_NAME / archive_id).is_dir():
+            continue
+        archived.append(
+            archive_previous_result(
+                predecessor_dir,
+                staging_dir,
+                superseded_by_run_id=superseded_by_run_id,
+                archived_at=archived_at,
+            )
+        )
+    return archived
+
+
 _WORK_LOCK_REGISTRY_GUARD = threading.Lock()
 _HELD_WORK_LOCKS: set[str] = set()
 
@@ -1446,6 +1583,9 @@ class GenerationRun:
             "prompt_estimate_tokens": prompt_estimate,
             "usage_margin_tokens": CONTEXT_USAGE_MARGIN_TOKENS,
             "api_optional_parameters": [],
+            "transport": (
+                "stream" if bool(getattr(self.client, "stream", False)) else "non-stream"
+            ),
             "wire_protocol": wire_protocol,
             "endpoint_path": protocol_endpoint_path(wire_protocol),
             "protocol_required_parameters": sorted(required_parameters),
@@ -2243,6 +2383,7 @@ class GenerationRun:
             },
             "context_audit": context_summary,
             "started_at": self.state.get("started_at"),
+            "manuscript_completed_at": completed_at,
             "completed_at": completed_at,
             "status": "completed",
         }
@@ -2252,6 +2393,25 @@ class GenerationRun:
             raise RuntimeError("发布 staging 深校验失败，未替换公开结果")
 
         had_previous = self.result_dir.exists()
+        archived_versions: list[str] = []
+        if had_previous:
+            archived_versions.append(
+                archive_previous_result(
+                    self.result_dir,
+                    staging_dir,
+                    superseded_by_run_id=self.run_id,
+                    archived_at=completed_at,
+                )
+            )
+        archived_versions.extend(
+            archive_superseded_results(
+                self.result_dir.parent,
+                self.model_cfg,
+                staging_dir,
+                superseded_by_run_id=self.run_id,
+                archived_at=completed_at,
+            )
+        )
         if had_previous:
             os.replace(self.result_dir, backup_dir)
         try:
@@ -2265,7 +2425,10 @@ class GenerationRun:
         self.state["stage"] = "completed"
         self.state["completed_at"] = manifest["completed_at"]
         self._save_state()
-        log(f"{self.model_id} 发布完成：{chars} 字，{len(chapters)} 章")
+        archive_note = (
+            f"，旧稿归档={','.join(archived_versions)}" if archived_versions else ""
+        )
+        log(f"{self.model_id} 发布完成：{chars} 字，{len(chapters)} 章{archive_note}")
 
     def execute(self, stop_after: str | None = None) -> bool:
         """Run or resume generation; return True only when publication completed."""
@@ -2681,13 +2844,25 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as exc:
         fail(f"New API preflight 失败：{exc}")
         return 1
-    wire_models = {str(model_cfg["model"]) for model_cfg in all_model_cfgs}
-    judge_models = {str(judge["model"]) for judge in all_judge_cfgs}
-    missing = sorted((wire_models | judge_models) - set(available))
+    # A targeted author run must not be blocked by an unrelated unavailable
+    # author. The full-run gate still verifies the complete fixed registry and
+    # every active judge before any paid generation call is allowed.
+    required_models = (
+        {
+            *(str(model_cfg["model"]) for model_cfg in all_model_cfgs),
+            *(str(judge["model"]) for judge in all_judge_cfgs),
+        }
+        if args.all
+        else {str(model_cfg["model"]) for model_cfg in model_cfgs}
+    )
+    missing = sorted(required_models - set(available))
     if missing:
         fail("/v1/models 缺少配置模型：" + ", ".join(missing))
         return 1
-    log(f"preflight 通过：全部 {len(all_model_cfgs)} 个生成模型、{len(all_judge_cfgs)} 个评委均精确存在")
+    if args.all:
+        log(f"preflight 通过：全部 {len(all_model_cfgs)} 个生成模型、{len(all_judge_cfgs)} 个评委均精确存在")
+    else:
+        log(f"preflight 通过：本次选择的 {len(model_cfgs)} 个生成模型均精确存在")
     for model_cfg in model_cfgs:
         context_window = int(model_cfg.get("context_window", 131_072))
         safe_context = int(context_window * 0.85)
@@ -2702,6 +2877,7 @@ def main(argv: list[str] | None = None) -> int:
         log(
             f"{model_cfg['id']}: wire={model_cfg['model']}, protocol={wire_protocol}, "
             f"path={protocol_endpoint_path(wire_protocol)}, context={context_window}, "
+            f"transport={'stream' if bool(getattr(client, 'stream', False)) else 'non-stream'}, "
             f"85%安全线={safe_context}, api_optional_params=none（服务端默认），"
             f"protocol_required={required_label}，"
             f"基础调用=19–21；若每章均不足3000字，最多追加16–18次扩写"

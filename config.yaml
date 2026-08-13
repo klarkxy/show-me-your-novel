@@ -10,6 +10,10 @@ providers:
     base_url_env: API_URL
     api_key_env: API_KEY
     timeout: 600
+    # Streaming is a transport choice, not a sampling control. The client
+    # reconstructs a complete response and rejects streams without a terminal
+    # event before the generation/scoring state machines can accept them.
+    stream: true
     request_defaults: {}
 
 # Generation controls intentionally stay empty so the upstream model uses its
@@ -41,6 +45,9 @@ models:
     name: DeepSeek V4 Pro
     model: deepseek-v4-pro
     aliases: [deepseek-pro]
+    # The upstream behind this stable wire ID changed. Bump the immutable run
+    # identity so the next successful publication archives the previous draft.
+    revision: "2026-08-13"
 
   - <<: *generation-defaults
     id: mimo-v2.5
@@ -98,6 +105,24 @@ models:
       max_tokens: 65536
 
   - <<: *generation-defaults
+    id: claude-fable-5
+    name: Claude Fable 5
+    model: claude-fable-5
+    aliases: [fable]
+    protocol: anthropic-messages
+    protocol_required:
+      max_tokens: 65536
+
+  - <<: *generation-defaults
+    id: claude-sonnet-4-6
+    name: Claude Sonnet 4.6
+    model: claude-sonnet-4-6
+    aliases: [sonnet-4.6]
+    protocol: anthropic-messages
+    protocol_required:
+      max_tokens: 65536
+
+  - <<: *generation-defaults
     id: claude-sonnet-5
     name: Claude Sonnet 5
     model: claude-sonnet-5
@@ -105,6 +130,12 @@ models:
     protocol: anthropic-messages
     protocol_required:
       max_tokens: 65536
+
+  - <<: *generation-defaults
+    id: gemini-2.5-pro
+    name: Gemini 2.5 Pro
+    model: gemini-2.5-pro
+    aliases: [gemini-2.5]
 
   - <<: *generation-defaults
     id: gemini-3.1-pro
@@ -137,25 +168,53 @@ models:
     aliases: [kimi]
 
   - <<: *generation-defaults
-    id: grok-4.5
-    name: Grok 4.5
-    model: grok-4.5
+    id: grok-4.6
+    name: Grok 4.6
+    model: grok-4.6
     aliases: [grok]
+    supersedes: [grok-4.5]
+
+  - <<: *generation-defaults
+    id: claude-opus-4-6
+    name: Claude Opus 4.6
+    model: claude-opus-4-6
+    aliases: [opus-4.6]
+    protocol: anthropic-messages
+    protocol_required:
+      max_tokens: 65536
+
+  - <<: *generation-defaults
+    id: claude-opus-4-7
+    name: Claude Opus 4.7
+    model: claude-opus-4-7
+    aliases: [opus-4.7]
+    protocol: anthropic-messages
+    protocol_required:
+      max_tokens: 65536
 
   - <<: *generation-defaults
     id: claude-opus-4-8
     name: Claude Opus 4.8
     model: claude-opus-4-8
+    aliases: [opus-4.8]
+    protocol: anthropic-messages
+    protocol_required:
+      max_tokens: 65536
+
+  - <<: *generation-defaults
+    id: claude-opus-5
+    name: Claude Opus 5
+    model: claude-opus-5
     aliases: [opus]
     protocol: anthropic-messages
     protocol_required:
       max_tokens: 65536
 
   - <<: *generation-defaults
-    id: agnes-2.0-flash
-    name: Agnes 2.0 Flash
-    model: agnes-2.0-flash
-    aliases: [agnes]
+    id: agnes-2.5-flash
+    name: Agnes 2.5 Flash
+    model: agnes-2.5-flash
+    aliases: [agnes, agnes-2.5]
 
 x-judge-defaults: &judge-defaults
   provider: new-api
@@ -175,8 +234,8 @@ judges:
 
   - <<: *judge-defaults
     id: grok
-    name: Grok 4.5
-    model: grok-4.5
+    name: Grok 4.6
+    model: grok-4.6
     # This Grok route injects tool_choice even when the client sends no tools.
     # Supply one disabled placeholder so the upstream request remains valid;
     # the judge cannot call it and its JSON output is still validated locally.
@@ -195,34 +254,35 @@ judges:
         tool_choice: none
 
   - <<: *judge-defaults
-    id: ds-v4-pro
-    name: DeepSeek V4 Pro
-    model: deepseek-v4-pro
+    id: opus
+    name: Claude Opus 5
+    model: claude-opus-5
+    protocol: anthropic-messages
+    protocol_required:
+      max_tokens: 16384
+    request: {}
+    stages:
+      judge:
+        temperature: 0.2
 
   - <<: *judge-defaults
-    id: mimo-v2.5-pro
-    name: MiMo V2.5 Pro
-    model: mimo-v2.5-pro
-
-  - <<: *judge-defaults
-    id: gemini-3.1-pro
-    name: Gemini 3.1 Pro
-    model: gemini-3.1-pro
-
-  # Historical V2 judge only. Not part of ACTIVE_JUDGE_IDS; kept so preflight
-  # and archives still know the wire model, without ranking or aggregation.
-  - <<: *judge-defaults
-    id: kimi
-    name: Kimi
+    id: k3
+    name: Kimi K3
     model: kimi-k3
-    # Kimi K3 rejects explicit non-1 temperatures. Omit the field so the
-    # upstream model keeps its required default while retaining JSON mode.
-    # Successful audits have consumed almost all of the shared 4096-token
-    # budget on private reasoning, so give only this judge enough headroom to
-    # finish its short public JSON response.
+    # K3 rejects explicit non-1 temperatures and may spend most of a 4096-token
+    # budget on private reasoning, so omit temperature and give the JSON room.
     request:
       max_tokens: 8192
     stages:
       judge:
         response_format:
           type: json_object
+
+  - <<: *judge-defaults
+    id: ds-v4-pro
+    name: DeepSeek V4 Pro
+    model: deepseek-v4-pro
+    # Full-manuscript self-review can exhaust the shared 4096-token default.
+    # Reserve enough room for the complete public JSON; truncation still fails.
+    request:
+      max_tokens: 8192

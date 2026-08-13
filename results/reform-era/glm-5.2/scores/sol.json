@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "glm-5.2",
+  "judge": "sol",
+  "requested_model": "gpt-5.6-sol",
+  "input_hash": "1d17439dd99c30d9b8de7121202bb0690d4b4d93c3e5bc774f3e6d41a6542972",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "6150baad554c0d136961a80abf6fc447ad302a9134848e89e6bea375ee4b093e",
+  "response_model": "gpt-5.6-sol",
+  "cache_key": "402d4ee41b3e647645c3a2f90cf990383c11d159891b9bc5f6910869460a0790",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 72.0,
+      "comment": "贫困、技术价值与体制外诱惑已通过肉票、维修费、代卖货物和夫妻隐瞒进入人物行动，但道义重估仍主要停留在反复铺垫，尚未形成更复杂的关系冲突。"
+    },
+    "historical_grounding": {
+      "score": 64.0,
+      "comment": "筒子楼、票证、国营厂、乡镇企业和维修需求等物质细节较扎实，但年代、工资、票证及政策边界的处理偶有可疑，且章节月份前后明显错乱。"
+    },
+    "characters": {
+      "score": 68.0,
+      "comment": "陈有福的谨慎、技术能力和逐步越界较具体，慧芬与有贵也有信息不对称和被冷落的张力，但多数配角仍承担功能，人物欲望与差异尚不够立体。"
+    },
+    "plot_causality": {
+      "score": 67.0,
+      "comment": "蛇皮袋、厂内传言、弟弟盘问和春蕾来人能逐步推动越界，行动链基本清楚，但大量心理解释替代了选择过程，部分冲突依赖重复误听与预设式巧合。"
+    },
+    "longform_structure": {
+      "score": 58.0,
+      "comment": "开篇确实铺设了账本、代卖、弟弟出走和维修线索，但正文与开篇提纲在月份、章节顺序和若干细节上不连续，长篇伏笔目前更多是作者说明而非文本兑现。"
+    },
+    "scene_execution": {
+      "score": 62.0,
+      "comment": "家庭、车间、食堂和厂门口场景有动作、声音与物件支撑，关键场面可视可感，但场景常被拆解成过密的动作注释和心理旁白，节奏因此显著迟滞。"
+    },
+    "style_control": {
+      "score": 54.0,
+      "comment": "整体语域和叙述距离大体稳定，能以技术与生活细节形成现实感，但排比、短句、重复意象和“像”式比喻失控，并出现外文残字、错字和病句。"
+    },
+    "ai_flavor": {
+      "score": 84.0,
+      "comment": "多数段落呈现同构的细节罗列、重复确认、机械递进和过度阐释，常把人物已表现出的心理再逐层解释，叙事因此明显程式化并削弱留白。"
+    }
+  }
+}

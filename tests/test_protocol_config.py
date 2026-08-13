@@ -19,30 +19,41 @@ EXPECTED_GENERATORS = (
     "gpt-5.6-sol",
     "gpt-5.6-terra",
     "claude-haiku-4-5",
+    "claude-fable-5",
+    "claude-sonnet-4-6",
     "claude-sonnet-5",
+    "gemini-2.5-pro",
     "gemini-3.1-pro",
     "gemini-3.5-flash",
     "gemini-3.6-flash",
     "kimi-k2.7-code",
     "kimi-k3",
-    "grok-4.5",
+    "grok-4.6",
+    "claude-opus-4-6",
+    "claude-opus-4-7",
     "claude-opus-4-8",
-    "agnes-2.0-flash",
+    "claude-opus-5",
+    "agnes-2.5-flash",
 )
 EXPECTED_JUDGES = {
     "sol": "gpt-5.6-sol",
-    "grok": "grok-4.5",
+    "grok": "grok-4.6",
+    "opus": "claude-opus-5",
+    "k3": "kimi-k3",
     "ds-v4-pro": "deepseek-v4-pro",
-    "mimo-v2.5-pro": "mimo-v2.5-pro",
-    "gemini-3.1-pro": "gemini-3.1-pro",
-    "kimi": "kimi-k3",
 }
 ANTHROPIC_GENERATORS = {
     "minimax-m3",
     "claude-haiku-4-5",
+    "claude-fable-5",
+    "claude-sonnet-4-6",
     "claude-sonnet-5",
+    "claude-opus-4-6",
+    "claude-opus-4-7",
     "claude-opus-4-8",
+    "claude-opus-5",
 }
+ANTHROPIC_JUDGES = {"opus"}
 
 
 def assert_anthropic_protocol_required(
@@ -71,6 +82,7 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     provider = config["providers"]["new-api"]
     assert provider["base_url_env"] == "API_URL"
     assert provider["api_key_env"] == "API_KEY"
+    assert provider["stream"] is True
     assert provider.get("request_defaults") == {}
 
     models = config["models"]
@@ -79,6 +91,9 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     assert all(model["provider"] == "new-api" for model in models)
     assert all(model.get("request") == {} for model in models)
     assert all(model.get("stages") == {} for model in models)
+    models_by_id = {model["id"]: model for model in models}
+    assert models_by_id["deepseek-v4-pro"]["revision"] == "2026-08-13"
+    assert models_by_id["grok-4.6"]["supersedes"] == ["grok-4.5"]
     for model in models:
         if model["id"] in ANTHROPIC_GENERATORS:
             assert_anthropic_protocol_required(
@@ -97,7 +112,7 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     assert judges_by_id["sol"]["request"] == {"max_tokens": 4096}
     assert judges_by_id["sol"]["stages"]["judge"]["temperature"] == 0.2
     grok = judges_by_id["grok"]
-    assert grok["name"] == "Grok 4.5"
+    assert grok["name"] == "Grok 4.6"
     assert grok["request"] == {"max_tokens": 4096}
     grok_stage = grok["stages"]["judge"]
     assert grok_stage["temperature"] == 0.2
@@ -121,15 +136,27 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
         OPENAI_CHAT_COMPLETIONS
     )
     assert "protocol_required" not in grok
-    kimi_stage = judges_by_id["kimi"]["stages"]["judge"]
-    assert judges_by_id["kimi"]["request"] == {"max_tokens": 8192}
-    assert "temperature" not in kimi_stage
-    assert kimi_stage["response_format"] == {"type": "json_object"}
+    opus = judges_by_id["opus"]
+    assert opus["request"] == {}
+    assert opus["stages"]["judge"] == {"temperature": 0.2}
+    assert opus["protocol"] == ANTHROPIC_MESSAGES
+    assert opus["protocol_required"] == {"max_tokens": 16384}
+    assert judges_by_id["k3"]["request"] == {"max_tokens": 8192}
+    assert judges_by_id["k3"]["stages"]["judge"] == {
+        "response_format": {"type": "json_object"}
+    }
+    assert judges_by_id["ds-v4-pro"]["request"] == {"max_tokens": 8192}
     for judge in judges:
-        assert judge.get("protocol", OPENAI_CHAT_COMPLETIONS) == (
-            OPENAI_CHAT_COMPLETIONS
-        )
-        assert "protocol_required" not in judge
+        if judge["id"] in ANTHROPIC_JUDGES:
+            assert_anthropic_protocol_required(
+                judge, require_more_than_8192=True
+            )
+            assert "response_format" not in judge["stages"]["judge"]
+        else:
+            assert judge.get("protocol", OPENAI_CHAT_COMPLETIONS) == (
+                OPENAI_CHAT_COMPLETIONS
+            )
+            assert "protocol_required" not in judge
 
     direction = (ROOT / "benchmark" / "reform-era" / "direction.md").read_text(
         encoding="utf-8"

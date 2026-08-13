@@ -10,5 +10,6 @@ _site/
 ._site.previous-*/
 .docs.build-*/
 .docs.previous-*/
+.llm-request-*/
 results/**/.*.backup-*/
 results/**/.*.publish-*/

@@ -1,0 +1,46 @@
+{
+  "schema": "novel-eval.v3",
+  "benchmark": "reform-era",
+  "candidate": "minimax-m3",
+  "judge": "opus",
+  "requested_model": "claude-opus-5",
+  "input_hash": "9d8425c49e0dde818904f65a94f6eac877738d6874913cb9fc33f3299fd3cb00",
+  "rubric_hash": "01ba7b0b291ce3041c6512096d5bb864105e38b738495975a0eb84aa74f3ffdb",
+  "judge_config_sha256": "f0f68dca58473498e11cb28c2eba87f9e88d2a931df4ee5d3deaaa7e4603e65a",
+  "response_model": "claude-opus-5",
+  "cache_key": "f2089f0fadbe03fc8fb9ebfa0a7f14bfad3e8e8b0099c3054791a21a35d7e7b1",
+  "dimensions": {
+    "theme_fulfillment": {
+      "score": 30.0,
+      "comment": "大纲层面切题（个人上升与背叛代价），但正文所呈现的部分只停留在工位受压与倒卖被罚，主题几乎未被真正戏剧化，且文本崩坏使任何主题表达失效。"
+    },
+    "historical_grounding": {
+      "score": 42.0,
+      "comment": "36元月薪、工商所投机倒把罚单、飞利浦五灯机、绕输出变压器等细节尚有年代感，但罚款额（450/100/180）前后矛盾，港商初访时间与大纲错位，考据未成体系。"
+    },
+    "characters": {
+      "score": 18.0,
+      "comment": "人物只剩“嗯”和复读机式追问；林秀兰、方小凤语气无差别，陈卫国内心几乎不可见，甚至出现“嗯。”林秀兰说的说话人张冠李戴，人物基本瓦解。"
+    },
+    "plot_causality": {
+      "score": 33.0,
+      "comment": "离合器隐患—调岗—工伤的因果链设计合理，但正文中大量场景无推进，冷战一章反复原地打转，信息重复而事件不增，因果被稀释到近乎停滞。"
+    },
+    "longform_structure": {
+      "score": 45.0,
+      "comment": "20卷宏纲与章节细纲规划完整、伏笔回收表清晰，属全篇最强项；但正文节奏严重失控，单章篇幅被无意义对白填满，规划与执行严重脱节。"
+    },
+    "scene_execution": {
+      "score": 12.0,
+      "comment": "“一百八十。”“嗯。”式循环连续数十轮，属明显生成退化；场景无调度、无动作、无信息增量，读者无法从中获得任何新事实。"
+    },
+    "style_control": {
+      "score": 10.0,
+      "comment": "通篇短句问答体，几乎无叙述肌理；“您”与工友口语混用不合1979年粤东工厂语感，语言单调到接近机械输出。"
+    },
+    "ai_flavor": {
+      "score": 8.0,
+      "comment": "极重的AI痕迹：复读循环、说话人标签错乱、模板化收尾（虫鸣/狗吠/看很久）反复出现，是典型的长文本生成崩坏样本。"
+    }
+  }
+}
