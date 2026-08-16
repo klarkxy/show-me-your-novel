@@ -14,7 +14,7 @@ EXPECTED_GENERATORS = (
     "mimo-v2.5",
     "mimo-v2.5-pro",
     "minimax-m3",
-    "glm-5.2",
+    "glm-5.3",
     "gpt-5.6-luna",
     "gpt-5.6-sol",
     "gpt-5.6-terra",
@@ -24,8 +24,7 @@ EXPECTED_GENERATORS = (
     "claude-sonnet-5",
     "gemini-2.5-pro",
     "gemini-3.1-pro",
-    "gemini-3.5-flash",
-    "gemini-3.6-flash",
+    "gemini-3.7-flash",
     "kimi-k2.7-code",
     "kimi-k3",
     "grok-4.6",
@@ -94,6 +93,11 @@ def test_v2_protocol_inventory_and_direction_are_locked() -> None:
     models_by_id = {model["id"]: model for model in models}
     assert models_by_id["deepseek-v4-pro"]["revision"] == "2026-08-13"
     assert models_by_id["grok-4.6"]["supersedes"] == ["grok-4.5"]
+    assert models_by_id["glm-5.3"]["supersedes"] == ["glm-5.2"]
+    assert models_by_id["gemini-3.7-flash"]["supersedes"] == [
+        "gemini-3.5-flash",
+        "gemini-3.6-flash",
+    ]
     for model in models:
         if model["id"] in ANTHROPIC_GENERATORS:
             assert_anthropic_protocol_required(

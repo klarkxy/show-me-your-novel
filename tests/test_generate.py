@@ -1233,7 +1233,7 @@ def test_fixed_registry_rejects_substitution() -> None:
     validated_models, validated_judges = validate_fixed_registries(
         {"models": models, "judges": judges}
     )
-    assert len(validated_models) == 25
+    assert len(validated_models) == 24
     assert len(validated_judges) == len(EXPECTED_JUDGES)
     substituted = [dict(item) for item in models]
     substituted[0]["model"] = "silent-fallback"

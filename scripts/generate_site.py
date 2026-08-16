@@ -72,6 +72,10 @@ from runner.compare_v4 import (  # noqa: E402
     ALL_CANDIDATES as V4_ALL_CANDIDATES,
     load_system_prompt as load_v4_pairwise_prompt,
 )
+from runner.reagg_v3 import (  # noqa: E402
+    COMPLETE as REAGG_COMPLETE,
+    attach_reagg_v3,
+)
 
 SITE_TITLE = "让我康康你的文"
 REPO_URL = "https://github.com/klarkxy/show-me-your-novel"
@@ -1422,12 +1426,37 @@ def load_legacy_stories(
     return stories
 
 
+PUBLIC_PROTOCOLS = ("v3", "v3-reagg", "v5", "v4")
+
+
+def resolve_public_protocol(
+    *,
+    cli: str | None,
+    output_dir_name: str,
+    v5_default: bool = False,
+) -> str:
+    """Closed production set is {v3, v3-reagg, v5}. V4 never wins via attach_v4."""
+
+    if cli:
+        if cli not in PUBLIC_PROTOCOLS:
+            raise ValueError(f"未知公开协议：{cli}")
+        return cli
+    if output_dir_name == "v4-preview" or output_dir_name.startswith(".v4-preview.build-"):
+        return "v4"
+    if output_dir_name == "v5-preview" or output_dir_name.startswith(".v5-preview.build-"):
+        return "v5"
+    if v5_default:
+        return "v5"
+    return "v3-reagg"
+
+
 def page_head(
     title: str,
     root_prefix: str,
     body_class: str,
     *,
     leaderboard_script: bool = False,
+    skip_href: str = "#main",
 ) -> str:
     script = (
         f'\n<script src="{root_prefix}assets/leaderboard.js" defer></script>'
@@ -1445,7 +1474,7 @@ def page_head(
   <link rel="stylesheet" href="{root_prefix}assets/style.css">{script}
 </head>
 <body class="{esc(body_class)}">
-<a class="skip-link" href="#main">跳到正文</a>
+<a class="skip-link" href="{esc(skip_href)}">跳到正文</a>
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="{root_prefix}index.html" aria-label="{SITE_TITLE}首页">
@@ -1454,6 +1483,7 @@ def page_head(
     </a>
     <nav class="site-nav" aria-label="主导航">
       <a href="{root_prefix}index.html">榜单</a>
+      <a href="{root_prefix}history/index.html">V2.1 历史</a>
       <a href="{root_prefix}novels/index.html">Legacy</a>
       <a href="{REPO_URL}" rel="noopener" target="_blank">GitHub</a>
     </nav>
@@ -1485,10 +1515,12 @@ DIMENSION_SHORT_LABELS = {
 }
 
 SCORING_NOTE = (
-    f"各维度取 {len(JUDGE_IDS)} 位活动评委票的中位数"
+    "当前公开口径是 V3 重聚合，不是新评：名次用可靠性加权 T 分，"
+    "雷达是评委票内残差（50 = 本书八维均值）。"
+    f"历史 V3 口径仍取 {len(JUDGE_IDS)} 位活动评委票的中位数"
     f"（{'、'.join(JUDGE_LABELS[judge_id] for judge_id in JUDGE_IDS)}）；"
     "综合按固定权重加总，其中AI味使用100减原值。"
-    "AI味越低越好，其余指标越高越好。"
+    "AI味越低越好，其余指标越高越好。T 分相对当前可排名队列，不可跨周当绝对分。"
 )
 
 
@@ -1513,6 +1545,21 @@ def _metric_key(spec: Any | None = None, *, overall: bool = False) -> str:
     return spec.key.replace("_", "-")
 
 
+def _profile_spark(result: dict[str, Any]) -> str:
+    reagg = result.get("reagg") or {}
+    residual_p = reagg.get("residual_p") if reagg.get("status") == REAGG_COMPLETE else None
+    if not residual_p:
+        return ""
+    bars = []
+    for spec in DIMENSION_SPECS:
+        offset = float(residual_p.get(spec.key, 50.0)) - 50.0
+        bars.append(
+            f'<span class="spark-bar" style="--spark:{offset:.1f}" '
+            f'title="{esc(_dimension_short(spec))} {offset:+.1f}"></span>'
+        )
+    return f'<span class="profile-spark" aria-hidden="true">{"".join(bars)}</span>'
+
+
 def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
     if result["detail_available"]:
         history = len(result.get("archives") or [])
@@ -1521,6 +1568,7 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
       <span class="entry-model">{esc(result['model_name'])}</span>
       <span class="entry-title">《{esc(result['title'])}》</span>
       <span class="entry-date">成稿 {esc(result['manuscript_date'])}{history_text}</span>
+      {_profile_spark(result)}
     </a>"""
     else:
         entry = f"""<span class="entry-link unavailable">
@@ -1528,6 +1576,12 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
       <span class="entry-title">{esc(result['title'])}</span>
     </span>"""
     rank_text = f"{rank:02d}" if rank is not None else ""
+    reagg = result.get("reagg") or {}
+    tscore = reagg.get("tscore") if reagg.get("status") == REAGG_COMPLETE else None
+    tie_next = bool(reagg.get("ties_with_next"))
+    tie_mark = (
+        '<span class="ci-overlap" data-tie-mark>=</span>' if tie_next else ""
+    )
     dimensions = result["aggregate_dimensions"]
     data_dimensions = "\n".join(
         (
@@ -1547,13 +1601,16 @@ def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
     return f"""<tr data-model-id="{esc(result['model_id'])}" data-model="{esc(result['model_name'])}"
     data-config-order="{result['config_order']}"
     data-rankable="{'true' if result['rankable'] else 'false'}"
+    data-tie-next="{'true' if tie_next else 'false'}"
+    data-tscore="{_data_number(tscore)}"
     data-overall="{_data_number(result['overall_score'])}"
 {data_dimensions}>
-  <td class="rank-cell" data-rank>{rank_text}</td>
+  <td class="rank-cell" data-rank>{rank_text}{tie_mark}</td>
   <th scope="row">
     {entry}
   </th>
-  <td class="metric-col" data-metric="overall" data-label="综合">{_format_score(result['overall_score'])}</td>
+  <td class="metric-col" data-metric="tscore" data-label="T分">{_format_score(tscore)}</td>
+  <td class="metric-col" data-metric="overall" data-label="V3综合" hidden>{_format_score(result['overall_score'])}</td>
 {score_cells}
 </tr>"""
 
@@ -1642,15 +1699,29 @@ def render_home(
     results: list[dict[str, Any]],
     legacy_count: int,
     *,
+    public_protocol: str = "v3-reagg",
     v4_default: bool = False,
     v4_preview: bool = False,
 ) -> str:
-    if v4_default:
-        return render_v4_home(results, legacy_count, preview=False)
-    ranked_count = sum(1 for result in results if result["rankable"])
+    if v4_default or public_protocol == "v4":
+        return render_v4_home(results, legacy_count, preview=not v4_default and v4_preview)
+    display = list(results)
+    if public_protocol == "v3-reagg":
+        display.sort(
+            key=lambda item: (
+                not item["rankable"],
+                -(
+                    (item.get("reagg") or {}).get("tscore")
+                    if (item.get("reagg") or {}).get("status") == REAGG_COMPLETE
+                    else -1e9
+                ),
+                item["config_order"],
+            )
+        )
+    ranked_count = sum(1 for result in display if result["rankable"])
     rank = 0
     rendered_rows: list[str] = []
-    for result in results:
+    for result in display:
         if result["rankable"]:
             rank += 1
             rendered_rows.append(_leaderboard_row(result, rank))
@@ -1673,7 +1744,8 @@ def render_home(
     <thead><tr>
       <th scope="col">#</th>
       <th scope="col">作品</th>
-      <th class="metric-col" scope="col" data-metric="overall">综合</th>
+      <th class="metric-col" scope="col" data-metric="tscore">T分</th>
+      <th class="metric-col" scope="col" data-metric="overall" hidden>V3综合</th>
       {dimension_headers}
     </tr></thead>
     <tbody id="leaderboard-body">{rows}</tbody>
@@ -1685,9 +1757,12 @@ def render_home(
   <span>把结果放入 <code>results/reform-era/&lt;model&gt;/</code> 后重新构建站点。</span>
 </div>"""
 
+    use_tscore = public_protocol == "v3-reagg"
     metric_buttons = [
+        '<button type="button" data-sort="tscore" data-direction="desc" '
+        f'aria-pressed="{"true" if use_tscore else "false"}" title="T分">T分</button>',
         '<button type="button" data-sort="overall" data-direction="desc" '
-        'aria-pressed="true" title="综合">综合</button>'
+        f'aria-pressed="{"false" if use_tscore else "true"}" title="V3 历史综合">V3综合</button>',
     ]
     for spec in DIMENSION_SPECS:
         metric_buttons.append(
@@ -1696,13 +1771,20 @@ def render_home(
             f'aria-pressed="false" title="{esc(_dimension_label(spec))}">'
             f"{esc(_dimension_short(spec))}</button>"
         )
+    chip = (
+        '<p class="protocol-chip">V3 重聚合 · 非新评 · 相对当前可排名队列</p>'
+        if public_protocol == "v3-reagg"
+        else ""
+    )
 
     return page_head(
         "改革开放长篇模型榜", "", "page-leaderboard", leaderboard_script=True
     ) + f"""
 <header class="page-intro" aria-labelledby="page-title">
   <h1 id="page-title">改革开放长篇模型榜</h1>
+  <p class="protocol-chip">V2.1 历史赛道 · 已冻结 · 不是新开局文风榜</p>
   <p class="page-sub">同一方向 · 约 5 万字开篇 · {len(JUDGE_IDS)} 评委盲评</p>
+  {chip}
   <p class="page-meta">已评分 {ranked_count} / 全部 {model_count} · 评委 {len(JUDGE_IDS)} · Legacy {legacy_count}</p>
 </header>
 
@@ -1761,9 +1843,11 @@ def _radar_chart(
     title: str,
     scores: dict[str, float | None],
     *,
+    series_kind: str,
     ranges: dict[str, dict[str, float]] | None = None,
     already_oriented: bool = False,
     specs: tuple[Any, ...] = DIMENSION_SPECS,
+    baseline: float | None = None,
 ) -> str:
     """Render an accessible dependency-free radar plus a visible score table."""
 
@@ -1800,6 +1884,16 @@ def _radar_chart(
         _radar_point(cx, cy, radius * value / 100, angle)
         for value, angle in zip(plotted, angles)
     )
+    baseline_mark = ""
+    if baseline is not None:
+        baseline_points = " ".join(
+            _radar_point(cx, cy, radius * baseline / 100, angle) for angle in angles
+        )
+        baseline_mark = (
+            f'<polygon points="{baseline_points}" class="radar-baseline" />'
+            f'<path class="radar-lune" fill-rule="evenodd" '
+            f'd="M {shape_points} Z M {baseline_points} Z" />'
+        )
     point_marks = "\n".join(
         (
             f'<circle cx="{_radar_point(cx, cy, radius * value / 100, angle).split(",")[0]}" '
@@ -1875,7 +1969,7 @@ def _radar_chart(
             f"<td>{raw_text}</td>{f'<td>{range_text}</td>' if ranges else ''}</tr>"
         )
     desc = "；".join(descriptions) + "。雷达越靠外代表该项表现越好。"
-    return f"""<figure class="radar-figure" data-radar-chart="{esc(safe_id)}">
+    return f"""<figure class="radar-figure" data-radar-chart="{esc(safe_id)}" data-series-kind="{esc(series_kind)}">
   <svg class="radar-chart" viewBox="0 0 720 620" role="img"
        aria-labelledby="{esc(safe_id)}-title {esc(safe_id)}-desc">
     <title id="{esc(safe_id)}-title">{esc(title)}</title>
@@ -1890,6 +1984,7 @@ def _radar_chart(
       {grid}
       {axes}
       {band}
+      {baseline_mark}
       <polygon points="{shape_points}" class="radar-shape"
                fill="url(#{esc(safe_id)}-hatch)" />
       {point_marks}
@@ -1927,7 +2022,7 @@ def _judge_evaluation(
   <summary>{esc(label)}</summary>
   <div class="judge-evaluation">
     <div class="judge-evaluation-grid">
-      {_radar_chart(chart_id, f'{label}逐维评分', scores)}
+      {_radar_chart(chart_id, f'{label}逐维评分', scores, series_kind="historical-median")}
       <ol class="dimension-comments" aria-label="{esc(label)}逐维评价">{''.join(comments)}</ol>
     </div>
   </div>
@@ -2004,8 +2099,8 @@ def _v4_result_section(result: dict[str, Any]) -> str:
     audit = _json_drawer("大纲审计", {"outline_audit": v4["outline_audit"]}) if v4.get("outline_audit") is not None else ""
     return f"""<section id="score-v4" class="aggregate-section v4-result-section" aria-labelledby="v4-score-title">
   <h2 id="v4-score-title">V4 评分</h2>{ranking}
-  {_radar_chart(f'{chart_prefix}-absolute', '绝对分与评委分歧范围', absolute_scores, ranges=absolute_ranges, specs=V4_DIMENSION_SPECS)}
-  {_radar_chart(f'{chart_prefix}-percentile', '维度百分位（队列中位概念为 50）', percentile_scores, already_oriented=True, specs=V4_DIMENSION_SPECS)}
+  {_radar_chart(f'{chart_prefix}-absolute', '绝对分与评委分歧范围', absolute_scores, series_kind="historical-median", ranges=absolute_ranges, specs=V4_DIMENSION_SPECS)}
+  {_radar_chart(f'{chart_prefix}-percentile', '维度百分位（队列中位概念为 50）', percentile_scores, series_kind="percentile", already_oriented=True, specs=V4_DIMENSION_SPECS, baseline=50)}
   <p class="v4-legend">绝对分雷达的阴影外沿和内沿分别表示该维度的最高、最低有效评委分；百分位雷达已按方向统一，50 表示队列中位。</p>
   <h3>24 个子项</h3>{_v4_subscore_table(v4)}
   <h3>评委证据、主要缺陷与置信度</h3>{_v4_judge_evaluations(v4)}
@@ -2031,7 +2126,63 @@ def _archive_history_section(result: dict[str, Any]) -> str:
 </section>"""
 
 
-def render_result_detail(result: dict[str, Any]) -> str:
+def _rank_strip(result: dict[str, Any], *, archived: bool) -> str:
+    reagg = result.get("reagg") or {}
+    if archived or reagg.get("status") != REAGG_COMPLETE:
+        return """<nav class="rank-strip" aria-label="阅读入口">
+  <a href="#novel-title">阅读正文</a>
+  <a href="#scores">查看评分</a>
+</nav>"""
+    strong = DIMENSION_SHORT_LABELS.get(reagg["strongest"], reagg["strongest"])
+    weak = DIMENSION_SHORT_LABELS.get(reagg["weakest"], reagg["weakest"])
+    tie = " · =" if reagg.get("ties_with_next") else ""
+    return f"""<nav class="rank-strip" aria-label="名次与剖面入口">
+  <span class="protocol-chip">V3 重聚合 · 非新评</span>
+  <span>第 {reagg['rank']} 名{tie} · 相对 {reagg['n']} 本</span>
+  <span>相对强：{esc(strong)} · 相对弱：{esc(weak)}</span>
+  <a href="#novel-title">阅读正文</a>
+  <a href="#scores">查看评分</a>
+</nav>"""
+
+
+def _default_profile_radar(result: dict[str, Any], chart_prefix: str) -> str:
+    reagg = result.get("reagg") or {}
+    if reagg.get("status") != REAGG_COMPLETE:
+        return (
+            '<p class="empty-copy" role="status">暂无重聚合剖面。'
+            "这本书不在当前可排名队列里，或不满足 N≥2。</p>"
+        )
+    residual_scores = {
+        key: reagg["residual_p"].get(key) for key in DIMENSION_KEYS
+    }
+    percentile_scores = {
+        key: reagg["percentiles"].get(key) for key in DIMENSION_KEYS
+    }
+    return (
+        _radar_chart(
+            f"{chart_prefix}-residual",
+            "相对本书均值的残差（50 = 本书八维均值，不是满分）",
+            residual_scores,
+            series_kind="residual-p",
+            already_oriented=True,
+            baseline=50,
+        )
+        + _radar_chart(
+            f"{chart_prefix}-percentile",
+            "队列百分位，不是绝对分（50 = 队列中位）",
+            percentile_scores,
+            series_kind="percentile",
+            already_oriented=True,
+            baseline=50,
+        )
+    )
+
+
+def render_result_detail(
+    result: dict[str, Any],
+    *,
+    public_protocol: str = "v3-reagg",
+) -> str:
     judges = result["judges"]
     judge_ids = tuple(result.get("judge_ids") or JUDGE_IDS)
     body_chars = result["body_chars"]
@@ -2041,7 +2192,6 @@ def render_result_detail(result: dict[str, Any]) -> str:
         spec.key: (aggregate_dimensions.get(spec.key) or {}).get("median")
         for spec in DIMENSION_SPECS
     }
-    ai_median = aggregate_scores["ai_flavor"]
     chart_prefix = f"radar-{result['model_id']}"
     archived = bool(result.get("archived"))
     if archived:
@@ -2062,10 +2212,24 @@ def render_result_detail(result: dict[str, Any]) -> str:
         archive_notice = ""
         history = _archive_history_section(result)
         scoring_note = SCORING_NOTE
+    show_v4 = public_protocol == "v4"
+    history_radar = ""
+    if any(value is not None for value in aggregate_scores.values()):
+        history_radar = (
+            '<details class="history-radar"><summary>V3 历史中位数雷达</summary>'
+            + _radar_chart(
+                f"{chart_prefix}-median",
+                "活动评委维度中位数",
+                aggregate_scores,
+                series_kind="historical-median",
+            )
+            + "</details>"
+        )
     return page_head(
         f"{result['title']} · {result['model_name']}",
         root_prefix,
         "page-result page-archived-result" if archived else "page-result",
+        skip_href="#novel-title",
     ) + f"""
 <a class="back-link" href="{back_link}">{back_text}</a>
 <article class="result-file">
@@ -2074,23 +2238,30 @@ def render_result_detail(result: dict[str, Any]) -> str:
     <p class="result-meta">{esc(result['model_name'])} · 成稿 {esc(result['manuscript_date'])} · {result['chapters']} 章 · {body_chars:,} 字</p>
     {archive_notice}
     <p class="result-blurb">{esc(result['blurb'])}</p>
-    <dl class="result-stats">
-      <div><dt>综合</dt><dd>{_format_score(result['overall_score'])}</dd></div>
-      <div><dt>AI味</dt><dd>{_format_score(ai_median)}</dd></div>
-    </dl>
+    {_rank_strip(result, archived=archived)}
   </header>
 
   {history}
 
-  <section class="aggregate-section" aria-labelledby="aggregate-title">
-    <nav class="score-switch" aria-label="评分版本"><a href="#score-v4">V4 评分</a><a href="#score-v3">V3 评分</a></nav>
-    <div id="score-v3">
-    <h2 id="aggregate-title">V3 评分</h2>
-    {_radar_chart(f'{chart_prefix}-median', '活动评委维度中位数', aggregate_scores)}
+  <section class="reading-section" aria-labelledby="novel-title">
+    <h2 id="novel-title">正文</h2>
+    <div class="novel-body markdown">{novel_html}</div>
+  </section>
+
+  <section class="outline-section" aria-labelledby="outline-title">
+    <h2 id="outline-title" class="visually-hidden">大纲</h2>
+    {_json_drawer('全纲', result['macro_outline'])}
+    {_json_drawer('细纲', result['opening_outline'])}
+  </section>
+
+  <section id="scores" class="aggregate-section" aria-labelledby="aggregate-title">
+    <h2 id="aggregate-title">评分剖面</h2>
+    {_default_profile_radar(result, chart_prefix)}
     <details class="info-drawer">
       <summary>评分怎么算</summary>
-      <p>{scoring_note} AI味仍以原始低分展示，雷达几何按「越低越好」反向绘制。</p>
+      <p>{scoring_note} 残差雷达里 AI 味已定向，50 是本书均值；头部书共同凹在自然度是 V3 数据里的真信号。</p>
     </details>
+    {history_radar}
     <div class="judge-evaluations" aria-label="活动评委逐维记录">
       {''.join(
           _judge_evaluation(
@@ -2101,22 +2272,21 @@ def render_result_detail(result: dict[str, Any]) -> str:
           for judge_id in judge_ids
       )}
     </div>
-    </div>
-  </section>
-
-  {_v4_result_section(result)}
-
-  <section class="outline-section" aria-labelledby="outline-title">
-    <h2 id="outline-title" class="visually-hidden">大纲</h2>
-    {_json_drawer('全纲', result['macro_outline'])}
-    {_json_drawer('细纲', result['opening_outline'])}
-  </section>
-
-  <section class="reading-section" aria-labelledby="novel-title">
-    <h2 id="novel-title">正文</h2>
-    <div class="novel-body markdown">{novel_html}</div>
+    {_v4_result_section(result) if show_v4 else ''}
   </section>
 </article>
+""" + PAGE_FOOT
+
+
+def render_history_index() -> str:
+    return page_head("V2.1 历史", "../", "page-legacy") + """
+<a class="back-link" href="../index.html">← 榜单</a>
+<header class="page-intro">
+  <h1>V2.1 已冻结</h1>
+  <p class="page-sub">改革开放长篇仍可在榜单阅读，但不再当作文风评测的当前协议。</p>
+</header>
+<p>作者群指出：每个模型自己起世界、人物和大纲时，测到的不是文风。新协议先锁世界，再锁人物，再锁章纲，最后冻成同一份开局提示词写 5–10 章。现行题目只有一句：筑基修士翻过十万大山看见高楼。说明见仓库 <code>docs/opening-protocol.md</code>。</p>
+<p>旧稿不删除。公开结果仍在 <code>results/reform-era/</code>，从<a href="../index.html">榜单</a>进入正文。</p>
 """ + PAGE_FOOT
 
 
@@ -2181,6 +2351,7 @@ def build_site(
     results_dir: Path,
     assets_dir: Path,
     output_dir: Path,
+    public_protocol: str | None = None,
 ) -> dict[str, int]:
     """Build a complete site into an empty output directory."""
 
@@ -2226,35 +2397,46 @@ def build_site(
             key=lambda item: item["manuscript_completed_at"],
             reverse=True,
         )
-    v4_default = attach_v4_results(results, results_dir)
-    # The preview directory is deliberately opt-in: an incomplete V4 dataset
-    # must not change a normal Pages build merely because files appeared.
-    v4_preview = output_dir.name == "v4-preview" or output_dir.name.startswith(".v4-preview.build-")
+    attach_v4_results(results, results_dir)
+    attach_reagg_v3(results, benchmark=results_dir.name, results_dir=results_dir)
+    protocol = resolve_public_protocol(
+        cli=public_protocol, output_dir_name=output_dir.name
+    )
+    if protocol == "v3-reagg":
+        print(
+            f"[reagg-v3] n={sum(1 for item in results if (item.get('reagg') or {}).get('status') == REAGG_COMPLETE)} "
+            "protocol=v3-reagg",
+            file=sys.stderr,
+        )
+    v4_preview = protocol == "v4"
     legacy_stories = load_legacy_stories(novels_dir, model_by_id, model_order)
 
     (output_dir / "index.html").write_text(
         render_home(
             results,
             len(legacy_stories),
-            v4_default=v4_default,
+            public_protocol=protocol,
             v4_preview=v4_preview,
         ),
         encoding="utf-8",
     )
+    history_dir = output_dir / "history"
+    history_dir.mkdir(parents=True, exist_ok=True)
+    (history_dir / "index.html").write_text(render_history_index(), encoding="utf-8")
     result_output = output_dir / "results" / "reform-era"
     result_output.mkdir(parents=True, exist_ok=True)
     for result in results:
         if not result["detail_available"]:
             continue
         (result_output / f"{result['model_id']}.html").write_text(
-            render_result_detail(result), encoding="utf-8"
+            render_result_detail(result, public_protocol=protocol), encoding="utf-8"
         )
     archive_output = result_output / ARCHIVE_DIR_NAME
     for archived in archived_results:
         version_output = archive_output / archived["model_id"]
         version_output.mkdir(parents=True, exist_ok=True)
         (version_output / f"{archived['archive_id']}.html").write_text(
-            render_result_detail(archived), encoding="utf-8"
+            render_result_detail(archived, public_protocol=protocol), encoding="utf-8"
         )
 
     legacy_output = output_dir / "novels"
@@ -2327,6 +2509,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--results-dir", default="results/reform-era")
     parser.add_argument("--assets-dir", default="site/assets")
     parser.add_argument("--docs-dir", default=".site/preview")
+    parser.add_argument(
+        "--public-protocol",
+        choices=PUBLIC_PROTOCOLS,
+        default=None,
+        help="公开口径。默认 v3-reagg；v4 仅预览。",
+    )
     args = parser.parse_args(argv)
 
     config_path = _resolve_from_root(args.config)
@@ -2349,6 +2537,7 @@ def main(argv: list[str] | None = None) -> int:
             results_dir=results_dir,
             assets_dir=assets_dir,
             output_dir=stage,
+            public_protocol=args.public_protocol,
         )
         _publish_directory(stage, docs_dir)
     except Exception as exc:

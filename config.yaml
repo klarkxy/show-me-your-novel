@@ -72,10 +72,11 @@ models:
     context_window: 204800
 
   - <<: *generation-defaults
-    id: glm-5.2
-    name: GLM 5.2
-    model: glm-5.2
+    id: glm-5.3
+    name: GLM 5.3
+    model: glm-5.3
     aliases: [glm]
+    supersedes: [glm-5.2]
 
   - <<: *generation-defaults
     id: gpt-5.6-luna
@@ -144,16 +145,11 @@ models:
     aliases: [gemini-pro]
 
   - <<: *generation-defaults
-    id: gemini-3.5-flash
-    name: Gemini 3.5 Flash
-    model: gemini-3.5-flash
+    id: gemini-3.7-flash
+    name: Gemini 3.7 Flash
+    model: gemini-3.7-flash
     aliases: [gemini-flash]
-
-  - <<: *generation-defaults
-    id: gemini-3.6-flash
-    name: Gemini 3.6 Flash
-    model: gemini-3.6-flash
-    aliases: [gemini-3.6]
+    supersedes: [gemini-3.5-flash, gemini-3.6-flash]
 
   - <<: *generation-defaults
     id: kimi-k2.7-code

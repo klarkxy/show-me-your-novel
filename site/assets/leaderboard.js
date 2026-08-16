@@ -10,7 +10,7 @@
   if (!body || !slider || !output) return;
 
   const rows = Array.from(body.querySelectorAll("tr"));
-  let activeMetric = "overall";
+  let activeMetric = "tscore";
 
   const isRankable = (row) => row.dataset.rankable === "true";
   const configOrder = (row) => {
@@ -30,8 +30,7 @@
     table.querySelectorAll(".metric-col").forEach((cell) => {
       const key = cell.getAttribute("data-metric");
       if (!key) return;
-      // Always show overall; also show the active sort dimension when it differs.
-      const show = key === "overall" || key === metric;
+      const show = key === "tscore" || key === metric;
       if (show) cell.removeAttribute("hidden");
       else cell.setAttribute("hidden", "");
     });
@@ -85,6 +84,10 @@
       }
       body.appendChild(row);
     });
+    rows.forEach((row) => {
+      const mark = row.querySelector("[data-tie-mark]");
+      if (mark) mark.hidden = activeMetric !== "tscore";
+    });
     buttons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.sort === activeMetric));
     });
@@ -93,7 +96,7 @@
   };
 
   buttons.forEach((button) => {
-    button.addEventListener("click", () => sortRows(button.dataset.sort || "overall"));
+    button.addEventListener("click", () => sortRows(button.dataset.sort || "tscore"));
   });
   slider.addEventListener("input", applyLimit);
 

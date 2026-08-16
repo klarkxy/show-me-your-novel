@@ -1,0 +1,10 @@
+{
+  "schema": "novel-benchmark.v3.lock",
+  "stage": "characters",
+  "source": "human-synthesis",
+  "from": {
+    "world": "human-synthesis",
+    "characters": "kimi-k3"
+  },
+  "note": "人物以 kimi-k3 为骨架定稿：沈却出山、周聿怀藏修拉人、韩闯查证、哑叔送到山脊即止。去掉原文遁光，避免开局就把山里手段写进凡人公路。不写死为何要藏、为何送走。"
+}

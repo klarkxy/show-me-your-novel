@@ -1,6 +1,6 @@
 # show-me-your-novel
 
-一个中文长篇小说模型评测项目。当前生成协议是 **自主长篇评测 V2.1**：25 个模型围绕同一方向独立完成规划与约 5 万字正文，再由 Sol、Grok 4.6、Claude Opus 5、Kimi K3、DeepSeek V4 Pro 五位固定评委盲评。
+一个中文长篇小说模型评测项目。当前生成协议是 **自主长篇评测 V2.1**：24 个模型围绕同一方向独立完成规划与约 5 万字正文，再由 Sol、Grok 4.6、Claude Opus 5、Kimi K3、DeepSeek V4 Pro 五位固定评委盲评。
 
 在线站点：[https://klarkxy.github.io/show-me-your-novel/](https://klarkxy.github.io/show-me-your-novel/)
 
@@ -34,17 +34,16 @@
 
 ```text
 deepseek-v4-flash   deepseek-v4-pro      mimo-v2.5
-mimo-v2.5-pro       minimax-m3           glm-5.2
+mimo-v2.5-pro       minimax-m3           glm-5.3
 gpt-5.6-luna        gpt-5.6-sol          gpt-5.6-terra
 claude-haiku-4-5    claude-fable-5       claude-sonnet-4-6
 claude-sonnet-5     gemini-2.5-pro        gemini-3.1-pro
-gemini-3.5-flash    gemini-3.6-flash      kimi-k2.7-code
-kimi-k3             grok-4.6              claude-opus-4-6
-claude-opus-4-7     claude-opus-4-8      claude-opus-5
-agnes-2.5-flash
+gemini-3.7-flash    kimi-k2.7-code       kimi-k3
+grok-4.6            claude-opus-4-6      claude-opus-4-7
+claude-opus-4-8     claude-opus-5        agnes-2.5-flash
 ```
 
-`deepseek-v4-flash` 与 `deepseek-v4-pro` 的服务端同名版本分别于 2026-08-03、2026-08-13 刷新；配置中的 `revision` 只用于区分评测运行，不会作为 API 请求参数发送。`grok-4.6` 取代 `grok-4.5`；新稿成功发布时，旧 4.5 稿会随原评审复制进 4.6 的归档区，原目录暂留作回滚副本。
+`deepseek-v4-flash` 与 `deepseek-v4-pro` 的服务端同名版本分别于 2026-08-03、2026-08-13 刷新；配置中的 `revision` 只用于区分评测运行，不会作为 API 请求参数发送。`grok-4.6` 取代 `grok-4.5`，`glm-5.3` 取代 `glm-5.2`，`gemini-3.7-flash` 取代 `gemini-3.5-flash` 与 `gemini-3.6-flash`；新稿成功发布时，旧稿会随原评审复制进新模型的归档区，原目录暂留作回滚副本。
 
 ## 安装与配置
 
@@ -62,7 +61,7 @@ API_URL=https://your-api.example.com/v1
 API_KEY=sk-...
 ```
 
-活动流程默认调用 OpenAI-compatible O 口 `/v1/chat/completions`；MiniMax M3、Claude 生成模型和 Opus 评委走原生 A 口 `/v1/messages`。两种协议默认使用流式传输并在本地重组完整响应；缺少终止事件的半截流会失败关闭，诊断命令仍可显式比较非流式。运行前统一通过 `/v1/models` 精确校验 25 个生成模型和 5 个固定评委 wire model ID，不做模糊匹配或静默替换；V3/V4 活动评委固定为 Sol、Grok 4.6、Claude Opus 5、Kimi K3、DeepSeek V4 Pro。
+活动流程默认调用 OpenAI-compatible O 口 `/v1/chat/completions`；MiniMax M3、Claude 生成模型和 Opus 评委走原生 A 口 `/v1/messages`。两种协议默认使用流式传输并在本地重组完整响应；缺少终止事件的半截流会失败关闭，诊断命令仍可显式比较非流式。运行前统一通过 `/v1/models` 精确校验 24 个生成模型和 5 个固定评委 wire model ID，不做模糊匹配或静默替换；V3/V4 活动评委固定为 Sol、Grok 4.6、Claude Opus 5、Kimi K3、DeepSeek V4 Pro。
 
 ## 统一 CLI
 
@@ -99,7 +98,7 @@ python runner/generate.py --model deepseek-v4-flash --model kimi-k3
 # 全量就绪检查：不发 completion 请求
 python runner/generate.py --all --dry-run
 
-# 显式运行全部 25 个模型
+# 显式运行全部 24 个模型
 python runner/generate.py --all
 
 # 低成本烟测，提交第一章后暂停
@@ -299,11 +298,21 @@ PowerShell：
 
 GitHub Actions 在无 API key 环境运行测试、重建 `_site/` 并部署 Pages；CI 不执行生成或评分。旧小说来源保留在 `novels/`，原有 `/novels/...` 路由继续生成。当前代码固定为五评委；只有五票和当前聚合全部有效的作品才进入排名。
 
+公开默认口径是 **V3 重聚合**（`novel-reagg.v3`）：名次用可靠性加权 T 分，雷达画评委票内残差。这不是新评委协议，提示词与原票未改。回滚中位数榜：
+
+```bash
+python scripts/generate_site.py --public-protocol v3 --docs-dir .site/preview
+```
+
+方案全文见 [docs/scoring-redesign.md](docs/scoring-redesign.md)。
+
+当前**新评测协议**是开局四段拆评，见 [docs/opening-protocol.md](docs/opening-protocol.md)。V2.1 改革开放稿整包冻结为历史赛道，不删。现行种子在 `benchmark/foundation-city/`。
+
 ## 目录
 
 | 路径 | 说明 |
 |---|---|
-| `config.yaml` | provider、25 个生成模型、评委定义和上下文配置 |
+| `config.yaml` | provider、24 个生成模型、评委定义和上下文配置 |
 | `benchmark/reform-era/` | V2.1 固定方向 |
 | `runner/prompts/v2.1/` | 活动生成 prompt |
 | `runner/prompts/v2/` | 共享的总纲修复 prompt 与评分 rubric |
@@ -318,6 +327,6 @@ GitHub Actions 在无 API key 环境运行测试、重建 `_site/` 并部署 Pag
 
 ## 全量运行提醒
 
-`--all` 会生成约 25 × 5 万字正文；若 25 个模型均生成完成，当前五评委口径的完整评分会产生 125 次携带全文的请求。开始付费全量前必须先执行测试、生成 dry-run、评分 dry-run 和离线建站，并核对实际计费。
+`--all` 会生成约 24 × 5 万字正文；若 24 个模型均生成完成，当前五评委口径的完整评分会产生 120 次携带全文的请求。开始付费全量前必须先执行测试、生成 dry-run、评分 dry-run 和离线建站，并核对实际计费。
 
 当前完成度和下一步见 [TODO.md](TODO.md)。测试通过只表示流程就绪，不等于全量生成或评分已经完成。
