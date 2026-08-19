@@ -372,6 +372,11 @@ class SiteGenerationTests(unittest.TestCase):
         )
 
         results = root / "results" / "reform-era"
+        (root / "benchmark" / "foundation-city").mkdir(parents=True, exist_ok=True)
+        (root / "benchmark" / "foundation-city" / "direction.md").write_text(
+            "当你好不容易成为筑基期修士，越过那十万大山，却发现遍地都是高楼大厦……这一刻你会怎么办？\n",
+            encoding="utf-8",
+        )
         # A and B deliberately tie. Config order, not display name, must win.
         self._write_result(results, "model-a", score=82.0, aggregate=True)
         self._write_result(results, "model-b", score=82.0, aggregate=True)
@@ -385,6 +390,52 @@ class SiteGenerationTests(unittest.TestCase):
         # Complete source votes without their aggregate record stay unranked.
         self._write_result(results, "model-h", score=77.0, aggregate=None)
         return config, novels, results
+
+    def _write_opening(
+        self,
+        root: Path,
+        model_id: str,
+        *,
+        status: str = "complete",
+    ) -> None:
+        model = root / "results" / "foundation-city" / model_id
+        model.mkdir(parents=True, exist_ok=True)
+        novel = (
+            "# 隐修的城\n\n## 第1章 山尽头的灯\n\n"
+            "沈却站在公路边坡上，车灯扫过道袍。\n"
+        )
+        (model / "novel.md").write_text(novel, encoding="utf-8")
+        digest = hashlib.sha256((model / "novel.md").read_bytes()).hexdigest()
+        self._write_json(
+            model / "prose.json",
+            {
+                "schema": "novel-benchmark.v3.prose",
+                "benchmark": "foundation-city",
+                "model_id": model_id,
+                "status": status,
+                "chapters": [
+                    {"number": 1, "title": "山尽头的灯", "beats": 1, "chars": 18}
+                ],
+                "total_chars": 18,
+                "artifact_sha256": {"novel.md": digest},
+            },
+        )
+
+    def _write_opening_lock(self, root: Path) -> None:
+        pack_dir = root / "benchmark" / "foundation-city" / "frozen"
+        pack_dir.mkdir(parents=True, exist_ok=True)
+        self._write_json(
+            pack_dir / "pack.json",
+            {
+                "schema": "novel-benchmark.v3",
+                "world": {"name": "隐修的城"},
+                "outline": {"incident_one_liner": "沈却翻过十万大山，看见高楼。"},
+            },
+        )
+        (root / "benchmark" / "foundation-city" / "direction.md").write_text(
+            "当你好不容易成为筑基期修士，越过那十万大山，却发现遍地都是高楼大厦……这一刻你会怎么办？\n",
+            encoding="utf-8",
+        )
 
     @staticmethod
     def _row(home: str, model_id: str) -> str:
@@ -458,41 +509,53 @@ class SiteGenerationTests(unittest.TestCase):
                 },
             )
             home = (output / "index.html").read_text(encoding="utf-8")
-            opening_index = (output / "opening" / "index.html").read_text(encoding="utf-8")
+            board = (output / "history" / "index.html").read_text(encoding="utf-8")
+            opening_alias = (output / "opening" / "index.html").read_text(
+                encoding="utf-8"
+            )
             self.assertIn("开局", home)
-            self.assertIn("尚无文风评分", opening_index)
-            self.assertEqual(home.count("data-model-id="), 15)
-            self.assertIn("全部 15", home)
-            self.assertIn(f"评委 {len(JUDGE_IDS)}", home)
-            self.assertIn("活动评委票的中位数", home)
-            self.assertIn("V3 重聚合", home)
-            self.assertIn("非新评", home)
-            self.assertIn('data-sort="tscore"', home)
-            self.assertIn("评分怎么算", home)
+            self.assertIn("尚无文风评分", home)
+            self.assertIn("不是榜单", home)
+            self.assertIn("筑基翻山见高楼", home)
+            self.assertIn("当你好不容易成为筑基期修士", home)
+            self.assertIn("history/index.html", home)
+            self.assertNotIn("data-model-id=", home)
+            self.assertNotIn("改革开放长篇模型榜", home)
+            self.assertIn("../index.html", opening_alias)
+            self.assertIn("开局已移到首页", opening_alias)
+            self.assertEqual(board.count("data-model-id="), 15)
+            self.assertIn("全部 15", board)
+            self.assertIn(f"评委 {len(JUDGE_IDS)}", board)
+            self.assertIn("活动评委票的中位数", board)
+            self.assertIn("V3 重聚合", board)
+            self.assertIn("非新评", board)
+            self.assertIn("V2.1 历史赛道", board)
+            self.assertIn('data-sort="tscore"', board)
+            self.assertIn("评分怎么算", board)
             self.assertIn("Content-Security-Policy", home)
-            self.assertNotIn("Zulu <script>", home)
-            self.assertIn("Zulu &lt;script&gt;", home)
-            self.assertNotIn("data-grok=", home)
-            self.assertNotIn('data-sort="grok"', home)
-            self.assertIn("data-theme-fulfillment=", home)
-            self.assertIn('data-sort="theme-fulfillment"', home)
-            self.assertIn("文风管理", home)
-            self.assertIn("AI味（越低越好）", home)
-            self.assertIn(">82.0</td>", home)
-            self.assertIn('data-metric="overall"', home)
-            self.assertIn("Claude Opus 5", home)
-            self.assertIn("Kimi K3", home)
-            self.assertIn("DeepSeek V4 Pro", home)
-            self.assertNotIn("Fable", home)
+            self.assertNotIn("Zulu <script>", board)
+            self.assertIn("Zulu &lt;script&gt;", board)
+            self.assertNotIn("data-grok=", board)
+            self.assertNotIn('data-sort="grok"', board)
+            self.assertIn("data-theme-fulfillment=", board)
+            self.assertIn('data-sort="theme-fulfillment"', board)
+            self.assertIn("文风管理", board)
+            self.assertIn("AI味（越低越好）", board)
+            self.assertIn(">82.0</td>", board)
+            self.assertIn('data-metric="overall"', board)
+            self.assertIn("Claude Opus 5", board)
+            self.assertIn("Kimi K3", board)
+            self.assertIn("DeepSeek V4 Pro", board)
+            self.assertNotIn("Fable", board)
 
-            row_a = self._row(home, "model-a")
-            row_b = self._row(home, "model-b")
-            row_c = self._row(home, "model-c")
-            row_d = self._row(home, "model-d")
-            row_e = self._row(home, "model-e")
-            row_f = self._row(home, "model-f")
-            row_g = self._row(home, "model-g")
-            row_h = self._row(home, "model-h")
+            row_a = self._row(board, "model-a")
+            row_b = self._row(board, "model-b")
+            row_c = self._row(board, "model-c")
+            row_d = self._row(board, "model-d")
+            row_e = self._row(board, "model-e")
+            row_f = self._row(board, "model-f")
+            row_g = self._row(board, "model-g")
+            row_h = self._row(board, "model-h")
             self.assertIn('data-rankable="true"', row_a)
             self.assertIn('data-rankable="true"', row_b)
             self.assertIn('data-rankable="false"', row_c)
@@ -500,19 +563,19 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("data-rank>02", row_b)
             self.assertIn('data-tie-next="true"', row_a)
             self.assertIn('data-tie-next="false"', row_b)
-            self.assertLess(home.index(row_a), home.index(row_b))
+            self.assertLess(board.index(row_a), board.index(row_b))
             for row in (row_c, row_d, row_e, row_f, row_g, row_h):
                 self.assertIn('data-rankable="false"', row)
                 self.assertIn('data-rank></td>', row)
 
             # A completed manuscript gets a detail page even if scoring is pending.
             for model_id in ("model-a", "model-b", "model-c", "model-d", "model-h"):
-                self.assertIn(f"results/reform-era/{model_id}.html", home)
+                self.assertIn(f"results/reform-era/{model_id}.html", board)
                 self.assertTrue(
                     (output / "results" / "reform-era" / f"{model_id}.html").is_file()
                 )
             for model_id in ("model-e", "model-f", "model-g"):
-                self.assertNotIn(f"results/reform-era/{model_id}.html", home)
+                self.assertNotIn(f"results/reform-era/{model_id}.html", board)
                 self.assertFalse(
                     (output / "results" / "reform-era" / f"{model_id}.html").exists()
                 )
@@ -533,6 +596,8 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("Fable", detail)
             self.assertIn("活动评委维度中位数", detail)
             self.assertIn("活动评委逐维记录", detail)
+            self.assertIn('href="../../history/index.html"', detail)
+            self.assertIn("← V2.1 历史", detail)
             self.assertIn('href="#novel-title"', detail)
             self.assertLess(detail.index('id="novel-title"'), detail.index('id="scores"'))
             self.assertIn("相对本书均值", detail)
@@ -562,6 +627,53 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("NaN", detail)
             self.assertIn("&lt;b data-test=1&gt;", detail)
             self.assertNotIn("<b data-test=1>", detail)
+
+    def test_homepage_is_opening_gallery_not_frozen_board(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config, novels, results = self._fixture(root)
+            self._write_opening_lock(root)
+            self._write_opening(root, "model-a")
+            self._write_opening(root, "model-b", status="partial")
+            output = root / "public"
+            summary = build_site(
+                config_path=config,
+                novels_dir=novels,
+                results_dir=results,
+                assets_dir=REPO_ROOT / "site" / "assets",
+                output_dir=output,
+            )
+            self.assertEqual(summary["opening_novels"], 1)
+
+            home = (output / "index.html").read_text(encoding="utf-8")
+            self.assertIn("尚无文风评分", home)
+            self.assertIn("不是榜单", home)
+            self.assertIn("隐修的城", home)
+            self.assertIn("沈却翻过十万大山，看见高楼。", home)
+            self.assertIn("results/foundation-city/model-a.html", home)
+            self.assertNotIn("results/foundation-city/model-b.html", home)
+            self.assertNotIn("data-model-id=", home)
+            self.assertNotIn("data-sort=", home)
+            self.assertNotIn("改革开放长篇模型榜", home)
+
+            board = (output / "history" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("改革开放长篇模型榜", board)
+            self.assertIn("V2.1 历史赛道", board)
+            self.assertIn('data-model-id="model-a"', board)
+            self.assertIn("../results/reform-era/model-a.html", board)
+
+            detail = (
+                output / "results" / "foundation-city" / "model-a.html"
+            ).read_text(encoding="utf-8")
+            self.assertIn('href="../../index.html"', detail)
+            self.assertIn("← 开局", detail)
+            self.assertIn("沈却站在公路边坡上", detail)
+            self.assertNotIn("T分", detail)
+            self.assertNotIn("评分剖面", detail)
+
+            alias = (output / "opening" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("../index.html", alias)
+            self.assertIn("开局已移到首页", alias)
 
     def test_archived_manuscript_keeps_reviews_is_browsable_and_never_ranks(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -614,7 +726,7 @@ class SiteGenerationTests(unittest.TestCase):
                 output_dir=output,
             )
 
-            home = (output / "index.html").read_text(encoding="utf-8")
+            home = (output / "history" / "index.html").read_text(encoding="utf-8")
             self.assertEqual(home.count('data-model-id="model-a"'), 1)
             row = self._row(home, "model-a")
             self.assertIn("成稿 2026-08-13", row)
@@ -690,7 +802,7 @@ class SiteGenerationTests(unittest.TestCase):
                 output_dir=output,
             )
 
-            home = (output / "index.html").read_text(encoding="utf-8")
+            home = (output / "history" / "index.html").read_text(encoding="utf-8")
             row = self._row(home, "model-a")
             self.assertIn('data-rankable="false"', row)
             detail = (output / "results" / "reform-era" / "model-a.html").read_text(
@@ -713,7 +825,7 @@ class SiteGenerationTests(unittest.TestCase):
                 output_dir=output,
             )
 
-            home = (output / "index.html").read_text(encoding="utf-8")
+            home = (output / "history" / "index.html").read_text(encoding="utf-8")
             row = self._row(home, "model-a")
             self.assertIn('data-rankable="false"', row)
             self.assertNotIn("results/reform-era/model-a.html", row)
@@ -737,7 +849,7 @@ class SiteGenerationTests(unittest.TestCase):
                 output_dir=output,
             )
 
-            home = (output / "index.html").read_text(encoding="utf-8")
+            home = (output / "history" / "index.html").read_text(encoding="utf-8")
             row = self._row(home, "model-a")
             self.assertIn('data-rankable="false"', row)
             self.assertNotIn("results/reform-era/model-a.html", row)
@@ -812,7 +924,7 @@ class SiteGenerationTests(unittest.TestCase):
                 output_dir=output,
             )
 
-            home = (output / "index.html").read_text(encoding="utf-8")
+            home = (output / "history" / "index.html").read_text(encoding="utf-8")
             row = self._row(home, "model-a")
             self.assertIn('data-rankable="true"', row)
             self.assertTrue(
@@ -838,7 +950,7 @@ class SiteGenerationTests(unittest.TestCase):
                 assets_dir=REPO_ROOT / "site" / "assets",
                 output_dir=output,
             )
-            home = (output / "index.html").read_text(encoding="utf-8")
+            home = (output / "history" / "index.html").read_text(encoding="utf-8")
             row = self._row(home, "model-a")
             self.assertIn('data-rankable="false"', row)
             self.assertIn("results/reform-era/model-a.html", row)
@@ -882,7 +994,7 @@ class SiteGenerationTests(unittest.TestCase):
                 assets_dir=REPO_ROOT / "site" / "assets",
                 output_dir=output,
             )
-            home = (output / "index.html").read_text(encoding="utf-8")
+            home = (output / "history" / "index.html").read_text(encoding="utf-8")
             row = self._row(home, "model-a")
             self.assertIn('data-rankable="false"', row)
             self.assertNotIn("results/reform-era/model-a.html", row)

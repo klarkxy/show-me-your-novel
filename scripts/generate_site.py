@@ -1482,8 +1482,7 @@ def page_head(
       <span>{SITE_TITLE}</span>
     </a>
     <nav class="site-nav" aria-label="主导航">
-      <a href="{root_prefix}index.html">榜单</a>
-      <a href="{root_prefix}opening/index.html">开局</a>
+      <a href="{root_prefix}index.html">开局</a>
       <a href="{root_prefix}history/index.html">V2.1 历史</a>
       <a href="{root_prefix}novels/index.html">Legacy</a>
       <a href="{REPO_URL}" rel="noopener" target="_blank">GitHub</a>
@@ -1561,11 +1560,16 @@ def _profile_spark(result: dict[str, Any]) -> str:
     return f'<span class="profile-spark" aria-hidden="true">{"".join(bars)}</span>'
 
 
-def _leaderboard_row(result: dict[str, Any], rank: int | None) -> str:
+def _leaderboard_row(
+    result: dict[str, Any],
+    rank: int | None,
+    *,
+    result_href_prefix: str = "results/reform-era/",
+) -> str:
     if result["detail_available"]:
         history = len(result.get("archives") or [])
         history_text = f" · 历史稿 {history}" if history else ""
-        entry = f"""<a class="entry-link" href="results/reform-era/{result['model_id']}.html">
+        entry = f"""<a class="entry-link" href="{result_href_prefix}{result['model_id']}.html">
       <span class="entry-model">{esc(result['model_name'])}</span>
       <span class="entry-title">《{esc(result['title'])}》</span>
       <span class="entry-date">成稿 {esc(result['manuscript_date'])}{history_text}</span>
@@ -1626,10 +1630,14 @@ def _v4_heat_cell(value: float | None, spec: Any) -> str:
     )
 
 
-def _v4_leaderboard_row(result: dict[str, Any]) -> str:
+def _v4_leaderboard_row(
+    result: dict[str, Any],
+    *,
+    result_href_prefix: str = "results/reform-era/",
+) -> str:
     v4 = result["v4"]
     detail = (
-        f'<a class="entry-link" href="results/reform-era/{esc(result["model_id"])}.html">'
+        f'<a class="entry-link" href="{result_href_prefix}{esc(result["model_id"])}.html">'
         f'<span class="entry-model">{esc(result["model_name"])}</span>'
         f'<span class="entry-title">《{esc(result["title"])}》</span></a>'
         if result["detail_available"]
@@ -1647,11 +1655,20 @@ def _v4_leaderboard_row(result: dict[str, Any]) -> str:
 </tr>"""
 
 
-def _v4_preview(results: list[dict[str, Any]], *, complete: bool) -> str:
+def _v4_preview(
+    results: list[dict[str, Any]],
+    *,
+    complete: bool,
+    result_href_prefix: str = "results/reform-era/",
+) -> str:
     valid_results = [result for result in results if result.get("v4", {}).get("valid")]
     if complete:
         valid_results.sort(key=lambda result: result["v4"]["rank"])
-    rows = "".join(_v4_leaderboard_row(result) for result in valid_results if complete)
+    rows = "".join(
+        _v4_leaderboard_row(result, result_href_prefix=result_href_prefix)
+        for result in valid_results
+        if complete
+    )
     if not complete:
         rows = "".join(
             f"<tr><th scope=\"row\">{esc(result['model_name'])}</th><td>{_format_score(result['v4']['overall_score'])}</td>"
@@ -1685,14 +1702,30 @@ def _v4_preview(results: list[dict[str, Any]], *, complete: bool) -> str:
 </section>"""
 
 
-def render_v4_home(results: list[dict[str, Any]], legacy_count: int, *, preview: bool) -> str:
-    return page_head("改革开放长篇模型榜 · V4", "", "page-leaderboard page-v4", leaderboard_script=False) + f"""
+def render_v4_home(
+    results: list[dict[str, Any]],
+    legacy_count: int,
+    *,
+    preview: bool,
+    root_prefix: str = "",
+    result_href_prefix: str = "results/reform-era/",
+) -> str:
+    return page_head(
+        "改革开放长篇模型榜 · V4",
+        root_prefix,
+        "page-leaderboard page-v4",
+        leaderboard_script=False,
+    ) + f"""
 <header class="page-intro" aria-labelledby="page-title">
   <h1 id="page-title">改革开放长篇模型榜</h1>
   <p class="page-sub">V4 · 成对比较 + 绝对评分 · {len(V4_JUDGE_IDS)} 位活动评委</p>
   <p class="page-meta">全部 {len(results)} · Legacy {legacy_count}</p>
 </header>
-{_v4_preview(results, complete=not preview or all(result.get('v4', {}).get('rank') for result in results if result['detail_available']))}
+{_v4_preview(
+    results,
+    complete=not preview or all(result.get('v4', {}).get('rank') for result in results if result['detail_available']),
+    result_href_prefix=result_href_prefix,
+)}
 """ + PAGE_FOOT
 
 
@@ -1703,9 +1736,17 @@ def render_home(
     public_protocol: str = "v3-reagg",
     v4_default: bool = False,
     v4_preview: bool = False,
+    root_prefix: str = "",
+    result_href_prefix: str = "results/reform-era/",
 ) -> str:
     if v4_default or public_protocol == "v4":
-        return render_v4_home(results, legacy_count, preview=not v4_default and v4_preview)
+        return render_v4_home(
+            results,
+            legacy_count,
+            preview=not v4_default and v4_preview,
+            root_prefix=root_prefix,
+            result_href_prefix=result_href_prefix,
+        )
     display = list(results)
     if public_protocol == "v3-reagg":
         display.sort(
@@ -1725,9 +1766,13 @@ def render_home(
     for result in display:
         if result["rankable"]:
             rank += 1
-            rendered_rows.append(_leaderboard_row(result, rank))
+            rendered_rows.append(
+                _leaderboard_row(result, rank, result_href_prefix=result_href_prefix)
+            )
         else:
-            rendered_rows.append(_leaderboard_row(result, None))
+            rendered_rows.append(
+                _leaderboard_row(result, None, result_href_prefix=result_href_prefix)
+            )
     rows = "\n".join(rendered_rows)
     model_count = len(results)
     if rows:
@@ -1778,10 +1823,18 @@ def render_home(
         else ""
     )
 
+    back_link = (
+        f'<a class="back-link" href="{root_prefix}index.html">← 开局</a>\n'
+        if root_prefix
+        else ""
+    )
     return page_head(
-        "改革开放长篇模型榜", "", "page-leaderboard", leaderboard_script=True
+        "改革开放长篇模型榜",
+        root_prefix,
+        "page-leaderboard",
+        leaderboard_script=True,
     ) + f"""
-<header class="page-intro" aria-labelledby="page-title">
+{back_link}<header class="page-intro" aria-labelledby="page-title">
   <h1 id="page-title">改革开放长篇模型榜</h1>
   <p class="protocol-chip">V2.1 历史赛道 · 已冻结 · 不是新开局文风榜</p>
   <p class="page-sub">同一方向 · 约 5 万字开篇 · {len(JUDGE_IDS)} 评委盲评</p>
@@ -1808,7 +1861,7 @@ def render_home(
     <p id="ranking-note">{SCORING_NOTE}</p>
   </details>
 </section>
-{_v4_preview(results, complete=False) if v4_preview else ''}
+{_v4_preview(results, complete=False, result_href_prefix=result_href_prefix) if v4_preview else ''}
 """ + PAGE_FOOT
 
 
@@ -2208,8 +2261,12 @@ def render_result_detail(
         )
     else:
         root_prefix = "../../"
-        back_link = "../../index.html"
-        back_text = "← 榜单"
+        if public_protocol == "v4":
+            back_link = "../../index.html"
+            back_text = "← 榜单"
+        else:
+            back_link = "../../history/index.html"
+            back_text = "← V2.1 历史"
         archive_notice = ""
         history = _archive_history_section(result)
         scoring_note = SCORING_NOTE
@@ -2279,15 +2336,14 @@ def render_result_detail(
 """ + PAGE_FOOT
 
 
-def render_history_index() -> str:
-    return page_head("V2.1 历史", "../", "page-legacy") + """
-<a class="back-link" href="../index.html">← 榜单</a>
+def render_opening_alias() -> str:
+    return page_head("开局", "../", "page-legacy") + """
+<a class="back-link" href="../index.html">← 开局已移到首页</a>
 <header class="page-intro">
-  <h1>V2.1 已冻结</h1>
-  <p class="page-sub">改革开放长篇仍可在榜单阅读，但不再当作文风评测的当前协议。</p>
+  <h1>开局在首页</h1>
+  <p class="page-sub">冻结包和正文齐套后，默认首页是开局阅读页，不是旧榜。</p>
 </header>
-<p>作者群指出：每个模型自己起世界、人物和大纲时，测到的不是文风。新协议先锁世界，再锁人物，再锁章纲，最后冻成同一份开局提示词写 5–10 章。现行题目只有一句：筑基修士翻过十万大山看见高楼。说明见仓库 <code>docs/opening-protocol.md</code>。</p>
-<p>已成稿的开局正文在<a href="../opening/index.html">开局</a>。旧稿不删除。公开结果仍在 <code>results/reform-era/</code>，从<a href="../index.html">榜单</a>进入。</p>
+<p><a href="../index.html">去首页读开局</a>。改革开放长篇在<a href="../history/index.html">V2.1 历史</a>。</p>
 """ + PAGE_FOOT
 
 
@@ -2365,11 +2421,16 @@ def load_opening_results(
     return found
 
 
-def render_opening_index(openings: list[dict[str, Any]], direction: str) -> str:
+def render_opening_index(
+    openings: list[dict[str, Any]],
+    direction: str,
+    *,
+    world_name: str = "",
+) -> str:
     cards = []
     for item in openings:
         cards.append(
-            f"""<a class="legacy-card" href="../results/foundation-city/{esc(item['model_id'])}.html">
+            f"""<a class="legacy-card" href="results/foundation-city/{esc(item['model_id'])}.html">
   <h2>{esc(item['model_name'])}</h2>
   <p class="card-meta">{item['chapters']} 章 · {item['chars']:,} 字</p>
   <p>{esc(item['blurb'])}</p>
@@ -2377,15 +2438,15 @@ def render_opening_index(openings: list[dict[str, Any]], direction: str) -> str:
         )
     cards_html = "\n".join(cards) or '<p class="empty-copy">还没有完整开局正文。</p>'
     topic = esc(direction.strip() or "筑基翻山见高楼")
-    return page_head("开局", "../", "page-legacy") + f"""
-<a class="back-link" href="../index.html">← 榜单</a>
+    world = esc(world_name or (openings[0]["title"] if openings else "开局"))
+    return page_head("开局 · 筑基翻山见高楼", "", "page-legacy") + f"""
 <header class="page-intro">
   <h1>筑基翻山见高楼</h1>
-  <p class="page-sub">同一冻结世界、人物和章纲 · 尚无文风评分</p>
+  <p class="page-sub">冻结世界《{world}》· 同一人物和章纲 · 尚无文风评分</p>
   <p class="page-meta">成稿 {len(openings)}</p>
 </header>
 <p>题目：{topic}</p>
-<p>世界、人物、章纲已锁死。正文按节写，不另补设定。这是开局阅读页，不是榜单。</p>
+<p>世界、人物、章纲已锁死。正文按节写，不另补设定。这是开局阅读页，不是榜单。改革开放长篇在<a href="history/index.html">V2.1 历史</a>。</p>
 <div class="legacy-grid">{cards_html}</div>
 """ + PAGE_FOOT
 
@@ -2398,7 +2459,7 @@ def render_opening_detail(item: dict[str, Any]) -> str:
         "page-result",
         skip_href="#novel-title",
     ) + f"""
-<a class="back-link" href="../../opening/index.html">← 开局</a>
+<a class="back-link" href="../../index.html">← 开局</a>
 <article class="result-file">
   <header class="result-header">
     <h1>《{esc(item['title'])}》</h1>
@@ -2423,7 +2484,7 @@ def render_legacy_index(stories: list[dict[str, Any]]) -> str:
 </a>""")
     cards_html = "\n".join(cards) or '<p class="empty-copy">没有可展示的旧题材。</p>'
     return page_head("Legacy", "../", "page-legacy") + f"""
-<a class="back-link" href="../index.html">← 榜单</a>
+<a class="back-link" href="../index.html">← 开局</a>
 <header class="page-intro">
   <h1>Legacy</h1>
 </header>
@@ -2550,22 +2611,43 @@ def build_site(
         opening_direction = ""
     openings = load_opening_results(opening_dir, model_by_id, model_order, frozen)
 
-    (output_dir / "index.html").write_text(
+    history_dir = output_dir / "history"
+    history_dir.mkdir(parents=True, exist_ok=True)
+    history_protocol = "v3-reagg" if protocol == "v4" else protocol
+    (history_dir / "index.html").write_text(
         render_home(
             results,
             len(legacy_stories),
-            public_protocol=protocol,
-            v4_preview=v4_preview,
+            public_protocol=history_protocol,
+            v4_preview=False,
+            root_prefix="../",
+            result_href_prefix="../results/reform-era/",
         ),
         encoding="utf-8",
     )
-    history_dir = output_dir / "history"
-    history_dir.mkdir(parents=True, exist_ok=True)
-    (history_dir / "index.html").write_text(render_history_index(), encoding="utf-8")
+    if protocol == "v4":
+        (output_dir / "index.html").write_text(
+            render_home(
+                results,
+                len(legacy_stories),
+                public_protocol=protocol,
+                v4_preview=v4_preview,
+            ),
+            encoding="utf-8",
+        )
+    else:
+        (output_dir / "index.html").write_text(
+            render_opening_index(
+                openings,
+                opening_direction,
+                world_name=str((frozen.get("world") or {}).get("name") or ""),
+            ),
+            encoding="utf-8",
+        )
     opening_output = output_dir / "opening"
     opening_output.mkdir(parents=True, exist_ok=True)
     (opening_output / "index.html").write_text(
-        render_opening_index(openings, opening_direction), encoding="utf-8"
+        render_opening_alias(), encoding="utf-8"
     )
     opening_result_output = output_dir / "results" / "foundation-city"
     opening_result_output.mkdir(parents=True, exist_ok=True)
@@ -2654,7 +2736,7 @@ def _publish_directory(stage: Path, target: Path) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="离线生成改革开放榜单与 Legacy 站点")
+    parser = argparse.ArgumentParser(description="离线生成开局阅读页、V2.1 历史榜与 Legacy 站点")
     parser.add_argument("--config", default="config.yaml")
     parser.add_argument("--novels-dir", default="novels")
     parser.add_argument("--results-dir", default="results/reform-era")

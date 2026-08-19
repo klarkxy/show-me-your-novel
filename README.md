@@ -306,7 +306,7 @@ python scripts/generate_site.py --public-protocol v3 --docs-dir .site/preview
 
 方案全文见 [docs/scoring-redesign.md](docs/scoring-redesign.md)。
 
-当前**新评测协议**是开局四段拆评，见 [docs/opening-protocol.md](docs/opening-protocol.md)。V2.1 改革开放稿整包冻结为历史赛道，不删。现行种子在 `benchmark/foundation-city/`。
+当前**新评测协议**是开局四段拆评，见 [docs/opening-protocol.md](docs/opening-protocol.md)。公开默认首页是筑基翻山见高楼的开局阅读页（尚无文风评分）。V2.1 改革开放稿整包冻结在「V2.1 历史」，不删。现行种子在 `benchmark/foundation-city/`。
 
 ## 目录
 
