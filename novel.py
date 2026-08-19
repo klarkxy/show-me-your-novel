@@ -10,7 +10,7 @@ from pathlib import Path
 import sys
 from typing import Callable, Iterable
 
-from runner import compare_v4, generate, generate_v3, score, score_design, score_v4
+from runner import compare_v4, generate, generate_v3, score, score_design, score_prose, score_v4
 from runner.llm_api import (
     ANTHROPIC_MESSAGES,
     ChatClient,
@@ -28,7 +28,8 @@ FORWARDED: dict[str, tuple[str, Callable[[Iterable[str] | None], int]]] = {
     "generate-v3": ("V3 开局：世界→人物→章纲→正文，层层锁定", generate_v3.main),
     "assemble-v3": ("把三段设计冻成同一份开局提示词", generate_v3.assemble_main),
     "score-design": ("V3 设计段打分并挑选冻结包", score_design.main),
-    "score": ("V3 Sol/Grok/Opus/K3/DeepSeek 评分", score.main),
+    "score-prose": ("V3 开局正文：文风与场景", score_prose.main),
+    "score": ("V2.1 Sol/Grok/Opus/K3/DeepSeek 评分", score.main),
     "score-v4": ("V4 绝对评分", score_v4.main),
     "compare-v4": ("V4 匿名成对比较", compare_v4.main),
     "site": ("离线构建站点", generate_site.main),

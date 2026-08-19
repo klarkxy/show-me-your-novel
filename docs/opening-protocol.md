@@ -92,8 +92,24 @@ python novel.py assemble-v3 --world glm-5.3 --characters kimi-k3 --outline gpt-5
 python novel.py generate-v3 --model glm-5.3 --phase prose
 ```
 
+## 评分
+
+设计段和正文段分开评。不要拿 V2.1 的「题材兑现 / 时代质感」去给已经冻结的设定打第二遍分。
+
+```bash
+# 各模型自己交的世界 / 人物 / 章纲
+python novel.py score-design --all
+
+# 同一冻结包下的开局正文，只评文风与场景
+python novel.py score-prose --all
+```
+
+冻结包已经由人合成。`score-design --assemble` 不再改冻。`_locked` 不是候选模型。
+
 ## 站点
 
-- 冻结包和开局正文齐套后，**默认首页是开局阅读页**，不是文风榜。
+- 默认首页是开局阅读页。简介取各家正文开头，不用冻结章纲那一句。
+- 文风分齐套后，首页按正文综合分排序。
+- 各模型自己的世界 / 人物 / 章纲在「设计」。
 - 改革开放榜整包冻结在「V2.1 历史」，旧稿不删。
-- 未出文风分之前，首页不得出现名次、T 分或雷达。
+- 未出文风分之前，首页不得出现名次。

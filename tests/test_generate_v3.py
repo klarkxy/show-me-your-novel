@@ -23,7 +23,14 @@ from runner.generate_v3 import (
     validate_world,
 )
 from runner.generate import repo_root, canonical_text
-from runner.score_design import DEFAULT_JUDGES, parse_design_score, pick_winners
+from runner.score_design import (
+    DEFAULT_JUDGES,
+    list_complete_candidates,
+    parse_design_score,
+    pick_winners,
+    render_judge_user,
+)
+from runner.score_prose import parse_prose_score
 
 
 def _world() -> dict:
@@ -245,6 +252,47 @@ class GenerateV3Tests(unittest.TestCase):
         self.assertEqual(winners["mixed"]["world"], "aa")
         self.assertEqual(winners["mixed"]["characters"], "bb")
         self.assertEqual(winners["package"], "bb")
+
+    def test_render_judge_user_survives_json_braces(self) -> None:
+        filled = render_judge_user(
+            "题：{direction}\n稿：{artifact}\n例：{{ \"a\": 1 }}",
+            direction="出山",
+            artifact='{"name": "隐修的城"}',
+        )
+        self.assertIn('{"name": "隐修的城"}', filled)
+        self.assertIn('{ "a": 1 }', filled)
+
+    def test_list_complete_candidates_skips_underscore_dirs(self) -> None:
+        import json
+        import tempfile
+        from pathlib import Path
+
+        world = _world()
+        characters = _characters()
+        outline = _outline()
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            locked = root / "_locked"
+            kept = root / "kimi-k3"
+            for path in (locked, kept):
+                path.mkdir()
+                (path / "world.json").write_text(
+                    json.dumps(world, ensure_ascii=False), encoding="utf-8"
+                )
+                (path / "characters.json").write_text(
+                    json.dumps(characters, ensure_ascii=False), encoding="utf-8"
+                )
+                (path / "outline.json").write_text(
+                    json.dumps(outline, ensure_ascii=False), encoding="utf-8"
+                )
+            self.assertEqual(list_complete_candidates(root), ["kimi-k3"])
+
+    def test_parse_prose_score_uses_four_bands(self) -> None:
+        parsed = parse_prose_score(
+            '{"bands":{"naturalness":3,"voice":2,"scene":4,"continuity":1},'
+            '"comment":"旁白把车写出来了，但交接卡念了半页。"}'
+        )
+        self.assertEqual(parsed["score"], 62.5)
 
     def test_design_judges_are_the_five_active_seats(self) -> None:
         self.assertEqual(DEFAULT_JUDGES, ("sol", "grok", "opus", "k3", "ds-v4-pro"))

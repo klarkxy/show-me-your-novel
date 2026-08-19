@@ -56,12 +56,21 @@ def _log(message: str) -> None:
         print(message, flush=True)
 
 
+def render_judge_user(template: str, **fields: str) -> str:
+    """Fill `{name}` slots without str.format, then unescape doubled braces."""
+
+    text = template
+    for key, value in fields.items():
+        text = text.replace("{" + key + "}", value)
+    return text.replace("{{", "{").replace("}}", "}")
+
+
 def list_complete_candidates(results_root: Path) -> list[str]:
     names: list[str] = []
     if not results_root.is_dir():
         return names
     for path in sorted(results_root.iterdir()):
-        if not path.is_dir():
+        if not path.is_dir() or path.name.startswith("_"):
             continue
         payload = v3.load_design_dir(path)
         if all(track in payload for track in TRACKS):
@@ -161,7 +170,8 @@ def score_one(
         _log(f"[score-design] {candidate} {track} {judge_id}: cached")
         return "cached"
     artifact = v3.load_design_dir(model_dir)[track]
-    user = prompts[f"judge_{track}.md"].format(
+    user = render_judge_user(
+        prompts[f"judge_{track}.md"],
         direction=direction,
         artifact=json.dumps(artifact, ensure_ascii=False, indent=2),
     )

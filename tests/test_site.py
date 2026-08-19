@@ -31,6 +31,7 @@ from scripts.generate_site import (
     count_chinese_chars,
     main,
     md_to_html,
+    opening_excerpt,
 )
 
 
@@ -397,13 +398,11 @@ class SiteGenerationTests(unittest.TestCase):
         model_id: str,
         *,
         status: str = "complete",
+        paragraph: str = "沈却站在公路边坡上，车灯扫过道袍。",
     ) -> None:
         model = root / "results" / "foundation-city" / model_id
         model.mkdir(parents=True, exist_ok=True)
-        novel = (
-            "# 隐修的城\n\n## 第1章 山尽头的灯\n\n"
-            "沈却站在公路边坡上，车灯扫过道袍。\n"
-        )
+        novel = f"# 隐修的城\n\n## 第1章 山尽头的灯\n\n{paragraph}\n"
         (model / "novel.md").write_text(novel, encoding="utf-8")
         digest = hashlib.sha256((model / "novel.md").read_bytes()).hexdigest()
         self._write_json(
@@ -504,6 +503,7 @@ class SiteGenerationTests(unittest.TestCase):
                 {
                     "results": 15,
                     "opening_novels": 0,
+                    "designs": 0,
                     "legacy_stories": 1,
                     "legacy_versions": 2,
                 },
@@ -515,7 +515,6 @@ class SiteGenerationTests(unittest.TestCase):
             )
             self.assertIn("开局", home)
             self.assertIn("尚无文风评分", home)
-            self.assertIn("不是榜单", home)
             self.assertIn("筑基翻山见高楼", home)
             self.assertIn("当你好不容易成为筑基期修士", home)
             self.assertIn("history/index.html", home)
@@ -635,6 +634,9 @@ class SiteGenerationTests(unittest.TestCase):
             self._write_opening_lock(root)
             self._write_opening(root, "model-a")
             self._write_opening(root, "model-b", status="partial")
+            self._write_opening(
+                root, "model-c", paragraph="雾先没过哑叔的脚踝。"
+            )
             output = root / "public"
             summary = build_site(
                 config_path=config,
@@ -643,15 +645,20 @@ class SiteGenerationTests(unittest.TestCase):
                 assets_dir=REPO_ROOT / "site" / "assets",
                 output_dir=output,
             )
-            self.assertEqual(summary["opening_novels"], 1)
+            self.assertEqual(summary["opening_novels"], 2)
 
             home = (output / "index.html").read_text(encoding="utf-8")
             self.assertIn("尚无文风评分", home)
-            self.assertIn("不是榜单", home)
             self.assertIn("隐修的城", home)
-            self.assertIn("沈却翻过十万大山，看见高楼。", home)
+            self.assertIn("沈却站在公路边坡上，车灯扫过道袍。", home)
+            self.assertIn("雾先没过哑叔的脚踝。", home)
+            self.assertNotIn("沈却翻过十万大山，看见高楼。", home)
             self.assertIn("results/foundation-city/model-a.html", home)
+            self.assertIn("results/foundation-city/model-c.html", home)
             self.assertNotIn("results/foundation-city/model-b.html", home)
+            self.assertIn("design/index.html", home)
+            design = (output / "design" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("设计段", design)
             self.assertNotIn("data-model-id=", home)
             self.assertNotIn("data-sort=", home)
             self.assertNotIn("改革开放长篇模型榜", home)
@@ -674,6 +681,72 @@ class SiteGenerationTests(unittest.TestCase):
             alias = (output / "opening" / "index.html").read_text(encoding="utf-8")
             self.assertIn("../index.html", alias)
             self.assertIn("开局已移到首页", alias)
+
+    def test_opening_excerpt_uses_first_paragraph_not_the_outline(self) -> None:
+        text = (
+            "## 第1章 山尽头的灯\n\n"
+            "雾是从山脊背后漫上来的，先没过了哑叔的脚踝。\n\n"
+            "沈却站在最后一道梁子上。\n"
+        )
+        self.assertEqual(
+            opening_excerpt(text),
+            "雾是从山脊背后漫上来的，先没过了哑叔的脚踝。",
+        )
+
+    def test_homepage_ranks_openings_when_prose_scores_are_current(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config, novels, results = self._fixture(root)
+            self._write_opening_lock(root)
+            self._write_opening(root, "model-a", paragraph="甲文开头站在边坡上。")
+            self._write_opening(root, "model-c", paragraph="乙文开头雾先没过脚踝。")
+            frozen_hash = hashlib.sha256(
+                (root / "benchmark" / "foundation-city" / "frozen" / "pack.json").read_bytes()
+            ).hexdigest()
+            for model_id, overall in (("model-a", 70.0), ("model-c", 90.0)):
+                novel = root / "results" / "foundation-city" / model_id / "novel.md"
+                self._write_json(
+                    root / "results" / "foundation-city" / model_id / "scores-prose" / "aggregate.json",
+                    {
+                        "schema": "novel-prose-aggregate.v3",
+                        "candidate": model_id,
+                        "complete": True,
+                        "overall": overall,
+                        "frozen_sha256": frozen_hash,
+                        "input_hash": hashlib.sha256(novel.read_bytes()).hexdigest(),
+                        "bands": {
+                            key: {"median": 3.0, "n": 5}
+                            for key in ("naturalness", "voice", "scene", "continuity")
+                        },
+                        "judges": {
+                            "sol": {
+                                "score": overall,
+                                "bands": {},
+                                "comment": "现场成立。",
+                            }
+                        },
+                    },
+                )
+            output = root / "public"
+            build_site(
+                config_path=config,
+                novels_dir=novels,
+                results_dir=results,
+                assets_dir=REPO_ROOT / "site" / "assets",
+                output_dir=output,
+            )
+            home = (output / "index.html").read_text(encoding="utf-8")
+            self.assertIn("只评文风与场景", home)
+            self.assertIn("01 · 90.0", home)
+            self.assertIn("02 · 70.0", home)
+            self.assertLess(home.index("MODEL-C"), home.index("Zulu"))
+            self.assertNotIn("尚无文风评分", home)
+            detail = (
+                output / "results" / "foundation-city" / "model-c.html"
+            ).read_text(encoding="utf-8")
+            self.assertIn("文风 90.0", detail)
+            self.assertIn("自然度", detail)
+            self.assertIn("现场成立。", detail)
 
     def test_archived_manuscript_keeps_reviews_is_browsable_and_never_ranks(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

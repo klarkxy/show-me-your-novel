@@ -324,6 +324,27 @@ def prose_only(text: str | None) -> str:
     return OUTLINE_BLOCK.sub("", cleaned)
 
 
+def opening_excerpt(text: str | None, *, limit: int = 96) -> str:
+    """First published paragraph, cut at a sentence when it runs long."""
+
+    paragraphs: list[str] = []
+    for line in prose_only(text).splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        paragraphs.append(re.sub(r"\s+", "", stripped))
+    if not paragraphs:
+        return ""
+    blob = paragraphs[0]
+    if len(blob) <= limit:
+        return blob
+    window = blob[:limit]
+    cut = max((window.rfind(mark) for mark in "。！？；"), default=-1)
+    if cut >= max(24, limit // 3):
+        return window[: cut + 1]
+    return window.rstrip("，、：；, ") + "…"
+
+
 def count_chinese_chars(text: str | None) -> int:
     """Count prose content like the generator, excluding Markdown headings."""
 
@@ -1483,6 +1504,7 @@ def page_head(
     </a>
     <nav class="site-nav" aria-label="主导航">
       <a href="{root_prefix}index.html">开局</a>
+      <a href="{root_prefix}design/index.html">设计</a>
       <a href="{root_prefix}history/index.html">V2.1 历史</a>
       <a href="{root_prefix}novels/index.html">Legacy</a>
       <a href="{REPO_URL}" rel="noopener" target="_blank">GitHub</a>
@@ -2368,17 +2390,47 @@ def _opening_artifacts_match(model_dir: Path, prose: dict[str, Any]) -> bool:
     return True
 
 
+PROSE_BAND_LABELS = {
+    "naturalness": "自然度",
+    "voice": "声音",
+    "scene": "场景",
+    "continuity": "承接",
+}
+DESIGN_TRACK_LABELS = {
+    "world": "世界",
+    "characters": "人物",
+    "outline": "章纲",
+}
+
+
+def _prose_score_if_current(
+    model_dir: Path, *, frozen_sha256: str, novel_hash: str
+) -> dict[str, Any] | None:
+    raw = _read_json(model_dir / "scores-prose" / "aggregate.json")
+    overall = raw.get("overall")
+    if (
+        raw.get("schema") != "novel-prose-aggregate.v3"
+        or not raw.get("complete")
+        or raw.get("frozen_sha256") != frozen_sha256
+        or raw.get("input_hash") != novel_hash
+        or not isinstance(overall, (int, float))
+    ):
+        return None
+    return raw
+
+
 def load_opening_results(
     opening_dir: Path,
     model_by_id: dict[str, dict[str, Any]],
     model_order: list[str],
     frozen: dict[str, Any],
+    *,
+    frozen_sha256: str = "",
 ) -> list[dict[str, Any]]:
     if not opening_dir.is_dir():
         return []
     order = {model_id: index for index, model_id in enumerate(model_order)}
     world_name = str((frozen.get("world") or {}).get("name") or "开局")
-    incident = str((frozen.get("outline") or {}).get("incident_one_liner") or "")
     found: list[dict[str, Any]] = []
     for model_dir in sorted(opening_dir.iterdir()):
         if not model_dir.is_dir() or model_dir.name.startswith("_"):
@@ -2401,12 +2453,16 @@ def load_opening_results(
             or not _opening_artifacts_match(model_dir, prose)
         ):
             continue
+        novel_hash = _sha256_raw_file(novel_path) if novel_path.is_file() else ""
+        score = _prose_score_if_current(
+            model_dir, frozen_sha256=frozen_sha256, novel_hash=novel_hash
+        )
         found.append(
             {
                 "model_id": model_id,
                 "model_name": model_by_id.get(model_id, {}).get("name", model_id),
                 "title": world_name,
-                "blurb": incident,
+                "blurb": opening_excerpt(novel),
                 "chapters": (
                     len(prose["chapters"])
                     if isinstance(prose.get("chapters"), list)
@@ -2415,9 +2471,76 @@ def load_opening_results(
                 "chars": int(prose.get("total_chars") or count_chinese_chars(novel)),
                 "novel_html": md_to_html(prose_only(novel)),
                 "config_order": order.get(model_id, len(order)),
+                "prose_score": score,
             }
         )
-    found.sort(key=lambda item: (item["config_order"], item["model_id"]))
+    found.sort(
+        key=lambda item: (
+            item["prose_score"] is None,
+            -(float((item["prose_score"] or {}).get("overall") or 0)),
+            item["config_order"],
+            item["model_id"],
+        )
+    )
+    rank = 0
+    for item in found:
+        if item["prose_score"] is None:
+            item["rank"] = None
+            continue
+        rank += 1
+        item["rank"] = rank
+    return found
+
+
+def load_design_board(
+    opening_dir: Path,
+    model_by_id: dict[str, dict[str, Any]],
+    model_order: list[str],
+) -> list[dict[str, Any]]:
+    if not opening_dir.is_dir():
+        return []
+    order = {model_id: index for index, model_id in enumerate(model_order)}
+    found: list[dict[str, Any]] = []
+    for model_dir in sorted(opening_dir.iterdir()):
+        if not model_dir.is_dir() or model_dir.name.startswith("_"):
+            continue
+        model_id = model_dir.name
+        if not SAFE_SLUG.fullmatch(model_id):
+            continue
+        world = _read_json(model_dir / "world.json")
+        characters = _read_json(model_dir / "characters.json")
+        outline = _read_json(model_dir / "outline.json")
+        if not world.get("name") or not characters.get("cast") or not outline:
+            continue
+        raw = _read_json(model_dir / "scores-design" / "aggregate.json")
+        score = raw if raw.get("schema") == "novel-design-aggregate.v3" else {}
+        found.append(
+            {
+                "model_id": model_id,
+                "model_name": model_by_id.get(model_id, {}).get("name", model_id),
+                "world_name": str(world.get("name") or ""),
+                "premise": str(world.get("premise") or ""),
+                "config_order": order.get(model_id, len(order)),
+                "complete": bool(score.get("complete")),
+                "overall": score.get("overall") if score.get("complete") else None,
+                "tracks": score.get("tracks") if isinstance(score.get("tracks"), dict) else {},
+            }
+        )
+    found.sort(
+        key=lambda item: (
+            item["overall"] is None,
+            -(float(item["overall"] or 0)),
+            item["config_order"],
+            item["model_id"],
+        )
+    )
+    rank = 0
+    for item in found:
+        if item["overall"] is None:
+            item["rank"] = None
+            continue
+        rank += 1
+        item["rank"] = rank
     return found
 
 
@@ -2427,32 +2550,97 @@ def render_opening_index(
     *,
     world_name: str = "",
 ) -> str:
+    ranked = sum(1 for item in openings if item.get("rank") is not None)
     cards = []
     for item in openings:
+        score = item.get("prose_score") or {}
+        overall = score.get("overall")
+        if item.get("rank") is not None and isinstance(overall, (int, float)):
+            meta = f"{item['rank']:02d} · {overall:.1f} · {item['chapters']} 章 · {item['chars']:,} 字"
+        else:
+            meta = f"{item['chapters']} 章 · {item['chars']:,} 字"
         cards.append(
             f"""<a class="legacy-card" href="results/foundation-city/{esc(item['model_id'])}.html">
   <h2>{esc(item['model_name'])}</h2>
-  <p class="card-meta">{item['chapters']} 章 · {item['chars']:,} 字</p>
+  <p class="card-meta">{esc(meta)}</p>
   <p>{esc(item['blurb'])}</p>
 </a>"""
         )
     cards_html = "\n".join(cards) or '<p class="empty-copy">还没有完整开局正文。</p>'
     topic = esc(direction.strip() or "筑基翻山见高楼")
     world = esc(world_name or (openings[0]["title"] if openings else "开局"))
+    if ranked:
+        sub = f"冻结世界《{world}》· 同一人物和章纲 · 只评文风与场景"
+        note = (
+            "世界、人物、章纲已锁死。正文按节写，不另补设定。"
+            "简介取各家正文开头。改革开放长篇在"
+            '<a href="history/index.html">V2.1 历史</a>。'
+            "各模型自己交的世界/人物/章纲在"
+            '<a href="design/index.html">设计</a>。'
+        )
+    else:
+        sub = f"冻结世界《{world}》· 同一人物和章纲 · 尚无文风评分"
+        note = (
+            "世界、人物、章纲已锁死。正文按节写，不另补设定。"
+            "简介取各家正文开头，不是冻结章纲那一句。"
+            "文风评分还没出炉，先按正文读。"
+            "改革开放长篇在"
+            '<a href="history/index.html">V2.1 历史</a>。'
+            "设计段评分在"
+            '<a href="design/index.html">设计</a>。'
+        )
     return page_head("开局 · 筑基翻山见高楼", "", "page-legacy") + f"""
 <header class="page-intro">
   <h1>筑基翻山见高楼</h1>
-  <p class="page-sub">冻结世界《{world}》· 同一人物和章纲 · 尚无文风评分</p>
-  <p class="page-meta">成稿 {len(openings)}</p>
+  <p class="page-sub">{sub}</p>
+  <p class="page-meta">成稿 {len(openings)}{" · 已评分 " + str(ranked) if ranked else ""}</p>
 </header>
 <p>题目：{topic}</p>
-<p>世界、人物、章纲已锁死。正文按节写，不另补设定。这是开局阅读页，不是榜单。改革开放长篇在<a href="history/index.html">V2.1 历史</a>。</p>
+<p>{note}</p>
 <div class="legacy-grid">{cards_html}</div>
 """ + PAGE_FOOT
 
 
+def _opening_score_section(item: dict[str, Any]) -> str:
+    score = item.get("prose_score") or {}
+    if not score:
+        return ""
+    bands = score.get("bands") if isinstance(score.get("bands"), dict) else {}
+    band_cells = "".join(
+        f"<tr><th scope=\"row\">{esc(PROSE_BAND_LABELS.get(key, key))}</th>"
+        f"<td>{_format_score((bands.get(key) or {}).get('median') if isinstance(bands.get(key), dict) else None)}</td></tr>"
+        for key in PROSE_BAND_LABELS
+    )
+    judges = score.get("judges") if isinstance(score.get("judges"), dict) else {}
+    comments = "".join(
+        f"<li><strong>{esc(_judge_label(judge_id))}</strong> "
+        f"{_format_score((ballot or {}).get('score'))} · "
+        f"{esc(str((ballot or {}).get('comment') or ''))}</li>"
+        for judge_id, ballot in judges.items()
+        if isinstance(ballot, dict)
+    )
+    rank = f"第 {item['rank']} 名 · " if item.get("rank") is not None else ""
+    return f"""
+<section id="scores" class="aggregate-section" aria-labelledby="opening-score-title">
+  <h2 id="opening-score-title">文风与场景</h2>
+  <p>{rank}综合 {_format_score(score.get("overall"))}。设定已冻结，这一栏不重评世界、人物或章纲。</p>
+  <div class="table-shell"><table>
+    <tbody>{band_cells}</tbody>
+  </table></div>
+  <ul class="dimension-comments">{comments}</ul>
+</section>
+"""
+
+
 def render_opening_detail(item: dict[str, Any]) -> str:
     body = item["novel_html"] or '<p class="empty-copy">正文尚未归档。</p>'
+    score = item.get("prose_score") or {}
+    overall = score.get("overall")
+    score_meta = (
+        f" · 文风 {_format_score(overall)}"
+        if isinstance(overall, (int, float))
+        else ""
+    )
     return page_head(
         f"{item['title']} · {item['model_name']}",
         "../../",
@@ -2463,14 +2651,67 @@ def render_opening_detail(item: dict[str, Any]) -> str:
 <article class="result-file">
   <header class="result-header">
     <h1>《{esc(item['title'])}》</h1>
-    <p class="result-meta">{esc(item['model_name'])} · {item['chapters']} 章 · {item['chars']:,} 字</p>
-    <p class="result-blurb">{esc(item['blurb'])}</p>
+    <p class="result-meta">{esc(item['model_name'])} · {item['chapters']} 章 · {item['chars']:,} 字{score_meta}</p>
   </header>
+  {_opening_score_section(item)}
   <section class="reading-section" aria-labelledby="novel-title">
     <h2 id="novel-title">正文</h2>
     <div class="novel-body markdown">{body}</div>
   </section>
 </article>
+""" + PAGE_FOOT
+
+
+def render_design_index(designs: list[dict[str, Any]]) -> str:
+    ranked = sum(1 for item in designs if item.get("rank") is not None)
+    rows = []
+    for item in designs:
+        tracks = item.get("tracks") or {}
+
+        def cell(track: str) -> str:
+            entry = tracks.get(track) if isinstance(tracks, dict) else None
+            median = entry.get("median") if isinstance(entry, dict) else None
+            return _format_score(median)
+
+        rank_text = f"{item['rank']:02d}" if item.get("rank") is not None else "—"
+        premise = esc((item.get("premise") or "")[:80])
+        rows.append(
+            f"""<tr>
+  <td class="rank-cell">{rank_text}</td>
+  <th scope="row"><span class="entry-model">{esc(item['model_name'])}</span>
+    <span class="entry-title">《{esc(item['world_name'])}》</span>
+    <span class="entry-date">{premise}</span></th>
+  <td>{cell("world")}</td>
+  <td>{cell("characters")}</td>
+  <td>{cell("outline")}</td>
+  <td>{_format_score(item.get("overall"))}</td>
+</tr>"""
+        )
+    body = "".join(rows) or '<tr><td colspan="6">还没有齐套的设计稿。</td></tr>'
+    sub = (
+        "各模型自己交的世界、人物、章纲。冻结包是人合成的，这张表不改冻。"
+        if ranked
+        else "各模型自己交的世界、人物、章纲。评分还没出炉。"
+    )
+    return page_head("设计段", "../", "page-leaderboard") + f"""
+<a class="back-link" href="../index.html">← 开局</a>
+<header class="page-intro">
+  <h1>设计段</h1>
+  <p class="page-sub">{sub}</p>
+  <p class="page-meta">齐套 {len(designs)}{" · 已评分 " + str(ranked) if ranked else ""}</p>
+</header>
+<p>世界评规则和机构是否撑得住这道开局题；人物评此刻能不能做选择；章纲评场面、第一次不可逆和交接卡。正文榜在<a href="../index.html">开局</a>。</p>
+<div class="table-shell"><table class="leaderboard">
+  <thead><tr>
+    <th scope="col">#</th>
+    <th scope="col">模型</th>
+    <th scope="col">世界</th>
+    <th scope="col">人物</th>
+    <th scope="col">章纲</th>
+    <th scope="col">综合</th>
+  </tr></thead>
+  <tbody>{body}</tbody>
+</table></div>
 """ + PAGE_FOOT
 
 
@@ -2602,6 +2843,7 @@ def build_site(
     )
     frozen_path = opening_dir.parent.parent / "benchmark" / "foundation-city" / "frozen" / "pack.json"
     frozen = _read_json(frozen_path) if frozen_path.is_file() else {}
+    frozen_sha256 = _sha256_raw_file(frozen_path) if frozen_path.is_file() else ""
     direction_path = opening_dir.parent.parent / "benchmark" / "foundation-city" / "direction.md"
     try:
         opening_direction = (
@@ -2609,7 +2851,14 @@ def build_site(
         )
     except OSError:
         opening_direction = ""
-    openings = load_opening_results(opening_dir, model_by_id, model_order, frozen)
+    openings = load_opening_results(
+        opening_dir,
+        model_by_id,
+        model_order,
+        frozen,
+        frozen_sha256=frozen_sha256,
+    )
+    designs = load_design_board(opening_dir, model_by_id, model_order)
 
     history_dir = output_dir / "history"
     history_dir.mkdir(parents=True, exist_ok=True)
@@ -2648,6 +2897,11 @@ def build_site(
     opening_output.mkdir(parents=True, exist_ok=True)
     (opening_output / "index.html").write_text(
         render_opening_alias(), encoding="utf-8"
+    )
+    design_output = output_dir / "design"
+    design_output.mkdir(parents=True, exist_ok=True)
+    (design_output / "index.html").write_text(
+        render_design_index(designs), encoding="utf-8"
     )
     opening_result_output = output_dir / "results" / "foundation-city"
     opening_result_output.mkdir(parents=True, exist_ok=True)
@@ -2690,6 +2944,7 @@ def build_site(
     return {
         "results": len(results),
         "opening_novels": len(openings),
+        "designs": len(designs),
         "legacy_stories": len(legacy_stories),
         "legacy_versions": sum(len(story["versions"]) for story in legacy_stories),
     }
