@@ -1483,6 +1483,7 @@ def page_head(
     </a>
     <nav class="site-nav" aria-label="主导航">
       <a href="{root_prefix}index.html">榜单</a>
+      <a href="{root_prefix}opening/index.html">开局</a>
       <a href="{root_prefix}history/index.html">V2.1 历史</a>
       <a href="{root_prefix}novels/index.html">Legacy</a>
       <a href="{REPO_URL}" rel="noopener" target="_blank">GitHub</a>
@@ -2286,7 +2287,129 @@ def render_history_index() -> str:
   <p class="page-sub">改革开放长篇仍可在榜单阅读，但不再当作文风评测的当前协议。</p>
 </header>
 <p>作者群指出：每个模型自己起世界、人物和大纲时，测到的不是文风。新协议先锁世界，再锁人物，再锁章纲，最后冻成同一份开局提示词写 5–10 章。现行题目只有一句：筑基修士翻过十万大山看见高楼。说明见仓库 <code>docs/opening-protocol.md</code>。</p>
-<p>旧稿不删除。公开结果仍在 <code>results/reform-era/</code>，从<a href="../index.html">榜单</a>进入正文。</p>
+<p>已成稿的开局正文在<a href="../opening/index.html">开局</a>。旧稿不删除。公开结果仍在 <code>results/reform-era/</code>，从<a href="../index.html">榜单</a>进入。</p>
+""" + PAGE_FOOT
+
+
+def _sha256_raw_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _opening_artifacts_match(model_dir: Path, prose: dict[str, Any]) -> bool:
+    hashes = prose.get("artifact_sha256")
+    if not isinstance(hashes, dict) or "novel.md" not in hashes:
+        return False
+    for name, expected in hashes.items():
+        if not isinstance(expected, str) or not re.fullmatch(r"[0-9a-f]{64}", expected):
+            return False
+        path = model_dir / Path(name)
+        if not path.is_file() or _sha256_raw_file(path) != expected:
+            return False
+    return True
+
+
+def load_opening_results(
+    opening_dir: Path,
+    model_by_id: dict[str, dict[str, Any]],
+    model_order: list[str],
+    frozen: dict[str, Any],
+) -> list[dict[str, Any]]:
+    if not opening_dir.is_dir():
+        return []
+    order = {model_id: index for index, model_id in enumerate(model_order)}
+    world_name = str((frozen.get("world") or {}).get("name") or "开局")
+    incident = str((frozen.get("outline") or {}).get("incident_one_liner") or "")
+    found: list[dict[str, Any]] = []
+    for model_dir in sorted(opening_dir.iterdir()):
+        if not model_dir.is_dir() or model_dir.name.startswith("_"):
+            continue
+        model_id = model_dir.name
+        if not SAFE_SLUG.fullmatch(model_id):
+            continue
+        prose = _read_json(model_dir / "prose.json")
+        novel_path = model_dir / "novel.md"
+        try:
+            novel = novel_path.read_text(encoding="utf-8") if novel_path.is_file() else ""
+        except OSError as exc:
+            print(f"[site] 忽略无法读取的开局正文：{novel_path}（{exc}）", file=sys.stderr)
+            novel = ""
+        if (
+            prose.get("schema") != "novel-benchmark.v3.prose"
+            or prose.get("status") != "complete"
+            or prose.get("model_id") != model_id
+            or not novel.strip()
+            or not _opening_artifacts_match(model_dir, prose)
+        ):
+            continue
+        found.append(
+            {
+                "model_id": model_id,
+                "model_name": model_by_id.get(model_id, {}).get("name", model_id),
+                "title": world_name,
+                "blurb": incident,
+                "chapters": (
+                    len(prose["chapters"])
+                    if isinstance(prose.get("chapters"), list)
+                    else count_chapters(novel)
+                ),
+                "chars": int(prose.get("total_chars") or count_chinese_chars(novel)),
+                "novel_html": md_to_html(prose_only(novel)),
+                "config_order": order.get(model_id, len(order)),
+            }
+        )
+    found.sort(key=lambda item: (item["config_order"], item["model_id"]))
+    return found
+
+
+def render_opening_index(openings: list[dict[str, Any]], direction: str) -> str:
+    cards = []
+    for item in openings:
+        cards.append(
+            f"""<a class="legacy-card" href="../results/foundation-city/{esc(item['model_id'])}.html">
+  <h2>{esc(item['model_name'])}</h2>
+  <p class="card-meta">{item['chapters']} 章 · {item['chars']:,} 字</p>
+  <p>{esc(item['blurb'])}</p>
+</a>"""
+        )
+    cards_html = "\n".join(cards) or '<p class="empty-copy">还没有完整开局正文。</p>'
+    topic = esc(direction.strip() or "筑基翻山见高楼")
+    return page_head("开局", "../", "page-legacy") + f"""
+<a class="back-link" href="../index.html">← 榜单</a>
+<header class="page-intro">
+  <h1>筑基翻山见高楼</h1>
+  <p class="page-sub">同一冻结世界、人物和章纲 · 尚无文风评分</p>
+  <p class="page-meta">成稿 {len(openings)}</p>
+</header>
+<p>题目：{topic}</p>
+<p>世界、人物、章纲已锁死。正文按节写，不另补设定。这是开局阅读页，不是榜单。</p>
+<div class="legacy-grid">{cards_html}</div>
+""" + PAGE_FOOT
+
+
+def render_opening_detail(item: dict[str, Any]) -> str:
+    body = item["novel_html"] or '<p class="empty-copy">正文尚未归档。</p>'
+    return page_head(
+        f"{item['title']} · {item['model_name']}",
+        "../../",
+        "page-result",
+        skip_href="#novel-title",
+    ) + f"""
+<a class="back-link" href="../../opening/index.html">← 开局</a>
+<article class="result-file">
+  <header class="result-header">
+    <h1>《{esc(item['title'])}》</h1>
+    <p class="result-meta">{esc(item['model_name'])} · {item['chapters']} 章 · {item['chars']:,} 字</p>
+    <p class="result-blurb">{esc(item['blurb'])}</p>
+  </header>
+  <section class="reading-section" aria-labelledby="novel-title">
+    <h2 id="novel-title">正文</h2>
+    <div class="novel-body markdown">{body}</div>
+  </section>
+</article>
 """ + PAGE_FOOT
 
 
@@ -2411,6 +2534,22 @@ def build_site(
     v4_preview = protocol == "v4"
     legacy_stories = load_legacy_stories(novels_dir, model_by_id, model_order)
 
+    opening_dir = (
+        results_dir
+        if results_dir.name == "foundation-city"
+        else results_dir.parent / "foundation-city"
+    )
+    frozen_path = opening_dir.parent.parent / "benchmark" / "foundation-city" / "frozen" / "pack.json"
+    frozen = _read_json(frozen_path) if frozen_path.is_file() else {}
+    direction_path = opening_dir.parent.parent / "benchmark" / "foundation-city" / "direction.md"
+    try:
+        opening_direction = (
+            direction_path.read_text(encoding="utf-8-sig") if direction_path.is_file() else ""
+        )
+    except OSError:
+        opening_direction = ""
+    openings = load_opening_results(opening_dir, model_by_id, model_order, frozen)
+
     (output_dir / "index.html").write_text(
         render_home(
             results,
@@ -2423,6 +2562,17 @@ def build_site(
     history_dir = output_dir / "history"
     history_dir.mkdir(parents=True, exist_ok=True)
     (history_dir / "index.html").write_text(render_history_index(), encoding="utf-8")
+    opening_output = output_dir / "opening"
+    opening_output.mkdir(parents=True, exist_ok=True)
+    (opening_output / "index.html").write_text(
+        render_opening_index(openings, opening_direction), encoding="utf-8"
+    )
+    opening_result_output = output_dir / "results" / "foundation-city"
+    opening_result_output.mkdir(parents=True, exist_ok=True)
+    for item in openings:
+        (opening_result_output / f"{item['model_id']}.html").write_text(
+            render_opening_detail(item), encoding="utf-8"
+        )
     result_output = output_dir / "results" / "reform-era"
     result_output.mkdir(parents=True, exist_ok=True)
     for result in results:
@@ -2457,6 +2607,7 @@ def build_site(
 
     return {
         "results": len(results),
+        "opening_novels": len(openings),
         "legacy_stories": len(legacy_stories),
         "legacy_versions": sum(len(story["versions"]) for story in legacy_stories),
     }
@@ -2549,6 +2700,7 @@ def main(argv: list[str] | None = None) -> int:
     print(
         "[site] 生成完成："
         f"改革开放结果 {summary['results']} 个，"
+        f"开局 {summary['opening_novels']} 篇，"
         f"Legacy {summary['legacy_stories']} 部 / {summary['legacy_versions']} 个版本，"
         f"输出到 {docs_dir}"
     )

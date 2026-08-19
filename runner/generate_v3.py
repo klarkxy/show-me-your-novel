@@ -7,12 +7,13 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 try:
     from . import generate as g
@@ -36,16 +37,30 @@ except ImportError:  # pragma: no cover
 
 PROTOCOL_VERSION = "novel-benchmark.v3"
 DEFAULT_BENCHMARK = "foundation-city"
-PROMPT_FILES = ("system.md", "world.md", "characters.md", "outline.md", "beat.md")
+PROMPT_FILES = (
+    "system.md",
+    "world.md",
+    "characters.md",
+    "outline.md",
+    "beat.md",
+    "expand_beat.md",
+)
 DESIGN_STAGES = ("world", "characters", "outline")
+SKIP_FROM_ALL = ("gpt-5.6-luna", "agnes-2.5-flash")
 MIN_BEAT_CHARS = 500
-MAX_BEAT_CHARS = 1_200
+# Prompt still asks for 500–1000. The accept gate is looser so a deterministic
+# model that overshoots cannot deadlock the isolated repair loop.
+MAX_BEAT_CHARS = 2_500
 MIN_CHAPTER_CHARS = 2_000
 MAX_CHAPTER_CHARS = 3_600
 MIN_CHAPTERS = 5
 MAX_CHAPTERS = 10
+PREVIOUS_TAIL_CHARS = 400
+PROSE_SCHEMA = "novel-benchmark.v3.prose"
 FROZEN_STYLE = (
     "叙述经过视角人物的经验、偏见和注意力。"
+    "人物心里可以叫错、看不懂。"
+    "旁白要把公路、汽车、灯牌、证件、手机写成当代物件，让山里人与现代城的反差落在纸面上。"
     "动作、对白、物件和反应彼此接力。"
     "关键处展开，重复流程压缩。"
     "不要念设定。"
@@ -346,6 +361,38 @@ def assemble_frozen(
     return pack
 
 
+def render_beat_materials(
+    pack: dict[str, Any],
+    chapter: dict[str, Any],
+    beat_index: int,
+) -> str:
+    """World, cast, and only the current beat. Later outline stays hidden."""
+
+    slice_card = {
+        "number": chapter["number"],
+        "title": chapter["title"],
+        "function": chapter["function"],
+        "must_not_lock": chapter["must_not_lock"],
+        "beat": chapter["beats"][beat_index - 1],
+    }
+    lines = [
+        "# 本节材料",
+        "",
+        "## 文风义务",
+        pack.get("style") or FROZEN_STYLE,
+        "",
+        "## 世界",
+        json.dumps(pack["world"], ensure_ascii=False, indent=2),
+        "",
+        "## 人物",
+        json.dumps(pack["characters"], ensure_ascii=False, indent=2),
+        "",
+        "## 本节章纲",
+        json.dumps(slice_card, ensure_ascii=False, indent=2),
+    ]
+    return "\n".join(lines) + "\n"
+
+
 def beat_user_prompt(
     prompts: dict[str, str],
     pack: dict[str, Any],
@@ -353,19 +400,68 @@ def beat_user_prompt(
     beat_index: int,
     previous_tail: str,
 ) -> str:
-    return prompts["beat.md"].format(
-        chapter_number=chapter["number"],
-        chapter_title=chapter["title"],
-        beat_index=beat_index,
-        beat_goal=chapter["beats"][beat_index - 1],
-        must_not_lock="；".join(chapter["must_not_lock"]),
-        frozen_pack=render_frozen_markdown(pack["world"], pack["characters"], pack["outline"]),
-        previous_tail=previous_tail or "（本章第一节）",
-    )
+    # JSON and prior prose contain braces. Do not str.format them.
+    replacements = {
+        "{chapter_number}": str(chapter["number"]),
+        "{chapter_title}": str(chapter["title"]),
+        "{beat_index}": str(beat_index),
+        "{beat_goal}": chapter["beats"][beat_index - 1],
+        "{must_not_lock}": "；".join(chapter["must_not_lock"]),
+        "{beat_materials}": render_beat_materials(pack, chapter, beat_index),
+        "{previous_tail}": previous_tail or "（本章第一节）",
+    }
+    text = prompts["beat.md"]
+    for token, value in replacements.items():
+        text = text.replace(token, value)
+    return text
+
+
+def expand_beat_prompt(
+    prompts: dict[str, str],
+    chapter: dict[str, Any],
+    beat_index: int,
+    draft: str,
+    current_chars: int,
+) -> str:
+    replacements = {
+        "{chapter_number}": str(chapter["number"]),
+        "{chapter_title}": str(chapter["title"]),
+        "{beat_index}": str(beat_index),
+        "{current_chars}": str(current_chars),
+        "{beat_goal}": chapter["beats"][beat_index - 1],
+        "{draft}": draft,
+    }
+    text = prompts["expand_beat.md"]
+    for token, value in replacements.items():
+        text = text.replace(token, value)
+    return text
+
+
+def beat_previous_tail(text: str, limit: int = PREVIOUS_TAIL_CHARS) -> str:
+    cleaned = g.canonical_text(text)
+    if len(cleaned) <= limit:
+        return cleaned
+    return cleaned[-limit:]
+
+
+def inspect_beat(text: str) -> str:
+    cleaned = g.normalize_chapter(text)
+    if not cleaned:
+        raise OpeningError("节拍为空")
+    if "```" in cleaned:
+        raise OpeningError("节拍包含代码围栏")
+    try:
+        g._reject_private_reasoning_markers(cleaned, "beat")
+    except ValueError as exc:
+        raise OpeningError(str(exc)) from exc
+    first = cleaned.splitlines()[0].strip()
+    if first.startswith("#") or re.match(r"^第\s*\d+\s*[章节]", first):
+        raise OpeningError("节拍不要标题")
+    return cleaned
 
 
 def validate_beat(text: str) -> str:
-    cleaned = g.normalize_chapter(text)
+    cleaned = inspect_beat(text)
     chars = g.count_content_chars(cleaned)
     if chars < MIN_BEAT_CHARS:
         raise OpeningError(f"节拍过短：{chars} < {MIN_BEAT_CHARS}")
@@ -375,13 +471,84 @@ def validate_beat(text: str) -> str:
 
 
 def assemble_chapter(beats: list[str]) -> str:
+    if not 3 <= len(beats) <= 4:
+        raise OpeningError(f"一章必须 3–4 节，收到 {len(beats)}")
     body = "\n\n".join(beat.strip() for beat in beats)
     chars = g.count_content_chars(body)
-    if chars < MIN_CHAPTER_CHARS:
-        raise OpeningError(f"整章过短：{chars} < {MIN_CHAPTER_CHARS}")
-    if chars > MAX_CHAPTER_CHARS:
-        raise OpeningError(f"整章过长：{chars} > {MAX_CHAPTER_CHARS}")
+    minimum = MIN_BEAT_CHARS * len(beats)
+    maximum = MAX_BEAT_CHARS * len(beats)
+    if chars < minimum:
+        raise OpeningError(f"整章过短：{chars} < {minimum}")
+    if chars > maximum:
+        raise OpeningError(f"整章过长：{chars} > {maximum}")
     return body
+
+
+def render_chapter_markdown(number: int, title: str, body: str) -> str:
+    return f"## 第{number}章 {title}\n\n{body.strip()}\n"
+
+
+def assemble_novel(chapter_texts: list[str]) -> str:
+    return "\n".join(text.rstrip() + "\n" for text in chapter_texts)
+
+
+def load_frozen_pack(path: Path) -> dict[str, Any]:
+    if not path.is_file():
+        raise OpeningError("缺少冻结包，先 assemble-v3")
+    try:
+        data = json.loads(path.read_bytes().decode("utf-8-sig"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise OpeningError(f"冻结包损坏：{exc}") from exc
+    if not isinstance(data, dict):
+        raise OpeningError("冻结包不是对象")
+    for key in ("world", "characters", "outline"):
+        if key not in data:
+            raise OpeningError(f"冻结包缺少 {key}")
+    return {
+        **data,
+        "world": validate_world(data["world"]),
+        "characters": validate_characters(data["characters"]),
+        "outline": validate_outline(data["outline"]),
+        "style": _require_text(data.get("style") or FROZEN_STYLE, "style"),
+    }
+
+
+def parse_v3_stop_after(value: str | None, phase: str) -> tuple[str | None, int | None]:
+    """Return ``(design_stage, chapter_number)``."""
+    if value is None:
+        return ("world" if phase == "design" else None, None)
+    text = value.strip()
+    lowered = text.lower()
+    if lowered in DESIGN_STAGES:
+        if phase != "design":
+            raise OpeningError("正文段 --stop-after 只用 chapter:N")
+        return lowered, None
+    match = re.fullmatch(r"chapter:([1-9][0-9]*)", lowered)
+    if match:
+        if phase != "prose":
+            raise OpeningError("chapter:N 只用于 --phase prose")
+        number = int(match.group(1))
+        if number > MAX_CHAPTERS:
+            raise OpeningError(f"--stop-after chapter:N 的 N 必须在 1–{MAX_CHAPTERS}")
+        return None, number
+    raise OpeningError("--stop-after 仅支持 world、characters、outline 或 chapter:N")
+
+
+def beat_artifact_path(output_dir: Path, chapter: int, beat: int) -> Path:
+    return output_dir / "beats" / f"{chapter:02d}-{beat:02d}.md"
+
+
+def chapter_artifact_path(output_dir: Path, chapter: int) -> Path:
+    return output_dir / "chapters" / f"{chapter:02d}.md"
+
+
+def try_load_beat(path: Path) -> str | None:
+    if not path.is_file():
+        return None
+    try:
+        return validate_beat(path.read_bytes().decode("utf-8-sig"))
+    except (OSError, OpeningError, ValueError, TypeError):
+        return None
 
 
 _PRINT_LOCK = threading.Lock()
@@ -407,15 +574,15 @@ def try_load_stage(output_dir: Path, stage: str) -> dict[str, Any] | None:
         return None
 
 
-def _complete_json(
+def _complete_with_retry(
     client: ChatClient,
     model_cfg: dict[str, Any],
     system: str,
     user: str,
-    validator,
+    accept: Callable[[str], Any],
     *,
     stage: str,
-) -> dict[str, Any]:
+) -> Any:
     last_error: Exception | None = None
     for attempt in range(1, g.MAX_STAGE_ATTEMPTS + 1):
         try:
@@ -427,8 +594,7 @@ def _complete_json(
                 ],
                 stage=stage,
             )
-            parsed = g.parse_json_object(result.content)
-            return validator(parsed)
+            return accept(result.content)
         except g.LLMAPIError as exc:
             last_error = exc
             if not g.api_error_is_retryable(exc) or attempt >= g.MAX_STAGE_ATTEMPTS:
@@ -442,6 +608,250 @@ def _complete_json(
                 raise OpeningError(f"{stage} 解析失败：{exc}") from exc
             _log(f"[generate-v3] repair {stage}: {exc}")
     raise OpeningError(f"{stage} 失败：{last_error}")
+
+
+def _complete_json(
+    client: ChatClient,
+    model_cfg: dict[str, Any],
+    system: str,
+    user: str,
+    validator,
+    *,
+    stage: str,
+) -> dict[str, Any]:
+    def accept(content: str) -> dict[str, Any]:
+        return validator(g.parse_json_object(content))
+
+    return _complete_with_retry(
+        client, model_cfg, system, user, accept, stage=stage
+    )
+
+
+def _one_completion(
+    client: ChatClient,
+    model_cfg: dict[str, Any],
+    system: str,
+    user: str,
+    *,
+    stage: str,
+) -> str:
+    result = client.complete(
+        model_cfg,
+        [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        stage=stage,
+    )
+    return inspect_beat(result.content)
+
+
+def _complete_beat(
+    client: ChatClient,
+    model_cfg: dict[str, Any],
+    system: str,
+    user: str,
+    *,
+    stage: str,
+    prompts: dict[str, str],
+    chapter: dict[str, Any],
+    beat_index: int,
+) -> str:
+    last_error: Exception | None = None
+    for attempt in range(1, g.MAX_STAGE_ATTEMPTS + 1):
+        try:
+            draft = _one_completion(client, model_cfg, system, user, stage=stage)
+            chars = g.count_content_chars(draft)
+            if MIN_BEAT_CHARS <= chars <= MAX_BEAT_CHARS:
+                return draft
+            if chars > MAX_BEAT_CHARS:
+                raise OpeningError(f"节拍过长：{chars} > {MAX_BEAT_CHARS}")
+            _log(f"[generate-v3] expand {stage}: {chars} < {MIN_BEAT_CHARS}")
+            expand_user = expand_beat_prompt(
+                prompts, chapter, beat_index, draft, chars
+            )
+            expanded = _one_completion(
+                client,
+                model_cfg,
+                system,
+                expand_user,
+                stage=f"{stage}-expand",
+            )
+            expanded_chars = g.count_content_chars(expanded)
+            if MIN_BEAT_CHARS <= expanded_chars <= MAX_BEAT_CHARS:
+                return expanded
+            if expanded_chars > MAX_BEAT_CHARS:
+                raise OpeningError(
+                    f"扩写后过长：{expanded_chars} > {MAX_BEAT_CHARS}"
+                )
+            raise OpeningError(
+                f"扩写后仍短：{expanded_chars} < {MIN_BEAT_CHARS}"
+            )
+        except g.LLMAPIError as exc:
+            last_error = exc
+            if not g.api_error_is_retryable(exc) or attempt >= g.MAX_STAGE_ATTEMPTS:
+                raise
+            delay = g.retry_delay_seconds(exc, attempt)
+            _log(f"[generate-v3] retry {stage} after {exc} in {delay:.1f}s")
+            time.sleep(delay)
+        except OpeningError as exc:
+            last_error = exc
+            if attempt >= g.MAX_STAGE_ATTEMPTS:
+                raise OpeningError(f"{stage} 解析失败：{exc}") from exc
+            _log(f"[generate-v3] repair {stage}: {exc}")
+    raise OpeningError(f"{stage} 失败：{last_error}")
+
+
+def _prose_conflict(output_dir: Path, frozen_sha256: str) -> None:
+    manifest_path = output_dir / "prose.json"
+    recorded = None
+    if manifest_path.is_file():
+        try:
+            payload = json.loads(manifest_path.read_bytes().decode("utf-8-sig"))
+        except (OSError, json.JSONDecodeError, ValueError, TypeError):
+            payload = None
+        if isinstance(payload, dict):
+            recorded = payload.get("frozen_sha256")
+    if recorded in {None, frozen_sha256}:
+        return
+    leftovers = []
+    for folder in (output_dir / "beats", output_dir / "chapters"):
+        if folder.is_dir():
+            leftovers.extend(folder.glob("*.md"))
+    if (output_dir / "novel.md").is_file():
+        leftovers.append(output_dir / "novel.md")
+    if leftovers:
+        raise OpeningError(
+            "冻结包已变，旧正文不能续跑；删掉 beats/、chapters/、novel.md、prose.json 后再跑"
+        )
+
+
+def _write_prose_manifest(
+    output_dir: Path,
+    *,
+    model_id: str,
+    benchmark: str,
+    frozen_sha256: str,
+    chapters: list[dict[str, Any]],
+    complete: bool,
+    stop_after_chapter: int | None,
+) -> dict[str, Any]:
+    artifacts: dict[str, str] = {}
+    for item in chapters:
+        number = item["number"]
+        beat_count = item["beats"]
+        for beat_index in range(1, beat_count + 1):
+            path = beat_artifact_path(output_dir, number, beat_index)
+            artifacts[path.relative_to(output_dir).as_posix()] = g.sha256_file(path)
+        chapter_path = chapter_artifact_path(output_dir, number)
+        artifacts[chapter_path.relative_to(output_dir).as_posix()] = g.sha256_file(
+            chapter_path
+        )
+    novel_path = output_dir / "novel.md"
+    if complete and novel_path.is_file():
+        artifacts["novel.md"] = g.sha256_file(novel_path)
+    payload = {
+        "schema": PROSE_SCHEMA,
+        "benchmark": benchmark,
+        "model_id": model_id,
+        "frozen_sha256": frozen_sha256,
+        "status": "complete" if complete else "partial",
+        "stop_after_chapter": stop_after_chapter,
+        "chapters": chapters,
+        "total_chars": sum(int(item["chars"]) for item in chapters),
+        "artifact_sha256": artifacts,
+    }
+    g.atomic_write_json(output_dir / "prose.json", payload)
+    return payload
+
+
+def run_prose(
+    *,
+    client: ChatClient,
+    model_cfg: dict[str, Any],
+    prompts: dict[str, str],
+    pack: dict[str, Any],
+    pack_path: Path,
+    output_dir: Path,
+    model_id: str,
+    stop_after_chapter: int | None = None,
+) -> tuple[str, str]:
+    frozen_sha256 = g.sha256_file(pack_path)
+    _prose_conflict(output_dir, frozen_sha256)
+    chapters = pack["outline"]["chapters"]
+    if stop_after_chapter is not None:
+        targets = [item for item in chapters if item["number"] <= stop_after_chapter]
+    else:
+        targets = list(chapters)
+    if not targets:
+        raise OpeningError("冻结章纲是空的")
+    complete = targets[-1]["number"] >= chapters[-1]["number"]
+    output_dir.mkdir(parents=True, exist_ok=True)
+    written: list[dict[str, Any]] = []
+    chapter_texts: list[str] = []
+    for chapter in targets:
+        number = chapter["number"]
+        title = chapter["title"]
+        goals = chapter["beats"]
+        beats: list[str] = []
+        missing: list[int] = []
+        for beat_index in range(1, len(goals) + 1):
+            cached = try_load_beat(beat_artifact_path(output_dir, number, beat_index))
+            if cached is None:
+                missing.append(beat_index)
+            else:
+                beats.append(cached)
+        if not missing and len(beats) == len(goals):
+            _log(f"[generate-v3] {model_id} chapter {number}: cached")
+        else:
+            beats = []
+            for beat_index, _goal in enumerate(goals, start=1):
+                path = beat_artifact_path(output_dir, number, beat_index)
+                cached = try_load_beat(path)
+                if cached is not None:
+                    _log(f"[generate-v3] {model_id} beat {number}.{beat_index}: cached")
+                    beats.append(cached)
+                    continue
+                tail = beat_previous_tail(beats[-1]) if beats else ""
+                user = beat_user_prompt(prompts, pack, chapter, beat_index, tail)
+                text = _complete_beat(
+                    client,
+                    model_cfg,
+                    prompts["system.md"],
+                    user,
+                    stage=f"v3-beat-{number}-{beat_index}",
+                    prompts=prompts,
+                    chapter=chapter,
+                    beat_index=beat_index,
+                )
+                g.atomic_write_text(path, text + "\n")
+                _log(f"[generate-v3] {model_id} beat {number}.{beat_index}: wrote")
+                beats.append(text)
+        body = assemble_chapter(beats)
+        chapter_text = render_chapter_markdown(number, title, body)
+        g.atomic_write_text(chapter_artifact_path(output_dir, number), chapter_text)
+        chapter_texts.append(chapter_text)
+        written.append(
+            {
+                "number": number,
+                "title": title,
+                "beats": len(beats),
+                "chars": g.count_content_chars(body),
+            }
+        )
+    if complete:
+        g.atomic_write_text(output_dir / "novel.md", assemble_novel(chapter_texts))
+        _log(f"[generate-v3] {model_id} novel: wrote")
+    _write_prose_manifest(
+        output_dir,
+        model_id=model_id,
+        benchmark=str(pack.get("benchmark") or DEFAULT_BENCHMARK),
+        frozen_sha256=frozen_sha256,
+        chapters=written,
+        complete=complete,
+        stop_after_chapter=None if complete else stop_after_chapter,
+    )
+    return model_id, "complete" if complete else f"partial:{written[-1]['number']}"
 
 
 def run_design_stage(
@@ -502,6 +912,7 @@ def _run_one_model(
     stages: tuple[str, ...],
     from_world: str | None,
     from_characters: str | None,
+    stop_after_chapter: int | None = None,
 ) -> tuple[str, str]:
     model_cfg = with_provider_request_defaults(config, get_model_config(config, model_id))
     results_root = root / "results" / benchmark
@@ -532,14 +943,22 @@ def _run_one_model(
             )
         return model_id, "ok"
     frozen = root / "benchmark" / benchmark / "frozen" / "pack.json"
-    if not frozen.is_file():
-        raise OpeningError("缺少冻结包，先 assemble-v3")
+    pack = load_frozen_pack(frozen)
     _log(f"[generate-v3] {model_id} prose against {frozen}")
-    raise OpeningError("prose 循环尚未接入")
+    return run_prose(
+        client=client,
+        model_cfg=model_cfg,
+        prompts=prompts,
+        pack=pack,
+        pack_path=frozen,
+        output_dir=out,
+        model_id=model_id,
+        stop_after_chapter=stop_after_chapter,
+    )
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="V3 开局：先锁世界，再锁人物，再锁章纲")
+    parser = argparse.ArgumentParser(description="V3 开局：先锁世界，再锁人物，再锁章纲，再写正文")
     parser.add_argument("--model", action="append", dest="models")
     parser.add_argument("--all", action="store_true")
     parser.add_argument(
@@ -551,9 +970,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--phase", choices=("design", "prose"), default="design")
     parser.add_argument(
         "--stop-after",
-        choices=DESIGN_STAGES,
-        default="world",
-        help="设计段默认只跑到世界；人物和章纲要等上一层锁定后再跑",
+        default=None,
+        help="设计段：world / characters / outline（默认 world）；正文段：chapter:N",
     )
     parser.add_argument("--from-world", help="人物/章纲使用这份已定世界（模型 id）")
     parser.add_argument("--from-characters", help="章纲使用这份已定人物（模型 id）")
@@ -569,6 +987,8 @@ def main(argv: list[str] | None = None) -> int:
     models = config.get("models") or []
     registry = [item["id"] for item in models if isinstance(item, dict) and item.get("id")]
     selected = list(registry) if args.all else list(args.models or [])
+    if args.all:
+        selected = [model_id for model_id in selected if model_id not in SKIP_FROM_ALL]
     if args.exclude:
         selected = [
             model_id
@@ -584,6 +1004,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.jobs < 1:
         print("[generate-v3] --jobs 必须 >= 1", file=sys.stderr)
         return 2
+    try:
+        stop_design, stop_chapter = parse_v3_stop_after(args.stop_after, args.phase)
+    except OpeningError as exc:
+        print(f"[generate-v3] {exc}", file=sys.stderr)
+        return 2
 
     direction_path = root / "benchmark" / args.benchmark / "direction.md"
     prompt_dir = root / "runner" / "prompts" / "v3"
@@ -591,24 +1016,37 @@ def main(argv: list[str] | None = None) -> int:
     prompts = load_v3_prompts(prompt_dir)
     assert_design_prompt(design_user_prompt(prompts, "world", direction), direction, "world")
 
-    stages = DESIGN_STAGES[: DESIGN_STAGES.index(args.stop_after) + 1]
-    if args.from_world:
-        stages = tuple(stage for stage in stages if stage != "world")
-    if args.from_characters:
-        stages = tuple(stage for stage in stages if stage not in {"world", "characters"})
-    if args.phase == "design" and "characters" in stages and not args.from_world:
-        print("[generate-v3] 写人物必须先 --from-world 锁住同一套世界", file=sys.stderr)
-        return 2
-    if args.phase == "design" and "outline" in stages and not args.from_characters:
-        print("[generate-v3] 写章纲必须先 --from-characters 锁住同一套人物", file=sys.stderr)
-        return 2
-    if args.phase == "design" and not stages:
-        print("[generate-v3] 没有可跑的设计段", file=sys.stderr)
-        return 2
+    stages: tuple[str, ...] = ()
+    if args.phase == "design":
+        assert stop_design is not None
+        stages = DESIGN_STAGES[: DESIGN_STAGES.index(stop_design) + 1]
+        if args.from_world:
+            stages = tuple(stage for stage in stages if stage != "world")
+        if args.from_characters:
+            stages = tuple(stage for stage in stages if stage not in {"world", "characters"})
+        if "characters" in stages and not args.from_world:
+            print("[generate-v3] 写人物必须先 --from-world 锁住同一套世界", file=sys.stderr)
+            return 2
+        if "outline" in stages and not args.from_characters:
+            print("[generate-v3] 写章纲必须先 --from-characters 锁住同一套人物", file=sys.stderr)
+            return 2
+        if not stages:
+            print("[generate-v3] 没有可跑的设计段", file=sys.stderr)
+            return 2
+    else:
+        frozen = root / "benchmark" / args.benchmark / "frozen" / "pack.json"
+        if not frozen.is_file():
+            print("[generate-v3] 缺少冻结包，先 assemble-v3", file=sys.stderr)
+            return 2
     if args.dry_run:
         print(
             f"[generate-v3] dry-run phase={args.phase} models={len(selected)} "
             f"jobs={args.jobs} stages={','.join(stages) or '-'} layered=ok"
+            + (
+                f" stop-after=chapter:{stop_chapter}"
+                if stop_chapter
+                else ""
+            )
         )
         return 0
 
@@ -618,7 +1056,7 @@ def main(argv: list[str] | None = None) -> int:
     workers = min(args.jobs, len(selected))
     _log(
         f"[generate-v3] start phase={args.phase} models={len(selected)} "
-        f"jobs={workers} stages={','.join(stages)}"
+        f"jobs={workers} stages={','.join(stages) or '-'}"
     )
     failures: list[str] = []
     with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -636,6 +1074,7 @@ def main(argv: list[str] | None = None) -> int:
                 stages=stages,
                 from_world=args.from_world,
                 from_characters=args.from_characters,
+                stop_after_chapter=stop_chapter,
             ): model_id
             for model_id in selected
         }

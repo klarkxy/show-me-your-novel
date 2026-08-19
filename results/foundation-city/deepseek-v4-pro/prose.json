@@ -1,0 +1,91 @@
+{
+  "schema": "novel-benchmark.v3.prose",
+  "benchmark": "foundation-city",
+  "model_id": "deepseek-v4-pro",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "status": "complete",
+  "stop_after_chapter": null,
+  "chapters": [
+    {
+      "number": 1,
+      "title": "山尽头的灯",
+      "beats": 4,
+      "chars": 2770
+    },
+    {
+      "number": 2,
+      "title": "查身份证",
+      "beats": 4,
+      "chars": 3688
+    },
+    {
+      "number": 3,
+      "title": "车上的规矩",
+      "beats": 4,
+      "chars": 3601
+    },
+    {
+      "number": 4,
+      "title": "半夜吐纳",
+      "beats": 4,
+      "chars": 3360
+    },
+    {
+      "number": 5,
+      "title": "交警上门",
+      "beats": 4,
+      "chars": 3008
+    },
+    {
+      "number": 6,
+      "title": "玉牌发烫",
+      "beats": 4,
+      "chars": 3852
+    },
+    {
+      "number": 7,
+      "title": "那处地方",
+      "beats": 4,
+      "chars": 3638
+    }
+  ],
+  "total_chars": 23917,
+  "artifact_sha256": {
+    "beats/01-01.md": "6d04732c8cdb2048ecb047cf603322fcc0a6fb2dd6f04cb566721f6cbce6a103",
+    "beats/01-02.md": "fb82128f75f7f93af3891e8fc628879d21d7c50418b83832be572223afc0720d",
+    "beats/01-03.md": "1c649c04c74d007c2be29c59b5ae08e4abf729fb28528858071a5a23356670db",
+    "beats/01-04.md": "890deb0d67551ea1809c3b73deb5b77d7682f0fc958ac67f492b878ee384aa8c",
+    "chapters/01.md": "047c10d2ba1e7ae6c94d3c90336e9ec287bd620c4447d5ec37d725409ae952a1",
+    "beats/02-01.md": "04e5d4b4e322969554c44d2bd431e5ceaf7f25c427c56fc770ac82334ccfe07b",
+    "beats/02-02.md": "e67551f32b432a508a6981c9c277ec5be2a8b1c447b83b7d850007e9730aa3d3",
+    "beats/02-03.md": "0fe073058319249090be2aa9753d70272ff9aa9fc959823ec678a639ebb68ef6",
+    "beats/02-04.md": "1cadb16c61143b116375273ff47c67d027cf5a4d8db3a2d3f4f740178fcb6966",
+    "chapters/02.md": "b82a6ecee5045f69b08a0121b13883d624edbf1cafadbb820acabb018d1b18fb",
+    "beats/03-01.md": "51e491ee86187846ffc9d1973259dda61ce5826b371f4d70905491aec01c0d90",
+    "beats/03-02.md": "43f0788d012c2103ee183a67e7e6736ca09782f105f6870d4a9a12955dc36f7d",
+    "beats/03-03.md": "1cdf5ace9ec602e5ad46054ecacb76e01190a062fa4e14b6b3bdee222b2f5b9a",
+    "beats/03-04.md": "a6ee7a1b1355f3a1e00999d19433921ade0360bbe14010697b230dbe10c960b0",
+    "chapters/03.md": "bb4318daa979cdde86dec7c35478fbfc55e41f23aa9501c2082e646c85b8ccf2",
+    "beats/04-01.md": "942fe2840a0d15e8f3ca426faafb7fee25958fa77409461efa7d6a90be3b812d",
+    "beats/04-02.md": "3bf0fba300cc6c784ace27be8335c0dd78041526799927cdb0eeaec6e9c52f2e",
+    "beats/04-03.md": "a6b48d666a9c2fae9a4f11e24baa583e02b2f6deb8b52cc8df5b2941970b56db",
+    "beats/04-04.md": "357462077072a2b357ea966462231402ade33a61e8345a57530c0a7c31c654e0",
+    "chapters/04.md": "aee8bba9ad202f567f3f70d656a26ef3afcdafe27b8e5769e149e98ea7e83ee2",
+    "beats/05-01.md": "8f8f12b2066d446997dd7578fcffa27896713bf31c8d63a24ac77bb14935a8b5",
+    "beats/05-02.md": "83c35eb9dbc6fc64544993192245567e660da1ccb6bf3b9f9a1baad551ee3b04",
+    "beats/05-03.md": "9132622a9a214ad93370bc378fab181a7b8be90fd59faa1f02a8bdead8b03e81",
+    "beats/05-04.md": "5305b5057c8fff6f5026811854b099a562a837163d1352a98a4ec5200f04f952",
+    "chapters/05.md": "c34fc99acf77dd6bdb90ae3f600a56c57afc80dd7a2517af041bdfd62fe8d665",
+    "beats/06-01.md": "fd88a13fb63550b095bd8d64846dd75915ecd8b4593b1c400ad446f469e05ef8",
+    "beats/06-02.md": "8012616c69d4e8137d45981438b1d210931c61261d5474d4eaacc817aaf5b0b7",
+    "beats/06-03.md": "5a9c31b8debee50340696858bd8aab26fd0db4e29ae4695d78087269da72aaf7",
+    "beats/06-04.md": "1a6c3fd7b57bbe2d76bf12b85ec03eb2b76f3b372064b58a92c49b3cf2377481",
+    "chapters/06.md": "376b51dbe2b7f3738c32c37f54cf2b8c6d30371943e022b5649e61dd321884cd",
+    "beats/07-01.md": "b46157774d6a030f3512e6cb4170c2cb118779092675d48682028f4d603bf85f",
+    "beats/07-02.md": "ec0d2e8065960f4186b1d1a076336f47a6d35436784a5aea49501c3c6fe18ba7",
+    "beats/07-03.md": "bc8ff7d7d25a8c791f36d010115c1d0b8434547869465b908caebc2f0f5743d6",
+    "beats/07-04.md": "936e06d22aa3b7b08071adb400cda107c768228fe1bcb22417b5e326751bd2ad",
+    "chapters/07.md": "34966718ec3c250f2e32d4c8c4f4a4c0c682e753dd418837aada18a995897c8a",
+    "novel.md": "469de5c246a1ceb822872b88be4b895491df059e86b086c9647fe8cc6b45d966"
+  }
+}

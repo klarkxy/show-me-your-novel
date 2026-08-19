@@ -449,9 +449,18 @@ class SiteGenerationTests(unittest.TestCase):
             )
 
             self.assertEqual(
-                summary, {"results": 15, "legacy_stories": 1, "legacy_versions": 2}
+                summary,
+                {
+                    "results": 15,
+                    "opening_novels": 0,
+                    "legacy_stories": 1,
+                    "legacy_versions": 2,
+                },
             )
             home = (output / "index.html").read_text(encoding="utf-8")
+            opening_index = (output / "opening" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("开局", home)
+            self.assertIn("尚无文风评分", opening_index)
             self.assertEqual(home.count("data-model-id="), 15)
             self.assertIn("全部 15", home)
             self.assertIn(f"评委 {len(JUDGE_IDS)}", home)

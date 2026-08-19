@@ -4,12 +4,18 @@ import unittest
 
 from runner.generate_v3 import (
     OpeningError,
+    SKIP_FROM_ALL,
     assert_design_prompt,
     assemble_chapter,
+    beat_previous_tail,
+    beat_user_prompt,
     design_user_prompt,
+    load_frozen_pack,
     load_v3_prompts,
     main as generate_v3_main,
     packs_compatible,
+    parse_v3_stop_after,
+    run_prose,
     try_load_stage,
     validate_beat,
     validate_characters,
@@ -152,6 +158,7 @@ class GenerateV3Tests(unittest.TestCase):
             outline_prompt, direction, "outline", world=world, characters=characters
         )
         self.assertIn(characters["viewpoint"], outline_prompt)
+        self.assertIn("5–10 章", outline_prompt)
         with self.assertRaises(OpeningError):
             assert_design_prompt(char_prompt, direction, "characters")
 
@@ -183,6 +190,11 @@ class GenerateV3Tests(unittest.TestCase):
         cleaned = validate_beat(beat)
         chapter = assemble_chapter([cleaned, cleaned, cleaned, cleaned])
         self.assertGreater(len(chapter), 100)
+        overshoot = "门卫把戟横过来。" + "城门的影子还在往外爬。" * 200
+        self.assertGreater(len(validate_beat(overshoot)), 100)
+        dump = "门卫把戟横过来。" + "城门的影子还在往外爬。" * 260
+        with self.assertRaises(OpeningError):
+            validate_beat(dump)
 
     def test_try_load_stage_rejects_broken_json(self) -> None:
         from pathlib import Path
@@ -269,3 +281,255 @@ class GenerateV3Tests(unittest.TestCase):
             ),
             2,
         )
+
+    def test_cli_dry_run_prose_sees_frozen_pack(self) -> None:
+        self.assertEqual(
+            generate_v3_main(
+                ["--all", "--dry-run", "--phase", "prose", "--exclude", "claude-"]
+            ),
+            0,
+        )
+
+    def test_all_skips_luna_and_agnes(self) -> None:
+        import io
+        from contextlib import redirect_stdout
+
+        self.assertIn("gpt-5.6-luna", SKIP_FROM_ALL)
+        self.assertIn("agnes-2.5-flash", SKIP_FROM_ALL)
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            code = generate_v3_main(
+                ["--all", "--dry-run", "--phase", "prose", "--exclude", "claude-"]
+            )
+        self.assertEqual(code, 0)
+        self.assertIn("models=14", buffer.getvalue())
+
+    def test_cli_prose_rejects_design_stop_after(self) -> None:
+        self.assertEqual(
+            generate_v3_main(["--all", "--dry-run", "--phase", "prose", "--stop-after", "world"]),
+            2,
+        )
+
+    def test_cli_design_rejects_chapter_stop_after(self) -> None:
+        self.assertEqual(
+            generate_v3_main(["--all", "--dry-run", "--stop-after", "chapter:1"]),
+            2,
+        )
+
+    def test_parse_stop_after_defaults(self) -> None:
+        self.assertEqual(parse_v3_stop_after(None, "design"), ("world", None))
+        self.assertEqual(parse_v3_stop_after(None, "prose"), (None, None))
+        self.assertEqual(parse_v3_stop_after("chapter:2", "prose"), (None, 2))
+
+    def test_beat_prompt_survives_json_braces(self) -> None:
+        root = repo_root()
+        prompts = load_v3_prompts(root / "runner" / "prompts" / "v3")
+        pack = {
+            "world": _world(),
+            "characters": _characters(),
+            "outline": _outline(),
+        }
+        pack["outline"]["incident_one_liner"] = "莱恩翻过十万大山，看见高楼大厦。"
+        user = beat_user_prompt(prompts, pack, pack["outline"]["chapters"][0], 1, "")
+        self.assertIn("（本章第一节）", user)
+        self.assertIn("西门缝", user)
+        self.assertIn("缝裂开", user)
+        self.assertIn("旁白", user)
+        self.assertNotIn("{beat_materials}", user)
+        self.assertNotIn("{previous_tail}", user)
+        self.assertNotIn("第2场", user)
+        self.assertNotIn("少年落地", user)
+        self.assertNotIn("有人伸手", user)
+
+    def test_real_frozen_beat_prompt_hides_later_outline(self) -> None:
+        from pathlib import Path
+
+        root = repo_root()
+        prompts = load_v3_prompts(root / "runner" / "prompts" / "v3")
+        pack = load_frozen_pack(root / "benchmark" / "foundation-city" / "frozen" / "pack.json")
+        user = beat_user_prompt(prompts, pack, pack["outline"]["chapters"][0], 1, "")
+        self.assertIn("哑叔", user)
+        self.assertNotIn("远房表弟", user)
+        self.assertNotIn("玉牌发烫", user)
+        self.assertNotIn("半夜吐纳", user)
+        self.assertNotIn("一束巡逻警灯扫上边坡", user)
+
+    def test_short_beat_is_expanded_once(self) -> None:
+        from types import SimpleNamespace
+
+        root = repo_root()
+        prompts = load_v3_prompts(root / "runner" / "prompts" / "v3")
+        chapter = _outline()["chapters"][0]
+        calls: list[str] = []
+
+        class Client:
+            def complete(self, model_cfg, messages, *, stage):
+                calls.append(stage)
+                user = messages[1]["content"]
+                if "扩写" in user or stage.endswith("-expand"):
+                    body = "扩写后莱恩把戟横过来。" + "城门的影子还在往外爬。" * 55
+                    return SimpleNamespace(content=body)
+                return SimpleNamespace(content="太短了，只有一句。")
+
+        from runner.generate_v3 import _complete_beat
+
+        text = _complete_beat(
+            Client(),
+            {"id": "glm-5.3", "model": "glm-5.3"},
+            prompts["system.md"],
+            beat_user_prompt(prompts, {"world": _world(), "characters": _characters(), "outline": _outline(), "style": "旁白。"}, chapter, 1, ""),
+            stage="v3-beat-1-1",
+            prompts=prompts,
+            chapter=chapter,
+            beat_index=1,
+        )
+        self.assertEqual(calls, ["v3-beat-1-1", "v3-beat-1-1-expand"])
+        self.assertIn("扩写后", text)
+
+    def test_previous_tail_keeps_the_ending(self) -> None:
+        text = ("前段。" * 80) + "这是尾部标记。"
+        tail = beat_previous_tail(text, limit=8)
+        self.assertEqual(tail, text[-8:])
+
+    def test_run_prose_writes_resumes_and_stops(self) -> None:
+        import json
+        import tempfile
+        from pathlib import Path
+        from types import SimpleNamespace
+
+        root = repo_root()
+        prompts = load_v3_prompts(root / "runner" / "prompts" / "v3")
+        outline = _outline()
+        outline["incident_one_liner"] = "莱恩翻过十万大山，看见高楼大厦。"
+        pack = {
+            "schema": "novel-benchmark.v3",
+            "benchmark": "foundation-city",
+            "world": _world(),
+            "characters": _characters(),
+            "outline": outline,
+            "style": "叙述经过视角人物的经验。",
+        }
+
+        class BeatClient:
+            def __init__(self) -> None:
+                self.calls: list[tuple[str, list[dict[str, str]]]] = []
+
+            def complete(self, model_cfg, messages, *, stage):
+                self.calls.append((stage, list(messages)))
+                user = messages[1]["content"]
+                marker = "本章第一节" if "（本章第一节）" in user else "接上节"
+                body = f"{marker}莱恩把戟横过来。" + "城门的影子还在往外爬。" * 55
+                return SimpleNamespace(content=body)
+
+        with tempfile.TemporaryDirectory() as temp:
+            work = Path(temp)
+            pack_path = work / "pack.json"
+            pack_path.write_text(json.dumps(pack, ensure_ascii=False, indent=2), encoding="utf-8")
+            loaded = load_frozen_pack(pack_path)
+            out = work / "glm-5.3"
+            client = BeatClient()
+            name, status = run_prose(
+                client=client,
+                model_cfg={"id": "glm-5.3", "model": "glm-5.3"},
+                prompts=prompts,
+                pack=loaded,
+                pack_path=pack_path,
+                output_dir=out,
+                model_id="glm-5.3",
+                stop_after_chapter=1,
+            )
+            self.assertEqual(name, "glm-5.3")
+            self.assertEqual(status, "partial:1")
+            self.assertEqual(len(client.calls), 3)
+            self.assertTrue((out / "beats" / "01-01.md").is_file())
+            self.assertTrue((out / "chapters" / "01.md").is_file())
+            self.assertFalse((out / "novel.md").is_file())
+            self.assertIn("（本章第一节）", client.calls[0][1][1]["content"])
+            self.assertIn("城门的影子还在往外爬。", client.calls[1][1][1]["content"])
+            self.assertNotIn("（本章第一节）", client.calls[1][1][1]["content"])
+
+            resumed = BeatClient()
+            name, status = run_prose(
+                client=resumed,
+                model_cfg={"id": "glm-5.3", "model": "glm-5.3"},
+                prompts=prompts,
+                pack=loaded,
+                pack_path=pack_path,
+                output_dir=out,
+                model_id="glm-5.3",
+            )
+            self.assertEqual(status, "complete")
+            self.assertEqual(len(resumed.calls), 12)
+            self.assertTrue((out / "novel.md").is_file())
+            novel = (out / "novel.md").read_text(encoding="utf-8")
+            self.assertIn("## 第1章 第1场", novel)
+            self.assertIn("## 第5章 第5场", novel)
+            manifest = json.loads((out / "prose.json").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["status"], "complete")
+            self.assertEqual(len(manifest["chapters"]), 5)
+
+            cached = BeatClient()
+            _, status = run_prose(
+                client=cached,
+                model_cfg={"id": "glm-5.3", "model": "glm-5.3"},
+                prompts=prompts,
+                pack=loaded,
+                pack_path=pack_path,
+                output_dir=out,
+                model_id="glm-5.3",
+            )
+            self.assertEqual(status, "complete")
+            self.assertEqual(cached.calls, [])
+
+    def test_run_prose_refuses_stale_frozen_pack(self) -> None:
+        import json
+        import tempfile
+        from pathlib import Path
+        from types import SimpleNamespace
+
+        root = repo_root()
+        prompts = load_v3_prompts(root / "runner" / "prompts" / "v3")
+        outline = _outline()
+        outline["incident_one_liner"] = "莱恩翻过十万大山，看见高楼大厦。"
+        pack = {
+            "schema": "novel-benchmark.v3",
+            "benchmark": "foundation-city",
+            "world": _world(),
+            "characters": _characters(),
+            "outline": outline,
+            "style": "叙述经过视角人物的经验。",
+        }
+
+        class BeatClient:
+            def complete(self, model_cfg, messages, *, stage):
+                body = "莱恩把戟横过来。" + "城门的影子还在往外爬。" * 55
+                return SimpleNamespace(content=body)
+
+        with tempfile.TemporaryDirectory() as temp:
+            work = Path(temp)
+            pack_path = work / "pack.json"
+            pack_path.write_text(json.dumps(pack, ensure_ascii=False, indent=2), encoding="utf-8")
+            out = work / "glm-5.3"
+            run_prose(
+                client=BeatClient(),
+                model_cfg={"id": "glm-5.3", "model": "glm-5.3"},
+                prompts=prompts,
+                pack=load_frozen_pack(pack_path),
+                pack_path=pack_path,
+                output_dir=out,
+                model_id="glm-5.3",
+                stop_after_chapter=1,
+            )
+            pack["world"]["name"] = "东门缝"
+            pack_path.write_text(json.dumps(pack, ensure_ascii=False, indent=2), encoding="utf-8")
+            with self.assertRaises(OpeningError):
+                run_prose(
+                    client=BeatClient(),
+                    model_cfg={"id": "glm-5.3", "model": "glm-5.3"},
+                    prompts=prompts,
+                    pack=load_frozen_pack(pack_path),
+                    pack_path=pack_path,
+                    output_dir=out,
+                    model_id="glm-5.3",
+                    stop_after_chapter=1,
+                )
