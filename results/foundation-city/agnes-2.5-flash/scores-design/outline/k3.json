@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 4
+  },
+  "score": 83.3,
+  "comment": "开局对题目的兑现很强：第一章就能看到‘筑基越山却见高楼’的反差点；不可逆也早早落在第4章‘咽回真气上车’而不是拖到后期；交接卡主要给边界和禁锁项，能直接交正文。"
+}

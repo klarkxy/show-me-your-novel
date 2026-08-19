@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 2,
+    "institutions": 2,
+    "focus": 2
+  },
+  "score": 50.0,
+  "comment": "开局切口锋利，但集团「无法突破金丹」与科技侧元婴禁忌存在张力，且贫民区与集团的生存冲突比隐世修盟更具行动力。"
+}

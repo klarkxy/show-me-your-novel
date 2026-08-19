@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "characters",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处：六人均以即时欲望、明确底线和具体拒绝方式压入同一站台，误判、知情与注意焦点彼此错位，入场余势可直接推动现场冲突。"
+}

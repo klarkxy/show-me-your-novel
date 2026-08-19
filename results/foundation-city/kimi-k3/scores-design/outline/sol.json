@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 1,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 50.0,
+  "comment": "不可逆选择落在第二章且后果清楚，但第一章只写到警灯照上边坡，题目要求的查身份证、司机撒谎捡走尚未发生，同时七章逐章拆出的脊线与节拍已明显超出单纯决策边界。"
+}

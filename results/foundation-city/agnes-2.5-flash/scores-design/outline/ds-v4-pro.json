@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "outline",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "incident": 3,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "最弱处：beats预写了大量具体台词与动作（如“想活命就上车”“你师父三十年前就走了”），远超决策边界，使正文失去自主发挥空间。"
+}

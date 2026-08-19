@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 2,
+    "differentiation": 2,
+    "playable": 2
+  },
+  "score": 50.0,
+  "comment": "agency 设计合格但 differentiation 稍显混杂"
+}

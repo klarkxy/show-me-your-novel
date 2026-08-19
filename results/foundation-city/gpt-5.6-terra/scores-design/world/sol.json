@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "开局身份、能力、资源和回返受限形成了有效阻力，机构也具备基本的目标与边界，但现代监控、灵力痕迹和各方处置权限仍有较多模糊空间，可能留下过早脱困或强行收容的捷径。"
+}

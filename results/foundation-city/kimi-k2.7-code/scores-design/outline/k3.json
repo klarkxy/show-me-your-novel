@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "开局场面清楚、首次不可逆落在第2章谎言领人且后果具体，但交接卡大量预写台词、逐拍动作与感官细节，已超出只给决策边界，必须压到1。"
+}

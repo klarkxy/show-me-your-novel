@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "outline",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 3
+  },
+  "score": 91.7,
+  "comment": "最强处：第一章beats直接、具体复现题目“越山见高楼”场面；最弱处：handoff的逐拍beats略细，但must_not_lock和not_resolved守住决策边界。"
+}

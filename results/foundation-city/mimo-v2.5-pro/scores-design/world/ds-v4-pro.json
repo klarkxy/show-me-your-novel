@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 75.0,
+  "comment": "最弱处在规则只禁飞行与破坏性法术，隐身、催眠等非破坏性捷径未被封堵，但其余部分紧扣开局。"
+}

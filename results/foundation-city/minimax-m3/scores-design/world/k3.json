@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最稳处在开局约束：无身份符、不识字、禁飞、灵尘与心魔合力堵住硬闯、暴露修为和现代捷径，直接把主角压进谨慎求生的都市入口。"
+}

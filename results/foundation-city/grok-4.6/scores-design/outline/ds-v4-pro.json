@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "outline",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "第一章能直接看见初始场面且首次不可逆选择落在第二章上车入城，但每章逐拍 beat 已把大量动作细节写死，交接卡只算半成品。"
+}

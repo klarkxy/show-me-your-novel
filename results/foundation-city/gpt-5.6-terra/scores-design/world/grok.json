@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "constraint 规则设定了多重限制能挡住主角获得身份和资源的捷径，是最强处。"
+}

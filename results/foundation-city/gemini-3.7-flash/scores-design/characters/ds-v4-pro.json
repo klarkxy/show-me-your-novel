@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "characters",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 91.7,
+  "comment": "最弱处是陈敬“在巡警或行车记录仪拍下前藏人”的欲望与郭建平已到场的事实存在时序冲突，使其‘拉卷帘门’选项在现场不太可执行。"
+}

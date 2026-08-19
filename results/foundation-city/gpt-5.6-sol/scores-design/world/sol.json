@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强处是把无身份、缺货币、能力受限、越界可追踪和现代监控直接压到主角的第一步上，最弱处是灵力追踪与各机构响应的时效和边界仍偏模糊，留下了机构随时按需收紧或放宽追捕的捷径。"
+}

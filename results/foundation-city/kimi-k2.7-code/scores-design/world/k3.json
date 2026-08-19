@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 4,
+    "focus": 3
+  },
+  "score": 83.3,
+  "comment": "机构矩阵最完整，规则也能挡住神通碾压等直接捷径；但蜃楼大阵在意外暴露时如何不留痕迹地抹平凡人认知，未给出可见的运作成本或后果，容易在开篇就面临逻辑断层。"
+}

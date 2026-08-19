@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 4,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 100.0,
+  "comment": "规则闭环、机构互锁、开局钩子精准，最强处在于灵气枯竭与灵波监测让主角任何施法都变成自曝且难恢复，捷径被封死。"
+}

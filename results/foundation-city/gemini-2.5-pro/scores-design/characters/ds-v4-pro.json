@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "characters",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处：三人的信息差与注意焦点被清晰分开，且每人的拒绝动作具体到可立即执行，陆远的退回山林与赵清的混入人群形成现场拉扯。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "林逢春的'不知藏修为'误判与周师傅'一眼认出'的知情形成现场张力，小吴的例行公事提供了第三种碰撞角度，三人此刻都能动起来。"
+}

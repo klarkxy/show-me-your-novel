@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "四人的注意焦点各随知情分开且串成连锁（陆沉盯灯牌引老何递水、剑柄露出逼周深表态），这是最强处；但老何、陈姐、周深三人的欲望同为『别惹麻烦』的回避型，若同时执行拒绝，现场容易失去推进力，这是最弱处。"
+}

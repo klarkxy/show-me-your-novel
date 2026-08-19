@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "最强处是无身份、失字、缺钱、真元不稳等限制能把“看见高楼后怎么办”落实为迫在眉睫的生存选择；较弱处是登仙司、灵警与集团的权限边界虽齐全，却尚未明确主角初次入城时谁会先发现他、为何不能立刻收编或拘捕。"
+}

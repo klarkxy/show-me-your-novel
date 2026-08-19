@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "最强是 agency，每人都有欲望底线和拒绝方式；最弱是 playable，顾长安会很快失去方向。"
+}

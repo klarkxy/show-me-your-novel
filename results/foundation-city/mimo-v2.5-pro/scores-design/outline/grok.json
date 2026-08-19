@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "outline",
+  "judge": "grok",
+  "bands": {
+    "incident": 2,
+    "irreversible": 2,
+    "handoff": 1
+  },
+  "score": 41.7,
+  "comment": "handoff 项因多处逐拍动作和必须事项限制，预写痕迹明显，需精简为仅决策边界"
+}

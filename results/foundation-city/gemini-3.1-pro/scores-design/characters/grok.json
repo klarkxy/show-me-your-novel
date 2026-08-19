@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是agency，每人都有此刻欲望、底线、拍板决定和拒绝方式，能直接在现场做出选择。"
+}

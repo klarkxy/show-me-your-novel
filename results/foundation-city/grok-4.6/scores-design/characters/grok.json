@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 2,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 66.7,
+  "comment": "agency 混杂，叶青有欲望底线但张明主要被动；differentiation 知情误判注意焦点分离良好；playable 入场余势叶青疲惫会改变判断"
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "glm-5.3",
+  "complete": false,
+  "overall": 86.1,
+  "tracks": {
+    "world": {
+      "median": 83.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "开局的身份、货币、监测与执法限制足以迫使主角求生和选择，但“临时保荐”、异常波动难识别与口诀可交易仍留下较宽的脱身捷径；机构目标和权限清楚，部分机构的实际制衡与冲突强度尚未完全落地。"
+        },
+        "grok": {
+          "score": 50.0,
+          "bands": {
+            "constraint": 2,
+            "institutions": 2,
+            "focus": 2
+          },
+          "comment": "constraint 规则挡住了主角直接用旧法器或山内方式翻盘，但旧法口诀作为硬通货有小漏洞"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 4,
+            "focus": 3
+          },
+          "comment": "机构设计罕见地闭环：灵政局能监测却不能拆山，大衍能定价却不能明抢，遗真会能庇护却挡不住收容令，启明修院给身份却逼人断师承，四方互相咬合出主角必须靠「未登记的旧法」这一唯一漏洞求生的硬处境；规则也真堵死了刷脸、卖灵石、硬闯等捷径。但「土法波动诡异不易识别」在开局保护主角的同时，也留下「一旦灵政局升级算法或主角学会模拟灵网波动，黑户设定就形同虚设」的后门；且主角必须在「暴露即收容」与「签约即卖师门」之间持续走钢丝，稍一失手就会滑向「用旧法打脸专利法器」的爽文捷径，需要作者在细节处"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "constraint": 4,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "约束环环相扣且无免费捷径，机构各有欲求与掣肘，开局被精准钉在“进城第一难”上。"
+        }
+      }
+    },
+    "characters": {
+      "median": 100.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "五人都带着会立刻触发选择的欲望、底线和拒绝动作入场，尤其秦渡把木牌、引气和翻墙作为具体分岔；知情误判与注意焦点也彼此错开，入场余势足以推动现场连续行动。"
+        },
+        "grok": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "agency 设计全面，每个角色欲望底线拒绝方式具体到此刻，能直接在现场做出选择"
+        },
+        "k3": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "每个人的拍板都是带代价的真分叉（点拨还是收摊、带走还是拧油门、放人还是带走核查），且五双眼睛各看各的——气、摄像头、木牌、手、弹幕；相对最弱的是蒋一帆，他的赌注只是流量、随时可掐播退场，与其他人押上几十年藏身之本的 stakes 不在一个量级。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强处：六人均以即时欲望、明确底线和具体拒绝方式压入同一站台，误判、知情与注意焦点彼此错位，入场余势可直接推动现场冲突。"
+        }
+      }
+    },
+    "outline": {
+      "median": 75.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 91.7,
+          "bands": {
+            "incident": 3,
+            "irreversible": 4,
+            "handoff": 4
+          },
+          "comment": "第一章已清楚交出翻山后撞入现代城市、被凡人警务流程拦住并不得不收起修士手段的初始场面，且第五章当街救人留下视频、由周聿怀承担后果的不可逆选择尤其扎实；但题目最醒目的“遍地高楼大厦”目前只由车流灯牌侧面呈现，建议正文补出更明确的高楼视觉冲击。"
+        },
+        "grok": {
+          "score": 58.3,
+          "bands": {
+            "incident": 3,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "incident 与 irreversible 均落在各章具体结果，handoff 因 beats 预写动作节奏而不足"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 3
+          },
+          "comment": "第一章就把题目那一幕完整落成具体场面（山合、车流灯牌、咽回探灵诀），但不可逆出手在第六章被删净视频、代价全额转嫁，削弱了「收不回来」的重量。"
+        },
+        "ds-v4-pro": {
+          "score": 66.7,
+          "bands": {
+            "incident": 3,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "最强处：第五章当街出手与第六章付账形成清晰不可逆闭环，没有拖到终局；但逐拍动作过多导致 handoff 只能给1。"
+        }
+      }
+    }
+  }
+}

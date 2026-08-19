@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 2,
+    "institutions": 2,
+    "focus": 2
+  },
+  "score": 50.0,
+  "comment": "constraint 处混杂，世界虽设规则挡住捷径但主角刚筑基期法力有限科技路径仍有小捷径"
+}

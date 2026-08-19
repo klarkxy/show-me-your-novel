@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "outline",
+  "judge": "grok",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "incident 直接命中题目翻山见高楼场景，第一章必须出现霓虹与车流，极强；handoff 过松，beats 与 prose_free 预写逐拍动作太多，决策边界模糊。"
+}

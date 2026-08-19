@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 3,
+    "irreversible": 4,
+    "handoff": 4
+  },
+  "score": 91.7,
+  "comment": "第一章已清楚交出翻山后撞入现代城市、被凡人警务流程拦住并不得不收起修士手段的初始场面，且第五章当街救人留下视频、由周聿怀承担后果的不可逆选择尤其扎实；但题目最醒目的“遍地高楼大厦”目前只由车流灯牌侧面呈现，建议正文补出更明确的高楼视觉冲击。"
+}

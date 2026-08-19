@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 1,
+    "handoff": 1
+  },
+  "score": 50.0,
+  "comment": "第一章能清楚交出翻山见城、灵气稀薄且身后人消失的初始场面，但掐诀或收手并未形成真正不可逆后果，且后续七章已按逐步事件和结果预排，超出单纯决策边界。"
+}

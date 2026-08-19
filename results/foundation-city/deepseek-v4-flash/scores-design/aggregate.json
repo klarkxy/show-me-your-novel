@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "deepseek-v4-flash",
+  "complete": false,
+  "overall": 79.2,
+  "tracks": {
+    "world": {
+      "median": 83.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "开局约束把灵力衰竭、现代身份缺失、术法失效和暴露风险同时压到主角身上，题目指向很集中；但灵力干扰、监控克制术式以及三方机构的实际追捕边界仍偏概念化，尚不足以完全堵死主角靠基础术法、随身物件或机构庇护迅速脱困的路径。"
+        },
+        "grok": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 4,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "constraint 规则设计最严，能有效阻挡开局捷径"
+        },
+        "k3": {
+          "score": 91.7,
+          "bands": {
+            "constraint": 3,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "三方机构的欲求、能力、禁区彼此咬合且互相制衡，开局约束精确服务于“翻过山撞见高楼”那一刻的窘境；唯“电磁克制术式”的压减机制较笼统，实战场景执行时可能漂移。"
+        },
+        "ds-v4-pro": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最强处是紧扣开局且约束层层加码；最弱处是未堵死主角回山补充灵力的捷径，让灵力枯竭的绝境存在被绕过风险。"
+        }
+      }
+    },
+    "characters": {
+      "median": 87.5,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "阿苓亮剑、陈默收场、栾兴隐退、宋灯截走、何声递桃子的即时动作和拒绝方式区分明确，但多数人的选择仍停留在条件触发后的备选菜单，且都被“隐藏系统”这一层关系部分同质化。"
+        },
+        "grok": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "agency 方面最强，每个人物都有欲望底线拍板拒绝方式。"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "知情层级和注意焦点分得很干净（阿苓看铁盒子、栾兴看手腕脚踝、宋灯看另两个盯梢者），但四个城市侧人物的功能高度重叠——都想让她'安静消失'且三人默认按兵不动，现场的推进几乎全押在阿苓拔剑和宋灯抢人上，若她不动就有全员干等的僵局风险。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强处：五人均有当下的欲望、底线、拍板与拒绝方式，且注意力焦点与信息错位清晰，可直接驱动现场冲突。"
+        }
+      }
+    },
+    "outline": {
+      "median": 66.7,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 66.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "题目所要的翻山见城场面在第一章已清楚成立，第一次收回道法并转入藏者身份也落在第五章，但交接材料以大量逐拍动作、指定台词和细节约束预写了正文，已不只是决策边界。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "incident 直接4，第一章完美还原题目场景；handoff 过低，章纲预写了过多逐拍动作和台词。"
+        },
+        "k3": {
+          "score": 66.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "第一章把「翻过山见高楼」的题面一幕落得干净准确，不可逆点也明确落在第五章跳闸被拖走并由后续章节持续承担代价；但交接卡越界严重——八章的 beats 大量预写台词（「这是我侄子」「藏得住才算活」「先借你一个名字」等二十余处成句）并逐拍锁死动作细节（掐烟、拴绒线、投硬币），远超决策边界的范畴。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "最弱在 handoff：章纲大量预写具体台词、逐拍动作，已将开局每一章的事态和结果写死，未保留决策边界。"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 66.7,
+  "comment": "constraint 处主角储物袋上古样式易成捷径，institutions 各有要能不能，focus 服务开局"
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "agnes-2.5-flash",
+  "complete": false,
+  "overall": 72.2,
+  "tracks": {
+    "world": {
+      "median": 66.7,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 58.3,
+          "bands": {
+            "constraint": 2,
+            "institutions": 2,
+            "focus": 3
+          },
+          "comment": "开局钩子和脆弱处境很集中，但“政府不知修仙界”与能监控收容异常个体的管理局相互牵扯，且筑基修为是否衰退、屏障为何长期无人越过等规则缝隙会削弱阻力可信度。"
+        },
+        "grok": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "constraint 处最强，筑基衰退+守山人关卡+无身份货币有效挡住山外现代文明捷径"
+        },
+        "k3": {
+          "score": 91.7,
+          "bands": {
+            "constraint": 3,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "三方势力的目标与能力形成精妙的动态制衡，尤其是山外来客管理局“能收容却看不透深浅”的盲区，为主角在现代社会的挣扎提供了既危险又留有余地的叙事空间；唯一的风险在于灵气衰退速度未量化，可能让紧迫感变得模糊。"
+        },
+        "ds-v4-pro": {
+          "score": 58.3,
+          "bands": {
+            "constraint": 2,
+            "institutions": 2,
+            "focus": 3
+          },
+          "comment": "最弱处在规则：筑基以下衰退与主角筑基仍持续衰退表述矛盾，使主角是否保留修为破局能力不够明确，削弱了约束强度。"
+        }
+      }
+    },
+    "characters": {
+      "median": 87.5,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "三人都带着可立即执行的选择和互相冲突的判断入场，尤其林逢春是否收敛气息会直接改变进城结果；小吴的行动略偏流程化，但不妨碍现场推进。"
+        },
+        "grok": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "agency 最强，每人都有欲望底线拍板拒绝方式"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "林逢春的'不知藏修为'误判与周师傅'一眼认出'的知情形成现场张力，小吴的例行公事提供了第三种碰撞角度，三人此刻都能动起来。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "三人对修仙与城市的知情状态、行动选择与注意焦点高度分层，能直接推入交叉冲突。"
+        }
+      }
+    },
+    "outline": {
+      "median": 62.5,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 50.0,
+          "bands": {
+            "incident": 2,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "最弱处是第一章虽写了车流、灯牌和灵气异常，却没有明确呈现“遍地高楼大厦”这一题目核心初始场面；不可逆选择落在第四章是清楚的，但交接材料已用大量逐拍动作和预写台词把正文路径定得过细。"
+        },
+        "grok": {
+          "score": 58.3,
+          "bands": {
+            "incident": 3,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "handoff处大量预写台词动作细节，需精简聚焦决策边界"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "incident": 3,
+            "irreversible": 3,
+            "handoff": 4
+          },
+          "comment": "开局对题目的兑现很强：第一章就能看到‘筑基越山却见高楼’的反差点；不可逆也早早落在第4章‘咽回真气上车’而不是拖到后期；交接卡主要给边界和禁锁项，能直接交正文。"
+        },
+        "ds-v4-pro": {
+          "score": 66.7,
+          "bands": {
+            "incident": 3,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "最弱处：beats预写了大量具体台词与动作（如“想活命就上车”“你师父三十年前就走了”），远超决策边界，使正文失去自主发挥空间。"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 83.3,
+  "comment": "三人的知情错位与注意焦点切得干净（陆淮看LED当显圣、老陈盯城管警灯、宋岚盯监控），误判天然产戏；略弱处是陆淮的cannot_accept预设了'找不到客栈、被当神经病'这类尚未在入场时刻发生的结果，到场时是余势而不是已触发的底线，需在现场补一拍才能逼出他的选择。"
+}

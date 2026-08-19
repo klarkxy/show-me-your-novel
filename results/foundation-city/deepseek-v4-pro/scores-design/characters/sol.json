@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 91.7,
+  "comment": "四人都带着明确底线和当场动作入场，知情层次与注意焦点分得很开；但陈大勇和阿晶的选择主要是常规驱离或躲避，尚未形成足以改变现场走向的具体压力。"
+}

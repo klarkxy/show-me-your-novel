@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "四人都带着可立即触发选择的欲望、底线和拒绝路径，尤其沈砚的求助冲动与周岚的遮掩自保会自然形成现场冲突；相对不足是林小满的选择强度略依赖沈砚是否先制造危险。"
+}

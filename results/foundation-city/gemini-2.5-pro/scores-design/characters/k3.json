@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "赵清的“选择无视”与保安小王的“多一事不如少一事”形成现实阻力网，迫使陆远必须在自傲与生存之间做出真实抉择，三重视角的误判与知情差撑起了这一刻的张力。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 83.3,
+  "comment": "三人的知情差、误判方向和注意焦点拆得很干净，叶青的隐藏欲、张明的回避、赵隐的观察压力能当场咬合；但叶青还缺一个立刻必须拍板的硬分叉，导致开场行动性略弱于设定张力。"
+}

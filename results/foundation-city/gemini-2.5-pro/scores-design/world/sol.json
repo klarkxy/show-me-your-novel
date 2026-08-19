@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 2,
+    "institutions": 2,
+    "focus": 3
+  },
+  "score": 58.3,
+  "comment": "开局目标和黑户、搜捕、神识受扰等限制很集中，但灵石、丹药和基础法器在山外究竟能否转化为生存资源及其代价没有明确规定，仍给主角留下了绕过困境的捷径。"
+}

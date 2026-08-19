@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 91.7,
+  "comment": "最弱处是马国强“已接到古装男子拦路电话”略抢在沈砚第一眼看清城市之前，容易把开场的茫然抉择提前推向被处置。"
+}

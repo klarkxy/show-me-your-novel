@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 4
+  },
+  "score": 83.3,
+  "comment": "陈玄带着筑基期的自信与误判进城，李隐因恐惧而隐藏，王警因无知而戒备，三人此刻的知情错位和即时选择压力足以让这场遭遇自然发生。"
+}

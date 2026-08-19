@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 4
+  },
+  "score": 91.7,
+  "comment": "对题目初始场面的捕捉精准，开局即能带入；不可逆选择落在了第2章末，但第3-6章主要在处理后果而非推进新危机，使得中段略显被动。"
+}

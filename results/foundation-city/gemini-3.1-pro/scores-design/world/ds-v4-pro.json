@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 66.7,
+  "comment": "约束最弱处在于未明确山外物理定律是否同步压制筑基期肉身被动强度，超人体魄可能绕过灵力短缺的困境。"
+}

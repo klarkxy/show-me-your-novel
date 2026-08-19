@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 2,
+    "institutions": 2,
+    "focus": 3
+  },
+  "score": 58.3,
+  "comment": "最弱处在规则：筑基以下衰退与主角筑基仍持续衰退表述矛盾，使主角是否保留修为破局能力不够明确，削弱了约束强度。"
+}

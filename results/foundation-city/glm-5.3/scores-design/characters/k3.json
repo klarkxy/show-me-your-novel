@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "每个人的拍板都是带代价的真分叉（点拨还是收摊、带走还是拧油门、放人还是带走核查），且五双眼睛各看各的——气、摄像头、木牌、手、弹幕；相对最弱的是蒋一帆，他的赌注只是流量、随时可掐播退场，与其他人押上几十年藏身之本的 stakes 不在一个量级。"
+}

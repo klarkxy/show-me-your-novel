@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "gpt-5.6-terra",
+  "complete": false,
+  "overall": 83.3,
+  "tracks": {
+    "world": {
+      "median": 79.2,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "开局身份、能力、资源和回返受限形成了有效阻力，机构也具备基本的目标与边界，但现代监控、灵力痕迹和各方处置权限仍有较多模糊空间，可能留下过早脱困或强行收容的捷径。"
+        },
+        "grok": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "constraint 规则设定了多重限制能挡住主角获得身份和资源的捷径，是最强处。"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "优势在于开局阶段把资源、身份、施法痕迹、携带物风险和能力上限都压住了，足以阻止主角立刻用法术或奇遇跳关；短板是边界已经收得很紧，但管理局、集团、大学和互助会都能提供过渡性帮助，仍留有被写快、写过头的空间。"
+        },
+        "ds-v4-pro": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最强处在focus：用‘山口禁制关闭、不能立刻回山、只能接触少数现代人’等硬约束把题目要求的‘这一刻’逼成生存与认知冲突，未决不写死后史。"
+        }
+      }
+    },
+    "characters": {
+      "median": 95.8,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "四人都带着可立即触发选择的欲望、底线和拒绝路径，尤其沈砚的求助冲动与周岚的遮掩自保会自然形成现场冲突；相对不足是林小满的选择强度略依赖沈砚是否先制造危险。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 2
+          },
+          "comment": "playable 仍有入场余势会改变判断"
+        },
+        "k3": {
+          "score": 91.7,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "最弱处是马国强“已接到古装男子拦路电话”略抢在沈砚第一眼看清城市之前，容易把开场的茫然抉择提前推向被处置。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强处是四人的欲望、误判与注意焦点在同一个现场清晰错开，且入场余势都直接推动当场选择。"
+        }
+      }
+    },
+    "outline": {
+      "median": 75.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "第一章已清楚交代翻山见城、身份受阻、险些施法并由周聿怀带离的初始场面，且不可逆选择落在章末；但六章材料用大量固定脊柱、压力项和逐拍事件预写后续推进，交给正文的决策空间偏小。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "incident 处最强，第一章直接呈现翻山见高楼车流；handoff 处逐拍动作过多"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 2
+          },
+          "comment": "开局紧扣题目核心反差，身份冲突与不可逆选择清晰落地，但各章action卡过于详尽（含大量具体动作与场景调度），越过了决策边界介入正文执行。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "山外高楼的第一章拍点清晰，irreversible也落在第二章；但beats已写成逐拍动作并含台词，handoff只能1。"
+        }
+      }
+    }
+  }
+}

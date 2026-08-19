@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "最强处在开局约束：法力衰减、神识被电磁干扰、黑户身份加上已被警报锁定，把主角死死按在题目那一瞬的错位感里，捷径基本被堵死；较弱处是机构只有异管总局一方成体系，科技与修仙两条路线在民间或暗处的对手机构尚是空白。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 2,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "institutions 各方均有清晰的 wants、can、cannot，机构设定自洽有力；constraint 规则虽严密，但主角灵石一匣的实际利用方式未完全明确，存在微弱混杂。"
+}

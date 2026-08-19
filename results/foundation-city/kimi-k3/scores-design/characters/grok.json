@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 2,
+    "differentiation": 2,
+    "playable": 2
+  },
+  "score": 50.0,
+  "comment": "agency 最强，沈却的欲望、底线和拒绝方式衔接自然"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "开局的身份、货币、监测与执法限制足以迫使主角求生和选择，但“临时保荐”、异常波动难识别与口诀可交易仍留下较宽的脱身捷径；机构目标和权限清楚，部分机构的实际制衡与冲突强度尚未完全落地。"
+}

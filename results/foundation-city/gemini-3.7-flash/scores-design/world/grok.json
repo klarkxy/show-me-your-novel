@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 66.7,
+  "comment": "constraint 处最弱，规则虽能挡住传统爽文，但主角刚渡筑基雷劫灵力枯竭，规则的压制效果尚未完全生效。"
+}

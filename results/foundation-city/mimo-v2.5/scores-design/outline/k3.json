@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 2
+  },
+  "score": 75.0,
+  "comment": "最强处是题目那一幕在第一章可直接落成公路边盘查与被带离的连锁后果；最弱处是各章 spine/beats 已接近逐拍排戏，且“咽下真气不暴露”到第4章又被小动作打破，不可逆性偏软。"
+}

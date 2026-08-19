@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "outline",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "最强处是第一章 beat 明确让沈却跨过最后一道山脊看到高楼霓虹与车流，完整兑现题目初始场面；但交接卡以五章逐拍动作锁死了正文决策空间。"
+}

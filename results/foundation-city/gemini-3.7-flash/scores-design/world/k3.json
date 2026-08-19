@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 2,
+    "focus": 3
+  },
+  "score": 66.7,
+  "comment": "最强处是开局约束与非致命收容SOP咬合紧密——灵力枯竭、雷达锁定、只能喊话不能击杀，直接给出一场可演的对峙戏；最弱处是两个机构同属城市执法一侧、目标高度重叠，缺少一个对主角另有所图的在野势力作为杠杆。"
+}

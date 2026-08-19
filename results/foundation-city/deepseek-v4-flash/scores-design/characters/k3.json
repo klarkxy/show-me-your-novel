@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "知情层级和注意焦点分得很干净（阿苓看铁盒子、栾兴看手腕脚踝、宋灯看另两个盯梢者），但四个城市侧人物的功能高度重叠——都想让她'安静消失'且三人默认按兵不动，现场的推进几乎全押在阿苓拔剑和宋灯抢人上，若她不动就有全员干等的僵局风险。"
+}

@@ -682,6 +682,50 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("../index.html", alias)
             self.assertIn("开局已移到首页", alias)
 
+    def test_design_board_publishes_four_judge_scores_as_provisional(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config, novels, results = self._fixture(root)
+            model = root / "results" / "foundation-city" / "model-a"
+            model.mkdir(parents=True)
+            self._write_json(
+                model / "world.json",
+                {"name": "试城", "premise": "翻山看见灯。"},
+            )
+            self._write_json(
+                model / "characters.json",
+                {"viewpoint": "沈却", "cast": [{"name": "沈却"}]},
+            )
+            self._write_json(model / "outline.json", {"incident_one_liner": "出山。"})
+            self._write_json(
+                model / "scores-design" / "aggregate.json",
+                {
+                    "schema": "novel-design-aggregate.v3",
+                    "candidate": "model-a",
+                    "complete": False,
+                    "overall": 80.5,
+                    "tracks": {
+                        "world": {"median": 83.3, "n": 4},
+                        "characters": {"median": 87.5, "n": 4},
+                        "outline": {"median": 70.8, "n": 4},
+                    },
+                },
+            )
+            output = root / "public"
+            summary = build_site(
+                config_path=config,
+                novels_dir=novels,
+                results_dir=results,
+                assets_dir=REPO_ROOT / "site" / "assets",
+                output_dir=output,
+            )
+            self.assertEqual(summary["designs"], 1)
+            page = (output / "design" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("80.5", page)
+            self.assertIn("试城", page)
+            self.assertIn("Opus 全线 503", page)
+            self.assertIn("不是完整五席榜", page)
+
     def test_opening_excerpt_uses_first_paragraph_not_the_outline(self) -> None:
         text = (
             "## 第1章 山尽头的灯\n\n"
@@ -714,6 +758,7 @@ class SiteGenerationTests(unittest.TestCase):
                         "overall": overall,
                         "frozen_sha256": frozen_hash,
                         "input_hash": hashlib.sha256(novel.read_bytes()).hexdigest(),
+                        "n": 5,
                         "bands": {
                             key: {"median": 3.0, "n": 5}
                             for key in ("naturalness", "voice", "scene", "continuity")

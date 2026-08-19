@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "开局限制清楚地把筑基修士置于灵力不可补充、身份全无且受监控的困境中，机构目标与能力也能制造追捕和交易压力，但科技能否转化为灵气的未决项仍可能成为过早解除困境的捷径。"
+}

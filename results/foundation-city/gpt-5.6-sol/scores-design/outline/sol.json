@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 2
+  },
+  "score": 83.3,
+  "comment": "第一章已明确落实筑基出山、撞见现代城市并被凡人规则带离的初始场面，且压下真气的选择即时生效；但六章均预排了较密的逐步事件链和反复的必守限制，虽留有未锁定项，仍不算纯粹的决策边界交接。"
+}

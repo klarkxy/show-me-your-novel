@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "开局焦点很准地压在“筑基修士闯入现代都市”的身份、资源与禁用术法上，但法规只写到监控和限制，缺少具体侦测手段、处罚成本与黑市灵气缺口，低调小法术和灰色资源仍可能绕开约束。"
+}

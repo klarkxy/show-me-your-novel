@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "characters",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是四人的欲望、误判与注意焦点在同一个现场清晰错开，且入场余势都直接推动当场选择。"
+}

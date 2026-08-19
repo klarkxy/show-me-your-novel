@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 1,
+    "institutions": 2,
+    "focus": 3
+  },
+  "score": 50.0,
+  "comment": "开局方向明确且保留了融入都市的空间，但“法规限制”“监控系统”和“筑基才能穿越”都缺少具体执行机制，主角仍容易凭修为绕过生存障碍。"
+}

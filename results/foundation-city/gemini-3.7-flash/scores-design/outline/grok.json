@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "outline",
+  "judge": "grok",
+  "bands": {
+    "incident": 2,
+    "irreversible": 2,
+    "handoff": 1
+  },
+  "score": 41.7,
+  "comment": "handoff 评分偏低，因 beats 与 must_keep 预设了过多具体动作与情节要点，不利于直接交给正文自由发挥。"
+}

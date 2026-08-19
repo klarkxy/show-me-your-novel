@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 91.7,
+  "comment": "agency 维度仍有失手，阿晶 agency 稍弱，differentiation 和 playable 都很强。"
+}

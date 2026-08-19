@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 3
+  },
+  "score": 91.7,
+  "comment": "第一章must_keep直接钉死「翻过山脊高楼车流扑面」的题目场面，第二章咽下真气跟陌生人走、亮信物是不可逆且后果归属清晰；个别beats（如监控看七遍、骂脏话跟上）略越界到正文发挥空间，但must_not_lock与prose_free整体把决策边界守得很干净。"
+}

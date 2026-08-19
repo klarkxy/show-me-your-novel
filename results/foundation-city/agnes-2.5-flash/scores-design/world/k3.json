@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 91.7,
+  "comment": "三方势力的目标与能力形成精妙的动态制衡，尤其是山外来客管理局“能收容却看不透深浅”的盲区，为主角在现代社会的挣扎提供了既危险又留有余地的叙事空间；唯一的风险在于灵气衰退速度未量化，可能让紧迫感变得模糊。"
+}

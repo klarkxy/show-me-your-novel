@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "第一章把「翻过山见高楼」的题面一幕落得干净准确，不可逆点也明确落在第五章跳闸被拖走并由后续章节持续承担代价；但交接卡越界严重——八章的 beats 大量预写台词（「这是我侄子」「藏得住才算活」「先借你一个名字」等二十余处成句）并逐拍锁死动作细节（掐烟、拴绒线、投硬币），远超决策边界的范畴。"
+}

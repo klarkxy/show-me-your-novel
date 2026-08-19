@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 66.7,
+  "comment": "开局矛盾和生存压力集中明确，但“认知屏障”与凡人社会的互动边界含混，监控、入世许可和小范围术法之间也缺少足以封死捷径的具体机制。"
+}

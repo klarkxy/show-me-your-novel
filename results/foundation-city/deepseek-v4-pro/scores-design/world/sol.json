@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "灵力枯竭、异常监测和科技武力共同限制了主角横推，但响应中心与边界司如何及时锁定并施压仍较泛，开局的具体决策压力尚未完全落地"
+}

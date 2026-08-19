@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "kimi-k3",
+  "complete": false,
+  "overall": 80.5,
+  "tracks": {
+    "world": {
+      "median": 83.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "开局的灵力消耗、监测追踪、身份支付和现代暴力构成了连续有效的现实阻力，但筑基对枪械与监测网的具体边界尚未明确，机构之间也还缺少能立刻制造选择压力的直接冲突。"
+        },
+        "grok": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 2,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "institutions 各方均有清晰的 wants、can、cannot，机构设定自洽有力；constraint 规则虽严密，但主角灵石一匣的实际利用方式未完全明确，存在微弱混杂。"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 4,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "规则层几乎没有漏洞，灵力只耗不补、监测定位、支付与身份困境共同锁死了主角的现代化捷径，强制他必须依赖他人；各方势力的欲望与恐惧也清晰且相互钳制，且未被提前解密，非常好地支撑了'出山之惊'与'开局即被锁定'的张力。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "constraint": 4,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "规则闭环、机构互锁、开局钩子精准，最强处在于灵气枯竭与灵波监测让主角任何施法都变成自曝且难恢复，捷径被封死。"
+        }
+      }
+    },
+    "characters": {
+      "median": 87.5,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 91.7,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "四人都有当场欲望、底线和可执行的拒绝动作，且知情层次与注意焦点区分鲜明；但沈却、周聿怀和韩闯的选择链尚未被具体的即时碰撞串起来，哑叔又正在退场，现场推进力略弱。"
+        },
+        "grok": {
+          "score": 50.0,
+          "bands": {
+            "agency": 2,
+            "differentiation": 2,
+            "playable": 2
+          },
+          "comment": "agency 最强，沈却的欲望、底线和拒绝方式衔接自然"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "四人立场清晰且各怀限制，能在这一刻形成有效的张力场，但韩闯的行动模式（查验证件、例行公事）相对沈却的‘验证道心’与周聿怀的‘藏匿同道’而言，更接近功能性干扰，其拒绝方式‘不接受任何说辞’在冲突升级时可能显得机械，需警惕其沦为单纯的‘程序性反派’。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强处是四个角色在同一现场各有即时欲望、底线与拒否，知情/误判和注意焦点分层清晰，尤其沈却的收手入流与周聿怀的塞人离场可直接构成下一阶段的对手戏。"
+        }
+      }
+    },
+    "outline": {
+      "median": 70.8,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 50.0,
+          "bands": {
+            "incident": 1,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "不可逆选择落在第二章且后果清楚，但第一章只写到警灯照上边坡，题目要求的查身份证、司机撒谎捡走尚未发生，同时七章逐章拆出的脊线与节拍已明显超出单纯决策边界。"
+        },
+        "grok": {
+          "score": 50.0,
+          "bands": {
+            "incident": 2,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "irreversible 档位最高，incident 仍有混杂，handoff 预写台词过多"
+        },
+        "k3": {
+          "score": 91.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 3
+          },
+          "comment": "第一章must_keep直接钉死「翻过山脊高楼车流扑面」的题目场面，第二章咽下真气跟陌生人走、亮信物是不可逆且后果归属清晰；个别beats（如监控看七遍、骂脏话跟上）略越界到正文发挥空间，但must_not_lock与prose_free整体把决策边界守得很干净。"
+        },
+        "ds-v4-pro": {
+          "score": 91.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 3
+          },
+          "comment": "最强处：第一章beats直接、具体复现题目“越山见高楼”场面；最弱处：handoff的逐拍beats略细，但must_not_lock和not_resolved守住决策边界。"
+        }
+      }
+    }
+  }
+}

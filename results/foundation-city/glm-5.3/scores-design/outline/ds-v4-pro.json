@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "outline",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "incident": 3,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "最强处：第五章当街出手与第六章付账形成清晰不可逆闭环，没有拖到终局；但逐拍动作过多导致 handoff 只能给1。"
+}

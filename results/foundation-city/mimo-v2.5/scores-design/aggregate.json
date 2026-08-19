@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "mimo-v2.5",
+  "complete": false,
+  "overall": 70.8,
+  "tracks": {
+    "world": {
+      "median": 66.7,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 66.7,
+          "bands": {
+            "constraint": 3,
+            "institutions": 2,
+            "focus": 3
+          },
+          "comment": "开局约束有效地制造了无身份、受监控且难以补充灵气的落差，但机构的利益与能力仍偏概念化，尚未充分转化为主角越过十万大山后立刻遭遇的具体压力。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "constraint 处主角储物袋上古样式易成捷径，institutions 各有要能不能，focus 服务开局"
+        },
+        "k3": {
+          "score": 50.0,
+          "bands": {
+            "constraint": 2,
+            "institutions": 2,
+            "focus": 2
+          },
+          "comment": "开局切口锋利，但集团「无法突破金丹」与科技侧元婴禁忌存在张力，且贫民区与集团的生存冲突比隐世修盟更具行动力。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最弱在约束未堵死‘筑基体魄远超凡人+可收敛灵力’这条硬闯或隐匿捷径，监控只识别异常波动却未给出反制手段。"
+        }
+      }
+    },
+    "characters": {
+      "median": 70.8,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "三人都有当场可执行的选择且知情差异清楚，但林逸的探索欲与拒绝方式偏泛，尚未形成足以迫使他在隐藏、接触或对抗之间立刻取舍的具体压力。"
+        },
+        "grok": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "agency 方面最强，因为每个人都有明确的欲望、底线和拒绝方式。"
+        },
+        "k3": {
+          "score": 66.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 2
+          },
+          "comment": "三人欲望、底线、知情与误判都分得开，也能现场互相逼选，但入场余势只作气质标签，尚未显示会怎样推翻或加剧他们此刻的判断。"
+        },
+        "ds-v4-pro": {
+          "score": 66.7,
+          "bands": {
+            "agency": 2,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "最弱在林逸‘不知需隐藏’却‘能决定是否隐藏修为’自相矛盾，削弱入场选择可信度；但李默与陈警官的知情错位能有效推动现场。"
+        }
+      }
+    },
+    "outline": {
+      "median": 75.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 2
+          },
+          "comment": "题目初始场面和第一章交接都很清楚，但“藏而融入”的不可逆选择主要停留在说明层，后续八章又用较密的逐拍事件预设了正文推进。"
+        },
+        "grok": {
+          "score": 83.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 2
+          },
+          "comment": "incident 与 irreversible 均直接落在第一章，完美匹配题目初始场面与首次不可逆选择；handoff 虽有 spine 与 beats 框架，但未预写台词或逐拍，合格。"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 2
+          },
+          "comment": "最强处是题目那一幕在第一章可直接落成公路边盘查与被带离的连锁后果；最弱处是各章 spine/beats 已接近逐拍排戏，且“咽下真气不暴露”到第4章又被小动作打破，不可逆性偏软。"
+        },
+        "ds-v4-pro": {
+          "score": 66.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "开局事件清晰，但八章细纲逐拍动作预写过多，交接卡不合格。"
+        }
+      }
+    }
+  }
+}

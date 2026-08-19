@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 4,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 83.3,
+  "comment": "规则层几乎没有漏洞，灵力只耗不补、监测定位、支付与身份困境共同锁死了主角的现代化捷径，强制他必须依赖他人；各方势力的欲望与恐惧也清晰且相互钳制，且未被提前解密，非常好地支撑了'出山之惊'与'开局即被锁定'的张力。"
+}

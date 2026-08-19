@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 83.3,
+  "comment": "四人的知情层次、注意焦点和即时阻力区分得很清楚，且都有可执行反应，但陆青的核心选择仍停留在选项罗列，尚未形成足以逼他立刻押注的具体压力。"
+}

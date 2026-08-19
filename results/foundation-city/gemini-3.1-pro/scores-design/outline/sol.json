@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 3
+  },
+  "score": 91.7,
+  "comment": "第一章已清楚呈现翻山后撞见现代高楼、灵气稀薄且众人不知修仙的题目场面，第三章也落下散气上车这一明确选择；但五章的逐章节拍和道具安排较密，给正文留下的取舍空间略少。"
+}

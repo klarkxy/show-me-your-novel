@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 3
+  },
+  "score": 75.0,
+  "comment": "第一章边坡望楼、收真气入人流准确落在题目场面上，低头藏修为+上出租车在第1–2章形成清晰的不可逆转向，交接卡用must_not_lock和prose_free守住了决策边界；主要弱点是pressures里'误判（凡俗集镇）'与眼前高楼都市自相矛盾且被逐章复制，第5–8章功能重叠拖泥带水。"
+}

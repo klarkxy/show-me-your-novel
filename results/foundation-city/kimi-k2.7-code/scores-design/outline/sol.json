@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "第一章清楚呈现了沈却翻过十万大山、撞见高速车流与高楼、被凡人交警拦下并被藏修注意到的初始场面，第二章周聿怀折返撒谎也形成了明确的不可逆绑定，但七章逐拍安排、示范台词和大量动作预设已明显超出只交决策边界。"
+}

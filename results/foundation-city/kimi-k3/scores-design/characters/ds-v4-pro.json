@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "characters",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是四个角色在同一现场各有即时欲望、底线与拒否，知情/误判和注意焦点分层清晰，尤其沈却的收手入流与周聿怀的塞人离场可直接构成下一阶段的对手戏。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "三人都有当场可执行的选择且知情差异清楚，但林逸的探索欲与拒绝方式偏泛，尚未形成足以迫使他在隐藏、接触或对抗之间立刻取舍的具体压力。"
+}

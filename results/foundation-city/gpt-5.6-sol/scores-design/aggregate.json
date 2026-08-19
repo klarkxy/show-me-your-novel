@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "gpt-5.6-sol",
+  "complete": false,
+  "overall": 80.5,
+  "tracks": {
+    "world": {
+      "median": 83.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最强处是把无身份、缺货币、能力受限、越界可追踪和现代监控直接压到主角的第一步上，最弱处是灵力追踪与各机构响应的时效和边界仍偏模糊，留下了机构随时按需收紧或放宽追捕的捷径。"
+        },
+        "grok": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "constraint 处最弱，主角可通过无籍修士互助网获得临时身份和住处，但界务署追踪痕迹仍会带来风险。"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 4,
+            "focus": 3
+          },
+          "comment": "机构三角（界务署/十宗盟/天工）欲求、能力、禁区互不重叠且互相制衡是最强处；约束层面黑市换钱与神识探测仍留有两条未完全堵死的捷径，unresolved 八条钩子略密，存在稀释开局单一悬念的风险。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "constraint": 4,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "最强处是约束与机构互相嵌套，使主角刚出山即处于被追踪与适应城市的双重压力中。"
+        }
+      }
+    },
+    "characters": {
+      "median": 75.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "四人都具备当场欲望、底线和可执行的拒绝方式，顾长安的误判尤其能推动选择，但方既明与赵闻笙都承担隐藏修士、压制暴露的相近功能，且尚缺一个迫使顾长安立即拍板的具体突发压力。"
+        },
+        "grok": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "最强是 agency，每人都有欲望底线和拒绝方式；最弱是 playable，顾长安会很快失去方向。"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "四人都有明确的拍板与拒绝方式且知情梯度清晰（顾长安误判阵法、方既明与赵闻笙藏修、林晚晴全不知），但林晚晴与赵闻笙在'不暴露前提下把人交给警察'上功能略有重叠，压低了分异上限。"
+        },
+        "ds-v4-pro": {
+          "score": 91.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强在知情/误判与注意焦点分层清晰，入场余势均能推动现场行动；但顾长安的底线偏情绪而非行为，削弱其当场选择的硬冲突。"
+        }
+      }
+    },
+    "outline": {
+      "median": 83.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 2
+          },
+          "comment": "第一章已明确落实筑基出山、撞见现代城市并被凡人规则带离的初始场面，且压下真气的选择即时生效；但六章均预排了较密的逐步事件链和反复的必守限制，虽留有未锁定项，仍不算纯粹的决策边界交接。"
+        },
+        "grok": {
+          "score": 58.3,
+          "bands": {
+            "incident": 3,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "incident 与 irreversible 均落在第一章，handoff 因 beats 列表预写过多具体动作而不足"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 3
+          },
+          "comment": "第一章前两个节拍就把题目那一幕（筑基出山、高架车流高楼、稀薄灵气）完整落地，且'咽回真气、接受盘查'的不可逆选择就锁在第1章结果里；交接卡的must_not_lock守住了边界，beats偏密但未越界到预写台词或写死后史。"
+        },
+        "ds-v4-pro": {
+          "score": 91.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 3
+          },
+          "comment": "首次山外高楼与咽气不证修士均落在首章，不可逆选择干净可辨；略弱在beats偏逐拍，但must_not_lock保住了后续弹性。"
+        }
+      }
+    }
+  }
+}

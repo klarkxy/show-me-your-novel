@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "outline",
+  "judge": "grok",
+  "bands": {
+    "incident": 2,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 50.0,
+  "comment": "irreversible 档位最高，incident 仍有混杂，handoff 预写台词过多"
+}

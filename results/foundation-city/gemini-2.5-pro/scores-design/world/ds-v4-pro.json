@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 2,
+    "institutions": 1,
+    "focus": 4
+  },
+  "score": 58.3,
+  "comment": "最弱在约束漏洞：主角携带的灵石丹药可绕过‘法力恢复慢’，且机构仅异管总局一方，难形成多方张力。"
+}

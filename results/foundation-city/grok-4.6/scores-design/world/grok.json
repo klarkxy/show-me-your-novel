@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 66.7,
+  "comment": "constraint 处混杂，世界材料提供了灵气存在作为捷径但开局要求低调隐藏身份"
+}

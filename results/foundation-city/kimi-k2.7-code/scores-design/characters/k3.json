@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 83.3,
+  "comment": "四人欲望底线均具体可执行，知情/误判/注意焦点差异清晰（陈国安重交通与执法、林小满重订单与规避、沈衡重隐匿与压制、陆青重身份确认与试探），入场状态（未稳灵力、夜班倦意、外卖倒计时、藏修警觉）均会即时影响判断，惟沈衡的‘藏修’背景与便利店场景的衔接在极端情况下可能略显刻意，但不影响其现场行动有效性。"
+}

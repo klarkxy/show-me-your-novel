@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 75.0,
+  "comment": "constraint最弱：规则称投靠任意势力即可避免管理局追捕，主角可借地下坊市快速脱困，削弱开局压力。"
+}

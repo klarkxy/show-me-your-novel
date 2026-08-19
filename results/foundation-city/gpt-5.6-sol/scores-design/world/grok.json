@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 75.0,
+  "comment": "constraint 处最弱，主角可通过无籍修士互助网获得临时身份和住处，但界务署追踪痕迹仍会带来风险。"
+}

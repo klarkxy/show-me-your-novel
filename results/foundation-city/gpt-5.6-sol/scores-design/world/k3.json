@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 4,
+    "focus": 3
+  },
+  "score": 83.3,
+  "comment": "机构三角（界务署/十宗盟/天工）欲求、能力、禁区互不重叠且互相制衡是最强处；约束层面黑市换钱与神识探测仍留有两条未完全堵死的捷径，unresolved 八条钩子略密，存在稀释开局单一悬念的风险。"
+}

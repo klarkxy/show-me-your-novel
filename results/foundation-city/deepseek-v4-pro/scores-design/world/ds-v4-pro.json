@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 75.0,
+  "comment": "最弱处在约束：规则自身未说明未施法修士如何被城市发现，靠“不能立刻吸收灵脉”等外部禁令补漏。"
+}

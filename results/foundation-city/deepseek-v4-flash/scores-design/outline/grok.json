@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "outline",
+  "judge": "grok",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "incident 直接4，第一章完美还原题目场景；handoff 过低，章纲预写了过多逐拍动作和台词。"
+}

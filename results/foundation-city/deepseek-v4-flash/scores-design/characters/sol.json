@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "阿苓亮剑、陈默收场、栾兴隐退、宋灯截走、何声递桃子的即时动作和拒绝方式区分明确，但多数人的选择仍停留在条件触发后的备选菜单，且都被“隐藏系统”这一层关系部分同质化。"
+}

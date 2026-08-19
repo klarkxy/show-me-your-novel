@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "agency 方面，陆远、赵清和保安小王都有清晰的欲望、底线、can_decide 和 how_refuses，是最强的"
+}

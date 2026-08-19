@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "gemini-2.5-pro",
+  "complete": false,
+  "overall": 80.5,
+  "tracks": {
+    "world": {
+      "median": 58.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 58.3,
+          "bands": {
+            "constraint": 2,
+            "institutions": 2,
+            "focus": 3
+          },
+          "comment": "开局目标和黑户、搜捕、神识受扰等限制很集中，但灵石、丹药和基础法器在山外究竟能否转化为生存资源及其代价没有明确规定，仍给主角留下了绕过困境的捷径。"
+        },
+        "grok": {
+          "score": 50.0,
+          "bands": {
+            "constraint": 2,
+            "institutions": 2,
+            "focus": 2
+          },
+          "comment": "constraint 处混杂，世界虽设规则挡住捷径但主角刚筑基期法力有限科技路径仍有小捷径"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "最强处在开局约束：法力衰减、神识被电磁干扰、黑户身份加上已被警报锁定，把主角死死按在题目那一瞬的错位感里，捷径基本被堵死；较弱处是机构只有异管总局一方成体系，科技与修仙两条路线在民间或暗处的对手机构尚是空白。"
+        },
+        "ds-v4-pro": {
+          "score": 58.3,
+          "bands": {
+            "constraint": 2,
+            "institutions": 1,
+            "focus": 4
+          },
+          "comment": "最弱在约束漏洞：主角携带的灵石丹药可绕过‘法力恢复慢’，且机构仅异管总局一方，难形成多方张力。"
+        }
+      }
+    },
+    "characters": {
+      "median": 100.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 66.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 2
+          },
+          "comment": "三人都有清晰的即时欲望、底线和应对方式，且知情层次分明，但陆远尚未被具体触发点逼到必须在进城、退回或隐藏修为之间拍板，现场行动仍偏向选项清单。"
+        },
+        "grok": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "agency 方面，陆远、赵清和保安小王都有清晰的欲望、底线、can_decide 和 how_refuses，是最强的"
+        },
+        "k3": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "赵清的“选择无视”与保安小王的“多一事不如少一事”形成现实阻力网，迫使陆远必须在自傲与生存之间做出真实抉择，三重视角的误判与知情差撑起了这一刻的张力。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强处：三人的信息差与注意焦点被清晰分开，且每人的拒绝动作具体到可立即执行，陆远的退回山林与赵清的混入人群形成现场拉扯。"
+        }
+      }
+    },
+    "outline": {
+      "median": 83.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 66.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "第一章清楚呈现了修士翻过山脊撞见现代都市、察觉同道伪装并被凡人盘问的初始场面，但后续交接材料已细化到逐拍动作、示例台词和多章情绪结果，超出了只交决策边界的范围。"
+        },
+        "grok": {
+          "score": 91.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 3
+          },
+          "comment": "incident 和 irreversible 均强，第一章直接展现翻山见高楼冲击，第二章明确上出租车割席不可逆，但 handoff 因 prose_free 允许自由发挥而略有混杂"
+        },
+        "k3": {
+          "score": 91.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 4
+          },
+          "comment": "对题目初始场面的捕捉精准，开局即能带入；不可逆选择落在了第2章末，但第3-6章主要在处理后果而非推进新危机，使得中段略显被动。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "第一章清楚写出修士见高楼都市的冲击，但章纲写到第6章并预写大量台词与逐拍动作，已越过交接卡的决策边界。"
+        }
+      }
+    }
+  }
+}

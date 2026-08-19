@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 2
+  },
+  "score": 66.7,
+  "comment": "三人欲望、底线、知情与误判都分得开，也能现场互相逼选，但入场余势只作气质标签，尚未显示会怎样推翻或加剧他们此刻的判断。"
+}

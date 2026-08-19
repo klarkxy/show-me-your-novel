@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "constraint 处最弱，主角刚筑基携带少量物品进入都市后易被管理局监控追捕"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 83.3,
+  "comment": "三人的知情层级、注意焦点和即时阻力区分清楚，但陆淮究竟为何在御剑与寻找落脚处之间作出选择、选择会造成什么现场后果仍不够明确。"
+}

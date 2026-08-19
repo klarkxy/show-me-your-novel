@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "deepseek-v4-pro",
+  "complete": false,
+  "overall": 77.8,
+  "tracks": {
+    "world": {
+      "median": 75.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "灵力枯竭、异常监测和科技武力共同限制了主角横推，但响应中心与边界司如何及时锁定并施压仍较泛，开局的具体决策压力尚未完全落地"
+        },
+        "grok": {
+          "score": 50.0,
+          "bands": {
+            "constraint": 2,
+            "institutions": 2,
+            "focus": 2
+          },
+          "comment": "constraint 处混杂，主角能判断建筑压住微弱灵脉但不能吸收，稍有捷径"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "最强处是规则互相咬合：灵脉恰好埋在受监控的高楼之下，'找到灵脉即翻身'的捷径被侦测网看守堵死；唯一明显缝隙是'不施法便无法识别'与'任何波动皆触发警报'的判定边界模糊，开局需先补这一刀。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最弱处在约束：规则自身未说明未施法修士如何被城市发现，靠“不能立刻吸收灵脉”等外部禁令补漏。"
+        }
+      }
+    },
+    "characters": {
+      "median": 91.7,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 91.7,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "四人都带着明确底线和当场动作入场，知情层次与注意焦点分得很开；但陈大勇和阿晶的选择主要是常规驱离或躲避，尚未形成足以改变现场走向的具体压力。"
+        },
+        "grok": {
+          "score": 91.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "agency 维度仍有失手，阿晶 agency 稍弱，differentiation 和 playable 都很强。"
+        },
+        "k3": {
+          "score": 91.7,
+          "bands": {
+            "agency": 4,
+            "differentiation": 3,
+            "playable": 4
+          },
+          "comment": "沈砚的筑基锐气与苏樾的藏修戒备在街口形成核心张力，凡人保安的盘问构成即时压力，人物行动链条清晰可演。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "四人欲望、底线、可做选择都具体到当前现场，且注意焦点与误判清晰分开，可直接支撑冲突。"
+        }
+      }
+    },
+    "outline": {
+      "median": 66.7,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 58.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 0
+          },
+          "comment": "第一章已清楚呈现翻山见高楼、被凡人拦截并被隐修士带走的题目场面，且咽回探气诀形成了明确选择；但章纲逐拍规定后续七章的台词、动作、道具和信息揭示，已经大量替正文预写，决策边界几乎被锁死。"
+        },
+        "grok": {
+          "score": 58.3,
+          "bands": {
+            "incident": 3,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "incident 与 irreversible 均在第一章直接落地，handoff 因逐拍动作与 must_keep 过多而不足"
+        },
+        "k3": {
+          "score": 91.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 3
+          },
+          "comment": "开局现代都市反差与主角被迫隐匿的不可逆选择极具张力，各章功能与留白边界清晰，唯部分章节beats对具体动作的精细化预设略微越界，存在束缚正文即时发挥的风险。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "最弱处在交接卡：大量预写台词与逐拍动作，章纲已近细纲。"
+        }
+      }
+    }
+  }
+}

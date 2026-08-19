@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 4,
+    "differentiation": 3,
+    "playable": 4
+  },
+  "score": 91.7,
+  "comment": "agency 设计最强，每个角色都有欲望、底线、拍板方式和拒绝方式；differentiation 稍有不足，知情误判和注意焦点未完全分开。"
+}

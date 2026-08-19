@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强处是紧扣开局且约束层层加码；最弱处是未堵死主角回山补充灵力的捷径，让灵力枯竭的绝境存在被绕过风险。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 2
+  },
+  "score": 58.3,
+  "comment": "机构权责（都市管理局、修仙协会、科技巨头）的三角制衡清晰且极具张力，但核心规则未明确灵气在科技面前的底层“压制”界限，导致“筑基修士”在现代都市的生存难度缺乏硬性约束，开局爽点与危机感的平衡极易失控。"
+}

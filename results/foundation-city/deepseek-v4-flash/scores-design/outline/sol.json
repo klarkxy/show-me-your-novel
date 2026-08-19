@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "题目所要的翻山见城场面在第一章已清楚成立，第一次收回道法并转入藏者身份也落在第五章，但交接材料以大量逐拍动作、指定台词和细节约束预写了正文，已不只是决策边界。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "第一章清楚呈现了修士翻过山脊撞见现代都市、察觉同道伪装并被凡人盘问的初始场面，但后续交接材料已细化到逐拍动作、示例台词和多章情绪结果，超出了只交决策边界的范围。"
+}

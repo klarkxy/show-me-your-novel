@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "agency 最强，每人欲望底线拍板拒绝方式都具体"
+}

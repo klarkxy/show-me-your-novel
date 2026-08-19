@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 91.7,
+  "comment": "三人分别在逃离、掩护、执法三种轨道上形成对峙，裴寻的灵气感知与陈敬的市井伪装、郭建平的执法程序构成立体冲突，仅陈敬的拒绝方式在极端紧张下略显程式化。"
+}

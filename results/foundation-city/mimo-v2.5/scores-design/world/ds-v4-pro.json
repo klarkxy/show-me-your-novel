@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 75.0,
+  "comment": "最弱在约束未堵死‘筑基体魄远超凡人+可收敛灵力’这条硬闯或隐匿捷径，监控只识别异常波动却未给出反制手段。"
+}

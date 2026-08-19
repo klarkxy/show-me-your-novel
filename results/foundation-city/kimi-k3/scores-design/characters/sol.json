@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 91.7,
+  "comment": "四人都有当场欲望、底线和可执行的拒绝动作，且知情层次与注意焦点区分鲜明；但沈却、周聿怀和韩闯的选择链尚未被具体的即时碰撞串起来，哑叔又正在退场，现场推进力略弱。"
+}

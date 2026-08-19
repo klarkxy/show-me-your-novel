@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 4,
+    "handoff": 3
+  },
+  "score": 83.3,
+  "comment": "开局场景通过“山脊断崖→高楼车流”的 spine 和“刚破关筑基”的 must_keep 精确锚定题目意象，第三章“散去真气上警车”的不可逆选择清晰落在具体章节结果中，各章交接卡严格限定决策边界而未写死后史，仅第一章灵气稀薄的设定与题目预期的震撼感略有张力。"
+}

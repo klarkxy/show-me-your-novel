@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强处在focus：用‘山口禁制关闭、不能立刻回山、只能接触少数现代人’等硬约束把题目要求的‘这一刻’逼成生存与认知冲突，未决不写死后史。"
+}

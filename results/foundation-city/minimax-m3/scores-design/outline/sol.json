@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 3,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "周聿怀在第三章以凡人搭话把沈却拉上车的不可逆转折很清楚，但第一章对题目核心的“遍地高楼大厦”只写成车流灯牌和城市，且五章逐拍动作与固定台词过多，交接自由度偏低。"
+}

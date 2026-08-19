@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "characters",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 91.7,
+  "comment": "最弱处在陈姐：她的注意焦点落在递来的碎灵石，依赖进店交易，未能在镇口第一刻直接行动，入场余势没能转化为现场选择。"
+}

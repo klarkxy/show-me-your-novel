@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "三人都带着可立即执行的选择和互相冲突的判断入场，尤其林逢春是否收敛气息会直接改变进城结果；小吴的行动略偏流程化，但不妨碍现场推进。"
+}

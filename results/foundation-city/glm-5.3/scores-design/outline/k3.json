@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 3
+  },
+  "score": 83.3,
+  "comment": "第一章就把题目那一幕完整落成具体场面（山合、车流灯牌、咽回探灵诀），但不可逆出手在第六章被删净视频、代价全额转嫁，削弱了「收不回来」的重量。"
+}

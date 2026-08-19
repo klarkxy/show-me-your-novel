@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "outline",
+  "judge": "grok",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 2
+  },
+  "score": 83.3,
+  "comment": "incident 与 irreversible 均直接落在第一章，完美匹配题目初始场面与首次不可逆选择；handoff 虽有 spine 与 beats 框架，但未预写台词或逐拍，合格。"
+}

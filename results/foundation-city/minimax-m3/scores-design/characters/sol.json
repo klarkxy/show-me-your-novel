@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "四人都有可执行的即时反应，且陆沉的灵石、剑柄和身份暴露能推动现场选择；但目前多数选择仍停留在“要不要开口、要不要掩饰”的预设分叉，尚未形成足以迫使陆沉当场拍板的具体冲突。"
+}

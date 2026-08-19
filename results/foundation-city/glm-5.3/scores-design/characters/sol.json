@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "五人都带着会立刻触发选择的欲望、底线和拒绝动作入场，尤其秦渡把木牌、引气和翻墙作为具体分岔；知情误判与注意焦点也彼此错开，入场余势足以推动现场连续行动。"
+}

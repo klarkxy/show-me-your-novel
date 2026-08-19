@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 3
+  },
+  "score": 91.7,
+  "comment": "开局现代都市反差与主角被迫隐匿的不可逆选择极具张力，各章功能与留白边界清晰，唯部分章节beats对具体动作的精细化预设略微越界，存在束缚正文即时发挥的风险。"
+}

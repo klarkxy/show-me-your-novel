@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 91.7,
+  "comment": "三方机构的欲求、能力、禁区彼此咬合且互相制衡，开局约束精确服务于“翻过山撞见高楼”那一刻的窘境；唯“电磁克制术式”的压减机制较笼统，实战场景执行时可能漂移。"
+}

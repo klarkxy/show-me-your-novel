@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 3
+  },
+  "score": 83.3,
+  "comment": "最强处是第一章就把「筑基—翻山—撞见高楼车流」这一核心场面完整落到具体节拍里，且不可逆点（周聿怀捞人上车）明确收在第3章结果中；唯一偏弱处是个别节拍预写了近似台词（如「兄弟，拍完了没？我接你回剧组」），略越出决策边界，但 prose_free 基本兜住了。"
+}

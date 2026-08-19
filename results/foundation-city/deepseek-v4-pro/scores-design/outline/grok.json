@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "outline",
+  "judge": "grok",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 58.3,
+  "comment": "incident 与 irreversible 均在第一章直接落地，handoff 因逐拍动作与 must_keep 过多而不足"
+}

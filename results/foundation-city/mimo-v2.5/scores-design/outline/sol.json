@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 2
+  },
+  "score": 75.0,
+  "comment": "题目初始场面和第一章交接都很清楚，但“藏而融入”的不可逆选择主要停留在说明层，后续八章又用较密的逐拍事件预设了正文推进。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 2,
+    "institutions": 2,
+    "focus": 2
+  },
+  "score": 50.0,
+  "comment": "constraint 处混杂，主角能判断建筑压住微弱灵脉但不能吸收，稍有捷径"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 3
+  },
+  "score": 83.3,
+  "comment": "第一章把「越山见高楼、灵气枯竭」的题目场面拍得极清楚，且不可逆选择落在第2章上车一节，交接卡的 must_not_lock 守住了后史，仅个别 beats（甩尾停车、「活着就行」）略带预写痕迹。"
+}

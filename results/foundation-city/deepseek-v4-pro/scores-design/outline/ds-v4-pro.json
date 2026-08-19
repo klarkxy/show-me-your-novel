@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "outline",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "最弱处在交接卡：大量预写台词与逐拍动作，章纲已近细纲。"
+}

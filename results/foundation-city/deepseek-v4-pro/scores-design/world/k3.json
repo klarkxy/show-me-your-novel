@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "最强处是规则互相咬合：灵脉恰好埋在受监控的高楼之下，'找到灵脉即翻身'的捷径被侦测网看守堵死；唯一明显缝隙是'不施法便无法识别'与'任何波动皆触发警报'的判定边界模糊，开局需先补这一刀。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 3,
+    "playable": 4
+  },
+  "score": 91.7,
+  "comment": "沈砚的筑基锐气与苏樾的藏修戒备在街口形成核心张力，凡人保安的盘问构成即时压力，人物行动链条清晰可演。"
+}

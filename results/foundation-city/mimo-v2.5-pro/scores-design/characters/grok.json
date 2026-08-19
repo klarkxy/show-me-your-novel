@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 91.7,
+  "comment": "agency 仍有职位标签混杂，differentiation 和 playable 能直接行动"
+}

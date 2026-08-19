@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "outline",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "第一章清楚写出修士见高楼都市的冲击，但章纲写到第6章并预写大量台词与逐拍动作，已越过交接卡的决策边界。"
+}

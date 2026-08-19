@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 91.7,
+  "comment": "三人都被明确放在车流、监控与拔剑临界点上，知情和误判也彼此错开；裴寻的选择仍略像预设的二选一，尚缺一个能迫使他改变判断的具体代价。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "四人都有明确的拍板与拒绝方式且知情梯度清晰（顾长安误判阵法、方既明与赵闻笙藏修、林晚晴全不知），但林晚晴与赵闻笙在'不暴露前提下把人交给警察'上功能略有重叠，压低了分异上限。"
+}

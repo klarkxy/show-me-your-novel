@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "第一章已清楚交代翻山见城、身份受阻、险些施法并由周聿怀带离的初始场面，且不可逆选择落在章末；但六章材料用大量固定脊柱、压力项和逐拍事件预写后续推进，交给正文的决策空间偏小。"
+}

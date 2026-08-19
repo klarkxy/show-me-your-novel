@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 2,
+    "institutions": 2,
+    "focus": 3
+  },
+  "score": 58.3,
+  "comment": "开局钩子和脆弱处境很集中，但“政府不知修仙界”与能监控收容异常个体的管理局相互牵扯，且筑基修为是否衰退、屏障为何长期无人越过等规则缝隙会削弱阻力可信度。"
+}

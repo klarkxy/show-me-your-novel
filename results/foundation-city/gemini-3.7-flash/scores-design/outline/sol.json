@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "第一章已清楚呈现翻越十万大山后撞见高楼车流与灵气枯竭都市的初始场面，不可逆选择也在前两章完成；但材料对后续六章的逐拍动作、台词和感官细节规定过密，已明显超出只交接决策边界的范围。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 66.7,
+  "comment": "第一章已明确给出翻山后看见高楼车流、灵气稀薄且被凡人注视的初始场面，但不可逆选择在低头融入与上出租车之间分裂，且八章逐拍安排和交警、警车等后续动作已明显越过交接边界。"
+}

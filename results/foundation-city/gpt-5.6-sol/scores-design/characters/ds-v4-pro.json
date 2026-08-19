@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "characters",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 91.7,
+  "comment": "最强在知情/误判与注意焦点分层清晰，入场余势均能推动现场行动；但顾长安的底线偏情绪而非行为，削弱其当场选择的硬冲突。"
+}

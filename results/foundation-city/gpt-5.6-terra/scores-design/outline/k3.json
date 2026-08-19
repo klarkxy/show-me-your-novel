@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 2
+  },
+  "score": 75.0,
+  "comment": "开局紧扣题目核心反差，身份冲突与不可逆选择清晰落地，但各章action卡过于详尽（含大量具体动作与场景调度），越过了决策边界介入正文执行。"
+}

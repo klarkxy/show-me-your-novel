@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "mimo-v2.5-pro",
+  "complete": false,
+  "overall": 69.5,
+  "tracks": {
+    "world": {
+      "median": 70.8,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 50.0,
+          "bands": {
+            "constraint": 1,
+            "institutions": 2,
+            "focus": 3
+          },
+          "comment": "开局方向明确且保留了融入都市的空间，但“法规限制”“监控系统”和“筑基才能穿越”都缺少具体执行机制，主角仍容易凭修为绕过生存障碍。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "constraint 处规则虽限制法术但主角刚筑基对现代一无所知有轻微不足"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "开局焦点很准地压在“筑基修士闯入现代都市”的身份、资源与禁用术法上，但法规只写到监控和限制，缺少具体侦测手段、处罚成本与黑市灵气缺口，低调小法术和灰色资源仍可能绕开约束。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最弱处在规则只禁飞行与破坏性法术，隐身、催眠等非破坏性捷径未被封堵，但其余部分紧扣开局。"
+        }
+      }
+    },
+    "characters": {
+      "median": 79.2,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "三人都有可执行的即时选择且知情差异清楚，但多数拒绝方式停留在“可能”层面，彼此尚未被具体现场压力逼出不可替代的决断。"
+        },
+        "grok": {
+          "score": 91.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "agency 仍有职位标签混杂，differentiation 和 playable 能直接行动"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 4
+          },
+          "comment": "陈玄带着筑基期的自信与误判进城，李隐因恐惧而隐藏，王警因无知而戒备，三人此刻的知情错位和即时选择压力足以让这场遭遇自然发生。"
+        },
+        "ds-v4-pro": {
+          "score": 50.0,
+          "bands": {
+            "agency": 2,
+            "differentiation": 2,
+            "playable": 2
+          },
+          "comment": "最强处是陈玄的误判与李隐的知情形成直接冲突；最弱处是王警缺乏主动介入的必然性，容易边缘化。"
+        }
+      }
+    },
+    "outline": {
+      "median": 58.4,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 50.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 1,
+            "handoff": 1
+          },
+          "comment": "第一章能清楚交出翻山见城、灵气稀薄且身后人消失的初始场面，但掐诀或收手并未形成真正不可逆后果，且后续七章已按逐步事件和结果预排，超出单纯决策边界。"
+        },
+        "grok": {
+          "score": 41.7,
+          "bands": {
+            "incident": 2,
+            "irreversible": 2,
+            "handoff": 1
+          },
+          "comment": "handoff 项因多处逐拍动作和必须事项限制，预写痕迹明显，需精简为仅决策边界"
+        },
+        "k3": {
+          "score": 66.7,
+          "bands": {
+            "incident": 3,
+            "irreversible": 3,
+            "handoff": 2
+          },
+          "comment": "第一章直接落在翻山见城那一幕且当场收束了掐诀试探的选择，但七章的beats已细化到'抿嘴低头走进人流''摄像头转动'这类逐拍动作，交接卡越过了决策边界、预排了正文节奏。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "最弱处在 handoff：章节内逐拍 beats 已细化到具体动作，压缩了正文的决策空间，未严格停在决策边界。"
+        }
+      }
+    }
+  }
+}

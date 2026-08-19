@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "三人都有可执行的即时选择且知情差异清楚，但多数拒绝方式停留在“可能”层面，彼此尚未被具体现场压力逼出不可替代的决断。"
+}

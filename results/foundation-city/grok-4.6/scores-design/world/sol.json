@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 1,
+    "institutions": 1,
+    "focus": 3
+  },
+  "score": 41.7,
+  "comment": "最有效的是明确要求筑基修士隐藏身份、低调融入都市并先求生存，但灵气分布、身份侦测和各机构实际制约都未落地，导致打坐突破、秘药获取或势力介入仍可能成为缺乏代价的捷径。"
+}

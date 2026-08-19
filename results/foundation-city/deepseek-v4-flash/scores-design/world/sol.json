@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "开局约束把灵力衰竭、现代身份缺失、术法失效和暴露风险同时压到主角身上，题目指向很集中；但灵力干扰、监控克制术式以及三方机构的实际追捕边界仍偏概念化，尚不足以完全堵死主角靠基础术法、随身物件或机构庇护迅速脱困的路径。"
+}

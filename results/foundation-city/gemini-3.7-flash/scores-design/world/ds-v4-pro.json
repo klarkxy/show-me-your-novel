@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最弱处在于两个机构的“无法直接致命”边界近似，使得开局冲突主要靠特管局单一机构推进，缺乏机构间的直接摩擦。"
+}

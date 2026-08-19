@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 2,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 50.0,
+  "comment": "最弱处是第一章虽写了车流、灯牌和灵气异常，却没有明确呈现“遍地高楼大厦”这一题目核心初始场面；不可逆选择落在第四章是清楚的，但交接材料已用大量逐拍动作和预写台词把正文路径定得过细。"
+}

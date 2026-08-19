@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "开局贴合题目且用“灵气只耗不补、无身份即被捕”的双重绞索制造了真实张力，但对“科技能否转为替代灵气”这一关键捷径刻意悬置，未设临时护栏，留下后期体系崩口的风险。"
+}

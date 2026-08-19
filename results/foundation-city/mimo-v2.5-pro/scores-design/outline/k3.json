@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "outline",
+  "judge": "k3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 2
+  },
+  "score": 66.7,
+  "comment": "第一章直接落在翻山见城那一幕且当场收束了掐诀试探的选择，但七章的beats已细化到'抿嘴低头走进人流''摄像头转动'这类逐拍动作，交接卡越过了决策边界、预排了正文节奏。"
+}

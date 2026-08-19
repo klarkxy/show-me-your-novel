@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "minimax-m3",
+  "complete": false,
+  "overall": 79.1,
+  "tracks": {
+    "world": {
+      "median": 83.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "最强处是无身份、失字、缺钱、真元不稳等限制能把“看见高楼后怎么办”落实为迫在眉睫的生存选择；较弱处是登仙司、灵警与集团的权限边界虽齐全，却尚未明确主角初次入城时谁会先发现他、为何不能立刻收编或拘捕。"
+        },
+        "grok": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 4,
+            "focus": 3
+          },
+          "comment": "constraint 处最弱，规则虽严但主角携带的飞剑与灵石在都市禁飞区与黑户身份下可能引发初期冲突。"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最稳处在开局约束：无身份符、不识字、禁飞、灵尘与心魔合力堵住硬闯、暴露修为和现代捷径，直接把主角压进谨慎求生的都市入口。"
+        },
+        "ds-v4-pro": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最强处是 opening_constraints 精准锁定文化震惊开局，未给主角轻松入世捷径；弱处是登仙司与灵警总署职能重叠，且对越境者收编可能削弱“不能暴露”的代价感。"
+        }
+      }
+    },
+    "characters": {
+      "median": 83.3,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "四人都有可执行的即时反应，且陆沉的灵石、剑柄和身份暴露能推动现场选择；但目前多数选择仍停留在“要不要开口、要不要掩饰”的预设分叉，尚未形成足以迫使陆沉当场拍板的具体冲突。"
+        },
+        "grok": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "agency 最强，每人欲望底线拍板拒绝方式都具体"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "四人的注意焦点各随知情分开且串成连锁（陆沉盯灯牌引老何递水、剑柄露出逼周深表态），这是最强处；但老何、陈姐、周深三人的欲望同为『别惹麻烦』的回避型，若同时执行拒绝，现场容易失去推进力，这是最弱处。"
+        },
+        "ds-v4-pro": {
+          "score": 91.7,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "最弱处在陈姐：她的注意焦点落在递来的碎灵石，依赖进店交易，未能在镇口第一刻直接行动，入场余势没能转化为现场选择。"
+        }
+      }
+    },
+    "outline": {
+      "median": 70.8,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 66.7,
+          "bands": {
+            "incident": 3,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "周聿怀在第三章以凡人搭话把沈却拉上车的不可逆转折很清楚，但第一章对题目核心的“遍地高楼大厦”只写成车流灯牌和城市，且五章逐拍动作与固定台词过多，交接自由度偏低。"
+        },
+        "grok": {
+          "score": 41.7,
+          "bands": {
+            "incident": 2,
+            "irreversible": 2,
+            "handoff": 1
+          },
+          "comment": "irreversible 不足，周聿怀拉人虽在第3章确立身份，但后续 not_resolved 众多未落地，拖到全书终局"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 3
+          },
+          "comment": "最强处是第一章就把「筑基—翻山—撞见高楼车流」这一核心场面完整落到具体节拍里，且不可逆点（周聿怀捞人上车）明确收在第3章结果中；唯一偏弱处是个别节拍预写了近似台词（如「兄弟，拍完了没？我接你回剧组」），略越出决策边界，但 prose_free 基本兜住了。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "最弱处在handoff：beats中已预写具体台词与逐拍动作，虽保留prose_free/must_not_lock，但已不是只给决策边界。"
+        }
+      }
+    }
+  }
+}

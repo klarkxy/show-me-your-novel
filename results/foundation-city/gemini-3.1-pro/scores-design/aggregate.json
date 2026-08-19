@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "gemini-3.1-pro",
+  "complete": false,
+  "overall": 84.7,
+  "tracks": {
+    "world": {
+      "median": 75.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "开局限制清楚地把筑基修士置于灵力不可补充、身份全无且受监控的困境中，机构目标与能力也能制造追捕和交易压力，但科技能否转化为灵气的未决项仍可能成为过早解除困境的捷径。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "constraint 处黑市提供了代用能源的潜在补充捷径，短期难接触，规则有混杂。"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "开局贴合题目且用“灵气只耗不补、无身份即被捕”的双重绞索制造了真实张力，但对“科技能否转为替代灵气”这一关键捷径刻意悬置，未设临时护栏，留下后期体系崩口的风险。"
+        },
+        "ds-v4-pro": {
+          "score": 66.7,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "约束最弱处在于未明确山外物理定律是否同步压制筑基期肉身被动强度，超人体魄可能绕过灵力短缺的困境。"
+        }
+      }
+    },
+    "characters": {
+      "median": 91.7,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "三人的知情层级、注意焦点和即时阻力区分清楚，但陆淮究竟为何在御剑与寻找落脚处之间作出选择、选择会造成什么现场后果仍不够明确。"
+        },
+        "grok": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强处是agency，每人都有此刻欲望、底线、拍板决定和拒绝方式，能直接在现场做出选择。"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "三人的知情错位与注意焦点切得干净（陆淮看LED当显圣、老陈盯城管警灯、宋岚盯监控），误判天然产戏；略弱处是陆淮的cannot_accept预设了'找不到客栈、被当神经病'这类尚未在入场时刻发生的结果，到场时是余势而不是已触发的底线，需在现场补一拍才能逼出他的选择。"
+        },
+        "ds-v4-pro": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强处在三人知情、误判与注意焦点清晰分离，且各自由入场余势推向十字路口冲突，可立即行动。"
+        }
+      }
+    },
+    "outline": {
+      "median": 87.5,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 91.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 3
+          },
+          "comment": "第一章已清楚呈现翻山后撞见现代高楼、灵气稀薄且众人不知修仙的题目场面，第三章也落下散气上车这一明确选择；但五章的逐章节拍和道具安排较密，给正文留下的取舍空间略少。"
+        },
+        "grok": {
+          "score": 100.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 4
+          },
+          "comment": "最强处在于第一章直接展现题目幕，irreversible选择在第二章落地，handoff边界清晰无台词"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "incident": 3,
+            "irreversible": 4,
+            "handoff": 3
+          },
+          "comment": "开局场景通过“山脊断崖→高楼车流”的 spine 和“刚破关筑基”的 must_keep 精确锚定题目意象，第三章“散去真气上警车”的不可逆选择清晰落在具体章节结果中，各章交接卡严格限定决策边界而未写死后史，仅第一章灵气稀薄的设定与题目预期的震撼感略有张力。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "最强处是第一章 beat 明确让沈却跨过最后一道山脊看到高楼霓虹与车流，完整兑现题目初始场面；但交接卡以五章逐拍动作锁死了正文决策空间。"
+        }
+      }
+    }
+  }
+}

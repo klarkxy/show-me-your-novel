@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "characters",
+  "judge": "sol",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 2
+  },
+  "score": 66.7,
+  "comment": "三人都有清晰的即时欲望、底线和应对方式，且知情层次分明，但陆远尚未被具体触发点逼到必须在进城、退回或隐藏修为之间拍板，现场行动仍偏向选项清单。"
+}

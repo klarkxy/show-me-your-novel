@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "outline",
+  "judge": "sol",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 0
+  },
+  "score": 58.3,
+  "comment": "第一章已清楚呈现翻山见高楼、被凡人拦截并被隐修士带走的题目场面，且咽回探气诀形成了明确选择；但章纲逐拍规定后续七章的台词、动作、道具和信息揭示，已经大量替正文预写，决策边界几乎被锁死。"
+}

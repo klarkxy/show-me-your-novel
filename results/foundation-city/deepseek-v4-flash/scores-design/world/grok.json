@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 4,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 83.3,
+  "comment": "constraint 规则设计最严，能有效阻挡开局捷径"
+}

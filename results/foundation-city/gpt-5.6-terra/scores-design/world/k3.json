@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "world",
+  "judge": "k3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "优势在于开局阶段把资源、身份、施法痕迹、携带物风险和能力上限都压住了，足以阻止主角立刻用法术或奇遇跳关；短板是边界已经收得很紧，但管理局、集团、大学和互助会都能提供过渡性帮助，仍留有被写快、写过头的空间。"
+}

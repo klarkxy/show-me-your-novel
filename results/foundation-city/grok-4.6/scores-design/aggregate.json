@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "grok-4.6",
+  "complete": false,
+  "overall": 63.9,
+  "tracks": {
+    "world": {
+      "median": 54.1,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 41.7,
+          "bands": {
+            "constraint": 1,
+            "institutions": 1,
+            "focus": 3
+          },
+          "comment": "最有效的是明确要求筑基修士隐藏身份、低调融入都市并先求生存，但灵气分布、身份侦测和各机构实际制约都未落地，导致打坐突破、秘药获取或势力介入仍可能成为缺乏代价的捷径。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "constraint 处混杂，世界材料提供了灵气存在作为捷径但开局要求低调隐藏身份"
+        },
+        "k3": {
+          "score": 58.3,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 2
+          },
+          "comment": "机构权责（都市管理局、修仙协会、科技巨头）的三角制衡清晰且极具张力，但核心规则未明确灵气在科技面前的底层“压制”界限，导致“筑基修士”在现代都市的生存难度缺乏硬性约束，开局爽点与危机感的平衡极易失控。"
+        },
+        "ds-v4-pro": {
+          "score": 50.0,
+          "bands": {
+            "constraint": 1,
+            "institutions": 2,
+            "focus": 3
+          },
+          "comment": "最弱处是修仙协会可登记并提供资源，主角只需投靠便破解“必须短期隐藏身份”的约束，削弱开局张力。"
+        }
+      }
+    },
+    "characters": {
+      "median": 66.7,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 58.3,
+          "bands": {
+            "agency": 2,
+            "differentiation": 3,
+            "playable": 2
+          },
+          "comment": "三人都有基本欲望和应对方向，知情差异也清楚，但题目现场缺少迫使叶青在隐藏、求助或处理异常之间立即拍板的具体触发，张明尤其偏被动，入场余势对判断的实际改变很弱。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "agency": 2,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "agency 混杂，叶青有欲望底线但张明主要被动；differentiation 知情误判注意焦点分离良好；playable 入场余势叶青疲惫会改变判断"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "三人的知情差、误判方向和注意焦点拆得很干净，叶青的隐藏欲、张明的回避、赵隐的观察压力能当场咬合；但叶青还缺一个立刻必须拍板的硬分叉，导致开场行动性略弱于设定张力。"
+        },
+        "ds-v4-pro": {
+          "score": 66.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 2,
+            "playable": 3
+          },
+          "comment": "最弱处：张明一边不知修士存在一边以“被修士认出”为底线，知情与底线脱节。"
+        }
+      }
+    },
+    "outline": {
+      "median": 70.8,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 66.7,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 1
+          },
+          "comment": "第一章已明确给出翻山后看见高楼车流、灵气稀薄且被凡人注视的初始场面，但不可逆选择在低头融入与上出租车之间分裂，且八章逐拍安排和交警、警车等后续动作已明显越过交接边界。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "incident": 3,
+            "irreversible": 3,
+            "handoff": 2
+          },
+          "comment": "handoff 最弱，章纲中 must_keep 和 beats 过多，预设了太多细节不利于正文自由处理"
+        },
+        "k3": {
+          "score": 75.0,
+          "bands": {
+            "incident": 3,
+            "irreversible": 3,
+            "handoff": 3
+          },
+          "comment": "第一章边坡望楼、收真气入人流准确落在题目场面上，低头藏修为+上出租车在第1–2章形成清晰的不可逆转向，交接卡用must_not_lock和prose_free守住了决策边界；主要弱点是pressures里'误判（凡俗集镇）'与眼前高楼都市自相矛盾且被逐章复制，第5–8章功能重叠拖泥带水。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "第一章能直接看见初始场面且首次不可逆选择落在第二章上车入城，但每章逐拍 beat 已把大量动作细节写死，交接卡只算半成品。"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "novel-design-aggregate.v3",
+  "candidate": "gemini-3.7-flash",
+  "complete": false,
+  "overall": 80.6,
+  "tracks": {
+    "world": {
+      "median": 75.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "开局约束、执法流程与黑户处境都紧扣翻越山脊后的第一次接触，但机构链条仍缺少城市法务部等关键执行方，且古法道基是否能绕过灵网监管留下了较宽的即时破局口。"
+        },
+        "grok": {
+          "score": 66.7,
+          "bands": {
+            "constraint": 2,
+            "institutions": 3,
+            "focus": 3
+          },
+          "comment": "constraint 处最弱，规则虽能挡住传统爽文，但主角刚渡筑基雷劫灵力枯竭，规则的压制效果尚未完全生效。"
+        },
+        "k3": {
+          "score": 66.7,
+          "bands": {
+            "constraint": 3,
+            "institutions": 2,
+            "focus": 3
+          },
+          "comment": "最强处是开局约束与非致命收容SOP咬合紧密——灵力枯竭、雷达锁定、只能喊话不能击杀，直接给出一场可演的对峙戏；最弱处是两个机构同属城市执法一侧、目标高度重叠，缺少一个对主角另有所图的在野势力作为杠杆。"
+        },
+        "ds-v4-pro": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最弱处在于两个机构的“无法直接致命”边界近似，使得开局冲突主要靠特管局单一机构推进，缺乏机构间的直接摩擦。"
+        }
+      }
+    },
+    "characters": {
+      "median": 91.7,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 91.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "三人都被明确放在车流、监控与拔剑临界点上，知情和误判也彼此错开；裴寻的选择仍略像预设的二选一，尚缺一个能迫使他改变判断的具体代价。"
+        },
+        "grok": {
+          "score": 50.0,
+          "bands": {
+            "agency": 2,
+            "differentiation": 2,
+            "playable": 2
+          },
+          "comment": "agency 设计合格但 differentiation 稍显混杂"
+        },
+        "k3": {
+          "score": 91.7,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "三人分别在逃离、掩护、执法三种轨道上形成对峙，裴寻的灵气感知与陈敬的市井伪装、郭建平的执法程序构成立体冲突，仅陈敬的拒绝方式在极端紧张下略显程式化。"
+        },
+        "ds-v4-pro": {
+          "score": 91.7,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "最弱处是陈敬“在巡警或行车记录仪拍下前藏人”的欲望与郭建平已到场的事实存在时序冲突，使其‘拉卷帘门’选项在现场不太可执行。"
+        }
+      }
+    },
+    "outline": {
+      "median": 75.0,
+      "n": 4,
+      "judges": {
+        "sol": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "第一章已清楚呈现翻越十万大山后撞见高楼车流与灵气枯竭都市的初始场面，不可逆选择也在前两章完成；但材料对后续六章的逐拍动作、台词和感官细节规定过密，已明显超出只交接决策边界的范围。"
+        },
+        "grok": {
+          "score": 41.7,
+          "bands": {
+            "incident": 2,
+            "irreversible": 2,
+            "handoff": 1
+          },
+          "comment": "handoff 评分偏低，因 beats 与 must_keep 预设了过多具体动作与情节要点，不利于直接交给正文自由发挥。"
+        },
+        "k3": {
+          "score": 83.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 3
+          },
+          "comment": "第一章把「越山见高楼、灵气枯竭」的题目场面拍得极清楚，且不可逆选择落在第2章上车一节，交接卡的 must_not_lock 守住了后史，仅个别 beats（甩尾停车、「活着就行」）略带预写痕迹。"
+        },
+        "ds-v4-pro": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 1
+          },
+          "comment": "最弱处在交接卡：六章beats与预写台词过细，几乎替正文定死动作和对话，只剩执行空间。"
+        }
+      }
+    }
+  }
+}

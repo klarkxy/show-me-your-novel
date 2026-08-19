@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "characters",
+  "judge": "k3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 83.3,
+  "comment": "四人立场清晰且各怀限制，能在这一刻形成有效的张力场，但韩闯的行动模式（查验证件、例行公事）相对沈却的‘验证道心’与周聿怀的‘藏匿同道’而言，更接近功能性干扰，其拒绝方式‘不接受任何说辞’在冲突升级时可能显得机械，需警惕其沦为单纯的‘程序性反派’。"
+}

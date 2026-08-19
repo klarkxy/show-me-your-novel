@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 1,
+    "institutions": 2,
+    "focus": 3
+  },
+  "score": 50.0,
+  "comment": "最弱处是修仙协会可登记并提供资源，主角只需投靠便破解“必须短期隐藏身份”的约束，削弱开局张力。"
+}

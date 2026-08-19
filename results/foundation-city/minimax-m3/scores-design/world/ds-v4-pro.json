@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "world",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强处是 opening_constraints 精准锁定文化震惊开局，未给主角轻松入世捷径；弱处是登仙司与灵警总署职能重叠，且对越境者收编可能削弱“不能暴露”的代价感。"
+}

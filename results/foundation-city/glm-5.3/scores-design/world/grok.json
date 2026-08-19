@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "world",
+  "judge": "grok",
+  "bands": {
+    "constraint": 2,
+    "institutions": 2,
+    "focus": 2
+  },
+  "score": 50.0,
+  "comment": "constraint 规则挡住了主角直接用旧法器或山内方式翻盘，但旧法口诀作为硬通货有小漏洞"
+}

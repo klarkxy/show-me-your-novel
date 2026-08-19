@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "characters",
+  "judge": "ds-v4-pro",
+  "bands": {
+    "agency": 2,
+    "differentiation": 2,
+    "playable": 2
+  },
+  "score": 50.0,
+  "comment": "最强处是陈玄的误判与李隐的知情形成直接冲突；最弱处是王警缺乏主动介入的必然性，容易边缘化。"
+}

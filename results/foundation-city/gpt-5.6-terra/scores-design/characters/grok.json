@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "characters",
+  "judge": "grok",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 2
+  },
+  "score": 66.7,
+  "comment": "playable 仍有入场余势会改变判断"
+}

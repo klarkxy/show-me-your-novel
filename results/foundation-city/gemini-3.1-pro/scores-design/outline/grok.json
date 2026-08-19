@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "outline",
+  "judge": "grok",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 4
+  },
+  "score": 100.0,
+  "comment": "最强处在于第一章直接展现题目幕，irreversible选择在第二章落地，handoff边界清晰无台词"
+}

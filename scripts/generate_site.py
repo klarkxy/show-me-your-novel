@@ -2408,12 +2408,14 @@ def _prose_score_if_current(
 ) -> dict[str, Any] | None:
     raw = _read_json(model_dir / "scores-prose" / "aggregate.json")
     overall = raw.get("overall")
+    n = raw.get("n")
     if (
         raw.get("schema") != "novel-prose-aggregate.v3"
-        or not raw.get("complete")
         or raw.get("frozen_sha256") != frozen_sha256
         or raw.get("input_hash") != novel_hash
         or not isinstance(overall, (int, float))
+        or not isinstance(n, int)
+        or n < 4
     ):
         return None
     return raw
@@ -2514,6 +2516,17 @@ def load_design_board(
             continue
         raw = _read_json(model_dir / "scores-design" / "aggregate.json")
         score = raw if raw.get("schema") == "novel-design-aggregate.v3" else {}
+        tracks = score.get("tracks") if isinstance(score.get("tracks"), dict) else {}
+        judge_n = min(
+            (
+                int(entry.get("n") or 0)
+                for entry in tracks.values()
+                if isinstance(entry, dict)
+            ),
+            default=0,
+        )
+        overall = score.get("overall")
+        publishable = isinstance(overall, (int, float)) and judge_n >= 4
         found.append(
             {
                 "model_id": model_id,
@@ -2522,8 +2535,9 @@ def load_design_board(
                 "premise": str(world.get("premise") or ""),
                 "config_order": order.get(model_id, len(order)),
                 "complete": bool(score.get("complete")),
-                "overall": score.get("overall") if score.get("complete") else None,
-                "tracks": score.get("tracks") if isinstance(score.get("tracks"), dict) else {},
+                "judge_n": judge_n,
+                "overall": overall if publishable else None,
+                "tracks": tracks,
             }
         )
     found.sort(
@@ -2551,6 +2565,11 @@ def render_opening_index(
     world_name: str = "",
 ) -> str:
     ranked = sum(1 for item in openings if item.get("rank") is not None)
+    provisional = any(
+        int((item.get("prose_score") or {}).get("n") or 0) < 5
+        for item in openings
+        if item.get("rank") is not None
+    )
     cards = []
     for item in openings:
         score = item.get("prose_score") or {}
@@ -2569,7 +2588,17 @@ def render_opening_index(
     cards_html = "\n".join(cards) or '<p class="empty-copy">还没有完整开局正文。</p>'
     topic = esc(direction.strip() or "筑基翻山见高楼")
     world = esc(world_name or (openings[0]["title"] if openings else "开局"))
-    if ranked:
+    if ranked and provisional:
+        sub = f"冻结世界《{world}》· 同一人物和章纲 · 四席文风分，缺 Opus"
+        note = (
+            "世界、人物、章纲已锁死。正文按节写，不另补设定。"
+            "简介取各家正文开头。Sol / Grok / K3 / DeepSeek 已到，Opus 全线 503，"
+            "这不是完整五席榜。改革开放长篇在"
+            '<a href="history/index.html">V2.1 历史</a>。'
+            "各模型自己交的世界/人物/章纲在"
+            '<a href="design/index.html">设计</a>。'
+        )
+    elif ranked:
         sub = f"冻结世界《{world}》· 同一人物和章纲 · 只评文风与场景"
         note = (
             "世界、人物、章纲已锁死。正文按节写，不另补设定。"
@@ -2664,6 +2693,7 @@ def render_opening_detail(item: dict[str, Any]) -> str:
 
 def render_design_index(designs: list[dict[str, Any]]) -> str:
     ranked = sum(1 for item in designs if item.get("rank") is not None)
+    missing_opus = ranked and not all(item.get("complete") for item in designs if item.get("rank") is not None)
     rows = []
     for item in designs:
         tracks = item.get("tracks") or {}
@@ -2688,11 +2718,15 @@ def render_design_index(designs: list[dict[str, Any]]) -> str:
 </tr>"""
         )
     body = "".join(rows) or '<tr><td colspan="6">还没有齐套的设计稿。</td></tr>'
-    sub = (
-        "各模型自己交的世界、人物、章纲。冻结包是人合成的，这张表不改冻。"
-        if ranked
-        else "各模型自己交的世界、人物、章纲。评分还没出炉。"
-    )
+    if ranked and missing_opus:
+        sub = (
+            "各模型自己交的世界、人物、章纲。四席已到（Sol / Grok / K3 / DeepSeek），"
+            "Opus 全线 503，这不是完整五席榜。冻结包是人合成的，这张表不改冻。"
+        )
+    elif ranked:
+        sub = "各模型自己交的世界、人物、章纲。冻结包是人合成的，这张表不改冻。"
+    else:
+        sub = "各模型自己交的世界、人物、章纲。评分还没出炉。"
     return page_head("设计段", "../", "page-leaderboard") + f"""
 <a class="back-link" href="../index.html">← 开局</a>
 <header class="page-intro">

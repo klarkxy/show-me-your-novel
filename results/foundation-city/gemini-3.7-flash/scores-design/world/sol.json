@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "开局约束、执法流程与黑户处境都紧扣翻越山脊后的第一次接触，但机构链条仍缺少城市法务部等关键执行方，且古法道基是否能绕过灵网监管留下了较宽的即时破局口。"
+}

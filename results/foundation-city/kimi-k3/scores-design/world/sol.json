@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "world",
+  "judge": "sol",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "开局的灵力消耗、监测追踪、身份支付和现代暴力构成了连续有效的现实阻力，但筑基对枪械与监测网的具体边界尚未明确，机构之间也还缺少能立刻制造选择压力的直接冲突。"
+}
