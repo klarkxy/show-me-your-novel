@@ -29,6 +29,7 @@ from runner.score_design import (
     parse_design_score,
     pick_winners,
     render_judge_user,
+    resolve_v3_judge_config,
 )
 from runner.score_prose import parse_prose_score
 
@@ -295,7 +296,32 @@ class GenerateV3Tests(unittest.TestCase):
         self.assertEqual(parsed["score"], 62.5)
 
     def test_design_judges_are_the_five_active_seats(self) -> None:
-        self.assertEqual(DEFAULT_JUDGES, ("sol", "grok", "opus", "k3", "ds-v4-pro"))
+        self.assertEqual(
+            DEFAULT_JUDGES, ("sol", "grok", "k3", "ds-v4-pro", "glm-5.3")
+        )
+
+    def test_v3_fifth_seat_uses_the_glm_generator(self) -> None:
+        config = {
+            "judges": [{"id": "sol", "name": "Sol", "model": "gpt-5.6-sol"}],
+            "models": [
+                {
+                    "id": "glm-5.3",
+                    "name": "GLM 5.3",
+                    "model": "glm-5.3",
+                    "provider": "new-api",
+                    "request": {},
+                    "stages": {},
+                }
+            ],
+        }
+        resolved = resolve_v3_judge_config(config, "glm-5.3")
+        self.assertEqual(resolved["model"], "glm-5.3")
+        self.assertEqual(resolved["request"]["max_tokens"], 32768)
+        self.assertEqual(resolved["stages"]["judge"]["temperature"], 0.2)
+        self.assertEqual(
+            resolved["stages"]["judge"]["response_format"], {"type": "json_object"}
+        )
+        self.assertEqual(resolve_v3_judge_config(config, "sol")["model"], "gpt-5.6-sol")
 
     def test_cli_dry_run_all_reports_jobs(self) -> None:
         self.assertEqual(

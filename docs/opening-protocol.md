@@ -104,6 +104,8 @@ python novel.py score-design --all
 python novel.py score-prose --all
 ```
 
+V3 评委是 Sol、Grok、K3、DeepSeek V4 Pro、GLM 5.3。不占用 V2.1 冻死的 Opus 席。
+
 冻结包已经由人合成。`score-design --assemble` 不再改冻。`_locked` 不是候选模型。
 
 ## 站点

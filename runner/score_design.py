@@ -22,6 +22,7 @@ try:
         ChatClient,
         LLMAPIError,
         get_judge_config,
+        get_model_config,
         load_config,
         load_env_file,
         with_provider_request_defaults,
@@ -33,6 +34,7 @@ except ImportError:  # pragma: no cover
         ChatClient,
         LLMAPIError,
         get_judge_config,
+        get_model_config,
         load_config,
         load_env_file,
         with_provider_request_defaults,
@@ -47,8 +49,30 @@ BANDS = {
     "characters": ("agency", "differentiation", "playable"),
     "outline": ("incident", "irreversible", "handoff"),
 }
-DEFAULT_JUDGES = tuple(g.EXPECTED_JUDGES)
+# V3 第五席用 glm-5.3，不改 V2.1 冻死的 opus 席。
+DEFAULT_JUDGES = ("sol", "grok", "k3", "ds-v4-pro", "glm-5.3")
 _PRINT = threading.Lock()
+
+
+def resolve_v3_judge_config(config: dict[str, Any], judge_id: str) -> dict[str, Any]:
+    """Use the V2.1 judge registry when possible; else the generator of the same id."""
+
+    try:
+        return get_judge_config(config, judge_id)
+    except ValueError:
+        pass
+    model_cfg = dict(get_model_config(config, judge_id))
+    request = dict(model_cfg.get("request") or {})
+    request.setdefault("max_tokens", 32768)
+    stages = dict(model_cfg.get("stages") or {})
+    judge_stage = dict(stages.get("judge") or {})
+    judge_stage.setdefault("temperature", 0.2)
+    if model_cfg.get("protocol") != "anthropic-messages":
+        judge_stage.setdefault("response_format", {"type": "json_object"})
+    stages["judge"] = judge_stage
+    model_cfg["request"] = request
+    model_cfg["stages"] = stages
+    return model_cfg
 
 
 def _log(message: str) -> None:
@@ -175,7 +199,9 @@ def score_one(
         direction=direction,
         artifact=json.dumps(artifact, ensure_ascii=False, indent=2),
     )
-    judge_cfg = with_provider_request_defaults(config, get_judge_config(config, judge_id))
+    judge_cfg = with_provider_request_defaults(
+        config, resolve_v3_judge_config(config, judge_id)
+    )
     parsed = _complete_score(client, judge_cfg, prompts["judge_system.md"], user, track)
     payload = {
         "schema": SCHEMA,
@@ -337,7 +363,9 @@ def main(argv: list[str] | None = None) -> int:
                 failures.append(f"{label}: {exc}")
                 _log(f"[score-design] FAIL {label}: {exc}")
 
-    aggregates = [aggregate_candidate(results_root / name, judges) for name in selected]
+    aggregates = [
+        aggregate_candidate(results_root / name, DEFAULT_JUDGES) for name in selected
+    ]
     complete = [item for item in aggregates if item.get("complete")]
     _log(f"[score-design] aggregates complete={len(complete)}/{len(selected)}")
     for item in sorted(complete, key=lambda row: (-float(row["overall"]), row["candidate"])):

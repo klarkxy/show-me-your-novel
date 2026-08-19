@@ -560,7 +560,7 @@ V4_DIMENSION_SPECS = (
 )
 V4_DIMENSION_KEYS = tuple(spec.key for spec in V4_DIMENSION_SPECS)
 V4_JUDGE_IDS = ("sol", "grok", "opus", "k3", "ds-v4-pro")
-HISTORICAL_JUDGE_LABELS = {"fable": "Fable"}
+HISTORICAL_JUDGE_LABELS = {"fable": "Fable", "glm-5.3": "GLM 5.3"}
 V4_ALL_EDGE_COUNT = 25
 V4_SEVERITIES = frozenset({"none", "minor", "major", "critical"})
 V4_SEVERITY_CAPS = {"major": 50.0, "critical": 25.0}
@@ -2592,7 +2592,7 @@ def render_opening_index(
         sub = f"冻结世界《{world}》· 同一人物和章纲 · 四席文风分，缺 Opus"
         note = (
             "世界、人物、章纲已锁死。正文按节写，不另补设定。"
-            "简介取各家正文开头。Sol / Grok / K3 / DeepSeek 已到，Opus 全线 503，"
+            "简介取各家正文开头。第五席是 GLM 5.3；未齐套前先按已到的票看，"
             "这不是完整五席榜。改革开放长篇在"
             '<a href="history/index.html">V2.1 历史</a>。'
             "各模型自己交的世界/人物/章纲在"
@@ -2720,8 +2720,8 @@ def render_design_index(designs: list[dict[str, Any]]) -> str:
     body = "".join(rows) or '<tr><td colspan="6">还没有齐套的设计稿。</td></tr>'
     if ranked and missing_opus:
         sub = (
-            "各模型自己交的世界、人物、章纲。四席已到（Sol / Grok / K3 / DeepSeek），"
-            "Opus 全线 503，这不是完整五席榜。冻结包是人合成的，这张表不改冻。"
+            "各模型自己交的世界、人物、章纲。第五席是 GLM 5.3；"
+            "未齐套前先按已到的票看，不是完整五席榜。冻结包是人合成的，这张表不改冻。"
         )
     elif ranked:
         sub = "各模型自己交的世界、人物、章纲。冻结包是人合成的，这张表不改冻。"

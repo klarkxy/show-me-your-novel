@@ -723,7 +723,7 @@ class SiteGenerationTests(unittest.TestCase):
             page = (output / "design" / "index.html").read_text(encoding="utf-8")
             self.assertIn("80.5", page)
             self.assertIn("试城", page)
-            self.assertIn("Opus 全线 503", page)
+            self.assertIn("GLM 5.3", page)
             self.assertIn("不是完整五席榜", page)
 
     def test_opening_excerpt_uses_first_paragraph_not_the_outline(self) -> None:

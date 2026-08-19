@@ -21,24 +21,26 @@ try:
     from .llm_api import (
         ChatClient,
         LLMAPIError,
-        get_judge_config,
         load_config,
         load_env_file,
         with_provider_request_defaults,
     )
-    from .score_design import DEFAULT_JUDGES, render_judge_user
+    from .score_design import DEFAULT_JUDGES, render_judge_user, resolve_v3_judge_config
 except ImportError:  # pragma: no cover
     import generate as g  # type: ignore
     import generate_v3 as v3  # type: ignore
     from llm_api import (  # type: ignore
         ChatClient,
         LLMAPIError,
-        get_judge_config,
         load_config,
         load_env_file,
         with_provider_request_defaults,
     )
-    from score_design import DEFAULT_JUDGES, render_judge_user  # type: ignore
+    from score_design import (  # type: ignore
+        DEFAULT_JUDGES,
+        render_judge_user,
+        resolve_v3_judge_config,
+    )
 
 
 SCHEMA = "novel-prose-eval.v3"
@@ -177,7 +179,9 @@ def score_one(
         direction=direction,
         artifact=novel,
     )
-    judge_cfg = with_provider_request_defaults(config, get_judge_config(config, judge_id))
+    judge_cfg = with_provider_request_defaults(
+        config, resolve_v3_judge_config(config, judge_id)
+    )
     parsed = _complete_score(client, judge_cfg, prompts["judge_system.md"], user)
     payload = {
         "schema": SCHEMA,
@@ -331,7 +335,7 @@ def main(argv: list[str] | None = None) -> int:
     aggregates = [
         aggregate_candidate(
             results_root / name,
-            judges,
+            DEFAULT_JUDGES,
             frozen_sha256=frozen_sha256,
             input_hash=hashes[name],
         )
