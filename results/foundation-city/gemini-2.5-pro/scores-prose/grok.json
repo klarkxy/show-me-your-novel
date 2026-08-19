@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "4d4a3b23ae5bfe6a2c1bf3d23abd723433b95552840ede2fc8524af084d6926f",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 2,
+    "continuity": 3
+  },
+  "score": 50.0,
+  "comment": "最弱处是叙述中存在解释性旁白，削弱现场感；最强处是场景执行中动作与反应接力紧密。"
+}

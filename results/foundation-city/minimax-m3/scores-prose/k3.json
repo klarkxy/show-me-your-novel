@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "496f756249b75f2e83b2647ce1ec05e5c6ad44d6b4ef0300edd317637a4106ae",
+  "bands": {
+    "naturalness": 3,
+    "voice": 4,
+    "scene": 3,
+    "continuity": 1
+  },
+  "score": 68.8,
+  "comment": "视角过滤是最强处——公路、LED、手机、身份证全部经山里人的误认写出来，稳而不炫；但连续性明显失守：第2章'夜风吹袍角'整段重复、第2章结尾已到住处而第3章又重回车上重来一遍、第1章与第7章说信不许拆而第4章却说'第一行他就读了'，节拍互相打架。"
+}

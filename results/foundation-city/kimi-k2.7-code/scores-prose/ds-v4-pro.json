@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "judge": "ds-v4-pro",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "ec44f1ff3e3a25051a25640dbab4a127c543ec582f53c9b1f64834acf1f9295a",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 50.0,
+  "comment": "最弱在节拍衔接：第1章以警灯照身结束，第2章已坐进出租车，且第5章交警场景疑似重复，明显断裂。"
+}

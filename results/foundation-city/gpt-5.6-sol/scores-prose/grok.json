@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "fad94ad36f2060cac10eee1d1376d6eb654d43535411e508e1d5d3f582cbcc9f",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 1
+  },
+  "score": 31.2,
+  "comment": "场景执行中，多次重复描述公路、汽车、灯牌、摄像头等现代元素，导致节奏不连贯。"
+}

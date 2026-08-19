@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "e2b8a4ec51fc07b9411e6985bf8d2edbaa515cc2c51d8bfee87d32f8c1e34f87",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 25.0,
+  "comment": "整段文字大面积自我复制粘贴（第1章警车段落、第2章上车段落、第3章保安段、第6章结尾段几乎逐字重复两遍以上），情节节拍彼此打架（同一章内出租车来了又走、走了又来，保安反应段落错位插进司机场景），场景完全失去接力，这不是失手而是结构性崩坏，continuity 无法成立。"
+}

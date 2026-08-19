@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "552005b1ad4869ad7afb4820f364e946cd4c190259b00a0fb0a40122e03fe071",
+  "bands": {
+    "naturalness": 3,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 56.2,
+  "comment": "视角过滤和第7章叩门一场是真功夫，但全篇像两版草稿硬缝：第1章末人已被警灯钉在出租车旁，第2章却退回坡底把认车、拦查整段重演，第2章连查两遍身份证、第3章两遍规矩两遍银子，第6章明写「师父拢共没给过地名」、第7章信封上却印着「城南青槐巷十一号」，重复流程从不压缩，节拍处处接不上。"
+}

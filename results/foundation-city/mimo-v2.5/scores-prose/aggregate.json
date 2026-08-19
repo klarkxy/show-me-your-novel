@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "mimo-v2.5",
+  "complete": true,
+  "overall": 37.5,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "3486844a57232719368a4f6f650e753273648756afe0bb04082fbee064fd5482",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 2.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 1.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 18.8,
+      "bands": {
+        "naturalness": 1,
+        "voice": 1,
+        "scene": 1,
+        "continuity": 0
+      },
+      "comment": "最严重的问题是第1—5章反复重写沈却下山、遇韩闯、上周聿怀出租车的同一段经历，且夜晚与傍晚、上下车关系等细节互相冲突，导致现场感被模板化解释和重复流程彻底冲散。"
+    },
+    "grok": {
+      "score": 37.5,
+      "bands": {
+        "naturalness": 1,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "叙述中充斥模板腔和解释性旁白，像作者在教读者凡人世界常识，读起来不自然。"
+    },
+    "k3": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 3,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "单场戏的感官细节和沈却视角的误认（铁盒子、铜镜、机械耳目）很扎实，但第1/2/3章、第5/6章、第7章内部把同一段相遇与送达反复重写了好几遍且细节互相矛盾（302与7-1、哑叔多次重现），节拍完全接不上，像是多版草稿直接拼接。"
+    },
+    "ds-v4-pro": {
+      "score": 43.8,
+      "bands": {
+        "naturalness": 2,
+        "voice": 2,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "对现代物件的陌生化处理较稳定，但多章重复同一公路拦截场景，节拍反复未能收束。"
+    },
+    "glm-5.3": {
+      "score": 31.2,
+      "bands": {
+        "naturalness": 2,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 0
+      },
+      "comment": "最弱是连续性：各章实为同一开局的多个重写版本，韩闯与周聿怀的出场方式每章都变、细节互相矛盾，第一章内司机就从韩闯无缝变成周聿怀，节拍完全断裂；旁白在'铁皮盒子'与'出租车'之间摇摆，视角纪律不稳。"
+    }
+  }
+}

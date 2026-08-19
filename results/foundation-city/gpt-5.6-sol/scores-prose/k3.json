@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "fad94ad36f2060cac10eee1d1376d6eb654d43535411e508e1d5d3f582cbcc9f",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 1,
+    "continuity": 1
+  },
+  "score": 43.8,
+  "comment": "视角过滤是亮点（摄像头被认作睁眼的木鱼、手机是发光的薄板，全程经沈却的经验折射），但全文像多稿拼接：第1章内部出租车司机掐诀、交警查证重复三遍，第1/2/5章三次重写同一个边坡开场且互相矛盾（先上出租车又被警察接走），第7章关门段落原样复制两遍，节拍完全接不上。"
+}

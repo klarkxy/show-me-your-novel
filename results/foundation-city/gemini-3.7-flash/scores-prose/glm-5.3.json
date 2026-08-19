@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "a8c87bfd6925ef59893c90a3e10b21e9a6502ce6f3a360aa194d2967c93eb359",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 50.0,
+  "comment": "视角措辞分层（沈却口中的'铁壳子/琉璃窗/黑白格子硬板'与韩闯章的'卡口/测速雷达/监控回放'）执行得最稳，但硬伤致命：车牌新A·T8942对海A·T7924、师父舆图七株老槐三进院对两株古槐九进重檐自相矛盾，玉牌惊刹与'收回去'、递夹克、'没有…没有…'城景对比等节拍各重演数遍，第6到7章还凭空跳场下雨，接续明显断裂。"
+}

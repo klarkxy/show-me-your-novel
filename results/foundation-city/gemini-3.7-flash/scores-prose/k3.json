@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "a8c87bfd6925ef59893c90a3e10b21e9a6502ce6f3a360aa194d2967c93eb359",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 2
+  },
+  "score": 56.2,
+  "comment": "最强处是视角：沈却一方把汽车写成铁壳子、琉璃窗，韩闯周聿怀一方用正常的当代词汇，错位始终统一，市井对白也活；最弱处是场景执行上同一节拍反复重写——第1章同一片城市夜景铺陈三遍，第3章玉牌掏出、急刹、『收回去』几乎原样演了两轮，第6、7章『师父描述的旧地对不上眼前』又重叠一遍，且出租车牌号第2章是新A·T8942、第5章变成海A·T7924，重复流程未压缩、细节前后不接，拉低了scene与continuity。"
+}

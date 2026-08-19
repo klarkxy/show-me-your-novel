@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "gemini-3.7-flash",
+  "complete": true,
+  "overall": 31.2,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "a8c87bfd6925ef59893c90a3e10b21e9a6502ce6f3a360aa194d2967c93eb359",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 1.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 2.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 0
+      },
+      "comment": "最弱处是同一套“灵气稀薄—身份证受阻—玉牌引发忌惮”的流程在多章反复重演，且第5章已到清晨后第6章又回到夜间，造成明显的模板化拖沓与时间断裂。"
+    },
+    "grok": {
+      "score": 31.2,
+      "bands": {
+        "naturalness": 1,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "文风堆砌排比过多，缺乏现场感与内心独白"
+    },
+    "k3": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "最强处是视角：沈却一方把汽车写成铁壳子、琉璃窗，韩闯周聿怀一方用正常的当代词汇，错位始终统一，市井对白也活；最弱处是场景执行上同一节拍反复重写——第1章同一片城市夜景铺陈三遍，第3章玉牌掏出、急刹、『收回去』几乎原样演了两轮，第6、7章『师父描述的旧地对不上眼前』又重叠一遍，且出租车牌号第2章是新A·T8942、第5章变成海A·T7924，重复流程未压缩、细节前后不接，拉低了scene与continuity。"
+    },
+    "ds-v4-pro": {
+      "score": 31.2,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 1
+      },
+      "comment": "最弱处：第1章同一套城市惊异被重复描写多次，第6章步行后第7章直接跳回出租车，节拍断裂；最强处是韩闯盘问与周聿怀打圆场的市井对话有些实感。"
+    },
+    "glm-5.3": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "视角措辞分层（沈却口中的'铁壳子/琉璃窗/黑白格子硬板'与韩闯章的'卡口/测速雷达/监控回放'）执行得最稳，但硬伤致命：车牌新A·T8942对海A·T7924、师父舆图七株老槐三进院对两株古槐九进重檐自相矛盾，玉牌惊刹与'收回去'、递夹克、'没有…没有…'城景对比等节拍各重演数遍，第6到7章还凭空跳场下雨，接续明显断裂。"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "ec44f1ff3e3a25051a25640dbab4a127c543ec582f53c9b1f64834acf1f9295a",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 50.0,
+  "comment": "最弱在连续性：查身份证与'远房表弟'桥段在第2至5章反复重演且说辞互相矛盾（晕车表弟→拍仿古视频→拍短视频→修车师兄弟），第4章开头被扔在桥底又与第3章结尾同抵灰楼脱节，第5章晨曦与夜空时序也打架；最强是视角处理，旁白始终用出租车、手机、摄像头、身份证等当代名词，错认只留在沈却的内心独白里，分寸拿捏稳定。"
+}

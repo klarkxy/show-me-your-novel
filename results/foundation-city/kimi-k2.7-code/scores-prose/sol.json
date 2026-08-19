@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "ec44f1ff3e3a25051a25640dbab4a127c543ec582f53c9b1f64834acf1f9295a",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 25.0,
+  "comment": "单章内的汽车、灯牌、摄像头和身份证都能通过沈却的误认形成视角，但第2、3、5章反复重演查身份证与出租车接走，第4至第7章又多次重置下车、租屋和寻找“那处地方”的过程，流程性复述严重掐断了现场感与节拍。"
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "kimi-k3",
+  "complete": true,
+  "overall": 56.2,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "35bd39321687472c3daa363cfc0195f7254b9648dd0df2e48362d93dd1f251c6",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 2.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 3.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 37.5,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 1,
+        "continuity": 0
+      },
+      "comment": "沈却初见高楼、车流和证件制度时的错认有鲜明视角，但第1—2章重复同一段下坡遇警、第2—3章又出现后座与副驾位置冲突，严重破坏现场执行和连续性。"
+    },
+    "grok": {
+      "score": 43.8,
+      "bands": {
+        "naturalness": 2,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "scene 执行中动作与反应接力较好，但 voice 因旁白过多解释现代物件而明显不足。"
+    },
+    "k3": {
+      "score": 62.5,
+      "bands": {
+        "naturalness": 3,
+        "voice": 3,
+        "scene": 3,
+        "continuity": 1
+      },
+      "comment": "单场戏的物件调度和双视角语感都相当扎实（交警监控室的悬疑线尤其好），但文本混进了多版草稿：下山坡与咽回真气在第1章内重复三遍，吐纳失败、交警盘问、递联系卡均各写两遍，且师父给的地址一会儿是'水井街'一会儿是'城南青石巷七号'、玉牌却指向城西，节拍彼此撞车，须先并稿才能进入下一阶段。"
+    },
+    "ds-v4-pro": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "视角控制是亮点——旁白用现代物件名，内心保留修真认知；但场景中灵气稀薄、城市灯火等意象多次重复，削弱了节拍推进。"
+    },
+    "glm-5.3": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 3,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "单句质感与视角过滤是强项（铁壳子、黑玻璃眼珠子、韩闯段的监控室腔调都立得住），但节拍拼接严重失守：第1章下坡走了两遍，第2章连演两场、第5章连演三场几乎相同的交警盘查且周聿怀的抖气、递名片逐字重复，第6章玉牌烫指城西、师父口述水井街老槐，第7章却凭空掏出「城南青石巷七号」的纸条还收了先前明说不收的车钱，加上哑叔是哑巴却有「絮叨」，整段像多份未对齐的草稿直接缝合。"
+    }
+  }
+}

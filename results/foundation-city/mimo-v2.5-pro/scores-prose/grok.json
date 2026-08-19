@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "80d506c2a9335935e7e25890b448d61f7f30353cc7d5e8c50117391296365194",
+  "bands": {
+    "naturalness": 0,
+    "voice": 0,
+    "scene": 0,
+    "continuity": 0
+  },
+  "score": 0.0,
+  "comment": "最弱处是场景执行中现代都市元素重复解释过多，缺乏连贯性"
+}

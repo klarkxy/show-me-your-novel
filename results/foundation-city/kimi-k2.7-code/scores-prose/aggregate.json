@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "kimi-k2.7-code",
+  "complete": true,
+  "overall": 50.0,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "ec44f1ff3e3a25051a25640dbab4a127c543ec582f53c9b1f64834acf1f9295a",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 2.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 3.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 0
+      },
+      "comment": "单章内的汽车、灯牌、摄像头和身份证都能通过沈却的误认形成视角，但第2、3、5章反复重演查身份证与出租车接走，第4至第7章又多次重置下车、租屋和寻找“那处地方”的过程，流程性复述严重掐断了现场感与节拍。"
+    },
+    "grok": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 2,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "场景执行在下山后遇出租车、交警、吐纳等环节有动作接力，但现代物件（如灯牌、身份证、手机）描述偏解释腔，人物内心反应不足。"
+    },
+    "k3": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "最大硬伤是跨章连续性：第2、3、5章把'出租车捡人—交警查身份证—周聿怀撒谎圆场'几乎原样重演三遍，警察在旅馆关门后又在'查身份证'章出现，顺序自相矛盾；但视角人物的错位经验（把摄像头认作独眼、把扫码认作法器）写得稳定且准确，是全文最强的执行。"
+    },
+    "ds-v4-pro": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "最弱在节拍衔接：第1章以警灯照身结束，第2章已坐进出租车，且第5章交警场景疑似重复，明显断裂。"
+    },
+    "glm-5.3": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "最弱在连续性：查身份证与'远房表弟'桥段在第2至5章反复重演且说辞互相矛盾（晕车表弟→拍仿古视频→拍短视频→修车师兄弟），第4章开头被扔在桥底又与第3章结尾同抵灰楼脱节，第5章晨曦与夜空时序也打架；最强是视角处理，旁白始终用出租车、手机、摄像头、身份证等当代名词，错认只留在沈却的内心独白里，分寸拿捏稳定。"
+    }
+  }
+}

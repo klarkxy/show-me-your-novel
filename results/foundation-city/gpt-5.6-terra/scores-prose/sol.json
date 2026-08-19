@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "d85cd03501f1cd9e959a70ba70989cebb07f4166e50ba9273f46ac54d9e89086",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 25.0,
+  "comment": "沈却以修士经验误认手机、摄像头和身份证的视角很清楚，但第2、5、6、7章反复重写下山、出租车和盘问流程，令场景执行显出模板化循环，并直接破坏开局的连续节拍。"
+}

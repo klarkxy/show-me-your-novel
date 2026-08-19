@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "e2b8a4ec51fc07b9411e6985bf8d2edbaa515cc2c51d8bfee87d32f8c1e34f87",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 1
+  },
+  "score": 31.2,
+  "comment": "最弱在节拍与复读：同一场景（边坡—出租车—查身份证）每章整场重演且大段文字逐字重复，哑叔身为哑者却开口说话、身无手机证件的沈却口袋里反复亮起手机、摸到印着自己照片的证件卡，视角与时间线多处断裂；仅哑叔入雾'来路像被一只手抹平'等零星句子尚见笔力。"
+}

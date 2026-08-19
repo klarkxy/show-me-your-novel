@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "496f756249b75f2e83b2647ce1ec05e5c6ad44d6b4ef0300edd317637a4106ae",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 3,
+    "continuity": 3
+  },
+  "score": 68.8,
+  "comment": "场景执行最强，感官细节精准连贯，人物视角自然融入现代物件"
+}

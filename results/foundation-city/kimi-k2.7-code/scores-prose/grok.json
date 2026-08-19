@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "ec44f1ff3e3a25051a25640dbab4a127c543ec582f53c9b1f64834acf1f9295a",
+  "bands": {
+    "naturalness": 2,
+    "voice": 2,
+    "scene": 2,
+    "continuity": 2
+  },
+  "score": 50.0,
+  "comment": "场景执行在下山后遇出租车、交警、吐纳等环节有动作接力，但现代物件（如灯牌、身份证、手机）描述偏解释腔，人物内心反应不足。"
+}

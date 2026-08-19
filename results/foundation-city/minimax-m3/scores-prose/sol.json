@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "496f756249b75f2e83b2647ce1ec05e5c6ad44d6b4ef0300edd317637a4106ae",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 25.0,
+  "comment": "第2、3章几乎重演同一段拦车—上车流程，第6章又把已发生的乘车重置为“车开出山口收费站”，导致场景接续和叙事现场感直接断裂。"
+}

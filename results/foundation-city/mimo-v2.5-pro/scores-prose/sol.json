@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "80d506c2a9335935e7e25890b448d61f7f30353cc7d5e8c50117391296365194",
+  "bands": {
+    "naturalness": 1,
+    "voice": 1,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 18.8,
+  "comment": "感官细节和初见城市的错位感偶有力度，但大量“铁壳虫、灵气荒漠、身份证盘问”的解释性复述把现场写成模板化流程，且第1至第7章反复重演同一段相遇并出现人物、时间和行动接续冲突。"
+}

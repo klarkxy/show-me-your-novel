@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "judge": "ds-v4-pro",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "a8c87bfd6925ef59893c90a3e10b21e9a6502ce6f3a360aa194d2967c93eb359",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 1
+  },
+  "score": 31.2,
+  "comment": "最弱处：第1章同一套城市惊异被重复描写多次，第6章步行后第7章直接跳回出租车，节拍断裂；最强处是韩闯盘问与周聿怀打圆场的市井对话有些实感。"
+}

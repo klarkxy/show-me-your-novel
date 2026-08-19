@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "f1f9da0ec294231a0ee35901dc9ba0db756ec997529de88af09bc0dcf6438b33",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 50.0,
+  "comment": "视角过滤做得最扎实——沈却眼中'铁壳怪兽''黑色硬泥路'与韩闯段落里'执法记录仪''卡口镜头'两套语感分明；但章节间衔接严重断裂，第1章结尾警灯钉人、第2章却像重新演一遍拦查且时间从深夜跳成烈日，第4到第5章沈却如何到了汽修厂完全没交代，加上'从pocket掏出打火机'和'一步两部''双双手掌'等错漏，读感像多段拼接而非一口气写下的现场。"
+}

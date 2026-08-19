@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "f278f31f95cc2289990029be3758850392d9251be0e5e6aabbd9749af298cbe7",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 25.0,
+  "comment": "沈却把汽车、摄像头和身份证误认成法器的局部视角有辨识度，但交警拦截、出租车搭救、凉泡面等场面在各章反复重写并互相改动，整体呈现出模板化堆叠而非连续现场。"
+}

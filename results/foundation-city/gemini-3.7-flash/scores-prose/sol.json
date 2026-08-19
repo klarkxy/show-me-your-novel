@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "a8c87bfd6925ef59893c90a3e10b21e9a6502ce6f3a360aa194d2967c93eb359",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 25.0,
+  "comment": "最弱处是同一套“灵气稀薄—身份证受阻—玉牌引发忌惮”的流程在多章反复重演，且第5章已到清晨后第6章又回到夜间，造成明显的模板化拖沓与时间断裂。"
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "3486844a57232719368a4f6f650e753273648756afe0bb04082fbee064fd5482",
+  "bands": {
+    "naturalness": 2,
+    "voice": 1,
+    "scene": 2,
+    "continuity": 0
+  },
+  "score": 31.2,
+  "comment": "最弱是连续性：各章实为同一开局的多个重写版本，韩闯与周聿怀的出场方式每章都变、细节互相矛盾，第一章内司机就从韩闯无缝变成周聿怀，节拍完全断裂；旁白在'铁皮盒子'与'出租车'之间摇摆，视角纪律不稳。"
+}

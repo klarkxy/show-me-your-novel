@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "d85cd03501f1cd9e959a70ba70989cebb07f4166e50ba9273f46ac54d9e89086",
+  "bands": {
+    "naturalness": 2,
+    "voice": 2,
+    "scene": 2,
+    "continuity": 0
+  },
+  "score": 37.5,
+  "comment": "最弱处是节拍彻底断裂：第1、2、5、7章把'下山—查身份证—出租车试探'同一序列重启了三四遍且细节互相矛盾（韩闯三次当作初见盘问、第四章沈却竟重问周聿怀姓名、旅馆前台忽男忽女），像多稿拼接；单看笔触，用修士眼光写柏油路、摄像头与证件倒是全篇最稳的亮点。"
+}

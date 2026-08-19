@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "gemini-2.5-pro",
+  "complete": true,
+  "overall": 37.5,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "4d4a3b23ae5bfe6a2c1bf3d23abd723433b95552840ede2fc8524af084d6926f",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 1.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 2.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 0
+      },
+      "comment": "交警盘问、出租车接走和玉牌引发急刹等段落有可视化动作接力，但“铁盒子”“钢铁洪流”等比喻与灵气稀薄、下山别惹眼等信息反复解释，且第6、7章重复并改写同一段进城过程，严重破坏现场感与连续性。"
+    },
+    "grok": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 2,
+        "continuity": 3
+      },
+      "comment": "最弱处是叙述中存在解释性旁白，削弱现场感；最强处是场景执行中动作与反应接力紧密。"
+    },
+    "k3": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 3,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "文风整体自然，现代物与修真认知的错位感做得比较好；但开局反复回到同一批信息，交接与回头路被多次重述，连续性明显拖慢。"
+    },
+    "ds-v4-pro": {
+      "score": 31.2,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 1
+      },
+      "comment": "最弱处在连续性：章节间时间线错乱、场景重复（如多次雷同的城市景观与盘问），且第6、7章内容与第5章交警上门事件顺序矛盾，导致节拍断裂。"
+    },
+    "glm-5.3": {
+      "score": 37.5,
+      "bands": {
+        "naturalness": 2,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "最弱在节拍接续：第6、7章把同一段「问地址—玉牌指路」写成了两个互相矛盾的版本（清虚观对见春台、城西商厦对破旧小区），第5章韩闯的回忆与第2章现场对不上、明明不穿警服开私家车转眼又坐进警车，第3章先称玉牌「已看过」随后才首次出示，且第3、7章正文断在半句；亮点是第2章查证与第4章跳闸两场，物件、对白、反应咬合扎实，但旁白通篇把汽车、手机、读卡器写成铁盒子、发光石板、法器，与偶尔冒出的高楼车流灯牌来回摇摆，视角命名缺乏纪律。"
+    }
+  }
+}

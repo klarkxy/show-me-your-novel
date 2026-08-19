@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "35bd39321687472c3daa363cfc0195f7254b9648dd0df2e48362d93dd1f251c6",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 37.5,
+  "comment": "沈却初见高楼、车流和证件制度时的错认有鲜明视角，但第1—2章重复同一段下坡遇警、第2—3章又出现后座与副驾位置冲突，严重破坏现场执行和连续性。"
+}

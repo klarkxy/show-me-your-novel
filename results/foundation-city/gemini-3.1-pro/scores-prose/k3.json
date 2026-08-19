@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "f1f9da0ec294231a0ee35901dc9ba0db756ec997529de88af09bc0dcf6438b33",
+  "bands": {
+    "naturalness": 3,
+    "voice": 4,
+    "scene": 3,
+    "continuity": 2
+  },
+  "score": 75.0,
+  "comment": "视角转化执行极佳，沈却将现代物件对应修仙体系的认知描写生动精准；但第1章与第4章哑叔消失、第2章与第5章查身份证等关键场景存在明显的重复执行，像是同一事件写了两遍。"
+}

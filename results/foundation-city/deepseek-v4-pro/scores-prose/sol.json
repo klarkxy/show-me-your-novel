@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "469de5c246a1ceb822872b88be4b895491df059e86b086c9647fe8cc6b45d966",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 0
+  },
+  "score": 43.8,
+  "comment": "山脊初见灯海、半诀反冲和手机监控等细节有现场感，但第1章末警灯、第2章出租车接人、第3章重演拦查、第5章再回放明显重复，导致场景推进被流程复述截断。"
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "glm-5.3",
+  "complete": true,
+  "overall": 56.2,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "552005b1ad4869ad7afb4820f364e946cd4c190259b00a0fb0a40122e03fe071",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 3.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 3.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 2.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 75.0,
+      "bands": {
+        "naturalness": 3,
+        "voice": 4,
+        "scene": 3,
+        "continuity": 2
+      },
+      "comment": "最强是始终用沈却的山中经验把汽车、摄像头、身份证等当代物件写成可感现场，最弱是第1至3章反复重演匝道、出租车和查证流程，虽有细节接力却明显拖慢节拍并削弱连续性。"
+    },
+    "grok": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "最弱是 naturalness，读起来有解释腔；最强是 scene，动作对白物件反应彼此接力。"
+    },
+    "k3": {
+      "score": 68.8,
+      "bands": {
+        "naturalness": 3,
+        "voice": 3,
+        "scene": 3,
+        "continuity": 2
+      },
+      "comment": "最强处：视角人物通过经验认知过滤现代物件的写法持续有效，如将手机称作\"黑色小板子\"、导航称作\"匣子\"、警车灯光形容为\"红蓝的光\"，既符合修真者认知又保留当代特征；最弱处：第4、5章节奏拖沓，周聿怀对玉牌态度的犹豫、房东查房等场景未能高效推进，部分重复性描写压缩不足。"
+    },
+    "ds-v4-pro": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "最强是以沈却视角展开的陌生化氛围，但第1—2章重复开场拖慢节拍，且比喻过密、解释性句子偏多，削弱了现场实感。"
+    },
+    "glm-5.3": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 3,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "视角过滤和第7章叩门一场是真功夫，但全篇像两版草稿硬缝：第1章末人已被警灯钉在出租车旁，第2章却退回坡底把认车、拦查整段重演，第2章连查两遍身份证、第3章两遍规矩两遍银子，第6章明写「师父拢共没给过地名」、第7章信封上却印着「城南青槐巷十一号」，重复流程从不压缩，节拍处处接不上。"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "judge": "ds-v4-pro",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "e2b8a4ec51fc07b9411e6985bf8d2edbaa515cc2c51d8bfee87d32f8c1e34f87",
+  "bands": {
+    "naturalness": 1,
+    "voice": 1,
+    "scene": 1,
+    "continuity": 1
+  },
+  "score": 25.0,
+  "comment": "最弱处在连续性：段落大量重复、错位，同一动作与内心被反复粘贴，节拍断裂且几乎不推进场景。"
+}

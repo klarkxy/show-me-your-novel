@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "469de5c246a1ceb822872b88be4b895491df059e86b086c9647fe8cc6b45d966",
+  "bands": {
+    "naturalness": 1,
+    "voice": 1,
+    "scene": 1,
+    "continuity": 2
+  },
+  "score": 31.2,
+  "comment": "文风仙侠味浓但场景执行重复灯牌车流灵气描写，缺乏自然流畅与节奏压缩"
+}

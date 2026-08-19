@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "3486844a57232719368a4f6f650e753273648756afe0bb04082fbee064fd5482",
+  "bands": {
+    "naturalness": 3,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 56.2,
+  "comment": "单场戏的感官细节和沈却视角的误认（铁盒子、铜镜、机械耳目）很扎实，但第1/2/3章、第5/6章、第7章内部把同一段相遇与送达反复重写了好几遍且细节互相矛盾（302与7-1、哑叔多次重现），节拍完全接不上，像是多版草稿直接拼接。"
+}

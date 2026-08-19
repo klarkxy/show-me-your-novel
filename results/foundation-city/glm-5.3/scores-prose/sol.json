@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "552005b1ad4869ad7afb4820f364e946cd4c190259b00a0fb0a40122e03fe071",
+  "bands": {
+    "naturalness": 3,
+    "voice": 4,
+    "scene": 3,
+    "continuity": 2
+  },
+  "score": 75.0,
+  "comment": "最强是始终用沈却的山中经验把汽车、摄像头、身份证等当代物件写成可感现场，最弱是第1至3章反复重演匝道、出租车和查证流程，虽有细节接力却明显拖慢节拍并削弱连续性。"
+}

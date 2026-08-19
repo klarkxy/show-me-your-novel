@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "4d4a3b23ae5bfe6a2c1bf3d23abd723433b95552840ede2fc8524af084d6926f",
+  "bands": {
+    "naturalness": 1,
+    "voice": 1,
+    "scene": 2,
+    "continuity": 0
+  },
+  "score": 25.0,
+  "comment": "交警盘问、出租车接走和玉牌引发急刹等段落有可视化动作接力，但“铁盒子”“钢铁洪流”等比喻与灵气稀薄、下山别惹眼等信息反复解释，且第6、7章重复并改写同一段进城过程，严重破坏现场感与连续性。"
+}

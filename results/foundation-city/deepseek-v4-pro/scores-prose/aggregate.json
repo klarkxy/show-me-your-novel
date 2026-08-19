@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "deepseek-v4-pro",
+  "complete": true,
+  "overall": 43.8,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "469de5c246a1ceb822872b88be4b895491df059e86b086c9647fe8cc6b45d966",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 2.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 2.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 43.8,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 0
+      },
+      "comment": "山脊初见灯海、半诀反冲和手机监控等细节有现场感，但第1章末警灯、第2章出租车接人、第3章重演拦查、第5章再回放明显重复，导致场景推进被流程复述截断。"
+    },
+    "grok": {
+      "score": 31.2,
+      "bands": {
+        "naturalness": 1,
+        "voice": 1,
+        "scene": 1,
+        "continuity": 2
+      },
+      "comment": "文风仙侠味浓但场景执行重复灯牌车流灵气描写，缺乏自然流畅与节奏压缩"
+    },
+    "k3": {
+      "score": 56.2,
+      "bands": {
+        "naturalness": 3,
+        "voice": 2,
+        "scene": 3,
+        "continuity": 1
+      },
+      "comment": "单场执行和临场感很强，但正文里嵌着'替换正文'的交接指令，且第2/3/5章把山口上车、交警查证反复重写成互相矛盾的多个版本，第6章结尾指向城西守卫楼、第7章又重头开往春明路，节拍根本接不上。"
+    },
+    "ds-v4-pro": {
+      "score": 43.8,
+      "bands": {
+        "naturalness": 2,
+        "voice": 2,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "最弱处在第4章内嵌的“替换正文”JSON交接卡，把叙述拦腰截断，使连续性崩坏。"
+    },
+    "glm-5.3": {
+      "score": 43.8,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 1,
+        "continuity": 1
+      },
+      "comment": "最弱处是连续性：第4章残留未整合的\"替换正文\"JSON编辑痕迹，且出租车接人、查身份证同一节拍在第2/3/5章反复重置重演，第6章结尾的守卫大门与第7章开头的春明路十九号完全对不上；最强处是视角过滤，旁白用当代名物、心里用山里经验错认，执行得最稳。"
+    }
+  }
+}

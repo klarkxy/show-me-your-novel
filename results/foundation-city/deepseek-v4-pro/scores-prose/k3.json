@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "469de5c246a1ceb822872b88be4b895491df059e86b086c9647fe8cc6b45d966",
+  "bands": {
+    "naturalness": 3,
+    "voice": 2,
+    "scene": 3,
+    "continuity": 1
+  },
+  "score": 56.2,
+  "comment": "单场执行和临场感很强，但正文里嵌着'替换正文'的交接指令，且第2/3/5章把山口上车、交警查证反复重写成互相矛盾的多个版本，第6章结尾指向城西守卫楼、第7章又重头开往春明路，节拍根本接不上。"
+}

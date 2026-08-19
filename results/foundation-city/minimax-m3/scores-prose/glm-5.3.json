@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "496f756249b75f2e83b2647ce1ec05e5c6ad44d6b4ef0300edd317637a4106ae",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 50.0,
+  "comment": "最弱在跨章接缝：第2章结尾人已进周家电梯、第3章却当无事发生还补写从未出现的'亮过玉牌'，第6章末两人已下车逆行步行、第7章又坐回车里，加上车牌号前后不一、信'读了第一行'与全程未拆矛盾、以及第2/5章两处整段重复，把单场景里相当扎实的感官接力（第1章霜变水泥、掐诀反噬）拆散了。"
+}

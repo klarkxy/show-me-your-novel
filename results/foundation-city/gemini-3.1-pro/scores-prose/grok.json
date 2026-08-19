@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "f1f9da0ec294231a0ee35901dc9ba0db756ec997529de88af09bc0dcf6438b33",
+  "bands": {
+    "naturalness": 0,
+    "voice": 1,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 25.0,
+  "comment": "文风排比腔重似模板，场景动作有张力但重复流程未压缩，连续性节拍跳跃明显"
+}

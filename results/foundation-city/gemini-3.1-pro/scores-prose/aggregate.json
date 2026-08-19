@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "gemini-3.1-pro",
+  "complete": true,
+  "overall": 50.0,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "f1f9da0ec294231a0ee35901dc9ba0db756ec997529de88af09bc0dcf6438b33",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 2.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 2.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 0
+      },
+      "comment": "最弱处是场景虽有车流、警灯、证件和玉牌等具体接力，却反复重演同一段拦查与上车流程，且第1章夜间初遇、第2章再次从头盘查、第3至4章入住路线、第5章又回到此前交警现场，造成明显的时间与行动断裂。"
+    },
+    "grok": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 0,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "文风排比腔重似模板，场景动作有张力但重复流程未压缩，连续性节拍跳跃明显"
+    },
+    "k3": {
+      "score": 75.0,
+      "bands": {
+        "naturalness": 3,
+        "voice": 4,
+        "scene": 3,
+        "continuity": 2
+      },
+      "comment": "视角转化执行极佳，沈却将现代物件对应修仙体系的认知描写生动精准；但第1章与第4章哑叔消失、第2章与第5章查身份证等关键场景存在明显的重复执行，像是同一事件写了两遍。"
+    },
+    "ds-v4-pro": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 2,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "以沈却视角辨识现代事物时新鲜感较强，但重复的‘交警盘问—司机解围’流程拖沓，削弱了节奏。"
+    },
+    "glm-5.3": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "视角过滤做得最扎实——沈却眼中'铁壳怪兽''黑色硬泥路'与韩闯段落里'执法记录仪''卡口镜头'两套语感分明；但章节间衔接严重断裂，第1章结尾警灯钉人、第2章却像重新演一遍拦查且时间从深夜跳成烈日，第4到第5章沈却如何到了汽修厂完全没交代，加上'从pocket掏出打火机'和'一步两部''双双手掌'等错漏，读感像多段拼接而非一口气写下的现场。"
+    }
+  }
+}

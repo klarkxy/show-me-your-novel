@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "judge": "ds-v4-pro",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "3486844a57232719368a4f6f650e753273648756afe0bb04082fbee064fd5482",
+  "bands": {
+    "naturalness": 2,
+    "voice": 2,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 43.8,
+  "comment": "对现代物件的陌生化处理较稳定，但多章重复同一公路拦截场景，节拍反复未能收束。"
+}

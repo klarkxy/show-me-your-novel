@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "80d506c2a9335935e7e25890b448d61f7f30353cc7d5e8c50117391296365194",
+  "bands": {
+    "naturalness": 2,
+    "voice": 2,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 43.8,
+  "comment": "最弱是连贯性：第1/2/3/6/7章反复重写同一场高速初遇且关键细节互相矛盾（周聿怀第一次借口是剧组、第二次变成表弟、第三次直接认玉牌），节拍完全接不上；单场视角转换和感官细节尚可，但'抿紧嘴''玉牌冰凉''把真气咽回去'等短语重复十余次已显模板化。"
+}

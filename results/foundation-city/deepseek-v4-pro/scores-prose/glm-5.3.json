@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "469de5c246a1ceb822872b88be4b895491df059e86b086c9647fe8cc6b45d966",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 1,
+    "continuity": 1
+  },
+  "score": 43.8,
+  "comment": "最弱处是连续性：第4章残留未整合的\"替换正文\"JSON编辑痕迹，且出租车接人、查身份证同一节拍在第2/3/5章反复重置重演，第6章结尾的守卫大门与第7章开头的春明路十九号完全对不上；最强处是视角过滤，旁白用当代名物、心里用山里经验错认，执行得最稳。"
+}

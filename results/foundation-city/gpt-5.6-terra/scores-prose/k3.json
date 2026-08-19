@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "d85cd03501f1cd9e959a70ba70989cebb07f4166e50ba9273f46ac54d9e89086",
+  "bands": {
+    "naturalness": 2,
+    "voice": 3,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 50.0,
+  "comment": "单场景内视角过滤和物件接力扎实（摄像头、铜钱、跳闸都立得住），但第1/2/5/6/7章把山口遇警、出租车、玉牌发烫同一批节拍重写了三四遍且结果互相矛盾，第4章还凭空冒出一张能刷开房门的薄卡，整篇更像草稿拼接而非连贯正文。"
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "judge": "ds-v4-pro",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "496f756249b75f2e83b2647ce1ec05e5c6ad44d6b4ef0300edd317637a4106ae",
+  "bands": {
+    "naturalness": 2,
+    "voice": 2,
+    "scene": 2,
+    "continuity": 2
+  },
+  "score": 50.0,
+  "comment": "最弱处是大量“不是…，是…”对举句式和重复的呼吸、探气、掐诀描写，使叙述显得模板化，削弱了现场感。"
+}

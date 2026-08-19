@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "3486844a57232719368a4f6f650e753273648756afe0bb04082fbee064fd5482",
+  "bands": {
+    "naturalness": 1,
+    "voice": 1,
+    "scene": 1,
+    "continuity": 0
+  },
+  "score": 18.8,
+  "comment": "最严重的问题是第1—5章反复重写沈却下山、遇韩闯、上周聿怀出租车的同一段经历，且夜晚与傍晚、上下车关系等细节互相冲突，导致现场感被模板化解释和重复流程彻底冲散。"
+}

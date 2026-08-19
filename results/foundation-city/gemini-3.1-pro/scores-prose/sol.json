@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "f1f9da0ec294231a0ee35901dc9ba0db756ec997529de88af09bc0dcf6438b33",
+  "bands": {
+    "naturalness": 1,
+    "voice": 1,
+    "scene": 2,
+    "continuity": 0
+  },
+  "score": 25.0,
+  "comment": "最弱处是场景虽有车流、警灯、证件和玉牌等具体接力，却反复重演同一段拦查与上车流程，且第1章夜间初遇、第2章再次从头盘查、第3至4章入住路线、第5章又回到此前交警现场，造成明显的时间与行动断裂。"
+}

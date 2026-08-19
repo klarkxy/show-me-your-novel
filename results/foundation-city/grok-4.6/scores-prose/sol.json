@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "e2b8a4ec51fc07b9411e6985bf8d2edbaa515cc2c51d8bfee87d32f8c1e34f87",
+  "bands": {
+    "naturalness": 0,
+    "voice": 1,
+    "scene": 0,
+    "continuity": 0
+  },
+  "score": 6.2,
+  "comment": "同一段“沈却站在公路边坡上”与查身份证、出租车往返被反复重写，且他前面没有手机和证件，后文却突然拿着手机、证件卡，现场执行与连续性均已失控。"
+}

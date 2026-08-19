@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "grok-4.6",
+  "complete": true,
+  "overall": 25.0,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "e2b8a4ec51fc07b9411e6985bf8d2edbaa515cc2c51d8bfee87d32f8c1e34f87",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 1.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 2.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 1.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 6.2,
+      "bands": {
+        "naturalness": 0,
+        "voice": 1,
+        "scene": 0,
+        "continuity": 0
+      },
+      "comment": "同一段“沈却站在公路边坡上”与查身份证、出租车往返被反复重写，且他前面没有手机和证件，后文却突然拿着手机、证件卡，现场执行与连续性均已失控。"
+    },
+    "grok": {
+      "score": 31.2,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 1
+      },
+      "comment": "文风中大量重复段落和模板式描述，场景执行缺乏连贯推进"
+    },
+    "k3": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 0
+      },
+      "comment": "整段文字大面积自我复制粘贴（第1章警车段落、第2章上车段落、第3章保安段、第6章结尾段几乎逐字重复两遍以上），情节节拍彼此打架（同一章内出租车来了又走、走了又来，保安反应段落错位插进司机场景），场景完全失去接力，这不是失手而是结构性崩坏，continuity 无法成立。"
+    },
+    "ds-v4-pro": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 1,
+        "scene": 1,
+        "continuity": 1
+      },
+      "comment": "最弱处在连续性：段落大量重复、错位，同一动作与内心被反复粘贴，节拍断裂且几乎不推进场景。"
+    },
+    "glm-5.3": {
+      "score": 31.2,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 1
+      },
+      "comment": "最弱在节拍与复读：同一场景（边坡—出租车—查身份证）每章整场重演且大段文字逐字重复，哑叔身为哑者却开口说话、身无手机证件的沈却口袋里反复亮起手机、摸到印着自己照片的证件卡，视角与时间线多处断裂；仅哑叔入雾'来路像被一只手抹平'等零星句子尚见笔力。"
+    }
+  }
+}

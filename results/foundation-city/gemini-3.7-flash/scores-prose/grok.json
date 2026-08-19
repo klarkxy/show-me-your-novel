@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "a8c87bfd6925ef59893c90a3e10b21e9a6502ce6f3a360aa194d2967c93eb359",
+  "bands": {
+    "naturalness": 1,
+    "voice": 1,
+    "scene": 2,
+    "continuity": 1
+  },
+  "score": 31.2,
+  "comment": "文风堆砌排比过多，缺乏现场感与内心独白"
+}

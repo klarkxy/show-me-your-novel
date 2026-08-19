@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "judge": "sol",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "fad94ad36f2060cac10eee1d1376d6eb654d43535411e508e1d5d3f582cbcc9f",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 2,
+    "continuity": 0
+  },
+  "score": 31.2,
+  "comment": "公路初遇、交警盘问和出租车接应本可形成有力开场，但同一流程在多章反复重写，且第7章末段整段重复，现场感被模板化复述和节拍断裂明显削弱。"
+}

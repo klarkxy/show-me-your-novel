@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "minimax-m3",
+  "complete": true,
+  "overall": 50.0,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "496f756249b75f2e83b2647ce1ec05e5c6ad44d6b4ef0300edd317637a4106ae",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 2.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 3.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 1.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 0
+      },
+      "comment": "第2、3章几乎重演同一段拦车—上车流程，第6章又把已发生的乘车重置为“车开出山口收费站”，导致场景接续和叙事现场感直接断裂。"
+    },
+    "grok": {
+      "score": 68.8,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 3,
+        "continuity": 3
+      },
+      "comment": "场景执行最强，感官细节精准连贯，人物视角自然融入现代物件"
+    },
+    "k3": {
+      "score": 68.8,
+      "bands": {
+        "naturalness": 3,
+        "voice": 4,
+        "scene": 3,
+        "continuity": 1
+      },
+      "comment": "视角过滤是最强处——公路、LED、手机、身份证全部经山里人的误认写出来，稳而不炫；但连续性明显失守：第2章'夜风吹袍角'整段重复、第2章结尾已到住处而第3章又重回车上重来一遍、第1章与第7章说信不许拆而第4章却说'第一行他就读了'，节拍互相打架。"
+    },
+    "ds-v4-pro": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 2,
+        "scene": 2,
+        "continuity": 2
+      },
+      "comment": "最弱处是大量“不是…，是…”对举句式和重复的呼吸、探气、掐诀描写，使叙述显得模板化，削弱了现场感。"
+    },
+    "glm-5.3": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "最弱在跨章接缝：第2章结尾人已进周家电梯、第3章却当无事发生还补写从未出现的'亮过玉牌'，第6章末两人已下车逆行步行、第7章又坐回车里，加上车牌号前后不一、信'读了第一行'与全程未拆矛盾、以及第2/5章两处整段重复，把单场景里相当扎实的感官接力（第1章霜变水泥、掐诀反噬）拆散了。"
+    }
+  }
+}

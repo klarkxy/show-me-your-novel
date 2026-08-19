@@ -1,0 +1,79 @@
+{
+  "schema": "novel-prose-aggregate.v3",
+  "candidate": "gpt-5.6-terra",
+  "complete": true,
+  "overall": 37.5,
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "d85cd03501f1cd9e959a70ba70989cebb07f4166e50ba9273f46ac54d9e89086",
+  "n": 5,
+  "bands": {
+    "naturalness": {
+      "median": 2.0,
+      "n": 5
+    },
+    "voice": {
+      "median": 2.0,
+      "n": 5
+    },
+    "scene": {
+      "median": 2.0,
+      "n": 5
+    },
+    "continuity": {
+      "median": 0.0,
+      "n": 5
+    }
+  },
+  "judges": {
+    "sol": {
+      "score": 25.0,
+      "bands": {
+        "naturalness": 1,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 0
+      },
+      "comment": "沈却以修士经验误认手机、摄像头和身份证的视角很清楚，但第2、5、6、7章反复重写下山、出租车和盘问流程，令场景执行显出模板化循环，并直接破坏开局的连续节拍。"
+    },
+    "grok": {
+      "score": 37.5,
+      "bands": {
+        "naturalness": 2,
+        "voice": 1,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "自然流畅但有排比腔，场景有推进但主角视角缺失"
+    },
+    "k3": {
+      "score": 50.0,
+      "bands": {
+        "naturalness": 2,
+        "voice": 3,
+        "scene": 2,
+        "continuity": 1
+      },
+      "comment": "单场景内视角过滤和物件接力扎实（摄像头、铜钱、跳闸都立得住），但第1/2/5/6/7章把山口遇警、出租车、玉牌发烫同一批节拍重写了三四遍且结果互相矛盾，第4章还凭空冒出一张能刷开房门的薄卡，整篇更像草稿拼接而非连贯正文。"
+    },
+    "ds-v4-pro": {
+      "score": 31.2,
+      "bands": {
+        "naturalness": 2,
+        "voice": 2,
+        "scene": 1,
+        "continuity": 0
+      },
+      "comment": "文本由多个重复且互相矛盾的片段拼接，山脊、出租车、交警查身份证等场景多次重演，连续性几乎完全断裂。"
+    },
+    "glm-5.3": {
+      "score": 37.5,
+      "bands": {
+        "naturalness": 2,
+        "voice": 2,
+        "scene": 2,
+        "continuity": 0
+      },
+      "comment": "最弱处是节拍彻底断裂：第1、2、5、7章把'下山—查身份证—出租车试探'同一序列重启了三四遍且细节互相矛盾（韩闯三次当作初见盘问、第四章沈却竟重问周聿怀姓名、旅馆前台忽男忽女），像多稿拼接；单看笔触，用修士眼光写柏油路、摄像头与证件倒是全篇最稳的亮点。"
+    }
+  }
+}

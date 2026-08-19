@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "judge": "grok",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "3486844a57232719368a4f6f650e753273648756afe0bb04082fbee064fd5482",
+  "bands": {
+    "naturalness": 1,
+    "voice": 1,
+    "scene": 2,
+    "continuity": 2
+  },
+  "score": 37.5,
+  "comment": "叙述中充斥模板腔和解释性旁白，像作者在教读者凡人世界常识，读起来不自然。"
+}

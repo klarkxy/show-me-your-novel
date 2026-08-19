@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "judge": "k3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "552005b1ad4869ad7afb4820f364e946cd4c190259b00a0fb0a40122e03fe071",
+  "bands": {
+    "naturalness": 3,
+    "voice": 3,
+    "scene": 3,
+    "continuity": 2
+  },
+  "score": 68.8,
+  "comment": "最强处：视角人物通过经验认知过滤现代物件的写法持续有效，如将手机称作\"黑色小板子\"、导航称作\"匣子\"、警车灯光形容为\"红蓝的光\"，既符合修真者认知又保留当代特征；最弱处：第4、5章节奏拖沓，周聿怀对玉牌态度的犹豫、房东查房等场景未能高效推进，部分重复性描写压缩不足。"
+}

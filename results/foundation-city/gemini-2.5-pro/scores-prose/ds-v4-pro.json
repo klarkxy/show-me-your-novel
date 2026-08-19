@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "judge": "ds-v4-pro",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "4d4a3b23ae5bfe6a2c1bf3d23abd723433b95552840ede2fc8524af084d6926f",
+  "bands": {
+    "naturalness": 1,
+    "voice": 2,
+    "scene": 1,
+    "continuity": 1
+  },
+  "score": 31.2,
+  "comment": "最弱处在连续性：章节间时间线错乱、场景重复（如多次雷同的城市景观与盘问），且第6、7章内容与第5章交警上门事件顺序矛盾，导致节拍断裂。"
+}

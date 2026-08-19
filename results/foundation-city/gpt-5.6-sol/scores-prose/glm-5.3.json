@@ -1,0 +1,16 @@
+{
+  "schema": "novel-prose-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "judge": "glm-5.3",
+  "frozen_sha256": "10a12575b08a36576f9b5163e2cae01e6dcf655c3d4a7ec589de39aaeed37217",
+  "input_hash": "fad94ad36f2060cac10eee1d1376d6eb654d43535411e508e1d5d3f582cbcc9f",
+  "bands": {
+    "naturalness": 2,
+    "voice": 2,
+    "scene": 2,
+    "continuity": 0
+  },
+  "score": 37.5,
+  "comment": "最弱是连续性：第3、5章把上车、查证等同一批节拍当替代稿重讲（第5章沈却被带进警局，与第2章'表弟'当场领走直接矛盾，车牌晋B/晋A不一，第7章还有整段原文重复粘贴），而单场戏内的视角过滤与物件细节是全篇最强处。"
+}
