@@ -1503,7 +1503,7 @@ def page_head(
       <span>{SITE_TITLE}</span>
     </a>
     <nav class="site-nav" aria-label="主导航">
-      <a href="{root_prefix}index.html">开局</a>
+      <a href="{root_prefix}index.html">榜单</a>
       <a href="{root_prefix}design/index.html">设计</a>
       <a href="{root_prefix}history/index.html">V2.1 历史</a>
       <a href="{root_prefix}novels/index.html">Legacy</a>
@@ -1846,7 +1846,7 @@ def render_home(
     )
 
     back_link = (
-        f'<a class="back-link" href="{root_prefix}index.html">← 开局</a>\n'
+        f'<a class="back-link" href="{root_prefix}index.html">← 榜单</a>\n'
         if root_prefix
         else ""
     )
@@ -2558,6 +2558,71 @@ def load_design_board(
     return found
 
 
+def _opening_band(score: dict[str, Any] | None, key: str) -> float | None:
+    if not isinstance(score, dict):
+        return None
+    entry = (score.get("bands") or {}).get(key) if isinstance(score.get("bands"), dict) else None
+    if not isinstance(entry, dict):
+        return None
+    value = entry.get("median")
+    return float(value) if isinstance(value, (int, float)) else None
+
+
+def _opening_spark(score: dict[str, Any] | None) -> str:
+    if not score:
+        return ""
+    bars = []
+    for key, label in PROSE_BAND_LABELS.items():
+        raw = _opening_band(score, key)
+        offset = (raw / 4.0 * 100.0 - 50.0) if raw is not None else 0.0
+        shown = f"{raw:.1f}" if raw is not None else "—"
+        bars.append(
+            f'<span class="spark-bar" style="--spark:{offset:.1f}" '
+            f'title="{esc(label)} {shown}"></span>'
+        )
+    return f'<span class="profile-spark" aria-hidden="true">{"".join(bars)}</span>'
+
+
+def _opening_leaderboard_row(item: dict[str, Any], *, tie_next: bool) -> str:
+    score = item.get("prose_score") or {}
+    overall = score.get("overall") if isinstance(score.get("overall"), (int, float)) else None
+    rankable = item.get("rank") is not None
+    entry = f"""<a class="entry-link" href="results/foundation-city/{esc(item['model_id'])}.html">
+      <span class="entry-model">{esc(item['model_name'])}</span>
+      <span class="entry-title">{item['chapters']} 章 · {item['chars']:,} 字</span>
+      <span class="entry-date">{esc(item['blurb'])}</span>
+      {_opening_spark(score if rankable else None)}
+    </a>"""
+    rank_text = f"{item['rank']:02d}" if rankable else ""
+    tie_mark = (
+        '<span class="ci-overlap" data-tie-mark>=</span>' if tie_next else ""
+    )
+    data_bands = "\n".join(
+        f'    data-{key}="{_data_number(_opening_band(score, key))}"'
+        for key in PROSE_BAND_LABELS
+    )
+    score_cells = "\n".join(
+        (
+            f'  <td class="metric-col" data-metric="{key}" '
+            f'data-label="{esc(label)}" hidden>'
+            f'{_format_score(_opening_band(score, key))}</td>'
+        )
+        for key, label in PROSE_BAND_LABELS.items()
+    )
+    return f"""<tr data-model-id="{esc(item['model_id'])}" data-model="{esc(item['model_name'])}"
+    data-config-order="{item['config_order']}"
+    data-rankable="{'true' if rankable else 'false'}"
+    data-overall="{_data_number(overall)}"
+{data_bands}>
+  <td class="rank-cell" data-rank>{rank_text}{tie_mark}</td>
+  <th scope="row">
+    {entry}
+  </th>
+  <td class="metric-col" data-metric="overall" data-label="综合">{_format_score(overall)}</td>
+{score_cells}
+</tr>"""
+
+
 def render_opening_index(
     openings: list[dict[str, Any]],
     direction: str,
@@ -2570,63 +2635,101 @@ def render_opening_index(
         for item in openings
         if item.get("rank") is not None
     )
-    cards = []
-    for item in openings:
-        score = item.get("prose_score") or {}
-        overall = score.get("overall")
-        if item.get("rank") is not None and isinstance(overall, (int, float)):
-            meta = f"{item['rank']:02d} · {overall:.1f} · {item['chapters']} 章 · {item['chars']:,} 字"
-        else:
-            meta = f"{item['chapters']} 章 · {item['chars']:,} 字"
-        cards.append(
-            f"""<a class="legacy-card" href="results/foundation-city/{esc(item['model_id'])}.html">
-  <h2>{esc(item['model_name'])}</h2>
-  <p class="card-meta">{esc(meta)}</p>
-  <p>{esc(item['blurb'])}</p>
-</a>"""
-        )
-    cards_html = "\n".join(cards) or '<p class="empty-copy">还没有完整开局正文。</p>'
+    rendered_rows: list[str] = []
+    for index, item in enumerate(openings):
+        tie_next = False
+        overall = (item.get("prose_score") or {}).get("overall")
+        if item.get("rank") is not None and overall is not None:
+            for nxt in openings[index + 1 :]:
+                if nxt.get("rank") is None:
+                    continue
+                tie_next = (nxt.get("prose_score") or {}).get("overall") == overall
+                break
+        rendered_rows.append(_opening_leaderboard_row(item, tie_next=tie_next))
     topic = esc(direction.strip() or "筑基翻山见高楼")
     world = esc(world_name or (openings[0]["title"] if openings else "开局"))
     if ranked and provisional:
-        sub = f"冻结世界《{world}》· 同一人物和章纲 · 四席文风分，缺 Opus"
-        note = (
-            "世界、人物、章纲已锁死。正文按节写，不另补设定。"
-            "简介取各家正文开头。第五席是 GLM 5.3；未齐套前先按已到的票看，"
-            "这不是完整五席榜。改革开放长篇在"
-            '<a href="history/index.html">V2.1 历史</a>。'
-            "各模型自己交的世界/人物/章纲在"
-            '<a href="design/index.html">设计</a>。'
-        )
-    elif ranked:
+        chip = '<p class="protocol-chip">第五席未齐套 · 先按已到的票排</p>'
         sub = f"冻结世界《{world}》· 同一人物和章纲 · 只评文风与场景"
-        note = (
-            "世界、人物、章纲已锁死。正文按节写，不另补设定。"
-            "简介取各家正文开头。改革开放长篇在"
-            '<a href="history/index.html">V2.1 历史</a>。'
-            "各模型自己交的世界/人物/章纲在"
-            '<a href="design/index.html">设计</a>。'
-        )
+    elif ranked:
+        chip = '<p class="protocol-chip">只评文风与场景 · 不重评设定</p>'
+        sub = f"冻结世界《{world}》· 同一人物和章纲 · 五评委"
     else:
-        sub = f"冻结世界《{world}》· 同一人物和章纲 · 尚无文风评分"
-        note = (
-            "世界、人物、章纲已锁死。正文按节写，不另补设定。"
-            "简介取各家正文开头，不是冻结章纲那一句。"
-            "文风评分还没出炉，先按正文读。"
-            "改革开放长篇在"
-            '<a href="history/index.html">V2.1 历史</a>。'
-            "设计段评分在"
-            '<a href="design/index.html">设计</a>。'
+        chip = '<p class="protocol-chip">尚无文风评分</p>'
+        sub = f"冻结世界《{world}》· 同一人物和章纲"
+    if rendered_rows:
+        band_headers = "".join(
+            (
+                f'<th class="metric-col" scope="col" data-metric="{key}" '
+                f'title="{esc(label)}" hidden>{esc(label)}</th>'
+            )
+            for key, label in PROSE_BAND_LABELS.items()
         )
-    return page_head("开局 · 筑基翻山见高楼", "", "page-legacy") + f"""
-<header class="page-intro">
-  <h1>筑基翻山见高楼</h1>
+        board = f"""
+<div class="table-shell">
+  <table class="leaderboard" data-pinned-metric="overall" aria-describedby="ranking-note">
+    <thead><tr>
+      <th scope="col">#</th>
+      <th scope="col">作品</th>
+      <th class="metric-col" scope="col" data-metric="overall">综合</th>
+      {band_headers}
+    </tr></thead>
+    <tbody id="leaderboard-body">{"".join(rendered_rows)}</tbody>
+  </table>
+</div>"""
+    else:
+        board = """<div class="empty-state" role="status">
+  <strong>榜单还没有开局正文。</strong>
+  <span>冻结包齐套并写完正文后重新构建站点。</span>
+</div>"""
+    metric_buttons = [
+        '<button type="button" data-sort="overall" data-direction="desc" '
+        'aria-pressed="true" title="综合">综合</button>'
+    ]
+    for key, label in PROSE_BAND_LABELS.items():
+        metric_buttons.append(
+            f'<button type="button" data-sort="{key}" data-direction="desc" '
+            f'aria-pressed="false" title="{esc(label)}">{esc(label)}</button>'
+        )
+    ranking = ""
+    if rendered_rows:
+        ranking = f"""
+<section class="ranking-panel" aria-labelledby="ranking-title">
+  <div class="ranking-toolbar">
+    <h2 id="ranking-title" class="visually-hidden">排名</h2>
+    <div class="metric-switch" role="group" aria-label="排名指标">
+      {''.join(metric_buttons)}
+    </div>
+    <div class="rank-ruler" data-rank-ruler>
+      <label class="rank-limit-label" for="rank-limit">显示</label>
+      <input id="rank-limit" type="range" min="1" max="{max(ranked, 1)}"
+        value="{max(ranked, 1)}" {'disabled' if not ranked else ''}>
+      <output for="rank-limit" id="rank-limit-output">{'前 ' + str(ranked) if ranked else '—'}</output>
+    </div>
+  </div>
+  {board}
+  <details class="info-drawer" id="ranking-note-drawer">
+    <summary>评分怎么算</summary>
+    <p id="ranking-note">综合分是自然度、声音、场景、承接四档（每档 0–4）取评委中位数后折成百分。同一冻结世界、人物和章纲，只评正文怎么写，不重打设定。</p>
+  </details>
+</section>"""
+    else:
+        ranking = board
+    return page_head(
+        "开局文风榜",
+        "",
+        "page-leaderboard",
+        leaderboard_script=True,
+    ) + f"""
+<header class="page-intro" aria-labelledby="page-title">
+  <h1 id="page-title">开局文风榜</h1>
+  {chip}
   <p class="page-sub">{sub}</p>
-  <p class="page-meta">成稿 {len(openings)}{" · 已评分 " + str(ranked) if ranked else ""}</p>
+  <p class="page-meta">已评分 {ranked} / 全部 {len(openings)} · 评委 5</p>
 </header>
 <p>题目：{topic}</p>
-<p>{note}</p>
-<div class="legacy-grid">{cards_html}</div>
+<p>正文按节写，不另补设定。改革开放长篇在<a href="history/index.html">V2.1 历史</a>。各模型自己交的世界/人物/章纲在<a href="design/index.html">设计</a>。</p>
+{ranking}
 """ + PAGE_FOOT
 
 
@@ -2676,7 +2779,7 @@ def render_opening_detail(item: dict[str, Any]) -> str:
         "page-result",
         skip_href="#novel-title",
     ) + f"""
-<a class="back-link" href="../../index.html">← 开局</a>
+<a class="back-link" href="../../index.html">← 榜单</a>
 <article class="result-file">
   <header class="result-header">
     <h1>《{esc(item['title'])}》</h1>
@@ -2728,13 +2831,13 @@ def render_design_index(designs: list[dict[str, Any]]) -> str:
     else:
         sub = "各模型自己交的世界、人物、章纲。评分还没出炉。"
     return page_head("设计段", "../", "page-leaderboard") + f"""
-<a class="back-link" href="../index.html">← 开局</a>
+<a class="back-link" href="../index.html">← 榜单</a>
 <header class="page-intro">
   <h1>设计段</h1>
   <p class="page-sub">{sub}</p>
   <p class="page-meta">齐套 {len(designs)}{" · 已评分 " + str(ranked) if ranked else ""}</p>
 </header>
-<p>世界评规则和机构是否撑得住这道开局题；人物评此刻能不能做选择；章纲评场面、第一次不可逆和交接卡。正文榜在<a href="../index.html">开局</a>。</p>
+<p>世界评规则和机构是否撑得住这道开局题；人物评此刻能不能做选择；章纲评场面、第一次不可逆和交接卡。正文榜在<a href="../index.html">榜单</a>。</p>
 <div class="table-shell"><table class="leaderboard">
   <thead><tr>
     <th scope="col">#</th>
@@ -2759,7 +2862,7 @@ def render_legacy_index(stories: list[dict[str, Any]]) -> str:
 </a>""")
     cards_html = "\n".join(cards) or '<p class="empty-copy">没有可展示的旧题材。</p>'
     return page_head("Legacy", "../", "page-legacy") + f"""
-<a class="back-link" href="../index.html">← 开局</a>
+<a class="back-link" href="../index.html">← 榜单</a>
 <header class="page-intro">
   <h1>Legacy</h1>
 </header>

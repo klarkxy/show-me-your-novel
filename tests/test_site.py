@@ -513,9 +513,8 @@ class SiteGenerationTests(unittest.TestCase):
             opening_alias = (output / "opening" / "index.html").read_text(
                 encoding="utf-8"
             )
-            self.assertIn("开局", home)
+            self.assertIn("开局文风榜", home)
             self.assertIn("尚无文风评分", home)
-            self.assertIn("筑基翻山见高楼", home)
             self.assertIn("当你好不容易成为筑基期修士", home)
             self.assertIn("history/index.html", home)
             self.assertNotIn("data-model-id=", home)
@@ -649,6 +648,7 @@ class SiteGenerationTests(unittest.TestCase):
 
             home = (output / "index.html").read_text(encoding="utf-8")
             self.assertIn("尚无文风评分", home)
+            self.assertIn("开局文风榜", home)
             self.assertIn("隐修的城", home)
             self.assertIn("沈却站在公路边坡上，车灯扫过道袍。", home)
             self.assertIn("雾先没过哑叔的脚踝。", home)
@@ -657,10 +657,10 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("results/foundation-city/model-c.html", home)
             self.assertNotIn("results/foundation-city/model-b.html", home)
             self.assertIn("design/index.html", home)
+            self.assertIn('data-model-id="model-a"', home)
+            self.assertIn('data-sort="overall"', home)
             design = (output / "design" / "index.html").read_text(encoding="utf-8")
             self.assertIn("设计段", design)
-            self.assertNotIn("data-model-id=", home)
-            self.assertNotIn("data-sort=", home)
             self.assertNotIn("改革开放长篇模型榜", home)
 
             board = (output / "history" / "index.html").read_text(encoding="utf-8")
@@ -673,7 +673,7 @@ class SiteGenerationTests(unittest.TestCase):
                 output / "results" / "foundation-city" / "model-a.html"
             ).read_text(encoding="utf-8")
             self.assertIn('href="../../index.html"', detail)
-            self.assertIn("← 开局", detail)
+            self.assertIn("← 榜单", detail)
             self.assertIn("沈却站在公路边坡上", detail)
             self.assertNotIn("T分", detail)
             self.assertNotIn("评分剖面", detail)
@@ -782,9 +782,14 @@ class SiteGenerationTests(unittest.TestCase):
             )
             home = (output / "index.html").read_text(encoding="utf-8")
             self.assertIn("只评文风与场景", home)
-            self.assertIn("01 · 90.0", home)
-            self.assertIn("02 · 70.0", home)
-            self.assertLess(home.index("MODEL-C"), home.index("Zulu"))
+            self.assertIn("开局文风榜", home)
+            row_c = self._row(home, "model-c")
+            row_a = self._row(home, "model-a")
+            self.assertIn("data-rank>01", row_c)
+            self.assertIn("data-rank>02", row_a)
+            self.assertIn(">90.0</td>", row_c)
+            self.assertIn(">70.0</td>", row_a)
+            self.assertLess(home.index(row_c), home.index(row_a))
             self.assertNotIn("尚无文风评分", home)
             detail = (
                 output / "results" / "foundation-city" / "model-c.html"

@@ -10,7 +10,9 @@
   if (!body || !slider || !output) return;
 
   const rows = Array.from(body.querySelectorAll("tr"));
-  let activeMetric = "tscore";
+  const pinnedMetric =
+    (table && table.dataset && table.dataset.pinnedMetric) || "tscore";
+  let activeMetric = pinnedMetric;
 
   const isRankable = (row) => row.dataset.rankable === "true";
   const configOrder = (row) => {
@@ -30,7 +32,7 @@
     table.querySelectorAll(".metric-col").forEach((cell) => {
       const key = cell.getAttribute("data-metric");
       if (!key) return;
-      const show = key === "tscore" || key === metric;
+      const show = key === pinnedMetric || key === metric;
       if (show) cell.removeAttribute("hidden");
       else cell.setAttribute("hidden", "");
     });
@@ -86,7 +88,7 @@
     });
     rows.forEach((row) => {
       const mark = row.querySelector("[data-tie-mark]");
-      if (mark) mark.hidden = activeMetric !== "tscore";
+      if (mark) mark.hidden = activeMetric !== pinnedMetric;
     });
     buttons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.sort === activeMetric));
@@ -96,7 +98,7 @@
   };
 
   buttons.forEach((button) => {
-    button.addEventListener("click", () => sortRows(button.dataset.sort || "tscore"));
+    button.addEventListener("click", () => sortRows(button.dataset.sort || pinnedMetric));
   });
   slider.addEventListener("input", applyLimit);
 
