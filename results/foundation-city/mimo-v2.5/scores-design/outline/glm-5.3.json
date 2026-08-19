@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 4
+  },
+  "score": 100.0,
+  "comment": "题目一幕原样成为第一章开场，「咽下真气」的抉择连同韩闯留档在第一章结果里落地、锁死「藏」的路径并驱动后续七章的代价链，交接面全程只用must_keep/must_not_lock划界，不预写台词也不写死后史。"
+}

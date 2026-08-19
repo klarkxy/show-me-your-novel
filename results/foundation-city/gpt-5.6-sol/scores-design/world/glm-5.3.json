@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 4,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是「境界越高越难适应山外灵气」一石二鸟地封死了高阶救兵与主角无敌两条捷径，四条开局出路也都各自标明代价、机构三限互相咬合；唯山内外语言是否相通全篇未交代，是仅存的暗缝。"
+}

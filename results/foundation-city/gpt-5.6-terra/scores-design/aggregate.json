@@ -1,12 +1,12 @@
 {
   "schema": "novel-design-aggregate.v3",
   "candidate": "gpt-5.6-terra",
-  "complete": false,
-  "overall": 83.3,
+  "complete": true,
+  "overall": 86.1,
   "tracks": {
     "world": {
-      "median": 79.2,
-      "n": 4,
+      "median": 83.3,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 83.3,
@@ -43,12 +43,21 @@
             "focus": 4
           },
           "comment": "最强处在focus：用‘山口禁制关闭、不能立刻回山、只能接触少数现代人’等硬约束把题目要求的‘这一刻’逼成生存与认知冲突，未决不写死后史。"
+        },
+        "glm-5.3": {
+          "score": 100.0,
+          "bands": {
+            "constraint": 4,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "最强处是约束成环：施法留痕、未登记即非法、古物高价值却不可示人、山口禁制封死退路，把筑基修士的每条捷径都堵在机制层面，五方势力各有欲求与忌惮且全部围绕越界事件咬合；唯主角在灵气稀薄的山外如何恢复灵力未明说，是小缺口。"
         }
       }
     },
     "characters": {
-      "median": 95.8,
-      "n": 4,
+      "median": 100.0,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 100.0,
@@ -85,12 +94,21 @@
             "playable": 4
           },
           "comment": "最强处是四人的欲望、误判与注意焦点在同一个现场清晰错开，且入场余势都直接推动当场选择。"
+        },
+        "glm-5.3": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "四人知情层级、误判方式与注意焦点完全错开且互不重叠，辅警耐心耗尽仍先当普通人、骑手只剩8%电量这类入场余势都会实际改变当场判断，可直接交给下一阶段。"
         }
       }
     },
     "outline": {
       "median": 75.0,
-      "n": 4,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 75.0,
@@ -127,6 +145,15 @@
             "handoff": 1
           },
           "comment": "山外高楼的第一章拍点清晰，irreversible也落在第二章；但beats已写成逐拍动作并含台词，handoff只能1。"
+        },
+        "glm-5.3": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 2
+          },
+          "comment": "第一章把'翻过十万大山见高楼'的题目场面连同'这一刻怎么办'的抉择完整交给正文、悬念也守得干净，是最强处；最弱处是各章beats预写了'知道得越少活得越像普通人'等多句台词以及拽腕、扣肩、塞手机等逐拍动作，越出了决策边界。"
         }
       }
     }

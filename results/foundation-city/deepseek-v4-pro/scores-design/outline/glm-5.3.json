@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 1
+  },
+  "score": 75.0,
+  "comment": "最强处是第一章用『边坡见高楼—掐诀欲探—咽回真气上车—后视镜里山口合拢』把题目场面与首次不可逆同时落地且后果贯穿后续各章；最弱处是beats大量预写台词与逐拍动作（如『去城西殡仪馆找老王领具棺材』整句、00:00:03倒计时、逐颗拧螺栓的微操），越出决策边界替正文把戏写死。"
+}

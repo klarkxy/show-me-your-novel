@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 2
+  },
+  "score": 66.7,
+  "comment": "三层知情梯度是最大亮点——同一缕出山灵气会被凡人读成'怪人'、被赵隐读成'出山修士'，误判天然分层；但张明'被修士认出'的底线泄露了他并不相信的存在，叶青'被求用灵力'的拒绝条件在此刻无人能触发，且'山里习惯'这一暴露引擎始终未被具体点名，现场接线有断点。"
+}

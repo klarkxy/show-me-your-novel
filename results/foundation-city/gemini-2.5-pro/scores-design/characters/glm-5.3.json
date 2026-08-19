@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是同一目标被三层知情切开——陆远探灵气、赵清认同类、小王只看见破衣长发的'驴友'，误读与警觉同框成戏；最弱是陆远的'立足'偏终身目标，此刻动机需靠入场状态补齐。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 3
+  },
+  "score": 75.0,
+  "comment": "第五、六章把不可逆落成「删视频本身即代价、债记在别人名下」并当场结清，是全案最稳的一手；失手在交接卡仍预写「收着点」「这就是为什么要藏」等锚定台词与「车头偏半尺」式微动作，且第一章仅以「车流灯牌」带过题目里的高楼大厦场面。"
+}

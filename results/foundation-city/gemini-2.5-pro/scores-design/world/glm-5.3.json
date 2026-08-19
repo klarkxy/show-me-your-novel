@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强处是开局约束与禁忌合力把'龙傲天'、速通致富、科技秒败三条捷径都堵死，逼开局只剩挣扎求生这一条戏路；最弱处是全场只有异管总局一家机构唱独角戏，且未交代储物袋里的灵石能否当'灵气电池'绕开山外法力恢复极慢的规则。"
+}

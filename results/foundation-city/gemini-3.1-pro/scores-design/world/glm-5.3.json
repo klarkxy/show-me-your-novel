@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "最强处是'灵气用一点少一点'的稀缺经济把主角逼进监管局与黑市的夹缝、天然挡住法术碾压捷径；最弱处是'微弱噪音干扰'与黑市'代用能源'均未定价，神识近乎免费的信息优势可能漏成隐性后门。"
+}

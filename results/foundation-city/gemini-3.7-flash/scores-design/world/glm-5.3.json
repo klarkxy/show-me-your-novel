@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强处是'城区无野生灵气可吸、无身份编码、筑基对量产灵导装备无断代优势、特管局不得径杀无攻击意图者'四重互锁，把'这一刻怎么办'逼成真两难且不预写后史；最弱处是环保署的罚单与信誉降级对没有终端的黑户根本无从生效，而悬置的古道基底层漏洞等于给主角留了一条规则未封死的翻盘后门。"
+}

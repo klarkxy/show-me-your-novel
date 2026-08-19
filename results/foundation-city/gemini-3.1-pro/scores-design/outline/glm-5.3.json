@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 3
+  },
+  "score": 75.0,
+  "comment": "最强处是第一章开场即落地题目场面（翻山见楼、灵气稀薄、咽回真气），且不可逆选择明确落在第三章'散气上车'的结果里并由四五章承接后果；最弱处是第一章must_keep'绝大多数是不知道修仙的普通人'越出了沈却山脊视角当下可知的范围，只能靠叙述硬塞。"
+}

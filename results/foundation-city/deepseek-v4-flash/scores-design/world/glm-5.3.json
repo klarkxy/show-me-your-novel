@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 4,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是约束互锁：灵力持续流失、术式十不存一、枪械可致命、无身份无现代常识，连这套世界自己提供的捷径（聚灵阵回蓝、灵力干扰电子脱身、残灯会假身份）都被'不能久留庇护''异常痕迹可被专业机构追察'逐条堵死；唯一没上锁的门是'主角为何不能折返大山'，目前只悬在未解列表里。"
+}

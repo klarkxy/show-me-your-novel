@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 91.7,
+  "comment": "最强处是四人知情与误判的梯度分层极干净（哑叔知而不能言、周聿怀知而藏、沈却误判山外、韩闯全盲三重误读），最弱处是场景坐标没对齐：周聿怀亲眼所见的'遁光'在沈却'翻过山脊、真气未稳'的入场里没有明确锚点，且高速边坡上既无'人流'可走进、也难有'路人'打量道袍。"
+}

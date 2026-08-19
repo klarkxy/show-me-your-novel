@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "知情与误判分层清晰、四人入场余势都足以左右当下判断是最强处；最弱是林晚晴的欲望与底线近乎职务说明，且方既明与赵闻笙同为怕暴露的藏修者、盯灵力泄漏的注意点部分重叠。"
+}

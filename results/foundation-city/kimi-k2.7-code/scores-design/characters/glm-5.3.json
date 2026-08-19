@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是知情梯度与红绿灯引信的咬合——沈衡的'剧组在那边'话术恰好寄生在林小满的误判上，而绿灯一亮她的赶路欲又直冲陆青'不可被当疯子'的底线，陈国安的清场时限与沈衡的出手窗口被同一盏灯锁死；唯'夜班末尾的倦意'与'晚高峰的焦躁'在时间上略有自相矛盾。"
+}

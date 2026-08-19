@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 3
+  },
+  "score": 83.3,
+  "comment": "最强处是第一章把题目场面完整落成'翻脊见城、当场抉择是否掐诀'并直接交给正文，最弱处是首次不可逆的后果只写成'可能错过线索'且第六章夜里重演试探将其稀释，另有哑叔仅出现一次、第二章余波文字截断等小失手。"
+}

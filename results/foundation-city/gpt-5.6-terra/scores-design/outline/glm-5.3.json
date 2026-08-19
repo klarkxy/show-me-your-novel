@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 2
+  },
+  "score": 75.0,
+  "comment": "第一章把'翻过十万大山见高楼'的题目场面连同'这一刻怎么办'的抉择完整交给正文、悬念也守得干净，是最强处；最弱处是各章beats预写了'知道得越少活得越像普通人'等多句台词以及拽腕、扣肩、塞手机等逐拍动作，越出了决策边界。"
+}

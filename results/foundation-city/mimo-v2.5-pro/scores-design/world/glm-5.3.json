@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 2,
+    "institutions": 2,
+    "focus": 3
+  },
+  "score": 58.3,
+  "comment": "最亮点是'唯筑基可穿越十万大山'直接兑现了题目里'好不容易'的门槛，但'灵气可能被垄断'用'可能'含糊带过、管理局对无证穿越者的处置态度也未定，开局的生存张力随时可能被传统门派'提供庇护'或科技集团的收编快速泄掉。"
+}

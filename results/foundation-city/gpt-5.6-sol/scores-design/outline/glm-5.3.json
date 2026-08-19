@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-sol",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 3
+  },
+  "score": 83.3,
+  "comment": "最强处是第一章用must_keep与首拍把'筑基出山第一眼见高楼车流'连同'咽回真气'的应答当场钉死、可直接开写；最弱处是首不可逆的代价被'立刻'二字软化，且部分beats预写了'古装短片亲戚''三条规矩'这类具体解法，略越纯决策边界。"
+}

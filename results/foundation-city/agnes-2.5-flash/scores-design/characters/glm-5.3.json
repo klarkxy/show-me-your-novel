@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 91.7,
+  "comment": "最强是三人知情梯度切得干净——懂山不懂城、两边都懂、只懂流程，各有各的误判与视线，欲望和拒绝方式全部落地；最弱是现场地理自相矛盾：林逢春自述站在公路旁，周师傅眼里却是他站在路中间不肯走，且小吴守的安检口与两人不在同一画格，另小吴预想的'神情恍惚'与林逢春实际的'神态张扬'也对不上。"
+}

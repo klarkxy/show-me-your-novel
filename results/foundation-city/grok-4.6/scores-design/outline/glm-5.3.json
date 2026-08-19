@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 2
+  },
+  "score": 66.7,
+  "comment": "最强处是第1章干净兑现题目场面、藏匿抉择当章落地且must_not_lock持续守住未解之谜；最弱处是2–4章beats自相矛盾（警车与出租车去向混乱、'认出道袍'重复、时序倒置）并预演抿嘴、掐诀等微动作，稀释了决策边界。"
+}

@@ -1,12 +1,12 @@
 {
   "schema": "novel-design-aggregate.v3",
   "candidate": "mimo-v2.5-pro",
-  "complete": false,
+  "complete": true,
   "overall": 69.5,
   "tracks": {
     "world": {
-      "median": 70.8,
-      "n": 4,
+      "median": 66.7,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 50.0,
@@ -43,12 +43,21 @@
             "focus": 4
           },
           "comment": "最弱处在规则只禁飞行与破坏性法术，隐身、催眠等非破坏性捷径未被封堵，但其余部分紧扣开局。"
+        },
+        "glm-5.3": {
+          "score": 58.3,
+          "bands": {
+            "constraint": 2,
+            "institutions": 2,
+            "focus": 3
+          },
+          "comment": "最亮点是'唯筑基可穿越十万大山'直接兑现了题目里'好不容易'的门槛，但'灵气可能被垄断'用'可能'含糊带过、管理局对无证穿越者的处置态度也未定，开局的生存张力随时可能被传统门派'提供庇护'或科技集团的收编快速泄掉。"
         }
       }
     },
     "characters": {
-      "median": 79.2,
-      "n": 4,
+      "median": 75.0,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 75.0,
@@ -85,12 +94,21 @@
             "playable": 2
           },
           "comment": "最强处是陈玄的误判与李隐的知情形成直接冲突；最弱处是王警缺乏主动介入的必然性，容易边缘化。"
+        },
+        "glm-5.3": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "最强处是知情差三角与底线正撞——陈玄'不容修仙被否认'直冲李隐'不容暴露'，冲突即刻可燃，且陈玄穿道袍备御风的入场余势必然改变其判断；最弱是王警仍偏职能标签、李隐'可能注意到'的入场偏被动。"
         }
       }
     },
     "outline": {
-      "median": 58.4,
-      "n": 4,
+      "median": 66.7,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 50.0,
@@ -127,6 +145,15 @@
             "handoff": 1
           },
           "comment": "最弱处在 handoff：章节内逐拍 beats 已细化到具体动作，压缩了正文的决策空间，未严格停在决策边界。"
+        },
+        "glm-5.3": {
+          "score": 83.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 3
+          },
+          "comment": "最强处是第一章把题目场面完整落成'翻脊见城、当场抉择是否掐诀'并直接交给正文，最弱处是首次不可逆的后果只写成'可能错过线索'且第六章夜里重演试探将其稀释，另有哑叔仅出现一次、第二章余波文字截断等小失手。"
         }
       }
     }

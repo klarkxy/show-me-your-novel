@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 3
+  },
+  "score": 91.7,
+  "comment": "最强处是第一章must_keep与beats把题目那一幕原样锁死、不可逆选择在第二章落地且后果双向落到沈却与周聿怀身上并在后文持续付账；最弱处是「想活就照做」「你不该现在来」「那边你不该去」等台词被逐字预写、甚至写进must_keep，越出了决策边界。"
+}

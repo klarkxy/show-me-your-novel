@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 4,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是约束成环：施法留痕、未登记即非法、古物高价值却不可示人、山口禁制封死退路，把筑基修士的每条捷径都堵在机制层面，五方势力各有欲求与忌惮且全部围绕越界事件咬合；唯主角在灵气稀薄的山外如何恢复灵力未明说，是小缺口。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强处是蜃楼大阵、灵气监控与'无证无钱、常识脱节'的开局约束层层咬合，把飞行、大法术、黑市变现、高人庇护等捷径都堵在摩擦之后；最弱处是规则中'共同维持都市''双方共同镇压'的隐修势力没有对应机构卡，成为唯一悬空的一角。"
+}

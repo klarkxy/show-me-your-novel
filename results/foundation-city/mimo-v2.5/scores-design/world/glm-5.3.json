@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强是开局约束：无芯片身份、灵力被监测、修为压制三件套把'这一刻怎么办'逼成即时生存题，且悬念清单未写死后史；最弱是'地脉残余供能的高楼'与'部分上古秘境'留出了吸灵升级的捷径未封。"
+}

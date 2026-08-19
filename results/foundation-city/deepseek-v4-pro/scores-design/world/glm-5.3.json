@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 75.0,
+  "comment": "最强处是「灵力仅三成且恢复百分之一、施法即触发监测、科技足以困住低阶修士」三重限制互相咬合，横推与速吸灵脉的捷径基本封死；最弱处是主角为何越山、此刻想要什么全无交代，「这一刻怎么办」只剩处境没有动机。"
+}

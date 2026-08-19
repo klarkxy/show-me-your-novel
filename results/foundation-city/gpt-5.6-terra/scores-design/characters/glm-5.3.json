@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gpt-5.6-terra",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "四人知情层级、误判方式与注意焦点完全错开且互不重叠，辅警耐心耗尽仍先当普通人、骑手只剩8%电量这类入场余势都会实际改变当场判断，可直接交给下一阶段。"
+}

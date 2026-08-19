@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-2.5-pro",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 2
+  },
+  "score": 66.7,
+  "comment": "最强处是第一章首拍即题目场面（翻山见车流高楼、道袍格格不入）并以交警逼近完成干净升级，不可逆选择也确实落在第二三章的结果里并由第四章'无身份即寸步难行'坐实；最弱处是beats反复预写台词与逐拍调度（如第二章切口原话'上车，此地不是说话的地方'、第六章'像一滴水汇入洪流'连比喻都写好），超出了只给决策边界的交接要求，尽管must_not_lock纪律本身保持得不错。"
+}

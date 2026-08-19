@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 4,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是把主角每条出路都标了价——无修籍即无账户即无交易，连'拿旧法口诀去登记专利变现'这条最诱人的捷径也被'旧法价值只在无专利无档案'的禁忌自我封死，四方机构各自的'不敢做'条条都是开局引擎；最弱处是'土法波动不被灵网识别'最像隐身外挂，目前主要靠禁忌条文而非规则本身压住。"
+}

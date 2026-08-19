@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5-pro",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 3,
+    "playable": 3
+  },
+  "score": 75.0,
+  "comment": "最强处是知情差三角与底线正撞——陈玄'不容修仙被否认'直冲李隐'不容暴露'，冲突即刻可燃，且陈玄穿道袍备御风的入场余势必然改变其判断；最弱是王警仍偏职能标签、李隐'可能注意到'的入场偏被动。"
+}

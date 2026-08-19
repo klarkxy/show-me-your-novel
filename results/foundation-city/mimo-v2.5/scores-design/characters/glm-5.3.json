@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "mimo-v2.5",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 3,
+    "differentiation": 4,
+    "playable": 3
+  },
+  "score": 83.3,
+  "comment": "三层知情与误判互斥得干净，林逸以为修士可公开、李默知须隐藏、陈警官只看见可疑流浪汉，同一人被读成三种真相，是全场引擎；弱在陈警官纯职责驱动缺个人利害，林逸的欲望是三件事打包而非此刻单一冲动。"
+}

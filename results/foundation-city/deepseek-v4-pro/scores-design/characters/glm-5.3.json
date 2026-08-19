@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-pro",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是误判分层且都接在拍板上：沈砚把藏修的众人读成'毫无修为'，保安当剧组流浪汉、店员当醉鬼，四种读法各配可执行的拒绝动作，而筑基未稳、交班困倦、夜班害怕这些入场余势都会实际拨动各自的选择。"
+}

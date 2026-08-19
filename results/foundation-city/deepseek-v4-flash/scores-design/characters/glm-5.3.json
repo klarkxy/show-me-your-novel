@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是知情分层与误判引擎——阿苓笃定'此地无人修仙'而四个暗处视线各怀来意、注意焦点互不重叠（路口气息/手腕脚踝/灵力外溢/重心与持剑手），且每人的拒绝方式都是可直接开演的具体动作（横剑/凉茶旁观/换道消失/职业微笑退场/扔桃子）；最弱是陈默与栾兴同为'隐匿观察者'，功能略有重叠，另需在下一阶段理顺何声口中'未记录者'与宋灯'过山口即备案'的层级差。"
+}

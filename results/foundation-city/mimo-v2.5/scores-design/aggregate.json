@@ -1,12 +1,12 @@
 {
   "schema": "novel-design-aggregate.v3",
   "candidate": "mimo-v2.5",
-  "complete": false,
-  "overall": 70.8,
+  "complete": true,
+  "overall": 72.2,
   "tracks": {
     "world": {
       "median": 66.7,
-      "n": 4,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 66.7,
@@ -43,12 +43,21 @@
             "focus": 4
           },
           "comment": "最弱在约束未堵死‘筑基体魄远超凡人+可收敛灵力’这条硬闯或隐匿捷径，监控只识别异常波动却未给出反制手段。"
+        },
+        "glm-5.3": {
+          "score": 83.3,
+          "bands": {
+            "constraint": 3,
+            "institutions": 3,
+            "focus": 4
+          },
+          "comment": "最强是开局约束：无芯片身份、灵力被监测、修为压制三件套把'这一刻怎么办'逼成即时生存题，且悬念清单未写死后史；最弱是'地脉残余供能的高楼'与'部分上古秘境'留出了吸灵升级的捷径未封。"
         }
       }
     },
     "characters": {
-      "median": 70.8,
-      "n": 4,
+      "median": 75.0,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 75.0,
@@ -85,12 +94,21 @@
             "playable": 3
           },
           "comment": "最弱在林逸‘不知需隐藏’却‘能决定是否隐藏修为’自相矛盾，削弱入场选择可信度；但李默与陈警官的知情错位能有效推动现场。"
+        },
+        "glm-5.3": {
+          "score": 83.3,
+          "bands": {
+            "agency": 3,
+            "differentiation": 4,
+            "playable": 3
+          },
+          "comment": "三层知情与误判互斥得干净，林逸以为修士可公开、李默知须隐藏、陈警官只看见可疑流浪汉，同一人被读成三种真相，是全场引擎；弱在陈警官纯职责驱动缺个人利害，林逸的欲望是三件事打包而非此刻单一冲动。"
         }
       }
     },
     "outline": {
       "median": 75.0,
-      "n": 4,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 75.0,
@@ -127,6 +145,15 @@
             "handoff": 1
           },
           "comment": "开局事件清晰，但八章细纲逐拍动作预写过多，交接卡不合格。"
+        },
+        "glm-5.3": {
+          "score": 100.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 4,
+            "handoff": 4
+          },
+          "comment": "题目一幕原样成为第一章开场，「咽下真气」的抉择连同韩闯留档在第一章结果里落地、锁死「藏」的路径并驱动后续七章的代价链，交接面全程只用must_keep/must_not_lock划界，不预写台词也不写死后史。"
         }
       }
     }

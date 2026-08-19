@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "deepseek-v4-flash",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 58.3,
+  "comment": "最强处是第一章干净落地题目场面、不可逆选择明确收在第5章结果并由沈却自担后果；最弱处是beats预写了十几句台词和系安全带、拴绒线挂玉牌这类逐拍微动作，交接卡远超决策边界。"
+}

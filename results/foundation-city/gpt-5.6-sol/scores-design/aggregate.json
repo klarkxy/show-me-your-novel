@@ -1,12 +1,12 @@
 {
   "schema": "novel-design-aggregate.v3",
   "candidate": "gpt-5.6-sol",
-  "complete": false,
+  "complete": true,
   "overall": 80.5,
   "tracks": {
     "world": {
       "median": 83.3,
-      "n": 4,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 83.3,
@@ -43,12 +43,21 @@
             "focus": 4
           },
           "comment": "最强处是约束与机构互相嵌套，使主角刚出山即处于被追踪与适应城市的双重压力中。"
+        },
+        "glm-5.3": {
+          "score": 100.0,
+          "bands": {
+            "constraint": 4,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "最强处是「境界越高越难适应山外灵气」一石二鸟地封死了高阶救兵与主角无敌两条捷径，四条开局出路也都各自标明代价、机构三限互相咬合；唯山内外语言是否相通全篇未交代，是仅存的暗缝。"
         }
       }
     },
     "characters": {
       "median": 75.0,
-      "n": 4,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 75.0,
@@ -85,12 +94,21 @@
             "playable": 4
           },
           "comment": "最强在知情/误判与注意焦点分层清晰，入场余势均能推动现场行动；但顾长安的底线偏情绪而非行为，削弱其当场选择的硬冲突。"
+        },
+        "glm-5.3": {
+          "score": 75.0,
+          "bands": {
+            "agency": 3,
+            "differentiation": 3,
+            "playable": 3
+          },
+          "comment": "知情与误判分层清晰、四人入场余势都足以左右当下判断是最强处；最弱是林晚晴的欲望与底线近乎职务说明，且方既明与赵闻笙同为怕暴露的藏修者、盯灵力泄漏的注意点部分重叠。"
         }
       }
     },
     "outline": {
       "median": 83.3,
-      "n": 4,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 83.3,
@@ -127,6 +145,15 @@
             "handoff": 3
           },
           "comment": "首次山外高楼与咽气不证修士均落在首章，不可逆选择干净可辨；略弱在beats偏逐拍，但must_not_lock保住了后续弹性。"
+        },
+        "glm-5.3": {
+          "score": 83.3,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 3
+          },
+          "comment": "最强处是第一章用must_keep与首拍把'筑基出山第一眼见高楼车流'连同'咽回真气'的应答当场钉死、可直接开写；最弱处是首不可逆的代价被'立刻'二字软化，且部分beats预写了'古装短片亲戚''三条规矩'这类具体解法，略越纯决策边界。"
         }
       }
     }

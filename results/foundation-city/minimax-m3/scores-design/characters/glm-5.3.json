@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是知情梯度与注意焦点完全错开——陈姐第一眼看见碎灵石却不识货、周深只盯半截剑柄、老何只看停步，四人各有此刻欲望和堵话方式，镇口这场戏不用作者推就能自己转起来。"
+}

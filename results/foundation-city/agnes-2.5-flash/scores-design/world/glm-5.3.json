@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 3,
+    "institutions": 3,
+    "focus": 4
+  },
+  "score": 83.3,
+  "comment": "最强处是守山人'只能延缓不能击杀筑基'与管理局'无法识别筑基实力'这两条边界精确为主角留出了过山后的活路；最弱处是'筑基以下修为消散'与'刚破筑基的主角在山外持续衰退'的阈值口径打架，且政府'不知修仙界存在'却设有山外来客管理局需要一句自洽补丁。"
+}

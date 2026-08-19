@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "glm-5.3",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是同一个秦渡被五双眼睛读成五种东西（行走的阵法误读、漏气的同门后辈、旧师弟、应激驴友、流量素材），知情分层与注意焦点互不重合，且饥饿、超时、心口发紧、掉粉等入场余势都在逼各自当场拍板；最弱是老葛与岑放同属'藏修怕曝光'一族，知情面与拒绝逻辑略有重叠。"
+}

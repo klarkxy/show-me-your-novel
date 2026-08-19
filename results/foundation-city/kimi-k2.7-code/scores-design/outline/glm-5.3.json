@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k2.7-code",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 4,
+    "handoff": 2
+  },
+  "score": 83.3,
+  "comment": "最强处是第一章用must_keep把题目场面（山脊尽头、车流高楼、道袍玉牌、归路封死）完整钉住，且不可逆选择明确落在第二章结果并持续发酵；最弱处是各章beats预写了多句台词和逐拍动作（如按响汽车警报脱身、掐诀被拍散的具体过程），交接卡越过了决策边界进入正文层面。"
+}

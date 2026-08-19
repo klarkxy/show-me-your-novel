@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 4,
+    "irreversible": 3,
+    "handoff": 2
+  },
+  "score": 75.0,
+  "comment": "最强处是第一章干净立起题目那一幕（刚筑基、翻过山脊、无灵气的城、收住的掐诀全在场）；最弱处是交接自相矛盾——prose_free 声明放开的拉人借口与规矩话术，却在 beats 里原句写死（'拍完了没''别掐诀别报山头'），并预写'明白过来是同道'这类正文级心理与逐拍小动作。"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.7-flash",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是三层知情差互不串线——裴寻找高楼阵眼、陈敬盯卡口探头与剑柄、郭建平只关心剑开没开刃，三人的欲望底线与入场余势全压在跃下护坡这一刻，可直接开写；最弱是郭建平的拍板偏程序分支、少一层价值取舍。"
+}

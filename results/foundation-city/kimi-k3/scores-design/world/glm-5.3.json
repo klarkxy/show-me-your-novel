@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "kimi-k3",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 4,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是规则咬合极紧——灵力只耗不补、施法半个时辰内暴露、屏障封死退路、无钱无身份不识简体字，四重锁把'这一刻怎么办'逼成真两难；唯一小口子是丹药能否在山外补充灵力未作说明。"
+}

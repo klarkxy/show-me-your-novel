@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "agnes-2.5-flash",
+  "track": "outline",
+  "judge": "glm-5.3",
+  "bands": {
+    "incident": 3,
+    "irreversible": 3,
+    "handoff": 1
+  },
+  "score": 58.3,
+  "comment": "最强处是第4章把「露底还是藏」的不可逆选择干净落在章内结果里且代价双向写清；最弱处是各章beats预写了大量台词与逐拍动作（如「你师父三十年前就走了」「十年前……死了三个同道」这类关键揭示连原话都定死了），交接卡越权替正文定调。"
+}

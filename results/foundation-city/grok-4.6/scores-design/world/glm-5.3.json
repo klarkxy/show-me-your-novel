@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "grok-4.6",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 2,
+    "institutions": 3,
+    "focus": 3
+  },
+  "score": 66.7,
+  "comment": "最弱处是'身份必须隐藏'缺乏世界内动因——管理局明言不干涉修炼、协会还专门保护修士，且'唯一已知的新晋筑基'与'隐藏身份'自相矛盾，挡捷径靠作者禁令而非设定逻辑；最强处是管理局、修仙协会、科技巨头三方各有欲求、能做与不敢做并形成互锁，开局约束与unresolved清单紧扣'这一刻怎么办'且不预写全书后史。"
+}

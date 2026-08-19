@@ -1,12 +1,12 @@
 {
   "schema": "novel-design-aggregate.v3",
   "candidate": "minimax-m3",
-  "complete": false,
-  "overall": 79.1,
+  "complete": true,
+  "overall": 83.3,
   "tracks": {
     "world": {
       "median": 83.3,
-      "n": 4,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 75.0,
@@ -43,12 +43,21 @@
             "focus": 4
           },
           "comment": "最强处是 opening_constraints 精准锁定文化震惊开局，未给主角轻松入世捷径；弱处是登仙司与灵警总署职能重叠，且对越境者收编可能削弱“不能暴露”的代价感。"
+        },
+        "glm-5.3": {
+          "score": 100.0,
+          "bands": {
+            "constraint": 4,
+            "institutions": 4,
+            "focus": 4
+          },
+          "comment": "最强处是约束闭环：无符黑户、禁飞区、真元不稳加上灵尘逼其买清心丹，把躺平、硬闯、隐姓埋名三条捷径全堵死，登仙司'不能杀只能收编'又恰好接住主角这条线；最弱是灵石兼作能源与财货的价值未定，三枚灵石恐成意外的启动资金。"
         }
       }
     },
     "characters": {
-      "median": 83.3,
-      "n": 4,
+      "median": 91.7,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 75.0,
@@ -85,12 +94,21 @@
             "playable": 3
           },
           "comment": "最弱处在陈姐：她的注意焦点落在递来的碎灵石，依赖进店交易，未能在镇口第一刻直接行动，入场余势没能转化为现场选择。"
+        },
+        "glm-5.3": {
+          "score": 100.0,
+          "bands": {
+            "agency": 4,
+            "differentiation": 4,
+            "playable": 4
+          },
+          "comment": "最强处是知情梯度与注意焦点完全错开——陈姐第一眼看见碎灵石却不识货、周深只盯半截剑柄、老何只看停步，四人各有此刻欲望和堵话方式，镇口这场戏不用作者推就能自己转起来。"
         }
       }
     },
     "outline": {
-      "median": 70.8,
-      "n": 4,
+      "median": 75.0,
+      "n": 5,
       "judges": {
         "sol": {
           "score": 66.7,
@@ -127,6 +145,15 @@
             "handoff": 1
           },
           "comment": "最弱处在handoff：beats中已预写具体台词与逐拍动作，虽保留prose_free/must_not_lock，但已不是只给决策边界。"
+        },
+        "glm-5.3": {
+          "score": 75.0,
+          "bands": {
+            "incident": 4,
+            "irreversible": 3,
+            "handoff": 2
+          },
+          "comment": "最强处是第一章干净立起题目那一幕（刚筑基、翻过山脊、无灵气的城、收住的掐诀全在场）；最弱处是交接自相矛盾——prose_free 声明放开的拉人借口与规矩话术，却在 beats 里原句写死（'拍完了没''别掐诀别报山头'），并预写'明白过来是同道'这类正文级心理与逐拍小动作。"
         }
       }
     }

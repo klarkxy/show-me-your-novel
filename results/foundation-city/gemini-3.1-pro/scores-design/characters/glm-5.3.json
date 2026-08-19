@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "gemini-3.1-pro",
+  "track": "characters",
+  "judge": "glm-5.3",
+  "bands": {
+    "agency": 4,
+    "differentiation": 4,
+    "playable": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是三层知情差与注意焦点（LED留影大阵/城管警灯/监控加嗡鸣的斩天剑）互相咬合成一张即时冲突网，三人的入场余势都直接点燃各自的拍板选项（御剑过路口/报警/手刀塞出租车），几乎可直接交给下一阶段；唯陆淮'冷哼转头'的拒绝方式略显套路，宋岚随身扫码枪的小道具也稍显不合身份。"
+}

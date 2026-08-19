@@ -1,0 +1,14 @@
+{
+  "schema": "novel-design-eval.v3",
+  "benchmark": "foundation-city",
+  "candidate": "minimax-m3",
+  "track": "world",
+  "judge": "glm-5.3",
+  "bands": {
+    "constraint": 4,
+    "institutions": 4,
+    "focus": 4
+  },
+  "score": 100.0,
+  "comment": "最强处是约束闭环：无符黑户、禁飞区、真元不稳加上灵尘逼其买清心丹，把躺平、硬闯、隐姓埋名三条捷径全堵死，登仙司'不能杀只能收编'又恰好接住主角这条线；最弱是灵石兼作能源与财货的价值未定，三枚灵石恐成意外的启动资金。"
+}
